@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Local AI tool settings
+.claude/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Dependencies and generated output
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Retained source artifacts are private by policy and must never be committed.
+# See docs/methodology.md and AGENTS.md.
+data/artifacts/
+
+# Logs
+*.log
+
+# Editor settings
+.idea/
+.vscode/

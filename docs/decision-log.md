@@ -140,3 +140,40 @@ The project needs a coherent stack that supports a public web experience, geospa
 ### Reconsider when
 
 Measured prototype results show a blocking performance, licensing, cost or reliability problem, or after the first public release when operational requirements change.
+
+## ADR-006 — Use source-specialized lightweight agents per project intake
+
+**Date:** 5 August 2026
+
+**Status:** Proposed for review
+
+**Scope:** Candidate research, user-submitted project intake and document discovery
+
+### Context
+
+Project information is distributed across official project pages, procurement systems, budgets, parliamentary records, planning documents, operator updates, geospatial services and independent corroboration. A single general search agent is likely to miss entire source families. The same problem applies when a project is proposed by the system, selected from the candidate pool, or added by a user.
+
+### Decision proposed
+
+Each project intake will use five or six lightweight, read-only research lanes with distinct responsibilities:
+
+1. Official project identity, authority and current project pages.
+2. Procurement, tender, award and contract-lot records.
+3. Budgets, investment plans, parliamentary records and oversight.
+4. Planning, approvals, environmental records and geospatial sources.
+5. Operator, district, construction-update and disruption sources.
+6. Independent corroboration, contradiction and missing-source discovery.
+
+The lanes return structured source candidates, claims, exact evidence spans, dates, metadata, confidence and unresolved gaps. A stronger review model performs cross-source synthesis and ambiguity review. No lane may publish, edit the golden truth set or make the final project-selection decision.
+
+### Consequences
+
+- The system searches the full public source ecosystem instead of repeatedly querying one general index.
+- User-submitted projects can enter the same evidence workflow as system-discovered projects.
+- Source gaps and failed searches become visible research outputs.
+- Six calls per project may be wasteful for simple projects, so cost, coverage and diminishing returns must be measured.
+- Claims need content-hash and source-identity deduplication before synthesis.
+
+### Reconsider when
+
+Evaluation shows that fewer lanes provide equivalent source coverage, a source family requires a specialized connector rather than an agent, or cost and latency make the default workflow unsustainable.

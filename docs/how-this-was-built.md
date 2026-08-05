@@ -154,7 +154,7 @@ Turn the product blueprint into an honest README and an operational build sequen
 ## Short entries
 
 - 2026-08-05 — Codex: extracted the complete feature register, moved the blueprint binary to `~/Documents/berlin-blueprint-private`, removed recruitment framing and replaced the public history. Verified: one commit, no DOCX in history and no recruitment-framing hits. `6a84726`
-- 2026-08-05 — Claude: drafted `docs/methodology.md` (evidence labels, financial-measure and milestone definitions, publication thresholds, status rules, correction process), cross-referencing the existing ADRs rather than duplicating them. Verified: reviewed against README, decision log and feature register for consistency; project owner approved. `<pending>`
+- 2026-08-05 — Claude: drafted `docs/methodology.md` (evidence labels, financial-measure and milestone definitions, publication thresholds, status rules, correction process), cross-referencing the existing ADRs rather than duplicating them. Verified: reviewed against README, decision log and feature register for consistency; approved by the project owner. `af0e412`
 
 ## 2026-08-05 — Initialize local Git repository
 
@@ -242,3 +242,96 @@ Record the five decisions needed to begin implementation without leaving archite
 
 - `docs/decision-log.md`
 - `docs/project-checklist.md`
+
+## 2026-08-05 — Research plan: source availability as a product differentiator
+
+**Status:** In progress
+
+**Commit:** Pending review
+
+### Goal
+
+Design the first research pass for selecting three pilot projects while preserving the complexity of finding and verifying fragmented public information.
+
+### Participants and scopes
+
+- Project owner: reviewed the initial orchestration results and decided that source availability and discovery difficulty should be treated as core product value, not merely a research obstacle.
+- Main agent (OpenAI Codex): coordinated six bounded, read-only Luna research tasks and synthesized their outputs.
+- Luna research agents: one selection-rubric task, one official-source ecosystem map, three category-specific candidate scans, and one adversarial bias review.
+- Claude: reserved for deeper finalist dossier review after the candidate pool and rubric are frozen.
+
+### Decisions
+
+- Agents will produce a broad candidate pool; they will not independently select the final three projects.
+- The scoring rubric will be frozen before candidates are scored.
+- Source availability and researchability will be scored separately from public value and research importance.
+- The candidate pool will deliberately include projects whose public evidence is fragmented, difficult to discover, scanned, moved, or distributed across agencies and document types.
+- The first three projects should form a balanced set: at least one bounded case, one complex multi-source case, and one hard-to-discover public-information case.
+- The source-ecosystem map is a first-class research output. It should show where project identity, dates, budgets, procurement, planning, contracts, geometry and updates are actually found.
+- Every candidate, exclusion reason, failed search path, dead or inaccessible source and unresolved gap should be retained in the research record.
+- A candidate will not be rejected merely because its information is difficult to find; it will be rejected when the evidence cannot be recovered or verified within the release scope and rules.
+
+### Verification
+
+- Six Luna reports were returned as research proposals; no agent edited files, committed, or selected the final projects.
+- The reports identified official-source families including Berlin Senate and district pages, procurement platforms, TED, budget and parliamentary records, operator pages, Geoportal/Open Data and planning records.
+- The adversarial review identified famous-project, source-availability, survivorship, authority and selection-leakage biases.
+- Candidate examples were treated as preliminary discovery leads, not verified project dossiers.
+
+### Failures and limitations
+
+- Agent-reported dates, budgets and URLs still require direct source verification.
+- The candidate pool is not yet frozen and no pilot project has been selected.
+- The methodology draft was approved by the project owner and pushed as `af0e412`; the research plan itself remains uncommitted.
+
+### Next step
+
+Freeze the scoring rubric and source-discovery record before conducting deeper finalist research.
+
+## 2026-08-05 — Project-level multi-agent source discovery
+
+**Status:** Proposed for review
+
+**Commit:** Pending review
+
+### Goal
+
+Define how the system researches a project after it is proposed by the system, selected from the candidate pool, or added by the project owner or a future user.
+
+### Decision proposed
+
+Each project intake should trigger five or six lightweight, read-only research lanes with distinct source responsibilities:
+
+1. Official project identity, authority and current project pages.
+2. Procurement, tender, award and contract-lot records from Berlin and TED.
+3. Budgets, investment plans, parliamentary records and oversight documents.
+4. Planning, approvals, environmental records and geospatial sources.
+5. Operator, district, construction-update and disruption sources.
+6. Independent corroboration, contradiction and missing-source discovery.
+
+Each lane returns structured source candidates, extracted claims, exact evidence spans, dates, source metadata, confidence and unresolved gaps. Agents do not publish, edit the golden truth set, or select the final project. A stronger review model handles ambiguity and cross-source synthesis after the lanes finish; lightweight models handle bounded discovery, extraction and deduplication.
+
+### Project-intake inputs
+
+- Candidate name and aliases.
+- Address, district, coordinates or affected route.
+- Organizations and known roles.
+- Category and lifecycle hypothesis.
+- User-submitted text, sign details or external identifiers where available.
+- Discovery timestamp and origin: system candidate, owner-selected or user-submitted.
+
+### Verification
+
+- All lane outputs are proposals until checked against the original source.
+- The system preserves failed searches, dead links, inaccessible documents, contradictions and duplicate sources.
+- Claims are deduplicated by source identity and content hash before synthesis.
+- The project owner establishes the golden truth values from the German source material.
+- Human review is required before a project or consequential claim becomes public.
+
+### Consequences and open questions
+
+- Source discovery becomes repeatable across selected and user-submitted projects.
+- Six lanes reduce blind spots caused by relying on a single agency or source type.
+- The workflow increases model calls, so cost per project and diminishing returns must be measured.
+- Source lanes may overlap; the schema must preserve provenance while deduplicating claims.
+- We still need to define the exact structured output schema, stop conditions, retry policy and whether all six lanes run for every project or whether simple projects can use fewer lanes.

@@ -66,14 +66,14 @@ Different errors have different consequences. A missed field is visible as missi
 
 Evaluation will separate precision-critical measures from recall-oriented coverage measures. Proposed v0 gates are:
 
-- Financial-measure type precision: at least 99% on the defined pilot set.
-- Organization-to-role precision: at least 99% on the defined pilot set.
-- Citation correctness: at least 99% on the defined pilot set.
-- Unsupported published claims: 0%, enforced by requiring an evidence span.
+- Financial-measure type precision: target at least 99% on the defined pilot set.
+- Organization-to-role precision: target at least 99% on the defined pilot set.
+- Citation correctness: target at least 99% on the defined pilot set.
+- Unsupported published claims: 0%, enforced by requiring an evidence span. This one is not a target — it is a deterministic invariant with no tolerance.
 - Field extraction recall: measured separately, with an initial expected range of 80–90%.
 - Entity-match and contradiction recall: measured separately rather than hidden inside a blended score.
 
-The human-review rate will be reported rather than optimized away. Thresholds remain provisional until the manually verified pilot set exists.
+These are release hypotheses, not achieved results, and the pilot set is small enough (three projects) that 99% precision means close to zero tolerated misses rather than a statistically meaningful rate. The publication gate is what a claim below threshold does — it routes to human review instead of publishing — not whether the measured number clears 99% on a given day. The first release publishes its actual measured numbers, including below-target ones, rather than withholding launch until the target is hit. The human-review rate will be reported rather than optimized away. Thresholds remain provisional until the manually verified pilot set exists.
 
 ### Consequences
 
@@ -109,7 +109,7 @@ The first public release will use an accessible 2D map connected to project doss
 
 ### Reconsider when
 
-User research shows that the 3D representation is essential to understanding the first release, or the 2D prototype fails to communicate the core project story.
+User research shows that the 3D representation is essential to understanding the first release, or the 2D prototype fails to communicate the core project story — but not before the first public release ships on its planned date. The first release date is fixed; if either signal appears beforehand, the response is to note it for the 3D milestone that follows, not to pull 3D work forward into the first release.
 
 ## ADR-005 — Use a small, typed stack with local pipeline execution for v0
 

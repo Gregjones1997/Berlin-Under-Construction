@@ -22,7 +22,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Write `docs/methodology.md` with the publication and evidence rules.
+**Next action:** Create the `/web` and `/pipeline` directory structure and add formatting, linting and testing commands.
 
 ## Phase 0 — Minimal foundation
 
@@ -45,7 +45,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 - [x] Choose the smallest viable initial stack.
 - [ ] Add formatting, linting and testing commands.
 - [ ] Add a basic CI workflow.
-- [ ] Make the first clean repository commit.
+- [x] Make the first clean repository commit.
 
 ### Minimal documentation
 
@@ -55,7 +55,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 - [x] Record ADR: risk-specific precision and recall targets.
 - [x] Record ADR: public 2D release before technical-illustration 3D.
 - [x] Record ADR: v0 stack and local pipeline execution.
-- [ ] Create `docs/methodology.md` from actual publication rules.
+- [x] Create `docs/methodology.md` from actual publication rules.
 - [ ] Create `docs/data-model.md` from the first working schema.
 - [ ] Add later documents only when their systems produce real evidence.
 

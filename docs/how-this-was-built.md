@@ -154,6 +154,7 @@ Turn the product blueprint into an honest README and an operational build sequen
 ## Short entries
 
 - 2026-08-05 — Codex: extracted the complete feature register, moved the blueprint binary to `~/Documents/berlin-blueprint-private`, removed recruitment framing and replaced the public history. Verified: one commit, no DOCX in history and no recruitment-framing hits. `6a84726`
+- 2026-08-05 — Claude: drafted `docs/methodology.md` (evidence labels, financial-measure and milestone definitions, publication thresholds, status rules, correction process), cross-referencing the existing ADRs rather than duplicating them. Verified: reviewed against README, decision log and feature register for consistency; project owner approved. `<pending>`
 
 ## 2026-08-05 — Initialize local Git repository
 

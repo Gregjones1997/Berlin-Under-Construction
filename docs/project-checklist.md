@@ -22,7 +22,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Create the `/web` and `/pipeline` directory structure and add formatting, linting and testing commands.
+**Next action:** Review the proposed pilot-selection criteria, source-ecosystem map and candidate ledger; then manually verify candidate leads before selecting any pilots.
 
 ## Phase 0 — Minimal foundation
 

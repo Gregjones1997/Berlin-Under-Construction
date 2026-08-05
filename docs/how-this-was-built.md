@@ -376,3 +376,88 @@ Each lane returns structured source candidates, extracted claims, exact evidence
 - The workflow increases model calls, so cost per project and diminishing returns must be measured.
 - Source lanes may overlap; the schema must preserve provenance while deduplicating claims.
 - We still need to define the exact structured output schema, stop conditions, retry policy and whether all six lanes run for every project or whether simple projects can use fewer lanes.
+
+## 2026-08-05 — Pilot-selection and source-ecosystem research artifacts
+
+**Status:** Proposed for project-owner review
+
+**Commit:** `85a210a` — `docs(research): add pilot selection and source ecosystem artifacts`
+
+### Goal
+
+Turn the preliminary multi-agent research outputs into reviewable Phase 0
+artifacts for selecting three pilots without treating agent-reported facts as
+verified research.
+
+### Participants and scopes
+
+- Project owner Gregory Jones: supplied the scope, retained final selection and
+  golden-truth authority, and must review the proposed artifacts.
+- Main agent (OpenAI Codex): inspected the repository and existing policy
+  documents, checked a limited set of official source entry points, and drafted
+  the three research files and this proposed log entry.
+- Prior multi-agent research outputs: preliminary leads only; no agent selected
+  a winner, edited the golden truth set or verified candidate claims.
+
+### Work performed
+
+- Drafted hard eligibility and final-selection gates for project-owner review,
+  intended to freeze the pilot process once accepted.
+- Drafted a weighted 0–100 rubric with expected end-date evidence as the largest
+  user-facing dimension.
+- Separated source availability from public usefulness and recorded controls for
+  source-availability, famous-project and public-usefulness bias.
+- Mapped official Berlin source families across identity, dates, finance,
+  procurement, planning, geospatial data, updates and oversight.
+- Created a cross-category candidate ledger without selecting final projects.
+
+### Decisions
+
+- Proposed retaining difficult-to-research candidates rather than excluding
+  them automatically.
+- Proposed requiring a supported expected end date, or a supported statement
+  that no expected end date is published, before final selection.
+- Proposed treating official entry-point checks as source-family verification,
+  not as verification of candidate-level facts or licensing permissions.
+
+### Verification
+
+- Confirmed the repository was clean on `main` before editing.
+- Read `README.md`, `AGENTS.md`, `docs/project-checklist.md`,
+  `docs/decision-log.md` and `docs/methodology.md`.
+- Confirmed that `docs/research/source-discovery-orchestration.md` is absent;
+  its available content is represented only by prior build-log and decision-log
+  entries and was not reconstructed as if it were a verified file.
+- Opened a limited set of official Berlin entry points for procurement, budget,
+  parliamentary, planning, geospatial and Open Data discovery. Candidate-level
+  claims remain unverified.
+
+### Failures and limitations
+
+- The prior multi-agent reports were not present as standalone files in the
+  repository, so the ledger uses their recorded source families and preliminary
+  leads without asserting their reported facts.
+- No candidate has a manually verified dossier, final score or selection
+  decision.
+- Source retention, quotation, database rights, personal-data handling and
+  machine-access conditions still require project- and dataset-specific review.
+
+### Project-owner feedback incorporated for review
+
+- Missing expected-end-date evidence remains exactly 0 in the rubric, but an
+  undated observation can remain in a separate research backlog instead of
+  being discarded.
+- Public usefulness is framed around affected-place context and disruption,
+  not an artificial exact headcount.
+- Road closures and lane restrictions were added as a distinct candidate
+  category because they directly affect residents and traffic users.
+- Research-agent discoveries are proposed to flow into a human-owned backlog;
+  agents still do not select pilots or edit the golden truth set.
+
+### Evidence
+
+- `docs/research/pilot-selection-criteria.md`
+- `docs/research/source-ecosystem.md`
+- `docs/research/candidate-ledger.md`
+- Existing research record in this document and proposed source-specialization
+  workflow in `docs/decision-log.md`, ADR-006.

@@ -101,7 +101,7 @@ What outcome was needed and why?
 
 **Status:** Complete
 
-**Commit:** Pending
+**Commit:** `6a84726` — docs: establish project foundation
 
 ### Goal
 
@@ -153,13 +153,13 @@ Turn the product blueprint into an honest README and an operational build sequen
 
 ## Short entries
 
-- 2026-08-05 — Codex: extracted the complete feature register, moved the blueprint binary to `~/Documents/berlin-blueprint-private`, removed recruitment framing and replaced the public history. Verified: one commit, no DOCX in history and no recruitment-framing hits. `this commit`
+- 2026-08-05 — Codex: extracted the complete feature register, moved the blueprint binary to `~/Documents/berlin-blueprint-private`, removed recruitment framing and replaced the public history. Verified: one commit, no DOCX in history and no recruitment-framing hits. `6a84726`
 
 ## 2026-08-05 — Initialize local Git repository
 
 **Status:** Complete
 
-**Commit:** Pending
+**Commit:** `6a84726` — docs: establish project foundation
 
 ### Goal
 
@@ -200,3 +200,44 @@ Place the project under local version control and prevent machine-specific or se
 - `.gitignore`
 - `docs/project-checklist.md`
 - `docs/how-this-was-built.md`
+
+## 2026-08-05 — Record initial architecture and policy decisions
+
+**Status:** Complete
+
+**Commit:** Pending
+
+### Goal
+
+Record the five decisions needed to begin implementation without leaving architecture and publication rules implicit.
+
+### Participants and scopes
+
+- Project owner: confirmed that implementation should begin collaboratively and approved the decision-log step.
+- Main agent (OpenAI Codex): drafted and cross-checked the ADRs against `AGENTS.md`, `README.md` and the project checklist.
+- External reviewer (Claude): supplied the release-sequencing, German-first, naming-policy and evaluation recommendations that informed the decisions.
+- Subagents: none used for this task.
+
+### Decisions
+
+- Preserve German source wording and translate only at the display layer.
+- Name organizations by documented role and exclude natural persons from v0.
+- Separate precision-critical quality gates from recall and report human review.
+- Ship the accessible 2D public product before advanced 3D.
+- Use the small typed v0 stack already specified in `AGENTS.md`, with the pipeline running locally until the first release.
+
+### Verification
+
+- Confirmed each ADR has context, decision, consequences and reconsideration conditions.
+- Confirmed the stack matches `AGENTS.md`.
+- Confirmed the checklist next action advances to methodology.
+
+### Failures and limitations
+
+- Metric thresholds remain proposals until the manually verified pilot set exists.
+- Legal and privacy requirements still require authoritative review before launch.
+
+### Evidence
+
+- `docs/decision-log.md`
+- `docs/project-checklist.md`

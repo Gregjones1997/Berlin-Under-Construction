@@ -22,7 +22,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Write `docs/decision-log.md` with the five ADRs.
+**Next action:** Write `docs/methodology.md` with the publication and evidence rules.
 
 ## Phase 0 — Minimal foundation
 
@@ -42,18 +42,19 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 - [x] Add `.gitignore` for local settings, secrets and generated files.
 - [ ] Add `.env.example` when the first environment variables are defined.
 - [ ] Create the application and test directory structure.
-- [ ] Choose the smallest viable initial stack.
+- [x] Choose the smallest viable initial stack.
 - [ ] Add formatting, linting and testing commands.
 - [ ] Add a basic CI workflow.
 - [ ] Make the first clean repository commit.
 
 ### Minimal documentation
 
-- [ ] Create `docs/decision-log.md`.
-- [ ] Record ADR: German-first extraction and display-only translation.
-- [ ] Record ADR: organizations named by role; natural persons excluded from v0.
-- [ ] Record ADR: risk-specific precision and recall targets.
-- [ ] Record ADR: public 2D release before technical-illustration 3D.
+- [x] Create `docs/decision-log.md`.
+- [x] Record ADR: German-first extraction and display-only translation.
+- [x] Record ADR: organizations named by role; natural persons excluded from v0.
+- [x] Record ADR: risk-specific precision and recall targets.
+- [x] Record ADR: public 2D release before technical-illustration 3D.
+- [x] Record ADR: v0 stack and local pipeline execution.
 - [ ] Create `docs/methodology.md` from actual publication rules.
 - [ ] Create `docs/data-model.md` from the first working schema.
 - [ ] Add later documents only when their systems produce real evidence.

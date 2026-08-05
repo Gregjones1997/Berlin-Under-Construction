@@ -86,6 +86,8 @@ These are release hypotheses, not achieved results, and the pilot set is small e
 
 The pilot dataset reveals that the metrics do not predict real publication risk or that a new claim type requires a separate gate.
 
+**Amended 5 August 2026** — reworded the precision figures as targets rather than fixed thresholds, called out the unsupported-claims rule as the one zero-tolerance invariant, and stated explicitly that the first release publishes its real measured numbers rather than withholding launch until targets are hit. The decision itself did not change. See `docs/how-this-was-built.md`, "Clarify evaluation-gate and 3D-sequencing wording."
+
 ## ADR-004 — Ship the public 2D product before advanced 3D
 
 **Date:** 5 August 2026  
@@ -110,6 +112,8 @@ The first public release will use an accessible 2D map connected to project doss
 ### Reconsider when
 
 User research shows that the 3D representation is essential to understanding the first release, or the 2D prototype fails to communicate the core project story — but not before the first public release ships on its planned date. The first release date is fixed; if either signal appears beforehand, the response is to note it for the 3D milestone that follows, not to pull 3D work forward into the first release.
+
+**Amended 5 August 2026** — added the floor on the reconsideration clause: trigger conditions may be noted before the first release, but do not pull 3D work forward into it. The decision itself did not change. See `docs/how-this-was-built.md`, "Clarify evaluation-gate and 3D-sequencing wording."
 
 ## ADR-005 — Use a small, typed stack with local pipeline execution for v0
 

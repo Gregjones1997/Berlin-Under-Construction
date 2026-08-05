@@ -155,6 +155,7 @@ Turn the product blueprint into an honest README and an operational build sequen
 
 - 2026-08-05 — Codex: extracted the complete feature register, moved the blueprint binary to `~/Documents/berlin-blueprint-private`, removed recruitment framing and replaced the public history. Verified: one commit, no DOCX in history and no recruitment-framing hits. `6a84726`
 - 2026-08-05 — Claude: drafted `docs/methodology.md` (evidence labels, financial-measure and milestone definitions, publication thresholds, status rules, correction process), cross-referencing the existing ADRs rather than duplicating them. Verified: reviewed against README, decision log and feature register for consistency; approved by the project owner. `af0e412`
+- 2026-08-05 — Claude: backfilled build-log entries for `e029383` and `f5fb60b` (both previously un-logged or left `Commit: Pending`), added `**Amended**` notes to ADR-003 and ADR-004, and added a "log at commit time, not after" rule to `AGENTS.md`. Verified: reviewed by the project owner. `<pending>`
 
 ## 2026-08-05 — Initialize local Git repository
 
@@ -206,7 +207,7 @@ Place the project under local version control and prevent machine-specific or se
 
 **Status:** Complete
 
-**Commit:** Pending
+**Commit:** `e029383` — docs(decisions): record initial architecture and policy ADRs
 
 ### Goal
 
@@ -242,6 +243,46 @@ Record the five decisions needed to begin implementation without leaving archite
 
 - `docs/decision-log.md`
 - `docs/project-checklist.md`
+
+## 2026-08-05 — Clarify evaluation-gate and 3D-sequencing wording
+
+**Status:** Complete
+
+**Commit:** `f5fb60b` — docs(decisions): clarify evaluation gates and 3D sequencing
+
+### Goal
+
+Close two review findings against the newly recorded ADR-003 and ADR-004: the 99% evaluation targets read as firm commitments rather than provisional release hypotheses, and ADR-004's reconsideration clause had no floor, meaning a persuasive argument could pull 3D work into the first release ahead of its fixed date.
+
+### Participants and scopes
+
+- Project owner: reviewed both findings and asked for the wording fixed without a commit.
+- External reviewer (Claude): identified the two findings during a decision-log review, drafted the replacement wording for ADR-003 and ADR-004 in place.
+- Main agent (OpenAI Codex): committed the reviewed wording.
+- Subagents: none used for this task.
+
+### Work performed
+
+- ADR-003: reworded the three 99% figures as targets rather than fixed thresholds, called out the unsupported-claims rule as the one true zero-tolerance invariant, and added that the release publishes its real measured numbers, including below-target ones, rather than withholding launch until targets are hit.
+- ADR-004: added a floor to the reconsideration clause — the trigger conditions may be noted before the first release, but do not pull 3D work forward into it regardless of how compelling they look mid-sprint.
+
+### Decisions
+
+- Accepted both wording changes as drafted; the underlying decisions in ADR-003 and ADR-004 did not change, only their precision.
+- Treated this as a clarification of the existing ADRs rather than a new ADR, since no decision reversed.
+
+### Verification
+
+- Re-read both ADRs end to end after editing to confirm the Decision and Reconsider-when sections no longer contradict the Context section's hedging language.
+- Confirmed via `git diff` that no other ADR content was touched.
+
+### Failures and limitations
+
+- This edit was not recorded in this log at the time it was committed; it is being backfilled now. See the entry above for the same gap on `e029383`.
+
+### Evidence
+
+- `docs/decision-log.md`
 
 ## 2026-08-05 — Research plan: source availability as a product differentiator
 

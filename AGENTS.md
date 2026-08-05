@@ -131,6 +131,16 @@ changes, anything that changes the product plan. Expect roughly ten of these.
 Never log secrets, personal data, raw prompt transcripts or private reasoning.
 Never record that an agent completed work that was not independently checked.
 
+**Log at commit time, not after.** Write the entry — full or short — in the same
+change as the commit it describes, with the real commit hash already in it if
+the tooling allows, or filled in immediately once the hash exists. Do not leave
+`Commit: Pending` unresolved past the session that created it, and do not defer
+the entry itself to "later." A backfilled log is a sign the process slipped;
+two ADR-wording commits went un-logged this way before this rule was written
+down. If an ADR's own text is edited after acceptance, add a one-line
+`**Amended <date>**` note under it pointing to the log entry, rather than
+silently rewriting it with no trace.
+
 ## Stack
 
 Decided, not open for re-litigation before 1 September. See

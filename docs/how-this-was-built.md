@@ -381,7 +381,7 @@ Each lane returns structured source candidates, extracted claims, exact evidence
 
 **Status:** Proposed for project-owner review
 
-**Commit:** `85a210a` — `docs(research): add pilot selection and source ecosystem artifacts`
+**Commit:** `bdafec9` — `docs(research): add pilot selection and source ecosystem artifacts`
 
 ### Goal
 

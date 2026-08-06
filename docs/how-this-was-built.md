@@ -186,6 +186,7 @@ Turn the product blueprint into an honest README and an operational build sequen
 - 2026-08-05 — Claude: backfilled build-log entries for `e029383` and `f5fb60b` (both previously un-logged or left `Commit: Pending`), added `**Amended**` notes to ADR-003 and ADR-004, and added a "log at commit time, not after" rule to `AGENTS.md`. Verified: reviewed and approved by the project owner. `03e9deb`
 - 2026-08-05 — Project owner: raised the bar for full build-log entries; documentation and planning work now gets a short entry. Recorded as ADR-007. `39be832`
 - 2026-08-06 — Project owner and Codex: made spawned-agent orchestration mandatory in the build record, including failed, redundant and rejected lanes; preserved single-writer synthesis and verification. `39be832`
+- **Course correction** — 2026-08-06 — Project owner and Codex: added skill/tool attribution and course-correction conventions, marked the ADR-006 stage mismatch, and gitignored private working notes. Verified: `notes/learning.md` is ignored and absent from Git status; diff check passes. `<hash>`
 
 ## 2026-08-05 — Initialize local Git repository
 
@@ -546,6 +547,16 @@ Correct the stage that the six-lane research workflow applies to. ADR-006 was dr
 - Kept the six lanes themselves unchanged. Only the stage they apply to moved.
 - Candidate naming will use a separate lightweight single-pass lookup rather than the full lane workflow.
 - Retained the existing rule that agent output is a lead until the project owner verifies it against the original German source.
+
+### Course correction
+
+An agent produced a well-designed six-lane research system aimed at candidate
+discovery and project intake generally. The project owner caught that the
+workflow was aimed at the wrong pipeline stage: candidate naming needs a
+lightweight identity lookup, while the six specialized lanes belong after a
+project has been named and selected for dossier research. The mismatch was
+caught before implementation. Its cost was one decision-log section and the
+review time needed to rescope it; no pipeline code had to be discarded.
 
 ### Verification
 

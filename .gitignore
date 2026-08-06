@@ -24,6 +24,9 @@ __pycache__/
 # See docs/methodology.md and AGENTS.md.
 data/artifacts/
 
+# Private working notes — never published
+notes/
+
 # Logs
 *.log
 

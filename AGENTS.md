@@ -136,6 +136,23 @@ planning, restructuring and policy-wording changes get a short entry. See
 - 2026-08-12 — Codex: dossier page scaffold. Verified: renders pilot 1 from DB. `abc1234`
 ```
 
+**Attribute skills and specialized tools.** When a skill, plugin or specialized
+tool contributes to committed work, name it in the entry's participants line
+alongside the model — for example `Main agent (Codex, /design-review skill)`.
+Record what it produced and what was accepted or rejected, not merely that it
+was used. If a tool wrote code that ships, saying so is required for the same
+reason this log exists.
+
+**Mark course corrections.** When agent or tool output was wrong, misaimed or
+rejected and a human caught it, mark the entry. Short entries take a
+`**Course correction** —` prefix; full entries add a `### Course correction`
+subsection stating what the agent produced, what was wrong with it, how it was
+caught, and what it cost. These are recorded whether or not the mistake reached
+a commit.
+
+Do not manufacture these. An invented or inflated course correction is worse
+than none, and the pattern only means anything if every instance is real.
+
 Never log secrets, personal data, raw prompt transcripts or private reasoning.
 Never record that an agent completed work that was not independently checked.
 Multi-agent work is never omitted merely because it produced no accepted change;

@@ -113,6 +113,19 @@ phase-only, stale, relative, untyped or absent. That is a result of the frozen
 end-date gate, not a judgement that those projects are unimportant. They stay
 in the backlog with their exact failure reason.
 
+**Known conflict for owner decision.** All four shortlisted candidates
+are `low` to `medium` research difficulty, each sourced from a single
+well-indexed HTML page. This does not satisfy the frozen bias control in
+`pilot-selection-criteria.md`, which requires that at least one
+shortlisted project test fragmented or difficult evidence. The end-date
+gate and the difficulty control conflict here, and the end-date gate was
+applied first. The project owner must either accept the shortlist as-is,
+admit a difficult candidate for the final three, or amend the difficulty
+control. Discovery did not resolve this. Candidates that exercise
+difficult evidence but fail the date gate include Klaerwerk Ruhleben
+(PDF-only, programme-versus-plant identity problem) and the
+Wollankstrasse railway bridge (closure-versus-project distinction).
+
 ## How to read this ledger
 
 - **Source availability** describes the research trail, not the project's

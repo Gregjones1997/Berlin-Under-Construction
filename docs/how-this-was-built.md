@@ -188,6 +188,7 @@ Turn the product blueprint into an honest README and an operational build sequen
 - 2026-08-05 — Project owner: raised the bar for full build-log entries; documentation and planning work now gets a short entry. Recorded as ADR-007. `39be832`
 - 2026-08-06 — Project owner and Codex: made spawned-agent orchestration mandatory in the build record, including failed, redundant and rejected lanes; preserved single-writer synthesis and verification. `39be832`
 - **Course correction** — 2026-08-06 — Project owner and Codex: added skill/tool attribution and course-correction conventions, marked the ADR-006 stage mismatch, and gitignored private working notes. Verified: `notes/learning.md` is ignored and absent from Git status; diff check passes. `4d4e215`
+- **Course correction** -- 2026-08-06 — Claude review recomputed the final end-date gate column from the candidate ledger and caught a lane gate count that did not reconcile against its own source ledger. Corrected housing/mixed-use from 1 to 0 and total from 17 to 16; no repository rework, but the error was live in two commits.
 
 ## 2026-08-05 — Initialize local Git repository
 
@@ -660,8 +661,8 @@ closure-only and untyped period endpoints do not pass cleanly.
 | Transport | 6 / 5–8 | 6 / 6 | 0 | 6 | 0 | 5 | 5 |
 | Public buildings / culture / space | 8 / 5–8 | 8 / 8 | 0 | 6 | 0 | 8 | 6 |
 | Utilities / energy / water / environment | 7 / 5–8 | 7 / 7 | 0 | 7 | 0 | 6 | 5 |
-| Housing / commercial / mixed-use | 8 / 5–8 | 8 / 8 | 0 | 7 | 0 | 4 | 1 |
-| **Total** | **29 / 20–32** | **29 / 29** | **0** | **26** | **0** | **23** | **17** |
+| Housing / commercial / mixed-use | 8 / 5–8 | 8 / 8 | 0 | 7 | 0 | 4 | 0 |
+| **Total** | **29 / 20–32** | **29 / 29** | **0** | **26** | **0** | **23** | **16** |
 
 Eight access-barrier paths were retained as source-registry seeds: a moved
 Senate directory, CAPTCHA, an initial DB PDF timeout, an internal-error school

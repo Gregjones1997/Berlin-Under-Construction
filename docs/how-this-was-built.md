@@ -2,11 +2,133 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-06 — Disclose the German-language constraint and verification boundary
+
+**Status:** Complete; native-speaker review pending
+
+**Commit:** Recorded by this commit — `docs(process): disclose German-language constraint and mitigations`
+
+### Goal
+
+State that the project owner does not read German, show what that means for the
+evidence chain, and measure the first verification pass over the vocabulary on
+which glossary-derived golden values will depend.
+
+### Participants and scopes
+
+- Project owner: disclosed the language constraint, required human rather than
+  owner authorship of ground truth, set the authority boundary and requested the
+  full-glossary verification run.
+- Main agent (OpenAI Codex, `/research` skill and web research): integrated the
+  policy, audited all glossary and candidate rows, ran back-translation,
+  independently reopened primary sources, wrote the report and made all
+  repository changes and commits.
+- Glossary-authorities subagent (OpenAI Codex, `/research` skill): read-only
+  retrieval lane for Duden, DWDS, specialist primary authorities and official
+  English publications. It returned a cited proposal and did not edit the tree.
+
+### Multi-agent architecture
+
+- Specialized delegation was used because the research skill requires a
+  background primary-source lane while the main agent continued the ledger audit
+  and policy work. The lane was limited to retrieval and divergence detection;
+  the main agent remained the single writer and authority integrator.
+- The subagent identified Duden's multiple senses for `Bauabnahme` and
+  `Finanzierung`, the general-language overlap between `Kosten` and `Ausgaben`,
+  specialist public-finance sources, three Berlin.de English publication paths,
+  and DB/BVG English-site gaps. Its DWDS retrieval was blocked by robots policy.
+- Accepted after independent reopening: the lexical ambiguities, specialist
+  sources, Berlin.de pairs and the DWDS limitation. Modified: its pre-change
+  74-row scope was expanded to the version-1.0 glossary's 88 rows, and English
+  absence was reported as “not found in this pass,” not proof of nonexistence.
+  Rejected: treating general dictionary synonymy, search-result agreement or an
+  official-hosted machine translation as contextual validation.
+- Independent check: the main agent reopened the cited Duden, Berlin.de,
+  Destatis, Bundestag, Federal Ministry of Finance, DB and BVG sources; then
+  recomputed report row, status, span and parallel-pair counts from the file.
+
+### Work performed
+
+- Added glossary version 1.0 and a date-qualifier/modal section that preserves
+  bounds, direction, precision, confidence and as-of wording.
+- Audited all 29 candidate rows against those qualifiers without editing the
+  discovery ledger. No direct contradiction was found between quoted wording
+  and a row's recorded milestone/date characterization; the ledger still lacks
+  a typed qualifier field.
+- Replaced owner authorship with human authorship as the golden-set invariant,
+  added per-value provenance and recorded ADR-008.
+- Checked 88 glossary rows, representing 87 distinct row labels because
+  `geschätzt` appears in two sections. Results: 77 `agreed`, 6 `flagged` and 5
+  `unresolved`. “Agreed” means only that consulted authorities did not diverge.
+- Inspected 29 candidate rows. Twenty-eight contained a quoted German
+  expected-end span group and were back-translated; C-026 had no quoted German
+  expected-end span. Four of the 28 showed a material modal divergence.
+- Found three project-specific German/English Berlin.de publication pairs
+  (C-001, C-014 and C-019). No pair was found for the other 26 candidate rows;
+  DB and BVG English sites existed but did not expose counterparts for the
+  checked C-003, C-004 and C-005 publications.
+- Added the verified-vocabulary premise to the README without claiming that the
+  constraint has been overcome.
+
+### Decisions
+
+- The native-speaker queue is `Baubeginn`, `Bauabnahme`, `Kosten`,
+  `Finanzierung`, `vorgesehen` and `soll`. No flagged glossary row was edited.
+- Five terms remain `unresolved` because this pass retrieved no adequate
+  authority for the complete term: `Ergänzungsunterlage zur Finanzierung`,
+  `haushalterische Grundlage`, `finanziert aus dem Plätzeprogramm`,
+  `Realisierungsverträge` and `Einbringungsverträge`.
+- Back-translation and official-hosted English text are divergence detectors,
+  not authorities. Three Berlin.de English pages were credited to automated
+  translation and were not promoted to controlled glossary sources.
+- Multiple model passes remain ineligible as golden-set validation regardless of
+  agreement.
+
+### Verification
+
+- Confirmed the glossary report has exactly 88 term rows: 77 `agreed`, 6
+  `flagged` and 5 `unresolved`.
+- Confirmed the back-translation appendix has 29 candidate rows, 28 completed
+  span-group passes and one explicit source gap.
+- Confirmed the parallel-text appendix has three German/English pairs and labels
+  the remaining 26 as not found in this pass.
+- Confirmed native-speaker review cells are empty and `docs/glossary.md` was not
+  modified by the verification-report commit.
+- Confirmed all five requested commits are focused and ordered:
+  `309363d`, `32888b6`, `1a5ce5b`, `ba3de76`, then this disclosure commit.
+
+### Failures and limitations
+
+- The project owner cannot independently verify contextual German meaning.
+  Project identity, boundary, applicable sense and disagreements between
+  authorities remain outside the owner's comprehension.
+- No native speaker has reviewed the glossary. Version 1.0 is therefore not
+  eligible as a verified layer for `glossary-derived` golden values.
+- DWDS pages could not be retrieved because of robots restrictions. Duden is a
+  general-language dictionary and does not establish every domain-specific
+  financial, planning or procurement sense.
+- Back-translation used a model and is correlated with the system being bounded;
+  agreement is not evidence of correctness.
+- Official parallel English was sparse—3 pairs found, 26 absent in this pass—and
+  the found English pages were official-hosted automated translations rather
+  than controlled terminology.
+- The ledger discrepancy—28 stored German span groups across 29 rows—must be
+  resolved before claiming complete candidate-span coverage.
+
+### Evidence
+
+- `309363d` — glossary version and qualifier section
+- `32888b6` — golden-set rule, provenance tags, ADR-008 and policy log
+- `1a5ce5b` — 88-row glossary verification report and measured appendices
+- `ba3de76` — public verified-vocabulary premise
+- `docs/research/glossary-verification.md`
+- `docs/project-checklist.md`, current handoff
+
 ## 2026-08-06 — Scope golden-set authorship and value provenance
 
 **Status:** Complete
 
-**Commit:** Pending — `docs(process): scope golden-set authorship and add value provenance tags`
+**Commit:** `32888b6` — `docs(process): scope golden-set authorship and add value provenance tags`
 
 ### Goal
 

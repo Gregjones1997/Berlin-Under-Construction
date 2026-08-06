@@ -22,7 +22,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Project owner confirms the four shortlisted project identities, boundaries and exact German expected-end wording in the original sources; then scores them and selects the final three pilots.
+**Next action:** Obtain native-speaker review of the six flagged glossary terms and source adequate authorities for the five unresolved terms; then have the project owner confirm the four shortlisted identities and boundaries and select the final three pilots using human-verified German expected-end wording.
 
 ## Phase 0 — Minimal foundation
 

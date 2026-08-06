@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete; owner review of open values remains
 
+**Commit:** `00cd463` — `docs(research): add verified evidence dossiers for three pilots`
+
 ### Goal
 
 Integrate the independently prepared evidence-pass proposals for the three

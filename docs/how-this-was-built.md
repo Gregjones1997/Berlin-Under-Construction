@@ -2,6 +2,50 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-06 — Verified C-014 dossier evidence and change history
+
+**Status:** Complete
+
+**Commit:** Pending — `docs(research): record verified C-014 dossier evidence and change history`
+
+### Goal
+
+Record the first verified dossier evidence for C-014, including the superseded completion target, the current completion field, the reported Baubeginn chain, source metadata and the remaining verification boundary.
+
+### Participants and scopes
+
+- Project owner: confirmed the four C-014 source spans directly on 2026-08-06.
+- Main agent (Codex): independently reopened the official and secondary pages, captured content hashes and recorded the evidence without assigning organization roles.
+- Secondary-source tracing agent (GPT-5.6-terra, high): located the missing official 2023 citation trail and returned the exact German span; it did not edit files.
+
+### Work performed
+
+- Verified `Die Fertigstellung der anspruchsvollen Bauaufgabe ist bis Ende 2025 vorgesehen.` in the 2023-10-12 Senate press release, preserving `bis` and `vorgesehen`.
+- Verified the current `Fertigstellung: 2026` field and recorded the pair as supersession, not correction.
+- Recorded the official planning statement, competition result, observed organizations and absence of a cost figure.
+- Recorded the two Entwicklungsstadt Baubeginn reports with `Reported` labels and preserved the excluded whole-Bahnhofsumfeld speculation.
+- Captured URL, publication date, retrieval date and SHA-256 content hash for four sources.
+
+### Decisions and limitations
+
+- No commissioner, financer or contractor roles were assigned; role vocabulary is blocked on the pending ADR.
+- The current record can preserve both date spans but cannot yet type source date, as-of date, modal qualifier and supersession relation as a structured historical milestone. This is a Phase 2 schema finding.
+- C-014 remains open on current status, the official basis of the 2026 field, exact boundary, Bezirk and Senate wording for the two later reported Baubeginn points.
+
+### Verification
+
+- Official primary span resolved at the supplied URL and matched verbatim.
+- Current official page resolved and `Fertigstellung: 2026` matched.
+- Both secondary pages resolved; their attribution chains were retained as reported, not promoted to primary evidence.
+- Hashes and retrieval metadata are recorded in the dossier.
+
+### Evidence
+
+- `docs/research/dossiers/C-014-europaplatz-sued.md`
+- `docs/research/candidate-ledger.md`
+- `docs/research/pilot-selection-record.md`
+- `docs/research/glossary-verification.md`
+
 ## 2026-08-06 — Owner-confirmed pilot selection and handoff
 
 **Status:** Complete

@@ -22,7 +22,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Obtain native-speaker review of the six flagged glossary terms and source adequate authorities for the five unresolved terms; then have the project owner confirm the four shortlisted identities and boundaries and select the final three pilots using human-verified German expected-end wording. Use the documented two-commit procedure for the next build-log entry and verify its hash through `git log`.
+**Next action:** Begin manual dossier research for C-014, C-010 and C-019 and create the first human-authored golden truth set. Check C-010 on 2026-08-25 to determine whether its 31 August 2026 milestone held or slipped; both outcomes are publishable.
 
 ## Phase 0 — Minimal foundation
 
@@ -63,9 +63,9 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Phase 1 — Three-project research foundation
 
-- [ ] Define pilot-project selection criteria.
-- [ ] Select three projects spanning different document and product problems.
-- [ ] Record why each project was selected.
+- [x] Define pilot-project selection criteria.
+- [x] Select three projects spanning different document and product problems.
+- [x] Record why each project was selected.
 - [ ] Create the source registry structure.
 - [ ] Record publisher, URL, access method, cadence, license and expected fields.
 - [ ] Define construction categories and exclusions needed by the three pilots.

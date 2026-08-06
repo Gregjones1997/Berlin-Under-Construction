@@ -2,6 +2,49 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-06 — Owner-confirmed pilot selection and handoff
+
+**Status:** Complete
+
+**Commit:** `f9df4ed` — `docs(process): close pilot-selection checklist items and update handoff`
+
+### Goal
+
+Record the project owner's confirmation of the four hard-gate candidates, select three pilots and a reserve, close only the evidenced Phase 1 selection items, and hand off manual dossier research.
+
+### Participants and scopes
+
+- Project owner: confirmed all four shortlisted identities, boundaries and exact German end-date wording against the original sources on 2026-08-06; made the final selection and accepted the documented process deviations.
+- Main agent (Codex): corrected four flagged modal framings, recorded the selection, updated the checklist and maintained the single-writer repository.
+- Native-speaker review: not performed in this pass; the glossary verification report's native-speaker column remains empty.
+
+### Work performed
+
+- Corrected C-002, C-004, C-009 and C-019 so their milestone framing preserves `sollen` and `vorgesehen` rather than collapsing them into stronger or different planning language.
+- Recorded selected pilots C-014, C-010 and C-019, with C-003 as reserve, in `docs/research/pilot-selection-record.md`.
+- Recorded the owner confirmation, C-010's requirement for both cited sources, the per-project boundaries and aliases, exact German date wording, milestone types, source/as-of dates, difficulty notes, unresolved gates, rationale and verification links.
+- Set the C-010 checkpoint to 2026-08-25 for its 2026-08-31 milestone.
+
+### Decisions and disclosures
+
+- The frozen weighted rubric was not applied and no dimension scores were assigned. This was deliberate: 26 days remained to first release, the shortlist had passed the hard gates, and portfolio complementarity was the deciding factor even though the rubric weights it at only 10 of 100. Retrospective scores would be post-hoc rationalisation.
+- The difficulty-control conflict is resolved by owner override, not satisfaction. All three pilots are low-to-medium difficulty, so the frozen requirement for at least one fragmented or difficult-evidence project is not met. The owner accepted this as a known first-release gap.
+- C-010 resolves one day before first release. A met promise and a slip are both publishable; the risk is discovering the answer late.
+
+### Verification
+
+- Re-read the four ledger rows and confirmed the quoted German spans were not changed.
+- Confirmed the three selected IDs and reserve match the owner decision record.
+- Confirmed only the three evidenced checklist items were closed; the controlled glossary remains open because native-speaker review is pending.
+- Commits in this sequence: `0dbe0e7` (modal framing), `bfcc45d` (selection record), and this commit (checklist and handoff).
+
+### Evidence
+
+- `docs/research/candidate-ledger.md`
+- `docs/research/glossary-verification.md`
+- `docs/research/pilot-selection-record.md`
+- `docs/project-checklist.md`
+
 - **Course correction** — 2026-08-06 — Project owner and Codex: corrected an orphaned build-log hash, made the two-commit hash procedure executable, and recorded the false German-language assumption as the course correction it was. Verified: every backticked build-log hash resolves through `git log`; ADR-008 and the disclosure entry state the actual and counterfactual costs. `16f997c`
 
 ## 2026-08-06 — Disclose the German-language constraint and verification boundary

@@ -87,14 +87,14 @@ second retried through Bing.
 
 ### Per-lead provenance, confidence and next confidence-changing check
 
-| Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
-| --- | --- | --- | --- |
-| Elsenbrücke | Name, endpoints, two districts, work and public consequence, construction-period/end wording | Likely budget/procurement trail only | High; rises if the remaining-works page repeats 2028 `Gesamtfertigstellung`, falls if it is revised |
-| Mühlendammbrücke | Name, boundary, district, work/consequence, 2029 completion wording | Likely source trail | High; compare current page and GRW wording and retain older 2028 as history |
-| U3 to Mexikoplatz | Name, endpoints, work/consequence, 2030 `Fertigstellung`/`Inbetriebnahme` | District and exact approved underground perimeter | High; approval record confirms or changes the boundary |
-| Siemensbahn | Name, endpoints, work/consequence, 2029 `Inbetriebnahme` | Districts and present phase boundary | High; DB plan/approval map confirms current construction limits |
-| Bahnhof Köpenick | Station identity, parent-project relation, service-start and wider-project dates | District | Medium-high; selecting station or corridor as the candidate raises it, conflating them lowers it |
-| Wollankstraße bridge | Bridge identity, underlying work, closure wording | District boundary; project end | Medium; a DB project milestone raises it, another closure-only notice does not |
+| ID | Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
+| --- | --- | --- | --- | --- |
+| C-001 | Elsenbrücke | Name, endpoints, two districts, work and public consequence, construction-period/end wording | Likely budget/procurement trail only | High; rises if the remaining-works page repeats 2028 `Gesamtfertigstellung`, falls if it is revised |
+| C-002 | Mühlendammbrücke | Name, boundary, district, work/consequence, 2029 completion wording | Likely source trail | High; compare current page and GRW wording and retain older 2028 as history |
+| C-003 | U3 to Mexikoplatz | Name, endpoints, work/consequence, 2030 `Fertigstellung`/`Inbetriebnahme` | District and exact approved underground perimeter | High; approval record confirms or changes the boundary |
+| C-004 | Siemensbahn | Name, endpoints, work/consequence, 2029 `Inbetriebnahme` | Districts and present phase boundary | High; DB plan/approval map confirms current construction limits |
+| C-005 | Bahnhof Köpenick | Station identity, parent-project relation, service-start and wider-project dates | District | Medium-high; selecting station or corridor as the candidate raises it, conflating them lowers it |
+| C-006 | Wollankstraße bridge | Bridge identity, underlying work, closure wording | District boundary; project end | Medium; a DB project milestone raises it, another closure-only notice does not |
 
 **Scope check:** stayed inside transport. Adlershof II, Rudolf-Wissell-Brücke
 and Mahlsdorf were retained as dead ends. No closure notice became a candidate.
@@ -147,16 +147,16 @@ site:berlin.de "Europaplatz Süd" Fertigstellung Umgestaltung
 
 ### Per-lead provenance, confidence and next confidence-changing check
 
-| Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
-| --- | --- | --- | --- |
-| New ISS Ostpreußendamm | Name, road-level place, authority context, consequence, 2028 `Fertigstellung` | Exact parcel/address; detailed project boundary | Medium-high identity but insufficient geography; a parcel/current project page raises it |
-| Grundschule am Weißen See | Name, current status and uncertain completion wording; address read in official record | No fixed reliable day | High identity / medium schedule; post-summer 2026 update decides |
-| DFK 2.0 Friedenauer Gemeinschaftsschule | Name/aliases, address, added rooms, full completion wording | Whether the system name represents the whole permanent project | High; project/contract boundary confirms or narrows it |
-| Heinrich-Hertz-Gymnasium | Name, route boundary, district, construction/hand-over and later move milestones | Likely later source families | High; an update after 31 August confirms or supersedes the date |
-| Grundschule am Wasserturm, remaining phases | Name, address, completed phase 1, remaining scope and forecast | Authorization and identifiers for phases 2–4 | Medium-high; phase IDs raise it, lack of authorized future phases lowers it |
-| Hochmeisterplatz phase 1 | Name, square, phase-one works/consequence and autumn end | Whole-project later phases | High for phase 1 / low for whole project; later-phase page decides candidate boundary |
-| Checkpoint Charlie education/memory place | Name, crossing boundary, proposed use and 2030 construction wording | District; construction implementation decision | Medium and currently ineligible; post-competition authorization raises it |
-| Europaplatz Süd | Name/aliases, station-forecourt boundary, current 2026 field, scope | District from geography; month/day | High identity / medium schedule; a current 2026 milestone update raises it |
+| ID | Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
+| --- | --- | --- | --- | --- |
+| C-007 | New ISS Ostpreußendamm | Name, road-level place, authority context, consequence, 2028 `Fertigstellung` | Exact parcel/address; detailed project boundary | Medium-high identity but insufficient geography; a parcel/current project page raises it |
+| C-008 | Grundschule am Weißen See | Name, current status and uncertain completion wording; address read in official record | No fixed reliable day | High identity / medium schedule; post-summer 2026 update decides |
+| C-009 | DFK 2.0 Friedenauer Gemeinschaftsschule | Name/aliases, address, added rooms, full completion wording | Whether the system name represents the whole permanent project | High; project/contract boundary confirms or narrows it |
+| C-010 | Heinrich-Hertz-Gymnasium | Name, route boundary, district, construction/hand-over and later move milestones | Likely later source families | High; an update after 31 August confirms or supersedes the date |
+| C-011 | Grundschule am Wasserturm, remaining phases | Name, address, completed phase 1, remaining scope and forecast | Authorization and identifiers for phases 2–4 | Medium-high; phase IDs raise it, lack of authorized future phases lowers it |
+| C-012 | Hochmeisterplatz phase 1 | Name, square, phase-one works/consequence and autumn end | Whole-project later phases | High for phase 1 / low for whole project; later-phase page decides candidate boundary |
+| C-013 | Checkpoint Charlie education/memory place | Name, crossing boundary, proposed use and 2030 construction wording | District; construction implementation decision | Medium and currently ineligible; post-competition authorization raises it |
+| C-014 | Europaplatz Süd | Name/aliases, station-forecourt boundary, current 2026 field, scope | District from geography; month/day | High identity / medium schedule; a current 2026 milestone update raises it |
 
 **Scope check:** stayed inside lane. Europaplatz's adjacent S21 works were
 explicitly excluded. Auerbacher Ring and the delivered Adlershof school remain
@@ -232,15 +232,15 @@ site:bew.berlin Heizkraftwerk Mitte Adresse Berlin Michaelkirchstraße
 
 ### Per-lead provenance, confidence and next confidence-changing check
 
-| Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
-| --- | --- | --- | --- |
-| Landsberger Allee | Name, route endpoints, line-renewal scope/consequence and whole-measure end wording | District and later procurement trail | High; district/lot map confirms geography without splitting the project |
-| Cité Foch utilities | Name, three streets/phases, Wittenau/Reinickendorf, scope/consequence and infrastructure end wording | Detailed contract identifiers | High; development agreement confirms exact overall-versus-utility boundary |
-| Hindenburgdamm heat-network reinforcement | Name, route, district, project length/phase count and `Bauende` | Procurement trail | High; a current phase table confirms end-2026 remains current |
-| Energiedreieck Ruhleben | Name, component works/consequence, 2027 heat-pump `Inbetriebnahme` | Exact site address in directly opened identity page; turbine end | Medium-high; official site record and component schedule decide one-vs-two project boundary |
-| HKW Mitte Power-to-Heat | Name, site address, plant scope/consequence and end-2028 `Inbetriebnahme` | Procurement trail only | High; construction update confirms current status and keeps later river-water heat pump separate |
-| Ruhleben fourth treatment stage | Plant/component identity and programme-level 2028 wording | Exact plant address and plant-specific end date | Medium; a plant project page raises it, another all-plants programme statement does not |
-| Panke Phase II, Buch/Pölnitzwiesen | Name, bounded river section, district, work/consequence and 24-month duration | Calendar end date | High identity / low end-date confidence; a dated Senate milestone raises it |
+| ID | Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
+| --- | --- | --- | --- | --- |
+| C-015 | Landsberger Allee | Name, route endpoints, line-renewal scope/consequence and whole-measure end wording | District and later procurement trail | High; district/lot map confirms geography without splitting the project |
+| C-016 | Cité Foch utilities | Name, three streets/phases, Wittenau/Reinickendorf, scope/consequence and infrastructure end wording | Detailed contract identifiers | High; development agreement confirms exact overall-versus-utility boundary |
+| C-017 | Hindenburgdamm heat-network reinforcement | Name, route, district, project length/phase count and `Bauende` | Procurement trail | High; a current phase table confirms end-2026 remains current |
+| C-018 | Energiedreieck Ruhleben | Name, component works/consequence, 2027 heat-pump `Inbetriebnahme` | Exact site address in directly opened identity page; turbine end | Medium-high; official site record and component schedule decide one-vs-two project boundary |
+| C-019 | HKW Mitte Power-to-Heat | Name, site address, plant scope/consequence and end-2028 `Inbetriebnahme` | Procurement trail only | High; construction update confirms current status and keeps later river-water heat pump separate |
+| C-020 | Ruhleben fourth treatment stage | Plant/component identity and programme-level 2028 wording | Exact plant address and plant-specific end date | Medium; a plant project page raises it, another all-plants programme statement does not |
+| C-021 | Panke Phase II, Buch/Pölnitzwiesen | Name, bounded river section, district, work/consequence and 24-month duration | Calendar end date | High identity / low end-date confidence; a dated Senate milestone raises it |
 
 **Scope check:** stayed inside utilities/environment. Gneisenaustraße was
 flagged as a combined transport/utility work and not returned; Wilhelmsruher See
@@ -332,16 +332,16 @@ site:berlin.de "Pankower Tor" "Mühlenstraße" "Prenzlauer Promenade"
 
 ### Per-lead provenance, confidence and next confidence-changing check
 
-| Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
-| --- | --- | --- | --- |
-| Schumacher Quartier | Name/alias, whole boundary, district, scope/consequence, first-buildings date | Geographic boundary of those first buildings | High whole identity / insufficient phase boundary; phase map raises it |
-| Behrens-Ufer | Name/aliases, riverfront industrial-site identity, district, scope/consequence and old development-end phrase | Street endpoints; current validity; milestone type | Medium; a current B-Plan/update can raise or lower it materially |
-| Das Neue Gartenfeld | Name/aliases, canal boundary, district, scope/consequence and rail-component date | Whole-quarter completion | High identity / no end evidence; implementation plan could raise it |
-| Quartier Heidestraße public works | Name, named spaces/streets, district, public-works scope and project period | Explicit completion milestone; map geometry | Medium-high; mapped unfinished sections and a typed end raise it |
-| Pankower Tor | Name/alias, yard/B-Plan boundaries, district and intended uses | Construction/end milestone | Medium; phase implementation contract raises it |
-| Rathausblock / Dragonerareal | Name/alias, street boundary, district and intended uses | Integrated completion date | High identity / no end evidence; programme schedule could raise it |
-| Lichterfelde Süd | Name, near-station place, district, scope/consequence and preparatory duration | Exact perimeter and project completion | Medium and geographically ineligible; official perimeter is the first check |
-| Ehemaliger Güterbahnhof Köpenick | Name/aliases, mapped boundary, district, scope/consequence and relative completion phrase | Textual endpoints; calendar date | Medium; dated implementation plan raises it, treating 15 years as a calendar date lowers it |
+| ID | Lead | Source-read fields | Inferred / not established | Confidence and decisive next check |
+| --- | --- | --- | --- | --- |
+| C-022 | Schumacher Quartier | Name/alias, whole boundary, district, scope/consequence, first-buildings date | Geographic boundary of those first buildings | High whole identity / insufficient phase boundary; phase map raises it |
+| C-023 | Behrens-Ufer | Name/aliases, riverfront industrial-site identity, district, scope/consequence and old development-end phrase | Street endpoints; current validity; milestone type | Medium; a current B-Plan/update can raise or lower it materially |
+| C-024 | Das Neue Gartenfeld | Name/aliases, canal boundary, district, scope/consequence and rail-component date | Whole-quarter completion | High identity / no end evidence; implementation plan could raise it |
+| C-025 | Quartier Heidestraße public works | Name, named spaces/streets, district, public-works scope and project period | Explicit completion milestone; map geometry | Medium-high; mapped unfinished sections and a typed end raise it |
+| C-026 | Pankower Tor | Name/alias, yard/B-Plan boundaries, district and intended uses | Construction/end milestone | Medium; phase implementation contract raises it |
+| C-027 | Rathausblock / Dragonerareal | Name/alias, street boundary, district and intended uses | Integrated completion date | High identity / no end evidence; programme schedule could raise it |
+| C-028 | Lichterfelde Süd | Name, near-station place, district, scope/consequence and preparatory duration | Exact perimeter and project completion | Medium and geographically ineligible; official perimeter is the first check |
+| C-029 | Ehemaliger Güterbahnhof Köpenick | Name/aliases, mapped boundary, district, scope/consequence and relative completion phrase | Textual endpoints; calendar date | Medium; dated implementation plan raises it, treating 15 years as a calendar date lowers it |
 
 **Scope check:** stayed inside development. Rhenaniabrücke, Gartenfeld school,
 Haus der Statistik energy system and Neue Mitte Tempelhof cultural building were

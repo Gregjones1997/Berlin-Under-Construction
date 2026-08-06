@@ -189,6 +189,7 @@ Turn the product blueprint into an honest README and an operational build sequen
 - 2026-08-06 — Project owner and Codex: made spawned-agent orchestration mandatory in the build record, including failed, redundant and rejected lanes; preserved single-writer synthesis and verification. `39be832`
 - **Course correction** — 2026-08-06 — Project owner and Codex: added skill/tool attribution and course-correction conventions, marked the ADR-006 stage mismatch, and gitignored private working notes. Verified: `notes/learning.md` is ignored and absent from Git status; diff check passes. `4d4e215`
 - **Course correction** -- 2026-08-06 — Claude review recomputed the final end-date gate column from the candidate ledger and caught a lane gate count that did not reconcile against its own source ledger. Corrected housing/mixed-use from 1 to 0 and total from 17 to 16; no repository rework, but the error was live in two commits.
+- 2026-08-06 — Codex: assigned stable candidate IDs C-001–C-029 to the discovery longlist, shortlist and provenance tables. Verified: 29 IDs, no gaps or duplicates, and ledger/trail names match.
 
 ## 2026-08-05 — Initialize local Git repository
 

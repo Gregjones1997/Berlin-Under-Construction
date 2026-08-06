@@ -2,7 +2,7 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
-- **Course correction** — 2026-08-06 — Project owner and Codex: corrected an orphaned build-log hash, made the two-commit hash procedure executable, and recorded the false German-language assumption as the course correction it was. Verified: every backticked build-log hash resolves through `git log`; ADR-008 and the disclosure entry state the actual and counterfactual costs.
+- **Course correction** — 2026-08-06 — Project owner and Codex: corrected an orphaned build-log hash, made the two-commit hash procedure executable, and recorded the false German-language assumption as the course correction it was. Verified: every backticked build-log hash resolves through `git log`; ADR-008 and the disclosure entry state the actual and counterfactual costs. `16f997c`
 
 ## 2026-08-06 — Disclose the German-language constraint and verification boundary
 

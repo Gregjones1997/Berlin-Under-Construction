@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete
 
+**Commit:** `b15af07` — `docs(process): record phase-2 branch boundary`
+
 ### Goal
 
 Create an explicit phase boundary before pipeline work begins and record the

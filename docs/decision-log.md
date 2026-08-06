@@ -289,3 +289,175 @@ contextual ambiguity out of the evaluation set.
 21-commit lifetime, how reviewer critique caught it and the actual versus
 counterfactual cost. See `docs/how-this-was-built.md`, “Disclose the
 German-language constraint and verification boundary.”
+
+## ADR-009 — Precision and conflict are two markers, not one
+
+**Date:** 6 August 2026
+
+**Status:** Accepted 2026-08-06 by the project owner.
+
+**Scope:** Public rendering of qualified and conflicting dates and amounts
+
+**Origin.** The project owner required that a value carrying a bound, a range or
+an approximation display an affordance revealing where the figure comes from,
+rather than rendering as a bare number: *"we should just throw an icon above
+that price in the UI. So that way, somebody could hover over it and see where
+the sources are coming from."* The reviewer refined this into two mechanically
+distinct markers after the pilot evidence showed that approximation and
+disagreement are different states which a single marker would conflate. The
+requirement and the decision to surface uncertainty in the UI are the owner's;
+the split into two markers and the computation rules are the reviewer's.
+
+**Context.** The 2026-08-06 evidence pass produced one clean example of each
+state:
+
+- `50Hertz finanziert den Bau der PtH-Anlage mit bis zu 75 Millionen Euro.`
+  One source, deliberately precise, expressing an upper bound. Nothing is in
+  conflict.
+- The C-014 project page states `1.900.000 €` while a Senate news item of the
+  same programme states `rund 1,7 Mio. Euro` for the programme's contribution.
+  Two official publications, both precise, disagreeing.
+
+A single "uncertain" icon renders these identically and destroys the
+distinction between *the publisher hedged* and *the government contradicts
+itself*. The second is closer to the reason this product exists.
+
+**Decision.**
+
+Two markers, both computed deterministically from stored fields. No model
+participates at render time.
+
+**Precision marker** — fires when a value's qualifier field is non-empty. The
+qualifier set is closed and comes from the glossary:
+
+| Class | Qualifiers | Renders as |
+| --- | --- | --- |
+| Upper bound | `bis`, `bis zu`, `spätestens` | `≤` |
+| Lower bound | `frühestens`, `ab` | `≥` |
+| Approximation | `rund`, `etwa`, `ca.`, `geschätzt` | `~` |
+| Range | two endpoints | `–` |
+| Modal / intent | `geplant`, `vorgesehen`, `soll`, `voraussichtlich`, `anvisiert` | typographic weight, not a glyph |
+| Source-stated unreliability | `nicht belastbar` | distinct warning glyph |
+
+**Conflict marker** — fires when two or more claims share a
+`(project, measure_type, scope)` key with different values. Three sub-states:
+
+- **Superseded** — same authority, different publication dates. Show current,
+  offer history.
+- **Unreconciled** — different sources, no supersession established. Show both
+  values side by side. **Neither value is promoted.**
+- **Scope-divergent** — values differ *and* scope strings differ. Render as
+  "these describe different things", never as a plain numeric conflict.
+
+**Consequences.**
+
+- The glyph is part of the value string, not adjacent decoration. Render
+  `≤ €75M`, not `€75M` with a hoverable dot, so the qualifier survives being
+  copied out of the page.
+- Modal force occupies a separate channel from numeric bound, because they
+  compose: `bis Ende 2028 geplant` is a bound *and* an intention.
+- Hover reveals the verbatim German span, publication date, source, and the
+  glossary row that maps the qualifier. That last element is what keeps the
+  display `glossary-derived` rather than model output.
+- **The unreconciled state never promotes a value.** This will come under
+  pressure — the instinct will be to show the more recent or the more official
+  figure. Resisting that is the decision.
+- Both markers are unit-testable, which keeps them inside rule 4 rather than
+  being a model behaviour we hope for.
+
+---
+
+## ADR-010 — Source tier for a state-owned company acting as Bauherr
+
+**Date:** 6 August 2026
+
+**Status:** Accepted 2026-08-06 by the project owner, who delegated the exact
+formulation to the reviewer.
+
+**Scope:** Source hierarchy for state-owned delivery bodies
+
+**Context.** C-010 is delivered under the Berliner Schulbauoffensive
+Erbbaurecht-and-Mietvertrag model. The district holds the site, HOWOGE holds
+the leasehold and delivers the building, and ZECH Hochbau AG builds it as
+`Generalübernehmer`. Two findings depend on whether HOWOGE's own project pages
+can carry dates:
+
+- `Die Endfertigstellung ist für 2026 vorgesehen.`
+- `Bauzeit` / `2024 bis 2026`
+
+The frozen source-tier table admits `Operator acting as Bauherr for its own
+project (BEW, BVG, BWB, DB)` as primary, and restricts `Contractor or developer`
+to their own participation and lot scope only, never project dates, budget or
+status. HOWOGE is on neither list and behaves like both.
+
+The owner's ruling was *"if they are the builder or contractor they can be
+trusted just label it"*, then delegated the wording. Applied literally this
+would have let contractor-tier sources carry project dates, removing the rule
+that prevents a subcontractor's lot completion from being read as the project's
+completion — a rule that is load-bearing for C-001, C-004 and C-005. The owner's
+premise also mis-identified the builder: HOWOGE is the Bauherr, ZECH is the
+contractor.
+
+**Decision.**
+
+> A state-owned company acting as **Bauherr** for a project it delivers is
+> primary for that project's dates, scope and status. HOWOGE under the Berliner
+> Schulbauoffensive joins BEW, BVG, BWB and DB on that line.
+>
+> **The test is the documented Bauherr role — not state ownership, and not who
+> holds the construction contract.**
+>
+> ZECH Hochbau AG remains contractor tier: own participation and lot scope
+> only, never project dates, budget or status.
+
+**Consequences.**
+
+- The two HOWOGE findings above become primary evidence for C-010.
+- The contractor rule survives intact for the transport pilots.
+- Where a source labels one organization with two roles, the tier follows the
+  documented role and the inconsistency is recorded in the dossier rather than
+  silently resolved. HOWOGE's own project page is exactly this case: its fact
+  box reads `Bauherr:` / `ZECH Hochbau AG` while its body text calls ZECH
+  `der beauftragte Generalübernehmer`.
+- This ADR assigns a **source tier**, not an organization role. Role assignment
+  remains blocked pending the ADR expanding the role vocabulary.
+
+---
+
+## ADR-011 — Strip PDF metadata before artifact retention
+
+**Date:** 6 August 2026
+
+**Status:** Proposed. Not yet ruled.
+
+**Scope:** Private source-artifact retention and provenance
+
+**Context.** During the 2026-08-06 pass, PDF metadata was both decisive and
+hazardous.
+
+Decisive: the Hauptausschuss paper `h19-2449-v.pdf` carries a letterhead date of
+`6. Oktober 2026`, which is a typographical error. Its embedded
+`/CreationDate` of `D:20251014143825+02'00'` corroborated the correct year
+alongside the document's own internal evidence.
+
+Hazardous: the same file's `/Author` field is a named official's email address.
+Rule 3 forbids naming a natural person, with no exceptions. Nobody reading the
+document text would know the name is there.
+
+**Decision (proposed).**
+
+1. Retained artifacts in `data/artifacts/` are written **after** a metadata
+   strip that removes at minimum `/Author`, `/Creator`, `/Producer` and any
+   XMP creator fields.
+2. Timestamps (`/CreationDate`, `/ModDate`) are **extracted and stored as
+   structured provenance before the strip**, because they resolve publication
+   dates. They are provenance data, not authority statements: a creation
+   timestamp corroborates a date, it does not publish one.
+3. The stored content hash is computed over **stripped** content, so that a
+   change to the strip rule does not silently invalidate every stored hash.
+   Record the strip-rule version alongside the hash.
+4. This applies before the first bulk retrieval run, not after.
+
+**Open question for the owner.** Whether the pre-strip hash should also be
+retained for chain-of-custody. The reviewer's recommendation is yes, stored
+separately and never displayed.

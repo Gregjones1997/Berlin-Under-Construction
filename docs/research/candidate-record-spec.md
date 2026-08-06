@@ -1,6 +1,6 @@
 # Candidate ledger
 
-**Status:** Named discovery longlist and four-project owner-review shortlist; no pilots selected and no scores assigned
+**Status:** Frozen candidate-record specification; three pilots selected and no scores assigned
 **Phase:** Phase 0 — research and foundation
 **Last updated:** 2026-08-06
 

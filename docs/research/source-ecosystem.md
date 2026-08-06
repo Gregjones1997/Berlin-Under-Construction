@@ -2,7 +2,7 @@
 
 **Status:** Research map; not yet a verified source registry
 **Phase:** Phase 0 — research and foundation
-**Last updated:** 2026-08-05
+**Last updated:** 2026-08-06
 
 This is a discovery map for finding primary evidence about Berlin construction
 projects. “Verified” below means that the named official entry point was opened
@@ -26,6 +26,49 @@ completeness has been verified.
 | Construction/project geometry and basemap context | Geoportal, district GIS, open cadastral/topographic layers and operator maps | Data owner varies | Geometry, CRS, feature ID, update date, accuracy, layer title | EPSG:25833 versus web CRS; geometry may show context, not project extent | Attribution, database rights, derived geometry and display terms must be checked | Family identified; authoritative project geometry not assumed |
 | Legal notices and administrative publication | Amtsblatt für Berlin, official law database and authority Bekanntmachungen | State of Berlin | Formal notices, approvals, procurement/legal decisions, effective dates | Search and PDFs can be difficult; formal language and historic archives | Reuse, personal data and document-image rights require legal review | Candidate family; direct source and retention test pending |
 | Oversight and audit | Rechnungshof Berlin, parliamentary committees, Senate reports and official audit publications | Court of Audit, Parliament, Senate | Findings, project controls, cost/schedule evidence, recommendations, responses | Reports can be periodic and not project-indexed | Reports may contain sensitive details; quote minimally and review reuse | Candidate family; project-level verification pending |
+
+## Parliamentary depth and reference sources
+
+**Schriftliche Anfragen (PARDOK).** Written questions and their answers. This
+family is particularly strong for date revisions, current status and cost
+tables, including direct answers to whether a project is on schedule.
+
+Direct PDF pattern:
+`pardok.parlament-berlin.de/starweb/adis/citat/VT/{WP}/SchrAnfr/S{WP}-{nr}.pdf`
+
+**Hauptausschuss-Vorlagen.** Budget committee papers. This is where exact euro
+figures, tax basis, budget chapter and title, funding sources, lot structure
+and planning-approval dates may appear.
+
+Direct PDF pattern:
+`parlament-berlin.de/adosservice/{WP}/Haupt/vorgang/h{WP}-{nr}-v.pdf`
+
+Both document families may contain named signatories. Cite the document, never
+the signatory. Both returned HTTP 403 to a default script User-Agent during the
+2026-08-06 evidence pass and served normally to a browser User-Agent.
+
+**Reference sources.** These are not about a particular project, but resolve
+wording used across projects. They are registered like project sources — URL,
+publication date, retrieval date and content hash — but indexed by the term
+they resolve and reused across dossiers.
+
+| Term resolved | Authority | Source |
+| --- | --- | --- |
+| `Schuljahresbeginn` | SenBJF | Ferienordnung für das Land Berlin 2024/2025 bis 2029/2030 |
+
+## Source-identity findings
+
+Senate press releases can be served byte-identically at multiple URL paths,
+including `/sen/sbw/presse/pressemeldungen/…` and
+`/sen/stadt/presse/pressemeldungen/…`. This was confirmed by identical
+SHA-256 values for Pressemitteilung 1374721. **Source identity is not URL
+identity:** deduplicate by content hash.
+
+A programme index page's `Aktuelles` block carries dated news items that are
+separate publications, not necessarily summaries of same-date press releases.
+For C-014 the index item contains a funding figure absent from the press
+release. Retrieve and register index items rather than treating the page as
+navigation only.
 
 ## Working verification states
 
@@ -56,8 +99,11 @@ The milestone and financial-measure definitions in `docs/methodology.md` apply.
 
 ## Direct-verification queue
 
-Before any candidate is scored as a finalist, verify at minimum: project
-identity and boundary; location; commissioner/operator role; current status;
-expected end date or an official statement that none is published; at least one
-date-history source; and the exact source terms for any budget, contract or
-award claim. This queue is not complete and no project has passed it yet.
+For future candidates, verify before selection at minimum: project identity and
+boundary, location, current status, expected end date or an official statement
+that none is published, and the exact source terms for any budget, contract or
+award claim. Organization roles publish only under the naming policy.
+
+C-010, C-014 and C-019 have completed their first evidence passes. Their
+remaining candidate-specific checks are recorded in their dossiers rather than
+being treated as proof that the source families are exhausted.

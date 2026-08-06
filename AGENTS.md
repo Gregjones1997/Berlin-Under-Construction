@@ -21,7 +21,7 @@ and next action, `docs/decision-log.md` for choices already made.
 
 | Participant | Owns |
 | --- | --- |
-| Project owner (Gregory) | Product, legal and naming decisions. Golden-set acceptance. Final acceptance. |
+| Project owner | Product, legal and naming decisions. Golden-set acceptance. Final acceptance. |
 | Main agent (Codex) | The repository. All file writes and all commits. |
 | Reviewer (Claude) | Review, planning, adversarial critique. Proposes diffs in chat; does not write to the tree. |
 | Subagent | A bounded task delegated by the main agent. Output is a proposal until verified. |
@@ -129,6 +129,26 @@ the others.
 **Session handoff** — end every session by updating the `Next action:` line in
 `docs/project-checklist.md`. That line is the handoff between sessions and
 between agents.
+
+**Retrieval blocks** — an HTTP 403 from a public source is not evidence that
+the source is unreachable, human-only, or gone. It is usually a User-Agent
+block. Retry with a full browser User-Agent; if that fails, open the URL with a
+browser tool. PARDOK, `berlin.de/suche` and other STARWEB-backed systems return
+403 to default script agents and serve normally to a browser User-Agent. Never
+escalate a 403 to the project owner as a manual task without trying both.
+Record the block and the workaround in the research trail; a recorded failure
+with no attempted workaround is not a finding.
+
+**Relative date anchors resolve by retrieval, not judgment.** Source wording
+frequently anchors a milestone to a named period rather than a date:
+`zum Schuljahresbeginn 2026/27`, `zum Sommeranfang`, `in den Winterferien`,
+`zum Fahrplanwechsel`. These are published by an authority and must be resolved
+against that authority — the Berlin Ferienordnung, the timetable change date,
+the budget year — not by an agent's or a reader's general knowledge of when
+that period "usually" falls. Retrieving the authority is permitted under rule
+1; assuming the period is not. Store both the source's own anchor wording as
+the canonical value and the resolved date with the authority that resolved it.
+Never replace the anchor with the date.
 
 **Cost** — log tokens, model and cost per document from the first extraction run.
 It is a published metric and it is ten lines of instrumentation.

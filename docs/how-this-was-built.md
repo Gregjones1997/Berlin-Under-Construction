@@ -2,11 +2,153 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-06 — Pilot evidence pass for C-014, C-010 and C-019
+
+**Status:** Complete; owner review of open values remains
+
+### Goal
+
+Integrate the independently prepared evidence-pass proposals for the three
+selected pilots, preserve exact German wording and scope conflicts, and turn
+the retrieval failures into repeatable repository policy without creating any
+golden-set values.
+
+### Participants and scopes
+
+- Project owner: supplied the source confirmations and binding rulings on
+  precision versus conflict, the state-owned Bauherr source tier, C-010's
+  quarantined amount, the h19-2449 publication date, the relative-date
+  interpretation and the C-019 pump-station boundary.
+- Main agent (OpenAI Codex): remained the sole writer; independently verified
+  source availability and hashes, qualified overstrong proposal wording,
+  reconciled repository collisions and integrated the accepted material.
+- External reviewer (Claude Opus 5): retrieved and extracted the German sources
+  and prepared proposals 01–10. The reviewer used no subagents and made no
+  repository edits.
+- Read-only integration checks (three GPT-5.6-terra agents, not Sol): one
+  checked policy, naming and document collisions; one reopened the core pilot
+  sources and tested claim strength; one checked ADR numbering, checklist,
+  selection-record and build-log structure. Model token and cost telemetry were
+  not exposed, so both are recorded as unavailable.
+
+### Multi-agent architecture
+
+Delegation was used only for independent, read-only checks while the main agent
+integrated the proposal pack. The policy lane found stale selection-record
+claims and naming risks; the source lane confirmed that C-014 must not be
+labelled delayed and that C-019's street address is an HKW site anchor rather
+than a project-specific address; the structural lane found the unresolved
+prior build-log hash and the required two-commit procedure. The main agent
+accepted those findings, rejected one lane's recommendation to keep the C-019
+pump station inside scope because it contradicted the owner's later ruling, and
+checked the integrated result against the proposal README, current repository
+and original URLs.
+
+### Work performed
+
+- Added two standing retrieval rules, ADR-009 and ADR-010 as accepted decisions,
+  and ADR-011 as a proposal only.
+- Added glossary 1.1 seed rows, recorded C-010's milestone-type structural risk,
+  and added the evidence source ladder, parliamentary URL patterns, reference
+  sources and retrieval playbook.
+- Replaced the C-014 dossier and created C-010 and C-019 dossiers. C-010's
+  `107.300.000 €` remains quarantined; C-014's `1.900.000 €` causal reading
+  remains unresolved; C-019's pump station is a linked measure outside the
+  owner-ruled boundary.
+- Reconciled the candidate ledger and pilot-selection record with the completed
+  evidence pass, including medium-high difficulty for C-014 and C-010, low for
+  C-019, and the superseded C-019 boundary declaration.
+- Repaired the existing C-014 build-log entry's reachable commit hash and
+  advanced the project-checklist handoff.
+
+### Decisions
+
+- The source ladder is documented as an observed and relevant-family sequence,
+  not a universal requirement that every project has parliamentary records.
+- C-014 is described as having passed an expected target window with completion
+  unverified, not as delayed.
+- C-019's address is explicitly a cross-source HKW site anchor; no precise
+  Power-to-Heat parcel or project-only street address is asserted.
+- Source-described organization relationships are retained without normalizing
+  them into commissioner, financer or contractor fields while the role
+  vocabulary remains blocked.
+- PDF metadata stripping remains proposed. The playbook does not make ADR-011
+  operational before the owner rules.
+
+### Verification
+
+- Reopened all 18 registered dossier URLs with a full browser User-Agent. Every
+  URL returned HTTP 200, including both PARDOK and Hauptausschuss direct-PDF
+  patterns.
+- Recomputed SHA-256 over raw response bytes: 15 hashes matched exactly. The two
+  Entwicklungsstadt pages and HOWOGE page had changed bytes while still
+  resolving and retaining their cited content; their current hashes and the
+  revalidation finding are recorded.
+- Confirmed 15 matching sources included all official Berlin, parliamentary,
+  BEW, meinBerlin and reference-PDF artifacts in the registries.
+- Checked the repository for unresolved placeholder ADR references, stale
+  inside-scope instructions, overstrong C-014 delay wording and newly introduced
+  natural-person names.
+- Verified that no proposal-scaffolding file is tracked or staged.
+
+### Course correction
+
+**Course correction** — The reviewer reported PARDOK as unreachable after HTTP
+403 responses and recommended a manual human pass. The project owner acted on
+that recommendation before directing a browser attempt. A full browser
+User-Agent retrieved both parliamentary document families. Cost: one
+misdirected owner instruction and delayed access to C-010's quarantined cost and
+C-014's financial structure. The standing retrieval rule now requires both
+User-Agent and browser-tool attempts before escalation.
+
+**Course correction** — The reviewer used regex-over-decompressed-streams PDF
+extraction that produced superficially readable but mangled spacing and nearly
+entered C-019's site address as a verbatim span. It was caught before recording.
+The Störfall PDF remains explicitly extraction-unreliable and cannot supply a
+string-comparison span until re-extracted with a proper parser.
+
+**Course correction** — The reviewer initially treated
+`zum Schuljahresbeginn 2026/27` as a German-reading judgment. The Berlin
+Ferienordnung supplies the first teaching day after the summer break,
+2026-08-24. The source anchor remains canonical, the resolved date carries its
+authority, and the owner's “within one week” interpretation remains separately
+tagged as owner judgment.
+
+**Course correction** — The preceding C-014 dossier commit was left in the
+build log as `Commit: Pending` even though reachable commit `efe0227` existed.
+The structural integration check caught it. Cost: no repository rework beyond
+repairing the entry in this work commit.
+
+### Failures and limitations
+
+- C-014 completion status and the causal explanation for its `1.900.000 €`
+  field remain open.
+- C-010's sports-hall scope conflict and formal meaning of
+  `Schuljahresbeginn` remain open; the 31 August expected milestone requires a
+  later official check.
+- C-019 has no public change history found, no source-confirmed Bezirk and no
+  project-specific street address.
+- Native-speaker glossary verification and every golden-set value remain future
+  human work.
+
+### Evidence
+
+- `AGENTS.md`; `docs/decision-log.md`; `docs/glossary.md`;
+  `docs/methodology.md`; `docs/research/source-ecosystem.md`
+- `docs/research/evidence-retrieval-playbook.md`
+- `docs/research/dossiers/C-014-europaplatz-sued.md`
+- `docs/research/dossiers/C-010-heinrich-hertz-gymnasium.md`
+- `docs/research/dossiers/C-019-power-to-heat-hkw-mitte.md`
+- `docs/research/candidate-ledger.md`;
+  `docs/research/pilot-selection-record.md`;
+  `docs/project-checklist.md`
+
+
 ## 2026-08-06 — Verified C-014 dossier evidence and change history
 
 **Status:** Complete
 
-**Commit:** Pending — `docs(research): record verified C-014 dossier evidence and change history`
+**Commit:** `efe0227` — `docs(research): record verified C-014 dossier evidence and change history`
 
 ### Goal
 
@@ -632,7 +774,7 @@ verified research.
 
 ### Participants and scopes
 
-- Project owner Gregory Jones: supplied the scope, retained final selection and
+- Project owner: supplied the scope, retained final selection and
   golden-truth authority, and must review the proposed artifacts.
 - Main agent (OpenAI Codex): inspected the repository and existing policy
   documents, checked a limited set of official source entry points, and drafted

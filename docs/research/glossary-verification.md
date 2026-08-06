@@ -9,6 +9,25 @@ This report records retrieval and divergence detection. It does not approve a
 translation, select a contextual dictionary sense or edit `docs/glossary.md`.
 Every native-speaker review cell is intentionally empty.
 
+## Structural risk found in C-010
+
+The 2026-08-06 evidence pass encountered five distinct completion or handover
+forms for one project across four publishing bodies:
+
+| Term | Source | Published |
+| --- | --- | --- |
+| `Fertigstellung und Übergabe` | Bezirksamt Friedrichshain-Kreuzberg | 2023-12-21 |
+| `Fertigstellung` | Senate Schulbau portal | 2024-07-03 |
+| `technische Übergabe` | SenBJF, Drucksache 19/26230 | 2026-06-19 |
+| `bauliche Fertigstellung` + `Übergabe an den Bezirk` | Bezirksamt Friedrichshain-Kreuzberg | 2026-07-06 |
+| `Endfertigstellung` | HOWOGE | undated |
+
+This is a display-layer and schema risk, not merely a vocabulary-coverage
+issue. A golden value for a C-010 “completion date” is ill-formed unless it
+also identifies the milestone type. No default completion type should be
+assumed. The seven glossary 1.1 seed rows added from this evidence pass remain
+outside the version 1.0 verification counts below until separately verified.
+
 ## Method and limits
 
 Three passes were run:

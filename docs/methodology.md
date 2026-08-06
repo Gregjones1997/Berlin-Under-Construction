@@ -47,6 +47,42 @@ A date, amount, contractor, or status is stored as a versioned claim with proven
 
 Superseding a claim never deletes it. The current view is computed from eligible claims under transparent precedence rules; the history remains inspectable behind it. This is what makes "what changed and when" a first-class feature rather than a changelog nobody can audit.
 
+## The source ladder
+
+The 2026-08-06 Berlin public-project evidence pass found the same project
+published at up to five depths. Value increased sharply in the cases tested.
+
+| Depth | Source | What it gives | What it costs |
+| --- | --- | --- | --- |
+| 1 | Project page | Status label, fact box, current headline date | Fields often undated, sometimes mislabelled |
+| 2 | Press release | Narrative, rounded figures, organizations, one date | Rounded; no budget references |
+| 3 | Programme index `Aktuelles` block | A **different text** from the press release, often with extra figures | Volatile; entries roll off |
+| 4 | Schriftliche Anfrage (PARDOK) | Current status, cost tables, direct answers to "is it on time" | Table headers and rows split across pages |
+| 5 | Hauptausschuss-Vorlage | Exact figures, tax basis, budget chapter and title, funding sources, approval dates, lot structure | Long, formal, occasionally typo'd |
+
+A research pass that stops at depth 2 will report rounded figures with no tax
+treatment, no budget reference and no approval date, and may record
+"financing not published" for projects whose financing is fully published one
+or two rungs down.
+
+**Standard sequence:** establish identity and boundary at depths 1–2, then
+check relevant parliamentary depths before recording a financial measure or a
+`not found` for dates or costs. Where those families do not cover the project,
+record that limitation rather than pretending every ladder depth exists.
+
+## Relative date anchors
+
+Sources routinely anchor milestones to named periods rather than dates:
+`zum Schuljahresbeginn 2026/27`, `zum Sommeranfang`, `in den Winterferien`,
+`zum Fahrplanwechsel`. These resolve against a published authority and must
+be retrieved, never assumed. Retrieving the authority is an operation
+permitted under `AGENTS.md` rule 1; deciding when the period "usually" falls
+is not.
+
+Store the source's anchor wording as the canonical value and the resolved date
+as derived, with the resolving authority named. Never replace the anchor with
+the date — the anchor is what the source committed to.
+
 ## Financial-measure definitions
 
 These are different measures. They are never blended, and a headline number never hides which one it is:
@@ -127,5 +163,7 @@ A change to any rule in this document is a consequential decision under `docs/bu
 These are known gaps, not omissions to paper over:
 
 - German legal review of this methodology (personality rights, database rights, copyright, defamation, data protection) has not yet occurred. See `README.md`, License and data policy.
-- The controlled glossary referenced in the Language policy does not yet exist; it is a Phase 1 deliverable.
+- The controlled glossary referenced in the Language policy exists as
+  discovery seed rows but has not yet completed project-owner and
+  native-speaker verification.
 - Publication thresholds in ADR-003 are proposed, not validated against real pilot data yet.

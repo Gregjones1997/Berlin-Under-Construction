@@ -22,7 +22,12 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Begin manual dossier research for C-014, C-010 and C-019 and create the first human-authored golden truth set. Check C-010 on 2026-08-25 to determine whether its 31 August 2026 milestone held or slipped; both outcomes are publishable.
+**Next action:** Project owner reviews the integrated C-014, C-010 and C-019
+evidence boundaries and unresolved values, decides proposed ADR-011 on PDF
+metadata retention, then begins the first human-authored golden truth set.
+Recheck C-010 from official sources on 2026-08-25; record whether its expected
+31 August milestone was met, revised or not yet reported without inferring an
+outcome.
 
 ## Phase 0 — Minimal foundation
 

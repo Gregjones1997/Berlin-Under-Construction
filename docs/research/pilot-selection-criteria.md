@@ -6,8 +6,8 @@
 
 This document freezes the gates and provisional scoring model for choosing the
 three first-release pilot projects. It does not select any project. Candidate
-names and source references in the companion ledger remain leads until Gregory
-Jones verifies the original German sources.
+names and source references in the companion ledger remain leads until the
+project owner verifies the original German sources.
 
 ## Purpose
 

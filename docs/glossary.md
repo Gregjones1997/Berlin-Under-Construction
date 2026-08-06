@@ -1,7 +1,7 @@
 # Controlled German–English domain glossary
 
 **Status:** Discovery seed rows; not yet project-owner confirmed
-**Glossary version:** 1.0
+**Glossary version:** 1.1
 **Last updated:** 2026-08-06
 
 German is canonical. The English column is a proposed display mapping, not a
@@ -60,6 +60,11 @@ This seed does not complete the Phase 1 controlled-glossary checklist item.
 | `Projektzeitraum` | project period | Endpoint is not automatically a completion milestone |
 | `Laufzeit` | duration / project period | Retain whether it describes planning, funding or works |
 | `Gesamtmaßnahme` | overall measure | Scope-control term; verify included phases |
+| `Endfertigstellung` | final completion | Distinct from `Fertigstellung`, `bauliche Fertigstellung`, `vollständige Fertigstellung` and `Gesamtfertigstellung`; retain the source's own term rather than normalising |
+| `technische Übergabe` | technical handover | Distinct from `Übergabe an den Bezirk` and from `bauliche Fertigstellung`; a technical handover is not occupancy or operation |
+| `Bauplanungsunterlage` (BPU) | building planning documents | Approval of the BPU is a dated planning milestone with its own approved cost; it is not construction start |
+| `Generalübernehmer` | general contractor (turnkey) | Distinct from `Bauherr`; a single source may label one organization both, and the tier follows the documented role |
+| `Schuljahresbeginn` | start of the school year | A relative anchor, not a date. Resolve against the Berlin Ferienordnung for the year in question; store the anchor as canonical and the resolved date as derived |
 
 ## Financial, budget and procurement-context terms
 
@@ -113,3 +118,5 @@ This seed does not complete the Phase 1 controlled-glossary checklist item.
 | `geschätzt` | estimated | Marks an estimate whose basis and as-of date must be retained. |
 | `nicht belastbar` | not reliable | Records source-stated unreliability and must be preserved as an explicit uncertainty claim. |
 | `Stand` | as at (date) | Sets the as-of date governing the whole statement and is critical to change history. |
+| `bis zu` (before an amount) | up to | Upper bound on a sum. Distinct in kind from `bis` before a date; `bis zu 75 Millionen Euro` is a financing ceiling, not a cost. |
+| `nach jetzigem Planungsstand` | as at the current state of planning | An as-of hedge tied to the publication date. Weaker than `geplant` and not equivalent to `voraussichtlich`; it dates the claim rather than qualifying the outcome. |

@@ -1,6 +1,7 @@
 # Controlled German–English domain glossary
 
 **Status:** Discovery seed rows; not yet project-owner confirmed
+**Glossary version:** 1.0
 **Last updated:** 2026-08-06
 
 German is canonical. The English column is a proposed display mapping, not a
@@ -93,3 +94,22 @@ This seed does not complete the Phase 1 controlled-glossary checklist item.
 | `Realisierungsverträge` | implementation agreements | Contract family; not an award value |
 | `Einbringungsverträge` | contribution/transfer agreements | Delivery/legal instrument; do not infer ownership or value |
 | `Investorenprojekt` | investor-led project | Delivery context, not a documented organization role by itself |
+
+## Date qualifiers and modal wording
+
+| German source term | Proposed display mapping | Effect on the claim |
+| --- | --- | --- |
+| `bis` | by / no later than | Makes the date an upper bound. `bis Ende 2028` is not equivalent to the point estimate `Ende 2028`. |
+| `ab` | from / starting | Marks when a state or service begins; it does not establish completion of construction works. |
+| `Anfang` / `Mitte` / `Ende` | early / mid / late | Adds sub-year precision that must be retained and never rounded to the bare year. |
+| `voraussichtlich` | expected | Marks explicit uncertainty and must never be dropped in display. |
+| `geplant` | planned | Records an intention as at the source publication date, not an accomplished fact. |
+| `vorgesehen` | envisaged | Expresses a weaker intention than `geplant` and often applies at programme rather than project level. |
+| `anvisiert` / `angestrebt` | targeted / aimed for | Marks an aspiration rather than a commitment or fact. |
+| `soll` | is to / is supposed to | Adds modal obligation or expectation; it is not a commitment and not a fact. |
+| `frühestens` | at the earliest | Makes the date a lower bound. |
+| `spätestens` | at the latest | Makes the date an upper bound. |
+| `rund` / `etwa` / `ca.` | approximately | Reduces precision; the approximation qualifier must be retained. |
+| `geschätzt` | estimated | Marks an estimate whose basis and as-of date must be retained. |
+| `nicht belastbar` | not reliable | Records source-stated unreliability and must be preserved as an explicit uncertainty claim. |
+| `Stand` | as at (date) | Sets the as-of date governing the whole statement and is critical to change history. |

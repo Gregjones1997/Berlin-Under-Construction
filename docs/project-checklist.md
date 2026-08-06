@@ -22,7 +22,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Obtain native-speaker review of the six flagged glossary terms and source adequate authorities for the five unresolved terms; then have the project owner confirm the four shortlisted identities and boundaries and select the final three pilots using human-verified German expected-end wording.
+**Next action:** Obtain native-speaker review of the six flagged glossary terms and source adequate authorities for the five unresolved terms; then have the project owner confirm the four shortlisted identities and boundaries and select the final three pilots using human-verified German expected-end wording. Use the documented two-commit procedure for the next build-log entry and verify its hash through `git log`.
 
 ## Phase 0 — Minimal foundation
 

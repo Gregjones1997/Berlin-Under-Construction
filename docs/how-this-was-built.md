@@ -2,11 +2,15 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- **Course correction** — 2026-08-06 — Project owner and Codex: corrected an orphaned build-log hash, made the two-commit hash procedure executable, and recorded the false German-language assumption as the course correction it was. Verified: every backticked build-log hash resolves through `git log`; ADR-008 and the disclosure entry state the actual and counterfactual costs.
+
 ## 2026-08-06 — Disclose the German-language constraint and verification boundary
 
-**Status:** Complete; native-speaker review pending
+**Course correction**
 
-**Commit:** Recorded by this commit — `docs(process): disclose German-language constraint and mitigations`
+**Status:** Complete; course correction recorded; native-speaker review pending
+
+**Commit:** `7173758` — `docs(process): disclose German-language constraint and mitigations`
 
 ### Goal
 
@@ -16,13 +20,16 @@ which glossary-derived golden values will depend.
 
 ### Participants and scopes
 
-- Project owner: disclosed the language constraint, required human rather than
+- Project owner: confirmed the language constraint, required human rather than
   owner authorship of ground truth, set the authority boundary and requested the
   full-glossary verification run.
 - Main agent (OpenAI Codex, `/research` skill and web research): integrated the
   policy, audited all glossary and candidate rows, ran back-translation,
   independently reopened primary sources, wrote the report and made all
   repository changes and commits.
+- External reviewer (Claude): identified that the original rule assigned German
+  ground-truth work to an owner who does not read German, before construction of
+  the golden set began.
 - Glossary-authorities subagent (OpenAI Codex, `/research` skill): read-only
   retrieval lane for Duden, DWDS, specialist primary authorities and official
   English publications. It returned a cited proposal and did not edit the tree.
@@ -83,6 +90,22 @@ which glossary-derived golden values will depend.
   translation and were not promoted to controlled glossary sources.
 - Multiple model passes remain ineligible as golden-set validation regardless of
   agreement.
+
+### Course correction
+
+The original rule required the project owner to build the golden truth set by
+hand from German source documents. It encoded the unexamined assumption that the
+project owner could read German, which was never true. The assumption survived
+21 commits and was caught in reviewer critique before any golden values were
+constructed. The actual cost was documentation rework: the rule, role table,
+ADR, README premise, verification report and build record had to be aligned.
+
+Had the contradiction surfaced after golden-set construction, the
+counterfactual cost would have been rebuilding affected values and invalidating
+evaluation results derived from them. That did not happen; there was no golden
+set or evaluation to rebuild. The controlled glossary and provenance design
+bound the remaining risk but do not solve the owner's lack of German
+comprehension.
 
 ### Verification
 
@@ -183,7 +206,7 @@ model-generated evaluation authority.
 - `docs/decision-log.md`, ADR-008
 - `docs/glossary.md`, version 1.0
 
-- 2026-08-06 — Codex: flipped the build log to newest-first and extracted its conventions. Verified: entry order follows Git commit order, the entry count is preserved, and moved prose is unchanged. `fbd9496`
+- 2026-08-06 — Codex: flipped the build log to newest-first and extracted its conventions. Verified: entry order follows Git commit order, the entry count is preserved, and moved prose is unchanged. `a00a129`
 - 2026-08-06 — Codex: separated the candidate data ledger, frozen record specification and category coverage map. Verified: moved sections retain their prose and cross-references resolve. `356238f`
 - 2026-08-06 — Codex: assigned stable candidate IDs C-001–C-029 to the discovery longlist, shortlist and provenance tables. Verified: 29 IDs, no gaps or duplicates, and ledger/trail names match. `e572bcf`
 - **Course correction** -- 2026-08-06 — Claude review recomputed the final end-date gate column from the candidate ledger and caught a lane gate count that did not reconcile against its own source ledger. Corrected housing/mixed-use from 1 to 0 and total from 17 to 16; no repository rework, but the error was live in two commits. `a0baace`

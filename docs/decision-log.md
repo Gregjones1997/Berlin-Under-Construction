@@ -225,12 +225,22 @@ A category of non-code work turns out to carry enough consequence that a one-lin
 
 ### Context
 
-The project owner does not read German. The previous rule both assigned the
-golden set to the project owner and required a human to read the German source
-documents, leaving the real authority and evidence chain ambiguous. The purpose
-of the rule remains unchanged: model-generated ground truth cannot validly
-evaluate model extraction because agreement can measure shared bias rather than
-correctness.
+The original non-negotiable rule assigned the golden truth set to the project
+owner and required its values to come from a human reading the German source
+documents. It therefore assumed that the project owner could read German. That
+assumption was never true: the project owner does not read German. The
+contradiction survived 21 commits without examination and was caught in reviewer
+critique before golden-set construction began.
+
+The correction cost documentation rework only. Had it surfaced after golden-set
+construction, the counterfactual cost would have been rebuilding any values that
+depended on the false authority assignment and invalidating evaluation results
+derived from them. No golden set or evaluation existed, so that rebuild did not
+occur.
+
+The purpose of the rule remains unchanged: model-generated ground truth cannot
+validly evaluate model extraction because agreement can measure shared bias
+rather than correctness.
 
 Three operating options were considered:
 
@@ -274,3 +284,8 @@ glossary verification and unresolved or out-of-vocabulary values.
 A German-speaking human can directly author and maintain all golden values at
 the required pace, or evidence shows that the glossary layer cannot keep
 contextual ambiguity out of the evaluation set.
+
+**Amended 6 August 2026** — recorded the false owner-language assumption, its
+21-commit lifetime, how reviewer critique caught it and the actual versus
+counterfactual cost. See `docs/how-this-was-built.md`, “Disclose the
+German-language constraint and verification boundary.”

@@ -582,7 +582,7 @@ review time needed to rescope it; no pipeline code had to be discarded.
 
 **Status:** Complete; awaiting project-owner confirmation and selection
 
-**Commit:** Pending
+**Commit:** `3e70ad7` — `docs(research): name and filter pilot candidates`
 
 ### Goal
 

@@ -30,6 +30,9 @@ data/artifacts/
 # Private working notes — never published
 notes/
 
+# Reviewer proposal scaffolding — applied, then discarded
+docs/research/proposals/
+
 # Logs
 *.log
 

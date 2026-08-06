@@ -145,21 +145,21 @@ The project needs a coherent stack that supports a public web experience, geospa
 
 Measured prototype results show a blocking performance, licensing, cost or reliability problem, or after the first public release when operational requirements change.
 
-## ADR-006 — Use source-specialized lightweight agents per project intake
+## ADR-006 — Use source-specialized lightweight agents to research selected projects
 
 **Date:** 5 August 2026
 
-**Status:** Proposed for review
+**Status:** Accepted, rescoped
 
-**Scope:** Candidate research, user-submitted project intake and document discovery
+**Scope:** Researching a project whose identity is already established — the three selected pilots in Phase 1, and later user-submitted or system-discovered projects after naming. Not candidate discovery or naming.
 
 ### Context
 
-Project information is distributed across official project pages, procurement systems, budgets, parliamentary records, planning documents, operator updates, geospatial services and independent corroboration. A single general search agent is likely to miss entire source families. The same problem applies when a project is proposed by the system, selected from the candidate pool, or added by a user.
+Project information is distributed across official project pages, procurement systems, budgets, parliamentary records, planning documents, operator updates, geospatial services and independent corroboration. A single general search agent is likely to miss entire source families once a named project enters dossier research. This applies to the selected pilots and, later, to user-submitted or system-discovered projects after their identities and boundaries are established.
 
-### Decision proposed
+### Decision
 
-Each project intake will use five or six lightweight, read-only research lanes with distinct responsibilities:
+Once a project has been named and selected, researching it will use five or six lightweight, read-only research lanes with distinct responsibilities:
 
 1. Official project identity, authority and current project pages.
 2. Procurement, tender, award and contract-lot records.
@@ -181,3 +181,36 @@ The lanes return structured source candidates, claims, exact evidence spans, dat
 ### Reconsider when
 
 Evaluation shows that fewer lanes provide equivalent source coverage, a source family requires a specialized connector rather than an agent, or cost and latency make the default workflow unsustainable.
+
+**Amended 6 August 2026** — the six lanes were originally proposed for candidate discovery and project intake generally. That is the wrong stage. Naming a candidate needs one identity-lookup pass; six lanes with claim extraction and cross-source synthesis is machinery aimed at a question that has not been asked yet. Rescoped to apply once a project is already named and selected, which is where parallel source-family research genuinely accelerates the project owner's manual dossier verification. Candidate naming uses a separate, much lighter single-pass lookup described in `docs/research/candidate-ledger.md`. The lanes themselves are unchanged; only the stage they apply to has moved. See `docs/how-this-was-built.md` for the review that prompted this.
+
+## ADR-007 — Reserve full build-log entries for work with code, measurement or real cost
+
+**Date:** 5 August 2026
+
+**Status:** Accepted
+
+**Scope:** Build logging in `docs/how-this-was-built.md`
+
+### Context
+
+The tiered logging policy separated short entries from full entries but defined "consequential" broadly enough that planning and documentation work qualified. Four consecutive full entries were written about documentation changes, totalling roughly 180 lines, on a repository with no implementation yet. The build log became mostly a record of writing documents rather than of building a system, which inverts its purpose: a reader learns that the project is governed carefully, but not whether it can be built.
+
+### Decision
+
+A full entry now requires that the work references code, a measurement, or a failure that cost real time. Everything else — documentation, planning, restructuring, policy wording, scope corrections — gets a one-line short entry.
+
+Existing full entries are retained as written. They are not retroactively compressed; rewriting an accountability record to look tidier is a worse outcome than an uneven one.
+
+This decision was made deliberately before implementation began, so that the log's shape matches the work that follows rather than being trimmed later when the volume became inconvenient.
+
+### Consequences
+
+- The build log's centre of gravity shifts to extraction runs, evaluation results, cost measurements and failures.
+- Planning and documentation work remains recorded, but proportionately.
+- The distinction is judgement-based, so borderline cases default to a short entry.
+- The existing documentation-heavy entries stay visible, including this one's own rationale.
+
+### Reconsider when
+
+A category of non-code work turns out to carry enough consequence that a one-line entry loses information a reader needs — for example a legal, licensing or privacy determination that changes what the product may publish.

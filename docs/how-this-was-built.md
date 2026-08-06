@@ -8,9 +8,11 @@ The purpose is accountability and reproducibility. It is not a transcript of pri
 
 Logging is tiered so that this record survives a four-week sprint. A log that stops halfway through the project is worse than no log at all.
 
-### Short entries — routine work
+### Short entries — documentation, planning and routine work
 
-Most work gets one line. Use this for scaffolding, wiring, styling, refactors, test additions and anything mechanical:
+Most work gets one line. Use this for documentation, planning, restructuring,
+policy wording, scaffolding, wiring, styling, refactors, test additions and
+anything mechanical:
 
 ```markdown
 - 2026-08-12 — Codex: dossier page scaffold. Verified: renders pilot 1 from DB. `abc1234`
@@ -18,9 +20,28 @@ Most work gets one line. Use this for scaffolding, wiring, styling, refactors, t
 
 Format: date, participant, what changed, how it was verified, commit hash. Several small commits toward one outcome may share a line.
 
-### Full entries — consequential work
+### Multi-agent entries — mandatory when agents are spawned
 
-Use the full template below only when the work changes the product plan, architecture, data model, publication policy, legal posture, model or provider choice, or evaluation thresholds. Expect roughly ten of these across the project. A consequential decision is recorded even when it produces no commit.
+Every task that delegates work to one or more agents is recorded, including
+when none of the delegated output is accepted. The entry identifies:
+
+- why parallel or specialized delegation was used;
+- each agent's bounded lane or responsibility;
+- the useful output, failure or duplication returned by each lane;
+- what the main agent accepted, modified or rejected and why; and
+- how the synthesized result was checked independently.
+
+This is an architectural record of task decomposition, synthesis and
+verification. It does not include raw prompts, private reasoning or
+unnecessary internal context. The main agent remains the single repository
+writer and owns the final result.
+
+### Full entries — code, measurement or costly failure
+
+Use the full template below only when the work references code, a measurement,
+or a failure that cost real time. Documentation, planning, restructuring and
+policy-wording changes use a short entry even when they change project policy.
+Borderline cases default to short. See `docs/decision-log.md`, ADR-007.
 
 When a main agent delegates to subagents, the main agent owns the final entry. Record:
 
@@ -54,7 +75,8 @@ Agent output is treated as a proposal until the main agent or project owner veri
 
 ## Full entry template
 
-Copy this section for consequential work only. Routine work uses the one-line short entry described above.
+Copy this section only for work that meets the full-entry bar above. All other
+work uses the one-line short entry described above.
 
 ```markdown
 ## YYYY-MM-DD — Short task title
@@ -73,6 +95,12 @@ What outcome was needed and why?
 - Main agent (`provider/model or tool`): implementation and integration scope.
 - Subagent (`provider/model or tool`): bounded delegated scope, if any.
 - External reviewer (`provider/model or person`): review scope, if any.
+
+### Multi-agent architecture
+
+- Why delegation was used and how the task was partitioned.
+- Agent or lane outputs, including failed or redundant work.
+- Integration decision and independent verification.
 
 ### Work performed
 
@@ -156,6 +184,8 @@ Turn the product blueprint into an honest README and an operational build sequen
 - 2026-08-05 — Codex: extracted the complete feature register, moved the blueprint binary to `~/Documents/berlin-blueprint-private`, removed recruitment framing and replaced the public history. Verified: one commit, no DOCX in history and no recruitment-framing hits. `6a84726`
 - 2026-08-05 — Claude: drafted `docs/methodology.md` (evidence labels, financial-measure and milestone definitions, publication thresholds, status rules, correction process), cross-referencing the existing ADRs rather than duplicating them. Verified: reviewed against README, decision log and feature register for consistency; approved by the project owner. `af0e412`
 - 2026-08-05 — Claude: backfilled build-log entries for `e029383` and `f5fb60b` (both previously un-logged or left `Commit: Pending`), added `**Amended**` notes to ADR-003 and ADR-004, and added a "log at commit time, not after" rule to `AGENTS.md`. Verified: reviewed and approved by the project owner. `03e9deb`
+- 2026-08-05 — Project owner: raised the bar for full build-log entries; documentation and planning work now gets a short entry. Recorded as ADR-007. `<hash>`
+- 2026-08-06 — Project owner and Codex: made spawned-agent orchestration mandatory in the build record, including failed, redundant and rejected lanes; preserved single-writer synthesis and verification. `<hash>`
 
 ## 2026-08-05 — Initialize local Git repository
 
@@ -331,9 +361,9 @@ Freeze the scoring rubric and source-discovery record before conducting deeper f
 
 ## 2026-08-05 — Project-level multi-agent source discovery
 
-**Status:** Proposed for review
+**Status:** Superseded
 
-**Commit:** Pending review
+**Commit:** `1accf13` — `docs(research): define source discovery orchestration`
 
 ### Goal
 
@@ -376,6 +406,10 @@ Each lane returns structured source candidates, extracted claims, exact evidence
 - The workflow increases model calls, so cost per project and diminishing returns must be measured.
 - Source lanes may overlap; the schema must preserve provenance while deduplicating claims.
 - We still need to define the exact structured output schema, stop conditions, retry policy and whether all six lanes run for every project or whether simple projects can use fewer lanes.
+
+**Superseded 6 August 2026** — the lane design remains accepted for named,
+selected-project dossier research, but no longer applies to candidate naming.
+See “Rescope ADR-006 from candidate discovery to selected-project research.”
 
 ## 2026-08-05 — Pilot-selection and source-ecosystem research artifacts
 
@@ -461,3 +495,74 @@ verified research.
 - `docs/research/candidate-ledger.md`
 - Existing research record in this document and proposed source-specialization
   workflow in `docs/decision-log.md`, ADR-006.
+
+## 2026-08-06 — Rescope ADR-006 from candidate discovery to selected-project research
+
+**Status:** Complete
+
+**Commit:** Pending
+
+### Goal
+
+Correct the stage that the six-lane research workflow applies to. ADR-006 was drafted and recorded as covering candidate research and project intake generally, but the immediate task — turning category rows in the candidate ledger into named, addressed projects — needs a single identity lookup, not six lanes with claim extraction and cross-source synthesis.
+
+### Participants and scopes
+
+- Project owner: identified that the recorded ADR did not match what was intended by "six agents", and that approval was given to a build that was not the one needed.
+- External reviewer (Claude): reviewed the three research artifacts and ADR-006,
+  initially recommended deferring the ADR to Phase 5, then drafted the rescope
+  separating lightweight candidate naming from six-lane selected-project
+  dossier research after the project owner clarified the immediate need.
+- Main agent (OpenAI Codex): reviewed the proposed rescope against the original
+  ADR, corrected the remaining scope inconsistency and integrated the process
+  documentation.
+- Subagents: none used for this task.
+
+### Multi-agent architecture
+
+- This was sequential collaboration between the project owner, Claude as an
+  external reviewer and Codex as the integrating main agent; no parallel
+  subagents were spawned.
+- Claude supplied an uncommitted working-tree draft of the rescope and amendment
+  rationale. Codex inspected the full diff against the candidate ledger, prior
+  orchestration record and repository policy, then corrected the stale context
+  wording and dates before any commit.
+- The project owner directed the scope correction and retains final acceptance
+  of the integrated wording.
+
+### Work performed
+
+- Retitled ADR-006 from "per project intake" to "to research selected projects".
+- Changed status from `Proposed for review` to `Accepted, rescoped`.
+- Narrowed the scope statement to projects whose identity is already established, explicitly excluding candidate discovery and naming.
+- Changed "Decision proposed" to "Decision" and reworded the opening line to apply after selection.
+- Added an `Amended 6 August 2026` note recording what moved and why.
+
+### Decisions
+
+- Rejected the reviewer's initial recommendation to defer ADR-006 to Phase 5.
+  The workflow belongs in Phase 1 dossier research once pilots are named, not
+  in the preceding candidate-naming pass.
+- Kept the six lanes themselves unchanged. Only the stage they apply to moved.
+- Candidate naming will use a separate lightweight single-pass lookup rather than the full lane workflow.
+- Retained the existing rule that agent output is a lead until the project owner verifies it against the original German source.
+
+### Verification
+
+- Re-read ADR-006 end to end after editing to confirm the title, status, scope, decision wording and amendment note agree with each other.
+- Confirmed the lanes, consequences and reconsideration conditions were not altered.
+- Confirmed the public record describes only project architecture,
+  accountability and verification rationale.
+
+### Failures and limitations
+
+- The original ADR was recorded at a scope the project owner had not intended, and approved before that mismatch was noticed. Cost was one decision-log section, caught before any implementation work followed from it.
+- The lightweight candidate-naming pass is not yet specified or run; the candidate ledger still contains category rows rather than named projects.
+- Claude edited the shared working tree directly, which crossed the repository's
+  reviewer/single-writer convention. No concurrent edit or commit occurred;
+  Codex reviewed and integrated the complete diff. Future reviewer changes
+  should be proposed for the main agent to apply.
+
+### Evidence
+
+- `docs/decision-log.md`, ADR-006

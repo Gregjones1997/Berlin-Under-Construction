@@ -113,14 +113,22 @@ It is a published metric and it is ten lines of instrumentation.
 **Review points** — the reviewer is asked for a full-diff review at phase
 boundaries, not per commit.
 
+**Agent delegation** — whenever the main agent or reviewer spawns one or more
+agents, the resulting `docs/how-this-was-built.md` entry must identify the
+orchestration: why delegation was used, each bounded lane or scope, the useful
+output returned, what was accepted, modified or rejected, and how the integrated
+result was independently checked. Record failed or redundant lanes too. The
+main agent remains the single writer and owns synthesis and verification.
+
 ## Build logging
 
 `docs/how-this-was-built.md` is a public accountability record. It is tiered so
 that it survives contact with a four-week sprint.
 
-**Full entry** (the template in that file) for consequential work only —
-schema design, policy decisions, model or provider choice, evaluation threshold
-changes, anything that changes the product plan. Expect roughly ten of these.
+**Full entry** (the template in `docs/how-this-was-built.md`) only when the work
+references code, a measurement, or a failure that cost real time. Documentation,
+planning, restructuring and policy-wording changes get a short entry. See
+`docs/decision-log.md`, ADR-007.
 
 **Short entry**, one line, for routine work:
 
@@ -130,6 +138,8 @@ changes, anything that changes the product plan. Expect roughly ten of these.
 
 Never log secrets, personal data, raw prompt transcripts or private reasoning.
 Never record that an agent completed work that was not independently checked.
+Multi-agent work is never omitted merely because it produced no accepted change;
+the attempted delegation and its disposition are part of the project record.
 
 **Log at commit time, not after.** Write the entry — full or short — in the same
 change as the commit it describes, with the real commit hash already in it if

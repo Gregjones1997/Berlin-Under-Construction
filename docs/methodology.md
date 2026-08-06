@@ -120,7 +120,7 @@ A resident report or observation creates a lead or an `Observed` claim. It does 
 
 ## Revising this document
 
-A change to any rule in this document is a consequential decision under `docs/how-this-was-built.md` and gets a full log entry, not a short one. If a rule here is loosened after launch, the change and its rationale are recorded publicly, not silently absorbed into a future edit.
+A change to any rule in this document is a consequential decision under `docs/build-log-conventions.md` and gets a full log entry, not a short one. If a rule here is loosened after launch, the change and its rationale are recorded publicly, not silently absorbed into a future edit.
 
 ## Open, unresolved items
 

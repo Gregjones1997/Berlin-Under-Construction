@@ -125,7 +125,7 @@ main agent remains the single writer and owns synthesis and verification.
 `docs/how-this-was-built.md` is a public accountability record. It is tiered so
 that it survives contact with a four-week sprint.
 
-**Full entry** (the template in `docs/how-this-was-built.md`) only when the work
+**Full entry** (the template in `docs/build-log-conventions.md`) only when the work
 references code, a measurement, or a failure that cost real time. Documentation,
 planning, restructuring and policy-wording changes get a short entry. See
 `docs/decision-log.md`, ADR-007.

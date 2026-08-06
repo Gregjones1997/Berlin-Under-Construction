@@ -305,6 +305,7 @@ Documentation will be created when it has real decisions or evidence to record. 
 - `decision-log.md` — important choices, alternatives and rationale.
 - `feature-register.md` — the preserved full product vision with stable feature IDs.
 - `how-this-was-built.md` — human work, agent contributions, failures and verification.
+- `build-log-conventions.md` — build-log policy, roles and full-entry template.
 - `project-checklist.md` — current position and the next concrete action.
 
 Evaluation reports, architecture documentation and correction policy will be added as their corresponding systems and decisions become concrete.

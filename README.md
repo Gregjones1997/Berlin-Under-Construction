@@ -20,6 +20,20 @@ This repository will document the product, data model, engineering decisions, ex
 
 The living build checklist is maintained in [`docs/project-checklist.md`](docs/project-checklist.md). The use of AI agents, manual decisions, failures and verification is recorded in [`docs/how-this-was-built.md`](docs/how-this-was-built.md).
 
+## Verified-vocabulary premise
+
+This project deliberately tests whether a verifiable extraction system can be
+built over a source language the author does not read. It uses a human-verified,
+versioned controlled vocabulary, deterministic evidence-span verification and
+per-value provenance to make that constraint inspectable rather than implicit.
+
+The premise forces a strict boundary between operating an authority and being
+the authority: agents may retrieve human-authored references, match spans and
+detect divergence, but they cannot validate their own interpretations. It also
+does not solve every language-dependent decision. Project boundary, identity,
+contextual sense and conflicts between authorities still require German
+comprehension the project owner does not have.
+
 ## Current status
 
 This project is not yet a finished application. The current work is focused on turning the product blueprint into a defensible technical plan and a small, manually verified foundation.

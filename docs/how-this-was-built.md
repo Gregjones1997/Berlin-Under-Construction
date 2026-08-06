@@ -497,6 +497,7 @@ verified research.
 - `docs/research/pilot-selection-criteria.md`
 - `docs/research/source-ecosystem.md`
 - `docs/research/candidate-ledger.md`
+- `docs/research/candidate-record-spec.md`
 - Existing research record in this document and proposed source-specialization
   workflow in `docs/decision-log.md`, ADR-006.
 
@@ -725,6 +726,7 @@ not repository rework. Browser fallback was then permitted for access failures.
 ### Evidence
 
 - `docs/research/candidate-ledger.md`
+- `docs/research/candidate-record-spec.md`
 - `docs/research/candidate-discovery-trail.md`
 - `docs/glossary.md`
 - `docs/project-checklist.md`

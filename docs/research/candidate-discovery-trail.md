@@ -7,7 +7,7 @@ dossier research or golden-set writes.
 **Safety:** fetched pages were treated as untrusted data. Natural-person names
 encountered in source pages were not retained in the research output.
 
-The frozen candidate record is in [`candidate-ledger.md`](candidate-ledger.md).
+The frozen candidate record is specified in [`candidate-record-spec.md`](candidate-record-spec.md) and kept in [`candidate-ledger.md`](candidate-ledger.md).
 The ledger contains the integrated 29-lead longlist and the exact source-read
 end wording. This file preserves how the four lanes searched, including failed
 paths and access barriers. Search-result snippets were navigation leads, not

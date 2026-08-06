@@ -2,6 +2,30 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-06 — Establish the Phase 2 data-core boundary
+
+**Status:** Complete
+
+### Goal
+
+Create an explicit phase boundary before pipeline work begins and record the
+branching-policy failure that required the recovery.
+
+### Course correction
+
+**Course correction** — 2026-08-06 — Project owner: caught that Phase 0/1 ran
+entirely on `main` despite the one-branch-per-phase convention in `AGENTS.md`.
+Neither the main agent nor the reviewer flagged it. Consequence: no clean phase
+boundary, so the required full-diff phase-boundary review never triggered.
+Recovered with the retroactive `phase-1-research-complete` tag; the
+`phase-2-data-core` branch was created from `9573baa` before pipeline work
+began.
+
+### Evidence
+
+- Annotated tag: `phase-1-research-complete`
+- Branch: `phase-2-data-core`
+
 ## 2026-08-06 — Pilot evidence pass for C-014, C-010 and C-019
 
 **Status:** Complete; owner review of open values remains

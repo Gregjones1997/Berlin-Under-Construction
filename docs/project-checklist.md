@@ -22,7 +22,7 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Review the proposed pilot-selection criteria, source-ecosystem map and candidate ledger; then manually verify candidate leads before selecting any pilots.
+**Next action:** Project owner confirms the four shortlisted project identities, boundaries and exact German expected-end wording in the original sources; then scores them and selects the final three pilots.
 
 ## Phase 0 — Minimal foundation
 

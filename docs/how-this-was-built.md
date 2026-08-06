@@ -577,3 +577,151 @@ review time needed to rescope it; no pipeline code had to be discarded.
 ### Evidence
 
 - `docs/decision-log.md`, ADR-006
+
+## 2026-08-06 — Named pilot-candidate discovery and end-date filter
+
+**Status:** Complete; awaiting project-owner confirmation and selection
+
+**Commit:** Pending
+
+### Goal
+
+Replace the candidate ledger's category placeholders with named, geographically
+bounded Berlin project leads, preserve the full discovery trail, and apply only
+the cheapest hard finalist question: whether an official project-level expected
+end date exists and what the exact German wording and milestone type are.
+
+### Participants and scopes
+
+- Project owner: froze the four discovery lanes, prohibited agent scoring and
+  finalist selection, required full query/access trails and retains confirmation
+  of project identity, German end wording and final-three selection.
+- Main agent (Codex, web research and integration): froze the record, ran the
+  utilities/environment lane, reopened all core identity links, deduplicated,
+  applied eligibility/end-date gates, wrote the longlist, shortlist, glossary
+  seeds and accountability record.
+- Transport subagent (GPT-5.6-terra, high; Chrome fallback): roads, bridges,
+  rail and transport infrastructure.
+- Public subagent (GPT-5.6-terra, high): schools, public buildings, cultural
+  facilities and public space.
+- Development subagent (GPT-5.6-terra, high): housing, commercial redevelopment,
+  demolition and mixed-use.
+- Three initial GPT-5.6-sol/high subagent invocations were interrupted at the
+  project owner's request before their output was accepted.
+
+### Multi-agent architecture
+
+- Delegation was used because the four category lanes were independent and the
+  project owner explicitly requested multiple scouts with a research trail per
+  lane. Each completed subagent was read-only and returned a proposal; only the
+  main agent wrote the repository.
+- Transport returned six leads and correctly rejected a bridge-closure date as
+  project completion. Public returned eight leads and separated whole-project,
+  phase-only and planning-stage milestones. Development returned eight leads
+  and exposed that most official dates were phase-only, relative, stale or not
+  typed as completion. The main agent returned seven utility/environment leads
+  and separated duration wording from calendar end dates.
+- Accepted: all 29 named identity leads, their source/access trails, explicit
+  gaps and German terminology. Modified: confidence and eligibility were
+  normalized against the frozen fields; linked subprojects were kept separate.
+  Rejected: closure-only dates, programme-level dates presented as project ends,
+  non-official developer dates, completed comparators, unbounded candidates for
+  final eligibility and any inferred calendar date from a duration.
+- Independent check: the main agent reopened all 29 core identity links. The DB
+  Wollankstraße PDF that timed out in the lane opened during integration, but
+  its date still described a closure rather than project completion.
+
+### Work performed
+
+- Froze the discovery record and the `found` / `not found` / `not checked`
+  expected-end vocabulary before lane results were integrated.
+- Named and bounded 29 candidates across four lanes with plausible official
+  identity sources, explicit read-versus-inferred fields and one next check.
+- Preserved every query, opened URL outcome, dead end, skipped source family,
+  access barrier and cross-lane link in a dedicated research-trail document.
+- Applied identity, construction-substance, geographic-boundary and end-date
+  gates without assigning scores.
+- Produced a four-project owner-review shortlist and retained every failed gate
+  in the longlist with its reason.
+- Added discovery seed rows for every consequential German milestone and
+  financial term encountered. The glossary remains unconfirmed and is not
+  marked complete.
+
+### Lane performance
+
+`Survived discovery gates` means identity, construction substance, an official
+evidence path and a usable geographic boundary. `Survived final end-date gate`
+also requires current project-level end wording; phase-only, programme-level,
+closure-only and untyped period endpoints do not pass cleanly.
+
+| Lane | Leads returned / requested | Core links open and identify project | Cited page did not support claim / project nonexistent | Survived discovery gates | Duplicates across lanes | Findable end-date evidence | Survived final end-date gate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Transport | 6 / 5–8 | 6 / 6 | 0 | 6 | 0 | 5 | 5 |
+| Public buildings / culture / space | 8 / 5–8 | 8 / 8 | 0 | 6 | 0 | 8 | 6 |
+| Utilities / energy / water / environment | 7 / 5–8 | 7 / 7 | 0 | 7 | 0 | 6 | 5 |
+| Housing / commercial / mixed-use | 8 / 5–8 | 8 / 8 | 0 | 7 | 0 | 4 | 1 |
+| **Total** | **29 / 20–32** | **29 / 29** | **0** | **26** | **0** | **23** | **17** |
+
+Eight access-barrier paths were retained as source-registry seeds: a moved
+Senate directory, CAPTCHA, an initial DB PDF timeout, an internal-error school
+PDF, a timed-out legacy school page, a BWB PDF redirect to 404, a BEW PDF fetch
+error and an internal-error Senate press page.
+
+### What was surprising
+
+The housing/mixed-use lane had abundant official identity and planning material
+but almost no clean whole-project completion evidence. By contrast, operator
+and transport pages often named `Inbetriebnahme`, `Bauende` or
+`Gesamtfertigstellung` directly. The end-date-first filter therefore changed the
+portfolio shape before any scoring: no development candidate entered the four,
+even though several remain strong public-interest backlog items.
+
+### Course correction
+
+The first three delegated lanes were launched on GPT-5.6-sol/high. The project
+owner stopped that choice because of credit use and asked that sol not be used
+moving forward. Those invocations were interrupted, their partial work was not
+accepted, and the same lanes were rerun on GPT-5.6-terra/high. Exact tokens and
+cost are unavailable because the agent runtime exposes neither; no estimate was
+invented. The correction cost was the aborted model usage and restart latency,
+not repository rework. Browser fallback was then permitted for access failures.
+
+### Decisions
+
+- Shortlisted U3 to Mexikoplatz, Heinrich-Hertz-Gymnasium at Ostbahnhof, the
+  HKW Mitte Power-to-Heat plant and Europaplatz Süd for owner review; no score
+  was assigned.
+- Kept a year-only public-space milestone as the spare despite weaker precision,
+  because it is still official and project-level and adds a distinct public
+  consequence.
+- Did not force category balance by admitting a development lead that failed
+  the frozen end-date or phase-boundary gate.
+- Kept all non-shortlisted candidates and failed paths visible.
+
+### Verification
+
+- Reopened all 29 core identity links and confirmed that each names the claimed
+  project; zero core citations failed the identity claim.
+- Checked aliases and linked phases for overlaps; no returned rows were merged.
+  Adjacent or linked projects are explicitly separated in the research trail.
+- Confirmed no natural person is named in the candidate records or shortlist.
+- Confirmed no closure notice is a candidate and no closure duration is stored
+  as a project end date.
+- Confirmed no score or golden-truth value was written.
+
+### Failures and limitations
+
+- Exact token and cost telemetry was unavailable for every lane. This remains
+  an instrumentation gap before the first extraction run.
+- A core identity page opening does not make every field current or
+  authoritative. The project owner still needs to confirm the four identities,
+  boundaries and exact German end wording before scoring.
+- Source licensing, quote/retention rights, financial measures, organization
+  roles, date history and dossier claims were intentionally not researched.
+
+### Evidence
+
+- `docs/research/candidate-ledger.md`
+- `docs/research/candidate-discovery-trail.md`
+- `docs/glossary.md`
+- `docs/project-checklist.md`

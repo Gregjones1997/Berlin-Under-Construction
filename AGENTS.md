@@ -21,7 +21,7 @@ and next action, `docs/decision-log.md` for choices already made.
 
 | Participant | Owns |
 | --- | --- |
-| Project owner (Gregory) | Product, legal and naming decisions. The golden truth set. Final acceptance. |
+| Project owner (Gregory) | Product, legal and naming decisions. Golden-set acceptance. Final acceptance. |
 | Main agent (Codex) | The repository. All file writes and all commits. |
 | Reviewer (Claude) | Review, planning, adversarial critique. Proposes diffs in chat; does not write to the tree. |
 | Subagent | A bounded task delegated by the main agent. Output is a proposal until verified. |
@@ -32,14 +32,37 @@ agents editing the same tree.
 
 ## Non-negotiable rules
 
-### 1. The golden truth set is built by hand, by the project owner
+### 1. The golden truth set is built by hand
 
 An agent must never generate, expand or "fill in" the golden evaluation set.
 If the ground truth is model-generated and we then evaluate model extraction
 against it, we are measuring self-consistency and the evaluation is worthless.
 
-Agents may build the harness, the schema and the tooling around it. The values
-come from a human reading the German source documents.
+The binding requirement is human authorship, not project-owner authorship. The
+project owner does not read German; this is a disclosed design constraint. Every
+golden value carries exactly one provenance tag: `span-verified`,
+`glossary-derived`, `owner-judgment` or `model-assisted`. No golden value may
+carry `model-assisted`.
+
+A `glossary-derived` value depends on a controlled glossary verified by a human
+who can assess the German. Evaluation results publish the glossary version and
+its verification status. Multiple model passes do not establish independence:
+correlated systems can reduce variance, not bias, and systematic errors are the
+ones the golden set exists to catch.
+
+**Agents may OPERATE any authority. Agents may not BE the authority.**
+
+Agents may retrieve DWDS or Duden entries, retrieve an official parallel English
+text published by the source authority, run back-translation to detect
+divergence, and perform verbatim span matching. Those operations rely on
+external, human-authored authority. Agents may not select which dictionary sense
+applies in context, assign a milestone type that enters the golden set, resolve
+a disagreement between authorities, or treat agreement across models as
+validation. Divergence detected by an agent is a question for a human, never an
+answer. Agreement is not evidence of correctness.
+
+Agents may build the harness, schema and tooling around the golden set. A human
+must author or verify every value under the provenance rules above.
 
 ### 2. Extract in German, translate only for display
 

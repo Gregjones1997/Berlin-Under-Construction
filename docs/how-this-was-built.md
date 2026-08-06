@@ -2,6 +2,65 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-06 — Scope golden-set authorship and value provenance
+
+**Status:** Complete
+
+**Commit:** Pending — `docs(process): scope golden-set authorship and add value provenance tags`
+
+### Goal
+
+Resolve the contradiction between owner-owned ground truth and the requirement
+that a human understand the German source, while preserving the prohibition on
+model-generated evaluation authority.
+
+### Participants and scopes
+
+- Project owner: disclosed the language constraint, chose human authorship rather
+  than owner authorship as the invariant, and specified the permitted and
+  prohibited operations.
+- Main agent (OpenAI Codex): integrated the rule, role definition, ADR and public
+  accountability record.
+- Subagents: none contributed to this policy decision.
+
+### Work performed
+
+- Replaced owner authorship with human authorship as the binding golden-set rule.
+- Added per-value provenance tags and prohibited `model-assisted` golden values.
+- Defined the versioned, human-verified controlled glossary as the reusable layer.
+- Separated agent operation of an authority from being the authority.
+- Recorded the rejected multi-pass-AI option and the residual need for German
+  comprehension in ADR-008.
+
+### Decisions
+
+- Accepted a human-verified glossary layer because recurring controlled terms can
+  be versioned and audited without pretending that model agreement is validation.
+- Rejected multiple AI passes as an independence mechanism because correlated
+  systems reduce variance but do not remove shared bias.
+- Retained German-speaking human review for contextual sense, project boundary,
+  identity, disagreement and out-of-vocabulary decisions.
+
+### Verification
+
+- Cross-checked the role table, rule 1 and ADR-008 for the same authority boundary.
+- Confirmed that the permitted operations are retrieval, divergence detection and
+  verbatim matching, not contextual judgment.
+- Confirmed that no golden value or candidate-ledger row was changed.
+
+### Failures and limitations
+
+- The glossary is not yet human-verified, so no value is currently eligible as
+  `glossary-derived` ground truth.
+- Provenance tags are policy only until the golden-set schema is implemented.
+- The project owner still cannot independently resolve German contextual disputes.
+
+### Evidence
+
+- `AGENTS.md`, rule 1 and the roles table
+- `docs/decision-log.md`, ADR-008
+- `docs/glossary.md`, version 1.0
+
 - 2026-08-06 — Codex: flipped the build log to newest-first and extracted its conventions. Verified: entry order follows Git commit order, the entry count is preserved, and moved prose is unchanged. `fbd9496`
 - 2026-08-06 — Codex: separated the candidate data ledger, frozen record specification and category coverage map. Verified: moved sections retain their prose and cross-references resolve. `356238f`
 - 2026-08-06 — Codex: assigned stable candidate IDs C-001–C-029 to the discovery longlist, shortlist and provenance tables. Verified: 29 IDs, no gaps or duplicates, and ledger/trail names match. `e572bcf`

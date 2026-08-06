@@ -214,3 +214,63 @@ This decision was made deliberately before implementation began, so that the log
 ### Reconsider when
 
 A category of non-code work turns out to carry enough consequence that a one-line entry loses information a reader needs — for example a legal, licensing or privacy determination that changes what the product may publish.
+
+## ADR-008 — Use a human-verified glossary layer for German golden values
+
+**Date:** 6 August 2026
+
+**Status:** Accepted
+
+**Scope:** Golden-set authorship, controlled vocabulary and evaluation provenance
+
+### Context
+
+The project owner does not read German. The previous rule both assigned the
+golden set to the project owner and required a human to read the German source
+documents, leaving the real authority and evidence chain ambiguous. The purpose
+of the rule remains unchanged: model-generated ground truth cannot validly
+evaluate model extraction because agreement can measure shared bias rather than
+correctness.
+
+Three operating options were considered:
+
+1. A German-speaking human authors or verifies every contextual value directly.
+2. Multiple AI passes translate, classify and cross-check each other.
+3. A human-verified controlled glossary supplies bounded, versioned mappings,
+   while contextual disagreements and values outside that layer return to a
+   German-speaking human.
+
+### Decision
+
+Use the controlled glossary as the verified layer. Every golden value receives
+one provenance tag: `span-verified`, `glossary-derived`, `owner-judgment` or
+`model-assisted`; `model-assisted` is prohibited in the golden set. A
+`glossary-derived` value is eligible only when the glossary version and human
+verification status are recorded and published with the evaluation result.
+
+Agents may operate external, human-authored authorities but may not replace
+them. They may retrieve dictionary entries and official parallel text, run
+back-translation to detect divergence, and match spans verbatim. They may not
+choose a contextual dictionary sense, assign a golden milestone type, resolve
+authority disagreement or treat cross-model agreement as validation. Detected
+divergence creates a human-review question.
+
+The glossary layer was chosen because it makes a reusable, inspectable boundary
+around recurring terms without pretending the owner's language constraint has
+been removed. A German-speaking human remains necessary for contextual judgment,
+glossary verification and unresolved or out-of-vocabulary values.
+
+### Consequences
+
+- Golden-set authority is human-authored but not necessarily owner-authored.
+- Evaluation results must identify the glossary version and verification status.
+- Provenance is attached per value rather than inferred from the dataset.
+- Multiple agreeing model passes remain model assistance, not validation.
+- Project boundary, identity and contextual sense decisions still require German
+  comprehension outside the owner's capabilities.
+
+### Reconsider when
+
+A German-speaking human can directly author and maintain all golden values at
+the required pace, or evidence shows that the glossary layer cannot keep
+contextual ambiguity out of the evaluation set.

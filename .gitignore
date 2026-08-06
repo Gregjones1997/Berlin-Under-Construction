@@ -4,6 +4,9 @@
 # Local AI tool settings
 .claude/
 
+# Vendored third-party agent skills — reproducible from skills-lock.json
+.agents/
+
 # Environment files
 .env
 .env.local

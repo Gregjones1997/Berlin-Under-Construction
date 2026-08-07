@@ -10,7 +10,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 - `571e7a6` — `feat(pipeline): add SQLite claim and artifact store`
 - `e52fb34` — `feat(pipeline): reconstruct a pilot dossier fragment from stored data`
-- `<metering-hash>` — `feat(pipeline): add fail-closed metered extraction runner`
+- `06f8e27` — `feat(pipeline): add fail-closed metered extraction runner`
 - `<process-hash>` — `docs(process): record vertical-slice evidence and next action`
 
 ### Goal

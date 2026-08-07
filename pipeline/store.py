@@ -224,28 +224,33 @@ class LocalPipelineStore:
         self, claim: ActiveMilestoneClaim | QuarantinedMilestoneClaim
     ) -> None:
         with self._connection:
-            matching_retrieval = self._connection.execute(
-                """
-                SELECT 1 FROM retrievals
-                WHERE project_id = ? AND source_id = ? AND artifact_id = ?
-                """,
-                (claim.project_id, claim.source_id, claim.artifact_id),
-            ).fetchone()
-            if matching_retrieval is None:
-                raise StoreInvariantError(
-                    "claim project, source and artifact must match a stored retrieval"
-                )
-            self._insert_immutable(
-                "milestone_claims",
-                "claim_id",
-                claim.claim_id,
-                {
-                    "project_id": claim.project_id,
-                    "artifact_id": claim.artifact_id,
-                    "created_at": claim.created_at.isoformat(),
-                    "record_json": _canonical_json(claim),
-                },
+            self._record_claim(claim)
+
+    def _record_claim(
+        self, claim: ActiveMilestoneClaim | QuarantinedMilestoneClaim
+    ) -> None:
+        matching_retrieval = self._connection.execute(
+            """
+            SELECT 1 FROM retrievals
+            WHERE project_id = ? AND source_id = ? AND artifact_id = ?
+            """,
+            (claim.project_id, claim.source_id, claim.artifact_id),
+        ).fetchone()
+        if matching_retrieval is None:
+            raise StoreInvariantError(
+                "claim project, source and artifact must match a stored retrieval"
             )
+        self._insert_immutable(
+            "milestone_claims",
+            "claim_id",
+            claim.claim_id,
+            {
+                "project_id": claim.project_id,
+                "artifact_id": claim.artifact_id,
+                "created_at": claim.created_at.isoformat(),
+                "record_json": _canonical_json(claim),
+            },
+        )
 
     def load_project(self, project_id: str) -> ProjectRecords:
         retrieval_json = self._connection.execute(
@@ -278,7 +283,13 @@ class LocalPipelineStore:
             ),
         )
 
-    def record_extraction_run(self, run: ExtractionRunRecord) -> None:
+    def record_extraction_run(
+        self,
+        run: ExtractionRunRecord,
+        claims: tuple[ActiveMilestoneClaim | QuarantinedMilestoneClaim, ...],
+    ) -> None:
+        """Atomically persist one extraction run and every claim it produced."""
+
         with self._connection:
             matching_retrieval = self._connection.execute(
                 "SELECT 1 FROM retrievals WHERE project_id = ? AND artifact_id = ?",
@@ -292,6 +303,12 @@ class LocalPipelineStore:
                 "extraction_runs", "run_id", run.run_id,
                 {"project_id": run.project_id, "artifact_id": run.artifact_id, "created_at": run.created_at.isoformat(), "record_json": _canonical_json(run)},
             )
+            for claim in claims:
+                if claim.project_id != run.project_id or claim.artifact_id != run.artifact_id:
+                    raise StoreInvariantError(
+                        "extraction claims must match the run project and artifact"
+                    )
+                self._record_claim(claim)
 
     def load_extraction_runs(self, project_id: str) -> tuple[ExtractionRunRecord, ...]:
         rows = self._connection.execute(

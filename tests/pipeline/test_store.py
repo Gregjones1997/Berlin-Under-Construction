@@ -151,5 +151,25 @@ def test_extraction_run_metrics_round_trip_without_model_content(tmp_path) -> No
     }))
     with LocalPipelineStore(database) as store:
         store.record_retrieval_artifact(retrieval(), artifact())
-        store.record_extraction_run(run)
+        store.record_extraction_run(run, (claim(),))
         assert store.load_extraction_runs("C-014") == (run,)
+        assert store.load_project("C-014").milestone_claims == (claim(),)
+
+
+def test_extraction_run_and_all_claims_commit_atomically(tmp_path) -> None:
+    database = tmp_path / "pipeline.sqlite3"
+    run = ExtractionRunRecord.model_validate_json(json.dumps({
+        "run_id": "run-atomic", "project_id": "C-014", "artifact_id": STORED_HASH,
+        "provider_request_id": "resp_123", "created_at": "2026-08-07T12:00:00+02:00",
+        "metrics": {"provider": "openai", "model": "gpt-5.6-luna", "model_version": "gpt-5.6-luna", "prompt_version": "milestone-extraction-de-v1", "extraction_schema_version": "1.0.0", "input_tokens": 10, "output_tokens": 2, "cached_tokens": 1, "cache_write_tokens": 0, "latency_ms": 30, "cost_amount": "0.0000036", "cost_currency": "USD", "pricing_reference": "openai-gpt-5.6-luna-2026-08-07"},
+        "validation_results": [{"code": "personal_data_high_confidence", "outcome": "pass"}],
+    }))
+    invalid = claim().model_copy(update={"claim_id": "claim-2", "source_id": "missing-source"})
+
+    with LocalPipelineStore(database) as store:
+        store.record_retrieval_artifact(retrieval(), artifact())
+        with pytest.raises(StoreInvariantError):
+            store.record_extraction_run(run, (claim(), invalid))
+
+        assert store.load_extraction_runs("C-014") == ()
+        assert store.load_project("C-014").milestone_claims == ()

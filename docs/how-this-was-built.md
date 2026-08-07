@@ -19,6 +19,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `1612a88` — `fix(pipeline): honor declared charset in metered input`
 - `fix(provider): make first OpenAI response diagnosable`
 - `fix(privacy): route possible names and low confidence to review`
+- `fix(store): persist extraction runs and claims atomically`
 
 ### Goal
 
@@ -101,6 +102,9 @@ prices were rejected after the official pricing page showed they were stale.
   exceptions are split into organization and toponym allowlists. The nonexistent
   OpenAI cache-write price was removed and nonzero cache-write usage is rejected
   at the OpenAI policy boundary.
+- Made the live extraction persistence unit one SQLite transaction: a run and
+  all claims commit together or all roll back. A failing second claim test proves
+  neither the run nor the first claim survives partial failure.
 
 ### Verification
 

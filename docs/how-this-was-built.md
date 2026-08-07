@@ -2,6 +2,83 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-07 — Persist and reconstruct the first milestone slice
+
+**Status:** In progress
+
+**Commits:**
+
+- `<storage-hash>` — `feat(pipeline): add SQLite claim and artifact store`
+- `<reconstruction-hash>` — `feat(pipeline): reconstruct a pilot dossier fragment from stored data`
+- `<metering-hash>` — `feat(pipeline): meter the first extraction run`
+- `<process-hash>` — `docs(process): record vertical-slice evidence and next action`
+
+### Goal
+
+Move one milestone claim end to end through retrieval, verified artifact
+retention, local persistence and storage-only reconstruction, then run the
+frozen prompt once with real provider metrics. The dossier comparison is a
+smoke observation, never a golden evaluation or accuracy measurement.
+
+### Participants and scopes
+
+- Project owner: approved SQLite for the local pipeline store, set the required
+  sequencing and commit boundaries, and retained authority over all golden and
+  publication decisions.
+- Main agent (Codex, TDD and codebase-design skills): sole writer; froze the
+  prompt before delegation, designed the public seams, integrated the proposals
+  and owns every test, commit and live verification.
+- SQLite storage subagent (inherited GPT-5.6 model, high effort;
+  codebase-design and domain-modeling skills): proposed the append-only local
+  store, atomic aggregates, canonical typed JSON, verified stored bytes and
+  migration constraints.
+- Reconstruction subagent (inherited GPT-5.6 model, high effort): proposed the
+  deterministic storage-only fragment, privacy-safe withholding and a neutral
+  dossier smoke comparison outside the reconstruction seam.
+- Metering/privacy subagent (inherited GPT-5.6 model, high effort): proposed the
+  provider seam, fail-closed threshold/pricing gates, exact usage accounting and
+  content-free personal-data validation results.
+
+### Multi-agent architecture
+
+Delegation began only after the extraction prompt was frozen. Three read-only
+lanes examined independent integration risks in parallel: storage transactions,
+reconstruction semantics, and live metering/privacy. No lane read the frozen
+dossiers or `evaluation/`, and no lane wrote to the repository.
+
+The main agent accepted a concrete SQLite module rather than a hypothetical
+generic repository, atomic immutable writes, post-transform hash identity,
+private verified blobs, typed JSON round-trips and adapter-level migration
+tests. Generic CRUD, URL identity, pre-transform hash foreign keys, silent
+conflict ignores, early Supabase and dual writes were rejected. For
+reconstruction, the main agent accepted deterministic storage-only rendering,
+withholding of non-publishable text and neutral smoke differences outside the
+renderer; a new protocol was rejected until a second backend exists. Metering
+disposition and final independent verification are recorded below when the
+runner is integrated.
+
+### Work performed
+
+- Frozen prompt and ADR-012 are recorded separately above because both preceded
+  implementation by design.
+- Added the SQLite persistence seam and its first transactional artifact,
+  retrieval and milestone-claim round trips. Further work remains in the commits
+  listed above.
+
+### Verification
+
+- Storage seam: four tests pass for close/reopen round-trip, idempotent replay,
+  immutable-ID conflict rejection, relational consistency and mode `0600`.
+- Full-suite, reconstruction, live retrieval, privacy and metering evidence are
+  added as the remaining slices complete.
+
+### Failures and limitations
+
+- The current process exposes no `OPENAI_API_KEY`. No live extraction has been
+  attempted and no token, cost or latency value has been invented. The main
+  agent is checking whether another available provider path exposes auditable
+  exact usage; otherwise Step 3 remains explicitly blocked.
+
 - 2026-08-07 — Project owner and Codex (TDD and codebase-design skills): froze `milestone-extraction-de-v1` before any extraction run, derived only from approved schema and policy rather than the dossiers. Verified: the prompt declares its immutable version and enforces untrusted-document handling, German-first values, exact spans, closed milestone types and natural-person exclusion. `d0d17d8`
 
 - 2026-08-07 — Project owner and Codex: accepted ADR-012, using SQLite for private local pipeline persistence while retaining Supabase/PostGIS for the web application. Verified: migration consequences preserve strict models, stable identities, German spans and ADR-011 hash roles. `3a1bf7f`

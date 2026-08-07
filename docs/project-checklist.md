@@ -22,15 +22,16 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Provision `OPENAI_API_KEY` locally and run the frozen prompt once
-through the fail-closed metered runner, persisting actual token, cost, latency and
-privacy outcomes. Then obtain human review of the proposed C-014 claim and
-reconstruct the complete pilot dossier from stored data before opening Phase 3.
-After that boundary, implement `FinancialClaim` on the working evidence-depth
-gate and extend source, conflict and review-history schemas. The German-speaking
-review continues in parallel and remains the only source of populated golden
-values. Recheck C-010 from official sources on 2026-08-25 without inferring an
-outcome.
+**Next action:** Set `OPENAI_API_KEY` in the local process environment and run
+the documented `python -m pipeline.extract_once` command once against the stored
+C-014 artifact. Record its actual four token fields, cost, latency and both
+privacy outcomes, then use local-only withheld-detail reconstruction to inspect
+storage fidelity without reporting an accuracy figure. Obtain human review of
+the proposed C-014 claim before opening Phase 3. After that boundary, implement
+`FinancialClaim` on the working evidence-depth gate and extend source, conflict
+and review-history schemas. The German-speaking review continues in parallel and
+remains the only source of populated golden values. Recheck C-010 from official
+sources on 2026-08-25 without inferring an outcome.
 
 ## Phase 0 — Minimal foundation
 

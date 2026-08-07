@@ -24,6 +24,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `feat(pipeline): add one-shot metered extraction command`
 - `fix(provider): retain status for unexpected error bodies`
 - `fix(privacy): version typed possible-name allowlists`
+- `docs(process): record corrected vertical-slice handoff`
 
 ### Goal
 
@@ -73,10 +74,11 @@ conflict ignores, early Supabase and dual writes were rejected. For
 reconstruction, the main agent accepted deterministic storage-only rendering,
 withholding of non-publishable text and neutral smoke differences outside the
 renderer; a new protocol was rejected until a second backend exists. Metering
-the main agent accepted a single-attempt Responses API adapter, `store=false`,
-strict structured output, content-free failures, preflight and actual cost
-ceilings, exact token categories and persisted privacy outcomes. The suggested
-prices were rejected after the official pricing page showed they were stale.
+the main agent initially accepted a single-attempt Responses API adapter,
+`store=false`, strict structured output, content-free failures, preflight and
+actual cost ceilings, token accounting and persisted privacy outcomes. The
+strict-mode and cache-write mistakes were caught before the first live call and
+are recorded under course correction below.
 
 ### Work performed
 
@@ -137,26 +139,44 @@ prices were rejected after the official pricing page showed they were stale.
   withheld. A score-free dossier smoke comparison observed differences; its
   generated and reference hashes are recorded in the process finding rather
   than treating the dossier as an evaluation set.
-- Metering, provider and storage-run tests exercise no retention, high-effort
-  structured requests, exact four-category pricing, latency, both personal-data
-  validators, safe failures, declared-charsets and typed metric round-trips.
-  Full suite: 105 tests.
+- Metering, provider, one-shot command and storage-run tests exercise no
+  retention, high-effort schema-constrained requests, OpenAI-gated token
+  accounting, latency, both personal-data validators, safe failures,
+  declared-charsets, atomic run/claim persistence and typed metric round-trips.
+  Full suite: 113 tests.
 
 ### Failures and limitations
 
 - The current process exposes no `OPENAI_API_KEY`. No live model extraction has
   been attempted and no token, cost or latency value has been invented. The
-  tested real provider path requires that credential, so Step 3 remains
-  explicitly blocked and this vertical slice is not complete.
+  tested `python -m pipeline.extract_once` path now exists and refuses to run
+  without that environment credential, so the live run remains the next action
+  and this vertical slice is not complete.
 
 ### Course correction
 
 The metering/privacy lane proposed obsolete GPT-5.6 Luna prices of $1.00 input,
-$0.10 cached input and $6.00 output per million tokens. The main agent caught
-this against OpenAI's official pricing and model documentation before any run,
-replaced it with the current short-context rates ($0.20 input, $0.02 cached
-input, $0.25 cache-write input and $1.20 output), and added a dated executable
-pricing file. No charge or persisted metric was affected.
+$0.10 cached input and $6.00 output per million tokens. The main agent corrected
+those values before any run but incorrectly retained a claimed $0.25 OpenAI
+cache-write rate. The external reviewer caught that OpenAI reports only
+`input_tokens_details.cached_tokens`; the nonexistent rate was removed and
+nonzero cache-write usage is rejected at the provider policy boundary. No charge
+or persisted metric was affected.
+
+The first adapter also passed the generated Pydantic schema with `strict: true`,
+although it contains constructs unsupported by OpenAI strict Structured Outputs.
+The external reviewer caught the expected HTTP 400 before a live call. The first
+run now uses `strict: false`; atomic Pydantic parsing and exact-span validation
+remain the authoritative rejection gate.
+
+Finally, the first privacy runner rejected the entire extraction for
+`possible_personal_name` and relied on a six-item German noun allowlist. The
+reviewer demonstrated false positives including the pilot's own place name and
+ordinary capitalized noun phrases. The runner now hard-fails only
+`personal_data_high_confidence`, records possible names as review-required,
+persists the affected claims atomically, and uses versioned organization and
+toponym allowlists. No live claim was discarded because the issue was caught
+before the key was wired.
 
 - 2026-08-07 — Project owner and Codex (TDD and codebase-design skills): froze `milestone-extraction-de-v1` before any extraction run, derived only from approved schema and policy rather than the dossiers. Verified: the prompt declares its immutable version and enforces untrusted-document handling, German-first values, exact spans, closed milestone types and natural-person exclusion. `d0d17d8`
 

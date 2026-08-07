@@ -21,6 +21,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `fix(privacy): route possible names and low confidence to review`
 - `fix(store): persist extraction runs and claims atomically`
 - `feat(pipeline): add local withheld-detail reconstruction`
+- `feat(pipeline): add one-shot metered extraction command`
 
 ### Goal
 
@@ -110,6 +111,13 @@ prices were rejected after the official pricing page showed they were stale.
   bannered `include_withheld_detail` local diagnostic that renders stored text
   and evidence for withheld claims so the smoke comparison can detect storage
   faults without changing any claim state.
+- Added `python -m pipeline.extract_once`, which reads `OPENAI_API_KEY` only from
+  the process environment, extracts an existing private stored artifact,
+  converts every validated proposal into a non-publishable review claim, commits
+  the run and claims atomically, and prints only safe run metrics and privacy
+  outcomes. Recorded the intentional omission of raw provider output from the
+  implemented extraction-run record as a privacy-minimizing departure from the
+  approved proposal shape.
 
 ### Verification
 

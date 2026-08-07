@@ -274,6 +274,14 @@ normalized value. The first extraction run records tokens, cost and duration per
 document. Prompt/model output is untrusted data and cannot alter configuration,
 validation rules or publication state.
 
+**Implemented departure, 2026-08-07:** `ExtractionRunRecord` intentionally omits
+the proposed `raw_output_private` field. The first-run path atomically validates
+the provider output, converts it to typed review-only claims, persists those
+claims with safe run metadata, and discards the raw response. This is a
+deliberate privacy-minimizing departure from the approved shape, not an
+accidental missing field. Reconsider only if a concrete diagnostic need cannot
+be met by the typed claims, safe rejection metadata and provider request ID.
+
 ## Deterministic publication and review states
 
 Validation produces stable codes rather than free-text-only outcomes:

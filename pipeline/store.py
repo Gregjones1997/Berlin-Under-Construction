@@ -83,6 +83,8 @@ class ProjectRecords(StrictModel):
 
 
 class ExtractionRunRecord(StrictModel):
+    """Safe run metadata; raw provider output is intentionally not persisted."""
+
     run_id: str = Field(min_length=1)
     project_id: str = Field(min_length=1)
     artifact_id: str = Field(pattern=r"^[0-9a-f]{64}$")

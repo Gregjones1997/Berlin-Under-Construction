@@ -20,6 +20,25 @@ This repository will document the product, data model, engineering decisions, ex
 
 The living build checklist is maintained in [`docs/project-checklist.md`](docs/project-checklist.md). The use of AI agents, manual decisions, failures and verification is recorded in [`docs/how-this-was-built.md`](docs/how-this-was-built.md).
 
+### One metered extraction
+
+After a private artifact and its retrieval record exist in the local SQLite
+store, provide `OPENAI_API_KEY` through the process environment (never a
+repository file) and run:
+
+```bash
+python -m pipeline.extract_once \
+  --database /private/path/pipeline.sqlite3 \
+  --project-id C-014 \
+  --source-id SOURCE_ID \
+  --artifact-id STORED_CONTENT_SHA256
+```
+
+The command refuses to run without the environment variable. It prints the run
+ID, input/cached/cache-write/output token fields, cost, latency and both privacy
+outcomes; it never prints the key, source text or raw model output. OpenAI has no
+cache-write usage field, so that provider-gated output category is always zero.
+
 ## Verified-vocabulary premise
 
 This project deliberately tests whether a verifiable extraction system can be

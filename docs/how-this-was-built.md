@@ -23,6 +23,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `feat(pipeline): add local withheld-detail reconstruction`
 - `feat(pipeline): add one-shot metered extraction command`
 - `fix(provider): retain status for unexpected error bodies`
+- `fix(privacy): version typed possible-name allowlists`
 
 ### Goal
 
@@ -121,6 +122,8 @@ prices were rejected after the official pricing page showed they were stale.
   approved proposal shape.
 - Hardened safe provider rejection so an unexpected non-object error body still
   retains its HTTP status without exposing body content.
+- Bumped the possible-name allowlist version because the configuration changed
+  from one noun list to distinct organization and toponym lists.
 
 ### Verification
 

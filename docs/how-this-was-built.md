@@ -2,7 +2,7 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
-- 2026-08-07 — Project owner, reviewer and Codex (domain-modeling skill): reconciled phase labels and ADR-002/003, accepted ADR-011 as amended, approved the claim/source/extraction design including quarantine and structural conflicts, and recorded the C-014 redirect finding outside the frozen dossier. Verified: owner rulings are explicit, three raw hashes reproduced, and dossiers remain unchanged.
+- 2026-08-07 — Project owner, reviewer and Codex (domain-modeling skill): reconciled phase labels and ADR-002/003, accepted ADR-011 as amended, approved the claim/source/extraction design including quarantine and structural conflicts, and recorded the C-014 redirect finding outside the frozen dossier. Verified: owner rulings are explicit, three raw hashes reproduced, and dossiers remain unchanged. `4b840d8`
 
 ## 2026-08-06 — Establish the Phase 2 data-core boundary
 

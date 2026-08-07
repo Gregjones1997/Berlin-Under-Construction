@@ -4,7 +4,30 @@ config_version = "retrieval-v1"
 [http]
 timeout_seconds = 30
 max_response_bytes = 52428800
+max_redirects = 5
 accept_encoding = "identity"
+
+# Retrieval refuses any URL, including any redirect hop, outside this list.
+#
+# This is a transport control, not an authority statement. Membership means
+# "the pipeline may fetch bytes from this host"; it says nothing about evidence
+# depth or source tier, and it must never be read as one. www.entwicklungsstadt.de
+# is journalism: a finding aid that points at primary documents and cannot carry
+# a figure (see the evidence-retrieval playbook, section 3). It is fetchable so
+# that dossier-cited hashes remain reproducible, nothing more.
+#
+# Extend from the source registry as new documented publishers are added.
+allowed_hosts = [
+  "www.berlin.de",
+  "berlin.de",
+  "mein.berlin.de",
+  "www.parlament-berlin.de",
+  "pardok.parlament-berlin.de",
+  "www.howoge.de",
+  "unternehmen.howoge.de",
+  "www.bew.berlin",
+  "www.entwicklungsstadt.de",
+]
 
 [http.user_agents]
 default = "BerlinUnderConstruction/0.1 (+https://github.com/Gregjones1997/Berlin-Under-Construction)"

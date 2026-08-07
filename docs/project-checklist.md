@@ -22,13 +22,14 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Extend the working milestone/extractor slice with financial,
-source, artifact, conflict and review-history schemas; add verified PDF evidence
-bounding boxes and the private atomic retention adapter; then run the first
-metered model extraction without creating golden values. The German-speaking
-review continues in parallel and remains the only source of populated golden
-values. Recheck C-010 from official sources on 2026-08-25 without inferring an
-outcome.
+**Next action:** Implement the financial slice and make `evidence_depths` plus
+`completion.financial_requires_depths` enforce its retrieval-completion gate;
+then extend source, artifact, conflict and review-history schemas, add verified
+PDF evidence bounding boxes and the private atomic retention adapter, and run
+the first metered model extraction without creating golden values. The
+German-speaking review continues in parallel and remains the only source of
+populated golden values. Recheck C-010 from official sources on 2026-08-25
+without inferring an outcome.
 
 ## Phase 0 — Minimal foundation
 

@@ -2,6 +2,76 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-07 — Close the first pipeline review findings
+
+**Status:** Complete
+
+**Commits:**
+
+- `<retrieval-hash>` — `fix(pipeline): constrain retrieval hosts and response size`
+- `<quarantine-hash>` — `feat(pipeline): make milestone quarantine structural`
+- `<artifact-hash>` — `fix(pipeline): block embedded files and honor declared charsets`
+
+### Goal
+
+Apply and independently verify the review findings against `d5d5806`, preserving
+the owner's rulings on the transport allowlist, structural milestone quarantine,
+HTML span length and timezone-aware creation dates.
+
+### Participants and scopes
+
+- Project owner: accepted four decisions incorporated into the proposal and
+  authorized applying the reviewer patch in three coherent work commits.
+- Main agent (Codex): remained the sole writer; inspected the proposal mapping,
+  applied it, separated it by purpose and independently verified the integrated
+  tree and live retrievals.
+- Reviewer (Claude): reviewed `309fade..9d909e0` read-only and supplied the
+  patch under `docs/research/proposals/2026-08-07-pipeline-review-fixes/`.
+
+### Work performed
+
+- Constrained the initial URL and every redirect hop to HTTPS and a configured
+  host allowlist, streamed response bodies under the configured byte cap,
+  wrapped upstream transport failures, required both User-Agent classes and
+  made fetch steps and artifact-transform selection drive retrieval behaviour.
+  The allowlist is transport permission only; it does not assign evidence depth
+  or source tier. A regression reads every frozen dossier URL to prevent drift
+  but never writes to the dossiers.
+- Replaced the milestone option bag with a discriminated active/quarantined
+  union. Eligible claims require verified state, accepted review and recorded
+  passing validations. Quarantined claims structurally require their reason,
+  human-assigned scope relation and review-decision ID, while extractor
+  proposals cannot reach any quarantine field. Claim interiors are immutable,
+  timestamps are timezone-aware and evidence-span length is explicit.
+- Removed embedded-file references and file specifications before PDF retention,
+  avoided creating an absent `/Info` dictionary, enforced the configured
+  transform rule, honored declared HTML charsets and routed undecodable artifacts
+  through the normal extraction-rejection channel. Reproduction registries are
+  strict, and diagnostic output labels pre-strip hashes private and distinguishes
+  them from stored-content hashes.
+
+### Verification
+
+- `.venv/bin/python -m pytest -q`: 78 tests passed after applying the proposal.
+- Live no-retention reproduction: all three C-014 historical response hashes
+  matched; the redirect hop was recorded; the PDF retained stored-content hash
+  `sha256:2d4a8292a2c7d309831dc19d74729ceb74aadcb433f08b55ea3ce1a48ced8a6a`.
+- Current retrieval configuration digest:
+  `sha256:b5b9c1dcdb0a5483be1e9176503539adfc4dd30108161aa33a460565b983e4c5`.
+  The older digest remains in the immutable `d5d5806` entry as the measurement
+  for that earlier configuration; it was not silently rewritten.
+- `git diff --check` passed. `docs/research/dossiers/` and `evaluation/` were
+  unchanged.
+
+### Failures and limitations
+
+- `evidence_depths` and `completion.financial_requires_depths` are validated but
+  still have no behavioural consumer. They remain forward-looking configuration
+  and must be wired into the financial slice before being called executable
+  policy.
+- Financial, conflict, source-persistence and review-history schemas, PDF
+  evidence bounding boxes and the private atomic retention adapter remain open.
+
 ## 2026-08-07 — Start the configured, retention-safe retrieval pipeline
 
 **Status:** Complete

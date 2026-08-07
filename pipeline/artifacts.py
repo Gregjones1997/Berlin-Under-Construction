@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import io
 from dataclasses import dataclass
+from typing import Mapping
 
 import pikepdf
 
@@ -144,7 +145,12 @@ def _verify_pdf(content: bytes) -> None:
         pdf.close()
 
 
-def prepare_artifact(response_bytes: bytes, declared_media_type: str) -> PreparedArtifact:
+def prepare_artifact(
+    response_bytes: bytes,
+    declared_media_type: str,
+    *,
+    transforms: Mapping[str, str] | None = None,
+) -> PreparedArtifact:
     """Return retention-safe bytes, or fail before callers can persist anything."""
 
     media_type = _media_type(declared_media_type)
@@ -153,6 +159,9 @@ def prepare_artifact(response_bytes: bytes, declared_media_type: str) -> Prepare
         raise MediaTypeMismatch("declared PDF does not have PDF magic")
     if media_type != "application/pdf" and looks_like_pdf:
         raise MediaTypeMismatch("PDF bytes cannot use an identity transform")
+
+    if transforms is not None and transforms.get(media_type) is None:
+        raise UnsupportedMediaType(f"no configured transform for media type {media_type!r}")
 
     pre_hash = _sha256(response_bytes)
     if media_type == "text/html":
@@ -171,6 +180,11 @@ def prepare_artifact(response_bytes: bytes, declared_media_type: str) -> Prepare
         checks = ("reparse_succeeded", "forbidden_metadata_absent", "byte_idempotent")
     else:
         raise UnsupportedMediaType(f"no artifact transform for media type {media_type!r}")
+
+    if transforms is not None and transforms[media_type] != rule:
+        raise TransformVerificationFailed(
+            f"configured transform {transforms[media_type]!r} does not match applied rule {rule!r}"
+        )
 
     stored_hash = _sha256(stored)
     if rule == IDENTITY_RULE_VERSION and stored_hash != pre_hash:

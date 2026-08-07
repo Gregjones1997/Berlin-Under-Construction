@@ -41,6 +41,11 @@ Organizations are relevant to understanding a project, but true facts placed nex
 
 The v0 product may name organizations only in documented roles such as commissioner, financer or contractor for a named lot. It will not name natural persons. Delay and cost variance attach to the project unless a reliable source explicitly establishes causation. Published projects and named organizations will have a correction path.
 
+Organizations, bodies and collective groups may be named and referred to.
+Natural persons may not, including through a role descriptor that identifies one
+individual at a point in time. A singular office plus a date is a name. Attribute
+statements to the document, not to the person or office that signed it.
+
 ### Consequences
 
 - Project pages remain focused on documented institutional responsibility.
@@ -51,6 +56,10 @@ The v0 product may name organizations only in documented roles such as commissio
 ### Reconsider when
 
 The project has a documented public-interest reason, authoritative policy and legal review supporting a broader naming scope.
+
+**Amended 2026-08-07** — added the role-descriptor test for singular offices and
+the document-attribution rule. See `docs/how-this-was-built.md`,
+the 2026-08-07 phase-label and ADR reconciliation entry.
 
 ## ADR-003 — Use risk-specific quality gates instead of one accuracy score
 
@@ -74,6 +83,14 @@ Evaluation will separate precision-critical measures from recall-oriented covera
 - Entity-match and contradiction recall: measured separately rather than hidden inside a blended score.
 
 These are release hypotheses, not achieved results, and the pilot set is small enough (three projects) that 99% precision means close to zero tolerated misses rather than a statistically meaningful rate. The publication gate is what a claim below threshold does — it routes to human review instead of publishing — not whether the measured number clears 99% on a given day. The first release publishes its actual measured numbers, including below-target ones, rather than withholding launch until the target is hit. The human-review rate will be reported rather than optimized away. Thresholds remain provisional until the manually verified pilot set exists.
+
+The organization-to-role precision target is explicitly **deferred**, not
+omitted: the role-vocabulary ADR is still pending, the three pilot dossiers
+assign no organization roles, and therefore the current set contains no valid
+role-labelled denominator. The gate activates only after that ADR is accepted
+and the human-authored golden set contains eligible organization-role values.
+Until then, reports must show it as `deferred — no eligible labelled data`, not
+as passed, failed or absent from a five-of-six summary.
 
 ### Consequences
 
@@ -428,7 +445,7 @@ contractor.
 
 **Date:** 6 August 2026
 
-**Status:** Proposed. Not yet ruled.
+**Status:** Accepted 2026-08-07 by the project owner, as amended by the reviewer.
 
 **Scope:** Private source-artifact retention and provenance
 
@@ -444,20 +461,78 @@ Hazardous: the same file's `/Author` field is a named official's email address.
 Rule 3 forbids naming a natural person, with no exceptions. Nobody reading the
 document text would know the name is there.
 
-**Decision (proposed).**
+**Decision.**
 
 1. Retained artifacts in `data/artifacts/` are written **after** a metadata
    strip that removes at minimum `/Author`, `/Creator`, `/Producer` and any
    XMP creator fields.
+
 2. Timestamps (`/CreationDate`, `/ModDate`) are **extracted and stored as
    structured provenance before the strip**, because they resolve publication
    dates. They are provenance data, not authority statements: a creation
    timestamp corroborates a date, it does not publish one.
-3. The stored content hash is computed over **stripped** content, so that a
-   change to the strip rule does not silently invalidate every stored hash.
-   Record the strip-rule version alongside the hash.
-4. This applies before the first bulk retrieval run, not after.
 
-**Open question for the owner.** Whether the pre-strip hash should also be
-retained for chain-of-custody. The reviewer's recommendation is yes, stored
-separately and never displayed.
+3. **The strip is performed by a PDF object-graph rewriter, not by pattern
+   replacement over raw bytes.** In the 2026-08-07 verification pass, the
+   `/Author` field of `h19-2449-v.pdf` was found inside a compressed object
+   stream, invisible to any byte-level scan of the response. A regex strip would
+   have reported success and removed nothing. Use a library that parses and
+   rewrites the document structure, such as qpdf or pikepdf.
+
+4. **The strip is verified, not assumed.** After stripping, the output is
+   re-parsed and retention **fails** if `/Author`, `/Creator`, `/Producer` or an
+   XMP creator field is still reachable in the rewritten document. A failed
+   verification blocks retention of that artifact; it does not warn and proceed.
+
+5. **This decision covers document metadata only.** Personal data appearing in
+   visible body text is handled by the evidence-span validators
+   (`personal_data_high_confidence`, `possible_personal_name`). ADR-011 must not
+   be read as having removed all personal data from an artifact.
+
+6. The stored content hash is computed over **stripped** content, so that a
+   change to the strip rule does not silently invalidate every stored hash.
+
+7. **The strip-rule version is recorded per artifact**, and the strip must be
+   idempotent: stripping already-stripped bytes produces identical bytes.
+
+8. This applies before the first bulk retrieval run, not after.
+
+### Hash retention and roles
+
+Both hashes are retained and are not interchangeable.
+
+| | `stored_content_hash` (post-strip) | `pre_transform_response_hash` (pre-strip) |
+| --- | --- | --- |
+| Artifact and source identity key | **Yes — the only one** | Never |
+| Deduplicates sources | **Yes** | Never |
+| Displayed in the public source registry | **Yes** | **Never** |
+| Target of `ExtractionRun.artifact_hash` | **Yes** | Never |
+| Purpose | Content addressing | Chain of custody |
+
+The post-strip hash is the identity key because metadata-only regeneration must
+not create a false new source version. The pre-strip hash is never displayed:
+the raw bytes are deliberately not retained and therefore cannot be reproduced
+by a public reader.
+
+For HTML and other media types with no metadata to strip, the transform is the
+identity transform with a recorded rule version. Both hashes exist and are equal.
+
+### Dossier registries
+
+The frozen dossier registries record SHA-256 over raw response bytes: historical
+pre-strip verification hashes. Three C-014 values were independently reproduced
+on 2026-08-07: `sha256:36d47e13…70f4f5`, `sha256:6f341678…cdeab5` and
+`sha256:a554a9df…49fa60`.
+
+After this ADR is implemented, a PDF's `stored_content_hash` will not equal its
+dossier registry hash. This is expected. Dossier values must not be updated,
+recomputed or reconciled; where both kinds are shown, label them `raw response
+(pre-strip)` and `stored content (post-strip)`.
+
+### Consequences
+
+- No retrieval job may write to `data/artifacts/` until the object-aware strip
+  and its post-strip verification both exist and are tested.
+- Strip verification is a deterministic test target under `AGENTS.md` rule 4.
+- The two-hash model must exist before the first bulk run because a pre-strip
+  hash cannot be backfilled after raw bytes are discarded.

@@ -1,7 +1,7 @@
 # Candidate ledger
 
 **Status:** Frozen candidate-record specification; three pilots selected and no scores assigned
-**Phase:** Phase 0 — research and foundation
+**Phase:** Phase 1 — research foundation
 **Last updated:** 2026-08-06
 
 The rows below are discovery leads assembled from prior multi-agent research

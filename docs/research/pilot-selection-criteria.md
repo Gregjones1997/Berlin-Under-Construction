@@ -1,8 +1,8 @@
 # Pilot-selection criteria
 
-**Status:** Research policy proposed for project-owner review
-**Phase:** Phase 0 — research and foundation
-**Last updated:** 2026-08-05
+**Status:** Accepted research policy; difficulty rule amended by the project owner 2026-08-06
+**Phase:** Phase 1 — research foundation
+**Last updated:** 2026-08-07
 
 This document freezes the gates and provisional scoring model for choosing the
 three first-release pilot projects. It does not select any project. Candidate
@@ -19,6 +19,12 @@ still being useful to a resident trying to understand a real construction story.
 The selection unit is a **project story**, not an isolated tender, building
 permit, contract lot or news event. A candidate may contain several linked lots
 or phases, but the boundary must be written down before scoring.
+
+**Research difficulty is recorded after an evidence pass, never estimated from
+the identity source.** Discovery-stage difficulty ratings are provisional and
+must not drive portfolio selection as if they were observed facts. Identity
+pages routinely conceal parliamentary PDFs, access barriers, dead links and
+cross-source contradictions; C-010 and C-014 demonstrated this directly.
 
 ## Hard eligibility gates
 
@@ -109,6 +115,10 @@ with a retained “research difficulty” note. The ledger must keep hard-to-fin
 projects, failed search paths, dead links and unresolved gaps. At least one
 shortlisted project should test fragmented or difficult evidence, subject to
 the final evidence gate and available review time.
+
+The retained research-difficulty note is finalized only after the evidence pass.
+Any rating recorded during discovery must be labelled provisional and replaced
+or confirmed from the actual retrieval trail before this control is assessed.
 
 ### Famous-project bias
 

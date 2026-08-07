@@ -1,7 +1,7 @@
 # Candidate ledger
 
 **Status:** Named discovery longlist, owner-confirmed shortlist and three selected pilots; no scores assigned
-**Phase:** Phase 0 — research and foundation
+**Phase:** Phase 1 — research foundation
 **Last updated:** 2026-08-06
 
 The rows below are discovery leads assembled from prior multi-agent research
@@ -70,9 +70,11 @@ likely source families, not unverified project roles.
 | C-028 | Lichterfelde Süd | Brownfield near S-Bahnhof Lichterfelde Süd; Steglitz-Zehlendorf (place read, exact perimeter not found) | Planned housing, school/care, parks and streets; preparatory works began (read) | [District preparatory-works update](https://www.berlin.de/ba-steglitz-zehlendorf/aktuelles/pressemitteilungen/2024/pressemitteilung.1490757.php) | **Not found:** `ungefähr anderthalb Jahre` applies only to preparatory works. | B-Plan, district/Senate planning and public-infrastructure records; not checked | High; **geographic gate not yet passed**; locate the official perimeter before any other research. |
 | C-029 | Ehemaliger Güterbahnhof Köpenick; alias Neues Stadtquartier ehemaliger Güterbahnhof Köpenick | Official mapped development boundary in Treptow-Köpenick; textual endpoints not extracted (read) | Brownfield redevelopment for housing, commerce and public facilities (read) | [Senate project page](https://www.berlin.de/sen/stadtentwicklung/neue-stadtquartiere/ehemaliger-gueterbahnhof-koepenick/) | **Found, relative only:** `bis zur Fertigstellung in ca. 15 Jahren.` Milestone: `Fertigstellung`; no calendar date is inferred. | Development-measure, B-Plan and public-infrastructure procurement; not checked | High; mapped boundary matched; obtain a dated implementation plan and publication-as-of context. |
 
-## Four-project shortlist for project-owner review
+## Selected pilot portfolio and reserve — shortlist outcome
 
-This shortlist was produced without scores. It uses the cheapest hard filter:
+This four-project candidate set was produced without scores and has since been
+resolved: C-014, C-010 and C-019 are the selected pilots; C-003 is the reserve.
+It used the cheapest hard filter:
 an opened official source, a bounded project rather than a tender or closure,
 and project-level expected-end wording. The project owner must confirm identity,
 boundary and the exact German wording before any score is assigned.
@@ -82,7 +84,7 @@ boundary and the exact German wording before any score is assigned.
 | C-003 | Verlängerung der U3 zum Mexikoplatz | `Ende 2030` / `Fertigstellung` / `Inbetriebnahme der 800 Meter langen Strecke und des unterirdischen Bahnhofs Mexikoplatz.` | Clear route, active works timeline and typed commissioning milestone | Confirm the exact approval/construction boundary and that the current page remains authoritative. |
 | C-010 | Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof | `die bauliche Fertigstellung am Ostbahnhof und die Übergabe an den Bezirk zum 31. August 2026 geplant.` | Exact day plus two distinct milestones; equipment and school opening remain separable | The date is imminent and must be rechecked after 31 August; finance/equipment is a separate story. |
 | C-019 | Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte | `Die Inbetriebnahme ist bis Ende 2028 geplant.` | HKW site anchor, source-enumerated plant boundary and typed commissioning milestone in a current source | Keep the associated pump station outside the declared boundary as a linked measure sharing a commissioning statement; the prospective river-water heat pump is also outside. |
-| C-014 | Europaplatz Süd — Umgestaltung | `Fertigstellung: 2026` | Official project page, precise place and a resident-facing public-space consequence | Year-only date is weaker than the other three; adjacent S21 and high-rise works must remain separate. |
+| C-014 | Europaplatz Süd — Umgestaltung | Five completion statements, from `… Umgestaltung … bis Ende 2025` through three differently qualified 2026 statements | Multi-family official evidence, a complete primary Baubeginn chain and a resident-facing public-space consequence | The current-page date remains year-only, but the evidence pass recovered four additional completion statements; adjacent S21 and high-rise works must remain separate. |
 
 No development-lane candidate made this four because the date evidence was
 phase-only, stale, relative, untyped or absent. That is a result of the frozen

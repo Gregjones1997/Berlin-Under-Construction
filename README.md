@@ -2,7 +2,7 @@
 
 > An independent, source-backed map that helps people understand what is being built across Berlin, who is responsible, what was promised, what changed, and what the public can reliably know.
 
-**Project status:** Concept and project-definition stage
+**Project status:** Phase 2 — trustworthy data core; pilot dossier review in progress
 
 **Geographic focus:** Berlin, Germany
 
@@ -36,7 +36,10 @@ comprehension the project owner does not have.
 
 ## Current status
 
-This project is not yet a finished application. The current work is focused on turning the product blueprint into a defensible technical plan and a small, manually verified foundation.
+This project is not yet a finished application. Three pilot dossiers are
+evidence-complete and frozen while German-speaking review prepares the
+human-authored golden set. Current implementation work is the Phase 2 typed data
+core and review tooling.
 
 The first public release will focus on a narrow, working vertical slice:
 
@@ -125,21 +128,21 @@ The longer-term experience may include:
 
 These are part of the preserved product vision, not claims about the current state of the application.
 
-## Initial technical direction
+## Decided v0 technical direction
 
-The architecture is intentionally not fully locked. Technical choices will be made through small prototypes and recorded in the decision log.
+The first-release stack is fixed in ADR-005. Prototypes may refine interfaces
+inside these boundaries, but do not reopen the stack before 1 September 2026:
 
-Likely system areas include:
-
-- **Web application:** TypeScript-based web application with responsive public pages.
-- **Data layer:** Relational project and claim data with geospatial support.
+- **Web application:** Next.js and TypeScript in `/web`, deployed on Vercel.
+- **Data layer:** Supabase Postgres with PostGIS.
 - **Source archive:** Source metadata, retrieval dates and content hashes, with private artifact retention only where appropriate and lawful.
-- **Document intelligence:** A typed pipeline for classification, extraction, validation, entity resolution and change detection.
+- **Document intelligence:** A Python pipeline in `/pipeline`, shaped as
+  deployable idempotent jobs but invoked locally until v0 ships.
 - **Review workflows:** Human review for uncertain claims, contradictions, corrections and resident submissions.
-- **Geospatial layer:** 2D map rendering, progressive geometry loading and an experimental 3D presentation layer.
-- **Evaluation:** Golden datasets, regression tests, citation checks, entity-matching metrics and cost/latency tracking.
-
-Potential technologies will be compared through measured prototypes. The project may evaluate combinations such as Next.js and TypeScript, PostgreSQL/PostGIS, Python-based document processing, MapLibre or deck.gl, and Three.js or React Three Fiber. These are candidates, not final commitments.
+- **Geospatial layer:** MapLibre GL JS for the public 2D map, with Berlin
+  EPSG:25833 data reprojected for web display. Experimental 3D follows v0.
+- **Evaluation:** pytest against a committed, human-authored JSON golden set,
+  with citation, routing, cost and latency checks.
 
 ## Data and trust model
 

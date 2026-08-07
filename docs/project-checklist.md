@@ -18,15 +18,14 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Phase 0 — Minimal foundation
+**Current phase:** Phase 2 — Trustworthy data core
 
 **Current status:** IN PROGRESS
 
-**Next action:** Project owner reviews the integrated C-014, C-010 and C-019
-evidence boundaries and unresolved values, decides proposed ADR-011 on PDF
-metadata retention, then begins the first human-authored golden truth set.
-Recheck C-010 from official sources on 2026-08-25; record whether its expected
-31 August milestone was met, revised or not yet reported without inferring an
+**Next action:** Implement the approved Python schemas and configured retrieval
+job, including ADR-011's verified object-aware transform. The German-speaking
+review continues in parallel and remains the only source of populated golden
+values. Recheck C-010 from official sources on 2026-08-25 without inferring an
 outcome.
 
 ## Phase 0 — Minimal foundation
@@ -78,10 +77,10 @@ outcome.
 - [ ] Define financial-measure types.
 - [ ] Create a controlled glossary of consequential German terms and fixed English display mappings.
 - [ ] Define evidence labels and publication thresholds.
-- [ ] Manually research project one.
-- [ ] Manually research projects two and three.
-- [ ] Capture exact German supporting passages for material claims.
-- [ ] Record contradictions, ambiguity and missing information.
+- [x] Manually research project one. Evidence: committed C-014 dossier.
+- [x] Manually research projects two and three. Evidence: committed C-010 and C-019 dossiers.
+- [x] Capture exact German supporting passages for material claims. Evidence: three frozen dossiers at `phase-1-research-complete`.
+- [x] Record contradictions, ambiguity and missing information. Evidence: quarantine, open-question and access-barrier sections in each dossier.
 - [ ] Create the first golden truth set.
 
 **Phase 1 exit evidence:** Three manually verified dossiers, a source matrix, a controlled glossary and expected extraction outputs exist.
@@ -123,7 +122,7 @@ outcome.
 ### Proposed v0 gates
 
 - [ ] Financial-measure type precision reaches at least 99% on the defined pilot set.
-- [ ] Organization-to-role precision reaches at least 99% on the defined pilot set.
+- [ ] Organization-to-role precision target is deferred until the role-vocabulary ADR is accepted and eligible human-labelled data exists; report it explicitly as deferred meanwhile.
 - [ ] Citation correctness reaches at least 99% on the defined pilot set.
 - [ ] Unsupported published claims remain at 0% through deterministic enforcement.
 - [ ] Recall and review-rate results are published honestly, even when below target.

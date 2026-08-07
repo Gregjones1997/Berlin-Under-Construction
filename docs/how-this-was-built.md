@@ -8,7 +8,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Commits:**
 
-- `<storage-hash>` — `feat(pipeline): add SQLite claim and artifact store`
+- `571e7a6` — `feat(pipeline): add SQLite claim and artifact store`
 - `<reconstruction-hash>` — `feat(pipeline): reconstruct a pilot dossier fragment from stored data`
 - `<metering-hash>` — `feat(pipeline): meter the first extraction run`
 - `<process-hash>` — `docs(process): record vertical-slice evidence and next action`

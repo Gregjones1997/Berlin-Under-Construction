@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_status": "awaiting-human-review",
+  "glossary": {
+    "version": null,
+    "verification_status": "not-yet-human-verified"
+  },
+  "claims": [
+    {"claim_id": "pending-human-review-001", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-002", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-003", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-004", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-005", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-006", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-007", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-008", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-009", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-010", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-011", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-012", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-013", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-014", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-015", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-016", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-017", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-018", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-019", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-020", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-021", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-022", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-023", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-024", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-025", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-026", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-027", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-028", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-029", "placeholder": true, "review_status": "pending-human-review", "expected": {}},
+    {"claim_id": "pending-human-review-030", "placeholder": true, "review_status": "pending-human-review", "expected": {}}
+  ]
+}

@@ -4,6 +4,73 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 - 2026-08-07 — Project owner, reviewer and Codex (domain-modeling skill): reconciled phase labels and ADR-002/003, accepted ADR-011 as amended, approved the claim/source/extraction design including quarantine and structural conflicts, and recorded the C-014 redirect finding outside the frozen dossier. Verified: owner rulings are explicit, three raw hashes reproduced, and dossiers remain unchanged. `4b840d8`
 
+## 2026-08-07 — Enforce build-log reachability and empty golden-set schema
+
+**Status:** Complete
+
+### Goal
+
+Turn the twice-failed build-log hash procedure into an automated invariant and
+prepare the golden-set engineering boundary without creating golden values.
+
+### Participants and scopes
+
+- Project owner: approved the empty golden-set engineering boundary and retained
+  authority over commits and all future populated values.
+- Main agent (Codex, TDD skill): remained the sole writer, implemented the CLI,
+  schema, tests and CI wiring, and independently verified the integrated result.
+- Reviewer (Claude): identified the amended-object test gap, dataset-status
+  coupling gap and commit/content-hash ambiguity; independently exercised the
+  proposed fixes before handoff.
+- Subagents: none.
+
+### Work performed
+
+- Corrected the orphaned pilot-selection hash to reachable commit `9acacfa` and
+  added a CLI plus full-history CI check for every recorded commit hash.
+- Added a regression whose pre-amend object still resolves under `git cat-file`
+  but is correctly rejected because it is absent from `git log --all`.
+- Reserved the `sha256:` prefix for content hashes so the Git-hash scanner has a
+  mechanical boundary.
+- Added 30 empty human-review slots, a JSON Schema and pytest harness. Dataset
+  status is coupled to claim review status, populated values require permitted
+  provenance, and `model-assisted` is unconditionally rejected.
+
+### Decisions
+
+- CI checks a full clone (`fetch-depth: 0`); object existence is never treated
+  as reachability.
+- The 30 IDs are capacity placeholders, not claim selection. Their `expected`
+  objects remain empty until the German-speaking review returns.
+
+### Verification
+
+- Main-agent run: 18 tests passed, including the real orphan precondition,
+  dataset-state transitions and ten adversarial `model-assisted` variants.
+- Main-agent run: all 28 distinct recorded commit hashes are reachable.
+- Reviewer independently verified 28/28 reachable hashes, unchanged dossiers,
+  an empty golden set, rejection across ten adversarial `model-assisted`
+  variants, and three byte-for-byte C-014 raw-response hashes.
+- Main agent independently reproduced those three hashes as
+  `sha256:36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5`,
+  `sha256:6f341678a9ec8240f29a8d6f93091c0cadd1f5e4cc8b90acc54c3805a2cdeab5`
+  and `sha256:a554a9df39ccba3b641e48264d3442a755178e60f3f7dea7c6de2398bb49fa60`
+  without retaining the response bodies.
+- The dossier directory is unchanged from `phase-1-research-complete`.
+
+### Course correction
+
+**Course correction** — the build log again recorded an amended commit's
+orphaned pre-amend hash after the first occurrence had already produced a
+written `git log` rule. The second failure proved prose was not an effective
+control. CI now enforces the rule, and the regression preserves the precise
+reason `git cat-file` is insufficient. Cost: one blocking cleanup item and the
+implementation of the missing automated guard.
+
+### Failures and limitations
+
+- No golden value exists; the harness validates structure and authority only.
+
 ## 2026-08-06 — Establish the Phase 2 data-core boundary
 
 **Status:** Complete
@@ -222,7 +289,7 @@ Record the first verified dossier evidence for C-014, including the superseded c
 
 **Status:** Complete
 
-**Commit:** `f9df4ed` — `docs(process): close pilot-selection checklist items and update handoff`
+**Commit:** `9acacfa` — `docs(process): close pilot-selection checklist items and update handoff`
 
 ### Goal
 

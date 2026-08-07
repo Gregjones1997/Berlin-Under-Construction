@@ -33,6 +33,10 @@ exception to the requirement to log work at commit time:
    this check: an orphaned pre-amend object can still resolve under `cat-file`
    even though a clone cannot reach it from history.
 
+Content hashes written in the build log use a `sha256:` prefix inside the
+backticks, for example `sha256:<64 lowercase hexadecimal characters>`. This
+distinguishes artifact hashes from abbreviated Git commit hashes mechanically.
+
 The entry itself is never deferred to the follow-up commit, and no hash remains
 omitted past the session that created the work. The hash-recording commit exists
 only to complete the entry for the immediately preceding work commit.

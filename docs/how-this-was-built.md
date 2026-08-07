@@ -12,6 +12,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `e52fb34` — `feat(pipeline): reconstruct a pilot dossier fragment from stored data`
 - `06f8e27` — `feat(pipeline): add fail-closed metered extraction runner`
 - `96ce545` — `docs(process): record vertical-slice evidence and next action`
+- `<delegation-note-hash>` — `docs(process): clarify delegation model fallback`
 
 ### Goal
 
@@ -45,6 +46,10 @@ Delegation began only after the extraction prompt was frozen. Three read-only
 lanes examined independent integration risks in parallel: storage transactions,
 reconstruction semantics, and live metering/privacy. No lane read the frozen
 dossiers or `evaluation/`, and no lane wrote to the repository.
+
+The orchestrator did not expose a direct `gpt-5.6-luna` override for these
+subagents. As required by the owner, the main agent used the available inherited
+GPT-5.6 model path at high effort and did not describe that fallback as Luna.
 
 The main agent accepted a concrete SQLite module rather than a hypothetical
 generic repository, atomic immutable writes, post-transform hash identity,

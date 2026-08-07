@@ -2,8 +2,8 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
-- 2026-08-07 — Project owner and Codex: changed hash recording from one ceremony commit per work commit to one same-session `docs(build-log)` commit covering all session entries, making hash ceremony distinguishable from substantive process changes. Verified: `AGENTS.md` and the conventions document define the same procedure.
-- 2026-08-07 — Project owner and Codex: accepted ADR-013, separating Phase 2 reconstruction fidelity from Phase 4 publication readiness, and aligned both phase criteria. Verified: decision and checklist state the same boundary.
+- 2026-08-07 — Project owner and Codex: changed hash recording from one ceremony commit per work commit to one same-session `docs(build-log)` commit covering all session entries, making hash ceremony distinguishable from substantive process changes. Verified: `AGENTS.md` and the conventions document define the same procedure. `3e20fe9`
+- 2026-08-07 — Project owner and Codex: accepted ADR-013, separating Phase 2 reconstruction fidelity from Phase 4 publication readiness, and aligned both phase criteria. Verified: decision and checklist state the same boundary. `3ab72ca`
 
 ## 2026-08-07 — Persist and reconstruct the first milestone slice
 
@@ -17,14 +17,14 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `96ce545` — `docs(process): record vertical-slice evidence and next action`
 - `1b20caa` — `docs(process): clarify delegation model fallback`
 - `1612a88` — `fix(pipeline): honor declared charset in metered input`
-- `fix(provider): make first OpenAI response diagnosable`
-- `fix(privacy): route possible names and low confidence to review`
-- `fix(store): persist extraction runs and claims atomically`
-- `feat(pipeline): add local withheld-detail reconstruction`
-- `feat(pipeline): add one-shot metered extraction command`
-- `fix(provider): retain status for unexpected error bodies`
-- `fix(privacy): version typed possible-name allowlists`
-- `docs(process): record corrected vertical-slice handoff`
+- `b4d3d0b` — `fix(provider): make first OpenAI response diagnosable`
+- `a6db7f3` — `fix(privacy): route possible names and low confidence to review`
+- `fdb51ac` — `fix(store): persist extraction runs and claims atomically`
+- `a5fb4b4` — `feat(pipeline): add local withheld-detail reconstruction`
+- `68b385f` — `feat(pipeline): add one-shot metered extraction command`
+- `db85fbd` — `fix(provider): retain status for unexpected error bodies`
+- `f021dab` — `fix(privacy): version typed possible-name allowlists`
+- `27113ea` — `docs(process): record corrected vertical-slice handoff`
 
 ### Goal
 

@@ -4,7 +4,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 - 2026-08-07 — Project owner and Codex (TDD and codebase-design skills): froze `milestone-extraction-de-v1` before any extraction run, derived only from approved schema and policy rather than the dossiers. Verified: the prompt declares its immutable version and enforces untrusted-document handling, German-first values, exact spans, closed milestone types and natural-person exclusion. `d0d17d8`
 
-- 2026-08-07 — Project owner and Codex: accepted ADR-012, using SQLite for private local pipeline persistence while retaining Supabase/PostGIS for the web application. Verified: migration consequences preserve strict models, stable identities, German spans and ADR-011 hash roles. `<hash>`
+- 2026-08-07 — Project owner and Codex: accepted ADR-012, using SQLite for private local pipeline persistence while retaining Supabase/PostGIS for the web application. Verified: migration consequences preserve strict models, stable identities, German spans and ADR-011 hash roles. `3a1bf7f`
 
 ## 2026-08-07 — Gate financial completion on evidence-depth coverage
 

@@ -2,6 +2,8 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-07 — Project owner and Codex (TDD and codebase-design skills): froze `milestone-extraction-de-v1` before any extraction run, derived only from approved schema and policy rather than the dossiers. Verified: the prompt declares its immutable version and enforces untrusted-document handling, German-first values, exact spans, closed milestone types and natural-person exclusion. `<hash>`
+
 ## 2026-08-07 — Gate financial completion on evidence-depth coverage
 
 **Status:** Complete

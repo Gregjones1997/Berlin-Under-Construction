@@ -130,8 +130,9 @@ These are part of the preserved product vision, not claims about the current sta
 
 ## Decided v0 technical direction
 
-The first-release stack is fixed in ADR-005. Prototypes may refine interfaces
-inside these boundaries, but do not reopen the stack before 1 September 2026:
+The current first-release stack is recorded in ADR-005. It is the working
+default, not an irrevocable constraint: the project owner may reopen or change
+any choice. Prototypes may refine interfaces inside these boundaries:
 
 - **Web application:** Next.js and TypeScript in `/web`, deployed on Vercel.
 - **Data layer:** Supabase Postgres with PostGIS.

@@ -215,8 +215,11 @@ pointing to the log entry, rather than silently rewriting it with no trace.
 
 ## Stack
 
-Decided, not open for re-litigation before 1 September. See
-`docs/decision-log.md`.
+This is the current v0 stack, not an irrevocable constraint. The project owner
+may reopen or change any stack decision at any time. Agents should treat the
+recorded choices as the working default and should not repeatedly reopen them
+without an owner request or material new evidence. Record any changed decision
+and its migration consequences in `docs/decision-log.md`.
 
 - **Web** — Next.js + TypeScript, deployed on Vercel. `/web`
 - **Database** — Supabase Postgres with PostGIS. No auth in v0; there are no user

@@ -536,3 +536,77 @@ recomputed or reconciled; where both kinds are shown, label them `raw response
 - Strip verification is a deterministic test target under `AGENTS.md` rule 4.
 - The two-hash model must exist before the first bulk run because a pre-strip
   hash cannot be backfilled after raw bytes are discarded.
+
+---
+
+## ADR-012 — Use SQLite for the local pipeline store
+
+**Date:** 7 August 2026
+
+**Status:** Accepted 2026-08-07 by the project owner
+
+**Scope:** Local pipeline persistence before v0 ships
+
+### Context
+
+The pipeline is invoked locally until v0 ships, and the current Phase 2 exit
+condition is to reconstruct a dossier from stored claims and evidence. Nothing
+required for that reconstruction depends on PostGIS. Standing up Supabase before
+the local pipeline can persist one claim would add an operations surface before
+the thing it hosts exists.
+
+ADR-005 remains unchanged: Supabase Postgres with PostGIS is the web
+application's v0 database. This decision concerns the local Python pipeline
+store only.
+
+### Decision
+
+Use SQLite as the local pipeline store for retrieval records, verified artifact
+records, extraction runs and milestone claims. The store is private local state,
+not a committed dataset and not a public artifact host.
+
+Pydantic domain schemas remain the trust boundary. SQLite is an adapter behind
+a small storage interface; database rows do not become a second, looser domain
+model. Writes that form one retrieval/extraction unit are transactional, stable
+IDs and schema versions are preserved, and corrections append rather than
+silently overwriting history.
+
+The dossier-fragment reconstruction test consumes stored records through that
+interface. It does not depend on SQLite-specific queries, so the same behavior
+can be exercised against a future Postgres adapter.
+
+### Consequences
+
+- Phase 2 can prove persistence and reconstruction without deployment, accounts,
+  credentials or a network dependency.
+- SQLite database files are local generated state and must be gitignored. Source
+  artifacts remain separately private under `data/artifacts/` and continue to
+  pass ADR-011 before any retention.
+- SQLite provides no PostGIS capability and is not the web application's
+  database. Geography remains in the Supabase/PostGIS path established by
+  ADR-005.
+- The adapter must preserve the two hash roles from ADR-011. Stored-content hash
+  is identity and the extraction foreign key; the pre-transform response hash is
+  private chain-of-custody data only.
+
+### Migration consequences
+
+- The future Postgres migration exports versioned records through the storage
+  interface rather than copying SQLite implementation details or row IDs.
+- Stable application IDs, UTC timestamps, schema versions, prompt/model versions,
+  exact German evidence spans and both explicitly labelled hash roles must
+  survive byte-for-byte or value-for-value as applicable.
+- SQLite-specific representations such as JSON text, decimal text and boolean
+  integers are decoded back into strict domain models before import. PostgreSQL
+  types are chosen from those models, not inferred from SQLite column affinity.
+- Content-addressed artifact identity is revalidated during migration. The raw
+  response is not reconstructed, and the private pre-transform hash never
+  becomes a public key or deduplication field.
+- The storage/reconstruction contract tests must run unchanged against the
+  Postgres adapter before cutover. Dual writes are not introduced unless a later
+  decision establishes an operational need.
+
+### Reconsider when
+
+The map needs shared geographic persistence, the local-only execution decision
+changes, or a measured SQLite limitation blocks deterministic reconstruction.

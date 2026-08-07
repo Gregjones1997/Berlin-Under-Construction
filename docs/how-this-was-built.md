@@ -8,7 +8,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Commits:**
 
-- `<retrieval-hash>` — `fix(pipeline): constrain retrieval hosts and response size`
+- `e9c66b4` — `fix(pipeline): constrain retrieval hosts and response size`
 - `<quarantine-hash>` — `feat(pipeline): make milestone quarantine structural`
 - `<artifact-hash>` — `fix(pipeline): block embedded files and honor declared charsets`
 

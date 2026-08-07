@@ -12,7 +12,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `e52fb34` — `feat(pipeline): reconstruct a pilot dossier fragment from stored data`
 - `06f8e27` — `feat(pipeline): add fail-closed metered extraction runner`
 - `96ce545` — `docs(process): record vertical-slice evidence and next action`
-- `<delegation-note-hash>` — `docs(process): clarify delegation model fallback`
+- `1b20caa` — `docs(process): clarify delegation model fallback`
 
 ### Goal
 

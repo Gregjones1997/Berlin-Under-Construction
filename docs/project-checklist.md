@@ -121,7 +121,10 @@ outcome.
 - [ ] Add a minimal review state and audit history.
 - [ ] Reconstruct a complete pilot dossier from stored data.
 
-**Phase 2 exit evidence:** A dossier can be regenerated entirely from versioned claims and evidence.
+**Phase 2 exit evidence:** A pilot dossier reconstructs from stored data alone,
+with every claim's real state faithfully rendered, including withheld claims and
+the reason each was withheld. The local-only withheld-detail mode verifies stored
+content without changing publication eligibility.
 
 ## Phase 3 — Bounded AI pipeline and evaluation
 
@@ -170,8 +173,13 @@ outcome.
 - [ ] Verify public-site legal, privacy and source-use requirements using authoritative guidance.
 - [ ] Deploy the first public release.
 - [ ] Record a short demo walkthrough.
+- [ ] Demonstrate that accepted, verified claims render publicly while withheld
+  claims remain non-public.
 
-**Phase 4 exit evidence:** A user can locate one of three projects, see its expected end date and history, and inspect the evidence behind every consequential claim.
+**Phase 4 exit evidence:** A user can locate one of three projects, see its
+expected end date and history, and inspect the evidence behind every
+consequential claim; accepted, verified claims render publicly and withheld
+claims do not.
 
 ## Phase 5 — Coverage and operational hardening
 

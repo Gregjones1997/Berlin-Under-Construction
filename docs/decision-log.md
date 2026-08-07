@@ -610,3 +610,55 @@ can be exercised against a future Postgres adapter.
 
 The map needs shared geographic persistence, the local-only execution decision
 changes, or a measured SQLite limitation blocks deterministic reconstruction.
+
+---
+
+## ADR-013 — Phase 2 exits on reconstruction fidelity, not publication readiness
+
+**Date:** 7 August 2026
+
+**Status:** Accepted 2026-08-07 by the project owner
+
+**Scope:** Phase 2 exit criteria and the private reconstruction boundary
+
+### Context
+
+Phase 2 previously required a dossier to be regenerated entirely from versioned
+claims and evidence. The publication-safe reconstruction renders only claims
+that are eligible, verified and accepted with every blocking validation passed.
+Those states require human review of German claim values.
+
+The first storage smoke test correctly reconstructed its unreviewed claim as
+withheld. Under the old criterion, that safe result was indistinguishable from a
+storage or reconstruction failure. It coupled proof that the pipeline faithfully
+round-trips data to a separate human decision about whether the data may publish.
+
+### Decision
+
+Phase 2 exits on **reconstruction fidelity**, not publication readiness.
+
+1. A pilot dossier must reconstruct from stored data alone, faithfully rendering
+   every claim's real state, including withheld claims and their reasons.
+2. The publication-safe render remains the default and the only mode available
+   to public surfaces.
+3. A local-only `include_withheld_detail` verification mode may render stored
+   detail for withheld claims so the smoke test can distinguish correct
+   withholding from incorrect storage. Its output is never published.
+4. Rendering publication-eligible claims publicly is a Phase 4 criterion, where
+   the public dossier and human-review workflow meet.
+5. No publication rule changes: evidence spans, blocking validations and an
+   accepted review decision remain mandatory.
+
+### Consequences
+
+- Phase 2 can be demonstrated with engineering evidence without treating human
+  review as a prerequisite for proving persistence.
+- The local smoke test becomes diagnostic for serialization and lost-span faults.
+- The withheld-detail mode is a private surface containing stored German source
+  text and must remain unreachable from public rendering paths.
+- Phase 4 owns the proof that accepted, verified claims render publicly.
+
+### Reconsider when
+
+Human review becomes routine rather than blocked, so restoring publication-ready
+claims to an earlier phase gate no longer couples unrelated work.

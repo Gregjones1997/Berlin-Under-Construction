@@ -13,6 +13,8 @@ from pipeline.schemas import (
     ActiveMilestoneClaim,
     QuarantinedMilestoneClaim,
     StrictModel,
+    ExtractionMetrics,
+    ValidationResult,
     milestone_claim_adapter,
 )
 
@@ -80,6 +82,16 @@ class ProjectRecords(StrictModel):
     milestone_claims: tuple[ActiveMilestoneClaim | QuarantinedMilestoneClaim, ...]
 
 
+class ExtractionRunRecord(StrictModel):
+    run_id: str = Field(min_length=1)
+    project_id: str = Field(min_length=1)
+    artifact_id: str = Field(pattern=r"^[0-9a-f]{64}$")
+    provider_request_id: str = Field(min_length=1)
+    created_at: AwareDatetime
+    metrics: ExtractionMetrics
+    validation_results: tuple[ValidationResult, ...]
+
+
 def _canonical_json(model: StrictModel, *, exclude: set[str] | None = None) -> str:
     return json.dumps(
         model.model_dump(mode="json", exclude=exclude),
@@ -135,6 +147,15 @@ class LocalPipelineStore:
             );
             CREATE INDEX IF NOT EXISTS milestone_claims_project_idx
                 ON milestone_claims(project_id, created_at, claim_id);
+            CREATE TABLE IF NOT EXISTS extraction_runs (
+                run_id TEXT PRIMARY KEY,
+                project_id TEXT NOT NULL,
+                artifact_id TEXT NOT NULL REFERENCES artifacts(artifact_id),
+                created_at TEXT NOT NULL,
+                record_json TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS extraction_runs_project_idx
+                ON extraction_runs(project_id, created_at, run_id);
             CREATE TRIGGER IF NOT EXISTS artifacts_no_update
                 BEFORE UPDATE ON artifacts BEGIN SELECT RAISE(ABORT, 'append-only'); END;
             CREATE TRIGGER IF NOT EXISTS artifacts_no_delete
@@ -147,6 +168,10 @@ class LocalPipelineStore:
                 BEFORE UPDATE ON milestone_claims BEGIN SELECT RAISE(ABORT, 'append-only'); END;
             CREATE TRIGGER IF NOT EXISTS milestone_claims_no_delete
                 BEFORE DELETE ON milestone_claims BEGIN SELECT RAISE(ABORT, 'append-only'); END;
+            CREATE TRIGGER IF NOT EXISTS extraction_runs_no_update
+                BEFORE UPDATE ON extraction_runs BEGIN SELECT RAISE(ABORT, 'append-only'); END;
+            CREATE TRIGGER IF NOT EXISTS extraction_runs_no_delete
+                BEFORE DELETE ON extraction_runs BEGIN SELECT RAISE(ABORT, 'append-only'); END;
             """
         )
 
@@ -252,6 +277,28 @@ class LocalPipelineStore:
                 milestone_claim_adapter.validate_json(row[0]) for row in claim_json
             ),
         )
+
+    def record_extraction_run(self, run: ExtractionRunRecord) -> None:
+        with self._connection:
+            matching_retrieval = self._connection.execute(
+                "SELECT 1 FROM retrievals WHERE project_id = ? AND artifact_id = ?",
+                (run.project_id, run.artifact_id),
+            ).fetchone()
+            if matching_retrieval is None:
+                raise StoreInvariantError(
+                    "extraction run project and artifact must match a stored retrieval"
+                )
+            self._insert_immutable(
+                "extraction_runs", "run_id", run.run_id,
+                {"project_id": run.project_id, "artifact_id": run.artifact_id, "created_at": run.created_at.isoformat(), "record_json": _canonical_json(run)},
+            )
+
+    def load_extraction_runs(self, project_id: str) -> tuple[ExtractionRunRecord, ...]:
+        rows = self._connection.execute(
+            "SELECT record_json FROM extraction_runs WHERE project_id = ? ORDER BY created_at, run_id",
+            (project_id,),
+        ).fetchall()
+        return tuple(ExtractionRunRecord.model_validate_json(row[0]) for row in rows)
 
     @staticmethod
     def _load_artifact(record_json: str, stored_bytes: bytes) -> ArtifactRecord:

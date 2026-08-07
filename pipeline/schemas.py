@@ -214,6 +214,8 @@ class ExtractionMetrics(StrictModel):
     input_tokens: int = Field(ge=0)
     output_tokens: int = Field(ge=0)
     cached_tokens: int | None = Field(default=None, ge=0)
+    cache_write_tokens: int = Field(default=0, ge=0)
+    latency_ms: int = Field(default=0, ge=0)
     cost_amount: Decimal = Field(ge=0, allow_inf_nan=False)
     cost_currency: Literal["EUR", "USD"]
     pricing_reference: str = Field(min_length=1)

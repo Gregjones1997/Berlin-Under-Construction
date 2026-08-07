@@ -32,8 +32,8 @@ def parse_extraction_output(
 
     try:
         output = ExtractionOutput.model_validate_json(raw_output)
-    except ValidationError as exc:
-        raise ExtractionOutputRejected("malformed_extraction_output") from exc
+    except ValidationError:
+        raise ExtractionOutputRejected("malformed_extraction_output") from None
 
     if media_type.partition(";")[0].strip().lower() != "text/html":
         raise ExtractionOutputRejected("evidence_span_verification_not_implemented_for_media_type")
@@ -45,8 +45,8 @@ def parse_extraction_output(
                 raise ExtractionOutputRejected("evidence_span_mismatch")
             try:
                 matches = validate_exact_html_span(artifact_bytes, span, charset=charset)
-            except ArtifactNotDecodable as exc:
-                raise ExtractionOutputRejected("artifact_not_decodable") from exc
+            except ArtifactNotDecodable:
+                raise ExtractionOutputRejected("artifact_not_decodable") from None
             if not matches:
                 raise ExtractionOutputRejected("evidence_span_mismatch")
     return output

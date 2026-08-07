@@ -10,7 +10,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 - `571e7a6` — `feat(pipeline): add SQLite claim and artifact store`
 - `e52fb34` — `feat(pipeline): reconstruct a pilot dossier fragment from stored data`
-- `<metering-hash>` — `feat(pipeline): meter the first extraction run`
+- `<metering-hash>` — `feat(pipeline): add fail-closed metered extraction runner`
 - `<process-hash>` — `docs(process): record vertical-slice evidence and next action`
 
 ### Goal
@@ -54,8 +54,10 @@ conflict ignores, early Supabase and dual writes were rejected. For
 reconstruction, the main agent accepted deterministic storage-only rendering,
 withholding of non-publishable text and neutral smoke differences outside the
 renderer; a new protocol was rejected until a second backend exists. Metering
-disposition and final independent verification are recorded below when the
-runner is integrated.
+the main agent accepted a single-attempt Responses API adapter, `store=false`,
+strict structured output, content-free failures, preflight and actual cost
+ceilings, exact token categories and persisted privacy outcomes. The suggested
+prices were rejected after the official pricing page showed they were stale.
 
 ### Work performed
 
@@ -68,6 +70,11 @@ runner is integrated.
   incompletely validated claim text and keeps the dossier comparison in a
   neutral, score-free smoke seam. Further work remains in the commits listed
   above.
+- Added the previously missing `thresholds-v1` configuration as explicitly
+  uncalibrated and human-review-only, plus a dated GPT-5.6 Luna pricing record,
+  a no-retention provider adapter and a fail-closed metered runner. Extraction
+  run records contain usage, cost, latency, provider request ID and stable
+  privacy outcomes, but never model or source text.
 
 ### Verification
 
@@ -75,15 +82,31 @@ runner is integrated.
   immutable-ID conflict rejection, relational consistency and mode `0600`.
 - Reconstruction seam: three tests pass for eligible exact-German rendering,
   private-hash exclusion, non-publishable withholding and non-vacuous projects.
-- Full-suite, reconstruction, live retrieval, privacy and metering evidence are
-  added as the remaining slices complete.
+- Live C-014 retrieval reproduced the expected response hash
+  `sha256:36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5`.
+  The reopened private store reconstructed one deliberately unreviewed claim as
+  withheld. A score-free dossier smoke comparison observed differences; its
+  generated and reference hashes are recorded in the process finding rather
+  than treating the dossier as an evaluation set.
+- Metering, provider and storage-run tests exercise no retention, high-effort
+  structured requests, exact four-category pricing, latency, both personal-data
+  validators, safe failures and typed metric round-trips. Full suite: 104 tests.
 
 ### Failures and limitations
 
-- The current process exposes no `OPENAI_API_KEY`. No live extraction has been
-  attempted and no token, cost or latency value has been invented. The main
-  agent is checking whether another available provider path exposes auditable
-  exact usage; otherwise Step 3 remains explicitly blocked.
+- The current process exposes no `OPENAI_API_KEY`. No live model extraction has
+  been attempted and no token, cost or latency value has been invented. The
+  tested real provider path requires that credential, so Step 3 remains
+  explicitly blocked and this vertical slice is not complete.
+
+### Course correction
+
+The metering/privacy lane proposed obsolete GPT-5.6 Luna prices of $1.00 input,
+$0.10 cached input and $6.00 output per million tokens. The main agent caught
+this against OpenAI's official pricing and model documentation before any run,
+replaced it with the current short-context rates ($0.20 input, $0.02 cached
+input, $0.25 cache-write input and $1.20 output), and added a dated executable
+pricing file. No charge or persisted metric was affected.
 
 - 2026-08-07 — Project owner and Codex (TDD and codebase-design skills): froze `milestone-extraction-de-v1` before any extraction run, derived only from approved schema and policy rather than the dossiers. Verified: the prompt declares its immutable version and enforces untrusted-document handling, German-first values, exact spans, closed milestone types and natural-person exclusion. `d0d17d8`
 

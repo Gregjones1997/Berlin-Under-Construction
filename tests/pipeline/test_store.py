@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from decimal import Decimal
 import hashlib
+import json
 
 import pytest
 
@@ -13,7 +14,7 @@ from pipeline.schemas import (
     HtmlEvidenceSpan,
     ValidationResult,
 )
-from pipeline.store import ArtifactRecord, LocalPipelineStore, RetrievalRecord
+from pipeline.store import ArtifactRecord, ExtractionRunRecord, LocalPipelineStore, RetrievalRecord
 from pipeline.store import StoreInvariantError
 
 
@@ -138,3 +139,17 @@ def test_local_database_is_private(tmp_path) -> None:
         pass
 
     assert database.stat().st_mode & 0o777 == 0o600
+
+
+def test_extraction_run_metrics_round_trip_without_model_content(tmp_path) -> None:
+    database = tmp_path / "pipeline.sqlite3"
+    run = ExtractionRunRecord.model_validate_json(json.dumps({
+        "run_id": "run-1", "project_id": "C-014", "artifact_id": STORED_HASH,
+        "provider_request_id": "resp_123", "created_at": "2026-08-07T12:00:00+02:00",
+        "metrics": {"provider": "openai", "model": "gpt-5.6-luna", "model_version": "gpt-5.6-luna", "prompt_version": "milestone-extraction-de-v1", "extraction_schema_version": "1.0.0", "input_tokens": 10, "output_tokens": 2, "cached_tokens": 1, "cache_write_tokens": 0, "latency_ms": 30, "cost_amount": "0.0000036", "cost_currency": "USD", "pricing_reference": "openai-gpt-5.6-luna-2026-08-07"},
+        "validation_results": [{"code": "personal_data_high_confidence", "outcome": "pass"}, {"code": "possible_personal_name", "outcome": "pass"}],
+    }))
+    with LocalPipelineStore(database) as store:
+        store.record_retrieval_artifact(retrieval(), artifact())
+        store.record_extraction_run(run)
+        assert store.load_extraction_runs("C-014") == (run,)

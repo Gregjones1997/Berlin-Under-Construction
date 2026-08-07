@@ -1,0 +1,20 @@
+schema_version = "1.0.0"
+config_version = "thresholds-v1"
+
+# Provisional and intentionally fail-closed. This has not been calibrated against
+# the human-authored golden set. No extractor proposal can publish from this value.
+[milestone]
+minimum_publication_confidence = "1.0"
+calibration_status = "uncalibrated"
+force_human_review = true
+
+[privacy]
+possible_name_allowlist_version = "possible-name-allowlist-v1"
+possible_name_allowlist = [
+  "Baumaßnahme",
+  "Baubeginn",
+  "Bauarbeiten",
+  "Der Baubeginn",
+  "Berlin",
+  "Inbetriebnahme",
+]

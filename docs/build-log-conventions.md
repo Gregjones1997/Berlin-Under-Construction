@@ -18,15 +18,16 @@ anything mechanical:
 
 Format: date, participant, what changed, how it was verified, commit hash. Several small commits toward one outcome may share a line.
 
-### Commit-hash recording procedure
+### Session-level commit-hash recording procedure
 
-Every logged change uses a two-commit sequence. This is the procedure, not an
+Every logged change is recorded in its work commit, while one hash-recording
+commit closes all entries from that session. This is the procedure, not an
 exception to the requirement to log work at commit time:
 
 1. Write the build-log entry as part of the work, with the commit hash omitted,
    and commit the work.
-2. Immediately create a hash-recording commit in the same session that adds the
-   work commit's reachable hash to the entry.
+2. At the end of the same session, add every work commit's reachable hash to its
+   entry in one commit with the `docs(build-log):` prefix.
 3. If the work commit is amended after its entry is written, re-check and update
    the recorded hash. Amending a commit changes its hash.
 4. Verify every recorded hash against `git log`. Never use `git cat-file` for
@@ -37,9 +38,9 @@ Content hashes written in the build log use a `sha256:` prefix inside the
 backticks, for example `sha256:<64 lowercase hexadecimal characters>`. This
 distinguishes artifact hashes from abbreviated Git commit hashes mechanically.
 
-The entry itself is never deferred to the follow-up commit, and no hash remains
-omitted past the session that created the work. The hash-recording commit exists
-only to complete the entry for the immediately preceding work commit.
+The entry itself is never deferred to the hash-recording commit, and no hash
+remains omitted past the session that created the work. The hash-recording commit
+contains only the hashes for that session's already-written entries.
 
 ### Multi-agent entries — mandatory when agents are spawned
 
@@ -147,4 +148,5 @@ What outcome was needed and why?
 ```
 
 In the work commit, omit the `**Commit:**` line from a new full entry. The
-immediate hash-recording commit inserts the completed line shown in the template.
+session-level hash-recording commit inserts the completed line shown in the
+template.

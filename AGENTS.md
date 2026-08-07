@@ -201,17 +201,18 @@ Never record that an agent completed work that was not independently checked.
 Multi-agent work is never omitted merely because it produced no accepted change;
 the attempted delegation and its disposition are part of the project record.
 
-**Log at commit time, not after.** Use the two-commit procedure in
-`docs/build-log-conventions.md`: write the entry with its hash omitted in the
-work commit, then immediately add the reachable hash in a hash-recording commit
-in the same session. Do not defer the entry itself to "later" or leave its hash
-omitted past the session that created it. If the work commit is amended, re-check
-the hash because amending changes it. Verify recorded hashes with `git log`,
-never `git cat-file`; orphaned objects can still resolve under `cat-file`. A
-backfilled log is a sign the process slipped; two ADR-wording commits went
-un-logged this way before this rule was written down. If an ADR's own text is
-edited after acceptance, add a one-line `**Amended <date>**` note under it
-pointing to the log entry, rather than silently rewriting it with no trace.
+**Log at commit time, not after.** Use the session-level procedure in
+`docs/build-log-conventions.md`: write every entry with its hash omitted in its
+work commit, then make one `docs(build-log):` hash-recording commit at the end of
+the same session covering all of that session's entries. Do not defer an entry
+itself to "later" or leave its hash omitted past the session that created it. If
+a work commit is amended, re-check its hash because amending changes it. Verify
+recorded hashes with `git log`, never `git cat-file`; orphaned objects can still
+resolve under `cat-file`. A backfilled log is a sign the process slipped; two
+ADR-wording commits went un-logged this way before this rule was written down.
+If an ADR's own text is edited after acceptance, add a one-line
+`**Amended <date>**` note under it pointing to the log entry, rather than
+silently rewriting it with no trace.
 
 ## Stack
 

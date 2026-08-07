@@ -2,6 +2,7 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-07 — Project owner and Codex: changed hash recording from one ceremony commit per work commit to one same-session `docs(build-log)` commit covering all session entries, making hash ceremony distinguishable from substantive process changes. Verified: `AGENTS.md` and the conventions document define the same procedure.
 - 2026-08-07 — Project owner and Codex: accepted ADR-013, separating Phase 2 reconstruction fidelity from Phase 4 publication readiness, and aligned both phase criteria. Verified: decision and checklist state the same boundary.
 
 ## 2026-08-07 — Persist and reconstruct the first milestone slice

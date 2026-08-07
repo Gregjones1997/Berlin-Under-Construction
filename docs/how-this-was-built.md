@@ -2,6 +2,64 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-07 — Gate financial completion on evidence-depth coverage
+
+**Status:** Complete
+
+**Commit:** `<hash>` — `feat(pipeline): gate financial completion on evidence-depth coverage`
+
+### Goal
+
+Close the remaining pipeline-review gap by making the configured evidence ladder
+and required financial depths behavioral, while stopping short of claiming that
+the financial claim slice itself exists.
+
+### Participants and scopes
+
+- Project owner: authorized the follow-up proposal and defined the Phase 1
+  checklist reconciliation and threshold-configuration blocker.
+- Main agent (Codex): remained the sole writer; read and applied the proposal,
+  inspected the gate, reconciled the checklist and independently verified the
+  integrated result.
+- Reviewer (Claude): supplied the read-only follow-up patch under
+  `docs/research/proposals/2026-08-07-financial-depth-coverage/`.
+
+### Work performed
+
+- Added immutable, discriminated per-project evidence-depth dispositions that
+  preserve `not_checked`, `searched_found`, `searched_absent`, `unavailable` and
+  human-assigned `inapplicable` as distinct states.
+- Required every searched or unavailable disposition to name its actual search;
+  found records name their source IDs, access barriers remain distinct from
+  absence, and inapplicability requires a review-decision ID.
+- Added a deterministic financial-completion gate that reads both
+  `evidence_depths` and `completion.financial_requires_depths`, rejects unknown
+  or duplicate depth records and routes incomplete coverage to review with
+  `financial_depth_coverage_incomplete`.
+- Reconciled Phase 1 checklist evidence without marking incomplete work done and
+  recorded the missing threshold configuration as a blocker before the first
+  metered extraction.
+
+### Verification
+
+- `.venv/bin/python -m pytest -q`: 91 tests passed, up from 78.
+- Both previously unused configuration fields now have behavioral consumers;
+  tests prove the required depths are read from configuration rather than
+  hardcoded.
+- Retrieval configuration digest remains
+  `sha256:b5b9c1dcdb0a5483be1e9176503539adfc4dd30108161aa33a460565b983e4c5`.
+- `git diff --check` passed. `docs/research/dossiers/` and `evaluation/` were
+  unchanged.
+
+### Failures and limitations
+
+- This is the coverage record and gate only. `FinancialClaim`, conflict records,
+  source and artifact persistence, review history and PDF evidence bounding
+  boxes remain open.
+- `Confidence.threshold_config_version` is required, but no threshold
+  configuration exists under `pipeline/config/`. The first metered extraction
+  remains blocked until that versioned configuration is implemented.
+
 ## 2026-08-07 — Close the first pipeline review findings
 
 **Status:** Complete

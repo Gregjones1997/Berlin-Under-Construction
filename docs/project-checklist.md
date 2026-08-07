@@ -22,14 +22,14 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Implement the financial slice and make `evidence_depths` plus
-`completion.financial_requires_depths` enforce its retrieval-completion gate;
-then extend source, artifact, conflict and review-history schemas, add verified
-PDF evidence bounding boxes and the private atomic retention adapter, and run
-the first metered model extraction without creating golden values. The
-German-speaking review continues in parallel and remains the only source of
-populated golden values. Recheck C-010 from official sources on 2026-08-25
-without inferring an outcome.
+**Next action:** Implement a versioned publication-threshold configuration before
+the first metered extraction, then implement `FinancialClaim` on the working
+evidence-depth completion gate. Extend source, artifact, conflict and
+review-history schemas, add verified PDF evidence bounding boxes and the private
+atomic retention adapter, and run the first metered model extraction without
+creating golden values. The German-speaking review continues in parallel and
+remains the only source of populated golden values. Recheck C-010 from official
+sources on 2026-08-25 without inferring an outcome.
 
 ## Phase 0 — Minimal foundation
 
@@ -85,6 +85,22 @@ without inferring an outcome.
 - [x] Capture exact German supporting passages for material claims. Evidence: three frozen dossiers at `phase-1-research-complete`.
 - [x] Record contradictions, ambiguity and missing information. Evidence: quarantine, open-question and access-barrier sections in each dossier.
 - [ ] Create the first golden truth set.
+
+**Partial Phase 1 evidence — every related item remains open:**
+
+- Milestone types: nine types are defined in `pipeline/schemas.py` at `d5d5806`,
+  matching `AGENTS.md`; lifecycle states are still undefined.
+- Evidence labels: `ValidationCode` exists at `15ce351`; publication thresholds
+  do not exist. `Confidence.threshold_config_version` is required, but no file
+  under `pipeline/config/` defines thresholds. A real versioned configuration is
+  required before the first metered extraction so this field is never populated
+  with a version string for nonexistent policy.
+- Source registry: not started. The `allowed_hosts` and `source_families` in
+  `pipeline/config/retrieval.v1.toml` (`d5d5806`, hardened at `e9c66b4`) are
+  transport configuration, not a source registry, and imply neither evidence
+  depth nor source tier.
+- Financial-measure types: approved in prose in `docs/data-model-proposal.md` at
+  `4b840d8`; absent from code.
 
 **Phase 1 exit evidence:** Three manually verified dossiers, a source matrix, a controlled glossary and expected extraction outputs exist.
 

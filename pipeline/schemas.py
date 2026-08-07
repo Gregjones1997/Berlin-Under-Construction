@@ -85,6 +85,7 @@ ValidationCode = Literal[
     "below_confidence_threshold",
     "missing_or_invalid_confidence",
     "malformed_extraction_output",
+    "financial_depth_coverage_incomplete",
 ]
 
 

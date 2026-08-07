@@ -30,8 +30,13 @@ def _may_render(claim: ActiveMilestoneClaim) -> bool:
     return all(outcomes.get(code) == "pass" for code in REQUIRED_RENDER_VALIDATIONS)
 
 
-def reconstruct_milestone_fragment(store: LocalPipelineStore, project_id: str) -> str:
-    """Render only stored, publication-safe milestone data in deterministic order."""
+def reconstruct_milestone_fragment(
+    store: LocalPipelineStore,
+    project_id: str,
+    *,
+    include_withheld_detail: bool = False,
+) -> str:
+    """Render stored milestones; withheld detail is an explicit local diagnostic."""
 
     records = store.load_project(project_id)
     if not records.milestone_claims:
@@ -43,14 +48,24 @@ def reconstruct_milestone_fragment(store: LocalPipelineStore, project_id: str) -
         for retrieval in records.retrievals
     }
     lines = [f"# Milestone fragment — {project_id}", ""]
+    if include_withheld_detail:
+        lines.extend(
+            [
+                "> LOCAL-ONLY WITHHELD DETAIL — private diagnostic output; never publish.",
+                "",
+            ]
+        )
     for claim in records.milestone_claims:
-        if not isinstance(claim, ActiveMilestoneClaim) or not _may_render(claim):
+        may_render = isinstance(claim, ActiveMilestoneClaim) and _may_render(claim)
+        if not may_render:
             codes = ", ".join(sorted(result.code for result in claim.validation_results)) or "none"
             lines.append(
                 f"- {claim.claim_id} — withheld "
                 f"({claim.publication_eligibility}; {claim.review_state}; validations: {codes})"
             )
-            continue
+            if not include_withheld_detail:
+                continue
+            lines.append("")
 
         artifact = artifacts.get(claim.artifact_id)
         retrieval = retrievals.get((claim.source_id, claim.artifact_id))
@@ -59,7 +74,7 @@ def reconstruct_milestone_fragment(store: LocalPipelineStore, project_id: str) -
 
         lines.extend(
             [
-                f"## {claim.milestone_type} — {claim.claim_id}",
+                f"## {'LOCAL-ONLY WITHHELD DETAIL — ' if not may_render else ''}{claim.milestone_type} — {claim.claim_id}",
                 "",
                 f"- Canonical German: {_quoted(claim.canonical_value_de)}",
                 f"- Milestone term: {_quoted(claim.milestone_term_de)}",

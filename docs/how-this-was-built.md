@@ -20,6 +20,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `fix(provider): make first OpenAI response diagnosable`
 - `fix(privacy): route possible names and low confidence to review`
 - `fix(store): persist extraction runs and claims atomically`
+- `feat(pipeline): add local withheld-detail reconstruction`
 
 ### Goal
 
@@ -105,6 +106,10 @@ prices were rejected after the official pricing page showed they were stale.
 - Made the live extraction persistence unit one SQLite transaction: a run and
   all claims commit together or all roll back. A failing second claim test proves
   neither the run nor the first claim survives partial failure.
+- Kept publication-safe reconstruction as the default and added an explicit,
+  bannered `include_withheld_detail` local diagnostic that renders stored text
+  and evidence for withheld claims so the smoke comparison can detect storage
+  faults without changing any claim state.
 
 ### Verification
 

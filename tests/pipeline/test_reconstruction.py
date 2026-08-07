@@ -50,6 +50,21 @@ def test_nonpublishable_claim_text_is_withheld(tmp_path) -> None:
     assert "Baubeginn 2026" not in fragment
 
 
+def test_local_withheld_detail_mode_exposes_stored_content_for_smoke_diagnosis(tmp_path) -> None:
+    database = tmp_path / "pipeline.sqlite3"
+    with LocalPipelineStore(database) as store:
+        store.record_retrieval_artifact(retrieval(), artifact())
+        store.record_claim(claim())
+        fragment = reconstruct_milestone_fragment(
+            store, "C-014", include_withheld_detail=True
+        )
+
+    assert "LOCAL-ONLY WITHHELD DETAIL" in fragment
+    assert "claim-1 — withheld" in fragment
+    assert 'Canonical German: "Baubeginn 2026"' in fragment
+    assert 'Evidence (main:0-14): "Baubeginn 2026"' in fragment
+
+
 def test_empty_project_cannot_vacuously_reconstruct(tmp_path) -> None:
     with LocalPipelineStore(tmp_path / "pipeline.sqlite3") as store:
         try:

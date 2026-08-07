@@ -13,6 +13,7 @@ from pipeline.metering import (
     ProviderUsage,
     run_metered_extraction,
 )
+from pipeline.schemas import ValidationResult
 
 
 ARTIFACT = "Der Baubeginn ist 2026 vorgesehen.".encode()
@@ -59,19 +60,29 @@ def policy() -> MeteringPolicy:
 
 
 def test_runner_records_exact_usage_cost_latency_and_privacy_results() -> None:
-    provider = FakeProvider(ProviderResponse(output_json=valid_output(), usage=ProviderUsage(input_tokens=1000, cached_input_tokens=200, cache_write_input_tokens=100, output_tokens=500), latency_ms=1234, provider_request_id="resp_safe_identifier"))
+    provider = FakeProvider(ProviderResponse(output_json=valid_output(), usage=ProviderUsage(input_tokens=1000, cached_input_tokens=200, output_tokens=500), latency_ms=1234, provider_request_id="resp_safe_identifier"))
     result = run_metered_extraction(provider, artifact_bytes=ARTIFACT, media_type="text/html; charset=utf-8", prompt="trusted frozen prompt", prompt_version="milestone-extraction-de-v1", policy=policy())
 
     assert result.metrics.input_tokens == 1000
     assert result.metrics.cached_tokens == 200
-    assert result.metrics.cache_write_tokens == 100
+    assert result.metrics.cache_write_tokens == 0
     assert result.metrics.output_tokens == 500
     assert result.metrics.latency_ms == 1234
-    assert result.metrics.cost_amount == Decimal("0.000769")
+    assert result.metrics.cost_amount == Decimal("0.000764")
     assert [item.model_dump() for item in result.validation_results] == [
         {"code": "personal_data_high_confidence", "outcome": "pass"},
         {"code": "possible_personal_name", "outcome": "pass"},
+        {"code": "below_confidence_threshold", "outcome": "review_required"},
     ]
+
+
+def test_possible_name_is_persistable_review_outcome_not_batch_rejection() -> None:
+    raw = valid_output().replace("Baumaßnahme", "Technische Übergabe")
+    provider = FakeProvider(ProviderResponse(output_json=raw, usage=ProviderUsage(input_tokens=10, output_tokens=10), latency_ms=4, provider_request_id="resp_safe_identifier"))
+
+    result = run_metered_extraction(provider, artifact_bytes=ARTIFACT, media_type="text/html", prompt="trusted frozen prompt", prompt_version="milestone-extraction-de-v1", policy=policy())
+
+    assert ValidationResult(code="possible_personal_name", outcome="review_required") in result.validation_results
 
 
 def test_privacy_detection_returns_only_stable_codes_and_never_sensitive_text() -> None:

@@ -10,11 +10,10 @@ force_human_review = true
 
 [privacy]
 possible_name_allowlist_version = "possible-name-allowlist-v1"
-possible_name_allowlist = [
-  "Baumaßnahme",
-  "Baubeginn",
-  "Bauarbeiten",
-  "Der Baubeginn",
-  "Berlin",
-  "Inbetriebnahme",
+possible_name_organization_allowlist = [
+  "Berliner Plätzeprogramm",
+]
+possible_name_toponym_allowlist = [
+  "Europaplatz Süd",
+  "Neue Mitte",
 ]

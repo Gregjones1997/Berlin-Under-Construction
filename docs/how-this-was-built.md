@@ -18,6 +18,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `1b20caa` — `docs(process): clarify delegation model fallback`
 - `1612a88` — `fix(pipeline): honor declared charset in metered input`
 - `fix(provider): make first OpenAI response diagnosable`
+- `fix(privacy): route possible names and low confidence to review`
 
 ### Goal
 
@@ -94,6 +95,12 @@ prices were rejected after the official pricing page showed they were stale.
   now stays in the system instruction, OpenAI cache-write usage is ignored,
   safe HTTP error type/code/status and incomplete reasons survive rejection, and
   the first response logs usage key names without values.
+- Kept `personal_data_high_confidence` as the only privacy hard failure.
+  `possible_personal_name` and below-threshold confidence now survive as recorded
+  review outcomes, the configured minimum is read, and the possible-name
+  exceptions are split into organization and toponym allowlists. The nonexistent
+  OpenAI cache-write price was removed and nonzero cache-write usage is rejected
+  at the OpenAI policy boundary.
 
 ### Verification
 

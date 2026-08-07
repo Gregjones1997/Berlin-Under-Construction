@@ -85,15 +85,16 @@ class MeteringPolicy(StrictModel):
 
     threshold_config_version: str
     force_human_review: Literal[True]
+    minimum_publication_confidence: Decimal
     possible_name_allowlist_version: str
-    possible_name_allowlist: frozenset[str]
+    possible_name_organization_allowlist: frozenset[str]
+    possible_name_toponym_allowlist: frozenset[str]
     pricing_reference: str
     provider: Literal["openai"]
     model: Literal["gpt-5.6-luna"]
     currency: Literal["USD"]
     input_rate: Decimal
     cached_input_rate: Decimal
-    cache_write_input_rate: Decimal
     output_rate: Decimal
     max_input_bytes: int
     max_output_tokens: int
@@ -112,15 +113,22 @@ class MeteringPolicy(StrictModel):
         return cls(
             threshold_config_version=thresholds["config_version"],
             force_human_review=thresholds["milestone"]["force_human_review"],
+            minimum_publication_confidence=Decimal(
+                thresholds["milestone"]["minimum_publication_confidence"]
+            ),
             possible_name_allowlist_version=thresholds["privacy"]["possible_name_allowlist_version"],
-            possible_name_allowlist=frozenset(thresholds["privacy"]["possible_name_allowlist"]),
+            possible_name_organization_allowlist=frozenset(
+                thresholds["privacy"]["possible_name_organization_allowlist"]
+            ),
+            possible_name_toponym_allowlist=frozenset(
+                thresholds["privacy"]["possible_name_toponym_allowlist"]
+            ),
             pricing_reference=pricing["pricing_reference"],
             provider=pricing["provider"],
             model=pricing["model"],
             currency=pricing["currency"],
             input_rate=Decimal(rates["input"]),
             cached_input_rate=Decimal(rates["cached_input"]),
-            cache_write_input_rate=Decimal(rates["cache_write_input"]),
             output_rate=Decimal(rates["output"]),
             max_input_bytes=limits["max_input_bytes"],
             max_output_tokens=limits["max_output_tokens"],
@@ -128,11 +136,12 @@ class MeteringPolicy(StrictModel):
         )
 
     def cost(self, usage: ProviderUsage) -> Decimal:
-        ordinary = usage.input_tokens - usage.cached_input_tokens - usage.cache_write_input_tokens
+        if usage.cache_write_input_tokens:
+            raise MeteringRejected("unsupported_openai_cache_write_usage")
+        ordinary = usage.input_tokens - usage.cached_input_tokens
         return (
             Decimal(ordinary) * self.input_rate
             + Decimal(usage.cached_input_tokens) * self.cached_input_rate
-            + Decimal(usage.cache_write_input_tokens) * self.cache_write_input_rate
             + Decimal(usage.output_tokens) * self.output_rate
         ) / MILLION
 
@@ -162,8 +171,12 @@ def _privacy_results(output: ExtractionOutput, policy: MeteringPolicy) -> tuple[
     text = _model_text(output)
     high = "fail" if _HIGH_CONFIDENCE.search(text) else "pass"
     possible = "pass"
+    allowed_names = (
+        policy.possible_name_organization_allowlist
+        | policy.possible_name_toponym_allowlist
+    )
     for match in _POSSIBLE_NAME.finditer(text):
-        if match.group(1) not in policy.possible_name_allowlist:
+        if match.group(1) not in allowed_names:
             possible = "review_required"
             break
     return (
@@ -185,7 +198,7 @@ def run_metered_extraction(
         raise MeteringRejected("input_byte_limit")
     preflight_maximum = (
         Decimal(policy.max_input_bytes)
-        * max(policy.input_rate, policy.cached_input_rate, policy.cache_write_input_rate)
+        * max(policy.input_rate, policy.cached_input_rate)
         + Decimal(policy.max_output_tokens) * policy.output_rate
     ) / MILLION
     if preflight_maximum > policy.cost_ceiling:
@@ -214,10 +227,21 @@ def run_metered_extraction(
     output = parse_extraction_output(response.output_json, artifact_bytes=artifact_bytes, media_type=media_type)
     if any(proposal.confidence.threshold_config_version != policy.threshold_config_version for proposal in output.proposed_claims):
         raise MeteringRejected("threshold_config_version_mismatch")
-    validations = _privacy_results(output, policy)
-    for validation in validations:
-        if validation.outcome != "pass":
+    privacy_validations = _privacy_results(output, policy)
+    for validation in privacy_validations:
+        if validation.code == "personal_data_high_confidence" and validation.outcome == "fail":
             raise MeteringRejected(validation.code)
+    below_threshold = any(
+        proposal.confidence.score < policy.minimum_publication_confidence
+        for proposal in output.proposed_claims
+    )
+    validations = (
+        *privacy_validations,
+        ValidationResult(
+            code="below_confidence_threshold",
+            outcome="review_required" if below_threshold else "pass",
+        ),
+    )
     return MeteredExtraction(
         output=output,
         metrics=ExtractionMetrics(

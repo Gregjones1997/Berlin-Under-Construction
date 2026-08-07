@@ -56,6 +56,19 @@ def test_openai_http_rejection_preserves_safe_diagnostics_only() -> None:
     assert "Baubeginn" not in str(caught.value)
 
 
+def test_openai_http_rejection_keeps_status_for_unexpected_error_body() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(401, json=["unexpected body"])
+
+    provider = OpenAIResponsesProvider(api_key="secret", client=httpx.Client(transport=httpx.MockTransport(handler)))
+    with pytest.raises(MeteringRejected) as caught:
+        provider.extract(request())
+
+    assert caught.value.http_status == 401
+    assert caught.value.provider_error_type is None
+    assert caught.value.provider_error_code is None
+
+
 def test_openai_incomplete_response_surfaces_reason() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json={"status": "incomplete", "incomplete_details": {"reason": "max_output_tokens"}, "output": [], "usage": {}})

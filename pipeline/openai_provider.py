@@ -46,7 +46,12 @@ class OpenAIResponsesProvider:
                 error_type = None
                 error_code = None
                 try:
-                    error = response.json().get("error", {})
+                    error_payload = response.json()
+                    error = (
+                        error_payload.get("error", {})
+                        if isinstance(error_payload, dict)
+                        else {}
+                    )
                     if isinstance(error, dict):
                         error_type = error.get("type") if isinstance(error.get("type"), str) else None
                         error_code = error.get("code") if isinstance(error.get("code"), str) else None

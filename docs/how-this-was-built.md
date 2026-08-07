@@ -22,6 +22,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `fix(store): persist extraction runs and claims atomically`
 - `feat(pipeline): add local withheld-detail reconstruction`
 - `feat(pipeline): add one-shot metered extraction command`
+- `fix(provider): retain status for unexpected error bodies`
 
 ### Goal
 
@@ -118,6 +119,8 @@ prices were rejected after the official pricing page showed they were stale.
   outcomes. Recorded the intentional omission of raw provider output from the
   implemented extraction-run record as a privacy-minimizing departure from the
   approved proposal shape.
+- Hardened safe provider rejection so an unexpected non-object error body still
+  retains its HTTP status without exposing body content.
 
 ### Verification
 

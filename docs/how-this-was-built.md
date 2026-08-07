@@ -62,13 +62,19 @@ runner is integrated.
 - Frozen prompt and ADR-012 are recorded separately above because both preceded
   implementation by design.
 - Added the SQLite persistence seam and its first transactional artifact,
-  retrieval and milestone-claim round trips. Further work remains in the commits
-  listed above.
+  retrieval and milestone-claim round trips.
+- Added a deterministic milestone-fragment renderer that reads only reopened
+  storage, exposes only post-transform hashes, withholds all non-publishable or
+  incompletely validated claim text and keeps the dossier comparison in a
+  neutral, score-free smoke seam. Further work remains in the commits listed
+  above.
 
 ### Verification
 
 - Storage seam: four tests pass for close/reopen round-trip, idempotent replay,
   immutable-ID conflict rejection, relational consistency and mode `0600`.
+- Reconstruction seam: three tests pass for eligible exact-German rendering,
+  private-hash exclusion, non-publishable withholding and non-vacuous projects.
 - Full-suite, reconstruction, live retrieval, privacy and metering evidence are
   added as the remaining slices complete.
 

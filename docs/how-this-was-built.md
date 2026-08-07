@@ -17,6 +17,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `96ce545` — `docs(process): record vertical-slice evidence and next action`
 - `1b20caa` — `docs(process): clarify delegation model fallback`
 - `1612a88` — `fix(pipeline): honor declared charset in metered input`
+- `fix(provider): make first OpenAI response diagnosable`
 
 ### Goal
 
@@ -43,6 +44,9 @@ smoke observation, never a golden evaluation or accuracy measurement.
 - Metering/privacy subagent (inherited GPT-5.6 model, high effort): proposed the
   provider seam, fail-closed threshold/pricing gates, exact usage accounting and
   content-free personal-data validation results.
+- External reviewer (Claude): identified strict-schema incompatibilities,
+  unsafe loss of provider diagnostics, incomplete-response ambiguity and the
+  nonexistent OpenAI cache-write usage field before the first live call.
 
 ### Multi-agent architecture
 
@@ -85,6 +89,11 @@ prices were rejected after the official pricing page showed they were stale.
   run records contain usage, cost, latency, provider request ID and stable
   privacy outcomes, but never model or source text. The runner decodes the
   provider input with the artifact's declared charset, matching span validation.
+- Changed the first-run provider request to non-strict Structured Outputs while
+  keeping atomic Pydantic validation authoritative. Trusted threshold metadata
+  now stays in the system instruction, OpenAI cache-write usage is ignored,
+  safe HTTP error type/code/status and incomplete reasons survive rejection, and
+  the first response logs usage key names without values.
 
 ### Verification
 

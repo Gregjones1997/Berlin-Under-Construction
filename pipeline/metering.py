@@ -26,6 +26,22 @@ MILLION = Decimal(1_000_000)
 class MeteringRejected(ValueError):
     """A stable, content-free rejection code safe for operational logs."""
 
+    def __init__(
+        self,
+        rejection_code: str,
+        *,
+        http_status: int | None = None,
+        provider_error_type: str | None = None,
+        provider_error_code: str | None = None,
+        incomplete_reason: str | None = None,
+    ) -> None:
+        super().__init__(rejection_code)
+        self.rejection_code = rejection_code
+        self.http_status = http_status
+        self.provider_error_type = provider_error_type
+        self.provider_error_code = provider_error_code
+        self.incomplete_reason = incomplete_reason
+
 
 class ProviderUsage(StrictModel):
     input_tokens: int = Field(ge=0)

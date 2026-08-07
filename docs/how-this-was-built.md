@@ -8,6 +8,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete
 
+**Commit:** `b81ba61` — `test(process): enforce build-log hash reachability and empty golden-set schema`
+
 ### Goal
 
 Turn the twice-failed build-log hash procedure into an automated invariant and

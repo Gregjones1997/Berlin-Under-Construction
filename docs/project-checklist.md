@@ -22,14 +22,15 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Implement a versioned publication-threshold configuration before
-the first metered extraction, then implement `FinancialClaim` on the working
-evidence-depth completion gate. Extend source, artifact, conflict and
-review-history schemas, add verified PDF evidence bounding boxes and the private
-atomic retention adapter, and run the first metered model extraction without
-creating golden values. The German-speaking review continues in parallel and
-remains the only source of populated golden values. Recheck C-010 from official
-sources on 2026-08-25 without inferring an outcome.
+**Next action:** Provision `OPENAI_API_KEY` locally and run the frozen prompt once
+through the fail-closed metered runner, persisting actual token, cost, latency and
+privacy outcomes. Then obtain human review of the proposed C-014 claim and
+reconstruct the complete pilot dossier from stored data before opening Phase 3.
+After that boundary, implement `FinancialClaim` on the working evidence-depth
+gate and extend source, conflict and review-history schemas. The German-speaking
+review continues in parallel and remains the only source of populated golden
+values. Recheck C-010 from official sources on 2026-08-25 without inferring an
+outcome.
 
 ## Phase 0 — Minimal foundation
 
@@ -48,10 +49,12 @@ sources on 2026-08-25 without inferring an outcome.
 - [x] Initialize Git repository on the `main` branch.
 - [x] Add `.gitignore` for local settings, secrets and generated files.
 - [ ] Add `.env.example` when the first environment variables are defined.
-- [ ] Create the application and test directory structure.
+- [x] Create the application and test directory structure. Evidence: `pipeline/`
+  and `tests/pipeline/` exercised by pytest at `d5d5806`.
 - [x] Choose the smallest viable initial stack.
 - [ ] Add formatting, linting and testing commands.
-- [ ] Add a basic CI workflow.
+- [x] Add a basic CI workflow. Evidence: `.github/workflows/quality.yml` runs
+  pytest and the build-log hash check at `b81ba61`.
 - [x] Make the first clean repository commit.
 
 ### Minimal documentation
@@ -90,11 +93,11 @@ sources on 2026-08-25 without inferring an outcome.
 
 - Milestone types: nine types are defined in `pipeline/schemas.py` at `d5d5806`,
   matching `AGENTS.md`; lifecycle states are still undefined.
-- Evidence labels: `ValidationCode` exists at `15ce351`; publication thresholds
-  do not exist. `Confidence.threshold_config_version` is required, but no file
-  under `pipeline/config/` defines thresholds. A real versioned configuration is
-  required before the first metered extraction so this field is never populated
-  with a version string for nonexistent policy.
+- Evidence labels: `ValidationCode` exists at `15ce351`. The versioned
+  `thresholds-v1` file exists at `06f8e27`, closing the nonexistent-reference
+  gap for `Confidence.threshold_config_version`, but it is explicitly
+  uncalibrated and forces human review. Accepted publication thresholds still do
+  not exist, so the item remains open.
 - Source registry: not started. The `allowed_hosts` and `source_families` in
   `pipeline/config/retrieval.v1.toml` (`d5d5806`, hardened at `e9c66b4`) are
   transport configuration, not a source registry, and imply neither evidence

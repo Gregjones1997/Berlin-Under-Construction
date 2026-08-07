@@ -6,7 +6,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete
 
-**Commit:** `<hash>` — `feat(pipeline): gate financial completion on evidence-depth coverage`
+**Commit:** `69c256c` — `feat(pipeline): gate financial completion on evidence-depth coverage`
 
 ### Goal
 

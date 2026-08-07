@@ -6,7 +6,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete
 
-**Commit:** `<hash>` — `feat(pipeline): add configured verified artifact retrieval`
+**Commit:** `d5d5806` — `feat(pipeline): add configured verified artifact retrieval`
 
 ### Goal
 

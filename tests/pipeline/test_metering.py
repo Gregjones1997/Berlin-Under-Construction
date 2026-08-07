@@ -95,3 +95,20 @@ def test_cost_ceiling_is_checked_before_provider_contact() -> None:
 def test_provider_usage_must_be_auditable() -> None:
     with pytest.raises(ValueError, match="cannot exceed input_tokens"):
         ProviderUsage(input_tokens=1, cached_input_tokens=2, output_tokens=1)
+
+
+def test_runner_honours_the_artifacts_declared_charset() -> None:
+    class CharsetProbe:
+        def extract(self, request):
+            assert request.artifact_text == "Baumaßnahme"
+            raise MeteringRejected("probe_complete")
+
+    with pytest.raises(MeteringRejected, match="probe_complete"):
+        run_metered_extraction(
+            CharsetProbe(),
+            artifact_bytes="Baumaßnahme".encode("latin-1"),
+            media_type="text/html; charset=latin-1",
+            prompt="trusted frozen prompt",
+            prompt_version="milestone-extraction-de-v1",
+            policy=policy(),
+        )

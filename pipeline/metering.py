@@ -9,8 +9,15 @@ from typing import Literal, Protocol
 
 from pydantic import ConfigDict, Field, model_validator
 
-from pipeline.extractor import parse_extraction_output
-from pipeline.schemas import ExtractionMetrics, ExtractionOutput, StrictModel, ValidationResult
+from pipeline.extractor import charset_of_media_type, parse_extraction_output
+from pipeline.schemas import (
+    ArtifactNotDecodable,
+    ExtractionMetrics,
+    ExtractionOutput,
+    StrictModel,
+    ValidationResult,
+    decode_artifact,
+)
 
 
 MILLION = Decimal(1_000_000)
@@ -168,8 +175,10 @@ def run_metered_extraction(
     if preflight_maximum > policy.cost_ceiling:
         raise MeteringRejected("preflight_cost_ceiling")
     try:
-        artifact_text = artifact_bytes.decode("utf-8", errors="strict")
-    except UnicodeDecodeError:
+        artifact_text = decode_artifact(
+            artifact_bytes, charset_of_media_type(media_type)
+        )
+    except ArtifactNotDecodable:
         raise MeteringRejected("artifact_not_decodable") from None
 
     response = provider.extract(

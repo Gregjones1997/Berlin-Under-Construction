@@ -14,7 +14,7 @@ class ExtractionOutputRejected(ValueError):
     pass
 
 
-def _charset_of(media_type: str) -> str:
+def charset_of_media_type(media_type: str) -> str:
     for parameter in media_type.split(";")[1:]:
         name, _, value = parameter.partition("=")
         if name.strip().lower() == "charset":
@@ -38,7 +38,7 @@ def parse_extraction_output(
     if media_type.partition(";")[0].strip().lower() != "text/html":
         raise ExtractionOutputRejected("evidence_span_verification_not_implemented_for_media_type")
 
-    charset = _charset_of(media_type)
+    charset = charset_of_media_type(media_type)
     for proposal in output.proposed_claims:
         for span in proposal.evidence_spans:
             if not isinstance(span, HtmlEvidenceSpan):

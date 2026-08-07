@@ -13,6 +13,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `06f8e27` — `feat(pipeline): add fail-closed metered extraction runner`
 - `96ce545` — `docs(process): record vertical-slice evidence and next action`
 - `1b20caa` — `docs(process): clarify delegation model fallback`
+- `<charset-fix-hash>` — `fix(pipeline): honor declared charset in metered input`
 
 ### Goal
 
@@ -79,7 +80,8 @@ prices were rejected after the official pricing page showed they were stale.
   uncalibrated and human-review-only, plus a dated GPT-5.6 Luna pricing record,
   a no-retention provider adapter and a fail-closed metered runner. Extraction
   run records contain usage, cost, latency, provider request ID and stable
-  privacy outcomes, but never model or source text.
+  privacy outcomes, but never model or source text. The runner decodes the
+  provider input with the artifact's declared charset, matching span validation.
 
 ### Verification
 
@@ -95,7 +97,8 @@ prices were rejected after the official pricing page showed they were stale.
   than treating the dossier as an evaluation set.
 - Metering, provider and storage-run tests exercise no retention, high-effort
   structured requests, exact four-category pricing, latency, both personal-data
-  validators, safe failures and typed metric round-trips. Full suite: 104 tests.
+  validators, safe failures, declared-charsets and typed metric round-trips.
+  Full suite: 105 tests.
 
 ### Failures and limitations
 

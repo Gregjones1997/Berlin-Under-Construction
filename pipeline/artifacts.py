@@ -11,6 +11,10 @@ import pikepdf
 PDF_RULE_VERSION = "pdf-metadata-strip/v1"
 IDENTITY_RULE_VERSION = "identity/v1"
 FORBIDDEN_KEYS = ("/Author", "/Creator", "/Producer", "/Metadata")
+# Attachment names and embedded payloads are neither document metadata (ADR-011 clause 5)
+# nor body text (span validators), so nothing else in the system would catch a name here.
+EMBEDDED_FILE_KEYS = ("/EmbeddedFiles", "/AF")
+FILESPEC_TYPE = pikepdf.Name("/Filespec")
 
 
 class ArtifactPreparationError(ValueError):
@@ -34,6 +38,10 @@ class TransformVerificationFailed(ArtifactPreparationError):
 
 
 class NonIdempotentTransform(ArtifactPreparationError):
+    pass
+
+
+class EmbeddedFileNotPermitted(ArtifactPreparationError):
     pass
 
 
@@ -76,10 +84,16 @@ def _media_type(value: str) -> str:
     return value.partition(";")[0].strip().lower()
 
 
-def _extract_timestamp(info: pikepdf.Dictionary, key: str) -> str | None:
-    if key not in info:
-        return None
-    return str(info[key])
+def _read_timestamps(pdf: pikepdf.Pdf) -> PdfTimestamps:
+    """Read /Info without pikepdf's ``docinfo`` accessor, which creates it when absent."""
+
+    info = pdf.trailer.get("/Info")
+    if not isinstance(info, pikepdf.Dictionary):
+        return PdfTimestamps(creation_date=None, modification_date=None)
+    return PdfTimestamps(
+        creation_date=str(info["/CreationDate"]) if "/CreationDate" in info else None,
+        modification_date=str(info["/ModDate"]) if "/ModDate" in info else None,
+    )
 
 
 def _strip_pdf_once(content: bytes) -> tuple[bytes, PdfTimestamps]:
@@ -96,18 +110,14 @@ def _strip_pdf_once(content: bytes) -> tuple[bytes, PdfTimestamps]:
         if pdf.is_encrypted:
             raise MalformedPdf("encrypted PDFs are not supported")
 
-        info = pdf.docinfo
-        timestamps = PdfTimestamps(
-            creation_date=_extract_timestamp(info, "/CreationDate"),
-            modification_date=_extract_timestamp(info, "/ModDate"),
-        )
+        timestamps = _read_timestamps(pdf)
 
         if "/Info" in pdf.trailer:
             del pdf.trailer["/Info"]
 
         for obj in pdf.objects:
             if isinstance(obj, pikepdf.Dictionary):
-                for key in FORBIDDEN_KEYS:
+                for key in FORBIDDEN_KEYS + EMBEDDED_FILE_KEYS:
                     if key in obj:
                         del obj[key]
 
@@ -139,8 +149,14 @@ def _verify_pdf(content: bytes) -> None:
         if "/Info" in pdf.trailer:
             raise TransformVerificationFailed("forbidden document information remains")
         for obj in pdf.objects:
-            if isinstance(obj, pikepdf.Dictionary) and any(key in obj for key in FORBIDDEN_KEYS):
+            if not isinstance(obj, pikepdf.Dictionary):
+                continue
+            if any(key in obj for key in FORBIDDEN_KEYS):
                 raise TransformVerificationFailed("forbidden metadata remains reachable")
+            if any(key in obj for key in EMBEDDED_FILE_KEYS):
+                raise EmbeddedFileNotPermitted("embedded file references remain reachable")
+            if obj.get("/Type") == FILESPEC_TYPE:
+                raise EmbeddedFileNotPermitted("an embedded file specification remains reachable")
     finally:
         pdf.close()
 
@@ -177,7 +193,12 @@ def prepare_artifact(
         if second != stored:
             raise NonIdempotentTransform("PDF transform did not reach a byte-stable result")
         rule = PDF_RULE_VERSION
-        checks = ("reparse_succeeded", "forbidden_metadata_absent", "byte_idempotent")
+        checks = (
+            "reparse_succeeded",
+            "forbidden_metadata_absent",
+            "embedded_files_absent",
+            "byte_idempotent",
+        )
     else:
         raise UnsupportedMediaType(f"no artifact transform for media type {media_type!r}")
 

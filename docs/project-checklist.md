@@ -22,8 +22,10 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Implement the approved Python schemas and configured retrieval
-job, including ADR-011's verified object-aware transform. The German-speaking
+**Next action:** Extend the working milestone/extractor slice with financial,
+source, artifact, conflict and review-history schemas; add verified PDF evidence
+bounding boxes and the private atomic retention adapter; then run the first
+metered model extraction without creating golden values. The German-speaking
 review continues in parallel and remains the only source of populated golden
 values. Recheck C-010 from official sources on 2026-08-25 without inferring an
 outcome.

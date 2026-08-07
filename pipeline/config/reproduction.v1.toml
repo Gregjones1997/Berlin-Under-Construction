@@ -1,0 +1,16 @@
+schema_version = "1.0.0"
+
+[[source]]
+id = "C-014-press-2023-06-26"
+url = "https://www.berlin.de/sen/sbw/presse/pressemeldungen/2023/pressemitteilung.1338536.php"
+expected_pre_transform_response_hash = "36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5"
+
+[[source]]
+id = "C-014-press-2023-10-12"
+url = "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1374721.php"
+expected_pre_transform_response_hash = "6f341678a9ec8240f29a8d6f93091c0cadd1f5e4cc8b90acc54c3805a2cdeab5"
+
+[[source]]
+id = "C-014-h19-2449"
+url = "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf"
+expected_pre_transform_response_hash = "a554a9df39ccba3b641e48264d3442a755178e60f3f7dea7c6de2398bb49fa60"

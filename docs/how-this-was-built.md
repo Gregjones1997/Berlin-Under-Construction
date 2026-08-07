@@ -2,6 +2,106 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-07 — Start the configured, retention-safe retrieval pipeline
+
+**Status:** Complete
+
+**Commit:** `<hash>` — `feat(pipeline): add configured verified artifact retrieval`
+
+### Goal
+
+Turn the evidence-retrieval playbook into executable policy, implement ADR-011
+before any bulk artifact retention, reproduce the three previously checked
+C-014 responses, and establish a strict German-first extraction boundary.
+
+### Participants and scopes
+
+- Project owner: requested the pipeline start, commit and push, and requested
+  high-effort GPT-5.6 Luna-compatible delegation.
+- Main agent (Codex, TDD and codebase-design skills): sole writer; designed,
+  integrated and independently tested the schemas, configuration, transformer,
+  retrieval job and extractor boundary.
+- Schema subagent (inherited GPT-5.6 model, high effort; domain-modeling, TDD and
+  codebase-design skills): proposed strict Pydantic boundaries and separation of
+  untrusted extraction proposals from trusted publication state.
+- Retrieval-configuration subagent (inherited GPT-5.6 model, high effort):
+  translated the playbook into a versioned TOML shape and identified the
+  evidence-depth and User-Agent fallback semantics.
+- Artifact subagent (inherited GPT-5.6 model, high effort; codebase-design
+  skill): proposed the single preparation gate, object-aware PDF rewrite,
+  reparse checks, idempotency test and safe reproduction inventory.
+
+### Multi-agent architecture
+
+Delegation split three read-only design risks that could be examined in
+parallel: schema authority boundaries, retrieval policy, and PDF transformation.
+The main agent accepted strict frozen models, the non-publishable proposal DTO,
+the term `evidence_depth`, the default/browser/browser-tool fallback, and the
+single `prepare_artifact` gate. The PDF proposal's exact 10.10.0 pin was modified
+to the independently tested 10.11.0 runtime. Its broader retention adapter,
+signed-PDF and embedded-file policies were deferred because this change does not
+write artifacts. The full approved claim/conflict/source model was also not
+claimed complete: this first vertical slice covers milestone proposals and
+leaves financial, conflict, review-history and PDF evidence-bbox slices next.
+
+The requested direct `gpt-5.6-luna` override was not accepted by the available
+orchestrator; the lanes therefore used its supported inherited-model path with
+high reasoning effort. All lanes remained read-only, and every accepted idea was
+reimplemented and checked by the main agent.
+
+### Work performed
+
+- Added strict Pydantic milestone-claim and untrusted milestone-proposal models.
+  Extractor output cannot contain publication or review fields, requires an
+  exact German evidence span, and is rejected atomically on malformed JSON or a
+  span mismatch. PDF proposal extraction remains blocked until bounding-box
+  verification exists.
+- Converted the operational retrieval rules into versioned TOML: five evidence
+  depths, parliamentary URL templates, financial completion depths, content
+  limits, exact identity encoding and the complete 403 fallback chain.
+- Added an in-memory retrieval job that records redirect and access-barrier
+  attempts and always passes successful bytes through the artifact preparation
+  gate before returning them.
+- Implemented ADR-011 with pikepdf/libqpdf: extract timestamp provenance, remove
+  document information and reachable metadata objects, deterministically
+  rewrite, reparse, verify forbidden fields are absent, and prove byte-level
+  idempotency. HTML remains byte-exact under `identity/v1`; both pre-transform
+  and stored hashes are computed, but only the stored hash is artifact identity.
+- Added a no-retention reproduction registry and command. It keeps response
+  bodies in memory only and does not modify the frozen dossiers.
+
+### Verification
+
+- `.venv/bin/python -m pytest -q`: 35 tests passed, including strict proposal
+  authority boundaries, exact German HTML spans, 403 retry recording, MIME
+  bypass rejection, object metadata removal, timestamp extraction, two hashes
+  and byte idempotency.
+- `.venv/bin/python -m pip check`: no broken requirements.
+- Live no-retention run: all three C-014 historical raw-response hashes matched.
+  The two HTML stored hashes remained equal to their raw hashes. The real
+  `h19-2449-v.pdf` passed reparse and idempotency verification and produced
+  stored-content `sha256:2d4a8292a2c7d309831dc19d74729ceb74aadcb433f08b55ea3ce1a48ced8a6a`
+  under `pdf-metadata-strip/v1`. Retrieval configuration digest:
+  `sha256:dfb0d5edc6a05ac04f147a31757db65d0022636a82d4907ab88b54fafed25496`.
+- `git diff --check` passed; the frozen dossier directory remained unchanged.
+
+### Course correction
+
+**Course correction** — the first editable install failed because setuptools
+auto-discovered the top-level `notes` and `evaluation` directories as packages.
+Package discovery is now explicitly limited to `pipeline*`, and generated
+`*.egg-info/` directories are ignored. Cost: one failed local install attempt;
+no repository or retained-artifact data was changed.
+
+### Failures and limitations
+
+- This is the first pipeline slice, not completion of the approved Phase 2 data
+  model. Financial claims, conflicts, source persistence, review history, PDF
+  evidence bounding boxes and the private atomic retention adapter remain.
+- No model extraction was executed and no golden value was generated or edited.
+- Browser-tool retrieval is an explicit terminal handoff from the local job; the
+  browser executor is not embedded in Python.
+
 - 2026-08-07 — Project owner and Codex: clarified that recorded stack choices are working defaults which the owner may reopen at any time; agents should not repeatedly relitigate them unprompted. Verified: the deadline-linked prohibition is absent from `AGENTS.md` and `README.md`. `5f87e67`
 
 - 2026-08-07 — Project owner, reviewer and Codex (domain-modeling skill): reconciled phase labels and ADR-002/003, accepted ADR-011 as amended, approved the claim/source/extraction design including quarantine and structural conflicts, and recorded the C-014 redirect finding outside the frozen dossier. Verified: owner rulings are explicit, three raw hashes reproduced, and dossiers remain unchanged. `4b840d8`

@@ -22,6 +22,7 @@ coverage/
 __pycache__/
 .pytest_cache/
 .ruff_cache/
+*.egg-info/
 
 # Retained source artifacts are private by policy and must never be committed.
 # See docs/methodology.md and AGENTS.md.

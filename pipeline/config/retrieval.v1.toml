@@ -1,0 +1,53 @@
+schema_version = "1.0.0"
+config_version = "retrieval-v1"
+
+[http]
+timeout_seconds = 30
+max_response_bytes = 52428800
+accept_encoding = "identity"
+
+[http.user_agents]
+default = "BerlinUnderConstruction/0.1 (+https://github.com/Gregjones1997/Berlin-Under-Construction)"
+browser = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36"
+
+[fetch_policy]
+steps = ["default", "browser", "browser_tool"]
+retry_statuses = [403]
+manual_only_after = "browser_tool_failure"
+record_resolved_barriers = true
+
+[artifact_transforms]
+"application/pdf" = "pdf-metadata-strip/v1"
+"text/html" = "identity/v1"
+
+[[evidence_depths]]
+depth = 1
+name = "project_page"
+
+[[evidence_depths]]
+depth = 2
+name = "press_release"
+
+[[evidence_depths]]
+depth = 3
+name = "programme_index"
+
+[[evidence_depths]]
+depth = 4
+name = "schriftliche_anfrage"
+
+[[evidence_depths]]
+depth = 5
+name = "hauptausschuss_vorlage"
+
+[source_families.parliamentary_question]
+url_template = "https://pardok.parlament-berlin.de/starweb/adis/citat/VT/{wp}/SchrAnfr/S{wp}-{number}.pdf"
+evidence_depth = 4
+
+[source_families.hauptausschuss]
+url_template = "https://www.parlament-berlin.de/adosservice/{wp}/Haupt/vorgang/h{wp}-{number}-v.pdf"
+evidence_depth = 5
+
+[completion]
+financial_requires_depths = [4, 5]
+record_inapplicable_or_unavailable = true

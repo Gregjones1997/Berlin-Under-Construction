@@ -13,7 +13,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - `06f8e27` — `feat(pipeline): add fail-closed metered extraction runner`
 - `96ce545` — `docs(process): record vertical-slice evidence and next action`
 - `1b20caa` — `docs(process): clarify delegation model fallback`
-- `<charset-fix-hash>` — `fix(pipeline): honor declared charset in metered input`
+- `1612a88` — `fix(pipeline): honor declared charset in metered input`
 
 ### Goal
 

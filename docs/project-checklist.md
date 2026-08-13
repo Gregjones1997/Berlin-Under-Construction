@@ -31,7 +31,11 @@ against the stored C-014 artifact failed on 2026-08-13 with
 `provider_response_incomplete`; it emitted no completed-run summary and added
 no run or claim to the private store. Report no token, cost, latency or privacy
 figures from that attempt, and make no second provider call without fresh owner
-authorization. Diagnose the missing safe incomplete-reason reporting first;
+authorization. Diagnose from stored data first: surface the adapter's
+content-free incomplete reason, and check the `max_output_tokens = 2000` cap
+against the 1,053 output tokens the one completed run over this artifact used.
+Await the owner's decision on whether a billed failed attempt may capture usage
+and cost labelled only as failed-call accounting;
 after any authorized completed run, use local-only withheld-detail
 reconstruction to inspect storage fidelity without reporting an accuracy figure
 and obtain human review of its proposed, unverified C-014 claim before opening

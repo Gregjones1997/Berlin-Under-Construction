@@ -2,9 +2,11 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): corrected the C-014 failure record to distinguish an incomplete response from an unestablished cause, identify the 2,000-token cap as a stored-data diagnosis candidate, and state that the adapter discarded failed-call usage and latency rather than proving them unavailable. Verified: provider control flow, metering policy and the private store's historical 1,053-output-token run checked directly.
+
 ## 2026-08-13 — Attempt the authorized C-014 one-shot
 
-**Status:** Complete — the single authorized attempt failed safely
+**Status:** Complete
 
 **Commit:** `61bcaac` — `docs(process): record failed C-014 one-shot`
 
@@ -30,8 +32,12 @@ turning the observation into an accuracy claim.
   source `C-014-press-2023-06-26` and artifact
   `sha256:36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5`.
 - Ran the README's `python -m pipeline.extract_once` invocation once through the
-  repository virtual environment. The provider returned an incomplete response
-  and the adapter rejected it as `provider_response_incomplete`.
+  repository virtual environment. The response came back with status
+  `incomplete` and the adapter rejected it as `provider_response_incomplete`.
+  Which side truncated it is not established: the run cap is
+  `max_output_tokens = 2000` with `reasoning_effort` fixed to `high`, and the one
+  completed run over this artifact consumed 1,053 output tokens, so the cap is a
+  live candidate and is testable from stored data without another provider call.
 - Did not retry, derive metrics from the failed response, reconstruct a new
   claim, change a contested English type or touch the golden set.
 
@@ -58,7 +64,12 @@ turning the observation into an accuracy claim.
 ### Failures and limitations
 
 - No completed-run summary exists, so the four token fields, cost, latency and
-  both privacy outcomes are unknown and are not reported.
+  both privacy outcomes are not reported. They were not unavailable: the adapter
+  raises before reading `usage` from the incomplete payload
+  (`pipeline/openai_provider.py:70`) and discards the latency it had already
+  measured, so this attempt's billed tokens and cost are captured nowhere. That
+  is a gap against the cost convention in `AGENTS.md` and needs an owner decision
+  before the adapter records anything from a failed call.
 - The command-line traceback exposes the stable rejection code but not the
   adapter's optional content-free incomplete reason. Diagnosing that reporting
   gap does not authorize another provider call.

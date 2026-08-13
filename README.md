@@ -38,6 +38,11 @@ The command refuses to run without the environment variable. It prints the run
 ID, input/cached/cache-write/output token fields, cost, latency and both privacy
 outcomes; it never prints the key, source text or raw model output. OpenAI has no
 cache-write usage field, so that provider-gated output category is always zero.
+If the provider returns a billed but rejected response, the command exits
+nonzero and prints only stable rejection details plus
+`failed_attempt_accounting` when safe usage is present. A failed attempt is not
+stored as an extraction run or claim, and its accounting is not presented as
+completed extraction metrics.
 
 ## German-first vocabulary boundary
 

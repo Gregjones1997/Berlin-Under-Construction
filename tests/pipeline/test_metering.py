@@ -50,7 +50,7 @@ class FakeProvider:
         self.calls += 1
         assert request.store is False
         assert request.reasoning_effort == "high"
-        assert request.max_output_tokens == 2000
+        assert request.max_output_tokens == 4000
         assert request.threshold_config_version == "thresholds-v1"
         return self.response
 

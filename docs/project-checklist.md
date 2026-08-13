@@ -26,26 +26,21 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 the Nest OUTBOX. On return, confirm that it records only the reviewer's
 pseudonymous role, relevant qualification and review date, then integrate no
 adjudication until the completed review has been checked against the source
-contexts. Separately, the authorized `python -m pipeline.extract_once` attempt
-against the stored C-014 artifact failed on 2026-08-13 with
-`provider_response_incomplete`; it emitted no completed-run summary and added
-no run or claim to the private store. Report no token, cost, latency or privacy
-figures from that attempt, and make no second provider call without fresh owner
-authorization. Diagnose from stored data first: surface the adapter's
-content-free incomplete reason, and check the `max_output_tokens = 2000` cap
-against the 1,053 output tokens the one completed run over this artifact used.
-Await the owner's decision on whether a billed failed attempt may capture usage
-and cost labelled only as failed-call accounting;
-after any authorized completed run, use local-only withheld-detail
-reconstruction to inspect storage fidelity without reporting an accuracy figure
-and obtain human review of its proposed, unverified C-014 claim before opening
-Phase 3. After that boundary, implement
-`FinancialClaim` on the working evidence-depth gate and extend source, conflict
-and review-history schemas. Human glossary verification and the golden truth set
-are post-v0; until then publish no accuracy figure, keep contested English types
-unresolved, and disclose the glossary version and unverified status. Recheck
-C-010 from official sources on 2026-08-25 without inferring an outcome. The
-zero-unsupported-publication invariant remains a v0 gate throughout.
+contexts. Separately, the C-014 output cap is now 4,000 and the adapter reports
+content-free failed-call accounting without persisting a run or claim. The cause
+of the 13 August incomplete response remains unestablished; make no second
+provider call without fresh owner authorization, and require any future
+authorized failure to expose its incomplete reason before reading its accounting
+as anything other than failed-attempt evidence. See the build log for the
+attempt and mitigation. After any authorized completed run, use local-only
+withheld-detail reconstruction and human review of its proposed, unverified
+claim before opening Phase 3. Then implement `FinancialClaim` on the working
+evidence-depth gate and extend source, conflict and review-history schemas.
+Human glossary verification and the golden truth set are post-v0; meanwhile
+publish no accuracy figure, keep contested English types unresolved, and
+disclose the glossary version and unverified status. Recheck C-010 from official
+sources on 2026-08-25 without inferring an outcome. The zero-unsupported-
+publication invariant remains a v0 gate throughout.
 
 ## Phase 0 — Minimal foundation
 

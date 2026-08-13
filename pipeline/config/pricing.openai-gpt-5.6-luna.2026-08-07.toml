@@ -15,5 +15,5 @@ output = "1.20"
 
 [run_limits]
 max_input_bytes = 200000
-max_output_tokens = 2000
+max_output_tokens = 4000
 cost_ceiling = "0.30"

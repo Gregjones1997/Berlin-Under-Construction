@@ -908,3 +908,42 @@ build-log entry.
 
 The repository adopts another public, versioned record with an explicit
 migration of the existing history.
+
+---
+
+## ADR-020 — Treat pricing provenance and run limits as separate concerns
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Extraction metering configuration and stored cost provenance
+
+### Context
+
+The metering configuration contains both dated provider rates and operator-set
+run limits. Raising `max_output_tokens` from 2,000 to 4,000 changes request
+policy without changing any price used to calculate stored costs. The current
+filename and `pricing_reference` combine those concerns even though only the
+rate block is the dated pricing observation.
+
+### Decision
+
+`pricing_reference` identifies the rate block, not the mutable `run_limits`
+block in the same file. Run-limit changes do not restate historical rates and
+must be recorded in the decision log and build log until the configuration is
+split or run-policy provenance is stored separately.
+
+### Consequences
+
+- Existing and future costs using this reference remain comparable because the
+  rates are unchanged.
+- `pricing_reference` alone does not reproduce the exact request cap; the build
+  record supplies that policy history for v0.
+- A later schema may store a separate run-policy version without changing the
+  meaning of existing cost rows.
+
+### Reconsider when
+
+The pipeline supports multiple run profiles, run limits affect a published
+comparison, or exact request-policy provenance needs to travel with each run.

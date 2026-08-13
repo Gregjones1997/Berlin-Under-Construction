@@ -79,3 +79,90 @@ def test_openai_incomplete_response_surfaces_reason() -> None:
 
     assert str(caught.value) == "provider_response_incomplete"
     assert caught.value.incomplete_reason == "max_output_tokens"
+    assert caught.value.billed_usage is None
+
+
+def test_openai_incomplete_response_captures_billed_usage_and_latency() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "status": "incomplete",
+                "incomplete_details": {"reason": "max_output_tokens"},
+                "output": [],
+                "usage": {
+                    "input_tokens": 120,
+                    "input_tokens_details": {"cached_tokens": 20},
+                    "output_tokens": 40,
+                },
+            },
+        )
+
+    provider = OpenAIResponsesProvider(
+        api_key="secret", client=httpx.Client(transport=httpx.MockTransport(handler))
+    )
+    with pytest.raises(MeteringRejected) as caught:
+        provider.extract(request())
+
+    assert caught.value.rejection_code == "provider_response_incomplete"
+    assert caught.value.billed_usage == {
+        "input_tokens": 120,
+        "output_tokens": 40,
+        "cached_input_tokens": 20,
+        "cache_write_input_tokens": 0,
+    }
+    assert caught.value.latency_ms is not None
+    assert caught.value.latency_ms >= 0
+
+
+def test_openai_incomplete_response_preserves_rejection_when_usage_is_malformed() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "status": "incomplete",
+                "incomplete_details": {"reason": "max_output_tokens"},
+                "output": [],
+                "usage": {"input_tokens": "12"},
+            },
+        )
+
+    provider = OpenAIResponsesProvider(
+        api_key="secret", client=httpx.Client(transport=httpx.MockTransport(handler))
+    )
+    with pytest.raises(MeteringRejected) as caught:
+        provider.extract(request())
+
+    assert caught.value.rejection_code == "provider_response_incomplete"
+    assert caught.value.incomplete_reason == "max_output_tokens"
+    assert caught.value.billed_usage is None
+
+
+def test_openai_output_shape_rejection_captures_billed_usage() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                "status": "completed",
+                "output": [],
+                "usage": {
+                    "input_tokens": 12,
+                    "input_tokens_details": {"cached_tokens": 3},
+                    "output_tokens": 4,
+                },
+            },
+        )
+
+    provider = OpenAIResponsesProvider(
+        api_key="secret", client=httpx.Client(transport=httpx.MockTransport(handler))
+    )
+    with pytest.raises(MeteringRejected) as caught:
+        provider.extract(request())
+
+    assert caught.value.rejection_code == "provider_output_shape"
+    assert caught.value.billed_usage == {
+        "input_tokens": 12,
+        "output_tokens": 4,
+        "cached_input_tokens": 3,
+        "cache_write_input_tokens": 0,
+    }

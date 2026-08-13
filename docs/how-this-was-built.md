@@ -2,6 +2,83 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-13 — Preserve accounting from failed extraction calls
+
+**Status:** Complete
+
+### Goal
+
+Make a future rejected provider response operationally useful without treating
+it as a completed extraction: preserve content-free usage, cost, latency and
+rejection details, keep failed attempts out of the append-only run store, and
+give a future authorized call more output runway.
+
+### Participants and scopes
+
+- Project owner: raised the output cap to 4,000, authorized failed-call token and
+  cost capture, and did not authorize another provider call.
+- Main agent (Codex, Buzz CLI skill): checked the proposal against the code and
+  stored policy, implemented the adapter, CLI, tests and public record, and ran
+  repository verification.
+- Reviewer Claire: traced the discarded diagnostics, identified the 2,000-token
+  cap as a live but unproven cause candidate, and proposed the bounded code and
+  test changes. No subagents were used.
+
+### Work performed
+
+- Raised `max_output_tokens` from 2,000 to 4,000. At the configured rates, the
+  maximum preflight cost rises to USD 0.0448 and remains below the USD 0.30
+  ceiling.
+- Added non-raising extraction of the four content-free token counts and elapsed
+  latency from incomplete and invalid-output-shape responses.
+- Added structured CLI rejection output with `failed_attempt_accounting`,
+  including cost under the configured rate reference. Failed calls still exit
+  nonzero and are not written to `extraction_runs` or claim tables.
+- Recorded that `pricing_reference` identifies rates, not mutable run limits,
+  while those concerns share one v0 configuration file.
+
+### Decisions
+
+- Accepted the reviewer's safe-diagnostics and no-persistence boundaries.
+- Extended the proposed usage helper to include the fourth token field,
+  `cache_write_input_tokens = 0`, matching completed OpenAI accounting.
+- Treated 4,000 tokens as an owner-selected mitigation, not proof that the prior
+  incomplete response hit the old cap. Its cause remains unestablished.
+- Kept the 13 August attempt entry unchanged because it correctly records the
+  2,000-token policy in force for that historical call.
+
+### Verification
+
+- Provider tests cover complete usage, incomplete usage, malformed usage and
+  billed invalid-output-shape rejection without changing the rejection code.
+- The CLI regression test verifies stderr accounting, nonzero exit and zero
+  persisted extraction runs or claims after rejection.
+- Full repository suite: 117 tests passed. The build-log checker validated all
+  61 pre-existing reachable hashes before this entry received its work-commit
+  hash.
+
+### Failures and limitations
+
+- The 13 August response payload was discarded before this change, so its usage,
+  cost, latency and incomplete reason cannot be recovered by this code.
+- The higher cap does not establish why that response was incomplete. Only a
+  separately authorized future call can exercise the new diagnostics.
+- Failed attempts are printed for operator accounting but are not persisted;
+  durable failed-attempt storage remains a separate schema decision.
+
+### Evidence
+
+- `pipeline/openai_provider.py`
+- `pipeline/extract_once.py`
+- `pipeline/metering.py`
+- `pipeline/config/pricing.openai-gpt-5.6-luna.2026-08-07.toml`
+- `README.md`
+- `tests/pipeline/test_openai_provider.py`
+- `tests/pipeline/test_extract_once.py`
+- `tests/pipeline/test_metering.py`
+- `docs/decision-log.md`
+- `docs/project-checklist.md`
+
 - 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): corrected the C-014 failure record to distinguish an incomplete response from an unestablished cause, identify the 2,000-token cap as a stored-data diagnosis candidate, and state that the adapter discarded failed-call usage and latency rather than proving them unavailable. Verified: provider control flow, metering policy and the private store's historical 1,053-output-token run checked directly. `d9c7106`
 
 ## 2026-08-13 — Attempt the authorized C-014 one-shot

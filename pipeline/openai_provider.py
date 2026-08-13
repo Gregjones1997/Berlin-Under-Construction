@@ -12,6 +12,30 @@ from pipeline.schemas import ExtractionOutput
 logger = logging.getLogger(__name__)
 
 
+def _billed_usage(payload: object) -> dict[str, int] | None:
+    """Return content-free token counts from a rejected response; never raise."""
+
+    if not isinstance(payload, dict):
+        return None
+    usage = payload.get("usage")
+    if not isinstance(usage, dict):
+        return None
+    details = usage.get("input_tokens_details")
+    cached = details.get("cached_tokens") if isinstance(details, dict) else 0
+    counts = {
+        "input_tokens": usage.get("input_tokens"),
+        "output_tokens": usage.get("output_tokens"),
+        "cached_input_tokens": cached if cached is not None else 0,
+        "cache_write_input_tokens": 0,
+    }
+    if any(
+        isinstance(value, bool) or not isinstance(value, int) or value < 0
+        for value in counts.values()
+    ):
+        return None
+    return counts
+
+
 class OpenAIResponsesProvider:
     """Minimal no-retention Responses API adapter; errors never include model content."""
 
@@ -70,10 +94,16 @@ class OpenAIResponsesProvider:
                 raise MeteringRejected(
                     "provider_response_incomplete",
                     incomplete_reason=reason if isinstance(reason, str) else None,
+                    billed_usage=_billed_usage(payload),
+                    latency_ms=round((perf_counter() - started) * 1000),
                 )
             output_texts = [content["text"] for item in payload["output"] if item.get("type") == "message" for content in item.get("content", []) if content.get("type") == "output_text"]
             if len(output_texts) != 1:
-                raise MeteringRejected("provider_output_shape")
+                raise MeteringRejected(
+                    "provider_output_shape",
+                    billed_usage=_billed_usage(payload),
+                    latency_ms=round((perf_counter() - started) * 1000),
+                )
             usage = payload["usage"]
             details = usage.get("input_tokens_details", {})
             if not self._usage_keys_logged:

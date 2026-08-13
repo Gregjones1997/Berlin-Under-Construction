@@ -34,6 +34,8 @@ class MeteringRejected(ValueError):
         provider_error_type: str | None = None,
         provider_error_code: str | None = None,
         incomplete_reason: str | None = None,
+        billed_usage: dict[str, int] | None = None,
+        latency_ms: int | None = None,
     ) -> None:
         super().__init__(rejection_code)
         self.rejection_code = rejection_code
@@ -41,6 +43,8 @@ class MeteringRejected(ValueError):
         self.provider_error_type = provider_error_type
         self.provider_error_code = provider_error_code
         self.incomplete_reason = incomplete_reason
+        self.billed_usage = billed_usage
+        self.latency_ms = latency_ms
 
 
 class ProviderUsage(StrictModel):

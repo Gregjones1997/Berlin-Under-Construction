@@ -6,10 +6,13 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import sys
 
 from pipeline.metering import (
     ExtractionProvider,
     MeteringPolicy,
+    MeteringRejected,
+    ProviderUsage,
     run_metered_extraction,
 )
 from pipeline.openai_provider import OpenAIResponsesProvider
@@ -146,17 +149,46 @@ def main() -> None:
         parser.error("OPENAI_API_KEY is required in the environment")
 
     policy = MeteringPolicy.load(args.thresholds, args.pricing)
-    with LocalPipelineStore(args.database) as store:
-        summary = extract_once(
-            OpenAIResponsesProvider(api_key=api_key),
-            store=store,
-            project_id=args.project_id,
-            source_id=args.source_id,
-            artifact_id=args.artifact_id,
-            prompt=args.prompt.read_text(encoding="utf-8"),
-            prompt_version=PROMPT_VERSION,
-            policy=policy,
-        )
+    try:
+        with LocalPipelineStore(args.database) as store:
+            summary = extract_once(
+                OpenAIResponsesProvider(api_key=api_key),
+                store=store,
+                project_id=args.project_id,
+                source_id=args.source_id,
+                artifact_id=args.artifact_id,
+                prompt=args.prompt.read_text(encoding="utf-8"),
+                prompt_version=PROMPT_VERSION,
+                policy=policy,
+            )
+    except MeteringRejected as rejection:
+        report: dict[str, object] = {"rejection_code": rejection.rejection_code}
+        for field in (
+            "http_status",
+            "provider_error_type",
+            "provider_error_code",
+            "incomplete_reason",
+            "latency_ms",
+        ):
+            value = getattr(rejection, field, None)
+            if value is not None:
+                report[field] = value
+        if rejection.billed_usage is not None:
+            accounting: dict[str, object] = {
+                "tokens": dict(rejection.billed_usage)
+            }
+            try:
+                accounting["cost"] = {
+                    "amount": str(
+                        policy.cost(ProviderUsage(**rejection.billed_usage))
+                    ),
+                    "currency": policy.currency,
+                }
+            except ValueError:
+                accounting["cost"] = None
+            report["failed_attempt_accounting"] = accounting
+        print(json.dumps(report, indent=2, sort_keys=True), file=sys.stderr)
+        raise SystemExit(1) from None
     print(json.dumps(summary, indent=2, sort_keys=True))
 
 

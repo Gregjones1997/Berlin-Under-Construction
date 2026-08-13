@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete
 
+**Commit:** `b6a15a4` — `fix(pipeline): preserve failed-call accounting`
+
 ### Goal
 
 Make a future rejected provider response operationally useful without treating

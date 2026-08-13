@@ -32,7 +32,8 @@ the proposed C-014 claim before opening Phase 3. After that boundary, implement
 and review-history schemas. Human glossary verification and the golden truth set
 are post-v0; until then publish no accuracy figure, keep contested English types
 unresolved, and disclose the glossary version and unverified status. Recheck
-C-010 from official sources on 2026-08-25 without inferring an outcome.
+C-010 from official sources on 2026-08-25 without inferring an outcome. The
+zero-unsupported-publication invariant remains a v0 gate throughout.
 
 ## Phase 0 — Minimal foundation
 
@@ -146,13 +147,17 @@ content without changing publication eligibility.
 - [ ] Add correct-refusal tests.
 - [ ] Document failures and threshold changes.
 
-### Post-v0 evaluation gates
+### Evaluation and publication gates
 
-- [ ] Financial-measure type precision reaches at least 99% on the defined pilot set.
-- [ ] Organization-to-role precision target is deferred until the role-vocabulary ADR is accepted and eligible human-labelled data exists; report it explicitly as deferred meanwhile.
-- [ ] Citation correctness reaches at least 99% on the defined pilot set.
+Scored gates marked post-v0 await the human-authored golden set. The remaining
+publication and disclosure gates are binding for v0.
+
+- [ ] Financial-measure type precision reaches at least 99% on the defined pilot set (post-v0).
+- [ ] Organization-to-role precision target is deferred until the role-vocabulary ADR is accepted and eligible human-labelled data exists (post-v0); report it explicitly as deferred meanwhile.
+- [ ] Citation correctness reaches at least 99% on the defined pilot set (post-v0).
 - [ ] Unsupported published claims remain at 0% through deterministic enforcement.
-- [ ] Recall and review-rate results are published honestly, even when below target.
+- [ ] Human-review rate is published honestly at v0.
+- [ ] Recall results are published honestly after post-v0 evaluation, even when below target.
 
 **Phase 3 exit evidence:** The pipeline has reproducible runs, visible failures,
 measured costs and explicit human-review behavior. No accuracy figure publishes

@@ -2,7 +2,7 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
-- **Course correction** — 2026-08-13 — Project owner, reviewer Claire and Codex (Buzz CLI skill): corrected ADR-014 and ADR-015 from 12 August to the owner-confirmed 13 August acceptance date, and restored the reviewer's role in endorsing the replacement clone before the owner corrected the workspace boundary. Verified: both ADRs carry amendment notes and the earlier course-correction entry now names all three participants.
+- **Course correction** — 2026-08-13 — Project owner, reviewer Claire and Codex (Buzz CLI skill): corrected ADR-014 and ADR-015 from 12 August to the owner-confirmed 13 August acceptance date, and restored the reviewer's role in endorsing the replacement clone before the owner corrected the workspace boundary. Verified: both ADRs carry amendment notes and the earlier course-correction entry now names all three participants. `207f3ff`
 
 - **Course correction** — 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): Claire found that the checklist's post-v0 heading accidentally deferred the deterministic zero-unsupported-publication invariant with scored evaluation. Codex accepted the finding, restored the invariant and honest review-rate reporting as v0 gates, and limited post-v0 labels to scored precision, citation and recall metrics. Verified: the checklist now distinguishes golden-set-dependent scores from repository rule 4. `313ee8f`
 

@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete — the single authorized attempt failed safely
 
+**Commit:** `61bcaac` — `docs(process): record failed C-014 one-shot`
+
 ### Goal
 
 Run the documented metered extraction exactly once against the retained C-014

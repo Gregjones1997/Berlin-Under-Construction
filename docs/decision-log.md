@@ -662,3 +662,241 @@ Phase 2 exits on **reconstruction fidelity**, not publication readiness.
 
 Human review becomes routine rather than blocked, so restoring publication-ready
 claims to an earlier phase gate no longer couples unrelated work.
+
+---
+
+## ADR-014 — Keep all three pilot projects in v0
+
+**Date:** 12 August 2026
+
+**Status:** Accepted 2026-08-12 by the project owner
+
+**Scope:** First-release project coverage
+
+### Context
+
+The 1 September deadline created a real scope question. The reviewer recommended
+a single-project v0 centered on C-014 because it offered the safest schedule.
+That alternative would have reduced the amount of source, schema and display work
+required before release, but it would also have removed the cross-project cases
+that expose different evidence and terminology problems.
+
+### Decision
+
+The v0 release keeps all three selected pilots: C-014, C-010 and C-019. The
+project owner declined the reviewer-recommended single-project alternative.
+Schedule pressure is handled by shrinking features around the three dossiers,
+not by removing two pilots.
+
+### Consequences
+
+- The first release must support all three pilot dossiers.
+- Optional product surface may be reduced to protect the deadline and trust
+  rules.
+- A working C-014 vertical slice remains the implementation path, but it is not
+  the complete release scope.
+
+### Reconsider when
+
+A documented blocker makes three-project publication impossible without
+weakening evidence quality, privacy or another non-negotiable rule.
+
+---
+
+## ADR-015 — Ship v0 with an explicitly unverified glossary
+
+**Date:** 12 August 2026
+
+**Status:** Accepted 2026-08-12 by the project owner
+
+**Scope:** v0 translation, evaluation and disclosure boundary
+
+### Context
+
+ADR-008 defines the human-verification boundary required for golden values, but
+German-speaking glossary verification will not complete on the v0 critical
+path. Treating an agent-produced or otherwise unverified glossary as authority
+would violate the golden-set rule; waiting for a golden set would put the first
+release behind that unavailable authority.
+
+C-010 is the live example of the risk: its five German completion terms are
+contested and cannot be collapsed into one asserted English milestone type.
+
+### Decision
+
+v0 may ship with a versioned glossary whose status is explicitly `unverified`.
+This changes sequencing, not the authority rule in ADR-008. The human-authored
+golden truth set and glossary verification move off the v0 critical path to
+post-v0.
+
+Until verification exists, all of the following are binding:
+
+1. No extraction accuracy figure is published.
+2. No English milestone type or financial type is asserted where the German is
+   contested. The unresolved German distinction remains visible instead.
+3. German remains canonical in storage.
+4. The glossary version and its verification status are published alongside
+   every output derived from the glossary.
+
+### Consequences
+
+- v0 can demonstrate bounded extraction, evidence spans, withholding, cost and
+  latency without presenting model self-consistency as accuracy.
+- C-010's five completion terms remain unresolved in English until a qualified
+  human settles the relevant vocabulary and context.
+- Any display derived from the glossary is visibly provisional and traceable to
+  its exact version.
+- Golden-set evaluation becomes post-v0 work; agents still may not create or
+  populate its values.
+
+### Reconsider when
+
+A German-speaking human has verified the relevant glossary version and authored
+or verified the eligible golden values under ADR-008.
+
+---
+
+## ADR-016 — Use operator sign-off without contribution credit
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Git commit trailers
+
+### Context
+
+The Buzz Nest `AGENTS.md` requires both `Signed-off-by` and `Co-authored-by`
+trailers for the human operator. This public repository separately discloses AI
+authorship in `docs/how-this-was-built.md`. Giving the operator contribution-
+graph credit for agent-authored changes would make the commit metadata conflict
+with that disclosure.
+
+### Decision
+
+Every agent-created commit carries `Signed-off-by` for the human operator, using
+the repository-local Git name and email. It does not carry `Co-authored-by` for
+the operator or an AI agent.
+
+This knowingly overrides the Buzz Nest trailer rule for this repository.
+
+### Consequences
+
+- Sign-off records human accountability without misattributing authorship.
+- AI participation remains disclosed in the canonical build log.
+- A missing repository-local email blocks an agent-created commit rather than
+  inviting a guessed identity.
+
+### Reconsider when
+
+The repository's public authorship policy or contribution-credit model changes.
+
+---
+
+## ADR-017 — Work in the existing artifact-bearing checkout
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Agent workspace and private pipeline state
+
+### Context
+
+The canonical working tree is `/Users/gregai/Documents/berlin construction`.
+The Buzz Nest convention already prefers an existing checkout, while an earlier
+session treated an empty `REPOS/` directory as evidence that the repository was
+unavailable and briefly created a replacement clone.
+
+That clone could never reproduce the real working environment:
+`data/artifacts/` is gitignored and private under rule 5, and the local SQLite
+store contains the retained bytes required by `pipeline.extract_once`.
+
+### Decision
+
+Agents work in the existing local checkout and do not clone this repository into
+the Buzz Nest `REPOS/` directory.
+
+### Consequences
+
+- Repository work and local extraction use the same canonical tree and private
+  state.
+- A fresh clone is suitable for public reproducibility checks, but cannot run
+  artifact-backed extraction without separately authorized access to the
+  private store.
+- Private artifacts remain gitignored and must never be copied into Git to make
+  another workspace convenient.
+
+### Reconsider when
+
+The project owner relocates the canonical checkout or introduces an authorized
+private-store adapter that preserves rule 5.
+
+---
+
+## ADR-018 — Repository instructions take precedence
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Agent instruction hierarchy
+
+### Context
+
+Two files named `AGENTS.md` apply during Buzz-coordinated work: the Buzz Nest
+workspace file and the repository file. Their general instructions overlap, and
+their commit-trailer rules conflict.
+
+### Decision
+
+For work on this project, the repository `AGENTS.md` wins over the Buzz Nest
+`AGENTS.md`. An agent must state a conflict out loud when it encounters one
+rather than silently choosing or blending the instructions.
+
+### Consequences
+
+- Project-specific trust, privacy, authorship and workflow rules remain
+  authoritative in the project they govern.
+- The Nest instructions continue to apply where they do not conflict.
+- Instruction conflicts become visible decisions rather than hidden agent
+  behavior.
+
+### Reconsider when
+
+The two instruction sets are consolidated or their precedence is defined by a
+higher project-owned policy.
+
+---
+
+## ADR-019 — Keep one canonical public build record
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Development-process documentation
+
+### Context
+
+Buzz provides workspace-level `WORK_LOGS/`, while this repository already has a
+public, versioned accountability record with project-specific content and hash
+verification rules. Splitting authoritative history between them would make a
+reader reconstruct the process from two stores with different lifetimes.
+
+### Decision
+
+`docs/how-this-was-built.md` is the canonical project build record.
+`WORK_LOGS/` in the Buzz Nest is scratch and never substitutes for a committed
+build-log entry.
+
+### Consequences
+
+- Every lasting process claim is reviewed and versioned with the repository.
+- Workspace logs may support a session but are not cited as the project record.
+- The build-log commit and hash-recording procedure remains mandatory.
+
+### Reconsider when
+
+The repository adopts another public, versioned record with an explicit
+migration of the existing history.

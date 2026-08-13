@@ -2,6 +2,8 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- **Course correction** — 2026-08-13 — Project owner and Codex (Buzz CLI skill): after Codex treated an empty Nest as the workspace and created a replacement clone that could not contain the private artifact, the owner restored the existing-checkout boundary; ADR-014–019 now record that correction alongside the 12–13 August v0 scope, unverified-glossary and repository-governance decisions. Verified: README and checklist match the ADRs on the three-project, no-accuracy-figure, German-canonical and workspace boundaries.
+
 - 2026-08-07 — Project owner and Codex: changed hash recording from one ceremony commit per work commit to one same-session `docs(build-log)` commit covering all session entries, making hash ceremony distinguishable from substantive process changes. Verified: `AGENTS.md` and the conventions document define the same procedure. `3e20fe9`
 - 2026-08-07 — Project owner and Codex: accepted ADR-013, separating Phase 2 reconstruction fidelity from Phase 4 publication readiness, and aligned both phase criteria. Verified: decision and checklist state the same boundary. `3ab72ca`
 

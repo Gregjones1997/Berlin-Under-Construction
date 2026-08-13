@@ -11,7 +11,7 @@ This is the operational source of truth for what is complete, what is in progres
 ## Delivery targets
 
 - **First public release target:** 1 September 2026.
-- **First release:** Three verified projects, bounded extraction and evaluation, evidence-backed dossiers, and a deployable 2D map.
+- **First release:** Three evidence-backed projects, bounded extraction with disclosed metering and limitations, evidence-backed dossiers, and a deployable 2D map. Scored evaluation follows post-v0.
 - **After first release:** Expand toward ten projects, then ship the technical-illustration 3D experience as a second public milestone.
 
 Targets are planning constraints, not promises. Scope should shrink before trust, evaluation or evidence quality is compromised.
@@ -29,9 +29,10 @@ privacy outcomes, then use local-only withheld-detail reconstruction to inspect
 storage fidelity without reporting an accuracy figure. Obtain human review of
 the proposed C-014 claim before opening Phase 3. After that boundary, implement
 `FinancialClaim` on the working evidence-depth gate and extend source, conflict
-and review-history schemas. The German-speaking review continues in parallel and
-remains the only source of populated golden values. Recheck C-010 from official
-sources on 2026-08-25 without inferring an outcome.
+and review-history schemas. Human glossary verification and the golden truth set
+are post-v0; until then publish no accuracy figure, keep contested English types
+unresolved, and disclose the glossary version and unverified status. Recheck
+C-010 from official sources on 2026-08-25 without inferring an outcome.
 
 ## Phase 0 — Minimal foundation
 
@@ -88,7 +89,7 @@ sources on 2026-08-25 without inferring an outcome.
 - [x] Manually research projects two and three. Evidence: committed C-010 and C-019 dossiers.
 - [x] Capture exact German supporting passages for material claims. Evidence: three frozen dossiers at `phase-1-research-complete`.
 - [x] Record contradictions, ambiguity and missing information. Evidence: quarantine, open-question and access-barrier sections in each dossier.
-- [ ] Create the first golden truth set.
+- [ ] Create the first golden truth set (post-v0; not on the release critical path per ADR-015).
 
 **Partial Phase 1 evidence — every related item remains open:**
 
@@ -127,7 +128,7 @@ with every claim's real state faithfully rendered, including withheld claims and
 the reason each was withheld. The local-only withheld-detail mode verifies stored
 content without changing publication eligibility.
 
-## Phase 3 — Bounded AI pipeline and evaluation
+## Phase 3 — Bounded AI pipeline; scored evaluation post-v0
 
 - [ ] Classify representative pilot documents.
 - [ ] Extract in German before translation.
@@ -137,15 +138,15 @@ content without changing publication eligibility.
 - [ ] Detect material changes and contradictions.
 - [ ] Track provider, model, prompt and schema versions.
 - [ ] Track cost and latency per document from the first run.
-- [ ] Evaluate financial-measure type precision.
-- [ ] Evaluate organization-to-role precision.
-- [ ] Evaluate citation correctness.
-- [ ] Evaluate field, entity-match and contradiction recall separately.
+- [ ] Evaluate financial-measure type precision (post-v0).
+- [ ] Evaluate organization-to-role precision (post-v0).
+- [ ] Evaluate citation correctness (post-v0).
+- [ ] Evaluate field, entity-match and contradiction recall separately (post-v0).
 - [ ] Measure and publish the human-review rate.
 - [ ] Add correct-refusal tests.
 - [ ] Document failures and threshold changes.
 
-### Proposed v0 gates
+### Post-v0 evaluation gates
 
 - [ ] Financial-measure type precision reaches at least 99% on the defined pilot set.
 - [ ] Organization-to-role precision target is deferred until the role-vocabulary ADR is accepted and eligible human-labelled data exists; report it explicitly as deferred meanwhile.
@@ -153,7 +154,9 @@ content without changing publication eligibility.
 - [ ] Unsupported published claims remain at 0% through deterministic enforcement.
 - [ ] Recall and review-rate results are published honestly, even when below target.
 
-**Phase 3 exit evidence:** The pipeline has reproducible results, visible failures, measured costs and explicit human-review behavior.
+**Phase 3 exit evidence:** The pipeline has reproducible runs, visible failures,
+measured costs and explicit human-review behavior. No accuracy figure publishes
+before a human-authored golden set and verified glossary exist.
 
 ## Phase 4 — First public 2D vertical slice
 
@@ -253,7 +256,10 @@ claims do not.
 - [ ] Three evidence-backed project stories are demonstrable.
 - [ ] Original German extraction and controlled translation are demonstrated.
 - [ ] Data and provenance model are explained.
-- [ ] Precision, recall, review rate, cost and latency are published.
+- [ ] Cost, latency and review behavior are published; no precision, recall or
+  accuracy figure is published before the post-v0 golden set exists.
+- [ ] Every glossary-derived output identifies the glossary version and its
+  verification status; contested English types remain unresolved.
 - [ ] Failures and corrections are documented.
 - [ ] Agent-assisted development process is disclosed honestly.
 - [ ] Architecture diagram reflects the implemented system.

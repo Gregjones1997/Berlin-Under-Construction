@@ -18,7 +18,7 @@ The product vision is to connect those records into understandable project dossi
 
 This repository will document the product, data model, engineering decisions, experiments, evaluation results and implementation as the project develops.
 
-The living build checklist is maintained in [`docs/project-checklist.md`](docs/project-checklist.md). The use of AI agents, manual decisions, failures and verification is recorded in [`docs/how-this-was-built.md`](docs/how-this-was-built.md).
+The living build checklist is maintained in [`docs/project-checklist.md`](docs/project-checklist.md). Buzz is the coordination harness for human-agent work; the repository remains the source of truth. The use of AI agents, manual decisions, failures and verification is recorded in the canonical public record, [`docs/how-this-was-built.md`](docs/how-this-was-built.md).
 
 ### One metered extraction
 
@@ -39,12 +39,13 @@ ID, input/cached/cache-write/output token fields, cost, latency and both privacy
 outcomes; it never prints the key, source text or raw model output. OpenAI has no
 cache-write usage field, so that provider-gated output category is always zero.
 
-## Verified-vocabulary premise
+## German-first vocabulary boundary
 
 This project deliberately tests whether a verifiable extraction system can be
-built over a source language the author does not read. It uses a human-verified,
-versioned controlled vocabulary, deterministic evidence-span verification and
-per-value provenance to make that constraint inspectable rather than implicit.
+built over a source language the author does not read. German remains canonical
+in storage, while a versioned controlled vocabulary, deterministic evidence-span
+verification and per-value provenance make the translation boundary inspectable
+rather than implicit.
 
 The premise forces a strict boundary between operating an authority and being
 the authority: agents may retrieve human-authored references, match spans and
@@ -53,12 +54,21 @@ does not solve every language-dependent decision. Project boundary, identity,
 contextual sense and conflicts between authorities still require German
 comprehension the project owner does not have.
 
+For v0, the glossary is explicitly unverified. The release will not publish an
+accuracy figure, and it will not assert an English milestone or financial type
+where the German meaning is contested. C-010's five completion terms are the
+current example: they remain unresolved rather than being collapsed into one
+English label. Every glossary-derived display publishes the glossary version and
+its verification status. Human glossary verification and the golden truth set
+remain post-v0 work.
+
 ## Current status
 
-This project is not yet a finished application. Three pilot dossiers are
-evidence-complete and frozen while German-speaking review prepares the
-human-authored golden set. Current implementation work is the Phase 2 typed data
-core and review tooling.
+This project is not yet a finished application. All three pilot dossiers remain
+in v0 and are evidence-complete and frozen. Current implementation work is the
+Phase 2 typed data core and review tooling. The release may show bounded pipeline
+behavior, cost and latency, but it will not describe those observations as an
+accuracy result while the glossary and golden set are unverified.
 
 The first public release will focus on a narrow, working vertical slice:
 
@@ -66,12 +76,16 @@ The first public release will focus on a narrow, working vertical slice:
 - A source registry and manually verified project dossiers.
 - Clear definitions for project status, milestones, financial measures and evidence.
 - A versioned data model for projects, claims, sources, organizations and changes.
-- A bounded document-intelligence workflow with evaluation results.
+- A bounded document-intelligence workflow with metering and visible limitations; scored evaluation follows after v0.
 - A deployable 2D map connected to evidence-backed project pages.
 
 The technical-illustration 3D experience remains an important differentiator, but it follows the first working 2D release so that geospatial rendering does not delay evidence of the core data and AI work.
 
 Features described in the roadmap are planned work unless they are explicitly marked as complete in the project documentation.
+
+Planned display treatment for unresolved vocabulary is deliberately calm: a
+status chip such as `Translation unverified` or `Milestone type unresolved`, not
+a warning banner. This is a later interface note, not a claim that the UI exists.
 
 ## Product thesis
 
@@ -102,7 +116,7 @@ New information should update the current view without deleting previously suppo
 
 An original estimate, approved budget, awarded contract value, expenditure and final cost are different measures. Likewise, construction start, handover, commissioning and public opening are different milestones. The data model should preserve these distinctions.
 
-German-language source terms should be extracted and stored before translation. A controlled German-English glossary will map consequential budget, procurement and milestone terms for display without replacing the original wording.
+German-language source terms should be extracted and stored before translation. A versioned German-English glossary may map consequential budget, procurement and milestone terms for display without replacing the original wording; its verification status must travel with derived output, and contested types remain unresolved.
 
 ### AI should be bounded and evaluated
 
@@ -161,8 +175,9 @@ any choice. Prototypes may refine interfaces inside these boundaries:
 - **Review workflows:** Human review for uncertain claims, contradictions, corrections and resident submissions.
 - **Geospatial layer:** MapLibre GL JS for the public 2D map, with Berlin
   EPSG:25833 data reprojected for web display. Experimental 3D follows v0.
-- **Evaluation:** pytest against a committed, human-authored JSON golden set,
-  with citation, routing, cost and latency checks.
+- **Evaluation:** pytest harnesses citation, routing, cost and latency now;
+  scored evaluation against a committed, human-authored JSON golden set follows
+  post-v0.
 
 ## Data and trust model
 
@@ -208,10 +223,11 @@ The first delivery goal is a small public product that demonstrates the complete
 - Define construction taxonomy, statuses, milestones and financial measures.
 - Create a controlled German-English domain glossary.
 - Research the pilot dossiers manually.
-- Create the first golden truth set and contradiction log.
+- Record contradictions now; create the first golden truth set post-v0.
 - Define evidence labels and publication thresholds.
 
-**Exit evidence:** versioned definitions, a source matrix and three manually verified project records.
+**Exit evidence:** versioned definitions, a source matrix and three
+evidence-backed project records with exact German spans.
 
 ### Phase 2 — Trustworthy data core
 
@@ -230,7 +246,8 @@ The first delivery goal is a small public product that demonstrates the complete
 - Add entity resolution.
 - Add change and contradiction detection.
 - Add grounded explanations and citation checks.
-- Measure accuracy, unsupported claims, review rate, cost and latency.
+- Measure unsupported claims, review behavior, cost and latency; defer accuracy
+  measurement until the post-v0 golden set and verified glossary exist.
 
 **Exit evidence:** the pipeline can process representative documents and show both successful outputs and known failures.
 

@@ -22,9 +22,10 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Set `OPENAI_API_KEY` in the local process environment and run
-the documented `python -m pipeline.extract_once` command once against the stored
-C-014 artifact. Record its actual four token fields, cost, latency and both
+**Next action:** With ADR-014 and ADR-015 settled, set `OPENAI_API_KEY` in the
+local process environment and run the documented
+`python -m pipeline.extract_once` command once against the stored C-014
+artifact. Record its actual four token fields, cost, latency and both
 privacy outcomes, then use local-only withheld-detail reconstruction to inspect
 storage fidelity without reporting an accuracy figure. Obtain human review of
 the proposed C-014 claim before opening Phase 3. After that boundary, implement

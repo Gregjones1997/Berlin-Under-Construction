@@ -667,9 +667,9 @@ claims to an earlier phase gate no longer couples unrelated work.
 
 ## ADR-014 — Keep all three pilot projects in v0
 
-**Date:** 12 August 2026
+**Date:** 13 August 2026
 
-**Status:** Accepted 2026-08-12 by the project owner
+**Status:** Accepted 2026-08-13 by the project owner
 
 **Scope:** First-release project coverage
 
@@ -701,13 +701,17 @@ not by removing two pilots.
 A documented blocker makes three-project publication impossible without
 weakening evidence quality, privacy or another non-negotiable rule.
 
+**Amended 13 August 2026** — corrected the decision and acceptance date from
+12 August to the owner-confirmed 13 August. See `docs/how-this-was-built.md`,
+the 2026-08-13 acceptance-date and attribution correction entry.
+
 ---
 
 ## ADR-015 — Ship v0 with an explicitly unverified glossary
 
-**Date:** 12 August 2026
+**Date:** 13 August 2026
 
-**Status:** Accepted 2026-08-12 by the project owner
+**Status:** Accepted 2026-08-13 by the project owner
 
 **Scope:** v0 translation, evaluation and disclosure boundary
 
@@ -753,6 +757,10 @@ Until verification exists, all of the following are binding:
 
 A German-speaking human has verified the relevant glossary version and authored
 or verified the eligible golden values under ADR-008.
+
+**Amended 13 August 2026** — corrected the decision and acceptance date from
+12 August to the owner-confirmed 13 August. See `docs/how-this-was-built.md`,
+the 2026-08-13 acceptance-date and attribution correction entry.
 
 ---
 

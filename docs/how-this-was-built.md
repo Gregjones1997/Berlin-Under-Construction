@@ -2,7 +2,7 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
-- 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): corrected the C-014 failure record to distinguish an incomplete response from an unestablished cause, identify the 2,000-token cap as a stored-data diagnosis candidate, and state that the adapter discarded failed-call usage and latency rather than proving them unavailable. Verified: provider control flow, metering policy and the private store's historical 1,053-output-token run checked directly.
+- 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): corrected the C-014 failure record to distinguish an incomplete response from an unestablished cause, identify the 2,000-token cap as a stored-data diagnosis candidate, and state that the adapter discarded failed-call usage and latency rather than proving them unavailable. Verified: provider control flow, metering policy and the private store's historical 1,053-output-token run checked directly. `d9c7106`
 
 ## 2026-08-13 — Attempt the authorized C-014 one-shot
 

@@ -2,7 +2,7 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
-- **Course correction** — 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): Claire found that the checklist's post-v0 heading accidentally deferred the deterministic zero-unsupported-publication invariant with scored evaluation. Codex accepted the finding, restored the invariant and honest review-rate reporting as v0 gates, and limited post-v0 labels to scored precision, citation and recall metrics. Verified: the checklist now distinguishes golden-set-dependent scores from repository rule 4.
+- **Course correction** — 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): Claire found that the checklist's post-v0 heading accidentally deferred the deterministic zero-unsupported-publication invariant with scored evaluation. Codex accepted the finding, restored the invariant and honest review-rate reporting as v0 gates, and limited post-v0 labels to scored precision, citation and recall metrics. Verified: the checklist now distinguishes golden-set-dependent scores from repository rule 4. `313ee8f`
 
 - **Course correction** — 2026-08-13 — Project owner and Codex (Buzz CLI skill): after Codex treated an empty Nest as the workspace and created a replacement clone that could not contain the private artifact, the owner restored the existing-checkout boundary; ADR-014–019 now record that correction alongside the 12–13 August v0 scope, unverified-glossary and repository-governance decisions. Verified: README and checklist match the ADRs on the three-project, no-accuracy-figure, German-canonical and workspace boundaries. `c59ae2a`
 

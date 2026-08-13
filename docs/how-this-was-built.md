@@ -2,6 +2,75 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-08-13 — Attempt the authorized C-014 one-shot
+
+**Status:** Complete — the single authorized attempt failed safely
+
+### Goal
+
+Run the documented metered extraction exactly once against the retained C-014
+artifact, persist any completed result as proposed and unverified, and record
+the provider-returned token, cost, latency and privacy measurements without
+turning the observation into an accuracy claim.
+
+### Participants and scopes
+
+- Project owner: authorized one provider attempt, fixed the reporting boundary
+  and retained authority over any retry, claim review and golden values.
+- Main agent (Codex, Buzz CLI skill): verified the stored retrieval, made the
+  sole provider call, checked persistence and recorded the failure.
+- No subagents were used. Reviewer Claire was requested for the post-commit
+  review and had not reviewed this entry at work-commit time.
+
+### Work performed
+
+- Confirmed the private SQLite store contained the matching C-014 retrieval for
+  source `C-014-press-2023-06-26` and artifact
+  `sha256:36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5`.
+- Ran the README's `python -m pipeline.extract_once` invocation once through the
+  repository virtual environment. The provider returned an incomplete response
+  and the adapter rejected it as `provider_response_incomplete`.
+- Did not retry, derive metrics from the failed response, reconstruct a new
+  claim, change a contested English type or touch the golden set.
+
+### Decisions
+
+- Treat the failed provider response as the result of the authorized attempt;
+  another provider call requires fresh owner direction.
+- Report no token, cost, latency or privacy figures because the command did not
+  complete and emitted no safe summary.
+- Keep the no-accuracy-figure and German-canonical boundaries unchanged.
+
+### Verification
+
+- The command exited nonzero with the content-free rejection code
+  `provider_response_incomplete`.
+- Before and after the attempt, the append-only store contained one historical
+  C-014 extraction run and one historical C-014 milestone claim. The failed
+  attempt added neither a run nor a claim.
+- The working tree remained unchanged by the failed command; only this record
+  and the checklist handoff were edited afterward.
+- Full repository suite: 113 tests passed. Pytest could not update its local
+  cache under the session sandbox, which did not affect test execution.
+
+### Failures and limitations
+
+- No completed-run summary exists, so the four token fields, cost, latency and
+  both privacy outcomes are unknown and are not reported.
+- The command-line traceback exposes the stable rejection code but not the
+  adapter's optional content-free incomplete reason. Diagnosing that reporting
+  gap does not authorize another provider call.
+- No new proposed claim exists to reconstruct or send for human review.
+
+### Evidence
+
+- `pipeline.extract_once` terminal result: nonzero exit with
+  `provider_response_incomplete`.
+- `data/artifacts/c014-vertical-slice.sqlite3`: unchanged post-attempt counts of
+  one historical run and one historical claim; the private database remains
+  untracked.
+- `docs/project-checklist.md`
+
 - 2026-08-13 — Project owner, reviewer Claire and Codex (Buzz CLI and Spreadsheets skills): assembled the native-German glossary review package. Claire identified proposal anchoring, the non-1:1 glossary join, duplicate-term IDs and the cross-row C-010 question before build, then caught three unstable row-number suffixes in the committed package; Codex accepted the two-pass review workflow, a complete 95-row left join with explicit missing-pass markers, stable section IDs and one grouped C-010 adjudication prompt, but could not run the Spreadsheets skill's visual render because its dependency loader was unavailable. Verified: CSV structure, empty review fields, priority coverage, source-row counts, UTF-8 spreadsheet encoding and public identity boundary checked mechanically; 113 repository tests passed. `155d211`, `cb24a19`
 
 - **Course correction** — 2026-08-13 — Project owner, reviewer Claire and Codex (Buzz CLI skill): corrected ADR-014 and ADR-015 from 12 August to the owner-confirmed 13 August acceptance date, and restored the reviewer's role in endorsing the replacement clone before the owner corrected the workspace boundary. Verified: both ADRs carry amendment notes and the earlier course-correction entry now names all three participants. `207f3ff`

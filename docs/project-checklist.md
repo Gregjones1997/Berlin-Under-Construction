@@ -22,8 +22,12 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** With ADR-014 and ADR-015 settled, set `OPENAI_API_KEY` in the
-local process environment and run the documented
+**Next action:** Send the canonical glossary review package to Reviewer A from
+the Nest OUTBOX. On return, confirm that it records only the reviewer's
+pseudonymous role, relevant qualification and review date, then integrate no
+adjudication until the completed review has been checked against the source
+contexts. Separately, with ADR-014 and ADR-015 settled, set `OPENAI_API_KEY` in
+the local process environment and run the documented
 `python -m pipeline.extract_once` command once against the stored C-014
 artifact. Record its actual four token fields, cost, latency and both
 privacy outcomes, then use local-only withheld-detail reconstruction to inspect

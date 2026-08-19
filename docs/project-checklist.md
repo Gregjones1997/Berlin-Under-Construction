@@ -18,18 +18,22 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Portfolio pivot sprint — Gate 1; Phase 2 remains incomplete
+**Current phase:** Portfolio pivot sprint — Gate 2; Phase 2 remains incomplete
 
 **Current status:** IN PROGRESS
 
-**Next action:** Complete Gate 1 in `docs/portfolio-pivot-plan.md`. The required
-Standards and Spec review lanes are complete, every hard finding was reproduced,
-and the fail-closed repairs pass 123 tests plus the build-log checker. Commit and
-push the repair on `phase-2-data-core`, require a green public workflow, then
-integrate it into `main`; the merge does not complete Phase 2. Make no provider
-call. After integration, create the Phase 4 public-slice branch and advance the
-handoff to Gate 2. The glossary-review handoff and 25 August C-010 recheck remain
-required outside this sprint unless a displayed value depends on them.
+**Next action:** Execute Gate 2 in `docs/portfolio-pivot-plan.md` on
+`phase-4-public-slice`. Define the smallest public display schema, curate C-014
+first from the frozen dossier and approved source states, then add minimum honest
+C-010 and C-019 records. Encode withheld and unresolved states structurally;
+withheld records expose a reason code but no value or evidence fields. Select a
+locally bundled Berlin boundary only after recording its authoritative source,
+license, retrieval date and coordinate system. Add deterministic build-time
+tests for evidence, HTTPS source URLs, naming, private-field exclusion and both
+sentinel and local known-withheld scans. Obtain the required review decision for
+every rendered value. Phase 2 remains incomplete. Make no provider call. The
+glossary-review handoff and 25 August C-010 recheck remain required outside this
+sprint unless a displayed value depends on them.
 
 ## Phase 0 — Minimal foundation
 

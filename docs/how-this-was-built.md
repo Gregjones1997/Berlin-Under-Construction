@@ -2,6 +2,14 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Codex: completed portfolio pivot Gate 1 without claiming Phase 2
+  completion. Pushed the reviewed repair, merged `phase-2-data-core` into `main`
+  with the explicit two-parent commit `73b5dea`, and advanced the handoff to
+  Gate 2. Verified: 123 tests and 64 build-log hashes pass on the merge; no
+  retained artifact or database is tracked; public `main` workflow
+  [32231132298](https://github.com/Gregjones1997/Berlin-Under-Construction/actions/runs/32231132298)
+  passed.
+
 - 2026-08-19 — Codex (`/context-restore` and repository `code-review` skills)
   with read-only Standards and Spec subagents: restored the paused Gate 1 review
   without crediting two stopped lanes that returned no findings, then restarted

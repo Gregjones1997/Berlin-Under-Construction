@@ -88,7 +88,7 @@ def test_module_command_refuses_missing_environment_key_even_if_dotenv_exists(tm
     environment.pop("OPENAI_API_KEY", None)
     result = subprocess.run(
         [
-            str(Path.cwd() / ".venv/bin/python"),
+            sys.executable,
             "-m",
             "pipeline.extract_once",
             "--database",

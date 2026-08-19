@@ -8,15 +8,19 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   C-010/C-019 work. Parallel review was used because the review skill requires
   independent standards and specification lanes. Standards found blurred
   milestone/financial semantics, a non-binding owner-decision reference,
-  incomplete possible-name detection, an ineligible undated-status option and
-  the missing delegation record. Spec independently found the domain blur and
+  incomplete possible-name detection, an undated-status/as-of mismatch and the
+  missing delegation record. Spec independently found the domain blur and
   decision weakness, plus escaped-value and sentinel-test gaps; its demand for
   the eventual Next.js export was retained as a required later check but not
   used to cross the owner-ordered pre-application review stop. Codex accepted
   the other findings, added typed display semantics and digest-bound owner
-  decisions, strengthened privacy and generated-output checks, and kept seven
-  unresolved publication choices with the owner. Independently verified: 151
-  tests pass; 66 reachable hashes validate; the five-file pre-application
+  decisions, strengthened privacy and generated-output checks, and kept every
+  unresolved publication choice with the owner. The first follow-up correctly
+  rejected Codex's attempt to declare the dated-but-stale status ineligible and
+  required subject-specific decision grounding and explicit milestone types;
+  those corrections are included without publishing another value.
+  Independently verified: 151 tests pass; the reachable-hash checker passes;
+  the five-file pre-application
   bundle passes the sentinel and expanded gitignored known-withheld scans; no
   private artifact is tracked. Initial checkpoint: `27657f9`; review-repair and
   follow-up-review hashes pending.

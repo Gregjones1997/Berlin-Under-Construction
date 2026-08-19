@@ -13,7 +13,8 @@ reason code; value and evidence fields are structurally forbidden.
 Consequential claim types retain their display semantics. Financial facts name
 their measure and scope, milestone facts name their milestone type, qualifiers
 are closed-class records, and every published fact carries source-date, as-of
-and freshness states. `name-allowlist.json` contains only reviewed public
+and freshness states. Evidence labels use the methodology vocabulary and remain
+separate from source tier. `name-allowlist.json` contains only reviewed public
 toponyms or non-person entities; an unallowlisted capitalized bigram blocks the
 projection for review.
 

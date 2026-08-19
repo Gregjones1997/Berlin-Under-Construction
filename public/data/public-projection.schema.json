@@ -227,7 +227,6 @@
         "reasonCode": {
           "enum": [
             "owner_review_required",
-            "methodology_ineligible",
             "source_string_requires_owner_verification",
             "multi_source_synthesis_has_no_exact_span",
             "role_vocabulary_unresolved"
@@ -238,13 +237,16 @@
     "evidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["exactTextDe", "sourceId", "sourceUrl", "publicationDate", "evidenceLabel"],
+      "required": ["exactTextDe", "sourceId", "sourceUrl", "publicationDate", "evidenceLabel", "sourceTier"],
       "properties": {
         "exactTextDe": { "type": "string", "minLength": 1 },
         "sourceId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
         "sourceUrl": { "type": "string", "pattern": "^https://" },
         "publicationDate": { "$ref": "#/$defs/publicationDateState" },
-        "evidenceLabel": { "enum": ["Primary", "Reported"] }
+        "evidenceLabel": {
+          "enum": ["Verified", "Corroborated", "Reported", "Observed", "Disputed"]
+        },
+        "sourceTier": { "enum": ["primary", "secondary"] }
       }
     },
     "qualifier": {

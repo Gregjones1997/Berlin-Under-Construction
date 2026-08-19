@@ -140,7 +140,9 @@ def _load_review_decisions(
         "subjectId",
         "subjectSha256",
         "basisRef",
-        "basisExactText",
+        "basisExactTexts",
+        "acceptanceRef",
+        "acceptanceExactText",
     }
     indexed: dict[str, dict[str, Any]] = {}
     root = repository_root.resolve()
@@ -166,21 +168,39 @@ def _load_review_decisions(
             r"sha256:[0-9a-f]{64}", record["subjectSha256"]
         ):
             raise PublicReleaseError("review-decision subject digest is invalid")
-        basis_ref = record["basisRef"]
-        basis_text = record["basisExactText"]
-        if not isinstance(basis_ref, str) or not basis_ref.startswith("docs/"):
-            raise PublicReleaseError("review-decision basis must be a repository document")
-        if not isinstance(basis_text, str) or not basis_text.strip():
-            raise PublicReleaseError("review-decision basis text must be non-empty")
-        basis_file = (root / basis_ref).resolve()
-        if not basis_file.is_relative_to(root) or not basis_file.is_file():
-            raise PublicReleaseError("review-decision basis document does not exist")
-        try:
-            source_text = basis_file.read_text(encoding="utf-8")
-        except (OSError, UnicodeDecodeError) as exc:
-            raise PublicReleaseError("cannot read review-decision basis document") from exc
-        if basis_text not in source_text:
-            raise PublicReleaseError("review-decision basis text is absent from frozen record")
+        basis_texts = record["basisExactTexts"]
+        if not isinstance(basis_texts, list) or not basis_texts or any(
+            not isinstance(text, str) or not text.strip() for text in basis_texts
+        ):
+            raise PublicReleaseError("review-decision basis texts must be non-empty")
+        for ref_key, exact_texts, label in (
+            ("basisRef", basis_texts, "basis"),
+            ("acceptanceRef", [record["acceptanceExactText"]], "acceptance"),
+        ):
+            document_ref = record[ref_key]
+            if not isinstance(document_ref, str) or not document_ref.startswith("docs/"):
+                raise PublicReleaseError(
+                    f"review-decision {label} must be a repository document"
+                )
+            if any(not isinstance(text, str) or not text.strip() for text in exact_texts):
+                raise PublicReleaseError(
+                    f"review-decision {label} text must be non-empty"
+                )
+            document = (root / document_ref).resolve()
+            if not document.is_relative_to(root) or not document.is_file():
+                raise PublicReleaseError(
+                    f"review-decision {label} document does not exist"
+                )
+            try:
+                source_text = document.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError) as exc:
+                raise PublicReleaseError(
+                    f"cannot read review-decision {label} document"
+                ) from exc
+            if any(text not in source_text for text in exact_texts):
+                raise PublicReleaseError(
+                    f"review-decision {label} text is absent from frozen record"
+                )
         indexed[decision_id] = record
     return indexed
 

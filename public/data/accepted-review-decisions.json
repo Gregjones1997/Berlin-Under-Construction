@@ -8,9 +8,13 @@
       "decidedOn": "2026-08-06",
       "subjectKind": "fact",
       "subjectId": "c014-project-name",
-      "subjectSha256": "sha256:4a50ad5e149f6b560a0b3cdec4fb20d32609169b9cee141f6e4080646dd34bed",
+      "subjectSha256": "sha256:999dfd534c9d6c00cf5043ed230eb1d845ba3d7d29ca9dab2ec634ad88124f8e",
       "basisRef": "docs/research/dossiers/C-014-europaplatz-sued.md",
-      "basisExactText": "**Owner confirmation:** The project owner confirmed identity, boundary and"
+      "basisExactTexts": [
+        "- **Canonical name:** Europaplatz Süd — Umgestaltung"
+      ],
+      "acceptanceRef": "docs/research/dossiers/C-014-europaplatz-sued.md",
+      "acceptanceExactText": "**Owner confirmation:** The project owner confirmed identity, boundary and"
     },
     {
       "reviewDecisionId": "review-c014-identity-location-20260806",
@@ -19,9 +23,13 @@
       "decidedOn": "2026-08-06",
       "subjectKind": "fact",
       "subjectId": "c014-project-location",
-      "subjectSha256": "sha256:e067ddcd45ed5a70cff98e49a5cc392efb77b14c34d6ed84c888da7aa1156089",
+      "subjectSha256": "sha256:f878bfd9147a6ab7f1618f150d0526a3d14ca19c4ba0d5883653081182d07fea",
       "basisRef": "docs/research/dossiers/C-014-europaplatz-sued.md",
-      "basisExactText": "**Owner confirmation:** The project owner confirmed identity, boundary and"
+      "basisExactTexts": [
+        "- **Location:** Europaplatz before Hauptbahnhof, Berlin-Moabit (Ortsteil, read from the project page)"
+      ],
+      "acceptanceRef": "docs/research/dossiers/C-014-europaplatz-sued.md",
+      "acceptanceExactText": "**Owner confirmation:** The project owner confirmed identity, boundary and"
     },
     {
       "reviewDecisionId": "review-c014-places-page-20260806",
@@ -30,9 +38,13 @@
       "decidedOn": "2026-08-06",
       "subjectKind": "fact",
       "subjectId": "c014-places-programme-page-figure",
-      "subjectSha256": "sha256:f1ba03906cfba82904993c34b6395dcaa88a4d2d7a4f8491bd8375ed3e9cf41c",
+      "subjectSha256": "sha256:4dca14282b0b9c8ec89f27bf08f6f1d8ef41f6e3bbdcb023ea31ed48f26d85e1",
       "basisRef": "docs/decision-log.md",
-      "basisExactText": "**Status:** Accepted 2026-08-06 by the project owner."
+      "basisExactTexts": [
+        "The C-014 project page states `1.900.000 €` while a Senate news item of the"
+      ],
+      "acceptanceRef": "docs/decision-log.md",
+      "acceptanceExactText": "**Status:** Accepted 2026-08-06 by the project owner."
     },
     {
       "reviewDecisionId": "review-c014-places-index-20260806",
@@ -41,9 +53,13 @@
       "decidedOn": "2026-08-06",
       "subjectKind": "fact",
       "subjectId": "c014-places-programme-index-figure",
-      "subjectSha256": "sha256:f3cc0fe78cd92e1f0810c24f82e7183a58dc9c94ee01af1fef51dd24cd60a69e",
+      "subjectSha256": "sha256:33f228f375a1cf776be51a3a3aeb244a52e5c595cb918da252631dacd73f89d6",
       "basisRef": "docs/decision-log.md",
-      "basisExactText": "**Status:** Accepted 2026-08-06 by the project owner."
+      "basisExactTexts": [
+        "same programme states `rund 1,7 Mio. Euro` for the programme's contribution."
+      ],
+      "acceptanceRef": "docs/decision-log.md",
+      "acceptanceExactText": "**Status:** Accepted 2026-08-06 by the project owner."
     },
     {
       "reviewDecisionId": "review-c014-places-conflict-20260806",
@@ -54,7 +70,13 @@
       "subjectId": "c014-places-programme-figures",
       "subjectSha256": "sha256:2a93d23809c61d463310da996eecdd54774bc64f9e236d814d605568627f0770",
       "basisRef": "docs/decision-log.md",
-      "basisExactText": "**Status:** Accepted 2026-08-06 by the project owner."
+      "basisExactTexts": [
+        "The C-014 project page states `1.900.000 €` while a Senate news item of the",
+        "same programme states `rund 1,7 Mio. Euro` for the programme's contribution.",
+        "Two official publications, both precise, disagreeing."
+      ],
+      "acceptanceRef": "docs/decision-log.md",
+      "acceptanceExactText": "**Status:** Accepted 2026-08-06 by the project owner."
     }
   ]
 }

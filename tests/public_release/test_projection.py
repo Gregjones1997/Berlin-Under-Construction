@@ -165,7 +165,7 @@ def test_review_decision_basis_must_be_verbatim_in_the_frozen_record(
     tmp_path: Path,
 ) -> None:
     decisions = json.loads(DECISIONS.read_text(encoding="utf-8"))
-    decisions["decisions"][0]["basisExactText"] = "invented owner approval"
+    decisions["decisions"][0]["basisExactTexts"] = ["invented owner approval"]
     candidate_decisions = tmp_path / "accepted-review-decisions.json"
     candidate_decisions.write_text(json.dumps(decisions), encoding="utf-8")
 
@@ -199,6 +199,11 @@ def test_published_financial_fact_retains_required_domain_semantics() -> None:
         for qualifier in fact["qualifiers"]
     )
     assert all("freshness" in fact and "asOfDate" in fact for fact in financial)
+    assert all(
+        fact["evidence"]["evidenceLabel"] == "Verified"
+        and fact["evidence"]["sourceTier"] == "primary"
+        for fact in financial
+    )
 
 
 def test_unreconciled_conflict_cannot_promote_a_value(tmp_path: Path) -> None:

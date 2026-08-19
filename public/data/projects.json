@@ -19,7 +19,8 @@
               "state": "verified",
               "value": "2023-06-26"
             },
-            "evidenceLabel": "Primary"
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
           },
           "qualifiers": [],
           "asOfDate": { "state": "not_applicable" },
@@ -42,7 +43,8 @@
               "state": "verified",
               "value": "2026-01-26"
             },
-            "evidenceLabel": "Primary"
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
           },
           "qualifiers": [],
           "asOfDate": { "state": "not_applicable" },
@@ -62,7 +64,8 @@
             "sourceId": "c014-project-page",
             "sourceUrl": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
             "publicationDate": { "state": "not_stated" },
-            "evidenceLabel": "Primary"
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
           },
           "qualifiers": [],
           "asOfDate": { "state": "not_stated" },
@@ -94,7 +97,8 @@
               "state": "verified",
               "value": "2026-01-26"
             },
-            "evidenceLabel": "Primary"
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
           },
           "qualifiers": [
             {
@@ -123,7 +127,7 @@
           "factId": "c014-current-status",
           "factType": "status",
           "state": "withheld",
-          "reasonCode": "methodology_ineligible"
+          "reasonCode": "owner_review_required"
         },
         {
           "factId": "c014-expected-completion-current",
@@ -138,7 +142,19 @@
           "reasonCode": "owner_review_required"
         },
         {
-          "factId": "c014-completion-history-2025",
+          "factId": "c014-completion-history-2025-a",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-completion-history-2025-b",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-completion-history-2025-c",
           "factType": "milestone",
           "state": "withheld",
           "reasonCode": "owner_review_required"

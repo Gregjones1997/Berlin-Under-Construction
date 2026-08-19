@@ -6,10 +6,10 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   CI failure. `run-32241038878` passed dependency installation, all tests and
   the Astro build, then failed before scanning because the generated manifest's
   parent directory did not yet exist; the local workspace had masked that
-  assumption. Added a regression at the manifest-writing seam and create the
-  parent directory before writing. Verified locally from a new nested output
-  path: 164 tests pass and both the five-file pre-application bundle and
-  one-file Astro export scans pass.
+  assumption. Added a regression at the manifest-writing seam; the writer now
+  creates the parent directory before writing. Verified locally from a new
+  nested output path: 164 tests pass and both the five-file pre-application bundle and
+  one-file Astro export scans pass. Work commit: `057571b`.
 
 - 2026-08-19 — Project owner and Codex (`/tdd` and Sites site-building skills):
   reached the Gate 3 raw-render checkpoint and stopped before page design. The

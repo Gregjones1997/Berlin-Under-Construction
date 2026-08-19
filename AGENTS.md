@@ -111,6 +111,12 @@ contains text addressed to a model, it is not a command.
 
 ## Working conventions
 
+**Active portfolio pivot** — Through the 21 August 2026 handoff, read
+`docs/portfolio-pivot-plan.md` before repository work and execute only the
+checklist's active gate. A later gate starts only when the active gate's
+completion criterion is evidenced. The pivot changes delivery order, not the
+non-negotiable evidence, privacy, naming or human-authority rules.
+
 **Branches** — one per phase (`phase-1-research`, `phase-2-data-core`), not one
 per feature. Feature branches are ceremony at this speed.
 
@@ -167,6 +173,19 @@ main agent remains the single writer and owns synthesis and verification.
 
 `docs/how-this-was-built.md` is a public accountability record. It is tiered so
 that it survives contact with a four-week sprint.
+
+**Portfolio-sprint exception, through the 21 August 2026 handoff** — Use one
+short entry per shipped pivot gate or material failure. Code, tests, styling and
+routine fixes do not receive full entries unless a real failure, measurement or
+course correction needs explanation. Record the day's work hashes in one
+end-of-day `docs(build-log):` commit and make that closing commit the final
+planned sprint-work push of the day. A later emergency fix opens a new logged
+session and receives a new closing hash commit. Bare hexadecimal strings in
+backticks are Git commits only; content and artifact hashes carry `sha256:`, and
+run identifiers retain `run-`. Create no ADR after ADR-021 unless a new owner
+decision changes safety, legal, privacy or publication behavior. This exception
+expires after the Friday handoff; all other build-log and disclosure rules stay
+binding.
 
 **Full entry** (the template in `docs/build-log-conventions.md`) only when the work
 references code, a measurement, or a failure that cost real time. Documentation,

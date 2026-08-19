@@ -18,29 +18,20 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Phase 2 — Trustworthy data core
+**Current phase:** Portfolio pivot sprint — Gate 1; Phase 2 remains incomplete
 
 **Current status:** IN PROGRESS
 
-**Next action:** Send the canonical glossary review package to Reviewer A from
-the Nest OUTBOX. On return, confirm that it records only the reviewer's
-pseudonymous role, relevant qualification and review date, then integrate no
-adjudication until the completed review has been checked against the source
-contexts. Separately, the C-014 output cap is now 4,000 and the adapter reports
-content-free failed-call accounting without persisting a run or claim. The cause
-of the 13 August incomplete response remains unestablished; make no second
-provider call without fresh owner authorization, and require any future
-authorized failure to expose its incomplete reason before reading its accounting
-as anything other than failed-attempt evidence. See the build log for the
-attempt and mitigation. After any authorized completed run, use local-only
-withheld-detail reconstruction and human review of its proposed, unverified
-claim before opening Phase 3. Then implement `FinancialClaim` on the working
-evidence-depth gate and extend source, conflict and review-history schemas.
-Human glossary verification and the golden truth set are post-v0; meanwhile
-publish no accuracy figure, keep contested English types unresolved, and
-disclose the glossary version and unverified status. Recheck C-010 from official
-sources on 2026-08-25 without inferring an outcome. The zero-unsupported-
-publication invariant remains a v0 gate throughout.
+**Next action:** Complete Gate 1 in `docs/portfolio-pivot-plan.md`. Replace the
+CI test's repository-local `.venv` interpreter assumption with the running
+Python interpreter, verify the full suite and build-log checker locally, then
+push `phase-2-data-core` and require a green public workflow. Review the complete
+Phase 2 diff for secrets, private artifacts, false completion claims and
+release-blocking defects before integrating it into `main`; the merge does not
+complete Phase 2. Make no provider call. After integration, create the Phase 4
+public-slice branch and advance the handoff to Gate 2. The glossary-review
+handoff and 25 August C-010 recheck remain required outside this sprint unless a
+displayed value depends on them.
 
 ## Phase 0 — Minimal foundation
 

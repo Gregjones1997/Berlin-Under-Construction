@@ -947,3 +947,55 @@ split or run-policy provenance is stored separately.
 
 The pipeline supports multiple run profiles, run limits affect a published
 comparison, or exact request-policy provenance needs to travel with each run.
+
+---
+
+## ADR-021 — Ship the smallest honest product before completing the trust platform
+
+**Date:** 19 August 2026
+
+**Status:** Accepted 2026-08-19 by the project owner after external review
+
+**Scope:** Delivery order through the 21 August portfolio handoff and the
+1 September first public release
+
+### Context
+
+The repository has three frozen source-backed dossiers, a strict milestone
+pipeline slice and 117 passing local tests, but no public web application, map or
+dossier page. The public default branch still presents a concept-stage project,
+and its strongest engineering work is both hidden on the Phase 2 branch and red
+in CI because of one local-interpreter assumption. Continuing the existing
+sequence would deepen the trust platform before demonstrating user value.
+
+### Decision
+
+Pivot delivery order: repair the public repository, create a public-safe static
+projection, ship C-014 as the flagship dossier, add thin C-010 and C-019 pages
+and a locally sourced MapLibre orientation view, expose only measured AI
+behavior, then deploy after the required public-site checks. Phase 2 remains
+incomplete, private artifacts never enter the web build, and no provider call is
+authorized by this decision.
+
+`docs/portfolio-pivot-plan.md` is the sprint's execution plan. Its active gate
+and completion criterion control sequencing. Through the Friday handoff, build
+logging uses one short entry per shipped gate or material failure and one closing
+hash commit per day. Evidence, German-canonical storage, human authority,
+natural-person exclusion, correction links and zero unsupported publication
+remain binding.
+
+### Consequences
+
+- A working, honest user experience now outranks broader backend completion.
+- Supabase, full domain schemas, address search, scored evaluation, broader
+  extraction batches and 3D remain deferred.
+- The public UI distinguishes human-curated dossier data from the single
+  retained completed extraction run and makes no total provider-call or accuracy
+  claim.
+- The temporary process exception expires after the 21 August handoff.
+
+### Reconsider when
+
+A binding evidence, privacy, legal or source-use requirement blocks public
+deployment. In that case the site remains a restricted preview and is not called
+the public release; the trust rule is not weakened to preserve the date.

@@ -2,6 +2,13 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Project owner, external reviewer Claude and Codex
+  (`writing-for-agents` skill): accepted the portfolio pivot, integrated all four
+  blocking review findings with two implementation clarifications, activated
+  the temporary sprint rules and moved the handoff to Gate 1. Verified: 117
+  tests pass, 62 build-log hashes validate and the accepted plan preserves the
+  private-artifact, publication and no-provider-call boundaries.
+
 ## 2026-08-13 — Preserve accounting from failed extraction calls
 
 **Status:** Complete

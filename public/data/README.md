@@ -26,21 +26,25 @@ The asset requires no runtime tile, API, cookie or network request.
 The release check transforms the projection into a five-file pre-application
 display bundle and scans every generated asset, including escaped JSON and HTML
 representations. Before every scan it regenerates the gitignored manifest from
-the projection's actual withheld fact IDs and a gitignored candidate catalog;
-published facts cannot linger in the scan list:
+the projection's actual withheld fact IDs and the repository scan catalog;
+published facts cannot linger in the scan list. Gate 3 adds the same scan over
+the real Astro export:
 
 ```bash
 python -m public_release \
-  --known-withheld-catalog data/artifacts/public-release-withheld-candidates.json \
-  --known-withheld-manifest data/artifacts/public-release-known-withheld.json
+  --output build/gate3-public-release \
+  --known-withheld-catalog public_release/known-withheld-candidates.json \
+  --known-withheld-manifest build/public-release-known-withheld.json \
+  --export-output web/dist
 ```
 
-The generated display model is the only renderer input. Facts named by a
-conflict are removed from the standalone list and nested only under that
-conflict. It also carries the public evidence-label glossary and visible
-withholding reason states.
+The pre-application bundle still emits the generated display model. The Astro
+loader applies the same boundary directly to the validated projection at build
+time: facts named by a conflict are removed from the standalone list and nested
+only under that conflict, evidence labels are publicly glossed and withholding
+reason states remain visible.
 
-This is the completed Gate 2 data bundle, not the Next.js application export.
-The same scanner must run over the real Next.js static export during Gate 3 and
-before any public deployment. Tests exercise generated
-HTML, JavaScript and data assets now without claiming that later export exists.
+The Astro site reads the projection only at build time. Its separate public
+directory prevents repository data files from being copied into `dist/`, and
+the no-island build emits no JavaScript. CI builds and scans the real export;
+the same check remains required before public deployment.

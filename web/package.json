@@ -1,0 +1,12 @@
+{
+  "name": "berlin-under-construction-web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build"
+  },
+  "dependencies": {
+    "astro": "7.2.3"
+  }
+}

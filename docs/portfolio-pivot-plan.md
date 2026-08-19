@@ -161,7 +161,7 @@ visible feature rather than weaken the constraint.
   from primary sources. The retained store currently contains one completed
   extraction run over one document; the repository does not establish a total
   historical provider-call count.`
-- A statically deployable Next.js application.
+- A statically deployable Astro application with no client islands in Gate 3.
 - A public-safe, committed data projection for the three pilots.
 - A MapLibre 2D Berlin orientation view using a locally bundled,
   license-checked boundary and three local markers, with links to stable dossier
@@ -214,7 +214,7 @@ private SQLite store during a local or cloud build.
 flowchart LR
     A["Private source artifacts and SQLite store"] -->|"local review only"| B["Public-safe projection"]
     C["Frozen pilot dossiers"] -->|"curated evidence fields"| B
-    B -->|"committed JSON or TypeScript"| D["Static Next.js build"]
+    B -->|"build-time read of committed JSON"| D["Static Astro build"]
     D --> E["Vercel public site"]
     A -. "never uploaded" .-> E
 ```
@@ -316,6 +316,12 @@ CRS provenance; the regenerated six-fact withheld manifest, sentinel scan and
 encoded-value scans pass over the five-file generated display bundle.
 
 ### Gate 3 — Ship the flagship dossier
+
+**Checkpoint:** Raw-render handoff reached 2026-08-19; Gate 3 is not complete.
+The no-island Astro build reads the committed projection at build time, emits
+the stable C-014 route as unstyled HTML, and passes the real-export privacy
+scan. Page design, typography, layout, completion-history presentation and
+display-state styling remain owner decisions.
 
 **Actions**
 

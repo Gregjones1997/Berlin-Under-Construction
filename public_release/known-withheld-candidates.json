@@ -1,0 +1,17 @@
+{
+  "valuesByFactId": {
+    "c014-completion-period-2026": [
+      "Der Bauzeitraum ist im ersten Halbjahr 2026 vorgesehen.",
+      "im ersten Halbjahr 2026"
+    ],
+    "c014-completion-outcome": [
+      "Passed target window; completion not verified"
+    ],
+    "c014-organization-roles": [],
+    "c010-organization-roles": [],
+    "c019-project-location": [
+      "Köpenicker Straße 60, 10179 Berlin"
+    ],
+    "c019-organization-roles": []
+  }
+}

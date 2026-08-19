@@ -1,0 +1,62 @@
+---
+import RawFact from "../../components/RawFact.astro";
+import {
+  loadPublicProjectPages,
+  type PublicProjectPage,
+} from "../../lib/public-projects";
+
+export function getStaticPaths() {
+  return loadPublicProjectPages()
+    .filter((project) => project.projectId === "C-014")
+    .map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+interface Props {
+  project: PublicProjectPage;
+}
+
+const { project } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{project.projectId} — {project.slug}</title>
+  </head>
+  <body>
+    <main>
+      <h1>{project.projectId} — {project.slug}</h1>
+
+      <section aria-labelledby="published-heading">
+        <h2 id="published-heading">Published facts</h2>
+        {project.publishedFacts.map((fact) => <RawFact fact={fact} />)}
+      </section>
+
+      <section aria-labelledby="conflicts-heading">
+        <h2 id="conflicts-heading">Conflicts</h2>
+        {project.conflicts.map((conflict) => (
+          <section data-conflict-id={conflict.conflictId}>
+            <h3>{conflict.conflictId}</h3>
+            <pre>{JSON.stringify({ ...conflict, facts: undefined }, null, 2)}</pre>
+            {conflict.facts.map((fact) => <RawFact fact={fact} />)}
+          </section>
+        ))}
+      </section>
+
+      <section aria-labelledby="withheld-heading">
+        <h2 id="withheld-heading">Withheld facts</h2>
+        {project.withheldFacts.map((fact) => (
+          <article data-fact-id={fact.factId}>
+            <h3>{fact.factId}</h3>
+            <p>Fact type: {fact.factType}</p>
+            <p>Reason code: {fact.reasonCode}</p>
+          </article>
+        ))}
+      </section>
+
+      <p><a href={project.correctionPath}>Correction</a></p>
+    </main>
+  </body>
+</html>

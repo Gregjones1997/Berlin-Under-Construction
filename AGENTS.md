@@ -241,7 +241,8 @@ recorded choices as the working default and should not repeatedly reopen them
 without an owner request or material new evidence. Record any changed decision
 and its migration consequences in `docs/decision-log.md`.
 
-- **Web** — Next.js + TypeScript, deployed on Vercel. `/web`
+- **Web** — Astro + TypeScript static output in `/web`, deployed on Vercel. No
+  client island may be added during Gate 3 without a new owner decision.
 - **Database** — Supabase Postgres with PostGIS. No auth in v0; there are no user
   accounts yet.
 - **Map** — MapLibre GL JS. Berlin geodata is EPSG:25833 and must be reprojected

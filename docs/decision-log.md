@@ -162,6 +162,10 @@ The project needs a coherent stack that supports a public web experience, geospa
 
 Measured prototype results show a blocking performance, licensing, cost or reliability problem, or after the first public release when operational requirements change.
 
+**Amended 19 August 2026** — ADR-022 replaces only the web framework choice
+with a no-island Astro static build. The remaining v0 stack decisions stay in
+force. See the Gate 3 checkpoint entry in `docs/how-this-was-built.md`.
+
 ## ADR-006 — Use source-specialized lightweight agents to research selected projects
 
 **Date:** 5 August 2026
@@ -999,3 +1003,49 @@ remain binding.
 A binding evidence, privacy, legal or source-use requirement blocks public
 deployment. In that case the site remains a restricted preview and is not called
 the public release; the trust rule is not weakened to preserve the date.
+
+---
+
+## ADR-022 — Use a no-island Astro static build for the public site
+
+**Date:** 19 August 2026
+
+**Status:** Accepted 2026-08-19 by the project owner
+
+**Scope:** Public web framework and Gate 3 data boundary
+
+### Context
+
+The public projection intentionally omits every withheld value. A hydrated
+application can nevertheless reopen the bundle-leak risk by serializing build
+props into client payloads even when a component conditionally hides them. The
+Gate 3 dossier needs no client-side state at its raw-render checkpoint.
+
+### Decision
+
+Replace the Next.js part of ADR-005 with an Astro and TypeScript static build in
+`/web`. Gate 3 uses no client islands, runtime data access, API routes or
+external requests. Astro reads `public/data/projects.json` only while building;
+its public-copy directory is separate from the repository's `public/data/`
+tree. CI builds the real `web/dist/` export and runs the sentinel and regenerated
+known-withheld scans over every emitted file. Vercel remains the planned host
+for the static output.
+
+If a client island appears necessary during Gate 3, implementation stops for a
+new owner decision rather than adding it implicitly.
+
+### Consequences
+
+- The initial dossier export contains HTML and no shipped JavaScript or
+  serialized hydration props.
+- The committed projection and supporting registry files cannot be copied by
+  Astro's default public-directory behavior.
+- Stable project routes are generated entirely at build time.
+- Any future interaction that requires client JavaScript reopens the privacy
+  boundary and must be reviewed explicitly.
+
+### Reconsider when
+
+A required, owner-approved user interaction cannot be delivered as static HTML.
+The decision point is whether to add a narrowly bounded island, not whether to
+weaken the withheld-value or generated-output scans.

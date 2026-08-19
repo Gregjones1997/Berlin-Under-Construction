@@ -18,16 +18,18 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Portfolio pivot sprint — Gate 2 complete; Gate 3 awaiting
-owner review; Phase 2 remains incomplete
+**Current phase:** Portfolio pivot sprint — Gate 3 raw-render checkpoint; Phase
+2 remains incomplete
 
-**Current status:** REVIEW REQUIRED
+**Current status:** IN PROGRESS — REVIEW REQUIRED
 
-**Next action:** Hold before Gate 3 on `phase-4-public-slice` for the owner's
-review of the completed Gate 2 projection and green CI. Do not start the page
-shell or rendering work until that review is accepted. Gate 3 must run the same
-sentinel and regenerated local known-withheld scans over the real Next.js static
-export before public deployment. Phase 2 remains incomplete.
+**Next action:** Hold Gate 3 at the raw Astro render checkpoint on
+`phase-4-public-slice`. The owner must review the unstyled C-014 output and make
+the page-design, typography, layout, completion-history and display-state
+decisions before any styling begins. Do not add a client island; if one appears
+necessary, stop for a separate owner decision. CI now runs the sentinel and
+regenerated known-withheld scans over the real `web/dist/` export. Phase 2
+remains incomplete.
 Make no provider call. The glossary-review handoff and 25 August C-010 recheck
 remain required outside this sprint unless a displayed value depends on them.
 

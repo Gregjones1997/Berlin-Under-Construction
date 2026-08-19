@@ -2,6 +2,20 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Project owner and Codex (`/tdd` and Sites site-building skills):
+  reached the Gate 3 raw-render checkpoint and stopped before page design. The
+  owner replaced Next.js with a no-island Astro static build to prevent
+  hydration-prop leakage. Codex used the site-building guidance only for the
+  local Astro scaffold (hosting and visual work were excluded by the checkpoint)
+  and used TDD at the built-route and complete-export seams. The accepted result
+  reads the committed projection only at build time, renders the C-014 facts,
+  conflict and withheld states as unstyled HTML, emits no JavaScript, keeps the
+  repository data tree outside Astro's public-copy directory, and extends CI to
+  scan the real `web/dist/` output. No agent delegation was used. Verified: 163
+  tests pass; Astro builds one stable project page; the five-file
+  pre-application bundle and one-file real export pass the regenerated
+  known-withheld and sentinel scans; 72 reachable build-log hashes validate.
+
 - 2026-08-19 — Project owner and Codex (`/tdd` skill): completed portfolio
   pivot Gate 2 and stopped before Gate 3. The owner made all eight C-014
   publication decisions and manually verified the PDF's `3.183.000` rendering;

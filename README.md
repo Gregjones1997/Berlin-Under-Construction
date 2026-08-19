@@ -2,8 +2,8 @@
 
 > An independent, source-backed map that helps people understand what is being built across Berlin, who is responsible, what was promised, what changed, and what the public can reliably know.
 
-**Project status:** Portfolio pivot sprint — Gate 2 complete and awaiting owner
-review before Gate 3; Phase 2 remains incomplete
+**Project status:** Portfolio pivot sprint — Gate 3 raw-render checkpoint awaiting
+owner review; Phase 2 remains incomplete
 
 **Geographic focus:** Berlin, Germany
 
@@ -173,7 +173,8 @@ The current first-release stack is recorded in ADR-005. It is the working
 default, not an irrevocable constraint: the project owner may reopen or change
 any choice. Prototypes may refine interfaces inside these boundaries:
 
-- **Web application:** Next.js and TypeScript in `/web`, deployed on Vercel.
+- **Web application:** Astro and TypeScript static output in `/web`, deployed on
+  Vercel. Gate 3 uses no client islands or runtime data access.
 - **Data layer:** Supabase Postgres with PostGIS.
 - **Source archive:** Source metadata, retrieval dates and content hashes, with private artifact retention only where appropriate and lawful.
 - **Document intelligence:** A Python pipeline in `/pipeline`, shaped as

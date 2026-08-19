@@ -1,0 +1,30 @@
+---
+import {
+  EVIDENCE_LABEL_GLOSSARY,
+  type PublicFact,
+} from "../lib/public-projects";
+
+interface Props {
+  fact: PublicFact;
+}
+
+const { fact } = Astro.props;
+---
+
+<article data-fact-id={fact.factId}>
+  <h3>{fact.factId}</h3>
+  <p>Fact type: {fact.factType}</p>
+  <p lang="de">{fact.valueDe}</p>
+  {fact.evidence && (
+    <>
+      <p>
+        Evidence label: {String(fact.evidence.evidenceLabel)} — {
+          EVIDENCE_LABEL_GLOSSARY[String(fact.evidence.evidenceLabel)]
+        }
+      </p>
+      <blockquote lang="de">{fact.evidence.exactTextDe}</blockquote>
+      <p><a href={fact.evidence.sourceUrl}>Source</a></p>
+    </>
+  )}
+  <pre>{JSON.stringify(fact, null, 2)}</pre>
+</article>

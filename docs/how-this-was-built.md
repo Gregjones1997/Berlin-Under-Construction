@@ -8,7 +8,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   Gate 2. Verified: 123 tests and 64 build-log hashes pass on the merge; no
   retained artifact or database is tracked; public `main` workflow
   [32231132298](https://github.com/Gregjones1997/Berlin-Under-Construction/actions/runs/32231132298)
-  passed.
+  passed. `5ddaf33`
 
 - 2026-08-19 — Codex (`/context-restore` and repository `code-review` skills)
   with read-only Standards and Spec subagents: restored the paused Gate 1 review

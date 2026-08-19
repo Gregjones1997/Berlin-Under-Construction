@@ -17,7 +17,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   known-withheld scans; boundary source, license, retrieval date and CRS remain
   recorded with no runtime request; no retained artifact, generated bundle or
   `CONTEXT.md` is tracked. The workflow runtime-version deprecation remains the
-  already recorded post-sprint task. Housekeeping commit: `6a6ca54`.
+  already recorded post-sprint task. Work commits: `6a6ca54`, `bde418f`.
 
 - 2026-08-19 — Codex (`/domain-modeling`, `/tdd` and repository `code-review`
   skills; official-source web research) with read-only Standards and Spec

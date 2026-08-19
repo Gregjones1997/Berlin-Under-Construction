@@ -9,7 +9,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   documented the unestablished cache-primer, the 13 August incomplete response
   with no stored run or claim, the prospective adapter correction, 164 passing
   tests and the absence of any accuracy, precision or recall result. No total
-  provider-call count is published. Work commit: `[pending]`.
+  provider-call count is published. Work commit: `66cf0d7`.
 
 - 2026-08-19 — Codex (`/research` skill; official-source web research) with one
   read-only legal-research subagent: prepared Gate 6 source-use, BKG attribution,
@@ -22,7 +22,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   the tree. The record names an access-restricted preview because visible BKG
   changed-data attribution, account-specific host/privacy facts, provider
   identity and working correction routes remain unresolved. Work commit:
-  `[pending]`.
+  `a598ab3`.
 
 - 2026-08-19 — Codex (`/tdd` skill): repaired the first clean-checkout Gate 3
   CI failure. `run-32241038878` passed dependency installation, all tests and

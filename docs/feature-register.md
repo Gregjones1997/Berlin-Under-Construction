@@ -2,7 +2,20 @@
 
 This register preserves the complete product vision for Berlin, Under Construction. Feature IDs are stable references; implementation sequencing lives in [`project-checklist.md`](project-checklist.md). A feature is not deleted from this register merely because it is outside the current delivery phase.
 
-The source blueprint contains 68 feature IDs across ten groups. Every feature is currently marked `Not started`.
+The source blueprint contains 68 feature IDs across ten groups. AI-12 and OPS-01
+are scoped for Phase 2; implementation remains not started. All other features
+are currently marked `Not started`.
+
+## Phase 2 local admin surface
+
+AI-12 and OPS-01 jointly define the local-only review dashboard required for
+the trustworthy data core. It is an operator tool, is not part of the public
+Vercel deployment, and does not introduce authentication to v0. Its registered
+minimum scope is retrieval health and failures; hashes and detected changes;
+extraction model, token, cost, duration and validation data; exact German spans
+beside proposed claims; qualifiers and public marker states; supersession,
+conflict and scope quarantine; reviewer actions and decision history; and each
+claim's publication eligibility with the exact blocking gate.
 
 ## Map (`MAP`)
 
@@ -27,7 +40,7 @@ The source blueprint contains 68 feature IDs across ten groups. Every feature is
 | DOS-04 | Contract and lot ledger | Show procurement stages, awarded suppliers, lot values, amendments and source notices. | Not started |
 | DOS-05 | Funding view | Show city, district, federal, EU, utility, company and private financing when disclosed. | Not started |
 | DOS-06 | Organization graph | Connect commissioners, owners, designers, contractors, consortia and repeat relationships. | Not started |
-| DOS-07 | Source archive | Expose archived documents, retrieval dates, hashes and highlighted supporting passages. | Not started |
+| DOS-07 | Source evidence record | Display source metadata, retrieval dates, hashes, short evidence spans and original links; retained full artifacts remain private. | Not started |
 | DOS-08 | Change log | Show exactly what changed, when it changed and which new source caused the update. | Not started |
 | DOS-09 | Confidence and freshness | Display evidence level, last checked time, contradictions and stale-source warnings. | Not started |
 | DOS-10 | Project comparison | Compare like-for-like fields while preserving differences in budget and date definitions. | Not started |
@@ -59,7 +72,7 @@ The source blueprint contains 68 feature IDs across ten groups. Every feature is
 | AI-09 | Sign and photo intake | Read project signs and user images to create leads, not automatic facts. | Not started |
 | AI-10 | Delay-risk research | Offer experimental, clearly labelled inference about schedule risk based on patterns and known dependencies. | Not started |
 | AI-11 | Model routing and cost control | Use fit-for-purpose models, caching and escalation based on ambiguity. | Not started |
-| AI-12 | Evaluation dashboard | Publish extraction, matching, citation and unsupported-claim performance. | Not started |
+| AI-12 | Evaluation and extraction-run dashboard | Locally inspect extraction runs, model/cost/latency, validation outcomes and smoke/evaluation reports; public reporting is a separate release output. | Phase 2 scoped; not started |
 
 ## Community (`COM`)
 
@@ -95,7 +108,7 @@ The source blueprint contains 68 feature IDs across ten groups. Every feature is
 
 | ID | Feature | Full-vision behaviour | Status |
 | --- | --- | --- | --- |
-| OPS-01 | Review queue | Approve, reject, correct or escalate low-confidence extractions and public submissions. | Not started |
+| OPS-01 | Review queue | Local-only v0 queue to accept, reject, correct or defer extracted claims with immutable decision history and explicit publication gates. | Phase 2 scoped; not started |
 | OPS-02 | Source registry | Track authoritative sources, update schedules, licenses, parsers and failure states. | Not started |
 | OPS-03 | Claim editor and audit trail | Edit structured claims while preserving original extraction and reviewer decision. | Not started |
 | OPS-04 | Organization and alias manager | Merge, split and disambiguate project and company entities safely. | Not started |

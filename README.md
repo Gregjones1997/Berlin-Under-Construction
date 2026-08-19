@@ -2,7 +2,7 @@
 
 > An independent, source-backed map that helps people understand what is being built across Berlin, who is responsible, what was promised, what changed, and what the public can reliably know.
 
-**Project status:** Concept and project-definition stage
+**Project status:** Portfolio pivot sprint — Gate 1; Phase 2 remains incomplete
 
 **Geographic focus:** Berlin, Germany
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Berlin, Under Construction is a planned AI-assisted and source-backed civic information product focused on visible construction and major works across Berlin.
+Berlin, Under Construction is an in-progress AI-assisted and source-backed civic information product focused on visible construction and major works across Berlin.
 
 Construction information often exists, but it is fragmented across planning pages, procurement notices, budgets, committee records, company reports, press releases, geospatial datasets and physical site signage. The same project may appear under different names, identifiers and definitions in each source.
 
@@ -18,14 +18,39 @@ The product vision is to connect those records into understandable project dossi
 
 This repository will document the product, data model, engineering decisions, experiments, evaluation results and implementation as the project develops.
 
-The living build checklist is maintained in [`docs/project-checklist.md`](docs/project-checklist.md). The use of AI agents, manual decisions, failures and verification is recorded in [`docs/how-this-was-built.md`](docs/how-this-was-built.md).
+The living build checklist is maintained in [`docs/project-checklist.md`](docs/project-checklist.md). Buzz is the coordination harness for human-agent work; the repository remains the source of truth. The use of AI agents, manual decisions, failures and verification is recorded in the canonical public record, [`docs/how-this-was-built.md`](docs/how-this-was-built.md).
 
-## Verified-vocabulary premise
+### One metered extraction
+
+After a private artifact and its retrieval record exist in the local SQLite
+store, provide `OPENAI_API_KEY` through the process environment (never a
+repository file) and run:
+
+```bash
+python -m pipeline.extract_once \
+  --database /private/path/pipeline.sqlite3 \
+  --project-id C-014 \
+  --source-id SOURCE_ID \
+  --artifact-id STORED_CONTENT_SHA256
+```
+
+The command refuses to run without the environment variable. It prints the run
+ID, input/cached/cache-write/output token fields, cost, latency and both privacy
+outcomes; it never prints the key, source text or raw model output. OpenAI has no
+cache-write usage field, so that provider-gated output category is always zero.
+If the provider returns a billed but rejected response, the command exits
+nonzero and prints only stable rejection details plus
+`failed_attempt_accounting` when safe usage is present. A failed attempt is not
+stored as an extraction run or claim, and its accounting is not presented as
+completed extraction metrics.
+
+## German-first vocabulary boundary
 
 This project deliberately tests whether a verifiable extraction system can be
-built over a source language the author does not read. It uses a human-verified,
-versioned controlled vocabulary, deterministic evidence-span verification and
-per-value provenance to make that constraint inspectable rather than implicit.
+built over a source language the author does not read. German remains canonical
+in storage, while a versioned controlled vocabulary, deterministic evidence-span
+verification and per-value provenance make the translation boundary inspectable
+rather than implicit.
 
 The premise forces a strict boundary between operating an authority and being
 the authority: agents may retrieve human-authored references, match spans and
@@ -34,9 +59,21 @@ does not solve every language-dependent decision. Project boundary, identity,
 contextual sense and conflicts between authorities still require German
 comprehension the project owner does not have.
 
+For v0, the glossary is explicitly unverified. The release will not publish an
+accuracy figure, and it will not assert an English milestone or financial type
+where the German meaning is contested. C-010's five completion terms are the
+current example: they remain unresolved rather than being collapsed into one
+English label. Every glossary-derived display publishes the glossary version and
+its verification status. Human glossary verification and the golden truth set
+remain post-v0 work.
+
 ## Current status
 
-This project is not yet a finished application. The current work is focused on turning the product blueprint into a defensible technical plan and a small, manually verified foundation.
+This project is not yet a finished application. All three pilot dossiers remain
+in v0 and are evidence-complete and frozen. Current implementation work is the
+Phase 2 typed data core and review tooling. The release may show bounded pipeline
+behavior, cost and latency, but it will not describe those observations as an
+accuracy result while the glossary and golden set are unverified.
 
 The first public release will focus on a narrow, working vertical slice:
 
@@ -44,12 +81,16 @@ The first public release will focus on a narrow, working vertical slice:
 - A source registry and manually verified project dossiers.
 - Clear definitions for project status, milestones, financial measures and evidence.
 - A versioned data model for projects, claims, sources, organizations and changes.
-- A bounded document-intelligence workflow with evaluation results.
+- A bounded document-intelligence workflow with metering and visible limitations; scored evaluation follows after v0.
 - A deployable 2D map connected to evidence-backed project pages.
 
 The technical-illustration 3D experience remains an important differentiator, but it follows the first working 2D release so that geospatial rendering does not delay evidence of the core data and AI work.
 
 Features described in the roadmap are planned work unless they are explicitly marked as complete in the project documentation.
+
+Planned display treatment for unresolved vocabulary is deliberately calm: a
+status chip such as `Translation unverified` or `Milestone type unresolved`, not
+a warning banner. This is a later interface note, not a claim that the UI exists.
 
 ## Product thesis
 
@@ -80,7 +121,7 @@ New information should update the current view without deleting previously suppo
 
 An original estimate, approved budget, awarded contract value, expenditure and final cost are different measures. Likewise, construction start, handover, commissioning and public opening are different milestones. The data model should preserve these distinctions.
 
-German-language source terms should be extracted and stored before translation. A controlled German-English glossary will map consequential budget, procurement and milestone terms for display without replacing the original wording.
+German-language source terms should be extracted and stored before translation. A versioned German-English glossary may map consequential budget, procurement and milestone terms for display without replacing the original wording; its verification status must travel with derived output, and contested types remain unresolved.
 
 ### AI should be bounded and evaluated
 
@@ -125,21 +166,23 @@ The longer-term experience may include:
 
 These are part of the preserved product vision, not claims about the current state of the application.
 
-## Initial technical direction
+## Decided v0 technical direction
 
-The architecture is intentionally not fully locked. Technical choices will be made through small prototypes and recorded in the decision log.
+The current first-release stack is recorded in ADR-005. It is the working
+default, not an irrevocable constraint: the project owner may reopen or change
+any choice. Prototypes may refine interfaces inside these boundaries:
 
-Likely system areas include:
-
-- **Web application:** TypeScript-based web application with responsive public pages.
-- **Data layer:** Relational project and claim data with geospatial support.
+- **Web application:** Next.js and TypeScript in `/web`, deployed on Vercel.
+- **Data layer:** Supabase Postgres with PostGIS.
 - **Source archive:** Source metadata, retrieval dates and content hashes, with private artifact retention only where appropriate and lawful.
-- **Document intelligence:** A typed pipeline for classification, extraction, validation, entity resolution and change detection.
+- **Document intelligence:** A Python pipeline in `/pipeline`, shaped as
+  deployable idempotent jobs but invoked locally until v0 ships.
 - **Review workflows:** Human review for uncertain claims, contradictions, corrections and resident submissions.
-- **Geospatial layer:** 2D map rendering, progressive geometry loading and an experimental 3D presentation layer.
-- **Evaluation:** Golden datasets, regression tests, citation checks, entity-matching metrics and cost/latency tracking.
-
-Potential technologies will be compared through measured prototypes. The project may evaluate combinations such as Next.js and TypeScript, PostgreSQL/PostGIS, Python-based document processing, MapLibre or deck.gl, and Three.js or React Three Fiber. These are candidates, not final commitments.
+- **Geospatial layer:** MapLibre GL JS for the public 2D map, with Berlin
+  EPSG:25833 data reprojected for web display. Experimental 3D follows v0.
+- **Evaluation:** pytest harnesses citation, routing, cost and latency now;
+  scored evaluation against a committed, human-authored JSON golden set follows
+  post-v0.
 
 ## Data and trust model
 
@@ -185,10 +228,11 @@ The first delivery goal is a small public product that demonstrates the complete
 - Define construction taxonomy, statuses, milestones and financial measures.
 - Create a controlled German-English domain glossary.
 - Research the pilot dossiers manually.
-- Create the first golden truth set and contradiction log.
+- Record contradictions now; create the first golden truth set post-v0.
 - Define evidence labels and publication thresholds.
 
-**Exit evidence:** versioned definitions, a source matrix and three manually verified project records.
+**Exit evidence:** versioned definitions, a source matrix and three
+evidence-backed project records with exact German spans.
 
 ### Phase 2 — Trustworthy data core
 
@@ -207,7 +251,8 @@ The first delivery goal is a small public product that demonstrates the complete
 - Add entity resolution.
 - Add change and contradiction detection.
 - Add grounded explanations and citation checks.
-- Measure accuracy, unsupported claims, review rate, cost and latency.
+- Measure unsupported claims, review behavior, cost and latency; defer accuracy
+  measurement until the post-v0 golden set and verified glossary exist.
 
 **Exit evidence:** the pipeline can process representative documents and show both successful outputs and known failures.
 
@@ -356,6 +401,15 @@ Licensing, source archiving, database rights, document retention and reuse polic
 
 German legal and privacy requirements, including public-site identification, analytics disclosures and source quotation, must be verified against current authoritative guidance before launch.
 
-## Initial next step
+## Active portfolio sprint
 
-The first implementation task is to bootstrap the repository and create the minimal documentation foundation. The first product task is to select three pilot projects, define the German-first terminology model and build their manually verified source matrix before automating extraction.
+The repository now contains three frozen pilot dossiers, a typed and tested
+Python pipeline slice, private append-only local persistence, deterministic
+evidence gates and measured run records. Phase 2 is deliberately still
+incomplete. The accepted sprint now integrates that work into the default
+branch, freezes a small public-safe projection and builds C-014 as the flagship
+dossier before adding the two thinner pilot pages. The operational handoff and
+current gate are maintained in
+[`docs/project-checklist.md`](docs/project-checklist.md); the binding delivery
+order is in
+[`docs/portfolio-pivot-plan.md`](docs/portfolio-pivot-plan.md).

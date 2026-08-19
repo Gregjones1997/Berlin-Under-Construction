@@ -1,7 +1,7 @@
 # Berlin official source ecosystem
 
 **Status:** Research map; not yet a verified source registry
-**Phase:** Phase 0 — research and foundation
+**Phase:** Phase 1 — research foundation
 **Last updated:** 2026-08-06
 
 This is a discovery map for finding primary evidence about Berlin construction

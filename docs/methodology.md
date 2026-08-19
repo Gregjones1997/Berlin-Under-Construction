@@ -133,7 +133,7 @@ See `docs/decision-log.md`, ADR-001, for full context. Extraction happens in the
 
 ## Publication thresholds
 
-See `docs/decision-log.md`, ADR-003, for the full quality-gate rationale. In summary: precision-critical fields (financial-measure type, organization-to-role linkage, citation correctness) target 99% on the pilot set, but the gate that actually governs publication is per-claim routing — a claim below threshold goes to human review instead of publishing, rather than blocking the whole release. The one true invariant, with no tolerance, is that an unsupported claim cannot publish at all.
+See `docs/decision-log.md`, ADR-003, for the full quality-gate rationale. In summary: precision-critical fields (financial-measure type, organization-to-role linkage, citation correctness) target 99% on the pilot set, but the gate that actually governs publication is per-claim routing — a claim below threshold goes to human review instead of publishing, rather than blocking the whole release. Organization-to-role precision is explicitly deferred until the role vocabulary and eligible human-labelled data exist; it must be reported as deferred, not omitted. The one true invariant, with no tolerance, is that an unsupported claim cannot publish at all.
 
 Measured performance, including numbers below target, is published rather than withheld. A falling human-review rate is reported as evidence of improving reliability, not assumed from day one.
 

@@ -41,6 +41,11 @@ Organizations are relevant to understanding a project, but true facts placed nex
 
 The v0 product may name organizations only in documented roles such as commissioner, financer or contractor for a named lot. It will not name natural persons. Delay and cost variance attach to the project unless a reliable source explicitly establishes causation. Published projects and named organizations will have a correction path.
 
+Organizations, bodies and collective groups may be named and referred to.
+Natural persons may not, including through a role descriptor that identifies one
+individual at a point in time. A singular office plus a date is a name. Attribute
+statements to the document, not to the person or office that signed it.
+
 ### Consequences
 
 - Project pages remain focused on documented institutional responsibility.
@@ -51,6 +56,10 @@ The v0 product may name organizations only in documented roles such as commissio
 ### Reconsider when
 
 The project has a documented public-interest reason, authoritative policy and legal review supporting a broader naming scope.
+
+**Amended 2026-08-07** — added the role-descriptor test for singular offices and
+the document-attribution rule. See `docs/how-this-was-built.md`,
+the 2026-08-07 phase-label and ADR reconciliation entry.
 
 ## ADR-003 — Use risk-specific quality gates instead of one accuracy score
 
@@ -74,6 +83,14 @@ Evaluation will separate precision-critical measures from recall-oriented covera
 - Entity-match and contradiction recall: measured separately rather than hidden inside a blended score.
 
 These are release hypotheses, not achieved results, and the pilot set is small enough (three projects) that 99% precision means close to zero tolerated misses rather than a statistically meaningful rate. The publication gate is what a claim below threshold does — it routes to human review instead of publishing — not whether the measured number clears 99% on a given day. The first release publishes its actual measured numbers, including below-target ones, rather than withholding launch until the target is hit. The human-review rate will be reported rather than optimized away. Thresholds remain provisional until the manually verified pilot set exists.
+
+The organization-to-role precision target is explicitly **deferred**, not
+omitted: the role-vocabulary ADR is still pending, the three pilot dossiers
+assign no organization roles, and therefore the current set contains no valid
+role-labelled denominator. The gate activates only after that ADR is accepted
+and the human-authored golden set contains eligible organization-role values.
+Until then, reports must show it as `deferred — no eligible labelled data`, not
+as passed, failed or absent from a five-of-six summary.
 
 ### Consequences
 
@@ -428,7 +445,7 @@ contractor.
 
 **Date:** 6 August 2026
 
-**Status:** Proposed. Not yet ruled.
+**Status:** Accepted 2026-08-07 by the project owner, as amended by the reviewer.
 
 **Scope:** Private source-artifact retention and provenance
 
@@ -444,20 +461,541 @@ Hazardous: the same file's `/Author` field is a named official's email address.
 Rule 3 forbids naming a natural person, with no exceptions. Nobody reading the
 document text would know the name is there.
 
-**Decision (proposed).**
+**Decision.**
 
 1. Retained artifacts in `data/artifacts/` are written **after** a metadata
    strip that removes at minimum `/Author`, `/Creator`, `/Producer` and any
    XMP creator fields.
+
 2. Timestamps (`/CreationDate`, `/ModDate`) are **extracted and stored as
    structured provenance before the strip**, because they resolve publication
    dates. They are provenance data, not authority statements: a creation
    timestamp corroborates a date, it does not publish one.
-3. The stored content hash is computed over **stripped** content, so that a
-   change to the strip rule does not silently invalidate every stored hash.
-   Record the strip-rule version alongside the hash.
-4. This applies before the first bulk retrieval run, not after.
 
-**Open question for the owner.** Whether the pre-strip hash should also be
-retained for chain-of-custody. The reviewer's recommendation is yes, stored
-separately and never displayed.
+3. **The strip is performed by a PDF object-graph rewriter, not by pattern
+   replacement over raw bytes.** In the 2026-08-07 verification pass, the
+   `/Author` field of `h19-2449-v.pdf` was found inside a compressed object
+   stream, invisible to any byte-level scan of the response. A regex strip would
+   have reported success and removed nothing. Use a library that parses and
+   rewrites the document structure, such as qpdf or pikepdf.
+
+4. **The strip is verified, not assumed.** After stripping, the output is
+   re-parsed and retention **fails** if `/Author`, `/Creator`, `/Producer` or an
+   XMP creator field is still reachable in the rewritten document. A failed
+   verification blocks retention of that artifact; it does not warn and proceed.
+
+5. **This decision covers document metadata only.** Personal data appearing in
+   visible body text is handled by the evidence-span validators
+   (`personal_data_high_confidence`, `possible_personal_name`). ADR-011 must not
+   be read as having removed all personal data from an artifact.
+
+6. The stored content hash is computed over **stripped** content, so that a
+   change to the strip rule does not silently invalidate every stored hash.
+
+7. **The strip-rule version is recorded per artifact**, and the strip must be
+   idempotent: stripping already-stripped bytes produces identical bytes.
+
+8. This applies before the first bulk retrieval run, not after.
+
+### Hash retention and roles
+
+Both hashes are retained and are not interchangeable.
+
+| | `stored_content_hash` (post-strip) | `pre_transform_response_hash` (pre-strip) |
+| --- | --- | --- |
+| Artifact and source identity key | **Yes — the only one** | Never |
+| Deduplicates sources | **Yes** | Never |
+| Displayed in the public source registry | **Yes** | **Never** |
+| Target of `ExtractionRun.artifact_hash` | **Yes** | Never |
+| Purpose | Content addressing | Chain of custody |
+
+The post-strip hash is the identity key because metadata-only regeneration must
+not create a false new source version. The pre-strip hash is never displayed:
+the raw bytes are deliberately not retained and therefore cannot be reproduced
+by a public reader.
+
+For HTML and other media types with no metadata to strip, the transform is the
+identity transform with a recorded rule version. Both hashes exist and are equal.
+
+### Dossier registries
+
+The frozen dossier registries record SHA-256 over raw response bytes: historical
+pre-strip verification hashes. Three C-014 values were independently reproduced
+on 2026-08-07: `sha256:36d47e13…70f4f5`, `sha256:6f341678…cdeab5` and
+`sha256:a554a9df…49fa60`.
+
+After this ADR is implemented, a PDF's `stored_content_hash` will not equal its
+dossier registry hash. This is expected. Dossier values must not be updated,
+recomputed or reconciled; where both kinds are shown, label them `raw response
+(pre-strip)` and `stored content (post-strip)`.
+
+### Consequences
+
+- No retrieval job may write to `data/artifacts/` until the object-aware strip
+  and its post-strip verification both exist and are tested.
+- Strip verification is a deterministic test target under `AGENTS.md` rule 4.
+- The two-hash model must exist before the first bulk run because a pre-strip
+  hash cannot be backfilled after raw bytes are discarded.
+
+---
+
+## ADR-012 — Use SQLite for the local pipeline store
+
+**Date:** 7 August 2026
+
+**Status:** Accepted 2026-08-07 by the project owner
+
+**Scope:** Local pipeline persistence before v0 ships
+
+### Context
+
+The pipeline is invoked locally until v0 ships, and the current Phase 2 exit
+condition is to reconstruct a dossier from stored claims and evidence. Nothing
+required for that reconstruction depends on PostGIS. Standing up Supabase before
+the local pipeline can persist one claim would add an operations surface before
+the thing it hosts exists.
+
+ADR-005 remains unchanged: Supabase Postgres with PostGIS is the web
+application's v0 database. This decision concerns the local Python pipeline
+store only.
+
+### Decision
+
+Use SQLite as the local pipeline store for retrieval records, verified artifact
+records, extraction runs and milestone claims. The store is private local state,
+not a committed dataset and not a public artifact host.
+
+Pydantic domain schemas remain the trust boundary. SQLite is an adapter behind
+a small storage interface; database rows do not become a second, looser domain
+model. Writes that form one retrieval/extraction unit are transactional, stable
+IDs and schema versions are preserved, and corrections append rather than
+silently overwriting history.
+
+The dossier-fragment reconstruction test consumes stored records through that
+interface. It does not depend on SQLite-specific queries, so the same behavior
+can be exercised against a future Postgres adapter.
+
+### Consequences
+
+- Phase 2 can prove persistence and reconstruction without deployment, accounts,
+  credentials or a network dependency.
+- SQLite database files are local generated state and must be gitignored. Source
+  artifacts remain separately private under `data/artifacts/` and continue to
+  pass ADR-011 before any retention.
+- SQLite provides no PostGIS capability and is not the web application's
+  database. Geography remains in the Supabase/PostGIS path established by
+  ADR-005.
+- The adapter must preserve the two hash roles from ADR-011. Stored-content hash
+  is identity and the extraction foreign key; the pre-transform response hash is
+  private chain-of-custody data only.
+
+### Migration consequences
+
+- The future Postgres migration exports versioned records through the storage
+  interface rather than copying SQLite implementation details or row IDs.
+- Stable application IDs, UTC timestamps, schema versions, prompt/model versions,
+  exact German evidence spans and both explicitly labelled hash roles must
+  survive byte-for-byte or value-for-value as applicable.
+- SQLite-specific representations such as JSON text, decimal text and boolean
+  integers are decoded back into strict domain models before import. PostgreSQL
+  types are chosen from those models, not inferred from SQLite column affinity.
+- Content-addressed artifact identity is revalidated during migration. The raw
+  response is not reconstructed, and the private pre-transform hash never
+  becomes a public key or deduplication field.
+- The storage/reconstruction contract tests must run unchanged against the
+  Postgres adapter before cutover. Dual writes are not introduced unless a later
+  decision establishes an operational need.
+
+### Reconsider when
+
+The map needs shared geographic persistence, the local-only execution decision
+changes, or a measured SQLite limitation blocks deterministic reconstruction.
+
+---
+
+## ADR-013 — Phase 2 exits on reconstruction fidelity, not publication readiness
+
+**Date:** 7 August 2026
+
+**Status:** Accepted 2026-08-07 by the project owner
+
+**Scope:** Phase 2 exit criteria and the private reconstruction boundary
+
+### Context
+
+Phase 2 previously required a dossier to be regenerated entirely from versioned
+claims and evidence. The publication-safe reconstruction renders only claims
+that are eligible, verified and accepted with every blocking validation passed.
+Those states require human review of German claim values.
+
+The first storage smoke test correctly reconstructed its unreviewed claim as
+withheld. Under the old criterion, that safe result was indistinguishable from a
+storage or reconstruction failure. It coupled proof that the pipeline faithfully
+round-trips data to a separate human decision about whether the data may publish.
+
+### Decision
+
+Phase 2 exits on **reconstruction fidelity**, not publication readiness.
+
+1. A pilot dossier must reconstruct from stored data alone, faithfully rendering
+   every claim's real state, including withheld claims and their reasons.
+2. The publication-safe render remains the default and the only mode available
+   to public surfaces.
+3. A local-only `include_withheld_detail` verification mode may render stored
+   detail for withheld claims so the smoke test can distinguish correct
+   withholding from incorrect storage. Its output is never published.
+4. Rendering publication-eligible claims publicly is a Phase 4 criterion, where
+   the public dossier and human-review workflow meet.
+5. No publication rule changes: evidence spans, blocking validations and an
+   accepted review decision remain mandatory.
+
+### Consequences
+
+- Phase 2 can be demonstrated with engineering evidence without treating human
+  review as a prerequisite for proving persistence.
+- The local smoke test becomes diagnostic for serialization and lost-span faults.
+- The withheld-detail mode is a private surface containing stored German source
+  text and must remain unreachable from public rendering paths.
+- Phase 4 owns the proof that accepted, verified claims render publicly.
+
+### Reconsider when
+
+Human review becomes routine rather than blocked, so restoring publication-ready
+claims to an earlier phase gate no longer couples unrelated work.
+
+---
+
+## ADR-014 — Keep all three pilot projects in v0
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** First-release project coverage
+
+### Context
+
+The 1 September deadline created a real scope question. The reviewer recommended
+a single-project v0 centered on C-014 because it offered the safest schedule.
+That alternative would have reduced the amount of source, schema and display work
+required before release, but it would also have removed the cross-project cases
+that expose different evidence and terminology problems.
+
+### Decision
+
+The v0 release keeps all three selected pilots: C-014, C-010 and C-019. The
+project owner declined the reviewer-recommended single-project alternative.
+Schedule pressure is handled by shrinking features around the three dossiers,
+not by removing two pilots.
+
+### Consequences
+
+- The first release must support all three pilot dossiers.
+- Optional product surface may be reduced to protect the deadline and trust
+  rules.
+- A working C-014 vertical slice remains the implementation path, but it is not
+  the complete release scope.
+
+### Reconsider when
+
+A documented blocker makes three-project publication impossible without
+weakening evidence quality, privacy or another non-negotiable rule.
+
+**Amended 13 August 2026** — corrected the decision and acceptance date from
+12 August to the owner-confirmed 13 August. See `docs/how-this-was-built.md`,
+the 2026-08-13 acceptance-date and attribution correction entry.
+
+---
+
+## ADR-015 — Ship v0 with an explicitly unverified glossary
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** v0 translation, evaluation and disclosure boundary
+
+### Context
+
+ADR-008 defines the human-verification boundary required for golden values, but
+German-speaking glossary verification will not complete on the v0 critical
+path. Treating an agent-produced or otherwise unverified glossary as authority
+would violate the golden-set rule; waiting for a golden set would put the first
+release behind that unavailable authority.
+
+C-010 is the live example of the risk: its five German completion terms are
+contested and cannot be collapsed into one asserted English milestone type.
+
+### Decision
+
+v0 may ship with a versioned glossary whose status is explicitly `unverified`.
+This changes sequencing, not the authority rule in ADR-008. The human-authored
+golden truth set and glossary verification move off the v0 critical path to
+post-v0.
+
+Until verification exists, all of the following are binding:
+
+1. No extraction accuracy figure is published.
+2. No English milestone type or financial type is asserted where the German is
+   contested. The unresolved German distinction remains visible instead.
+3. German remains canonical in storage.
+4. The glossary version and its verification status are published alongside
+   every output derived from the glossary.
+
+### Consequences
+
+- v0 can demonstrate bounded extraction, evidence spans, withholding, cost and
+  latency without presenting model self-consistency as accuracy.
+- C-010's five completion terms remain unresolved in English until a qualified
+  human settles the relevant vocabulary and context.
+- Any display derived from the glossary is visibly provisional and traceable to
+  its exact version.
+- Golden-set evaluation becomes post-v0 work; agents still may not create or
+  populate its values.
+
+### Reconsider when
+
+A German-speaking human has verified the relevant glossary version and authored
+or verified the eligible golden values under ADR-008.
+
+**Amended 13 August 2026** — corrected the decision and acceptance date from
+12 August to the owner-confirmed 13 August. See `docs/how-this-was-built.md`,
+the 2026-08-13 acceptance-date and attribution correction entry.
+
+---
+
+## ADR-016 — Use operator sign-off without contribution credit
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Git commit trailers
+
+### Context
+
+The Buzz Nest `AGENTS.md` requires both `Signed-off-by` and `Co-authored-by`
+trailers for the human operator. This public repository separately discloses AI
+authorship in `docs/how-this-was-built.md`. Giving the operator contribution-
+graph credit for agent-authored changes would make the commit metadata conflict
+with that disclosure.
+
+### Decision
+
+Every agent-created commit carries `Signed-off-by` for the human operator, using
+the repository-local Git name and email. It does not carry `Co-authored-by` for
+the operator or an AI agent.
+
+This knowingly overrides the Buzz Nest trailer rule for this repository.
+
+### Consequences
+
+- Sign-off records human accountability without misattributing authorship.
+- AI participation remains disclosed in the canonical build log.
+- A missing repository-local email blocks an agent-created commit rather than
+  inviting a guessed identity.
+
+### Reconsider when
+
+The repository's public authorship policy or contribution-credit model changes.
+
+---
+
+## ADR-017 — Work in the existing artifact-bearing checkout
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Agent workspace and private pipeline state
+
+### Context
+
+The canonical working tree is `/Users/gregai/Documents/berlin construction`.
+The Buzz Nest convention already prefers an existing checkout, while an earlier
+session treated an empty `REPOS/` directory as evidence that the repository was
+unavailable and briefly created a replacement clone.
+
+That clone could never reproduce the real working environment:
+`data/artifacts/` is gitignored and private under rule 5, and the local SQLite
+store contains the retained bytes required by `pipeline.extract_once`.
+
+### Decision
+
+Agents work in the existing local checkout and do not clone this repository into
+the Buzz Nest `REPOS/` directory.
+
+### Consequences
+
+- Repository work and local extraction use the same canonical tree and private
+  state.
+- A fresh clone is suitable for public reproducibility checks, but cannot run
+  artifact-backed extraction without separately authorized access to the
+  private store.
+- Private artifacts remain gitignored and must never be copied into Git to make
+  another workspace convenient.
+
+### Reconsider when
+
+The project owner relocates the canonical checkout or introduces an authorized
+private-store adapter that preserves rule 5.
+
+---
+
+## ADR-018 — Repository instructions take precedence
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Agent instruction hierarchy
+
+### Context
+
+Two files named `AGENTS.md` apply during Buzz-coordinated work: the Buzz Nest
+workspace file and the repository file. Their general instructions overlap, and
+their commit-trailer rules conflict.
+
+### Decision
+
+For work on this project, the repository `AGENTS.md` wins over the Buzz Nest
+`AGENTS.md`. An agent must state a conflict out loud when it encounters one
+rather than silently choosing or blending the instructions.
+
+### Consequences
+
+- Project-specific trust, privacy, authorship and workflow rules remain
+  authoritative in the project they govern.
+- The Nest instructions continue to apply where they do not conflict.
+- Instruction conflicts become visible decisions rather than hidden agent
+  behavior.
+
+### Reconsider when
+
+The two instruction sets are consolidated or their precedence is defined by a
+higher project-owned policy.
+
+---
+
+## ADR-019 — Keep one canonical public build record
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Development-process documentation
+
+### Context
+
+Buzz provides workspace-level `WORK_LOGS/`, while this repository already has a
+public, versioned accountability record with project-specific content and hash
+verification rules. Splitting authoritative history between them would make a
+reader reconstruct the process from two stores with different lifetimes.
+
+### Decision
+
+`docs/how-this-was-built.md` is the canonical project build record.
+`WORK_LOGS/` in the Buzz Nest is scratch and never substitutes for a committed
+build-log entry.
+
+### Consequences
+
+- Every lasting process claim is reviewed and versioned with the repository.
+- Workspace logs may support a session but are not cited as the project record.
+- The build-log commit and hash-recording procedure remains mandatory.
+
+### Reconsider when
+
+The repository adopts another public, versioned record with an explicit
+migration of the existing history.
+
+---
+
+## ADR-020 — Treat pricing provenance and run limits as separate concerns
+
+**Date:** 13 August 2026
+
+**Status:** Accepted 2026-08-13 by the project owner
+
+**Scope:** Extraction metering configuration and stored cost provenance
+
+### Context
+
+The metering configuration contains both dated provider rates and operator-set
+run limits. Raising `max_output_tokens` from 2,000 to 4,000 changes request
+policy without changing any price used to calculate stored costs. The current
+filename and `pricing_reference` combine those concerns even though only the
+rate block is the dated pricing observation.
+
+### Decision
+
+`pricing_reference` identifies the rate block, not the mutable `run_limits`
+block in the same file. Run-limit changes do not restate historical rates and
+must be recorded in the decision log and build log until the configuration is
+split or run-policy provenance is stored separately.
+
+### Consequences
+
+- Existing and future costs using this reference remain comparable because the
+  rates are unchanged.
+- `pricing_reference` alone does not reproduce the exact request cap; the build
+  record supplies that policy history for v0.
+- A later schema may store a separate run-policy version without changing the
+  meaning of existing cost rows.
+
+### Reconsider when
+
+The pipeline supports multiple run profiles, run limits affect a published
+comparison, or exact request-policy provenance needs to travel with each run.
+
+---
+
+## ADR-021 — Ship the smallest honest product before completing the trust platform
+
+**Date:** 19 August 2026
+
+**Status:** Accepted 2026-08-19 by the project owner after external review
+
+**Scope:** Delivery order through the 21 August portfolio handoff and the
+1 September first public release
+
+### Context
+
+The repository has three frozen source-backed dossiers, a strict milestone
+pipeline slice and 117 passing local tests, but no public web application, map or
+dossier page. The public default branch still presents a concept-stage project,
+and its strongest engineering work is both hidden on the Phase 2 branch and red
+in CI because of one local-interpreter assumption. Continuing the existing
+sequence would deepen the trust platform before demonstrating user value.
+
+### Decision
+
+Pivot delivery order: repair the public repository, create a public-safe static
+projection, ship C-014 as the flagship dossier, add thin C-010 and C-019 pages
+and a locally sourced MapLibre orientation view, expose only measured AI
+behavior, then deploy after the required public-site checks. Phase 2 remains
+incomplete, private artifacts never enter the web build, and no provider call is
+authorized by this decision.
+
+`docs/portfolio-pivot-plan.md` is the sprint's execution plan. Its active gate
+and completion criterion control sequencing. Through the Friday handoff, build
+logging uses one short entry per shipped gate or material failure and one closing
+hash commit per day. Evidence, German-canonical storage, human authority,
+natural-person exclusion, correction links and zero unsupported publication
+remain binding.
+
+### Consequences
+
+- A working, honest user experience now outranks broader backend completion.
+- Supabase, full domain schemas, address search, scored evaluation, broader
+  extraction batches and 3D remain deferred.
+- The public UI distinguishes human-curated dossier data from the single
+  retained completed extraction run and makes no total provider-call or accuracy
+  claim.
+- The temporary process exception expires after the 21 August handoff.
+
+### Reconsider when
+
+A binding evidence, privacy, legal or source-use requirement blocks public
+deployment. In that case the site remains a restricted preview and is not called
+the public release; the trust rule is not weakened to preserve the date.

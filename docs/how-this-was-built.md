@@ -2,6 +2,712 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Codex (`/context-restore` and repository `code-review` skills)
+  with read-only Standards and Spec subagents: restored the paused Gate 1 review
+  without crediting two stopped lanes that returned no findings, then restarted
+  both required axes against `main...HEAD`. Standards found missing stored
+  publication-date state and PDF timestamps, a stale checklist handoff, the
+  prior session's non-final closing hash commit and one unused serialization
+  hook; Spec found that publication-safe reconstruction trusted recorded pass
+  flags instead of rechecking evidence and an append-only acceptance decision,
+  plus the stale concept-stage README ending. Codex accepted every hard finding
+  and the small cleanup, independently reproduced the bad HTML offsets, added
+  name-free append-only review decisions and fail-closed render checks, retained
+  provenance fields, corrected the public handoffs, and recorded the prior
+  session-close failure instead of rewriting history. Verified: 123 tests pass;
+  63 reachable build-log hashes validate; focused adversarial tests pass; the
+  existing private store remains readable and review-required; branch-history
+  scans find no credential, retained artifact or database blob. The focused
+  Standards follow-up approved the repair and required this follow-up disclosure.
+  Two focused Spec passes then caught equal-timestamp and mixed-UTC-offset ways
+  for a later revocation to lose ordering; Codex accepted both, enforced strict
+  per-claim time growth, stored the ordering key in UTC and added adversarial
+  coverage. The final Spec pass approved the corrected gate. No finding was
+  rejected. `ded9cf9`
+
+- 2026-08-19 — Project owner, external reviewer Claude and Codex
+  (`writing-for-agents` skill): accepted the portfolio pivot, integrated all four
+  blocking review findings with two implementation clarifications, activated
+  the temporary sprint rules and moved the handoff to Gate 1. Verified: 117
+  tests pass, 62 build-log hashes validate and the accepted plan preserves the
+  private-artifact, publication and no-provider-call boundaries. `3e96766`
+
+## 2026-08-13 — Preserve accounting from failed extraction calls
+
+**Status:** Complete
+
+**Commit:** `b6a15a4` — `fix(pipeline): preserve failed-call accounting`
+
+### Goal
+
+Make a future rejected provider response operationally useful without treating
+it as a completed extraction: preserve content-free usage, cost, latency and
+rejection details, keep failed attempts out of the append-only run store, and
+give a future authorized call more output runway.
+
+### Participants and scopes
+
+- Project owner: raised the output cap to 4,000, authorized failed-call token and
+  cost capture, and did not authorize another provider call.
+- Main agent (Codex, Buzz CLI skill): checked the proposal against the code and
+  stored policy, implemented the adapter, CLI, tests and public record, and ran
+  repository verification.
+- Reviewer Claire: traced the discarded diagnostics, identified the 2,000-token
+  cap as a live but unproven cause candidate, and proposed the bounded code and
+  test changes. No subagents were used.
+
+### Work performed
+
+- Raised `max_output_tokens` from 2,000 to 4,000. At the configured rates, the
+  maximum preflight cost rises to USD 0.0448 and remains below the USD 0.30
+  ceiling.
+- Added non-raising extraction of the four content-free token counts and elapsed
+  latency from incomplete and invalid-output-shape responses.
+- Added structured CLI rejection output with `failed_attempt_accounting`,
+  including cost under the configured rate reference. Failed calls still exit
+  nonzero and are not written to `extraction_runs` or claim tables.
+- Recorded that `pricing_reference` identifies rates, not mutable run limits,
+  while those concerns share one v0 configuration file.
+
+### Decisions
+
+- Accepted the reviewer's safe-diagnostics and no-persistence boundaries.
+- Extended the proposed usage helper to include the fourth token field,
+  `cache_write_input_tokens = 0`, matching completed OpenAI accounting.
+- Treated 4,000 tokens as an owner-selected mitigation, not proof that the prior
+  incomplete response hit the old cap. Its cause remains unestablished.
+- Kept the 13 August attempt entry unchanged because it correctly records the
+  2,000-token policy in force for that historical call.
+
+### Verification
+
+- Provider tests cover complete usage, incomplete usage, malformed usage and
+  billed invalid-output-shape rejection without changing the rejection code.
+- The CLI regression test verifies stderr accounting, nonzero exit and zero
+  persisted extraction runs or claims after rejection.
+- Full repository suite: 117 tests passed. The build-log checker validated all
+  61 pre-existing reachable hashes before this entry received its work-commit
+  hash.
+
+### Failures and limitations
+
+- The 13 August response payload was discarded before this change, so its usage,
+  cost, latency and incomplete reason cannot be recovered by this code.
+- The higher cap does not establish why that response was incomplete. Only a
+  separately authorized future call can exercise the new diagnostics.
+- Failed attempts are printed for operator accounting but are not persisted;
+  durable failed-attempt storage remains a separate schema decision.
+
+### Evidence
+
+- `pipeline/openai_provider.py`
+- `pipeline/extract_once.py`
+- `pipeline/metering.py`
+- `pipeline/config/pricing.openai-gpt-5.6-luna.2026-08-07.toml`
+- `README.md`
+- `tests/pipeline/test_openai_provider.py`
+- `tests/pipeline/test_extract_once.py`
+- `tests/pipeline/test_metering.py`
+- `docs/decision-log.md`
+- `docs/project-checklist.md`
+
+- 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): corrected the C-014 failure record to distinguish an incomplete response from an unestablished cause, identify the 2,000-token cap as a stored-data diagnosis candidate, and state that the adapter discarded failed-call usage and latency rather than proving them unavailable. Verified: provider control flow, metering policy and the private store's historical 1,053-output-token run checked directly. `d9c7106`
+
+## 2026-08-13 — Attempt the authorized C-014 one-shot
+
+**Status:** Complete
+
+**Commit:** `61bcaac` — `docs(process): record failed C-014 one-shot`
+
+### Goal
+
+Run the documented metered extraction exactly once against the retained C-014
+artifact, persist any completed result as proposed and unverified, and record
+the provider-returned token, cost, latency and privacy measurements without
+turning the observation into an accuracy claim.
+
+### Participants and scopes
+
+- Project owner: authorized one provider attempt, fixed the reporting boundary
+  and retained authority over any retry, claim review and golden values.
+- Main agent (Codex, Buzz CLI skill): verified the stored retrieval, made the
+  sole provider call, checked persistence and recorded the failure.
+- No subagents were used. Reviewer Claire was requested for the post-commit
+  review and had not reviewed this entry at work-commit time.
+
+### Work performed
+
+- Confirmed the private SQLite store contained the matching C-014 retrieval for
+  source `C-014-press-2023-06-26` and artifact
+  `sha256:36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5`.
+- Ran the README's `python -m pipeline.extract_once` invocation once through the
+  repository virtual environment. The response came back with status
+  `incomplete` and the adapter rejected it as `provider_response_incomplete`.
+  Which side truncated it is not established: the run cap is
+  `max_output_tokens = 2000` with `reasoning_effort` fixed to `high`, and the one
+  completed run over this artifact consumed 1,053 output tokens, so the cap is a
+  live candidate and is testable from stored data without another provider call.
+- Did not retry, derive metrics from the failed response, reconstruct a new
+  claim, change a contested English type or touch the golden set.
+
+### Decisions
+
+- Treat the failed provider response as the result of the authorized attempt;
+  another provider call requires fresh owner direction.
+- Report no token, cost, latency or privacy figures because the command did not
+  complete and emitted no safe summary.
+- Keep the no-accuracy-figure and German-canonical boundaries unchanged.
+
+### Verification
+
+- The command exited nonzero with the content-free rejection code
+  `provider_response_incomplete`.
+- Before and after the attempt, the append-only store contained one historical
+  C-014 extraction run and one historical C-014 milestone claim. The failed
+  attempt added neither a run nor a claim.
+- The working tree remained unchanged by the failed command; only this record
+  and the checklist handoff were edited afterward.
+- Full repository suite: 113 tests passed. Pytest could not update its local
+  cache under the session sandbox, which did not affect test execution.
+
+### Failures and limitations
+
+- No completed-run summary exists, so the four token fields, cost, latency and
+  both privacy outcomes are not reported. They were not unavailable: the adapter
+  raises before reading `usage` from the incomplete payload
+  (`pipeline/openai_provider.py:70`) and discards the latency it had already
+  measured, so this attempt's billed tokens and cost are captured nowhere. That
+  is a gap against the cost convention in `AGENTS.md` and needs an owner decision
+  before the adapter records anything from a failed call.
+- The command-line traceback exposes the stable rejection code but not the
+  adapter's optional content-free incomplete reason. Diagnosing that reporting
+  gap does not authorize another provider call.
+- No new proposed claim exists to reconstruct or send for human review.
+
+### Evidence
+
+- `pipeline.extract_once` terminal result: nonzero exit with
+  `provider_response_incomplete`.
+- `data/artifacts/c014-vertical-slice.sqlite3`: unchanged post-attempt counts of
+  one historical run and one historical claim; the private database remains
+  untracked.
+- `docs/project-checklist.md`
+
+- 2026-08-13 — Project owner, reviewer Claire and Codex (Buzz CLI and Spreadsheets skills): assembled the native-German glossary review package. Claire identified proposal anchoring, the non-1:1 glossary join, duplicate-term IDs and the cross-row C-010 question before build, then caught three unstable row-number suffixes in the committed package; Codex accepted the two-pass review workflow, a complete 95-row left join with explicit missing-pass markers, stable section IDs and one grouped C-010 adjudication prompt, but could not run the Spreadsheets skill's visual render because its dependency loader was unavailable. Verified: CSV structure, empty review fields, priority coverage, source-row counts, UTF-8 spreadsheet encoding and public identity boundary checked mechanically; 113 repository tests passed. `155d211`, `cb24a19`
+
+- **Course correction** — 2026-08-13 — Project owner, reviewer Claire and Codex (Buzz CLI skill): corrected ADR-014 and ADR-015 from 12 August to the owner-confirmed 13 August acceptance date, and restored the reviewer's role in endorsing the replacement clone before the owner corrected the workspace boundary. Verified: both ADRs carry amendment notes and the earlier course-correction entry now names all three participants. `207f3ff`
+
+- **Course correction** — 2026-08-13 — Reviewer Claire and Codex (Buzz CLI skill): Claire found that the checklist's post-v0 heading accidentally deferred the deterministic zero-unsupported-publication invariant with scored evaluation. Codex accepted the finding, restored the invariant and honest review-rate reporting as v0 gates, and limited post-v0 labels to scored precision, citation and recall metrics. Verified: the checklist now distinguishes golden-set-dependent scores from repository rule 4. `313ee8f`
+
+- **Course correction** — 2026-08-13 — Project owner, reviewer Claire and Codex (Buzz CLI skill): after Codex treated an empty Nest as the workspace and the reviewer endorsed cloning, producing a checkout that could not contain the private artifact, the owner restored the existing-checkout boundary; ADR-014–019 now record that correction alongside the 12–13 August v0 scope, unverified-glossary and repository-governance decisions. Verified: README and checklist match the ADRs on the three-project, no-accuracy-figure, German-canonical and workspace boundaries. `c59ae2a`
+
+- 2026-08-07 — Project owner and Codex: changed hash recording from one ceremony commit per work commit to one same-session `docs(build-log)` commit covering all session entries, making hash ceremony distinguishable from substantive process changes. Verified: `AGENTS.md` and the conventions document define the same procedure. `3e20fe9`
+- 2026-08-07 — Project owner and Codex: accepted ADR-013, separating Phase 2 reconstruction fidelity from Phase 4 publication readiness, and aligned both phase criteria. Verified: decision and checklist state the same boundary. `3ab72ca`
+
+## 2026-08-07 — Persist and reconstruct the first milestone slice
+
+**Status:** In progress
+
+**Commits:**
+
+- `571e7a6` — `feat(pipeline): add SQLite claim and artifact store`
+- `e52fb34` — `feat(pipeline): reconstruct a pilot dossier fragment from stored data`
+- `06f8e27` — `feat(pipeline): add fail-closed metered extraction runner`
+- `96ce545` — `docs(process): record vertical-slice evidence and next action`
+- `1b20caa` — `docs(process): clarify delegation model fallback`
+- `1612a88` — `fix(pipeline): honor declared charset in metered input`
+- `b4d3d0b` — `fix(provider): make first OpenAI response diagnosable`
+- `a6db7f3` — `fix(privacy): route possible names and low confidence to review`
+- `fdb51ac` — `fix(store): persist extraction runs and claims atomically`
+- `a5fb4b4` — `feat(pipeline): add local withheld-detail reconstruction`
+- `68b385f` — `feat(pipeline): add one-shot metered extraction command`
+- `db85fbd` — `fix(provider): retain status for unexpected error bodies`
+- `f021dab` — `fix(privacy): version typed possible-name allowlists`
+- `27113ea` — `docs(process): record corrected vertical-slice handoff`
+
+### Goal
+
+Move one milestone claim end to end through retrieval, verified artifact
+retention, local persistence and storage-only reconstruction, then run the
+frozen prompt once with real provider metrics. The dossier comparison is a
+smoke observation, never a golden evaluation or accuracy measurement.
+
+### Participants and scopes
+
+- Project owner: approved SQLite for the local pipeline store, set the required
+  sequencing and commit boundaries, and retained authority over all golden and
+  publication decisions.
+- Main agent (Codex, TDD and codebase-design skills): sole writer; froze the
+  prompt before delegation, designed the public seams, integrated the proposals
+  and owns every test, commit and live verification.
+- SQLite storage subagent (inherited GPT-5.6 model, high effort;
+  codebase-design and domain-modeling skills): proposed the append-only local
+  store, atomic aggregates, canonical typed JSON, verified stored bytes and
+  migration constraints.
+- Reconstruction subagent (inherited GPT-5.6 model, high effort): proposed the
+  deterministic storage-only fragment, privacy-safe withholding and a neutral
+  dossier smoke comparison outside the reconstruction seam.
+- Metering/privacy subagent (inherited GPT-5.6 model, high effort): proposed the
+  provider seam, fail-closed threshold/pricing gates, exact usage accounting and
+  content-free personal-data validation results.
+- External reviewer (Claude): identified strict-schema incompatibilities,
+  unsafe loss of provider diagnostics, incomplete-response ambiguity and the
+  nonexistent OpenAI cache-write usage field before the first live call.
+
+### Multi-agent architecture
+
+Delegation began only after the extraction prompt was frozen. Three read-only
+lanes examined independent integration risks in parallel: storage transactions,
+reconstruction semantics, and live metering/privacy. No lane read the frozen
+dossiers or `evaluation/`, and no lane wrote to the repository.
+
+The orchestrator did not expose a direct `gpt-5.6-luna` override for these
+subagents. As required by the owner, the main agent used the available inherited
+GPT-5.6 model path at high effort and did not describe that fallback as Luna.
+
+The main agent accepted a concrete SQLite module rather than a hypothetical
+generic repository, atomic immutable writes, post-transform hash identity,
+private verified blobs, typed JSON round-trips and adapter-level migration
+tests. Generic CRUD, URL identity, pre-transform hash foreign keys, silent
+conflict ignores, early Supabase and dual writes were rejected. For
+reconstruction, the main agent accepted deterministic storage-only rendering,
+withholding of non-publishable text and neutral smoke differences outside the
+renderer; a new protocol was rejected until a second backend exists. Metering
+the main agent initially accepted a single-attempt Responses API adapter,
+`store=false`, strict structured output, content-free failures, preflight and
+actual cost ceilings, token accounting and persisted privacy outcomes. The
+strict-mode and cache-write mistakes were caught before the first live call and
+are recorded under course correction below.
+
+### Work performed
+
+- Frozen prompt and ADR-012 are recorded separately above because both preceded
+  implementation by design.
+- Added the SQLite persistence seam and its first transactional artifact,
+  retrieval and milestone-claim round trips.
+- Added a deterministic milestone-fragment renderer that reads only reopened
+  storage, exposes only post-transform hashes, withholds all non-publishable or
+  incompletely validated claim text and keeps the dossier comparison in a
+  neutral, score-free smoke seam. Further work remains in the commits listed
+  above.
+- Added the previously missing `thresholds-v1` configuration as explicitly
+  uncalibrated and human-review-only, plus a dated GPT-5.6 Luna pricing record,
+  a no-retention provider adapter and a fail-closed metered runner. Extraction
+  run records contain usage, cost, latency, provider request ID and stable
+  privacy outcomes, but never model or source text. The runner decodes the
+  provider input with the artifact's declared charset, matching span validation.
+- Changed the first-run provider request to non-strict Structured Outputs while
+  keeping atomic Pydantic validation authoritative. Trusted threshold metadata
+  now stays in the system instruction, OpenAI cache-write usage is ignored,
+  safe HTTP error type/code/status and incomplete reasons survive rejection, and
+  the first response logs usage key names without values.
+- Kept `personal_data_high_confidence` as the only privacy hard failure.
+  `possible_personal_name` and below-threshold confidence now survive as recorded
+  review outcomes, the configured minimum is read, and the possible-name
+  exceptions are split into organization and toponym allowlists. The nonexistent
+  OpenAI cache-write price was removed and nonzero cache-write usage is rejected
+  at the OpenAI policy boundary.
+- Made the live extraction persistence unit one SQLite transaction: a run and
+  all claims commit together or all roll back. A failing second claim test proves
+  neither the run nor the first claim survives partial failure.
+- Kept publication-safe reconstruction as the default and added an explicit,
+  bannered `include_withheld_detail` local diagnostic that renders stored text
+  and evidence for withheld claims so the smoke comparison can detect storage
+  faults without changing any claim state.
+- Added `python -m pipeline.extract_once`, which reads `OPENAI_API_KEY` only from
+  the process environment, extracts an existing private stored artifact,
+  converts every validated proposal into a non-publishable review claim, commits
+  the run and claims atomically, and prints only safe run metrics and privacy
+  outcomes. Recorded the intentional omission of raw provider output from the
+  implemented extraction-run record as a privacy-minimizing departure from the
+  approved proposal shape.
+- Hardened safe provider rejection so an unexpected non-object error body still
+  retains its HTTP status without exposing body content.
+- Bumped the possible-name allowlist version because the configuration changed
+  from one noun list to distinct organization and toponym lists.
+
+### Verification
+
+- Storage seam: four tests pass for close/reopen round-trip, idempotent replay,
+  immutable-ID conflict rejection, relational consistency and mode `0600`.
+- Reconstruction seam: three tests pass for eligible exact-German rendering,
+  private-hash exclusion, non-publishable withholding and non-vacuous projects.
+- Live C-014 retrieval reproduced the expected response hash
+  `sha256:36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5`.
+  The reopened private store reconstructed one deliberately unreviewed claim as
+  withheld. A score-free dossier smoke comparison observed differences; its
+  generated and reference hashes are recorded in the process finding rather
+  than treating the dossier as an evaluation set.
+- Metering, provider, one-shot command and storage-run tests exercise no
+  retention, high-effort schema-constrained requests, OpenAI-gated token
+  accounting, latency, both personal-data validators, safe failures,
+  declared-charsets, atomic run/claim persistence and typed metric round-trips.
+  Full suite: 113 tests.
+
+### Failures and limitations
+
+- The current process exposes no `OPENAI_API_KEY`. No live model extraction has
+  been attempted and no token, cost or latency value has been invented. The
+  tested `python -m pipeline.extract_once` path now exists and refuses to run
+  without that environment credential, so the live run remains the next action
+  and this vertical slice is not complete.
+
+### Course correction
+
+The metering/privacy lane proposed obsolete GPT-5.6 Luna prices of $1.00 input,
+$0.10 cached input and $6.00 output per million tokens. The main agent corrected
+those values before any run but incorrectly retained a claimed $0.25 OpenAI
+cache-write rate. The external reviewer caught that OpenAI reports only
+`input_tokens_details.cached_tokens`; the nonexistent rate was removed and
+nonzero cache-write usage is rejected at the provider policy boundary. No charge
+or persisted metric was affected.
+
+The first adapter also passed the generated Pydantic schema with `strict: true`,
+although it contains constructs unsupported by OpenAI strict Structured Outputs.
+The external reviewer caught the expected HTTP 400 before a live call. The first
+run now uses `strict: false`; atomic Pydantic parsing and exact-span validation
+remain the authoritative rejection gate.
+
+Finally, the first privacy runner rejected the entire extraction for
+`possible_personal_name` and relied on a six-item German noun allowlist. The
+reviewer demonstrated false positives including the pilot's own place name and
+ordinary capitalized noun phrases. The runner now hard-fails only
+`personal_data_high_confidence`, records possible names as review-required,
+persists the affected claims atomically, and uses versioned organization and
+toponym allowlists. No live claim was discarded because the issue was caught
+before the key was wired.
+
+- 2026-08-07 — Project owner and Codex (TDD and codebase-design skills): froze `milestone-extraction-de-v1` before any extraction run, derived only from approved schema and policy rather than the dossiers. Verified: the prompt declares its immutable version and enforces untrusted-document handling, German-first values, exact spans, closed milestone types and natural-person exclusion. `d0d17d8`
+
+- 2026-08-07 — Project owner and Codex: accepted ADR-012, using SQLite for private local pipeline persistence while retaining Supabase/PostGIS for the web application. Verified: migration consequences preserve strict models, stable identities, German spans and ADR-011 hash roles. `3a1bf7f`
+
+## 2026-08-07 — Gate financial completion on evidence-depth coverage
+
+**Status:** Complete
+
+**Commit:** `69c256c` — `feat(pipeline): gate financial completion on evidence-depth coverage`
+
+### Goal
+
+Close the remaining pipeline-review gap by making the configured evidence ladder
+and required financial depths behavioral, while stopping short of claiming that
+the financial claim slice itself exists.
+
+### Participants and scopes
+
+- Project owner: authorized the follow-up proposal and defined the Phase 1
+  checklist reconciliation and threshold-configuration blocker.
+- Main agent (Codex): remained the sole writer; read and applied the proposal,
+  inspected the gate, reconciled the checklist and independently verified the
+  integrated result.
+- Reviewer (Claude): supplied the read-only follow-up patch under
+  `docs/research/proposals/2026-08-07-financial-depth-coverage/`.
+
+### Work performed
+
+- Added immutable, discriminated per-project evidence-depth dispositions that
+  preserve `not_checked`, `searched_found`, `searched_absent`, `unavailable` and
+  human-assigned `inapplicable` as distinct states.
+- Required every searched or unavailable disposition to name its actual search;
+  found records name their source IDs, access barriers remain distinct from
+  absence, and inapplicability requires a review-decision ID.
+- Added a deterministic financial-completion gate that reads both
+  `evidence_depths` and `completion.financial_requires_depths`, rejects unknown
+  or duplicate depth records and routes incomplete coverage to review with
+  `financial_depth_coverage_incomplete`.
+- Reconciled Phase 1 checklist evidence without marking incomplete work done and
+  recorded the missing threshold configuration as a blocker before the first
+  metered extraction.
+
+### Verification
+
+- `.venv/bin/python -m pytest -q`: 91 tests passed, up from 78.
+- Both previously unused configuration fields now have behavioral consumers;
+  tests prove the required depths are read from configuration rather than
+  hardcoded.
+- Retrieval configuration digest remains
+  `sha256:b5b9c1dcdb0a5483be1e9176503539adfc4dd30108161aa33a460565b983e4c5`.
+- `git diff --check` passed. `docs/research/dossiers/` and `evaluation/` were
+  unchanged.
+
+### Failures and limitations
+
+- This is the coverage record and gate only. `FinancialClaim`, conflict records,
+  source and artifact persistence, review history and PDF evidence bounding
+  boxes remain open.
+- `Confidence.threshold_config_version` is required, but no threshold
+  configuration exists under `pipeline/config/`. The first metered extraction
+  remains blocked until that versioned configuration is implemented.
+
+## 2026-08-07 — Close the first pipeline review findings
+
+**Status:** Complete
+
+**Commits:**
+
+- `e9c66b4` — `fix(pipeline): constrain retrieval hosts and response size`
+- `15ce351` — `feat(pipeline): make milestone quarantine structural`
+- `8006010` — `fix(pipeline): block embedded files and honor declared charsets`
+
+### Goal
+
+Apply and independently verify the review findings against `d5d5806`, preserving
+the owner's rulings on the transport allowlist, structural milestone quarantine,
+HTML span length and timezone-aware creation dates.
+
+### Participants and scopes
+
+- Project owner: accepted four decisions incorporated into the proposal and
+  authorized applying the reviewer patch in three coherent work commits.
+- Main agent (Codex): remained the sole writer; inspected the proposal mapping,
+  applied it, separated it by purpose and independently verified the integrated
+  tree and live retrievals.
+- Reviewer (Claude): reviewed `309fade..9d909e0` read-only and supplied the
+  patch under `docs/research/proposals/2026-08-07-pipeline-review-fixes/`.
+
+### Work performed
+
+- Constrained the initial URL and every redirect hop to HTTPS and a configured
+  host allowlist, streamed response bodies under the configured byte cap,
+  wrapped upstream transport failures, required both User-Agent classes and
+  made fetch steps and artifact-transform selection drive retrieval behaviour.
+  The allowlist is transport permission only; it does not assign evidence depth
+  or source tier. A regression reads every frozen dossier URL to prevent drift
+  but never writes to the dossiers.
+- Replaced the milestone option bag with a discriminated active/quarantined
+  union. Eligible claims require verified state, accepted review and recorded
+  passing validations. Quarantined claims structurally require their reason,
+  human-assigned scope relation and review-decision ID, while extractor
+  proposals cannot reach any quarantine field. Claim interiors are immutable,
+  timestamps are timezone-aware and evidence-span length is explicit.
+- Removed embedded-file references and file specifications before PDF retention,
+  avoided creating an absent `/Info` dictionary, enforced the configured
+  transform rule, honored declared HTML charsets and routed undecodable artifacts
+  through the normal extraction-rejection channel. Reproduction registries are
+  strict, and diagnostic output labels pre-strip hashes private and distinguishes
+  them from stored-content hashes.
+
+### Verification
+
+- `.venv/bin/python -m pytest -q`: 78 tests passed after applying the proposal.
+- Live no-retention reproduction: all three C-014 historical response hashes
+  matched; the redirect hop was recorded; the PDF retained stored-content hash
+  `sha256:2d4a8292a2c7d309831dc19d74729ceb74aadcb433f08b55ea3ce1a48ced8a6a`.
+- Current retrieval configuration digest:
+  `sha256:b5b9c1dcdb0a5483be1e9176503539adfc4dd30108161aa33a460565b983e4c5`.
+  The older digest remains in the immutable `d5d5806` entry as the measurement
+  for that earlier configuration; it was not silently rewritten.
+- `git diff --check` passed. `docs/research/dossiers/` and `evaluation/` were
+  unchanged.
+
+### Failures and limitations
+
+- `evidence_depths` and `completion.financial_requires_depths` are validated but
+  still have no behavioural consumer. They remain forward-looking configuration
+  and must be wired into the financial slice before being called executable
+  policy.
+- Financial, conflict, source-persistence and review-history schemas, PDF
+  evidence bounding boxes and the private atomic retention adapter remain open.
+
+## 2026-08-07 — Start the configured, retention-safe retrieval pipeline
+
+**Status:** Complete
+
+**Commit:** `d5d5806` — `feat(pipeline): add configured verified artifact retrieval`
+
+### Goal
+
+Turn the evidence-retrieval playbook into executable policy, implement ADR-011
+before any bulk artifact retention, reproduce the three previously checked
+C-014 responses, and establish a strict German-first extraction boundary.
+
+### Participants and scopes
+
+- Project owner: requested the pipeline start, commit and push, and requested
+  high-effort GPT-5.6 Luna-compatible delegation.
+- Main agent (Codex, TDD and codebase-design skills): sole writer; designed,
+  integrated and independently tested the schemas, configuration, transformer,
+  retrieval job and extractor boundary.
+- Schema subagent (inherited GPT-5.6 model, high effort; domain-modeling, TDD and
+  codebase-design skills): proposed strict Pydantic boundaries and separation of
+  untrusted extraction proposals from trusted publication state.
+- Retrieval-configuration subagent (inherited GPT-5.6 model, high effort):
+  translated the playbook into a versioned TOML shape and identified the
+  evidence-depth and User-Agent fallback semantics.
+- Artifact subagent (inherited GPT-5.6 model, high effort; codebase-design
+  skill): proposed the single preparation gate, object-aware PDF rewrite,
+  reparse checks, idempotency test and safe reproduction inventory.
+
+### Multi-agent architecture
+
+Delegation split three read-only design risks that could be examined in
+parallel: schema authority boundaries, retrieval policy, and PDF transformation.
+The main agent accepted strict frozen models, the non-publishable proposal DTO,
+the term `evidence_depth`, the default/browser/browser-tool fallback, and the
+single `prepare_artifact` gate. The PDF proposal's exact 10.10.0 pin was modified
+to the independently tested 10.11.0 runtime. Its broader retention adapter,
+signed-PDF and embedded-file policies were deferred because this change does not
+write artifacts. The full approved claim/conflict/source model was also not
+claimed complete: this first vertical slice covers milestone proposals and
+leaves financial, conflict, review-history and PDF evidence-bbox slices next.
+
+The requested direct `gpt-5.6-luna` override was not accepted by the available
+orchestrator; the lanes therefore used its supported inherited-model path with
+high reasoning effort. All lanes remained read-only, and every accepted idea was
+reimplemented and checked by the main agent.
+
+### Work performed
+
+- Added strict Pydantic milestone-claim and untrusted milestone-proposal models.
+  Extractor output cannot contain publication or review fields, requires an
+  exact German evidence span, and is rejected atomically on malformed JSON or a
+  span mismatch. PDF proposal extraction remains blocked until bounding-box
+  verification exists.
+- Converted the operational retrieval rules into versioned TOML: five evidence
+  depths, parliamentary URL templates, financial completion depths, content
+  limits, exact identity encoding and the complete 403 fallback chain.
+- Added an in-memory retrieval job that records redirect and access-barrier
+  attempts and always passes successful bytes through the artifact preparation
+  gate before returning them.
+- Implemented ADR-011 with pikepdf/libqpdf: extract timestamp provenance, remove
+  document information and reachable metadata objects, deterministically
+  rewrite, reparse, verify forbidden fields are absent, and prove byte-level
+  idempotency. HTML remains byte-exact under `identity/v1`; both pre-transform
+  and stored hashes are computed, but only the stored hash is artifact identity.
+- Added a no-retention reproduction registry and command. It keeps response
+  bodies in memory only and does not modify the frozen dossiers.
+
+### Verification
+
+- `.venv/bin/python -m pytest -q`: 35 tests passed, including strict proposal
+  authority boundaries, exact German HTML spans, 403 retry recording, MIME
+  bypass rejection, object metadata removal, timestamp extraction, two hashes
+  and byte idempotency.
+- `.venv/bin/python -m pip check`: no broken requirements.
+- Live no-retention run: all three C-014 historical raw-response hashes matched.
+  The two HTML stored hashes remained equal to their raw hashes. The real
+  `h19-2449-v.pdf` passed reparse and idempotency verification and produced
+  stored-content `sha256:2d4a8292a2c7d309831dc19d74729ceb74aadcb433f08b55ea3ce1a48ced8a6a`
+  under `pdf-metadata-strip/v1`. Retrieval configuration digest:
+  `sha256:dfb0d5edc6a05ac04f147a31757db65d0022636a82d4907ab88b54fafed25496`.
+- `git diff --check` passed; the frozen dossier directory remained unchanged.
+
+### Course correction
+
+**Course correction** — the first editable install failed because setuptools
+auto-discovered the top-level `notes` and `evaluation` directories as packages.
+Package discovery is now explicitly limited to `pipeline*`, and generated
+`*.egg-info/` directories are ignored. Cost: one failed local install attempt;
+no repository or retained-artifact data was changed.
+
+### Failures and limitations
+
+- This is the first pipeline slice, not completion of the approved Phase 2 data
+  model. Financial claims, conflicts, source persistence, review history, PDF
+  evidence bounding boxes and the private atomic retention adapter remain.
+- No model extraction was executed and no golden value was generated or edited.
+- Browser-tool retrieval is an explicit terminal handoff from the local job; the
+  browser executor is not embedded in Python.
+
+- 2026-08-07 — Project owner and Codex: clarified that recorded stack choices are working defaults which the owner may reopen at any time; agents should not repeatedly relitigate them unprompted. Verified: the deadline-linked prohibition is absent from `AGENTS.md` and `README.md`. `5f87e67`
+
+- 2026-08-07 — Project owner, reviewer and Codex (domain-modeling skill): reconciled phase labels and ADR-002/003, accepted ADR-011 as amended, approved the claim/source/extraction design including quarantine and structural conflicts, and recorded the C-014 redirect finding outside the frozen dossier. Verified: owner rulings are explicit, three raw hashes reproduced, and dossiers remain unchanged. `4b840d8`
+
+## 2026-08-07 — Enforce build-log reachability and empty golden-set schema
+
+**Status:** Complete
+
+**Commit:** `b81ba61` — `test(process): enforce build-log hash reachability and empty golden-set schema`
+
+### Goal
+
+Turn the twice-failed build-log hash procedure into an automated invariant and
+prepare the golden-set engineering boundary without creating golden values.
+
+### Participants and scopes
+
+- Project owner: approved the empty golden-set engineering boundary and retained
+  authority over commits and all future populated values.
+- Main agent (Codex, TDD skill): remained the sole writer, implemented the CLI,
+  schema, tests and CI wiring, and independently verified the integrated result.
+- Reviewer (Claude): identified the amended-object test gap, dataset-status
+  coupling gap and commit/content-hash ambiguity; independently exercised the
+  proposed fixes before handoff.
+- Subagents: none.
+
+### Work performed
+
+- Corrected the orphaned pilot-selection hash to reachable commit `9acacfa` and
+  added a CLI plus full-history CI check for every recorded commit hash.
+- Added a regression whose pre-amend object still resolves under `git cat-file`
+  but is correctly rejected because it is absent from `git log --all`.
+- Reserved the `sha256:` prefix for content hashes so the Git-hash scanner has a
+  mechanical boundary.
+- Added 30 empty human-review slots, a JSON Schema and pytest harness. Dataset
+  status is coupled to claim review status, populated values require permitted
+  provenance, and `model-assisted` is unconditionally rejected.
+
+### Decisions
+
+- CI checks a full clone (`fetch-depth: 0`); object existence is never treated
+  as reachability.
+- The 30 IDs are capacity placeholders, not claim selection. Their `expected`
+  objects remain empty until the German-speaking review returns.
+
+### Verification
+
+- Main-agent run: 18 tests passed, including the real orphan precondition,
+  dataset-state transitions and ten adversarial `model-assisted` variants.
+- Main-agent run: all 28 distinct recorded commit hashes are reachable.
+- Reviewer independently verified 28/28 reachable hashes, unchanged dossiers,
+  an empty golden set, rejection across ten adversarial `model-assisted`
+  variants, and three byte-for-byte C-014 raw-response hashes.
+- Main agent independently reproduced those three hashes as
+  `sha256:36d47e13604b30115339bd75090a452296d9ebd1f8919bf9cf2440299070f4f5`,
+  `sha256:6f341678a9ec8240f29a8d6f93091c0cadd1f5e4cc8b90acc54c3805a2cdeab5`
+  and `sha256:a554a9df39ccba3b641e48264d3442a755178e60f3f7dea7c6de2398bb49fa60`
+  without retaining the response bodies.
+- The dossier directory is unchanged from `phase-1-research-complete`.
+
+### Course correction
+
+**Course correction** — the build log again recorded an amended commit's
+orphaned pre-amend hash after the first occurrence had already produced a
+written `git log` rule. The second failure proved prose was not an effective
+control. CI now enforces the rule, and the regression preserves the precise
+reason `git cat-file` is insufficient. Cost: one blocking cleanup item and the
+implementation of the missing automated guard.
+
+### Failures and limitations
+
+- No golden value exists; the harness validates structure and authority only.
+
+## 2026-08-06 — Establish the Phase 2 data-core boundary
+
+**Status:** Complete
+
+**Commit:** `b15af07` — `docs(process): record phase-2 branch boundary`
+
+### Goal
+
+Create an explicit phase boundary before pipeline work begins and record the
+branching-policy failure that required the recovery.
+
+### Course correction
+
+**Course correction** — 2026-08-06 — Project owner: caught that Phase 0/1 ran
+entirely on `main` despite the one-branch-per-phase convention in `AGENTS.md`.
+Neither the main agent nor the reviewer flagged it. Consequence: no clean phase
+boundary, so the required full-diff phase-boundary review never triggered.
+Recovered with the retroactive `phase-1-research-complete` tag; the
+`phase-2-data-core` branch was created from `9573baa` before pipeline work
+began.
+
+### Evidence
+
+- Annotated tag: `phase-1-research-complete`
+- Branch: `phase-2-data-core`
+
 ## 2026-08-06 — Pilot evidence pass for C-014, C-010 and C-019
 
 **Status:** Complete; owner review of open values remains
@@ -194,7 +900,7 @@ Record the first verified dossier evidence for C-014, including the superseded c
 
 **Status:** Complete
 
-**Commit:** `f9df4ed` — `docs(process): close pilot-selection checklist items and update handoff`
+**Commit:** `9acacfa` — `docs(process): close pilot-selection checklist items and update handoff`
 
 ### Goal
 

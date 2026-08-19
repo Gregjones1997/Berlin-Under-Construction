@@ -130,15 +130,17 @@ proper parser, mark the extraction unreliable and say so in the dossier.
   pass a document with letterhead `6. Oktober 2026` had `/CreationDate`
   `D:20251014…`, confirming a year typo.
 - `/Author` may contain a named official's email address. Rule 3 has no
-  exceptions. Do not record or display it. ADR-011 proposes metadata stripping
-  before bulk retention; implementation remains blocked on the owner decision.
+  exceptions. Do not record or display it. ADR-011 requires object-graph-aware
+  metadata stripping and a successful post-strip re-parse before retention.
 - Metadata timestamps are **provenance, not publication**. A creation timestamp
   corroborates a date; it does not publish one.
 
-**Hash over raw response bytes, SHA-256.** This method reproduced two hashes
-already in the C-014 dossier exactly, which is the evidence that it matches
-what the main agent uses. If a hash does not reproduce, that is a finding about
-the page, not a reason to change method silently.
+**Keep the two hash roles separate.** Frozen dossier registries record SHA-256
+over raw response bytes (`pre_transform_response_hash`) for historical chain of
+custody. Retained artifact identity and deduplication use only SHA-256 over the
+post-transform bytes (`stored_content_hash`). For HTML the recorded transform is
+the identity transform, so the two values are equal. For stripped PDFs they are
+expected to differ. Never reconcile one into the other silently.
 
 **An empty Wayback CDX result is a finding.** No archive of a page means its
 undated fields are unverifiable by any member of the public. That is

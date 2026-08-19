@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://berlin-under-construction.invalid/schemas/golden-set-v1.json",
+  "title": "Berlin, Under Construction human-authored golden set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "dataset_status", "glossary", "claims"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "dataset_status": {"enum": ["awaiting-human-review", "human-verified"]},
+    "glossary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "verification_status"],
+      "properties": {
+        "version": {"type": ["string", "null"]},
+        "verification_status": {
+          "enum": ["not-yet-human-verified", "human-verified"]
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/claim"}
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["dataset_status"],
+        "properties": {
+          "dataset_status": {"const": "awaiting-human-review"}
+        }
+      },
+      "then": {
+        "properties": {
+          "claims": {
+            "items": {
+              "properties": {
+                "review_status": {"const": "pending-human-review"}
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "placeholder", "review_status", "expected"],
+      "properties": {
+        "claim_id": {"type": "string", "minLength": 1},
+        "project_id": {"enum": ["C-010", "C-014", "C-019"]},
+        "placeholder": {"type": "boolean"},
+        "review_status": {"enum": ["pending-human-review", "human-verified"]},
+        "human_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewer_class", "verified_at"],
+          "properties": {
+            "reviewer_class": {"const": "german-speaking-human"},
+            "verified_at": {"type": "string", "format": "date"}
+          }
+        },
+        "expected": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/golden_value"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"review_status": {"const": "pending-human-review"}}},
+          "then": {
+            "properties": {
+              "placeholder": {"const": true},
+              "expected": {"maxProperties": 0}
+            },
+            "not": {"required": ["human_review"]}
+          }
+        },
+        {
+          "if": {"properties": {"review_status": {"const": "human-verified"}}},
+          "then": {
+            "required": ["project_id", "human_review"],
+            "properties": {
+              "placeholder": {"const": false},
+              "expected": {"minProperties": 1}
+            }
+          }
+        }
+      ]
+    },
+    "golden_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "provenance"],
+      "properties": {
+        "value": {
+          "type": ["string", "number", "integer", "boolean", "object", "array"]
+        },
+        "provenance": {"$ref": "#/$defs/provenance"}
+      }
+    },
+    "provenance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tag", "source_id", "evidence_span"],
+          "properties": {
+            "tag": {"const": "span-verified"},
+            "source_id": {"type": "string", "minLength": 1},
+            "evidence_span": {"type": "string", "minLength": 1}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tag", "glossary_version", "glossary_verification_status"],
+          "properties": {
+            "tag": {"const": "glossary-derived"},
+            "glossary_version": {"type": "string", "minLength": 1},
+            "glossary_verification_status": {"const": "human-verified"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tag", "decision_date"],
+          "properties": {
+            "tag": {"const": "owner-judgment"},
+            "decision_date": {"type": "string", "format": "date"}
+          }
+        },
+        {
+          "type": "object",
+          "required": ["tag"],
+          "properties": {"tag": {"const": "model-assisted"}}
+        }
+      ],
+      "not": {
+        "type": "object",
+        "required": ["tag"],
+        "properties": {"tag": {"const": "model-assisted"}}
+      }
+    }
+  }
+}

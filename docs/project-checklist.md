@@ -11,23 +11,25 @@ This is the operational source of truth for what is complete, what is in progres
 ## Delivery targets
 
 - **First public release target:** 1 September 2026.
-- **First release:** Three verified projects, bounded extraction and evaluation, evidence-backed dossiers, and a deployable 2D map.
+- **First release:** Three evidence-backed projects, bounded extraction with disclosed metering and limitations, evidence-backed dossiers, and a deployable 2D map. Scored evaluation follows post-v0.
 - **After first release:** Expand toward ten projects, then ship the technical-illustration 3D experience as a second public milestone.
 
 Targets are planning constraints, not promises. Scope should shrink before trust, evaluation or evidence quality is compromised.
 
 ## Current position
 
-**Current phase:** Phase 0 — Minimal foundation
+**Current phase:** Portfolio pivot sprint — Gate 1; Phase 2 remains incomplete
 
 **Current status:** IN PROGRESS
 
-**Next action:** Project owner reviews the integrated C-014, C-010 and C-019
-evidence boundaries and unresolved values, decides proposed ADR-011 on PDF
-metadata retention, then begins the first human-authored golden truth set.
-Recheck C-010 from official sources on 2026-08-25; record whether its expected
-31 August milestone was met, revised or not yet reported without inferring an
-outcome.
+**Next action:** Complete Gate 1 in `docs/portfolio-pivot-plan.md`. The required
+Standards and Spec review lanes are complete, every hard finding was reproduced,
+and the fail-closed repairs pass 123 tests plus the build-log checker. Commit and
+push the repair on `phase-2-data-core`, require a green public workflow, then
+integrate it into `main`; the merge does not complete Phase 2. Make no provider
+call. After integration, create the Phase 4 public-slice branch and advance the
+handoff to Gate 2. The glossary-review handoff and 25 August C-010 recheck remain
+required outside this sprint unless a displayed value depends on them.
 
 ## Phase 0 — Minimal foundation
 
@@ -45,11 +47,15 @@ outcome.
 
 - [x] Initialize Git repository on the `main` branch.
 - [x] Add `.gitignore` for local settings, secrets and generated files.
-- [ ] Add `.env.example` when the first environment variables are defined.
-- [ ] Create the application and test directory structure.
+- [x] Add `.env.example` when the first environment variables are defined.
+  Evidence: the committed example names `OPENAI_API_KEY` without a value and the
+  CLI refuses repository `.env` loading.
+- [x] Create the application and test directory structure. Evidence: `pipeline/`
+  and `tests/pipeline/` exercised by pytest at `d5d5806`.
 - [x] Choose the smallest viable initial stack.
 - [ ] Add formatting, linting and testing commands.
-- [ ] Add a basic CI workflow.
+- [x] Add a basic CI workflow. Evidence: `.github/workflows/quality.yml` runs
+  pytest and the build-log hash check at `b81ba61`.
 - [x] Make the first clean repository commit.
 
 ### Minimal documentation
@@ -78,11 +84,27 @@ outcome.
 - [ ] Define financial-measure types.
 - [ ] Create a controlled glossary of consequential German terms and fixed English display mappings.
 - [ ] Define evidence labels and publication thresholds.
-- [ ] Manually research project one.
-- [ ] Manually research projects two and three.
-- [ ] Capture exact German supporting passages for material claims.
-- [ ] Record contradictions, ambiguity and missing information.
-- [ ] Create the first golden truth set.
+- [x] Manually research project one. Evidence: committed C-014 dossier.
+- [x] Manually research projects two and three. Evidence: committed C-010 and C-019 dossiers.
+- [x] Capture exact German supporting passages for material claims. Evidence: three frozen dossiers at `phase-1-research-complete`.
+- [x] Record contradictions, ambiguity and missing information. Evidence: quarantine, open-question and access-barrier sections in each dossier.
+- [ ] Create the first golden truth set (post-v0; not on the release critical path per ADR-015).
+
+**Partial Phase 1 evidence — every related item remains open:**
+
+- Milestone types: nine types are defined in `pipeline/schemas.py` at `d5d5806`,
+  matching `AGENTS.md`; lifecycle states are still undefined.
+- Evidence labels: `ValidationCode` exists at `15ce351`. The versioned
+  `thresholds-v1` file exists at `06f8e27`, closing the nonexistent-reference
+  gap for `Confidence.threshold_config_version`, but it is explicitly
+  uncalibrated and forces human review. Accepted publication thresholds still do
+  not exist, so the item remains open.
+- Source registry: not started. The `allowed_hosts` and `source_families` in
+  `pipeline/config/retrieval.v1.toml` (`d5d5806`, hardened at `e9c66b4`) are
+  transport configuration, not a source registry, and imply neither evidence
+  depth nor source tier.
+- Financial-measure types: approved in prose in `docs/data-model-proposal.md` at
+  `4b840d8`; absent from code.
 
 **Phase 1 exit evidence:** Three manually verified dossiers, a source matrix, a controlled glossary and expected extraction outputs exist.
 
@@ -100,9 +122,12 @@ outcome.
 - [ ] Add a minimal review state and audit history.
 - [ ] Reconstruct a complete pilot dossier from stored data.
 
-**Phase 2 exit evidence:** A dossier can be regenerated entirely from versioned claims and evidence.
+**Phase 2 exit evidence:** A pilot dossier reconstructs from stored data alone,
+with every claim's real state faithfully rendered, including withheld claims and
+the reason each was withheld. The local-only withheld-detail mode verifies stored
+content without changing publication eligibility.
 
-## Phase 3 — Bounded AI pipeline and evaluation
+## Phase 3 — Bounded AI pipeline; scored evaluation post-v0
 
 - [ ] Classify representative pilot documents.
 - [ ] Extract in German before translation.
@@ -112,23 +137,29 @@ outcome.
 - [ ] Detect material changes and contradictions.
 - [ ] Track provider, model, prompt and schema versions.
 - [ ] Track cost and latency per document from the first run.
-- [ ] Evaluate financial-measure type precision.
-- [ ] Evaluate organization-to-role precision.
-- [ ] Evaluate citation correctness.
-- [ ] Evaluate field, entity-match and contradiction recall separately.
+- [ ] Evaluate financial-measure type precision (post-v0).
+- [ ] Evaluate organization-to-role precision (post-v0).
+- [ ] Evaluate citation correctness (post-v0).
+- [ ] Evaluate field, entity-match and contradiction recall separately (post-v0).
 - [ ] Measure and publish the human-review rate.
 - [ ] Add correct-refusal tests.
 - [ ] Document failures and threshold changes.
 
-### Proposed v0 gates
+### Evaluation and publication gates
 
-- [ ] Financial-measure type precision reaches at least 99% on the defined pilot set.
-- [ ] Organization-to-role precision reaches at least 99% on the defined pilot set.
-- [ ] Citation correctness reaches at least 99% on the defined pilot set.
+Scored gates marked post-v0 await the human-authored golden set. The remaining
+publication and disclosure gates are binding for v0.
+
+- [ ] Financial-measure type precision reaches at least 99% on the defined pilot set (post-v0).
+- [ ] Organization-to-role precision target is deferred until the role-vocabulary ADR is accepted and eligible human-labelled data exists (post-v0); report it explicitly as deferred meanwhile.
+- [ ] Citation correctness reaches at least 99% on the defined pilot set (post-v0).
 - [ ] Unsupported published claims remain at 0% through deterministic enforcement.
-- [ ] Recall and review-rate results are published honestly, even when below target.
+- [ ] Human-review rate is published honestly at v0.
+- [ ] Recall results are published honestly after post-v0 evaluation, even when below target.
 
-**Phase 3 exit evidence:** The pipeline has reproducible results, visible failures, measured costs and explicit human-review behavior.
+**Phase 3 exit evidence:** The pipeline has reproducible runs, visible failures,
+measured costs and explicit human-review behavior. No accuracy figure publishes
+before a human-authored golden set and verified glossary exist.
 
 ## Phase 4 — First public 2D vertical slice
 
@@ -149,8 +180,13 @@ outcome.
 - [ ] Verify public-site legal, privacy and source-use requirements using authoritative guidance.
 - [ ] Deploy the first public release.
 - [ ] Record a short demo walkthrough.
+- [ ] Demonstrate that accepted, verified claims render publicly while withheld
+  claims remain non-public.
 
-**Phase 4 exit evidence:** A user can locate one of three projects, see its expected end date and history, and inspect the evidence behind every consequential claim.
+**Phase 4 exit evidence:** A user can locate one of three projects, see its
+expected end date and history, and inspect the evidence behind every
+consequential claim; accepted, verified claims render publicly and withheld
+claims do not.
 
 ## Phase 5 — Coverage and operational hardening
 
@@ -223,7 +259,10 @@ outcome.
 - [ ] Three evidence-backed project stories are demonstrable.
 - [ ] Original German extraction and controlled translation are demonstrated.
 - [ ] Data and provenance model are explained.
-- [ ] Precision, recall, review rate, cost and latency are published.
+- [ ] Cost, latency and review behavior are published; no precision, recall or
+  accuracy figure is published before the post-v0 golden set exists.
+- [ ] Every glossary-derived output identifies the glossary version and its
+  verification status; contested English types remain unresolved.
 - [ ] Failures and corrections are documented.
 - [ ] Agent-assisted development process is disclosed honestly.
 - [ ] Architecture diagram reflects the implemented system.

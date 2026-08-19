@@ -18,20 +18,16 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Portfolio pivot sprint — Gate 2; Phase 2 remains incomplete
+**Current phase:** Portfolio pivot sprint — Gate 2 complete; Gate 3 awaiting
+owner review; Phase 2 remains incomplete
 
-**Current status:** IN PROGRESS
+**Current status:** REVIEW REQUIRED
 
-**Next action:** Hold Gate 2 at the C-014 schema review point on
-`phase-4-public-slice`. The owner must review
-`docs/review/c014-publication-decisions.md`, the display schema and the
-digest-bound existing publication bases in
-`public/data/accepted-review-decisions.json`; do not begin C-010 or C-019. After
-owner rulings, append only accepted C-014 decisions, rerun projection, boundary,
-sentinel and local known-withheld built-output checks, and obtain review of the
-resulting full C-014 projection before continuing Gate 2. The real Next.js
-static export must receive the same scan once it exists. Phase 2 remains
-incomplete.
+**Next action:** Hold before Gate 3 on `phase-4-public-slice` for the owner's
+review of the completed Gate 2 projection and green CI. Do not start the page
+shell or rendering work until that review is accepted. Gate 3 must run the same
+sentinel and regenerated local known-withheld scans over the real Next.js static
+export before public deployment. Phase 2 remains incomplete.
 Make no provider call. The glossary-review handoff and 25 August C-010 recheck
 remain required outside this sprint unless a displayed value depends on them.
 

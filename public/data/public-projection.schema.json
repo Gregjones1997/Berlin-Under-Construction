@@ -229,6 +229,7 @@
             "owner_review_required",
             "source_string_requires_owner_verification",
             "multi_source_synthesis_has_no_exact_span",
+            "milestone_vocabulary_unresolved",
             "role_vocabulary_unresolved"
           ]
         }

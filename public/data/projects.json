@@ -126,62 +126,241 @@
         {
           "factId": "c014-current-status",
           "factType": "status",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Laufende Maßnahme",
+          "evidence": {
+            "exactTextDe": "Laufende Maßnahme",
+            "sourceId": "c014-project-page",
+            "sourceUrl": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
+            "publicationDate": { "state": "not_stated" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "verified", "value": "2026-08-06" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-current-status-20260819"
+          }
         },
         {
           "factId": "c014-expected-completion-current",
           "factType": "milestone",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Fertigstellung: 2026",
+          "evidence": {
+            "exactTextDe": "Fertigstellung: 2026",
+            "sourceId": "c014-project-page",
+            "sourceUrl": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
+            "publicationDate": { "state": "not_stated" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "verified", "value": "2026-08-06" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "substantial_completion",
+          "milestoneTermDe": "Fertigstellung",
+          "objectScopeDe": "Europaplatz Süd",
+          "dateValue": { "precision": "year", "canonicalDe": "2026" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-completion-current-20260819"
+          }
         },
         {
           "factId": "c014-completion-history-2023",
           "factType": "milestone",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Die Fertigstellung der anspruchsvollen Bauaufgabe ist bis Ende 2025 vorgesehen.",
+          "evidence": {
+            "exactTextDe": "Die Fertigstellung der anspruchsvollen Bauaufgabe ist bis Ende 2025 vorgesehen.",
+            "sourceId": "c014-pm-2023-10-12",
+            "sourceUrl": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/2023/pressemitteilung.1374721.php",
+            "publicationDate": { "state": "verified", "value": "2023-10-12" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [
+            { "qualifierClass": "upper_bound", "appliesTo": "date", "tokenDe": "bis" },
+            { "qualifierClass": "modal_intent", "appliesTo": "date", "tokenDe": "vorgesehen" }
+          ],
+          "asOfDate": { "state": "verified", "value": "2023-10-12" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "substantial_completion",
+          "milestoneTermDe": "Fertigstellung",
+          "objectScopeDe": "anspruchsvolle Bauaufgabe",
+          "dateValue": { "precision": "year", "canonicalDe": "bis Ende 2025" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-completion-2023-20260819"
+          }
         },
         {
           "factId": "c014-completion-history-2025-a",
           "factType": "milestone",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Die Umsetzung der Baumaßnahme wird nach zeitnaher Ausschreibung (2025) in 2026 durchgeführt (Fertigstellung geplant für Sommer 2026).",
+          "evidence": {
+            "exactTextDe": "Die Umsetzung der Baumaßnahme wird nach zeitnaher Ausschreibung (2025) in 2026 durchgeführt (Fertigstellung geplant für Sommer 2026).",
+            "sourceId": "c014-hauptausschuss-2025-10-06",
+            "sourceUrl": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+            "publicationDate": { "state": "verified", "value": "2025-10-06" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [
+            { "qualifierClass": "modal_intent", "appliesTo": "date", "tokenDe": "geplant" }
+          ],
+          "asOfDate": { "state": "verified", "value": "2025-10-06" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "substantial_completion",
+          "milestoneTermDe": "Fertigstellung",
+          "objectScopeDe": "Baumaßnahme",
+          "dateValue": { "precision": "season", "canonicalDe": "Sommer 2026" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-completion-2025-a-20260819"
+          }
         },
         {
           "factId": "c014-completion-history-2025-b",
           "factType": "milestone",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Die Baumaßnahme wird im Sommer 2026 abgeschlossen werden.",
+          "evidence": {
+            "exactTextDe": "Die Baumaßnahme wird im Sommer 2026 abgeschlossen werden.",
+            "sourceId": "c014-hauptausschuss-2025-10-06",
+            "sourceUrl": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+            "publicationDate": { "state": "verified", "value": "2025-10-06" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "verified", "value": "2025-10-06" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "substantial_completion",
+          "milestoneTermDe": "abgeschlossen",
+          "objectScopeDe": "Baumaßnahme",
+          "dateValue": { "precision": "season", "canonicalDe": "Sommer 2026" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-completion-2025-b-20260819"
+          }
         },
         {
           "factId": "c014-completion-history-2025-c",
           "factType": "milestone",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Die Fertigstellung der Baumaßnahme wird voraussichtlich in 2026 erfolgen.",
+          "evidence": {
+            "exactTextDe": "Die Fertigstellung der Baumaßnahme wird voraussichtlich in 2026 erfolgen.",
+            "sourceId": "c014-hauptausschuss-2025-10-06",
+            "sourceUrl": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+            "publicationDate": { "state": "verified", "value": "2025-10-06" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [
+            { "qualifierClass": "modal_intent", "appliesTo": "date", "tokenDe": "voraussichtlich" }
+          ],
+          "asOfDate": { "state": "verified", "value": "2025-10-06" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "substantial_completion",
+          "milestoneTermDe": "Fertigstellung",
+          "objectScopeDe": "Baumaßnahme",
+          "dateValue": { "precision": "year", "canonicalDe": "in 2026" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-completion-2025-c-20260819"
+          }
         },
         {
           "factId": "c014-completion-period-2026",
           "factType": "milestone",
           "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "reasonCode": "milestone_vocabulary_unresolved"
         },
         {
           "factId": "c014-construction-start-history",
           "factType": "milestone",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Der Baubeginn wird erst im Januar 2026 erfolgen.",
+          "evidence": {
+            "exactTextDe": "Der Baubeginn wird erst im Januar 2026 erfolgen.",
+            "sourceId": "c014-hauptausschuss-2025-10-06",
+            "sourceUrl": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+            "publicationDate": { "state": "verified", "value": "2025-10-06" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "verified", "value": "2025-10-06" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "construction_start",
+          "milestoneTermDe": "Baubeginn",
+          "objectScopeDe": "Europaplatz Süd",
+          "dateValue": { "precision": "month", "canonicalDe": "erst im Januar 2026" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-construction-start-history-20260819"
+          }
         },
         {
           "factId": "c014-construction-start-current",
           "factType": "milestone",
-          "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "state": "published",
+          "valueDe": "Die Umgestaltung des südlichen Europaplatzes, dem Vorplatz des Hauptbahnhofs an der Invalidenstraße, beginnt am 2. Februar 2026.",
+          "evidence": {
+            "exactTextDe": "Die Umgestaltung des südlichen Europaplatzes, dem Vorplatz des Hauptbahnhofs an der Invalidenstraße, beginnt am 2. Februar 2026.",
+            "sourceId": "c014-pm-2026-01-26",
+            "sourceUrl": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1637393.php",
+            "publicationDate": { "state": "verified", "value": "2026-01-26" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "verified", "value": "2026-01-26" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "construction_start",
+          "milestoneTermDe": "beginnt",
+          "objectScopeDe": "Umgestaltung des südlichen Europaplatzes",
+          "dateValue": { "precision": "exact_day", "canonicalDe": "2. Februar 2026" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-construction-start-current-20260819"
+          }
         },
         {
           "factId": "c014-approved-total-cost",
           "factType": "financial_measure",
-          "state": "withheld",
-          "reasonCode": "source_string_requires_owner_verification"
+          "state": "published",
+          "valueDe": "Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3.183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.",
+          "evidence": {
+            "exactTextDe": "Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3.183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.",
+            "sourceId": "c014-hauptausschuss-2025-10-06",
+            "sourceUrl": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+            "publicationDate": { "state": "verified", "value": "2025-10-06" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "verified", "value": "2025-01-31" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "measureType": "approved_budget",
+          "scope": {
+            "normalizedKey": "c014-bauplanungsunterlage-total",
+            "wordingDe": "Gesamtkosten"
+          },
+          "amount": { "value": 3183000, "currency": "EUR" },
+          "taxTreatment": { "state": "stated", "value": "gross" },
+          "priceBasis": { "state": "not_stated" },
+          "budgetReference": { "state": "not_stated" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c014-approved-budget-20260819"
+          }
         },
         {
           "factId": "c014-completion-outcome",
@@ -211,6 +390,211 @@
           }
         }
       ]
+    },
+    {
+      "projectId": "C-010",
+      "slug": "heinrich-hertz-gymnasium-ostbahnhof",
+      "correctionPath": "/corrections?project=C-010",
+      "facts": [
+        {
+          "factId": "c010-project-name",
+          "factType": "project_name",
+          "state": "published",
+          "valueDe": "Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof",
+          "evidence": {
+            "exactTextDe": "Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof",
+            "sourceId": "c010-howoge-project-page",
+            "sourceUrl": "https://www.howoge.de/schulbau/heinrich-hertz-gymnasium-projektuebersicht",
+            "publicationDate": { "state": "not_stated" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "not_applicable" },
+          "freshness": { "state": "not_applicable" },
+          "translationState": "german_canonical",
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c010-identity-name-20260806"
+          }
+        },
+        {
+          "factId": "c010-project-location",
+          "factType": "project_location",
+          "state": "published",
+          "valueDe": "Lange Straße/Straße der Pariser Kommune, 10243 Berlin – Friedrichshain-Kreuzberg",
+          "evidence": {
+            "exactTextDe": "Lange Straße/Straße der Pariser Kommune, 10243 Berlin – Friedrichshain-Kreuzberg",
+            "sourceId": "c010-howoge-project-page",
+            "sourceUrl": "https://www.howoge.de/schulbau/heinrich-hertz-gymnasium-projektuebersicht",
+            "publicationDate": { "state": "not_stated" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "not_applicable" },
+          "freshness": { "state": "not_applicable" },
+          "translationState": "german_canonical",
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c010-identity-location-20260806"
+          }
+        },
+        {
+          "factId": "c010-current-status",
+          "factType": "status",
+          "state": "published",
+          "valueDe": "Die Umsetzung des Schulneubaus liegt im Zeitplan.",
+          "evidence": {
+            "exactTextDe": "Die Umsetzung des Schulneubaus liegt im Zeitplan.",
+            "sourceId": "c010-drucksache-19-26230",
+            "sourceUrl": "https://pardok.parlament-berlin.de/starweb/adis/citat/VT/19/SchrAnfr/S19-26230.pdf",
+            "publicationDate": { "state": "verified", "value": "2026-06-19" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "verified", "value": "2026-06-19" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c010-status-20260806"
+          }
+        },
+        {
+          "factId": "c010-technical-handover-current",
+          "factType": "milestone",
+          "state": "published",
+          "valueDe": "Die technische Übergabe des Neubaus an den Bezirk ist für den 31.08.2026 geplant.",
+          "evidence": {
+            "exactTextDe": "Die technische Übergabe des Neubaus an den Bezirk ist für den 31.08.2026 geplant.",
+            "sourceId": "c010-drucksache-19-26230",
+            "sourceUrl": "https://pardok.parlament-berlin.de/starweb/adis/citat/VT/19/SchrAnfr/S19-26230.pdf",
+            "publicationDate": { "state": "verified", "value": "2026-06-19" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [
+            { "qualifierClass": "modal_intent", "appliesTo": "date", "tokenDe": "geplant" }
+          ],
+          "asOfDate": { "state": "verified", "value": "2026-06-19" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "handover",
+          "milestoneTermDe": "technische Übergabe",
+          "objectScopeDe": "Neubau an den Bezirk",
+          "dateValue": { "precision": "exact_day", "canonicalDe": "31.08.2026" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c010-handover-20260806"
+          }
+        },
+        {
+          "factId": "c010-organization-roles",
+          "factType": "organization_role",
+          "state": "withheld",
+          "reasonCode": "role_vocabulary_unresolved"
+        }
+      ],
+      "conflicts": []
+    },
+    {
+      "projectId": "C-019",
+      "slug": "power-to-heat-heizkraftwerk-mitte",
+      "correctionPath": "/corrections?project=C-019",
+      "facts": [
+        {
+          "factId": "c019-project-name",
+          "factType": "project_name",
+          "state": "published",
+          "valueDe": "Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte",
+          "evidence": {
+            "exactTextDe": "Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte",
+            "sourceId": "c019-bew-2026-05-04",
+            "sourceUrl": "https://www.bew.berlin/aktuelles-und-presse/2026/120-megawatt-am-heizkraftwerk-berlin-mitte/",
+            "publicationDate": { "state": "verified", "value": "2026-05-04" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [],
+          "asOfDate": { "state": "not_applicable" },
+          "freshness": { "state": "not_applicable" },
+          "translationState": "german_canonical",
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c019-identity-name-20260806"
+          }
+        },
+        {
+          "factId": "c019-project-location",
+          "factType": "project_location",
+          "state": "withheld",
+          "reasonCode": "source_string_requires_owner_verification"
+        },
+        {
+          "factId": "c019-commissioning-current",
+          "factType": "milestone",
+          "state": "published",
+          "valueDe": "Die Inbetriebnahme ist bis Ende 2028 geplant.",
+          "evidence": {
+            "exactTextDe": "Die Inbetriebnahme ist bis Ende 2028 geplant.",
+            "sourceId": "c019-bew-2026-05-04",
+            "sourceUrl": "https://www.bew.berlin/aktuelles-und-presse/2026/120-megawatt-am-heizkraftwerk-berlin-mitte/",
+            "publicationDate": { "state": "verified", "value": "2026-05-04" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [
+            { "qualifierClass": "upper_bound", "appliesTo": "date", "tokenDe": "bis" },
+            { "qualifierClass": "modal_intent", "appliesTo": "date", "tokenDe": "geplant" }
+          ],
+          "asOfDate": { "state": "verified", "value": "2026-05-04" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "milestoneType": "commissioning",
+          "milestoneTermDe": "Inbetriebnahme",
+          "objectScopeDe": "Power-to-Heat-Anlage",
+          "dateValue": { "precision": "year", "canonicalDe": "bis Ende 2028" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c019-commissioning-20260806"
+          }
+        },
+        {
+          "factId": "c019-financing-commitment",
+          "factType": "financial_measure",
+          "state": "published",
+          "valueDe": "50Hertz finanziert den Bau der PtH-Anlage mit bis zu 75 Millionen Euro.",
+          "evidence": {
+            "exactTextDe": "50Hertz finanziert den Bau der PtH-Anlage mit bis zu 75 Millionen Euro.",
+            "sourceId": "c019-bew-2026-05-04",
+            "sourceUrl": "https://www.bew.berlin/aktuelles-und-presse/2026/120-megawatt-am-heizkraftwerk-berlin-mitte/",
+            "publicationDate": { "state": "verified", "value": "2026-05-04" },
+            "evidenceLabel": "Verified",
+            "sourceTier": "primary"
+          },
+          "qualifiers": [
+            { "qualifierClass": "upper_bound", "appliesTo": "amount", "tokenDe": "bis zu" }
+          ],
+          "asOfDate": { "state": "not_stated" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "measureType": "financing_commitment",
+          "scope": {
+            "normalizedKey": "c019-pth-anlage-construction",
+            "wordingDe": "PtH-Anlage"
+          },
+          "amount": { "value": 75000000, "currency": "EUR" },
+          "taxTreatment": { "state": "not_stated" },
+          "priceBasis": { "state": "not_stated" },
+          "budgetReference": { "state": "not_stated" },
+          "acceptedDecision": {
+            "reviewDecisionId": "review-c019-financing-20260806"
+          }
+        },
+        {
+          "factId": "c019-organization-roles",
+          "factType": "organization_role",
+          "state": "withheld",
+          "reasonCode": "role_vocabulary_unresolved"
+        }
+      ],
+      "conflicts": []
     }
   ]
 }

@@ -8,6 +8,7 @@ import pytest
 from public_release import (
     PublicReleaseError,
     build_public_bundle,
+    regenerate_known_withheld_manifest,
     scan_static_output,
 )
 
@@ -22,12 +23,118 @@ NAME_ALLOWLIST = ROOT / "public" / "data" / "name-allowlist.json"
 SENTINEL = "WITHHELD_SENTINEL_ZURÜCKGESTELLT_DO_NOT_SHIP"
 
 
+def _write_manifest(
+    tmp_path: Path, values: list[str]
+) -> tuple[Path, Path]:
+    projection = tmp_path / "scan-projection.json"
+    projection.write_text(
+        json.dumps(
+            {
+                "projects": [
+                    {
+                        "facts": [
+                            {"factId": "withheld-fixture", "state": "withheld"}
+                        ]
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    catalog = tmp_path / "scan-catalog.json"
+    catalog.write_text(
+        json.dumps({"valuesByFactId": {"withheld-fixture": values}}),
+        encoding="utf-8",
+    )
+    manifest = tmp_path / "known-withheld.json"
+    regenerate_known_withheld_manifest(
+        projection_path=projection,
+        candidate_catalog_path=catalog,
+        manifest_path=manifest,
+    )
+    return projection, manifest
+
+
+def test_known_withheld_manifest_is_regenerated_from_projection_state(
+    tmp_path: Path,
+) -> None:
+    projection = tmp_path / "projection.json"
+    projection.write_text(
+        json.dumps(
+            {
+                "projects": [
+                    {
+                        "facts": [
+                            {
+                                "factId": "still-withheld",
+                                "state": "withheld",
+                            },
+                            {
+                                "factId": "now-published",
+                                "state": "published",
+                                "valueDe": "newly public",
+                            },
+                        ]
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    catalog = tmp_path / "catalog.json"
+    catalog.write_text(
+        json.dumps(
+            {
+                "valuesByFactId": {
+                    "still-withheld": ["private current value"],
+                    "now-published": ["stale old scan value"],
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    manifest = tmp_path / "manifest.json"
+
+    result = regenerate_known_withheld_manifest(
+        projection_path=projection,
+        candidate_catalog_path=catalog,
+        manifest_path=manifest,
+    )
+
+    assert result["withheldFactIds"] == ["still-withheld"]
+    assert result["values"] == ["private current value"]
+    assert "stale old scan value" not in manifest.read_text(encoding="utf-8")
+
+
 def test_withheld_fixture_sentinel_cannot_enter_generated_assets(
     tmp_path: Path,
 ) -> None:
     output = tmp_path / "out"
+    projection_payload = json.loads(PROJECTION.read_text(encoding="utf-8"))
+    withheld_ids = [
+        fact["factId"]
+        for project in projection_payload["projects"]
+        for fact in project["facts"]
+        if fact["state"] == "withheld"
+    ]
+    catalog = tmp_path / "known-withheld-catalog.json"
+    catalog.write_text(
+        json.dumps(
+            {
+                "valuesByFactId": {
+                    fact_id: [SENTINEL] if index == 0 else []
+                    for index, fact_id in enumerate(withheld_ids)
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
     manifest = tmp_path / "known-withheld.json"
-    manifest.write_text(json.dumps({"values": [SENTINEL]}), encoding="utf-8")
+    regenerate_known_withheld_manifest(
+        projection_path=PROJECTION,
+        candidate_catalog_path=catalog,
+        manifest_path=manifest,
+    )
 
     build_public_bundle(
         projection_path=PROJECTION,
@@ -63,13 +170,14 @@ def test_withheld_fixture_sentinel_cannot_enter_generated_assets(
         output,
         sentinels=(SENTINEL,),
         known_withheld_manifest=manifest,
+        projection_path=PROJECTION,
     )
 
     assert {path.name for path in scanned} == {
         "berlin-boundary.geojson",
         "berlin-boundary.provenance.json",
         "index.html",
-        "projects.json",
+        "display-model.json",
         "projection.js",
     }
 
@@ -94,13 +202,14 @@ def test_scanner_checks_known_withheld_values_in_generated_html(
     (output / "index.html").write_text(
         "<main>known local withheld value</main>", encoding="utf-8"
     )
-    manifest = tmp_path / "known-withheld.json"
-    manifest.write_text(
-        json.dumps({"values": ["known local withheld value"]}), encoding="utf-8"
-    )
+    projection, manifest = _write_manifest(tmp_path, ["known local withheld value"])
 
     with pytest.raises(PublicReleaseError, match="generated output"):
-        scan_static_output(output, known_withheld_manifest=manifest)
+        scan_static_output(
+            output,
+            known_withheld_manifest=manifest,
+            projection_path=projection,
+        )
 
 
 @pytest.mark.parametrize(
@@ -118,11 +227,31 @@ def test_scanner_rejects_encoded_known_withheld_values(
     output = tmp_path / "out"
     output.mkdir()
     (output / "app.js").write_text(encoded, encoding="utf-8")
-    manifest = tmp_path / "known-withheld.json"
-    manifest.write_text(json.dumps({"values": ["zurückgestellt"]}), encoding="utf-8")
+    projection, manifest = _write_manifest(tmp_path, ["zurückgestellt"])
 
     with pytest.raises(PublicReleaseError, match="generated output"):
-        scan_static_output(output, known_withheld_manifest=manifest)
+        scan_static_output(
+            output,
+            known_withheld_manifest=manifest,
+            projection_path=projection,
+        )
+
+
+def test_scanner_rejects_a_manifest_for_an_older_projection(tmp_path: Path) -> None:
+    output = tmp_path / "out"
+    output.mkdir()
+    (output / "index.html").write_text("safe", encoding="utf-8")
+    projection, manifest = _write_manifest(tmp_path, ["private current value"])
+    projection.write_text(
+        json.dumps({"projects": [{"facts": []}]}), encoding="utf-8"
+    )
+
+    with pytest.raises(PublicReleaseError, match="does not match current projection"):
+        scan_static_output(
+            output,
+            known_withheld_manifest=manifest,
+            projection_path=projection,
+        )
 
 
 def test_bundle_rejects_unexpected_stale_output_file(tmp_path: Path) -> None:

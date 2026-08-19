@@ -2,7 +2,8 @@
 
 > An independent, source-backed map that helps people understand what is being built across Berlin, who is responsible, what was promised, what changed, and what the public can reliably know.
 
-**Project status:** Portfolio pivot sprint — Gate 2; Phase 2 remains incomplete
+**Project status:** Portfolio pivot sprint — Gate 2 complete and awaiting owner
+review before Gate 3; Phase 2 remains incomplete
 
 **Geographic focus:** Berlin, Germany
 

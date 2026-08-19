@@ -40,13 +40,50 @@ def _first_withheld_fact(payload: dict[str, object]) -> dict[str, object]:
     return next(fact for fact in project["facts"] if fact["state"] == "withheld")
 
 
-def test_committed_c014_projection_is_valid_and_contains_no_other_project() -> None:
+def test_committed_projection_contains_all_three_pilots() -> None:
     projection = _validate()
 
-    assert [project["projectId"] for project in projection["projects"]] == ["C-014"]
+    assert [project["projectId"] for project in projection["projects"]] == [
+        "C-014",
+        "C-010",
+        "C-019",
+    ]
 
 
-def test_only_frozen_dossier_decisions_are_published_before_owner_review() -> None:
+def test_thin_pilot_records_publish_only_frozen_minimums() -> None:
+    projection = _validate()
+    projects = {project["projectId"]: project for project in projection["projects"]}
+
+    assert {
+        fact["factId"]
+        for fact in projects["C-010"]["facts"]
+        if fact["state"] == "published"
+    } == {
+        "c010-project-name",
+        "c010-project-location",
+        "c010-current-status",
+        "c010-technical-handover-current",
+    }
+    assert {
+        fact["factId"]
+        for fact in projects["C-019"]["facts"]
+        if fact["state"] == "published"
+    } == {
+        "c019-project-name",
+        "c019-commissioning-current",
+        "c019-financing-commitment",
+    }
+    c019_withheld = {
+        fact["factId"]: fact
+        for fact in projects["C-019"]["facts"]
+        if fact["state"] == "withheld"
+    }
+    assert c019_withheld["c019-project-location"]["reasonCode"] == (
+        "source_string_requires_owner_verification"
+    )
+
+
+def test_only_owner_accepted_c014_facts_are_published() -> None:
     projection = _validate()
     facts = projection["projects"][0]["facts"]
 
@@ -55,10 +92,68 @@ def test_only_frozen_dossier_decisions_are_published_before_owner_review() -> No
         "c014-project-location",
         "c014-places-programme-page-figure",
         "c014-places-programme-index-figure",
+        "c014-current-status",
+        "c014-expected-completion-current",
+        "c014-completion-history-2023",
+        "c014-completion-history-2025-a",
+        "c014-completion-history-2025-b",
+        "c014-completion-history-2025-c",
+        "c014-construction-start-history",
+        "c014-construction-start-current",
+        "c014-approved-total-cost",
+    }
+    assert {fact["factId"] for fact in facts if fact["state"] == "withheld"} == {
+        "c014-completion-period-2026",
+        "c014-completion-outcome",
+        "c014-organization-roles",
     }
     for fact in facts:
         if fact["state"] == "withheld":
             assert set(fact) == {"factId", "factType", "state", "reasonCode"}
+
+
+def test_c014_owner_decisions_preserve_exact_types_and_corrected_pdf_value() -> None:
+    projection = _validate()
+    facts = {
+        fact["factId"]: fact for fact in projection["projects"][0]["facts"]
+    }
+
+    assert facts["c014-current-status"]["asOfDate"] == {
+        "state": "verified",
+        "value": "2026-08-06",
+    }
+    assert facts["c014-current-status"]["freshness"] == {"state": "unassessed"}
+    assert facts["c014-completion-period-2026"] == {
+        "factId": "c014-completion-period-2026",
+        "factType": "milestone",
+        "state": "withheld",
+        "reasonCode": "milestone_vocabulary_unresolved",
+    }
+    assert {
+        facts[fact_id]["milestoneType"]
+        for fact_id in (
+            "c014-expected-completion-current",
+            "c014-completion-history-2023",
+            "c014-completion-history-2025-a",
+            "c014-completion-history-2025-b",
+            "c014-completion-history-2025-c",
+        )
+    } == {"substantial_completion"}
+    assert {
+        facts[fact_id]["milestoneType"]
+        for fact_id in (
+            "c014-construction-start-history",
+            "c014-construction-start-current",
+        )
+    } == {"construction_start"}
+    cost = facts["c014-approved-total-cost"]
+    assert cost["measureType"] == "approved_budget"
+    assert cost["amount"] == {"value": 3183000, "currency": "EUR"}
+    assert cost["taxTreatment"] == {"state": "stated", "value": "gross"}
+    assert cost["priceBasis"] == {"state": "not_stated"}
+    assert cost["budgetReference"] == {"state": "not_stated"}
+    assert "3.183.000 € brutto" in cost["evidence"]["exactTextDe"]
+    assert "3 .183.000" not in cost["evidence"]["exactTextDe"]
 
 
 def test_published_factual_value_requires_exact_german_span(tmp_path: Path) -> None:
@@ -185,7 +280,9 @@ def test_published_financial_fact_retains_required_domain_semantics() -> None:
     financial = [
         fact
         for fact in facts
-        if fact["factType"] == "financial_measure" and fact["state"] == "published"
+        if fact["factType"] == "financial_measure"
+        and fact["state"] == "published"
+        and fact["measureType"] == "financing_commitment"
     ]
 
     assert {fact["measureType"] for fact in financial} == {"financing_commitment"}

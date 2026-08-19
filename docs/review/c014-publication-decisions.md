@@ -1,18 +1,17 @@
 # C-014 publication decision list
 
-**Status:** Owner review required before any item below can move from
-`withheld` to `published` in `public/data/projects.json`.
+**Status:** Owner decisions recorded 2026-08-19
 
 **Scope:** C-014 only. The project name, location and the already accepted
 unreconciled Plätzeprogramm figures are not repeated here. Their publication
-basis is recorded in the frozen dossier and ADR-009. No item below is approved
-by this document, and no agent may interpret silence as acceptance.
+basis is recorded in the frozen dossier and ADR-009. Only the explicit decisions
+below authorize a state change; silence is not acceptance.
 
 For each item, record **accept**, **reject**, **modify** or **defer** and a short
 rationale. A modification needs a replacement German value, exact source span
 and explicit fact subtype. An accepted choice is appended to
 `public/data/accepted-review-decisions.json`; only its opaque ID enters the
-projection. This pending list is not overwritten.
+projection. The original proposals remain beside the recorded decisions.
 
 ## Decisions
 
@@ -31,7 +30,9 @@ projection. This pending list is not overwritten.
 - Publication date: not stated
 - Decision needed: publish only with that as-of date and freshness warning,
   modify the treatment, or keep it withheld.
-- Owner decision: **pending**
+- Owner decision: **ACCEPT** — Publish only as the page status observed on
+  2026-08-06 with freshness unassessed and the stale-source warning retained;
+  do not imply verified real-world completion state.
 
 ### 2. Current completion field
 
@@ -44,7 +45,8 @@ projection. This pending list is not overwritten.
 - Publication date: not stated
 - Decision needed: publish as the project page's undated current completion
   field, not as verified completion and not as a more precise date.
-- Owner decision: **pending**
+- Owner decision: **ACCEPT** — Publish as `substantial_completion` and as the
+  page's undated current completion field, not a verified or more precise date.
 
 ### 3. Earlier completion target
 
@@ -56,7 +58,8 @@ projection. This pending list is not overwritten.
 - Publication date: 2023-10-12
 - Decision needed: publish in the change history with `bis` and `vorgesehen`
   retained in the value.
-- Owner decision: **pending**
+- Owner decision: **ACCEPT** — Publish as `substantial_completion` with `bis`
+  and `vorgesehen` retained in the displayed German value.
 
 ### 4. Three completion statements in the 2025 paper
 
@@ -75,7 +78,9 @@ projection. This pending list is not overwritten.
 - Decision needed: publish all three distinctly, select a specified one with a
   rationale, or keep the group withheld. The dossier says an agent selection
   would be arbitrary.
-- Owner decision: **pending**
+- Owner decision: **ACCEPT ALL THREE** — Publish A, B and C distinctly as
+  `substantial_completion`, side by side, with no selection, ranking or
+  preferred-reading annotation.
 
 ### 5. January 2026 construction-period statement
 
@@ -90,7 +95,8 @@ projection. This pending list is not overwritten.
 - Decision needed: keep withheld, specify an already accepted type with a
   rationale, or explicitly authorize a separate schema decision. A bare
   publication acceptance cannot be implemented and will not be inferred.
-- Owner decision: **pending**
+- Owner decision: **DEFER** — Do not add a construction-period milestone type
+  this sprint; keep the fact withheld as `milestone_vocabulary_unresolved`.
 
 ### 6. Construction-start change
 
@@ -101,7 +107,8 @@ projection. This pending list is not overwritten.
 - Source: <https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf>
 - Publication date: 2025-10-06 under the recorded owner ruling
 - Decision needed: publish as the source's own delay wording, preserving `erst`.
-- Owner decision: **pending**
+- Owner decision: **ACCEPT** — Publish as `construction_start`, preserving the
+  source's `erst` wording.
 
 ### 7. Current construction-start date
 
@@ -113,20 +120,22 @@ projection. This pending list is not overwritten.
 - Publication date: 2026-01-26
 - Decision needed: publish as the announced construction-start date, not as
   evidence that construction actually began.
-- Owner decision: **pending**
+- Owner decision: **ACCEPT** — Publish as `construction_start` and as the
+  announced date, not evidence that construction actually began.
 
 ### 8. Approved total cost
 
 - Fact ID: `c014-approved-total-cost`
-- Proposed German value: `Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3 .183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.`
-- Exact German span: same as the proposed value
+- Accepted German value and exact span: `Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3.183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.`
 - Proposed financial measure type: `approved_budget`; accepting this mapping is
   required because the source wording is approved `Gesamtkosten`, not spend
 - Source: <https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf>
 - Publication date: 2025-10-06 under the recorded owner ruling
 - Decision needed: verify the original PDF rendering before acceptance because
   the dossier identifies `3 .183.000` as an extraction spacing artifact.
-- Owner decision: **pending**
+- Owner decision: **ACCEPT** — The owner checked the original PDF: it renders
+  `3.183.000`. Publish as `approved_budget`, amount 3,183,000 EUR and stated
+  gross tax treatment; price basis and budget reference remain `not_stated`.
 
 ## Intentionally not offered for approval
 

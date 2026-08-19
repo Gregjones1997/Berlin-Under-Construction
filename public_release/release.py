@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import hashlib
 import html
 import html.entities
@@ -43,6 +44,18 @@ POSSIBLE_PERSON_NAME = re.compile(
     r"[A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)?\s+"
     r"[A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)?\b"
 )
+
+EVIDENCE_LABEL_GLOSSARY = {
+    "Verified": (
+        "The displayed wording is faithfully supported by the cited source. "
+        "It does not mean the value is current, the only official value, or that "
+        "a conflicting value is resolved."
+    ),
+    "Corroborated": "More than one reliable source supports the displayed claim.",
+    "Reported": "A reputable secondary source reports the displayed claim.",
+    "Observed": "A dated observation supports visible conditions, not cause.",
+    "Disputed": "Relevant counterevidence exists and review remains open.",
+}
 
 
 def _load_object(path: Path) -> dict[str, Any]:
@@ -405,6 +418,91 @@ def validate_boundary_assets(
     return provenance
 
 
+def _display_fact(fact: dict[str, Any], *, in_conflict: bool) -> dict[str, Any]:
+    displayed = copy.deepcopy(fact)
+    label = fact["evidence"]["evidenceLabel"]
+    displayed["evidenceLabelDisplay"] = {
+        "label": label,
+        "gloss": EVIDENCE_LABEL_GLOSSARY[label],
+        "priority": "secondary_to_conflict" if in_conflict else "normal",
+    }
+    warnings: list[str] = []
+    if fact["factType"] == "status" and fact["freshness"]["state"] == "unassessed":
+        as_of = fact["asOfDate"]
+        observed_on = as_of.get("value", "an unstated date")
+        warnings.append(
+            f"Source status observed on {observed_on}; freshness is unassessed. "
+            "This does not verify the real-world completion state."
+        )
+    displayed["displayWarnings"] = warnings
+    return displayed
+
+
+def build_public_display_model(projection: dict[str, Any]) -> dict[str, Any]:
+    """Create the only shape the public renderer may consume."""
+
+    projects: list[dict[str, Any]] = []
+    for project in projection["projects"]:
+        facts_by_id = {fact["factId"]: fact for fact in project["facts"]}
+        conflict_member_ids = {
+            fact_id
+            for conflict in project["conflicts"]
+            for fact_id in conflict["memberFactIds"]
+        }
+        standalone = [
+            _display_fact(fact, in_conflict=False)
+            for fact in project["facts"]
+            if fact["state"] == "published"
+            and fact["factId"] not in conflict_member_ids
+        ]
+        conflicts = []
+        for conflict in project["conflicts"]:
+            displayed_conflict = copy.deepcopy(conflict)
+            displayed_conflict["facts"] = [
+                _display_fact(facts_by_id[fact_id], in_conflict=True)
+                for fact_id in conflict["memberFactIds"]
+            ]
+            displayed_conflict["presentationPriority"] = (
+                "conflict_over_evidence_label"
+            )
+            conflicts.append(displayed_conflict)
+        withheld = [
+            copy.deepcopy(fact)
+            for fact in project["facts"]
+            if fact["state"] == "withheld"
+        ]
+        completion_candidates = [
+            fact
+            for fact in standalone
+            if fact["factType"] == "milestone"
+            and fact.get("milestoneType") == "substantial_completion"
+            and fact["asOfDate"]["state"] == "verified"
+        ]
+        lead_fact_id = (
+            max(completion_candidates, key=lambda fact: fact["asOfDate"]["value"])[
+                "factId"
+            ]
+            if completion_candidates
+            else None
+        )
+        projects.append(
+            {
+                "projectId": project["projectId"],
+                "slug": project["slug"],
+                "correctionPath": project["correctionPath"],
+                "leadFactId": lead_fact_id,
+                "facts": standalone,
+                "conflicts": conflicts,
+                "withheldFacts": withheld,
+            }
+        )
+    return {
+        "schemaVersion": "public-display-model/v1",
+        "evidenceLabelGlossary": copy.deepcopy(EVIDENCE_LABEL_GLOSSARY),
+        "projects": projects,
+    }
+
+
 def build_public_bundle(
     *,
     projection_path: str | Path,
@@ -426,10 +524,11 @@ def build_public_bundle(
         name_allowlist_path=name_allowlist_path,
         repository_root=repository_root,
     )
+    display_model = build_public_display_model(projection)
     validate_boundary_assets(boundary_path, boundary_provenance_path)
     output = Path(output_dir)
     expected_relative_files = {
-        Path("data/projects.json"),
+        Path("data/display-model.json"),
         Path("data/map/berlin-boundary.geojson"),
         Path("data/map/berlin-boundary.provenance.json"),
         Path("static/projection.js"),
@@ -447,8 +546,12 @@ def build_public_bundle(
     data_output = output / "data"
     map_output = data_output / "map"
     map_output.mkdir(parents=True, exist_ok=True)
+    display_target = data_output / "display-model.json"
+    display_target.write_text(
+        json.dumps(display_model, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     targets = (
-        (Path(projection_path), data_output / "projects.json"),
         (Path(boundary_path), map_output / "berlin-boundary.geojson"),
         (
             Path(boundary_provenance_path),
@@ -461,8 +564,8 @@ def build_public_bundle(
     static_output.mkdir(parents=True, exist_ok=True)
     inline_target = static_output / "projection.js"
     inline_target.write_text(
-        "window.__PUBLIC_PROJECTION__="
-        + json.dumps(projection, ensure_ascii=False, separators=(",", ":"))
+        "window.__PUBLIC_DISPLAY_MODEL__="
+        + json.dumps(display_model, ensure_ascii=False, separators=(",", ":"))
         + ";\n",
         encoding="utf-8",
     )
@@ -472,15 +575,110 @@ def build_public_bundle(
         '<script src="/static/projection.js"></script></head><body></body></html>\n',
         encoding="utf-8",
     )
-    return tuple(target for _, target in targets) + (inline_target, index_target)
+    return (display_target,) + tuple(target for _, target in targets) + (
+        inline_target,
+        index_target,
+    )
 
 
-def _known_withheld_values(manifest_path: Path | None) -> tuple[str, ...]:
+def regenerate_known_withheld_manifest(
+    *,
+    projection_path: str | Path,
+    candidate_catalog_path: str | Path,
+    manifest_path: str | Path,
+) -> dict[str, Any]:
+    """Build the local scan list from the projection's current withheld IDs."""
+
+    projection_file = Path(projection_path)
+    projection = _load_object(projection_file)
+    catalog = _load_object(Path(candidate_catalog_path))
+    if set(catalog) != {"valuesByFactId"} or not isinstance(
+        catalog["valuesByFactId"], dict
+    ):
+        raise PublicReleaseError(
+            "known-withheld candidate catalog must contain only valuesByFactId"
+        )
+    values_by_fact_id = catalog["valuesByFactId"]
+    withheld_ids = sorted(
+        fact["factId"]
+        for project in projection.get("projects", [])
+        for fact in project.get("facts", [])
+        if fact.get("state") == "withheld"
+    )
+    if len(set(withheld_ids)) != len(withheld_ids):
+        raise PublicReleaseError("withheld fact IDs must be unique")
+    missing = set(withheld_ids) - set(values_by_fact_id)
+    if missing:
+        raise PublicReleaseError("known-withheld catalog is missing current fact IDs")
+
+    values: list[str] = []
+    seen: set[str] = set()
+    for fact_id in withheld_ids:
+        candidates = values_by_fact_id[fact_id]
+        if not isinstance(candidates, list) or any(
+            not isinstance(value, str) or not value.strip() for value in candidates
+        ):
+            raise PublicReleaseError(
+                "known-withheld catalog values must be lists of non-empty strings"
+            )
+        for value in candidates:
+            if value not in seen:
+                seen.add(value)
+                values.append(value)
+
+    result = {
+        "schemaVersion": "known-withheld-manifest/v1",
+        "projectionSha256": (
+            "sha256:" + hashlib.sha256(projection_file.read_bytes()).hexdigest()
+        ),
+        "withheldFactIds": withheld_ids,
+        "values": values,
+    }
+    Path(manifest_path).write_text(
+        json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return result
+
+
+def _known_withheld_values(
+    manifest_path: Path | None, projection_path: Path | None
+) -> tuple[str, ...]:
     if manifest_path is None:
         return ()
+    if projection_path is None:
+        raise PublicReleaseError(
+            "current projection is required with a known-withheld manifest"
+        )
     payload = _load_object(manifest_path)
-    if set(payload) != {"values"} or not isinstance(payload["values"], list):
-        raise PublicReleaseError("known-withheld manifest must contain only a values list")
+    required = {
+        "schemaVersion",
+        "projectionSha256",
+        "withheldFactIds",
+        "values",
+    }
+    if set(payload) != required or payload["schemaVersion"] != (
+        "known-withheld-manifest/v1"
+    ):
+        raise PublicReleaseError("known-withheld manifest fields are invalid")
+    projection_bytes = projection_path.read_bytes()
+    expected_hash = f"sha256:{hashlib.sha256(projection_bytes).hexdigest()}"
+    projection = _load_object(projection_path)
+    expected_ids = sorted(
+        fact["factId"]
+        for project in projection.get("projects", [])
+        for fact in project.get("facts", [])
+        if fact.get("state") == "withheld"
+    )
+    if (
+        payload["projectionSha256"] != expected_hash
+        or payload["withheldFactIds"] != expected_ids
+    ):
+        raise PublicReleaseError(
+            "known-withheld manifest does not match current projection"
+        )
+    if not isinstance(payload["values"], list):
+        raise PublicReleaseError("known-withheld values must be a list")
     values: list[str] = []
     for value in payload["values"]:
         if not isinstance(value, str) or not value.strip():
@@ -516,6 +714,7 @@ def scan_static_output(
     *,
     sentinels: Iterable[str] = (),
     known_withheld_manifest: str | Path | None = None,
+    projection_path: str | Path | None = None,
 ) -> tuple[Path, ...]:
     """Scan every generated asset as bytes for values that must not ship."""
 
@@ -525,7 +724,8 @@ def scan_static_output(
     values = tuple(
         value for value in sentinels if isinstance(value, str) and value
     ) + _known_withheld_values(
-        Path(known_withheld_manifest) if known_withheld_manifest is not None else None
+        Path(known_withheld_manifest) if known_withheld_manifest is not None else None,
+        Path(projection_path) if projection_path is not None else None,
     )
     needles = tuple(
         variant for value in values for variant in _needle_variants(value)

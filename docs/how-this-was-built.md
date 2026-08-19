@@ -2,6 +2,23 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Project owner and Codex (`/tdd` skill): completed portfolio
+  pivot Gate 2 and stopped before Gate 3. The owner made all eight C-014
+  publication decisions and manually verified the PDF's `3.183.000` rendering;
+  Codex encoded the accepted values as digest-bound records, kept the deferred
+  construction-period fact visibly withheld, added the minimum owner-grounded
+  C-010/C-019 records, and introduced a renderer-only display model that nests
+  conflict members exclusively under their conflict and publicly glosses
+  evidence labels. The TDD seam covered projection validation, display-model
+  exclusivity and generated-output scanning. The known-withheld manifest is now
+  regenerated from the projection's actual six-fact withheld set before scanning
+  JSON, HTML, JavaScript and escaped forms. Verified: 158 tests pass; 70 reachable
+  build-log hashes validate; the five generated files pass sentinel and local
+  known-withheld scans; boundary source, license, retrieval date and CRS remain
+  recorded with no runtime request; no retained artifact, generated bundle or
+  `CONTEXT.md` is tracked. The workflow runtime-version deprecation remains the
+  already recorded post-sprint task. Housekeeping commit: `6a6ca54`.
+
 - 2026-08-19 — Codex (`/domain-modeling`, `/tdd` and repository `code-review`
   skills; official-source web research) with read-only Standards and Spec
   subagents: created the C-014 public-projection review checkpoint before any

@@ -23,16 +23,24 @@ license, retrieval date, native and bundled coordinate reference systems,
 transformation and content hash are recorded in the adjacent provenance file.
 The asset requires no runtime tile, API, cookie or network request.
 
-The release check stages these files into a five-file pre-application bundle and
-scans every generated asset, including escaped JSON and HTML representations.
-It requires a gitignored manifest of the current known-withheld values:
+The release check transforms the projection into a five-file pre-application
+display bundle and scans every generated asset, including escaped JSON and HTML
+representations. Before every scan it regenerates the gitignored manifest from
+the projection's actual withheld fact IDs and a gitignored candidate catalog;
+published facts cannot linger in the scan list:
 
 ```bash
 python -m public_release \
+  --known-withheld-catalog data/artifacts/public-release-withheld-candidates.json \
   --known-withheld-manifest data/artifacts/public-release-known-withheld.json
 ```
 
-This is the C-014 schema review checkpoint, not the Next.js application export.
-The same scanner must run over the real Next.js static export after the owner
-accepts the schema and before any public deployment. Tests exercise generated
+The generated display model is the only renderer input. Facts named by a
+conflict are removed from the standalone list and nested only under that
+conflict. It also carries the public evidence-label glossary and visible
+withholding reason states.
+
+This is the completed Gate 2 data bundle, not the Next.js application export.
+The same scanner must run over the real Next.js static export during Gate 3 and
+before any public deployment. Tests exercise generated
 HTML, JavaScript and data assets now without claiming that later export exists.

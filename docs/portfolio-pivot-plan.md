@@ -309,6 +309,12 @@ codes but no value fields, the map asset has recorded source and license, and
 both the sentinel and local known-withheld scans find no withheld detail in the
 built output.
 
+**Gate status:** Complete 2026-08-19, pending owner review before Gate 3. The
+three-record projection passes its build-time evidence and decision validator;
+the locally bundled Berlin boundary retains source, license, retrieval date and
+CRS provenance; the regenerated six-fact withheld manifest, sentinel scan and
+encoded-value scans pass over the five-file generated display bundle.
+
 ### Gate 3 — Ship the flagship dossier
 
 **Actions**

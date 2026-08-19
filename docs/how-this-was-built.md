@@ -23,8 +23,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   C-014 checkpoint. Verified at the code fixed point: 151 tests pass; 67
   reachable hashes validate; the five-file pre-application bundle passes the
   sentinel and expanded gitignored known-withheld scans; no private artifact is
-  tracked. Work commits: `27657f9`, `d482ac0`, `2d89e53`; review-record hash
-  pending.
+  tracked. Work commits: `27657f9`, `d482ac0`, `2d89e53`, `88a3ec1`.
 
 - 2026-08-19 — Codex: completed portfolio pivot Gate 1 without claiming Phase 2
   completion. Pushed the reviewed repair, merged `phase-2-data-core` into `main`

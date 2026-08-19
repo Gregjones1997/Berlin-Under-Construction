@@ -384,6 +384,13 @@ makes no quality claim the empty golden set cannot support.
 
 ### Gate 6 — Deploy and package the portfolio
 
+**Pre-deployment evidence prepared 2026-08-19:**
+[`docs/research/findings/2026-08-19-public-site-legal-privacy-source-use.md`](research/findings/2026-08-19-public-site-legal-privacy-source-use.md)
+records the primary-source review. Public deployment remains blocked pending
+visible BKG changed-data attribution, production-host/privacy disclosure,
+approved provider/editorial identity and working correction routes. The named
+fallback is an access-restricted preview.
+
 **Actions**
 
 1. Deploy the static application.

@@ -33,6 +33,13 @@ remains incomplete.
 Make no provider call. The glossary-review handoff and 25 August C-010 recheck
 remain required outside this sprint unless a displayed value depends on them.
 
+Non-blocking later-gate preparation: the Gate 6 legal/privacy/source-use review
+is recorded in
+[`docs/research/findings/2026-08-19-public-site-legal-privacy-source-use.md`](research/findings/2026-08-19-public-site-legal-privacy-source-use.md).
+It does not advance Gate 3. Public deployment remains blocked; use an
+access-restricted preview until its attribution, host/privacy, provider identity
+and correction-route requirements are evidenced.
+
 ## Phase 0 — Minimal foundation
 
 ### Already complete

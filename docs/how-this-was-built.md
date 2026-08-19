@@ -2,6 +2,19 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Codex (`/research` skill; official-source web research) with one
+  read-only legal-research subagent: prepared Gate 6 source-use, BKG attribution,
+  privacy and correction-route evidence without advancing Gate 3. Delegation
+  was used for an independent primary-source lane: the subagent returned the
+  governing statutes, authority terms, regulator guidance and hosting caveat;
+  Codex accepted the committee-paper classification and host-telemetry
+  refinements after directly rechecking the cited sources, modified the result
+  into a deployment checklist, and rejected no finding. No subagent wrote to
+  the tree. The record names an access-restricted preview because visible BKG
+  changed-data attribution, account-specific host/privacy facts, provider
+  identity and working correction routes remain unresolved. Work commit:
+  `[pending]`.
+
 - 2026-08-19 — Codex (`/tdd` skill): repaired the first clean-checkout Gate 3
   CI failure. `run-32241038878` passed dependency installation, all tests and
   the Astro build, then failed before scanning because the generated manifest's

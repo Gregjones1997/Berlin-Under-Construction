@@ -4,6 +4,7 @@ import json
 import hashlib
 import os
 import sqlite3
+from datetime import UTC, date
 from pathlib import Path
 from typing import Literal, Self
 
@@ -21,6 +22,26 @@ from pipeline.schemas import (
 
 class StoreInvariantError(ValueError):
     pass
+
+
+class PdfTimestampRecord(StrictModel):
+    creation_date: str | None
+    modification_date: str | None
+
+
+class PublicationDateRecord(StrictModel):
+    status: Literal["not_checked", "verified", "not_stated", "unresolved"]
+    value: date | None = None
+    provenance: tuple[str, ...] = ()
+
+    @model_validator(mode="after")
+    def verified_values_require_provenance(self) -> "PublicationDateRecord":
+        if self.status == "verified":
+            if self.value is None or not self.provenance:
+                raise ValueError("verified publication dates require a value and provenance")
+        elif self.value is not None:
+            raise ValueError("only verified publication dates may carry a value")
+        return self
 
 
 class ArtifactRecord(StrictModel):
@@ -43,6 +64,7 @@ class ArtifactRecord(StrictModel):
     stored_bytes: bytes
     transform_rule_version: str = Field(min_length=1)
     transform_checks: tuple[str, ...] = Field(min_length=1)
+    extracted_pdf_timestamps: PdfTimestampRecord | None = None
     created_at: AwareDatetime
 
     @model_validator(mode="after")
@@ -58,6 +80,11 @@ class ArtifactRecord(StrictModel):
             and self.pre_transform_response_hash != self.stored_content_hash
         ):
             raise ValueError("identity transforms require equal hash roles")
+        media_type = self.media_type.partition(";")[0].strip().lower()
+        if media_type == "application/pdf" and self.extracted_pdf_timestamps is None:
+            raise ValueError("PDF artifacts require extracted timestamp provenance")
+        if media_type != "application/pdf" and self.extracted_pdf_timestamps is not None:
+            raise ValueError("only PDF artifacts may carry extracted PDF timestamps")
         return self
 
 
@@ -74,12 +101,30 @@ class RetrievalRecord(StrictModel):
     outcome: Literal["received"]
     user_agent_class: Literal["default", "browser"]
     retry_number: int = Field(ge=0)
+    publication_date: PublicationDateRecord = Field(
+        default_factory=lambda: PublicationDateRecord(status="not_checked")
+    )
+
+
+class ReviewDecisionRecord(StrictModel):
+    """Append-only, name-free proof of the human publication decision."""
+
+    schema_version: str = Field(min_length=1)
+    review_decision_id: str = Field(min_length=1)
+    project_id: str = Field(min_length=1)
+    claim_id: str = Field(min_length=1)
+    decision: Literal["accept", "reject", "correct", "defer", "quarantine"]
+    actor_class: Literal["project_owner", "qualified_human_reviewer"]
+    created_at: AwareDatetime
+    prior_state: Literal["proposed", "accepted", "rejected", "deferred"]
+    rationale: str = Field(min_length=1)
 
 
 class ProjectRecords(StrictModel):
     retrievals: tuple[RetrievalRecord, ...]
     artifacts: tuple[ArtifactRecord, ...]
     milestone_claims: tuple[ActiveMilestoneClaim | QuarantinedMilestoneClaim, ...]
+    review_decisions: tuple[ReviewDecisionRecord, ...]
 
 
 class ExtractionRunRecord(StrictModel):
@@ -94,9 +139,9 @@ class ExtractionRunRecord(StrictModel):
     validation_results: tuple[ValidationResult, ...]
 
 
-def _canonical_json(model: StrictModel, *, exclude: set[str] | None = None) -> str:
+def _canonical_json(model: StrictModel) -> str:
     return json.dumps(
-        model.model_dump(mode="json", exclude=exclude),
+        model.model_dump(mode="json"),
         sort_keys=True,
         separators=(",", ":"),
     )
@@ -149,6 +194,15 @@ class LocalPipelineStore:
             );
             CREATE INDEX IF NOT EXISTS milestone_claims_project_idx
                 ON milestone_claims(project_id, created_at, claim_id);
+            CREATE TABLE IF NOT EXISTS review_decisions (
+                review_decision_id TEXT PRIMARY KEY,
+                project_id TEXT NOT NULL,
+                claim_id TEXT NOT NULL REFERENCES milestone_claims(claim_id),
+                created_at TEXT NOT NULL,
+                record_json TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS review_decisions_project_idx
+                ON review_decisions(project_id, created_at, review_decision_id);
             CREATE TABLE IF NOT EXISTS extraction_runs (
                 run_id TEXT PRIMARY KEY,
                 project_id TEXT NOT NULL,
@@ -170,6 +224,10 @@ class LocalPipelineStore:
                 BEFORE UPDATE ON milestone_claims BEGIN SELECT RAISE(ABORT, 'append-only'); END;
             CREATE TRIGGER IF NOT EXISTS milestone_claims_no_delete
                 BEFORE DELETE ON milestone_claims BEGIN SELECT RAISE(ABORT, 'append-only'); END;
+            CREATE TRIGGER IF NOT EXISTS review_decisions_no_update
+                BEFORE UPDATE ON review_decisions BEGIN SELECT RAISE(ABORT, 'append-only'); END;
+            CREATE TRIGGER IF NOT EXISTS review_decisions_no_delete
+                BEFORE DELETE ON review_decisions BEGIN SELECT RAISE(ABORT, 'append-only'); END;
             CREATE TRIGGER IF NOT EXISTS extraction_runs_no_update
                 BEFORE UPDATE ON extraction_runs BEGIN SELECT RAISE(ABORT, 'append-only'); END;
             CREATE TRIGGER IF NOT EXISTS extraction_runs_no_delete
@@ -277,13 +335,77 @@ class LocalPipelineStore:
             """,
             (project_id,),
         ).fetchall()
+        review_json = self._connection.execute(
+            """
+            SELECT record_json FROM review_decisions
+            WHERE project_id = ? ORDER BY created_at, review_decision_id
+            """,
+            (project_id,),
+        ).fetchall()
         return ProjectRecords(
             retrievals=tuple(RetrievalRecord.model_validate_json(row[0]) for row in retrieval_json),
             artifacts=tuple(self._load_artifact(row[0], row[1]) for row in artifact_rows),
             milestone_claims=tuple(
                 milestone_claim_adapter.validate_json(row[0]) for row in claim_json
             ),
+            review_decisions=tuple(
+                ReviewDecisionRecord.model_validate_json(row[0]) for row in review_json
+            ),
         )
+
+    def record_review_decision(self, decision: ReviewDecisionRecord) -> None:
+        with self._connection:
+            matching_claim = self._connection.execute(
+                """
+                SELECT 1 FROM milestone_claims
+                WHERE claim_id = ? AND project_id = ?
+                """,
+                (decision.claim_id, decision.project_id),
+            ).fetchone()
+            if matching_claim is None:
+                raise StoreInvariantError(
+                    "review decision must reference a stored claim in the same project"
+                )
+            existing_row = self._connection.execute(
+                """
+                SELECT record_json FROM review_decisions
+                WHERE review_decision_id = ?
+                """,
+                (decision.review_decision_id,),
+            ).fetchone()
+            if existing_row is not None:
+                existing = ReviewDecisionRecord.model_validate_json(existing_row[0])
+                if existing == decision:
+                    return
+                raise StoreInvariantError(
+                    f"immutable review_decisions record {decision.review_decision_id!r} conflicts"
+                )
+            latest_row = self._connection.execute(
+                """
+                SELECT record_json FROM review_decisions
+                WHERE claim_id = ?
+                ORDER BY created_at DESC, review_decision_id DESC
+                LIMIT 1
+                """,
+                (decision.claim_id,),
+            ).fetchone()
+            if latest_row is not None:
+                latest = ReviewDecisionRecord.model_validate_json(latest_row[0])
+                if decision.created_at <= latest.created_at:
+                    raise StoreInvariantError(
+                        "review decision timestamps must strictly increase per claim"
+                    )
+            self._insert_immutable(
+                "review_decisions",
+                "review_decision_id",
+                decision.review_decision_id,
+                {
+                    "project_id": decision.project_id,
+                    "claim_id": decision.claim_id,
+                    "created_at": decision.created_at.astimezone(UTC).isoformat(),
+                    "record_json": _canonical_json(decision),
+                },
+            )
 
     def record_extraction_run(
         self,

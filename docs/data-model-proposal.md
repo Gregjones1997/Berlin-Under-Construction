@@ -1,6 +1,8 @@
 # Approved Phase 2 typed schemas
 
-**Status:** Approved by the project owner 2026-08-07; Python types not yet implemented
+**Status:** Approved by the project owner 2026-08-07; milestone, artifact,
+retrieval, extraction-run and append-only review-decision slices implemented;
+broader Phase 2 types remain incomplete
 **Date:** 2026-08-07
 **Scope:** Claim, source and extraction-run boundaries for the three pilot projects
 

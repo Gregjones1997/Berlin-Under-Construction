@@ -22,16 +22,14 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Complete Gate 1 in `docs/portfolio-pivot-plan.md`. Replace the
-CI test's repository-local `.venv` interpreter assumption with the running
-Python interpreter, verify the full suite and build-log checker locally, then
-push `phase-2-data-core` and require a green public workflow. Review the complete
-Phase 2 diff for secrets, private artifacts, false completion claims and
-release-blocking defects before integrating it into `main`; the merge does not
-complete Phase 2. Make no provider call. After integration, create the Phase 4
-public-slice branch and advance the handoff to Gate 2. The glossary-review
-handoff and 25 August C-010 recheck remain required outside this sprint unless a
-displayed value depends on them.
+**Next action:** Complete Gate 1 in `docs/portfolio-pivot-plan.md`. The required
+Standards and Spec review lanes are complete, every hard finding was reproduced,
+and the fail-closed repairs pass 123 tests plus the build-log checker. Commit and
+push the repair on `phase-2-data-core`, require a green public workflow, then
+integrate it into `main`; the merge does not complete Phase 2. Make no provider
+call. After integration, create the Phase 4 public-slice branch and advance the
+handoff to Gate 2. The glossary-review handoff and 25 August C-010 recheck remain
+required outside this sprint unless a displayed value depends on them.
 
 ## Phase 0 — Minimal foundation
 
@@ -49,7 +47,9 @@ displayed value depends on them.
 
 - [x] Initialize Git repository on the `main` branch.
 - [x] Add `.gitignore` for local settings, secrets and generated files.
-- [ ] Add `.env.example` when the first environment variables are defined.
+- [x] Add `.env.example` when the first environment variables are defined.
+  Evidence: the committed example names `OPENAI_API_KEY` without a value and the
+  CLI refuses repository `.env` loading.
 - [x] Create the application and test directory structure. Evidence: `pipeline/`
   and `tests/pipeline/` exercised by pytest at `d5d5806`.
 - [x] Choose the smallest viable initial stack.

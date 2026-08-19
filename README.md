@@ -2,7 +2,7 @@
 
 > An independent, source-backed map that helps people understand what is being built across Berlin, who is responsible, what was promised, what changed, and what the public can reliably know.
 
-**Project status:** Phase 2 — trustworthy data core; pilot dossier review in progress
+**Project status:** Portfolio pivot sprint — Gate 1; Phase 2 remains incomplete
 
 **Geographic focus:** Berlin, Germany
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Berlin, Under Construction is a planned AI-assisted and source-backed civic information product focused on visible construction and major works across Berlin.
+Berlin, Under Construction is an in-progress AI-assisted and source-backed civic information product focused on visible construction and major works across Berlin.
 
 Construction information often exists, but it is fragmented across planning pages, procurement notices, budgets, committee records, company reports, press releases, geospatial datasets and physical site signage. The same project may appear under different names, identifiers and definitions in each source.
 
@@ -401,6 +401,15 @@ Licensing, source archiving, database rights, document retention and reuse polic
 
 German legal and privacy requirements, including public-site identification, analytics disclosures and source quotation, must be verified against current authoritative guidance before launch.
 
-## Initial next step
+## Active portfolio sprint
 
-The first implementation task is to bootstrap the repository and create the minimal documentation foundation. The first product task is to select three pilot projects, define the German-first terminology model and build their manually verified source matrix before automating extraction.
+The repository now contains three frozen pilot dossiers, a typed and tested
+Python pipeline slice, private append-only local persistence, deterministic
+evidence gates and measured run records. Phase 2 is deliberately still
+incomplete. The accepted sprint now integrates that work into the default
+branch, freezes a small public-safe projection and builds C-014 as the flagship
+dossier before adding the two thinner pilot pages. The operational handoff and
+current gate are maintained in
+[`docs/project-checklist.md`](docs/project-checklist.md); the binding delivery
+order is in
+[`docs/portfolio-pivot-plan.md`](docs/portfolio-pivot-plan.md).

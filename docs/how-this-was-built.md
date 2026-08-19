@@ -2,6 +2,29 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Codex (`/context-restore` and repository `code-review` skills)
+  with read-only Standards and Spec subagents: restored the paused Gate 1 review
+  without crediting two stopped lanes that returned no findings, then restarted
+  both required axes against `main...HEAD`. Standards found missing stored
+  publication-date state and PDF timestamps, a stale checklist handoff, the
+  prior session's non-final closing hash commit and one unused serialization
+  hook; Spec found that publication-safe reconstruction trusted recorded pass
+  flags instead of rechecking evidence and an append-only acceptance decision,
+  plus the stale concept-stage README ending. Codex accepted every hard finding
+  and the small cleanup, independently reproduced the bad HTML offsets, added
+  name-free append-only review decisions and fail-closed render checks, retained
+  provenance fields, corrected the public handoffs, and recorded the prior
+  session-close failure instead of rewriting history. Verified: 123 tests pass;
+  63 reachable build-log hashes validate; focused adversarial tests pass; the
+  existing private store remains readable and review-required; branch-history
+  scans find no credential, retained artifact or database blob. The focused
+  Standards follow-up approved the repair and required this follow-up disclosure.
+  Two focused Spec passes then caught equal-timestamp and mixed-UTC-offset ways
+  for a later revocation to lose ordering; Codex accepted both, enforced strict
+  per-claim time growth, stored the ordering key in UTC and added adversarial
+  coverage. The final Spec pass approved the corrected gate. No finding was
+  rejected.
+
 - 2026-08-19 — Project owner, external reviewer Claude and Codex
   (`writing-for-agents` skill): accepted the portfolio pivot, integrated all four
   blocking review findings with two implementation clarifications, activated

@@ -6,8 +6,15 @@ import json
 from dataclasses import dataclass
 from typing import Literal
 
-from pipeline.schemas import ActiveMilestoneClaim, HtmlEvidenceSpan, PdfEvidenceSpan
-from pipeline.store import LocalPipelineStore
+from pipeline.extractor import charset_of_media_type
+from pipeline.schemas import (
+    ActiveMilestoneClaim,
+    ArtifactNotDecodable,
+    HtmlEvidenceSpan,
+    PdfEvidenceSpan,
+    validate_exact_html_span,
+)
+from pipeline.store import ArtifactRecord, LocalPipelineStore, ReviewDecisionRecord
 
 
 class IncompleteReconstruction(ValueError):
@@ -23,8 +30,30 @@ def _quoted(value: str) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def _may_render(claim: ActiveMilestoneClaim) -> bool:
+def _evidence_matches(claim: ActiveMilestoneClaim, artifact: ArtifactRecord) -> bool:
+    if artifact.media_type.partition(";")[0].strip().lower() != "text/html":
+        return False
+    charset = charset_of_media_type(artifact.media_type)
+    try:
+        return all(
+            isinstance(span, HtmlEvidenceSpan)
+            and validate_exact_html_span(artifact.stored_bytes, span, charset=charset)
+            for span in claim.evidence_spans
+        )
+    except ArtifactNotDecodable:
+        return False
+
+
+def _may_render(
+    claim: ActiveMilestoneClaim,
+    artifact: ArtifactRecord | None,
+    decision: ReviewDecisionRecord | None,
+) -> bool:
     if claim.publication_eligibility != "eligible":
+        return False
+    if artifact is None or not _evidence_matches(claim, artifact):
+        return False
+    if decision is None or decision.decision != "accept":
         return False
     outcomes = {result.code: result.outcome for result in claim.validation_results}
     return all(outcomes.get(code) == "pass" for code in REQUIRED_RENDER_VALIDATIONS)
@@ -47,6 +76,9 @@ def reconstruct_milestone_fragment(
         (retrieval.source_id, retrieval.artifact_id): retrieval
         for retrieval in records.retrievals
     }
+    latest_decisions = {
+        decision.claim_id: decision for decision in records.review_decisions
+    }
     lines = [f"# Milestone fragment — {project_id}", ""]
     if include_withheld_detail:
         lines.extend(
@@ -56,19 +88,33 @@ def reconstruct_milestone_fragment(
             ]
         )
     for claim in records.milestone_claims:
-        may_render = isinstance(claim, ActiveMilestoneClaim) and _may_render(claim)
+        artifact = artifacts.get(claim.artifact_id)
+        retrieval = retrievals.get((claim.source_id, claim.artifact_id))
+        decision = latest_decisions.get(claim.claim_id)
+        may_render = (
+            isinstance(claim, ActiveMilestoneClaim)
+            and retrieval is not None
+            and _may_render(claim, artifact, decision)
+        )
         if not may_render:
             codes = ", ".join(sorted(result.code for result in claim.validation_results)) or "none"
+            render_blocks: list[str] = []
+            if artifact is None or retrieval is None:
+                render_blocks.append("missing_stored_evidence")
+            elif isinstance(claim, ActiveMilestoneClaim) and not _evidence_matches(claim, artifact):
+                render_blocks.append("evidence_span_mismatch")
+            if decision is None or decision.decision != "accept":
+                render_blocks.append("missing_accepted_review_decision")
+            block_text = ", ".join(render_blocks) or "claim_state_not_publishable"
             lines.append(
                 f"- {claim.claim_id} — withheld "
-                f"({claim.publication_eligibility}; {claim.review_state}; validations: {codes})"
+                f"({claim.publication_eligibility}; {claim.review_state}; "
+                f"validations: {codes}; render gates: {block_text})"
             )
             if not include_withheld_detail:
                 continue
             lines.append("")
 
-        artifact = artifacts.get(claim.artifact_id)
-        retrieval = retrievals.get((claim.source_id, claim.artifact_id))
         if artifact is None or retrieval is None:
             raise IncompleteReconstruction("claim evidence is not backed by a stored retrieval")
 

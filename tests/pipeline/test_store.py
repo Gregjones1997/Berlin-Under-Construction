@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from decimal import Decimal
 import hashlib
 import json
@@ -14,8 +14,16 @@ from pipeline.schemas import (
     HtmlEvidenceSpan,
     ValidationResult,
 )
-from pipeline.store import ArtifactRecord, ExtractionRunRecord, LocalPipelineStore, RetrievalRecord
-from pipeline.store import StoreInvariantError
+from pipeline.store import (
+    ArtifactRecord,
+    ExtractionRunRecord,
+    LocalPipelineStore,
+    PdfTimestampRecord,
+    PublicationDateRecord,
+    RetrievalRecord,
+    ReviewDecisionRecord,
+    StoreInvariantError,
+)
 
 
 NOW = datetime(2026, 8, 7, 12, 0, tzinfo=UTC)
@@ -54,6 +62,11 @@ def retrieval() -> RetrievalRecord:
         outcome="received",
         user_agent_class="default",
         retry_number=0,
+        publication_date=PublicationDateRecord(
+            status="verified",
+            value=date(2026, 8, 7),
+            provenance=("source-page",),
+        ),
     )
 
 
@@ -71,8 +84,8 @@ def claim() -> ActiveMilestoneClaim:
                 kind="html",
                 exact_text_de="Baubeginn 2026",
                 selector="main",
-                start=0,
-                end=14,
+                start=6,
+                end=20,
             ),
         ),
         qualifiers=(),
@@ -96,12 +109,27 @@ def claim() -> ActiveMilestoneClaim:
     )
 
 
+def review_decision() -> ReviewDecisionRecord:
+    return ReviewDecisionRecord(
+        schema_version="1.0.0",
+        review_decision_id="review-1",
+        project_id="C-014",
+        claim_id="claim-1",
+        decision="accept",
+        actor_class="qualified_human_reviewer",
+        created_at=NOW,
+        prior_state="proposed",
+        rationale="Approved for the reviewed display state.",
+    )
+
+
 def test_project_records_survive_store_reopen(tmp_path) -> None:
     database = tmp_path / "pipeline.sqlite3"
 
     with LocalPipelineStore(database) as store:
         store.record_retrieval_artifact(retrieval(), artifact())
         store.record_claim(claim())
+        store.record_review_decision(review_decision())
 
     with LocalPipelineStore(database) as reopened:
         records = reopened.load_project("C-014")
@@ -109,6 +137,83 @@ def test_project_records_survive_store_reopen(tmp_path) -> None:
     assert records.retrievals == (retrieval(),)
     assert records.artifacts == (artifact(),)
     assert records.milestone_claims == (claim(),)
+    assert records.review_decisions == (review_decision(),)
+
+
+def test_pdf_artifact_retains_extracted_timestamps(tmp_path) -> None:
+    stored_bytes = b"%PDF-retention-record"
+    stored_hash = hashlib.sha256(stored_bytes).hexdigest()
+    retained = ArtifactRecord(
+        schema_version="1.0.0",
+        artifact_id=stored_hash,
+        media_type="application/pdf",
+        byte_length=len(stored_bytes),
+        retained_private=True,
+        hash_algorithm="sha256",
+        pre_transform_response_hash="b" * 64,
+        stored_content_hash=stored_hash,
+        stored_bytes=stored_bytes,
+        transform_rule_version="pdf-metadata-strip/v1",
+        transform_checks=("forbidden_metadata_absent",),
+        extracted_pdf_timestamps=PdfTimestampRecord(
+            creation_date="D:20260807120000+02'00'",
+            modification_date=None,
+        ),
+        created_at=NOW,
+    )
+    pdf_retrieval = retrieval().model_copy(update={"artifact_id": stored_hash})
+
+    with LocalPipelineStore(tmp_path / "pipeline.sqlite3") as store:
+        store.record_retrieval_artifact(pdf_retrieval, retained)
+        assert store.load_project("C-014").artifacts == (retained,)
+
+
+def test_pdf_artifact_without_timestamp_provenance_is_rejected() -> None:
+    stored_bytes = b"%PDF-missing-provenance"
+    stored_hash = hashlib.sha256(stored_bytes).hexdigest()
+
+    with pytest.raises(ValueError, match="timestamp provenance"):
+        ArtifactRecord(
+            schema_version="1.0.0",
+            artifact_id=stored_hash,
+            media_type="application/pdf",
+            byte_length=len(stored_bytes),
+            retained_private=True,
+            hash_algorithm="sha256",
+            pre_transform_response_hash="b" * 64,
+            stored_content_hash=stored_hash,
+            stored_bytes=stored_bytes,
+            transform_rule_version="pdf-metadata-strip/v1",
+            transform_checks=("forbidden_metadata_absent",),
+            created_at=NOW,
+        )
+
+
+def test_review_decision_requires_a_stored_claim_and_is_immutable(tmp_path) -> None:
+    database = tmp_path / "pipeline.sqlite3"
+    with LocalPipelineStore(database) as store:
+        with pytest.raises(StoreInvariantError):
+            store.record_review_decision(review_decision())
+
+        store.record_retrieval_artifact(retrieval(), artifact())
+        store.record_claim(claim())
+        store.record_review_decision(review_decision())
+        store.record_review_decision(review_decision())
+
+        conflicting = review_decision().model_copy(update={"decision": "reject"})
+        with pytest.raises(StoreInvariantError):
+            store.record_review_decision(conflicting)
+
+        same_timestamp_revocation = review_decision().model_copy(
+            update={
+                "review_decision_id": "review-a",
+                "decision": "reject",
+                "prior_state": "accepted",
+                "rationale": "Approval withdrawn at an ambiguous timestamp.",
+            }
+        )
+        with pytest.raises(StoreInvariantError, match="strictly increase"):
+            store.record_review_decision(same_timestamp_revocation)
 
 
 def test_identical_replay_is_idempotent_but_conflicting_id_is_rejected(tmp_path) -> None:

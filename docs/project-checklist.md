@@ -22,18 +22,15 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** IN PROGRESS
 
-**Next action:** Execute Gate 2 in `docs/portfolio-pivot-plan.md` on
-`phase-4-public-slice`. Define the smallest public display schema, curate C-014
-first from the frozen dossier and approved source states, then add minimum honest
-C-010 and C-019 records. Encode withheld and unresolved states structurally;
-withheld records expose a reason code but no value or evidence fields. Select a
-locally bundled Berlin boundary only after recording its authoritative source,
-license, retrieval date and coordinate system. Add deterministic build-time
-tests for evidence, HTTPS source URLs, naming, private-field exclusion and both
-sentinel and local known-withheld scans. Obtain the required review decision for
-every rendered value. Phase 2 remains incomplete. Make no provider call. The
-glossary-review handoff and 25 August C-010 recheck remain required outside this
-sprint unless a displayed value depends on them.
+**Next action:** Hold Gate 2 at the C-014 schema review point on
+`phase-4-public-slice`. The owner must review
+`docs/review/c014-publication-decisions.md` and the existing publication bases
+in `public/data/projects.json`; do not begin C-010 or C-019. After owner rulings,
+apply only accepted C-014 decisions, rerun projection, boundary, sentinel and
+local known-withheld built-output checks, and obtain review of the resulting
+full C-014 projection before continuing Gate 2. Phase 2 remains incomplete.
+Make no provider call. The glossary-review handoff and 25 August C-010 recheck
+remain required outside this sprint unless a displayed value depends on them.
 
 ## Phase 0 — Minimal foundation
 

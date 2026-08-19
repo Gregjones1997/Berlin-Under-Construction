@@ -22,4 +22,4 @@ dev = [
 testpaths = ["tests"]
 
 [tool.setuptools.packages.find]
-include = ["pipeline*"]
+include = ["pipeline*", "public_release*"]

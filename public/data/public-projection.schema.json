@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://berlin-under-construction.example/schemas/public-projection-v1.json",
+  "title": "Berlin, Under Construction public display projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "projects"],
+  "properties": {
+    "schemaVersion": { "const": "public-projection/v1" },
+    "projects": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/project" }
+    }
+  },
+  "$defs": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["projectId", "slug", "correctionPath", "facts", "conflicts"],
+      "properties": {
+        "projectId": { "type": "string", "pattern": "^C-[0-9]{3}$" },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "correctionPath": { "type": "string", "pattern": "^/corrections\\?project=C-[0-9]{3}$" },
+        "facts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              { "$ref": "#/$defs/publishedFact" },
+              { "$ref": "#/$defs/withheldFact" }
+            ]
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/unreconciledConflict" }
+        }
+      }
+    },
+    "factType": {
+      "enum": [
+        "project_name",
+        "project_location",
+        "status",
+        "milestone",
+        "financial_measure",
+        "organization_role"
+      ]
+    },
+    "publishedFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "factId",
+        "factType",
+        "state",
+        "valueDe",
+        "evidence",
+        "acceptedDecision"
+      ],
+      "properties": {
+        "factId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "factType": { "$ref": "#/$defs/factType" },
+        "state": { "const": "published" },
+        "valueDe": { "type": "string", "minLength": 1 },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "acceptedDecision": { "$ref": "#/$defs/acceptedDecision" }
+      }
+    },
+    "withheldFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["factId", "factType", "state", "reasonCode"],
+      "properties": {
+        "factId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "factType": { "$ref": "#/$defs/factType" },
+        "state": { "const": "withheld" },
+        "reasonCode": {
+          "enum": [
+            "owner_review_required",
+            "source_string_requires_owner_verification",
+            "multi_source_synthesis_has_no_exact_span",
+            "role_vocabulary_unresolved"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exactTextDe", "sourceId", "sourceUrl", "publicationDate"],
+      "properties": {
+        "exactTextDe": { "type": "string", "minLength": 1 },
+        "sourceId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "sourceUrl": { "type": "string", "pattern": "^https://" },
+        "publicationDate": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["state", "value"],
+              "properties": {
+                "state": { "const": "verified" },
+                "value": { "type": "string", "format": "date" }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["state"],
+              "properties": { "state": { "const": "not_stated" } }
+            }
+          ]
+        }
+      }
+    },
+    "acceptedDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "actorClass", "decidedOn", "decisionRef"],
+      "properties": {
+        "decision": { "const": "accept" },
+        "actorClass": { "const": "project_owner" },
+        "decidedOn": { "type": "string", "format": "date" },
+        "decisionRef": { "type": "string", "pattern": "^docs/.+\\.md(?:#.+)?$" }
+      }
+    },
+    "unreconciledConflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conflictId",
+        "state",
+        "memberFactIds",
+        "acceptedDecision"
+      ],
+      "properties": {
+        "conflictId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "state": { "const": "unreconciled" },
+        "memberFactIds": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+        },
+        "acceptedDecision": { "$ref": "#/$defs/acceptedDecision" }
+      }
+    }
+  }
+}

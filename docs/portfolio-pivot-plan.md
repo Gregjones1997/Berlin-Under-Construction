@@ -189,6 +189,9 @@ visible feature rather than weaken the constraint.
 
 ### Deferred beyond Friday
 
+- GitHub Actions Node-runtime deprecation upgrades for `actions/checkout@v4`
+  and `actions/setup-python@v5`; both workflows pass today, so revisit after the
+  portfolio sprint rather than changing action versions during Gate 2.
 - Supabase, Postgres and PostGIS.
 - Production API routes or server-side database access.
 - Address search.

@@ -1,0 +1,20 @@
+{
+  "assetId": "berlin-boundary-vg250-2026-01-01",
+  "authority": "Bundesamt für Kartographie und Geodäsie (BKG)",
+  "dataset": "Verwaltungsgebiete 1:250 000, Stand 01.01.2026 (VG250 01.01.)",
+  "datasetUrl": "https://gdz.bkg.bund.de/index.php/default/open-data/verwaltungsgebiete-1-250-000-stand-01-01-vg250-01-01.html",
+  "serviceUrl": "https://sgx.geodatenzentrum.de/wfs_vg250",
+  "requestUrl": "https://sgx.geodatenzentrum.de/wfs_vg250?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=vg250%3Avg250_lan&OUTPUTFORMAT=application%2Fjson&SRSNAME=EPSG%3A4326&CQL_FILTER=sn_l%3D%2711%27",
+  "retrievedOn": "2026-08-19",
+  "sourceCrs": "EPSG:25832",
+  "bundledCrs": "EPSG:4326",
+  "transformation": "BKG WFS server-side reprojection requested with SRSNAME=EPSG:4326; non-geometry source attributes removed locally.",
+  "license": {
+    "id": "dl-de/by-2-0",
+    "name": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+    "url": "https://www.govdata.de/dl-de/by-2-0",
+    "attribution": "© BKG (2026) dl-de/by-2-0, Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf"
+  },
+  "geometrySha256": "sha256:e159b1a8332c82d259b481f06149f1b404b767d2208418342085b68522072278",
+  "runtimeRequests": []
+}

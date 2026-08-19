@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "public-projection/v1",
+  "projects": [
+    {
+      "projectId": "C-014",
+      "slug": "europaplatz-sued",
+      "correctionPath": "/corrections?project=C-014",
+      "facts": [
+        {
+          "factId": "c014-project-name",
+          "factType": "project_name",
+          "state": "published",
+          "valueDe": "Europaplatz Süd — Umgestaltung",
+          "evidence": {
+            "exactTextDe": "Umgestaltung des Europaplatzes Süd",
+            "sourceId": "c014-pm-2023-06-26",
+            "sourceUrl": "https://www.berlin.de/sen/sbw/presse/pressemeldungen/2023/pressemitteilung.1338536.php",
+            "publicationDate": {
+              "state": "verified",
+              "value": "2023-06-26"
+            }
+          },
+          "acceptedDecision": {
+            "decision": "accept",
+            "actorClass": "project_owner",
+            "decidedOn": "2026-08-06",
+            "decisionRef": "docs/research/dossiers/C-014-europaplatz-sued.md#identity-and-boundary"
+          }
+        },
+        {
+          "factId": "c014-project-location",
+          "factType": "project_location",
+          "state": "published",
+          "valueDe": "Vorplatz des Hauptbahnhofs an der Invalidenstraße",
+          "evidence": {
+            "exactTextDe": "dem Vorplatz des Hauptbahnhofs an der Invalidenstraße",
+            "sourceId": "c014-pm-2026-01-26",
+            "sourceUrl": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1637393.php",
+            "publicationDate": {
+              "state": "verified",
+              "value": "2026-01-26"
+            }
+          },
+          "acceptedDecision": {
+            "decision": "accept",
+            "actorClass": "project_owner",
+            "decidedOn": "2026-08-06",
+            "decisionRef": "docs/research/dossiers/C-014-europaplatz-sued.md#identity-and-boundary"
+          }
+        },
+        {
+          "factId": "c014-places-programme-page-figure",
+          "factType": "financial_measure",
+          "state": "published",
+          "valueDe": "finanziert aus dem Plätzeprogramm: 1.900.000 €",
+          "evidence": {
+            "exactTextDe": "finanziert aus dem Plätzeprogramm: 1.900.000 €",
+            "sourceId": "c014-project-page",
+            "sourceUrl": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
+            "publicationDate": { "state": "not_stated" }
+          },
+          "acceptedDecision": {
+            "decision": "accept",
+            "actorClass": "project_owner",
+            "decidedOn": "2026-08-06",
+            "decisionRef": "docs/research/dossiers/C-014-europaplatz-sued.md#unreconciled--the-project-page-figure"
+          }
+        },
+        {
+          "factId": "c014-places-programme-index-figure",
+          "factType": "financial_measure",
+          "state": "published",
+          "valueDe": "Das Berliner Plätzeprogramm steuert rund 1,7 Mio. Euro zur Maßnahme bei.",
+          "evidence": {
+            "exactTextDe": "Das Berliner Plätzeprogramm steuert rund 1,7 Mio. Euro zur Maßnahme bei.",
+            "sourceId": "c014-places-programme-index-2026-01-26",
+            "sourceUrl": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/",
+            "publicationDate": {
+              "state": "verified",
+              "value": "2026-01-26"
+            }
+          },
+          "acceptedDecision": {
+            "decision": "accept",
+            "actorClass": "project_owner",
+            "decidedOn": "2026-08-06",
+            "decisionRef": "docs/decision-log.md#adr-009--precision-and-conflict-are-two-markers-not-one"
+          }
+        },
+        {
+          "factId": "c014-current-status",
+          "factType": "status",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-expected-completion-current",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-completion-history-2023",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-completion-history-2025",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-completion-period-2026",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-construction-start-history",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-construction-start-current",
+          "factType": "milestone",
+          "state": "withheld",
+          "reasonCode": "owner_review_required"
+        },
+        {
+          "factId": "c014-approved-total-cost",
+          "factType": "financial_measure",
+          "state": "withheld",
+          "reasonCode": "source_string_requires_owner_verification"
+        },
+        {
+          "factId": "c014-completion-outcome",
+          "factType": "status",
+          "state": "withheld",
+          "reasonCode": "multi_source_synthesis_has_no_exact_span"
+        },
+        {
+          "factId": "c014-organization-roles",
+          "factType": "organization_role",
+          "state": "withheld",
+          "reasonCode": "role_vocabulary_unresolved"
+        }
+      ],
+      "conflicts": [
+        {
+          "conflictId": "c014-places-programme-figures",
+          "state": "unreconciled",
+          "memberFactIds": [
+            "c014-places-programme-page-figure",
+            "c014-places-programme-index-figure"
+          ],
+          "acceptedDecision": {
+            "decision": "accept",
+            "actorClass": "project_owner",
+            "decidedOn": "2026-08-06",
+            "decisionRef": "docs/decision-log.md#adr-009--precision-and-conflict-are-two-markers-not-one"
+          }
+        }
+      ]
+    }
+  ]
+}

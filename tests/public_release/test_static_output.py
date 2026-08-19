@@ -106,6 +106,24 @@ def test_known_withheld_manifest_is_regenerated_from_projection_state(
     assert "stale old scan value" not in manifest.read_text(encoding="utf-8")
 
 
+def test_manifest_regeneration_creates_its_output_directory(tmp_path: Path) -> None:
+    projection = tmp_path / "projection.json"
+    projection.write_text(
+        json.dumps({"projects": [{"facts": []}]}), encoding="utf-8"
+    )
+    catalog = tmp_path / "catalog.json"
+    catalog.write_text(json.dumps({"valuesByFactId": {}}), encoding="utf-8")
+    manifest = tmp_path / "new-build-directory" / "known-withheld.json"
+
+    regenerate_known_withheld_manifest(
+        projection_path=projection,
+        candidate_catalog_path=catalog,
+        manifest_path=manifest,
+    )
+
+    assert manifest.is_file()
+
+
 def test_withheld_fixture_sentinel_cannot_enter_generated_assets(
     tmp_path: Path,
 ) -> None:

@@ -634,7 +634,9 @@ def regenerate_known_withheld_manifest(
         "withheldFactIds": withheld_ids,
         "values": values,
     }
-    Path(manifest_path).write_text(
+    manifest_file = Path(manifest_path)
+    manifest_file.parent.mkdir(parents=True, exist_ok=True)
+    manifest_file.write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )

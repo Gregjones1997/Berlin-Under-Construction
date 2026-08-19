@@ -27,7 +27,11 @@
           "minItems": 1,
           "items": {
             "oneOf": [
-              { "$ref": "#/$defs/publishedFact" },
+              { "$ref": "#/$defs/publishedSimpleFact" },
+              { "$ref": "#/$defs/publishedFinancialFact" },
+              { "$ref": "#/$defs/publishedMilestoneFact" },
+              { "$ref": "#/$defs/publishedStatusFact" },
+              { "$ref": "#/$defs/publishedOrganizationRoleFact" },
               { "$ref": "#/$defs/withheldFact" }
             ]
           }
@@ -48,15 +52,18 @@
         "organization_role"
       ]
     },
-    "publishedFact": {
+    "publishedFactBase": {
       "type": "object",
-      "additionalProperties": false,
       "required": [
         "factId",
         "factType",
         "state",
         "valueDe",
         "evidence",
+        "qualifiers",
+        "asOfDate",
+        "freshness",
+        "translationState",
         "acceptedDecision"
       ],
       "properties": {
@@ -65,8 +72,149 @@
         "state": { "const": "published" },
         "valueDe": { "type": "string", "minLength": 1 },
         "evidence": { "$ref": "#/$defs/evidence" },
+        "qualifiers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/qualifier" }
+        },
+        "asOfDate": { "$ref": "#/$defs/dateState" },
+        "freshness": { "$ref": "#/$defs/freshness" },
+        "translationState": { "const": "german_canonical" },
         "acceptedDecision": { "$ref": "#/$defs/acceptedDecision" }
       }
+    },
+    "publishedSimpleFact": {
+      "allOf": [
+        { "$ref": "#/$defs/publishedFactBase" },
+        {
+          "properties": {
+            "factType": { "enum": ["project_name", "project_location"] }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "publishedFinancialFact": {
+      "allOf": [
+        { "$ref": "#/$defs/publishedFactBase" },
+        {
+          "required": [
+            "measureType",
+            "scope",
+            "amount",
+            "taxTreatment",
+            "priceBasis",
+            "budgetReference"
+          ],
+          "properties": {
+            "factType": { "const": "financial_measure" },
+            "measureType": {
+              "enum": [
+                "original_estimate",
+                "approved_budget",
+                "current_forecast",
+                "awarded_contract_value",
+                "contract_amendment",
+                "expenditure_to_date",
+                "final_cost",
+                "financing_commitment"
+              ]
+            },
+            "scope": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["normalizedKey", "wordingDe"],
+              "properties": {
+                "normalizedKey": { "type": "string", "minLength": 1 },
+                "wordingDe": { "type": "string", "minLength": 1 }
+              }
+            },
+            "amount": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["value", "currency"],
+              "properties": {
+                "value": { "type": "integer", "minimum": 0 },
+                "currency": { "const": "EUR" }
+              }
+            },
+            "taxTreatment": { "$ref": "#/$defs/statedEnumOrNotStated" },
+            "priceBasis": { "$ref": "#/$defs/statedStringOrNotStated" },
+            "budgetReference": { "$ref": "#/$defs/statedStringOrNotStated" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "publishedMilestoneFact": {
+      "allOf": [
+        { "$ref": "#/$defs/publishedFactBase" },
+        {
+          "required": ["milestoneType", "milestoneTermDe", "objectScopeDe", "dateValue"],
+          "properties": {
+            "factType": { "const": "milestone" },
+            "milestoneType": {
+              "enum": [
+                "planning_approval",
+                "tender_deadline",
+                "award",
+                "site_start",
+                "construction_start",
+                "substantial_completion",
+                "handover",
+                "commissioning",
+                "public_opening"
+              ]
+            },
+            "milestoneTermDe": { "type": "string", "minLength": 1 },
+            "objectScopeDe": { "type": "string", "minLength": 1 },
+            "dateValue": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["precision", "canonicalDe"],
+              "properties": {
+                "precision": {
+                  "enum": ["exact_day", "month", "season", "half_year", "year", "range", "relative_anchor"]
+                },
+                "canonicalDe": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "publishedStatusFact": {
+      "allOf": [
+        { "$ref": "#/$defs/publishedFactBase" },
+        {
+          "properties": {
+            "factType": { "const": "status" },
+            "asOfDate": { "$ref": "#/$defs/verifiedDate" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "publishedOrganizationRoleFact": {
+      "allOf": [
+        { "$ref": "#/$defs/publishedFactBase" },
+        {
+          "required": ["organizationName", "organizationRole"],
+          "properties": {
+            "factType": { "const": "organization_role" },
+            "organizationName": { "type": "string", "minLength": 1 },
+            "organizationRole": { "enum": ["commissioner", "financer", "contractor"] },
+            "namedLotDe": { "type": "string", "minLength": 1 }
+          },
+          "allOf": [
+            {
+              "if": { "properties": { "organizationRole": { "const": "contractor" } } },
+              "then": { "required": ["namedLotDe"] }
+            }
+          ]
+        }
+      ],
+      "unevaluatedProperties": false
     },
     "withheldFact": {
       "type": "object",
@@ -79,6 +227,7 @@
         "reasonCode": {
           "enum": [
             "owner_review_required",
+            "methodology_ineligible",
             "source_string_requires_owner_verification",
             "multi_source_synthesis_has_no_exact_span",
             "role_vocabulary_unresolved"
@@ -89,55 +238,124 @@
     "evidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["exactTextDe", "sourceId", "sourceUrl", "publicationDate"],
+      "required": ["exactTextDe", "sourceId", "sourceUrl", "publicationDate", "evidenceLabel"],
       "properties": {
         "exactTextDe": { "type": "string", "minLength": 1 },
         "sourceId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
         "sourceUrl": { "type": "string", "pattern": "^https://" },
-        "publicationDate": {
-          "oneOf": [
-            {
-              "type": "object",
-              "additionalProperties": false,
-              "required": ["state", "value"],
-              "properties": {
-                "state": { "const": "verified" },
-                "value": { "type": "string", "format": "date" }
-              }
-            },
-            {
-              "type": "object",
-              "additionalProperties": false,
-              "required": ["state"],
-              "properties": { "state": { "const": "not_stated" } }
-            }
-          ]
-        }
+        "publicationDate": { "$ref": "#/$defs/publicationDateState" },
+        "evidenceLabel": { "enum": ["Primary", "Reported"] }
       }
+    },
+    "qualifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["qualifierClass", "appliesTo", "tokenDe"],
+      "properties": {
+        "qualifierClass": {
+          "enum": ["upper_bound", "lower_bound", "approximation", "range", "modal_intent", "source_stated_unreliability", "as_of_hedge"]
+        },
+        "appliesTo": { "enum": ["amount", "date", "scope", "status"] },
+        "tokenDe": { "type": "string", "minLength": 1 }
+      }
+    },
+    "verifiedDate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "value"],
+      "properties": {
+        "state": { "const": "verified" },
+        "value": { "type": "string", "format": "date" }
+      }
+    },
+    "dateState": {
+      "oneOf": [
+        { "$ref": "#/$defs/verifiedDate" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state"],
+          "properties": { "state": { "enum": ["not_stated", "not_applicable"] } }
+        }
+      ]
+    },
+    "publicationDateState": {
+      "oneOf": [
+        { "$ref": "#/$defs/verifiedDate" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state"],
+          "properties": { "state": { "const": "not_stated" } }
+        }
+      ]
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state"],
+      "properties": {
+        "state": { "enum": ["not_applicable", "unassessed", "current_as_of", "historical"] },
+        "assessedOn": { "type": "string", "format": "date" }
+      },
+      "if": { "properties": { "state": { "enum": ["current_as_of", "historical"] } } },
+      "then": { "required": ["assessedOn"] }
+    },
+    "statedEnumOrNotStated": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "value"],
+          "properties": {
+            "state": { "const": "stated" },
+            "value": { "enum": ["gross", "net"] }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state"],
+          "properties": { "state": { "const": "not_stated" } }
+        }
+      ]
+    },
+    "statedStringOrNotStated": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "valueDe"],
+          "properties": {
+            "state": { "const": "stated" },
+            "valueDe": { "type": "string", "minLength": 1 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state"],
+          "properties": { "state": { "const": "not_stated" } }
+        }
+      ]
     },
     "acceptedDecision": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["decision", "actorClass", "decidedOn", "decisionRef"],
+      "required": ["reviewDecisionId"],
       "properties": {
-        "decision": { "const": "accept" },
-        "actorClass": { "const": "project_owner" },
-        "decidedOn": { "type": "string", "format": "date" },
-        "decisionRef": { "type": "string", "pattern": "^docs/.+\\.md(?:#.+)?$" }
+        "reviewDecisionId": { "type": "string", "pattern": "^review-[a-z0-9]+(?:-[a-z0-9]+)*$" }
       }
     },
     "unreconciledConflict": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "conflictId",
-        "state",
-        "memberFactIds",
-        "acceptedDecision"
-      ],
+      "required": ["conflictId", "state", "measureType", "scopeKey", "memberFactIds", "acceptedDecision"],
       "properties": {
         "conflictId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
         "state": { "const": "unreconciled" },
+        "measureType": { "const": "financing_commitment" },
+        "scopeKey": { "type": "string", "minLength": 1 },
         "memberFactIds": {
           "type": "array",
           "minItems": 2,

@@ -13,20 +13,21 @@ rationale. A modification needs a replacement German value and the exact source
 span that supports it. Approval will be copied into the projection as an
 append-only owner-decision reference; it will not overwrite this list.
 
-## Decisions
+## Methodology-ineligible under the current rules
 
-### 1. Current source status
+### Current source status
 
 - Fact ID: `c014-current-status`
-- Proposed German value: `Laufende Maßnahme`
-- Exact German span: `Laufende Maßnahme`
+- Withheld candidate: `Laufende Maßnahme`
 - Source: <https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php>
 - Publication date: not stated
-- Decision needed: publish this only as a source status, knowing the frozen
-  dossier says the field may be stale; or keep it withheld.
-- Owner decision: **pending**
+- Reason code: `methodology_ineligible`
+- Reason: the methodology forbids publication of an undated status. This is not
+  offered for approval unless a supported as-of date is supplied.
 
-### 2. Current completion field
+## Decisions
+
+### 1. Current completion field
 
 - Fact ID: `c014-expected-completion-current`
 - Proposed German value: `Fertigstellung: 2026`
@@ -37,7 +38,7 @@ append-only owner-decision reference; it will not overwrite this list.
   field, not as verified completion and not as a more precise date.
 - Owner decision: **pending**
 
-### 3. Earlier completion target
+### 2. Earlier completion target
 
 - Fact ID: `c014-completion-history-2023`
 - Proposed German value: `Die Fertigstellung der anspruchsvollen Bauaufgabe ist bis Ende 2025 vorgesehen.`
@@ -48,7 +49,7 @@ append-only owner-decision reference; it will not overwrite this list.
   retained in the value.
 - Owner decision: **pending**
 
-### 4. Three completion statements in the 2025 paper
+### 3. Three completion statements in the 2025 paper
 
 - Fact ID: `c014-completion-history-2025`
 - Candidate A: `Die Umsetzung der Baumaßnahme wird nach zeitnaher Ausschreibung (2025) in 2026 durchgeführt (Fertigstellung geplant für Sommer 2026).`
@@ -62,7 +63,7 @@ append-only owner-decision reference; it will not overwrite this list.
   would be arbitrary.
 - Owner decision: **pending**
 
-### 5. January 2026 construction-period statement
+### 4. January 2026 construction-period statement
 
 - Fact ID: `c014-completion-period-2026`
 - Proposed German value: `Der Europaplatz wird im ersten Halbjahr 2026 zu einem klimaresilienten, ansprechenden Bahnhofsvorplatz umgebaut.`
@@ -73,7 +74,7 @@ append-only owner-decision reference; it will not overwrite this list.
   `Fertigstellung`.
 - Owner decision: **pending**
 
-### 6. Construction-start change
+### 5. Construction-start change
 
 - Fact ID: `c014-construction-start-history`
 - Proposed German value: `Der Baubeginn wird erst im Januar 2026 erfolgen.`
@@ -83,7 +84,7 @@ append-only owner-decision reference; it will not overwrite this list.
 - Decision needed: publish as the source's own delay wording, preserving `erst`.
 - Owner decision: **pending**
 
-### 7. Current construction-start date
+### 6. Current construction-start date
 
 - Fact ID: `c014-construction-start-current`
 - Proposed German value: `Die Umgestaltung des südlichen Europaplatzes, dem Vorplatz des Hauptbahnhofs an der Invalidenstraße, beginnt am 2. Februar 2026.`
@@ -94,7 +95,7 @@ append-only owner-decision reference; it will not overwrite this list.
   evidence that construction actually began.
 - Owner decision: **pending**
 
-### 8. Approved total cost
+### 7. Approved total cost
 
 - Fact ID: `c014-approved-total-cost`
 - Proposed German value: `Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3 .183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.`

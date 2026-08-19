@@ -2,6 +2,25 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Codex (`/domain-modeling`, `/tdd` and repository `code-review`
+  skills; official-source web research) with read-only Standards and Spec
+  subagents: created the C-014 public-projection review checkpoint before any
+  C-010/C-019 work. Parallel review was used because the review skill requires
+  independent standards and specification lanes. Standards found blurred
+  milestone/financial semantics, a non-binding owner-decision reference,
+  incomplete possible-name detection, an ineligible undated-status option and
+  the missing delegation record. Spec independently found the domain blur and
+  decision weakness, plus escaped-value and sentinel-test gaps; its demand for
+  the eventual Next.js export was retained as a required later check but not
+  used to cross the owner-ordered pre-application review stop. Codex accepted
+  the other findings, added typed display semantics and digest-bound owner
+  decisions, strengthened privacy and generated-output checks, and kept seven
+  unresolved publication choices with the owner. Independently verified: 151
+  tests pass; 66 reachable hashes validate; the five-file pre-application
+  bundle passes the sentinel and expanded gitignored known-withheld scans; no
+  private artifact is tracked. Initial checkpoint: `27657f9`; review-repair and
+  follow-up-review hashes pending.
+
 - 2026-08-19 — Codex: completed portfolio pivot Gate 1 without claiming Phase 2
   completion. Pushed the reviewed repair, merged `phase-2-data-core` into `main`
   with the explicit two-parent commit `73b5dea`, and advanced the handoff to

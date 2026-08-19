@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "public-review-decisions/v1",
+  "decisions": [
+    {
+      "reviewDecisionId": "review-c014-identity-name-20260806",
+      "decision": "accept",
+      "actorClass": "project_owner",
+      "decidedOn": "2026-08-06",
+      "subjectKind": "fact",
+      "subjectId": "c014-project-name",
+      "subjectSha256": "sha256:4a50ad5e149f6b560a0b3cdec4fb20d32609169b9cee141f6e4080646dd34bed",
+      "basisRef": "docs/research/dossiers/C-014-europaplatz-sued.md",
+      "basisExactText": "**Owner confirmation:** The project owner confirmed identity, boundary and"
+    },
+    {
+      "reviewDecisionId": "review-c014-identity-location-20260806",
+      "decision": "accept",
+      "actorClass": "project_owner",
+      "decidedOn": "2026-08-06",
+      "subjectKind": "fact",
+      "subjectId": "c014-project-location",
+      "subjectSha256": "sha256:e067ddcd45ed5a70cff98e49a5cc392efb77b14c34d6ed84c888da7aa1156089",
+      "basisRef": "docs/research/dossiers/C-014-europaplatz-sued.md",
+      "basisExactText": "**Owner confirmation:** The project owner confirmed identity, boundary and"
+    },
+    {
+      "reviewDecisionId": "review-c014-places-page-20260806",
+      "decision": "accept",
+      "actorClass": "project_owner",
+      "decidedOn": "2026-08-06",
+      "subjectKind": "fact",
+      "subjectId": "c014-places-programme-page-figure",
+      "subjectSha256": "sha256:f1ba03906cfba82904993c34b6395dcaa88a4d2d7a4f8491bd8375ed3e9cf41c",
+      "basisRef": "docs/decision-log.md",
+      "basisExactText": "**Status:** Accepted 2026-08-06 by the project owner."
+    },
+    {
+      "reviewDecisionId": "review-c014-places-index-20260806",
+      "decision": "accept",
+      "actorClass": "project_owner",
+      "decidedOn": "2026-08-06",
+      "subjectKind": "fact",
+      "subjectId": "c014-places-programme-index-figure",
+      "subjectSha256": "sha256:f3cc0fe78cd92e1f0810c24f82e7183a58dc9c94ee01af1fef51dd24cd60a69e",
+      "basisRef": "docs/decision-log.md",
+      "basisExactText": "**Status:** Accepted 2026-08-06 by the project owner."
+    },
+    {
+      "reviewDecisionId": "review-c014-places-conflict-20260806",
+      "decision": "accept",
+      "actorClass": "project_owner",
+      "decidedOn": "2026-08-06",
+      "subjectKind": "conflict",
+      "subjectId": "c014-places-programme-figures",
+      "subjectSha256": "sha256:2a93d23809c61d463310da996eecdd54774bc64f9e236d814d605568627f0770",
+      "basisRef": "docs/decision-log.md",
+      "basisExactText": "**Status:** Accepted 2026-08-06 by the project owner."
+    }
+  ]
+}

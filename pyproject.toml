@@ -8,13 +8,13 @@ version = "0.0.0"
 requires-python = ">=3.11"
 dependencies = [
   "httpx>=0.28,<1",
+  "jsonschema>=4.23,<5",
   "pikepdf==10.11.0",
   "pydantic>=2.12,<3",
 ]
 
 [project.optional-dependencies]
 dev = [
-  "jsonschema>=4.23,<5",
   "pytest>=8,<9",
 ]
 

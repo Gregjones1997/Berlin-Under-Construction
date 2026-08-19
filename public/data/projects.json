@@ -18,13 +18,15 @@
             "publicationDate": {
               "state": "verified",
               "value": "2023-06-26"
-            }
+            },
+            "evidenceLabel": "Primary"
           },
+          "qualifiers": [],
+          "asOfDate": { "state": "not_applicable" },
+          "freshness": { "state": "not_applicable" },
+          "translationState": "german_canonical",
           "acceptedDecision": {
-            "decision": "accept",
-            "actorClass": "project_owner",
-            "decidedOn": "2026-08-06",
-            "decisionRef": "docs/research/dossiers/C-014-europaplatz-sued.md#identity-and-boundary"
+            "reviewDecisionId": "review-c014-identity-name-20260806"
           }
         },
         {
@@ -39,13 +41,15 @@
             "publicationDate": {
               "state": "verified",
               "value": "2026-01-26"
-            }
+            },
+            "evidenceLabel": "Primary"
           },
+          "qualifiers": [],
+          "asOfDate": { "state": "not_applicable" },
+          "freshness": { "state": "not_applicable" },
+          "translationState": "german_canonical",
           "acceptedDecision": {
-            "decision": "accept",
-            "actorClass": "project_owner",
-            "decidedOn": "2026-08-06",
-            "decisionRef": "docs/research/dossiers/C-014-europaplatz-sued.md#identity-and-boundary"
+            "reviewDecisionId": "review-c014-identity-location-20260806"
           }
         },
         {
@@ -57,13 +61,24 @@
             "exactTextDe": "finanziert aus dem Plätzeprogramm: 1.900.000 €",
             "sourceId": "c014-project-page",
             "sourceUrl": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
-            "publicationDate": { "state": "not_stated" }
+            "publicationDate": { "state": "not_stated" },
+            "evidenceLabel": "Primary"
           },
+          "qualifiers": [],
+          "asOfDate": { "state": "not_stated" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "measureType": "financing_commitment",
+          "scope": {
+            "normalizedKey": "c014-places-programme-contribution",
+            "wordingDe": "aus dem Plätzeprogramm"
+          },
+          "amount": { "value": 1900000, "currency": "EUR" },
+          "taxTreatment": { "state": "not_stated" },
+          "priceBasis": { "state": "not_stated" },
+          "budgetReference": { "state": "not_stated" },
           "acceptedDecision": {
-            "decision": "accept",
-            "actorClass": "project_owner",
-            "decidedOn": "2026-08-06",
-            "decisionRef": "docs/research/dossiers/C-014-europaplatz-sued.md#unreconciled--the-project-page-figure"
+            "reviewDecisionId": "review-c014-places-page-20260806"
           }
         },
         {
@@ -78,20 +93,37 @@
             "publicationDate": {
               "state": "verified",
               "value": "2026-01-26"
-            }
+            },
+            "evidenceLabel": "Primary"
           },
+          "qualifiers": [
+            {
+              "qualifierClass": "approximation",
+              "appliesTo": "amount",
+              "tokenDe": "rund"
+            }
+          ],
+          "asOfDate": { "state": "not_stated" },
+          "freshness": { "state": "unassessed" },
+          "translationState": "german_canonical",
+          "measureType": "financing_commitment",
+          "scope": {
+            "normalizedKey": "c014-places-programme-contribution",
+            "wordingDe": "zur Maßnahme"
+          },
+          "amount": { "value": 1700000, "currency": "EUR" },
+          "taxTreatment": { "state": "not_stated" },
+          "priceBasis": { "state": "not_stated" },
+          "budgetReference": { "state": "not_stated" },
           "acceptedDecision": {
-            "decision": "accept",
-            "actorClass": "project_owner",
-            "decidedOn": "2026-08-06",
-            "decisionRef": "docs/decision-log.md#adr-009--precision-and-conflict-are-two-markers-not-one"
+            "reviewDecisionId": "review-c014-places-index-20260806"
           }
         },
         {
           "factId": "c014-current-status",
           "factType": "status",
           "state": "withheld",
-          "reasonCode": "owner_review_required"
+          "reasonCode": "methodology_ineligible"
         },
         {
           "factId": "c014-expected-completion-current",
@@ -152,15 +184,14 @@
         {
           "conflictId": "c014-places-programme-figures",
           "state": "unreconciled",
+          "measureType": "financing_commitment",
+          "scopeKey": "c014-places-programme-contribution",
           "memberFactIds": [
             "c014-places-programme-page-figure",
             "c014-places-programme-index-figure"
           ],
           "acceptedDecision": {
-            "decision": "accept",
-            "actorClass": "project_owner",
-            "decidedOn": "2026-08-06",
-            "decisionRef": "docs/decision-log.md#adr-009--precision-and-conflict-are-two-markers-not-one"
+            "reviewDecisionId": "review-c014-places-conflict-20260806"
           }
         }
       ]

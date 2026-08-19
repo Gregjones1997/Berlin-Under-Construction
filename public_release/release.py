@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import hashlib
+import html
+import html.entities
 import json
 import re
 import shutil
@@ -34,6 +36,12 @@ PERSONAL_DATA_PATTERNS = (
     re.compile(r"\bgez\.\s+[A-ZÄÖÜ]", re.IGNORECASE),
     re.compile(r"\bi\.\s*V\.\s+[A-ZÄÖÜ]", re.IGNORECASE),
     re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE),
+)
+
+POSSIBLE_PERSON_NAME = re.compile(
+    r"\b(?!(?:Der|Die|Das|Ein|Eine)\b)"
+    r"[A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)?\s+"
+    r"[A-ZÄÖÜ][a-zäöüß]+(?:-[A-ZÄÖÜ][a-zäöüß]+)?\b"
 )
 
 
@@ -76,8 +84,132 @@ def _format_schema_errors(payload: dict[str, Any], schema: dict[str, Any]) -> st
     return f"{location}: {error.message}"
 
 
+def _load_name_allowlist(path: Path) -> tuple[str, ...]:
+    payload = _load_object(path)
+    if set(payload) != {"schemaVersion", "terms"}:
+        raise PublicReleaseError("name allowlist fields are incomplete or unexpected")
+    if payload["schemaVersion"] != "public-name-allowlist/v1":
+        raise PublicReleaseError("unsupported name allowlist schema")
+    terms = payload["terms"]
+    if not isinstance(terms, list) or any(
+        not isinstance(term, str) or not term.strip() for term in terms
+    ):
+        raise PublicReleaseError("name allowlist terms must be non-empty strings")
+    if len(set(terms)) != len(terms):
+        raise PublicReleaseError("name allowlist terms must be unique")
+    return tuple(terms)
+
+
+def _contains_possible_person_name(value: str, allowed_terms: tuple[str, ...]) -> bool:
+    candidate = value
+    for term in sorted(allowed_terms, key=len, reverse=True):
+        candidate = candidate.replace(term, " ")
+    return POSSIBLE_PERSON_NAME.search(candidate) is not None
+
+
+def _subject_digest(subject: dict[str, Any]) -> str:
+    public_subject = {
+        key: value for key, value in subject.items() if key != "acceptedDecision"
+    }
+    encoded = json.dumps(
+        public_subject,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return f"sha256:{hashlib.sha256(encoded).hexdigest()}"
+
+
+def _load_review_decisions(
+    path: Path, repository_root: Path
+) -> dict[str, dict[str, Any]]:
+    payload = _load_object(path)
+    if set(payload) != {"schemaVersion", "decisions"}:
+        raise PublicReleaseError("review-decision registry fields are incomplete or unexpected")
+    if payload["schemaVersion"] != "public-review-decisions/v1":
+        raise PublicReleaseError("unsupported review-decision registry schema")
+    records = payload["decisions"]
+    if not isinstance(records, list):
+        raise PublicReleaseError("review-decision registry must contain a decisions list")
+    required = {
+        "reviewDecisionId",
+        "decision",
+        "actorClass",
+        "decidedOn",
+        "subjectKind",
+        "subjectId",
+        "subjectSha256",
+        "basisRef",
+        "basisExactText",
+    }
+    indexed: dict[str, dict[str, Any]] = {}
+    root = repository_root.resolve()
+    for record in records:
+        if not isinstance(record, dict) or set(record) != required:
+            raise PublicReleaseError("review-decision record fields are incomplete or unexpected")
+        decision_id = record["reviewDecisionId"]
+        if not isinstance(decision_id, str) or not decision_id.startswith("review-"):
+            raise PublicReleaseError("review-decision ID is invalid")
+        if decision_id in indexed:
+            raise PublicReleaseError(f"duplicate review-decision ID: {decision_id}")
+        if record["decision"] != "accept" or record["actorClass"] != "project_owner":
+            raise PublicReleaseError("public registry may contain only owner-accepted decisions")
+        if record["subjectKind"] not in {"fact", "conflict"}:
+            raise PublicReleaseError("review-decision subject kind is invalid")
+        if not isinstance(record["subjectId"], str) or not record["subjectId"].strip():
+            raise PublicReleaseError("review-decision subject ID is invalid")
+        if not isinstance(record["decidedOn"], str) or not re.fullmatch(
+            r"[0-9]{4}-[0-9]{2}-[0-9]{2}", record["decidedOn"]
+        ):
+            raise PublicReleaseError("review-decision date is invalid")
+        if not isinstance(record["subjectSha256"], str) or not re.fullmatch(
+            r"sha256:[0-9a-f]{64}", record["subjectSha256"]
+        ):
+            raise PublicReleaseError("review-decision subject digest is invalid")
+        basis_ref = record["basisRef"]
+        basis_text = record["basisExactText"]
+        if not isinstance(basis_ref, str) or not basis_ref.startswith("docs/"):
+            raise PublicReleaseError("review-decision basis must be a repository document")
+        if not isinstance(basis_text, str) or not basis_text.strip():
+            raise PublicReleaseError("review-decision basis text must be non-empty")
+        basis_file = (root / basis_ref).resolve()
+        if not basis_file.is_relative_to(root) or not basis_file.is_file():
+            raise PublicReleaseError("review-decision basis document does not exist")
+        try:
+            source_text = basis_file.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            raise PublicReleaseError("cannot read review-decision basis document") from exc
+        if basis_text not in source_text:
+            raise PublicReleaseError("review-decision basis text is absent from frozen record")
+        indexed[decision_id] = record
+    return indexed
+
+
+def _require_accepted_decision(
+    subject: dict[str, Any],
+    *,
+    subject_kind: str,
+    decisions: dict[str, dict[str, Any]],
+) -> None:
+    decision_id = subject["acceptedDecision"]["reviewDecisionId"]
+    decision = decisions.get(decision_id)
+    subject_id = subject["factId"] if subject_kind == "fact" else subject["conflictId"]
+    if (
+        decision is None
+        or decision["subjectKind"] != subject_kind
+        or decision["subjectId"] != subject_id
+        or decision["subjectSha256"] != _subject_digest(subject)
+    ):
+        raise PublicReleaseError(f"no accepted owner decision matches: {subject_id}")
+
+
 def validate_projection(
-    projection_path: str | Path, schema_path: str | Path
+    projection_path: str | Path,
+    schema_path: str | Path,
+    *,
+    review_decisions_path: str | Path,
+    name_allowlist_path: str | Path,
+    repository_root: str | Path,
 ) -> dict[str, Any]:
     """Validate the sole committed input allowed to reach public project pages."""
 
@@ -85,6 +217,7 @@ def validate_projection(
     schema_file = Path(schema_path)
     payload = _load_object(projection_file)
     schema = _load_object(schema_file)
+    allowed_names = _load_name_allowlist(Path(name_allowlist_path))
 
     for location, value in _walk(payload):
         if isinstance(value, dict):
@@ -95,30 +228,16 @@ def validate_projection(
             pattern.search(value) for pattern in PERSONAL_DATA_PATTERNS
         ):
             raise PublicReleaseError(f"high-confidence personal data at {location}")
-
-    projects = payload.get("projects")
-    if isinstance(projects, list):
-        for project in projects:
-            if not isinstance(project, dict) or not isinstance(project.get("facts"), list):
-                continue
-            for fact in project["facts"]:
-                if not isinstance(fact, dict) or fact.get("state") != "published":
-                    continue
-                evidence = fact.get("evidence")
-                if not isinstance(evidence, dict):
-                    continue
-                exact_text = evidence.get("exactTextDe")
-                if not isinstance(exact_text, str) or not exact_text.strip():
-                    raise PublicReleaseError("exactTextDe must be a non-empty German span")
-                source_url = evidence.get("sourceUrl")
-                if not isinstance(source_url, str) or not _is_https(source_url):
-                    raise PublicReleaseError("every published sourceUrl must be HTTPS")
+        if isinstance(value, str) and _contains_possible_person_name(value, allowed_names):
+            raise PublicReleaseError(f"possible personal name requires review at {location}")
 
     schema_error = _format_schema_errors(payload, schema)
     if schema_error:
         raise PublicReleaseError(f"projection schema violation: {schema_error}")
 
-    root = projection_file.resolve().parents[2]
+    decisions = _load_review_decisions(
+        Path(review_decisions_path), Path(repository_root)
+    )
     for project in payload["projects"]:
         fact_ids: set[str] = set()
         published_fact_ids: set[str] = set()
@@ -136,24 +255,51 @@ def validate_projection(
             source_url = fact["evidence"]["sourceUrl"]
             if not _is_https(source_url):
                 raise PublicReleaseError(f"sourceUrl must be HTTPS: {fact_id}")
-            decision_ref = fact["acceptedDecision"]["decisionRef"]
-            referenced_file = root / decision_ref.partition("#")[0]
-            if not referenced_file.is_file():
-                raise PublicReleaseError(
-                    f"accepted decision reference does not exist: {fact_id}"
+            for qualifier in fact["qualifiers"]:
+                if qualifier["tokenDe"] not in exact_text:
+                    raise PublicReleaseError(
+                        f"qualifier token must occur in exact evidence: {fact_id}"
+                    )
+            if fact["factType"] == "financial_measure":
+                if fact["scope"]["wordingDe"] not in exact_text:
+                    raise PublicReleaseError(
+                        f"financial scope wording must occur in exact evidence: {fact_id}"
+                    )
+            try:
+                _require_accepted_decision(
+                    fact, subject_kind="fact", decisions=decisions
                 )
+            except (KeyError, TypeError) as exc:
+                raise PublicReleaseError(
+                    f"no accepted owner decision matches: {fact_id}"
+                ) from exc
 
         for conflict in project["conflicts"]:
             if not set(conflict["memberFactIds"]).issubset(published_fact_ids):
                 raise PublicReleaseError(
                     f"conflict members must be published facts: {conflict['conflictId']}"
                 )
-            decision_ref = conflict["acceptedDecision"]["decisionRef"]
-            referenced_file = root / decision_ref.partition("#")[0]
-            if not referenced_file.is_file():
+            member_facts = [
+                fact
+                for fact in project["facts"]
+                if fact["factId"] in conflict["memberFactIds"]
+            ]
+            if any(
+                fact.get("measureType") != conflict["measureType"]
+                or fact.get("scope", {}).get("normalizedKey") != conflict["scopeKey"]
+                for fact in member_facts
+            ):
                 raise PublicReleaseError(
-                    f"accepted conflict decision reference does not exist: {conflict['conflictId']}"
+                    f"conflict key does not match member facts: {conflict['conflictId']}"
                 )
+            try:
+                _require_accepted_decision(
+                    conflict, subject_kind="conflict", decisions=decisions
+                )
+            except (KeyError, TypeError) as exc:
+                raise PublicReleaseError(
+                    f"no accepted owner decision matches: {conflict['conflictId']}"
+                ) from exc
     return payload
 
 
@@ -245,13 +391,39 @@ def build_public_bundle(
     schema_path: str | Path,
     boundary_path: str | Path,
     boundary_provenance_path: str | Path,
+    review_decisions_path: str | Path,
+    name_allowlist_path: str | Path,
     output_dir: str | Path,
 ) -> tuple[Path, ...]:
     """Validate and stage only the public projection and local map assets."""
 
-    projection = validate_projection(projection_path, schema_path)
+    projection_file = Path(projection_path)
+    repository_root = projection_file.resolve().parents[2]
+    projection = validate_projection(
+        projection_path,
+        schema_path,
+        review_decisions_path=review_decisions_path,
+        name_allowlist_path=name_allowlist_path,
+        repository_root=repository_root,
+    )
     validate_boundary_assets(boundary_path, boundary_provenance_path)
     output = Path(output_dir)
+    expected_relative_files = {
+        Path("data/projects.json"),
+        Path("data/map/berlin-boundary.geojson"),
+        Path("data/map/berlin-boundary.provenance.json"),
+        Path("static/projection.js"),
+        Path("index.html"),
+    }
+    if output.exists():
+        existing = {
+            path.relative_to(output) for path in output.rglob("*") if path.is_file()
+        }
+        unexpected = existing - expected_relative_files
+        if unexpected:
+            raise PublicReleaseError(
+                "generated output contains unexpected pre-existing files"
+            )
     data_output = output / "data"
     map_output = data_output / "map"
     map_output.mkdir(parents=True, exist_ok=True)
@@ -283,18 +455,40 @@ def build_public_bundle(
     return tuple(target for _, target in targets) + (inline_target, index_target)
 
 
-def _known_withheld_values(manifest_path: Path | None) -> tuple[bytes, ...]:
+def _known_withheld_values(manifest_path: Path | None) -> tuple[str, ...]:
     if manifest_path is None:
         return ()
     payload = _load_object(manifest_path)
     if set(payload) != {"values"} or not isinstance(payload["values"], list):
         raise PublicReleaseError("known-withheld manifest must contain only a values list")
-    values: list[bytes] = []
+    values: list[str] = []
     for value in payload["values"]:
         if not isinstance(value, str) or not value.strip():
             raise PublicReleaseError("known-withheld values must be non-empty strings")
-        values.append(value.encode("utf-8"))
+        values.append(value)
     return tuple(values)
+
+
+def _needle_variants(value: str) -> tuple[bytes, ...]:
+    json_escaped = json.dumps(value, ensure_ascii=True)[1:-1]
+    named_entities = "".join(
+        f"&{html.entities.codepoint2name[ord(character)]};"
+        if ord(character) in html.entities.codepoint2name
+        else character
+        for character in value
+    )
+    variants = {
+        value,
+        json_escaped,
+        re.sub(
+            r"\\u([0-9a-f]{4})",
+            lambda match: "\\u" + match.group(1).upper(),
+            json_escaped,
+        ),
+        value.encode("ascii", "xmlcharrefreplace").decode("ascii"),
+        named_entities,
+    }
+    return tuple(variant.encode("utf-8") for variant in variants if variant)
 
 
 def scan_static_output(
@@ -308,17 +502,23 @@ def scan_static_output(
     output = Path(output_dir)
     if not output.is_dir():
         raise PublicReleaseError("generated output directory does not exist")
-    needles = tuple(
-        value.encode("utf-8") for value in sentinels if isinstance(value, str) and value
+    values = tuple(
+        value for value in sentinels if isinstance(value, str) and value
     ) + _known_withheld_values(
         Path(known_withheld_manifest) if known_withheld_manifest is not None else None
+    )
+    needles = tuple(
+        variant for value in values for variant in _needle_variants(value)
     )
     files = tuple(sorted(path for path in output.rglob("*") if path.is_file()))
     if not files:
         raise PublicReleaseError("generated output contains no files")
     for path in files:
         content = path.read_bytes()
-        if any(needle in content for needle in needles):
+        decoded_html = html.unescape(content.decode("utf-8", errors="ignore"))
+        if any(needle in content for needle in needles) or any(
+            value in decoded_html for value in values
+        ):
             relative = path.relative_to(output)
             raise PublicReleaseError(
                 f"withheld value found in generated output: {relative.as_posix()}"

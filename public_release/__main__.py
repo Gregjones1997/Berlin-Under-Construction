@@ -35,6 +35,10 @@ def main() -> int:
         boundary_provenance_path=(
             ROOT / "public" / "data" / "map" / "berlin-boundary.provenance.json"
         ),
+        review_decisions_path=(
+            ROOT / "public" / "data" / "accepted-review-decisions.json"
+        ),
+        name_allowlist_path=ROOT / "public" / "data" / "name-allowlist.json",
         output_dir=args.output,
     )
     scanned = scan_static_output(

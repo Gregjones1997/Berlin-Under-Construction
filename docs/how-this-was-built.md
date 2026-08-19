@@ -15,6 +15,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   tests pass; Astro builds one stable project page; the five-file
   pre-application bundle and one-file real export pass the regenerated
   known-withheld and sentinel scans; 72 reachable build-log hashes validate.
+  Work commit: `58b5a35`.
 
 - 2026-08-19 — Project owner and Codex (`/tdd` skill): completed portfolio
   pivot Gate 2 and stopped before Gate 3. The owner made all eight C-014

@@ -2,6 +2,15 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-19 — Codex: prepared Gate 5's evidence-backed AI-method prose and
+  figures without building a page or advancing Gate 3. Reproduced the completed
+  run's 3 uncached input, 17,682 cached input and 1,053 output tokens, USD
+  0.00161784 cost and 10,017 ms latency from the private append-only record;
+  documented the unestablished cache-primer, the 13 August incomplete response
+  with no stored run or claim, the prospective adapter correction, 164 passing
+  tests and the absence of any accuracy, precision or recall result. No total
+  provider-call count is published. Work commit: `[pending]`.
+
 - 2026-08-19 — Codex (`/research` skill; official-source web research) with one
   read-only legal-research subagent: prepared Gate 6 source-use, BKG attribution,
   privacy and correction-route evidence without advancing Gate 3. Delegation

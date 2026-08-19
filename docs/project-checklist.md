@@ -39,6 +39,8 @@ is recorded in
 It does not advance Gate 3. Public deployment remains blocked; use an
 access-restricted preview until its attribution, host/privacy, provider identity
 and correction-route requirements are evidenced.
+Gate 5's evidence-backed prose and figures are recorded separately in
+[`docs/ai-method.md`](ai-method.md); no method page or layout has started.
 
 ## Phase 0 — Minimal foundation
 

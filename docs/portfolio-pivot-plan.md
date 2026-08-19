@@ -353,6 +353,13 @@ map, and a non-map list provides the same navigation.
 
 ### Gate 5 — Expose the real AI story
 
+**Content prepared 2026-08-19:** [`docs/ai-method.md`](ai-method.md) records the
+stored run figures, unestablished cache origin, 13 August failed attempt,
+prospective adapter correction, current test count and absence of any accuracy,
+precision or recall result. It publishes no total provider-call count. Gate 5
+is not complete until the later owner-approved page presents and verifies this
+content.
+
 The method section reports the existing evidence:
 
 - The retained store contains one completed `gpt-5.6-luna` extraction run over

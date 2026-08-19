@@ -23,7 +23,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   for a later revocation to lose ordering; Codex accepted both, enforced strict
   per-claim time growth, stored the ordering key in UTC and added adversarial
   coverage. The final Spec pass approved the corrected gate. No finding was
-  rejected.
+  rejected. `ded9cf9`
 
 - 2026-08-19 — Project owner, external reviewer Claude and Codex
   (`writing-for-agents` skill): accepted the portfolio pivot, integrated all four

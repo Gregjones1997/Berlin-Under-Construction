@@ -553,5 +553,5 @@ blocking evidence.
   license-checked boundary instead of replacing the selected map stack; retained
   the `run-` prefix for run identifiers instead of labelling them as SHA-256.
   No reviewer finding was rejected.
-- **ADR-021 commit:**
+- **ADR-021 commit:** `3e96766` — `docs(process): accept portfolio pivot`.
 - **Gate 1 owner:** Main agent (Codex).

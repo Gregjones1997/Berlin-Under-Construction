@@ -7,7 +7,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   blocking review findings with two implementation clarifications, activated
   the temporary sprint rules and moved the handoff to Gate 1. Verified: 117
   tests pass, 62 build-log hashes validate and the accepted plan preserves the
-  private-artifact, publication and no-provider-call boundaries.
+  private-artifact, publication and no-provider-call boundaries. `3e96766`
 
 ## 2026-08-13 — Preserve accounting from failed extraction calls
 

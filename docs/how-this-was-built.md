@@ -2,6 +2,16 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-20 — Project owner and Codex: invoked the portfolio plan's
+  public-site-review fallback. Friday now ships only as a password-protected
+  access-restricted preview; public launch moves to before 1 September after
+  provider identity and the Article 13 privacy notice are resolved. The owner
+  also replaced the interactive map with a static BKG boundary SVG and moved
+  contextual correction routes into Gate 4. The owner required C-019 to remain
+  explicitly unplaced because its location is withheld and approved the
+  monitored invitation channel only as a labelled preview arrangement; a
+  permanent address remains a public-launch blocker. Work commit: `[pending]`.
+
 - 2026-08-19 — Codex: prepared Gate 5's evidence-backed AI-method prose and
   figures without building a page or advancing Gate 3. Reproduced the completed
   run's 3 uncached input, 17,682 cached input and 1,053 output tokens, USD

@@ -2,8 +2,9 @@
 
 **Status:** Accepted 19 August 2026 by the project owner after external review  
 **Sprint window:** 19–21 August 2026  
-**Target:** A credible portfolio release by Friday, 21 August; continued polish
-through the existing 1 September public-release date  
+**Target:** A credible password-protected portfolio preview by Friday,
+21 August; public launch before 1 September after provider identity and the
+Article 13 privacy notice are resolved
 **Authority:** This document changes no accepted rule until the project owner
 accepts it and the resulting decision is recorded as ADR-021.
 
@@ -47,10 +48,11 @@ portfolio product. Continuing the current sequence would deepen that imbalance.
 
 ## Sprint outcome
 
-By the end of Friday, a reviewer should be able to open one public URL and:
+By the end of Friday, an invited reviewer should be able to open one
+password-protected preview URL and:
 
 1. Understand the product in 30 seconds.
-2. See three Berlin projects on a 2D map.
+2. See three Berlin projects through a static Berlin boundary orientation.
 3. Open C-014 as the flagship dossier.
 4. Identify the source-stated expected completion information and how it
    changed over time.
@@ -63,13 +65,14 @@ By the end of Friday, a reviewer should be able to open one public URL and:
 8. Reach the repository, see green CI and understand the architecture and
    limitations from a concise README.
 
-The Friday release is a portfolio vertical slice. The 1 September release
-remains the date for additional polish, measured extraction breadth and any
-public-readiness work that does not fit safely in this sprint.
+The Friday result is an **access-restricted portfolio preview, not a public
+release**. Public launch moves to before 1 September, after provider identity
+and the Article 13 privacy notice are resolved. No README, page or deployment
+copy may call Friday's result public.
 
 ## Audience tests
 
-The release must pass all three tests.
+The restricted preview must pass all three tests.
 
 ### Recruiter test
 
@@ -79,7 +82,7 @@ In one minute, a non-specialist can answer:
 - What can I click?
 - What did the project owner build?
 - Why is AI useful here?
-- Is the product live?
+- Is the restricted preview live, and what still blocks public launch?
 
 **Complete when:** the live URL, screenshot, one-sentence thesis and concise
 technology summary appear before roadmap or process detail in the README.
@@ -139,10 +142,11 @@ The pivot changes sequence, not trust.
    Phase 2 complete. The incomplete data-core and evaluation work stays visible.
 9. **No provider call is implied.** Every live model call requires separate,
    explicit owner authorization with a call count and cost ceiling.
-10. **Public-release duties remain binding.** Every published project and named
-    organization has a correction route. Public deployment uses no analytics or
-    cookies during the sprint and proceeds only after the required legal,
-    privacy and source-use checks are recorded against authoritative guidance.
+10. **Public-release duties remain binding.** Every displayed project and named
+    organization has a correction route. Friday's deployment is
+    password-protected and access-restricted. Public launch proceeds only after
+    provider identity and an accurate Article 13 privacy notice are resolved.
+    No product analytics, cookies or third-party runtime requests are added.
 
 If a proposed shortcut conflicts with one of these constraints, reduce the
 visible feature rather than weaken the constraint.
@@ -163,9 +167,12 @@ visible feature rather than weaken the constraint.
   historical provider-call count.`
 - A statically deployable Astro application with no client islands in Gate 3.
 - A public-safe, committed data projection for the three pilots.
-- A MapLibre 2D Berlin orientation view using a locally bundled,
-  license-checked boundary and three local markers, with links to stable dossier
-  URLs and no third-party runtime tile request.
+- A static inline SVG Berlin orientation view using the locally bundled,
+  license-checked BKG boundary. C-014 and C-010 have dossier-linked markers.
+  C-019 has no marker or inferred coordinates: it remains visibly listed beside
+  the map with its withheld-location reason. The presentation ships no
+  JavaScript, tile service or external runtime request and carries the visible
+  linked `(Daten verändert)` attribution directly with the SVG.
 - A polished C-014 dossier showing current source-stated completion information,
   change history, qualifiers and expandable German evidence.
 - Thin C-010 and C-019 dossier pages with project identity, current evidence
@@ -175,8 +182,8 @@ visible feature rather than weaken the constraint.
 - A correction route on every project page and wherever a named organization is
   presented.
 - A compact AI-method section reporting only measured behavior.
-- A production deployment, no analytics or cookies, recorded public-site checks
-  and basic mobile/keyboard verification.
+- A password-protected access-restricted deployment, no product analytics or
+  cookies, recorded preview checks and basic mobile/keyboard verification.
 
 ### Ship if the must-have path is green
 
@@ -195,7 +202,11 @@ visible feature rather than weaken the constraint.
 - Supabase, Postgres and PostGIS.
 - Production API routes or server-side database access.
 - Address search.
-- Authentication, user accounts or correction workflow implementation.
+- Application-owned authentication or user accounts. Deployment-level password
+  protection is required for the Friday preview.
+- An interactive map, tile service or client-side map runtime.
+- Public launch, pending provider identity and the Article 13 privacy notice;
+  target remains before 1 September 2026.
 - Complete project, organization, source, financial, conflict and review-history
   schemas.
 - Broad document classification, entity resolution or contradiction detection.
@@ -215,7 +226,7 @@ flowchart LR
     A["Private source artifacts and SQLite store"] -->|"local review only"| B["Public-safe projection"]
     C["Frozen pilot dossiers"] -->|"curated evidence fields"| B
     B -->|"build-time read of committed JSON"| D["Static Astro build"]
-    D --> E["Vercel public site"]
+    D --> E["Vercel access-restricted preview"]
     A -. "never uploaded" .-> E
 ```
 
@@ -331,8 +342,7 @@ display-state styling remain owner decisions.
 4. Render qualifiers as part of the value, not decoration alone.
 5. Add evidence expansion with exact German span, date and source link.
 6. Render conflict, withheld and translation-unverified states.
-7. Add the shared correction route for the project and named organizations.
-8. Verify narrow mobile width and keyboard access.
+7. Verify narrow mobile width and keyboard access.
 
 **Complete when:** a first-time reader can explain what changed on C-014 and
 open the supporting evidence in under one minute on desktop and mobile.
@@ -341,15 +351,26 @@ open the supporting evidence in under one minute on desktop and mobile.
 
 **Actions**
 
-1. Add a MapLibre view using the approved local Berlin boundary and one local
-   marker per pilot, without a third-party runtime tile request.
-2. Link every marker to its dossier route.
-3. Add thin C-010 and C-019 pages through the shared dossier interface.
-4. Keep unresolved states visible rather than filling empty sections.
-5. Verify map fallback content remains usable by keyboard and without the map.
+1. Add a static inline SVG using the approved local Berlin boundary. Place only
+   C-014 and C-010. Keep C-019 reachable as a dossier-linked, explicitly
+   unplaced entry labelled `location withheld` with its reason code; do not
+   infer coordinates. State that two of three pilots are placed. Ship no client
+   JavaScript or tile request.
+2. Put the visible linked BKG attribution, including `(Daten verändert)`,
+   directly with the boundary and correct the provenance record to match.
+3. Move `/corrections` into this gate. Generate contextual static routes for
+   projects and for any named organization presentation; distinguish ordinary
+   evidence corrections from formal rights of reply and data-protection
+   requests.
+4. Add thin C-010 and C-019 pages through the shared dossier interface; delete
+   the hardcoded C-014 route filter rather than extending it.
+5. Keep unresolved states visible rather than filling empty sections.
+6. Provide a non-map project list with the same three dossier links.
 
 **Complete when:** all three projects are reachable from the landing page and
-map, and a non-map list provides the same navigation.
+static boundary presentation, a non-map list provides the same navigation, the
+correction links resolve with their originating context, the BKG attribution is
+visible, and the export contains no scripts or JavaScript files.
 
 ### Gate 5 — Expose the real AI story
 
@@ -393,30 +414,34 @@ makes no quality claim the empty golden set cannot support.
 
 **Pre-deployment evidence prepared 2026-08-19:**
 [`docs/research/findings/2026-08-19-public-site-legal-privacy-source-use.md`](research/findings/2026-08-19-public-site-legal-privacy-source-use.md)
-records the primary-source review. Public deployment remains blocked pending
-visible BKG changed-data attribution, production-host/privacy disclosure,
-approved provider/editorial identity and working correction routes. The named
-fallback is an access-restricted preview.
+records the primary-source review. On 2026-08-20 the owner invoked the plan's
+`Public-site review is incomplete` fallback: Friday ships as a
+password-protected access-restricted preview and is not called the public
+release. Public launch moves to before 1 September after provider identity and
+the Article 13 privacy notice are resolved.
 
 **Actions**
 
-1. Deploy the static application.
+1. Deploy the static application behind deployment-level password protection.
 2. Before making it public, verify the applicable legal, privacy and source-use
    requirements against authoritative guidance and record the evidence. Keep
    the deployment as a restricted preview if this check is incomplete.
-3. Verify every route, correction route and source link in production.
+3. Verify every route, correction route and source link in the restricted
+   preview.
 4. Check mobile layout, keyboard navigation, missing-data states and a failed
    map-load fallback.
-5. Rewrite the README opening around the live product and measured behavior.
-6. Add the production URL and representative screenshot.
+5. Rewrite the README opening around the restricted preview and measured
+   behavior without calling Friday's result public.
+6. Add the restricted-preview URL and representative screenshot.
 7. Run final local and public checks.
 8. Record known limitations and the next action for the 1 September release.
 
-**Complete when:** the public URL works from a fresh browser, CI is green, the
-README leads with the product, the required public-site checks and correction
-routes have evidence, and the repository contains no claim that the deferred
-systems are complete. A restricted preview is useful sprint evidence but does
-not satisfy the public-deployment criterion.
+**Friday preview complete when:** an invited reviewer can authenticate from a
+fresh browser, CI is green, the README leads with the product, preview route and
+correction checks have evidence, and no repository or page wording calls the
+result public. This invoked fallback does not satisfy the public-release
+criterion. Public launch remains separately blocked until provider identity and
+the Article 13 notice are resolved.
 
 ## Timebox and cut order
 
@@ -428,28 +453,17 @@ not satisfy the public-deployment criterion.
 - Integrate current work into `main`.
 - Start the public projection and application shell only after Gate 1 is green.
 
-### Thursday — complete the vertical path
+### Thursday and Friday — locked priority order
 
-- Freeze the C-014 projection.
-- Complete the flagship dossier and evidence interaction.
-- Deploy an unpolished but functional production skeleton.
-- Add the map and thin project pages after the flagship path works.
+Cut from the bottom, never the top:
 
-### Friday — package and verify
-
-- Complete all three project routes.
-- Add the measured AI-method section.
-- Polish the landing page and README.
-- Verify production, mobile, keyboard and fallback behavior.
-- Record a walkthrough only if the live product and public repository are green.
-
-If time expires, cut in this order:
-
-1. Walkthrough video.
-2. Social image and share previews.
-3. Additional C-010/C-019 detail.
-4. Map visual refinement.
-5. Architecture illustration.
+1. C-014 designed and deployed.
+2. `/corrections` route.
+3. Landing page and static boundary SVG with two placed markers plus C-019's
+   linked withheld-location entry.
+4. C-010 and C-019 thin pages.
+5. AI-method page built from `docs/ai-method.md`.
+6. Restricted-preview deployment and README rewrite.
 
 Do not cut C-014 evidence interaction, visible uncertainty states, green CI,
 the public-safe data boundary or truthful limitations.
@@ -535,12 +549,12 @@ result plainly.
 | CI remains red | The interpreter fix does not produce a green public run | Stop frontend work, reproduce the CI environment and repair the actual failure first. |
 | Phase 2 merge exposes a serious defect | Integration review finds privacy, secret or false-completion risk | Keep the branch unmerged, fix the defect there and preserve `main`; do not hide it with a README change. |
 | Public data cannot be approved in time | A value lacks an eligible evidence/review state | Render an explicit withheld or unresolved state; never substitute model output. |
-| Map integration consumes the timebox | No functional map after the allotted implementation block | Ship an accessible project list and simple Berlin orientation panel; add the interactive map next. |
+| Map integration consumes the timebox | **Invoked 2026-08-20:** an interactive map would consume the remaining sprint | Ship an accessible project list and static inline BKG boundary SVG with dossier-linked markers; defer the interactive map. |
 | C-010 terminology blocks English display | The German milestone type remains contested | Show the German term, source span and `Milestone type unresolved`; omit the asserted English type. |
 | A source becomes unavailable | Production link check fails | Keep the dated short evidence span and mark the original link unavailable; do not rehost the artifact. |
 | Website polish threatens deployment | Core pages work but visual refinements remain | Deploy the functional version and defer refinement. |
 | New backend work appears necessary | A UI field has no current schema | Reduce or withhold the field unless the missing work blocks the flagship evidence path. |
-| Public-site review is incomplete | Legal, privacy or source-use evidence is missing | Keep an access-restricted preview, record the blocker and do not call it the public release. |
+| Public-site review is incomplete | **Invoked 2026-08-20:** provider identity and the Article 13 privacy notice will not be resolved by Friday | Ship only a password-protected access-restricted preview, record the blocker and do not call it the public release. Public launch moves to before 1 September. |
 
 ## Review instructions
 

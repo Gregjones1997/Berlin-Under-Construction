@@ -4,6 +4,11 @@
 **Scope:** Gate 6 pre-deployment evidence for the static public portfolio  
 **Status:** **Public deployment is blocked; use an access-restricted preview.**
 
+**Fallback invoked 2026-08-20:** The project owner selected a
+password-protected access-restricted preview for Friday 21 August and declined
+to publish an Impressum this week. Public launch moves to before 1 September,
+after provider identity and the Article 13 privacy notice are resolved.
+
 This is a primary-source compliance record, not a substitute for legal advice.
 It records what the present product can rely on, what the public site must show,
 and which owner/hosting facts remain unresolved. No unresolved requirement may
@@ -15,9 +20,10 @@ be worked around by weakening the public wording.
 | --- | --- | --- | --- |
 | Short `berlin.de` evidence spans | Statutory quotation right, not an open licence | Quote only short, exact German spans for a genuine evidentiary purpose; identify the source and link its HTTPS URL | Conditionally satisfiable by the current evidence model; span-by-span purpose and attribution remain mandatory |
 | Short `parlament-berlin.de` evidence spans | Statutory quotation right; a narrower official-work basis exists for identified Drucksachen and Plenarprotokolle | Keep exact wording, identify the source and link its HTTPS URL; do not assume every committee paper is a Drucksache | Conditionally satisfiable; C-014's committee paper uses the quotation basis, not an unverified official-work classification |
-| BKG Berlin boundary | `dl-de/by-2-0` plus BKG's product-specific source-note rules | Put the prescribed, linked attribution visibly with the map and mark the transformed data as changed | **Not yet satisfied:** no map presentation exists and the recorded attribution omits the change notice |
+| BKG Berlin boundary | `dl-de/by-2-0` plus BKG's product-specific source-note rules | Put the prescribed, linked attribution visibly with the map and mark the transformed data as changed | Implemented in the static boundary presentation and provenance; production display remains to be verified |
+| Two placed marker positions | OpenStreetMap data under ODbL 1.0 | Record the one-time source results locally and attribute OpenStreetMap visibly; make no runtime request | Implemented for C-014 and C-010 only; C-019 has no coordinate lookup or marker |
 | Cookies and analytics | TDDDG § 25, GDPR Article 13 and Berlin DPA guidance | Ship no product analytics, tracking, cookie/local-storage access or external embeds; separately disclose host/CDN request processing | Product-side position is implementable; **host facts and privacy notice remain unresolved** |
-| Provider identity and corrections | MStV §§ 18–20; DDG § 5 where applicable; project publication policy | Publish the legally required provider/editorial identity and address, a monitored contact, and working contextual correction routes | **Not yet satisfied:** operator details are not approved and `/corrections` is not implemented |
+| Provider identity and corrections | MStV §§ 18–20; DDG § 5 where applicable; project publication policy | Publish the legally required provider/editorial identity and address, a monitored contact, and working contextual correction routes | Contextual preview routes are implemented; provider identity and a permanent monitored address remain unresolved public-launch blockers |
 
 ## 1. Short German evidence spans
 
@@ -106,9 +112,16 @@ repeat it, but metadata or a legal page alone does not meet the product-specific
 "deutlich sichtbar" instruction. This is a compliance placement rule, not a
 typography or layout decision.
 
-The public build is blocked until Gate 4 supplies that visible linked line. The
-current provenance string also omits `(Daten verändert)` and must be corrected
-when the map implementation consumes it.
+The static Gate 4 presentation supplies the linked line and the provenance now
+includes `(Daten verändert)`. The restricted deployment still requires a
+production check that the attribution remains visible beside the map.
+
+The two placed marker positions were retrieved once from OpenStreetMap
+Nominatim and committed with their query URLs, object identifiers, retrieval
+date and ODbL attribution in
+[`public/data/map/pilot-marker-positions.json`](../../../public/data/map/pilot-marker-positions.json).
+No runtime query is made. C-019 was not queried and has no coordinates because
+its location fact remains withheld pending source verification.
 
 ## 3. No analytics, no cookies, and hosting privacy
 
@@ -191,26 +204,32 @@ prove:
 - the provider identity, postal address, electronic contact and any required
   editorially responsible person are approved and published.
 
-The current projection contains `/corrections?project=...` paths, but no
-`/corrections` route exists. The owner/operator identity, publishable address,
-monitored channel and § 18(2) responsible-person decision are also unresolved.
-These are public-deployment blockers. The repository's ban on naming source
-natural persons does not authorize hiding a legally required operator identity.
-If the identity/address cannot be published or applicability cannot be cleared,
-the named fallback is an **access-restricted preview**, not a public release.
+The projection now uses stable contextual project routes. During the
+access-restricted preview, each route explicitly directs invitees to the
+monitored channel through which they received access and distinguishes evidence
+corrections, formal rights of reply and data-protection requests. The page calls
+this a preview arrangement, not a permanent public intake channel.
+
+The owner/operator identity, publishable address, permanent monitored address
+and § 18(2) responsible-person decision remain unresolved public-launch
+blockers. The repository's ban on naming source natural persons does not
+authorize hiding a legally required operator identity. If these cannot be
+published or applicability cannot be cleared, the deployment remains an
+**access-restricted preview**, not a public release.
 
 ## Gate 6 pre-public checklist derived from this evidence
 
 - [ ] Keep all source spans short, exact, purpose-bound, visibly quoted and
   linked to their exact HTTPS source.
-- [ ] Add the visible, linked BKG attribution with `(Daten verändert)` directly
+- [x] Add the visible, linked BKG attribution with `(Daten verändert)` directly
   to the map presentation.
 - [ ] Verify the production host/account, optional analytics state, cookies,
   storage, network requests, operational logs, retention, subprocessors and
   transfer safeguards.
 - [ ] Publish an accurate privacy notice and provider/editorial identity.
-- [ ] Implement and production-test contextual correction routes and the
-  monitored intake channel.
+- [ ] Production-test the implemented contextual correction routes and preview
+  intake instructions; approve a permanent monitored address before public
+  launch.
 - [ ] Keep the deployment access-restricted until every item above is evidenced.
 
 ## Research method and source quality

@@ -2,8 +2,13 @@
 
 > An independent, source-backed map that helps people understand what is being built across Berlin, who is responsible, what was promised, what changed, and what the public can reliably know.
 
-**Project status:** Portfolio pivot sprint — Gate 3 raw-render checkpoint awaiting
-owner review; Phase 2 remains incomplete
+**Project status:** Portfolio pivot sprint — Gate 3 design handoff pending;
+Friday ships as an access-restricted preview, not a public release; Phase 2
+remains incomplete
+
+The public launch remains targeted for before 1 September 2026, after provider
+identity and the Article 13 privacy notice are resolved. No Friday artifact or
+deployment should be described as public.
 
 **Geographic focus:** Berlin, Germany
 

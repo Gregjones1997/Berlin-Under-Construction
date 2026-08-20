@@ -10,7 +10,9 @@ This is the operational source of truth for what is complete, what is in progres
 
 ## Delivery targets
 
-- **First public release target:** 1 September 2026.
+- **Friday 21 August target:** Password-protected access-restricted preview.
+- **First public release target:** Before 1 September 2026, after provider
+  identity and the Article 13 privacy notice are resolved.
 - **First release:** Three evidence-backed projects, bounded extraction with disclosed metering and limitations, evidence-backed dossiers, and a deployable 2D map. Scored evaluation follows post-v0.
 - **After first release:** Expand toward ten projects, then ship the technical-illustration 3D experience as a second public milestone.
 
@@ -18,18 +20,19 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Portfolio pivot sprint — Gate 3 raw-render checkpoint; Phase
-2 remains incomplete
+**Current phase:** Portfolio pivot sprint — Gate 3 design handoff; Phase 2
+remains incomplete
 
 **Current status:** IN PROGRESS — REVIEW REQUIRED
 
-**Next action:** Hold Gate 3 at the raw Astro render checkpoint on
-`phase-4-public-slice`. The owner must review the unstyled C-014 output and make
-the page-design, typography, layout, completion-history and display-state
-decisions before any styling begins. Do not add a client island; if one appears
-necessary, stop for a separate owner decision. CI now runs the sentinel and
-regenerated known-withheld scans over the real `web/dist/` export. Phase 2
-remains incomplete.
+**Next action:** Hold C-014 styling until the owner's separate HTML/CSS design
+handoff arrives, then reimplement it as Astro components rather than copying the
+artifact. The pre-design baseline now contains contextual project correction
+routes, all three dossier routes, the static local Berlin boundary presentation
+and the AI-method route; preserve their green export-level regressions during
+design integration. Do not add a client island; if one appears necessary, stop
+for a separate owner decision. CI must keep scanning the real `web/dist/`
+export. Phase 2 remains incomplete.
 Make no provider call. The glossary-review handoff and 25 August C-010 recheck
 remain required outside this sprint unless a displayed value depends on them.
 
@@ -39,8 +42,19 @@ is recorded in
 It does not advance Gate 3. Public deployment remains blocked; use an
 access-restricted preview until its attribution, host/privacy, provider identity
 and correction-route requirements are evidenced.
-Gate 5's evidence-backed prose and figures are recorded separately in
-[`docs/ai-method.md`](ai-method.md); no method page or layout has started.
+Gate 5's evidence-backed prose and figures are recorded in
+[`docs/ai-method.md`](ai-method.md) and rendered without styling at `/method`.
+Page design remains deferred.
+
+**Invoked fallback, 2026-08-20:** Friday's deployment is an access-restricted,
+password-protected preview. It is not the public release. Public launch moves
+to before 1 September after provider identity and the Article 13 privacy notice
+are resolved. The interactive map is cut in favor of a zero-JavaScript inline
+SVG using the bundled BKG boundary. C-014 and C-010 are placed; C-019 remains a
+linked, explicitly unplaced entry because its location is withheld pending
+source verification. The correction route moves into Gate 4. Preview invitees
+use the monitored channel through which they received access; a permanent
+monitored address is an additional pre-public-launch blocker and is not invented.
 
 ## Phase 0 — Minimal foundation
 
@@ -182,14 +196,19 @@ before a human-authored golden set and verified glossary exist.
 - [ ] Display organizations only by documented role.
 - [ ] Keep delay and cost variance attached to the project unless explicit causal evidence exists.
 - [ ] Display evidence spans and links to original sources.
-- [ ] Add a clear correction link for every published project and named organization.
-- [ ] Create the accessible 2D Berlin map.
-- [ ] Connect project locations to dossiers.
+- [x] Add a working contextual correction route for every published project
+  and named organization.
+- [x] Create the accessible static Berlin boundary SVG with linked dossier
+  markers and visible BKG changed-data attribution.
+- [x] Connect project locations to dossiers, keeping C-019 explicitly linked
+  but unplaced while its location fact is withheld.
 - [ ] Add basic address or project search.
 - [ ] Add stable URLs and share previews.
 - [ ] Verify mobile and keyboard behavior.
 - [ ] Verify public-site legal, privacy and source-use requirements using authoritative guidance.
-- [ ] Deploy the first public release.
+- [ ] Deploy the password-protected access-restricted preview.
+- [ ] Resolve provider identity and the Article 13 privacy notice, then deploy
+  the first public release before 1 September 2026.
 - [ ] Record a short demo walkthrough.
 - [ ] Demonstrate that accepted, verified claims render publicly while withheld
   claims remain non-public.

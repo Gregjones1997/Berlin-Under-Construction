@@ -1049,3 +1049,76 @@ new owner decision rather than adding it implicitly.
 A required, owner-approved user interaction cannot be delivered as static HTML.
 The decision point is whether to add a narrowly bounded island, not whether to
 weaken the withheld-value or generated-output scans.
+
+---
+
+## ADR-023 — Ship Friday as an access-restricted preview
+
+**Date:** 20 August 2026
+
+**Status:** Accepted 2026-08-20 by the project owner
+
+**Scope:** Friday deployment, public-launch boundary, map scope and correction
+route sequencing
+
+### Context
+
+The Gate 6 legal review established that a public launch needs approved provider
+identity and an accurate Article 13 privacy notice. The project owner will not
+publish an Impressum during the Friday sprint. Treating the Friday artifact as
+public would therefore contradict the recorded legal fallback and create a
+late deployment blocker.
+
+The remaining time also cannot safely absorb an interactive map. The locally
+bundled BKG boundary already supports a static orientation view without client
+JavaScript, external tiles, cookies or API keys. Separately, every dossier
+already links to a correction path that does not exist, so correction intake is
+a current broken-link and deployment issue rather than final packaging.
+
+### Decision
+
+Invoke the `Public-site review is incomplete` fallback in the portfolio plan.
+Friday 21 August ships only as a deployment-level password-protected,
+access-restricted preview. It is not the public release, and no README, page or
+deployment wording may describe it as public. Public launch moves to before
+1 September 2026, after provider identity and the Article 13 privacy notice are
+resolved.
+
+Replace the interactive MapLibre sprint deliverable with a static inline SVG
+drawn from the bundled BKG boundary. C-014 and C-010 receive source-recorded,
+dossier-linked markers. C-019 receives no coordinates and no marker because its
+location fact is withheld pending source verification; it remains visibly
+listed and linked beside the map with the reason code. The caption states that
+two of three pilots are placed. The map has no client JavaScript or runtime
+request and carries a visible linked BKG source line including `(Daten
+verändert)`. Correct the stored provenance attribution to the same wording.
+
+Move the contextual correction route into Gate 4. It remains static and
+JavaScript-free, preserves the originating project or organization context and
+distinguishes ordinary evidence corrections from formal rights of reply and
+data-protection requests. Application-owned authentication, a form backend and
+an interactive correction workflow remain out of scope. During the restricted
+preview, invitees use the monitored channel through which they received access;
+the page labels this as a provisional preview arrangement. A permanent
+monitored address is required before public launch and must not be invented.
+
+### Consequences
+
+- Friday can demonstrate the complete evidence path without implying public
+  legal readiness.
+- Public launch remains blocked until provider identity and the Article 13
+  notice are resolved; password protection does not satisfy that later gate.
+- The preview must be tested from a fresh browser for effective access control
+  before its URL is shared.
+- The static boundary preserves the zero-JavaScript and no-third-party-request
+  positions while giving invited reviewers geographic orientation.
+- Broken correction links are repaired before preview deployment. The invite
+  channel provides monitored preview intake, while a permanent monitored
+  address remains a pre-public-launch blocker alongside provider identity and
+  the Article 13 notice.
+
+### Reconsider when
+
+Provider identity and the Article 13 notice are approved for public launch, or
+an interactive map can be added without weakening the display, privacy,
+licensing or no-client-JavaScript constraints.

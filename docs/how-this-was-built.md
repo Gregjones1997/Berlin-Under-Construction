@@ -13,7 +13,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   zero client JavaScript across every page. No agent delegation was used.
   Verified: 169 tests pass; Astro builds ten pages; both the five-file public
   bundle and ten-file export pass regenerated known-withheld and sentinel scans.
-  Work commit: `[pending]`.
+  Work commit: `7420b8a`.
 
 - 2026-08-20 — Project owner and Codex: invoked the portfolio plan's
   public-site-review fallback. Friday now ships only as a password-protected
@@ -23,7 +23,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   contextual correction routes into Gate 4. The owner required C-019 to remain
   explicitly unplaced because its location is withheld and approved the
   monitored invitation channel only as a labelled preview arrangement; a
-  permanent address remains a public-launch blocker. Work commit: `[pending]`.
+  permanent address remains a public-launch blocker. Work commit: `dca76e6`.
 
 - 2026-08-19 — Codex: prepared Gate 5's evidence-backed AI-method prose and
   figures without building a page or advancing Gate 3. Reproduced the completed

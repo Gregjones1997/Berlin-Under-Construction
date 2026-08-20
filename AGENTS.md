@@ -23,12 +23,36 @@ and next action, `docs/decision-log.md` for choices already made.
 | --- | --- |
 | Project owner | Product, legal and naming decisions. Golden-set acceptance. Final acceptance. |
 | Main agent (Codex) | The repository. All file writes and all commits. |
-| Reviewer (Claude) | Review, planning, adversarial critique. Proposes diffs in chat; does not write to the tree. |
+| Reviewer (Claude) | Review, planning, adversarial critique. Proposes diffs and design artifacts in chat or as published Artifacts; does not write to the tree. |
 | Subagent | A bounded task delegated by the main agent. Output is a proposal until verified. |
 
 **Single writer.** Only the main agent commits. A reviewer that wants a change
 proposes it; the main agent or the project owner applies it. Do not have two
 agents editing the same tree.
+
+**Design artifacts.** The reviewer may produce visual design proposals (Claude
+Design canvases, mockups, HTML/CSS drafts). These are proposals with the same
+status as a proposed diff: the main agent translates them into repository
+components and owns the result. A design artifact is never copied into the tree
+verbatim — it is reimplemented as Astro components so the display contract is
+enforced in code, not inherited from a mockup.
+
+Every design proposal is bound by the same constraints as the implementation:
+
+- **No external runtime requests.** No Google Fonts, no CDN stylesheets, no
+  remote images, no map tile services. Self-hosted or system font stacks only.
+  This is a legal position, not an aesthetic one: the no-cookie-banner basis in
+  docs/research/findings/2026-08-19-public-site-legal-privacy-source-use.md
+  depends on the site making no third-party request.
+- **No client JavaScript.** Evidence expansion uses <details>/<summary>. A design
+  requiring an island must be redesigned or escalated as an owner decision.
+- **The display contract governs.** Conflict members render only inside the
+  conflict presentation. Withheld facts show a reason, never a value. No
+  serialized object is rendered.
+- **German is canonical.** Source values appear verbatim in German. English is
+  used for structural labels and glosses only, never to translate a value.
+- **BKG attribution** appears as a visible linked line with the boundary
+  presentation.
 
 ## Non-negotiable rules
 

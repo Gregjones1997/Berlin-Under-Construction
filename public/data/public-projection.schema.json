@@ -21,7 +21,7 @@
       "properties": {
         "projectId": { "type": "string", "pattern": "^C-[0-9]{3}$" },
         "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-        "correctionPath": { "type": "string", "pattern": "^/corrections\\?project=C-[0-9]{3}$" },
+        "correctionPath": { "type": "string", "pattern": "^/corrections/projects/C-[0-9]{3}/$" },
         "facts": {
           "type": "array",
           "minItems": 1,

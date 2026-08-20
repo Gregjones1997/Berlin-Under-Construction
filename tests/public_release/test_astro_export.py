@@ -87,6 +87,109 @@ def test_c014_static_route_renders_every_accepted_fact_and_withheld_state(
     assert "3 .183.000" not in c014_export
 
 
+def test_every_project_has_a_stable_static_dossier_route(c014_export: str) -> None:
+    expected_routes = {
+        "europaplatz-sued",
+        "heinrich-hertz-gymnasium-ostbahnhof",
+        "power-to-heat-heizkraftwerk-mitte",
+    }
+
+    for slug in expected_routes:
+        page = DIST / "projects" / slug / "index.html"
+        assert page.is_file(), slug
+
+
+def test_project_correction_routes_preserve_context_and_request_type(
+    c014_export: str,
+) -> None:
+    projects = {
+        "C-014": "Europaplatz Süd — Umgestaltung",
+        "C-010": "Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof",
+        "C-019": "Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte",
+    }
+
+    for project_id, project_name in projects.items():
+        route = f"/corrections/projects/{project_id}/"
+        assert f'href="{route}"' in (
+            DIST
+            / "projects"
+            / {
+                "C-014": "europaplatz-sued",
+                "C-010": "heinrich-hertz-gymnasium-ostbahnhof",
+                "C-019": "power-to-heat-heizkraftwerk-mitte",
+            }[project_id]
+            / "index.html"
+        ).read_text(encoding="utf-8")
+
+        correction_page = (
+            DIST / "corrections" / "projects" / project_id / "index.html"
+        )
+        assert correction_page.is_file()
+        correction_export = correction_page.read_text(encoding="utf-8")
+        assert project_id in correction_export
+        assert project_name in correction_export
+        assert "preview arrangement" in correction_export.lower()
+        assert "channel through which you received access" in correction_export
+        assert "Evidence correction" in correction_export
+        assert "Formal right of reply" in correction_export
+        assert "Data-protection request" in correction_export
+
+    c019_export = (
+        DIST / "projects" / "power-to-heat-heizkraftwerk-mitte" / "index.html"
+    ).read_text(encoding="utf-8")
+    organization_route = "/corrections/organizations/50hertz/"
+    assert f'href="{organization_route}"' in c019_export
+    organization_page = (
+        DIST / "corrections" / "organizations" / "50hertz" / "index.html"
+    )
+    assert organization_page.is_file()
+    organization_export = organization_page.read_text(encoding="utf-8")
+    assert "Organization context: 50Hertz" in organization_export
+    assert "preview arrangement" in organization_export.lower()
+    assert "Evidence correction" in organization_export
+    assert "Formal right of reply" in organization_export
+    assert "Data-protection request" in organization_export
+
+
+def test_static_boundary_places_two_projects_and_keeps_c019_visible_unplaced(
+    c014_export: str,
+) -> None:
+    landing_page = DIST / "index.html"
+    assert landing_page.is_file()
+    landing_export = landing_page.read_text(encoding="utf-8")
+
+    assert "<svg" in landing_export
+    assert landing_export.count('data-map-marker="placed"') == 2
+    assert 'data-project-id="C-014"' in landing_export
+    assert 'data-project-id="C-010"' in landing_export
+    assert 'data-project-id="C-019"' not in landing_export
+    assert "Two of three pilot projects are placed" in landing_export
+    assert "C-019" in landing_export
+    assert "location withheld pending source verification" in landing_export
+    assert "source_string_requires_owner_verification" in landing_export
+    assert "/projects/power-to-heat-heizkraftwerk-mitte/" in landing_export
+    assert "(Daten verändert)" in landing_export
+    assert "https://www.bkg.bund.de" in landing_export
+    assert "https://www.govdata.de/dl-de/by-2-0" in landing_export
+
+
+def test_ai_method_route_reports_only_established_measurements(
+    c014_export: str,
+) -> None:
+    method_page = DIST / "method" / "index.html"
+    assert method_page.is_file()
+    method_export = method_page.read_text(encoding="utf-8")
+
+    for measurement in ("3", "17,682", "1,053", "USD 0.00161784", "10,017 ms"):
+        assert measurement in method_export
+    assert "primed the cache is unestablished" in method_export
+    assert "no stored extraction run and no stored claim" in method_export
+    assert "provider_response_incomplete" in method_export
+    assert "adapter was subsequently corrected" in method_export
+    assert "No accuracy, precision or recall result exists" in method_export
+    assert "total provider-call count" not in method_export
+
+
 def test_conflict_members_exist_only_inside_the_conflict_presentation(
     c014_export: str,
 ) -> None:
@@ -106,8 +209,24 @@ def test_raw_export_glosses_verified_as_source_fidelity(c014_export: str) -> Non
     assert "does not mean the value is current" in c014_export
 
 
+def test_export_contains_named_fields_not_serialized_objects(
+    c014_export: str,
+) -> None:
+    exported_html = "\n".join(
+        page.read_text(encoding="utf-8") for page in DIST.rglob("*.html")
+    )
+    assert "<pre" not in exported_html.lower()
+    assert '&quot;factId&quot;' not in exported_html
+    assert '&quot;memberFactIds&quot;' not in exported_html
+    assert "Evidence" in c014_export
+    assert "Milestone type:" in c014_export
+
+
 def test_astro_export_ships_no_javascript(c014_export: str) -> None:
-    assert "<script" not in c014_export.lower()
+    exported_html = "\n".join(
+        page.read_text(encoding="utf-8") for page in DIST.rglob("*.html")
+    )
+    assert "<script" not in exported_html.lower()
     assert not tuple(DIST.rglob("*.js"))
     assert not tuple(DIST.rglob("*.json"))
     assert not (DIST / "data").exists()

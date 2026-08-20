@@ -2,6 +2,19 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-08-20 — Codex (`/tdd` skill; official Berlin and OpenStreetMap source
+  checks): completed the pre-design static-export baseline. The raw Astro build
+  now generates all three dossiers, project and named-organization correction
+  contexts, the measured AI-method route and a local inline BKG boundary. C-014
+  and C-010 use locally recorded ODbL marker positions; C-019 has no coordinate
+  lookup or marker and remains visibly linked with its withheld reason. Export
+  regressions enforce conflict-only members, valueless withheld states, named
+  fields instead of serialized objects, the provisional correction wording and
+  zero client JavaScript across every page. No agent delegation was used.
+  Verified: 169 tests pass; Astro builds ten pages; both the five-file public
+  bundle and ten-file export pass regenerated known-withheld and sentinel scans.
+  Work commit: `[pending]`.
+
 - 2026-08-20 — Project owner and Codex: invoked the portfolio plan's
   public-site-review fallback. Friday now ships only as a password-protected
   access-restricted preview; public launch moves to before 1 September after

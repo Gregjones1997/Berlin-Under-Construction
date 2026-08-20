@@ -1,0 +1,61 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AI method — recorded evidence and limits</title>
+  </head>
+  <body>
+    <main>
+      <h1>AI method: recorded run, failed attempt and limits</h1>
+      <p>
+        The retained private store contains one completed extraction run for one
+        C-014 source document. It is not evidence of an absolute historical
+        provider-request figure, so none is published.
+      </p>
+
+      <h2>Completed run</h2>
+      <dl>
+        <dt>Uncached input tokens</dt><dd>3</dd>
+        <dt>Cached input tokens</dt><dd>17,682</dd>
+        <dt>Output tokens</dt><dd>1,053</dd>
+        <dt>Recorded cost</dt><dd>USD 0.00161784</dd>
+        <dt>Recorded latency</dt><dd>10,017 ms</dd>
+      </dl>
+      <p>
+        The cache read shows that a prefix was reused. The request which primed
+        the cache is unestablished; no origin or historical request total is
+        inferred.
+      </p>
+
+      <h2>Failed attempt on 13 August 2026</h2>
+      <p>
+        A later authorized request returned an incomplete response. The adapter
+        rejected it as <code>provider_response_incomplete</code>. It produced no
+        stored extraction run and no stored claim.
+      </p>
+      <p>
+        The adapter was subsequently corrected so a future authorized call can
+        preserve content-free usage, cost, latency, incomplete reason and
+        rejection details while still failing closed. That correction does not
+        reconstruct the missing accounting or establish the cause of the failed
+        attempt.
+      </p>
+
+      <h2>What has and has not been demonstrated</h2>
+      <p>
+        The current recorded repository suite passes 169 tests covering schemas,
+        storage, evidence and publication gates, adapter behavior, static export
+        and leak scans. Engineering tests do not measure model extraction quality.
+      </p>
+      <p>
+        No accuracy, precision or recall result exists. The scored golden set is
+        empty, so there is no basis for an extraction-quality percentage or a
+        comparative model claim.
+      </p>
+    </main>
+  </body>
+</html>

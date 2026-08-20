@@ -4,7 +4,7 @@
     {
       "projectId": "C-014",
       "slug": "europaplatz-sued",
-      "correctionPath": "/corrections?project=C-014",
+      "correctionPath": "/corrections/projects/C-014/",
       "facts": [
         {
           "factId": "c014-project-name",
@@ -394,7 +394,7 @@
     {
       "projectId": "C-010",
       "slug": "heinrich-hertz-gymnasium-ostbahnhof",
-      "correctionPath": "/corrections?project=C-010",
+      "correctionPath": "/corrections/projects/C-010/",
       "facts": [
         {
           "factId": "c010-project-name",
@@ -498,7 +498,7 @@
     {
       "projectId": "C-019",
       "slug": "power-to-heat-heizkraftwerk-mitte",
-      "correctionPath": "/corrections?project=C-019",
+      "correctionPath": "/corrections/projects/C-019/",
       "facts": [
         {
           "factId": "c019-project-name",

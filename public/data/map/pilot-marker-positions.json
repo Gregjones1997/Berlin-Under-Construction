@@ -1,0 +1,25 @@
+{
+  "retrievedOn": "2026-08-20",
+  "source": "OpenStreetMap Nominatim",
+  "license": {
+    "id": "ODbL-1.0",
+    "url": "https://www.openstreetmap.org/copyright",
+    "attribution": "© OpenStreetMap contributors"
+  },
+  "positions": [
+    {
+      "projectId": "C-014",
+      "latitude": 52.5259827,
+      "longitude": 13.3689832,
+      "sourceUrl": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&q=Europaplatz%20S%C3%BCd%2C%20Berlin",
+      "sourceObject": "OpenStreetMap way 1495873511"
+    },
+    {
+      "projectId": "C-010",
+      "latitude": 52.5119131,
+      "longitude": 13.4356627,
+      "sourceUrl": "https://nominatim.openstreetmap.org/search?format=jsonv2&limit=3&q=Lange%20Stra%C3%9Fe%2060%2C%2010243%20Berlin",
+      "sourceObject": "OpenStreetMap node 12532218274"
+    }
+  ]
+}

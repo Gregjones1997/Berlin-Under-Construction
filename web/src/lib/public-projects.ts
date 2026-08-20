@@ -41,6 +41,7 @@ type ProjectRecord = {
 export type PublicProjectPage = {
   projectId: string;
   slug: string;
+  projectNameDe: string;
   correctionPath: string;
   publishedFacts: PublicFact[];
   withheldFacts: PublicFact[];
@@ -87,9 +88,17 @@ function pageRecord(project: ProjectRecord): PublicProjectPage {
     }),
   }));
 
+  const projectName = project.facts.find(
+    (fact) => fact.factType === "project_name" && fact.state === "published",
+  );
+  if (!projectName?.valueDe) {
+    fail(`project ${project.projectId} has no published German name`);
+  }
+
   return {
     projectId: project.projectId,
     slug: project.slug,
+    projectNameDe: projectName.valueDe,
     correctionPath: project.correctionPath,
     publishedFacts: project.facts.filter(
       (fact) => fact.state === "published" && !conflictMemberIds.has(fact.factId),

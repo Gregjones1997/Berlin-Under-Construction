@@ -9,22 +9,85 @@ interface Props {
 }
 
 const { fact } = Astro.props;
+
+const qualifiers = Array.isArray(fact.qualifiers) ? fact.qualifiers : [];
+const warnings = Array.isArray(fact.displayWarnings) ? fact.displayWarnings : [];
+const amount = fact.amount as
+  | { value?: number; currency?: string }
+  | undefined;
+const dateValue = fact.dateValue as
+  | { precision?: string; canonicalDe?: string }
+  | undefined;
+const publicationDate = fact.evidence?.publicationDate as
+  | { state?: string; value?: string }
+  | undefined;
+const asOfDate = fact.asOfDate as
+  | { state?: string; value?: string }
+  | undefined;
+const freshness = fact.freshness as { state?: string } | undefined;
+const organizationCorrection =
+  fact.factId === "c019-financing-commitment"
+    ? {
+        name: "50Hertz",
+        path: "/corrections/organizations/50hertz/",
+      }
+    : undefined;
 ---
 
 <article data-fact-id={fact.factId}>
   <h3>{fact.factId}</h3>
   <p>Fact type: {fact.factType}</p>
   <p lang="de">{fact.valueDe}</p>
+  {fact.milestoneType && <p>Milestone type: {String(fact.milestoneType)}</p>}
+  {fact.milestoneTermDe && (
+    <p>Milestone term: <span lang="de">{String(fact.milestoneTermDe)}</span></p>
+  )}
+  {dateValue?.canonicalDe && (
+    <p>Date: <span lang="de">{dateValue.canonicalDe}</span> ({dateValue.precision})</p>
+  )}
+  {fact.measureType && <p>Financial measure: {String(fact.measureType)}</p>}
+  {amount?.value !== undefined && (
+    <p>Amount: {amount.value} {amount.currency}</p>
+  )}
+  {fact.taxTreatment && (
+    <p>Tax treatment: {String((fact.taxTreatment as { state?: string }).state)}</p>
+  )}
+  {fact.priceBasis && (
+    <p>Price basis: {String((fact.priceBasis as { state?: string }).state)}</p>
+  )}
+  {fact.budgetReference && (
+    <p>Budget reference: {String((fact.budgetReference as { state?: string }).state)}</p>
+  )}
+  {qualifiers.map((qualifier) => (
+    <p>
+      Qualifier: <span lang="de">{String((qualifier as { tokenDe?: string }).tokenDe)}</span>
+    </p>
+  ))}
+  {asOfDate?.state && (
+    <p>As of: {asOfDate.value ?? asOfDate.state}</p>
+  )}
+  {freshness?.state && <p>Freshness: {freshness.state}</p>}
+  {warnings.map((warning) => <p>{String(warning)}</p>)}
+  {organizationCorrection && (
+    <p>
+      <a href={organizationCorrection.path}>
+        Correction concerning {organizationCorrection.name}
+      </a>
+    </p>
+  )}
   {fact.evidence && (
-    <>
+    <details>
+      <summary>Evidence</summary>
       <p>
         Evidence label: {String(fact.evidence.evidenceLabel)} — {
           EVIDENCE_LABEL_GLOSSARY[String(fact.evidence.evidenceLabel)]
         }
       </p>
       <blockquote lang="de">{fact.evidence.exactTextDe}</blockquote>
-      <p><a href={fact.evidence.sourceUrl}>Source</a></p>
-    </>
+      {publicationDate?.state && (
+        <p>Source publication date: {publicationDate.value ?? publicationDate.state}</p>
+      )}
+      <p><a href={fact.evidence.sourceUrl}>Original source</a></p>
+    </details>
   )}
-  <pre>{JSON.stringify(fact, null, 2)}</pre>
 </article>

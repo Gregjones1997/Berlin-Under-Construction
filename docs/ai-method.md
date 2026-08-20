@@ -53,7 +53,7 @@ attempt into a completed run.
 
 ## What has and has not been demonstrated
 
-As of 19 August 2026, the current repository suite passes **164 tests**. Those
+As of 20 August 2026, the current repository suite passes **169 tests**. Those
 tests cover schemas, storage, evidence and publication gates, adapter behavior,
 the public projection, static export, and leak scans. A passing engineering test
 suite does not evaluate whether model extractions are correct.
@@ -76,5 +76,5 @@ publication decision; it does not create a model-level accuracy measurement.
   [`pipeline/openai_provider.py`](../pipeline/openai_provider.py) and exercised
   by `tests/pipeline/test_openai_provider.py` and
   `tests/pipeline/test_extract_once.py`.
-- The 164-test figure is the full local `pytest` result on 2026-08-19 before
-  this prose-only change; it is rechecked at the session close.
+- The 169-test figure is the full local `pytest` result on 2026-08-20 after the
+  non-design Gate 4 export routes and publication-boundary regressions landed.

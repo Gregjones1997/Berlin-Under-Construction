@@ -7,7 +7,6 @@ import {
 
 export function getStaticPaths() {
   return loadPublicProjectPages()
-    .filter((project) => project.projectId === "C-014")
     .map((project) => ({ params: { slug: project.slug }, props: { project } }));
 }
 
@@ -39,7 +38,11 @@ const { project } = Astro.props;
         {project.conflicts.map((conflict) => (
           <section data-conflict-id={conflict.conflictId}>
             <h3>{conflict.conflictId}</h3>
-            <pre>{JSON.stringify({ ...conflict, facts: undefined }, null, 2)}</pre>
+            <p>State: {String(conflict.state)}</p>
+            {conflict.measureType && (
+              <p>Financial measure: {String(conflict.measureType)}</p>
+            )}
+            {conflict.scopeKey && <p>Scope: {String(conflict.scopeKey)}</p>}
             {conflict.facts.map((fact) => <RawFact fact={fact} />)}
           </section>
         ))}

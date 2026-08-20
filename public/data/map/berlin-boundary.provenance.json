@@ -13,7 +13,7 @@
     "id": "dl-de/by-2-0",
     "name": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
     "url": "https://www.govdata.de/dl-de/by-2-0",
-    "attribution": "© BKG (2026) dl-de/by-2-0, Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf"
+    "attribution": "© BKG (2026) dl-de/by-2-0 (Daten verändert), Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf"
   },
   "geometrySha256": "sha256:e159b1a8332c82d259b481f06149f1b404b767d2208418342085b68522072278",
   "runtimeRequests": []

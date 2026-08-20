@@ -1,0 +1,159 @@
+---
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { loadPublicProjectPages } from "../lib/public-projects";
+
+type Position = {
+  projectId: string;
+  latitude: number;
+  longitude: number;
+};
+
+type Boundary = {
+  features: Array<{
+    geometry: {
+      type: "MultiPolygon";
+      coordinates: number[][][][];
+    };
+  }>;
+};
+
+const dataRoot = resolve(process.cwd(), "../public/data/map");
+const boundary = JSON.parse(
+  readFileSync(resolve(dataRoot, "berlin-boundary.geojson"), "utf8"),
+) as Boundary;
+const markerData = JSON.parse(
+  readFileSync(resolve(dataRoot, "pilot-marker-positions.json"), "utf8"),
+) as { positions: Position[] };
+const projects = loadPublicProjectPages();
+const projectById = new Map(projects.map((project) => [project.projectId, project]));
+
+if (markerData.positions.some((position) => position.projectId === "C-019")) {
+  throw new Error("C-019 must remain unplaced while its location is withheld");
+}
+
+const width = 800;
+const height = 600;
+const padding = 30;
+const rings = boundary.features.flatMap((feature) =>
+  feature.geometry.coordinates.flatMap((polygon) => polygon),
+);
+const points = rings.flat();
+const longitudes = points.map(([longitude]) => longitude);
+const latitudes = points.map(([, latitude]) => latitude);
+const minLongitude = Math.min(...longitudes);
+const maxLongitude = Math.max(...longitudes);
+const minLatitude = Math.min(...latitudes);
+const maxLatitude = Math.max(...latitudes);
+
+function mapPoint(longitude: number, latitude: number) {
+  return {
+    x:
+      padding +
+      ((longitude - minLongitude) / (maxLongitude - minLongitude)) *
+        (width - 2 * padding),
+    y:
+      padding +
+      ((maxLatitude - latitude) / (maxLatitude - minLatitude)) *
+        (height - 2 * padding),
+  };
+}
+
+const boundaryPaths = rings.map((ring) =>
+  ring
+    .map(([longitude, latitude], index) => {
+      const { x, y } = mapPoint(longitude, latitude);
+      return `${index === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`;
+    })
+    .join(" ") + " Z",
+);
+
+const placedProjects = markerData.positions.map((position) => {
+  const project = projectById.get(position.projectId);
+  if (!project) {
+    throw new Error(`Unknown marker project ${position.projectId}`);
+  }
+  const publishedLocation = project.publishedFacts.some(
+    (fact) => fact.factType === "project_location",
+  );
+  if (!publishedLocation) {
+    throw new Error(`Marker project ${position.projectId} has no published location`);
+  }
+  return { ...project, ...mapPoint(position.longitude, position.latitude) };
+});
+
+const c019 = projectById.get("C-019");
+const c019Location = c019?.withheldFacts.find(
+  (fact) => fact.factId === "c019-project-location",
+);
+if (!c019 || c019Location?.reasonCode !== "source_string_requires_owner_verification") {
+  throw new Error("C-019 withheld-location state is missing");
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Berlin, Under Construction — restricted preview</title>
+  </head>
+  <body>
+    <main>
+      <h1>Berlin, Under Construction</h1>
+      <p>Access-restricted preview. This is not the public release.</p>
+      <figure aria-labelledby="map-heading map-caption">
+        <h2 id="map-heading">Pilot projects within Berlin</h2>
+        <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby="map-title map-description">
+          <title id="map-title">Berlin boundary with two placed pilot projects</title>
+          <desc id="map-description">C-014 and C-010 are placed. C-019 is listed separately because its location is withheld.</desc>
+          {boundaryPaths.map((path) => <path d={path} fill="none" stroke="currentColor" />)}
+          {placedProjects.map((project) => (
+            <a
+              href={`/projects/${project.slug}/`}
+              data-map-marker="placed"
+              data-project-id={project.projectId}
+              aria-label={`${project.projectId}: ${project.projectNameDe}`}
+            >
+              <circle cx={project.x} cy={project.y} r="8" />
+              <text x={project.x + 12} y={project.y + 4}>{project.projectId}</text>
+            </a>
+          ))}
+        </svg>
+        <figcaption id="map-caption">
+          <p>
+            Two of three pilot projects are placed. C-019 remains reachable below,
+            with its location withheld pending source verification.
+          </p>
+          <p>
+            Boundary: © <a href="https://www.bkg.bund.de">BKG</a> 2026
+            <a href="https://www.govdata.de/dl-de/by-2-0">dl-de/by-2-0</a>
+            (Daten verändert), Datenquellen:
+            <a href="https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf">BKG source record</a>.
+          </p>
+          <p>
+            Marker positions: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL 1.0.
+          </p>
+        </figcaption>
+      </figure>
+
+      <section aria-labelledby="unplaced-heading">
+        <h2 id="unplaced-heading">Project with location withheld</h2>
+        <p>
+          <a href={`/projects/${c019.slug}/`}>C-019 — <span lang="de">{c019.projectNameDe}</span></a><br />
+          Location withheld pending source verification.<br />
+          Reason code: {c019Location.reasonCode}
+        </p>
+      </section>
+
+      <nav aria-label="All pilot projects">
+        <h2>All pilot projects</h2>
+        <ul>
+          {projects.map((project) => (
+            <li><a href={`/projects/${project.slug}/`}>{project.projectId} — <span lang="de">{project.projectNameDe}</span></a></li>
+          ))}
+        </ul>
+      </nav>
+    </main>
+  </body>
+</html>

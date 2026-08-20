@@ -1,0 +1,48 @@
+---
+import {
+  loadPublicProjectPages,
+  type PublicProjectPage,
+} from "../../../lib/public-projects";
+
+export function getStaticPaths() {
+  return loadPublicProjectPages().map((project) => ({
+    params: { projectId: project.projectId },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: PublicProjectPage;
+}
+
+const { project } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Correction for {project.projectId}</title>
+  </head>
+  <body>
+    <main>
+      <h1>Correction or formal request</h1>
+      <p>Project context: {project.projectId} — <span lang="de">{project.projectNameDe}</span></p>
+      <p>
+        This is a preview arrangement, not the permanent public correction
+        channel. During the access-restricted preview, use the monitored channel
+        through which you received access. Include the project ID above so the
+        originating context is preserved.
+      </p>
+      <h2>Evidence correction</h2>
+      <p>Identify the displayed statement, the proposed correction and its source.</p>
+      <h2>Formal right of reply</h2>
+      <p>State that the request is a formal right-of-reply request and identify the passage concerned.</p>
+      <h2>Data-protection request</h2>
+      <p>State that the request concerns data protection and describe the affected information or right.</p>
+      <p>A permanent monitored address is required before public release.</p>
+      <p><a href={`/projects/${project.slug}/`}>Return to project</a></p>
+    </main>
+  </body>
+</html>

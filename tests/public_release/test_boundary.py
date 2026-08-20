@@ -21,6 +21,7 @@ def test_bundled_berlin_boundary_has_verified_local_provenance() -> None:
     assert result["sourceCrs"] == "EPSG:25832"
     assert result["bundledCrs"] == "EPSG:4326"
     assert result["license"]["id"] == "dl-de/by-2-0"
+    assert "(Daten verändert)" in result["license"]["attribution"]
     assert result["runtimeRequests"] == []
 
 

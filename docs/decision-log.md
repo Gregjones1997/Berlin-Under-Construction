@@ -1058,6 +1058,13 @@ weaken the withheld-value or generated-output scans.
 
 **Status:** Accepted 2026-08-20 by the project owner
 
+**Amended 2026-08-25** — the owner removed password setup and deployment from
+this repository lane because the Astro deployment is being handled separately.
+No deployment or access-control outcome is inferred from that reassignment, and
+no URL may be described as public or verified until the separate live checks are
+recorded. See the 2026-08-25 Gate 6 local-package entry in
+`docs/how-this-was-built.md`.
+
 **Scope:** Friday deployment, public-launch boundary, map scope and correction
 route sequencing
 

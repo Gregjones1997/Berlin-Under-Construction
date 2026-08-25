@@ -40,6 +40,21 @@ class _FactLocationParser(HTMLParser):
             self.conflict_depth -= 1
 
 
+class _LinkParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.hrefs: list[str] = []
+
+    def handle_starttag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        if tag != "a":
+            return
+        href = dict(attrs).get("href")
+        if href:
+            self.hrefs.append(href)
+
+
 @pytest.fixture(scope="module")
 def c014_export() -> str:
     result = subprocess.run(
@@ -188,6 +203,58 @@ def test_ai_method_route_reports_only_established_measurements(
     assert "adapter was subsequently corrected" in method_export
     assert "No accuracy, precision or recall result exists" in method_export
     assert "total provider-call count" not in method_export
+
+
+def test_legal_draft_routes_keep_owner_and_live_facts_as_placeholders(
+    c014_export: str,
+) -> None:
+    landing_export = (DIST / "index.html").read_text(encoding="utf-8")
+    assert 'href="/impressum/"' in landing_export
+    assert 'href="/privacy/"' in landing_export
+
+    impressum = (DIST / "impressum" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    for placeholder in (
+        "provider identity",
+        "complete postal address",
+        "permanent monitored contact",
+        "decide whether § 18(2) MStV applies",
+    ):
+        assert f"OWNER DECISION REQUIRED: {placeholder}" in impressum
+    assert "not approved for a public launch" in impressum
+
+    privacy = (DIST / "privacy" / "index.html").read_text(encoding="utf-8")
+    for placeholder in (
+        "provider/controller identity",
+        "complete postal address",
+        "permanent monitored contact for privacy requests",
+    ):
+        assert f"OWNER DECISION REQUIRED: {placeholder}" in privacy
+    for live_fact in (
+        "request metadata actually processed",
+        "cookies or browser storage",
+        "applicable recipients and subprocessors",
+        "non-EEA transfers",
+        "retention period or evidenced deletion criterion",
+    ):
+        assert live_fact in privacy
+    assert "It must not be presented as a complete public notice" in privacy
+
+
+def test_every_internal_link_resolves_in_the_static_export(
+    c014_export: str,
+) -> None:
+    for page in DIST.rglob("*.html"):
+        parser = _LinkParser()
+        parser.feed(page.read_text(encoding="utf-8"))
+        for href in parser.hrefs:
+            if not href.startswith("/"):
+                continue
+            target = DIST / href.lstrip("/")
+            if href.endswith("/"):
+                target = target / "index.html"
+            assert target.is_file(), f"{page.relative_to(DIST)} -> {href}"
 
 
 def test_conflict_members_exist_only_inside_the_conflict_presentation(

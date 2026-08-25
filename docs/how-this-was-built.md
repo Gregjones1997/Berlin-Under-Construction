@@ -2,6 +2,102 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- **Course correction** — 2026-08-25 — Project owner and Codex (Vercel CLI and
+  Vercel deployments guidance): the attempted password-protected preview lane
+  stopped before project creation when the authenticated Hobby account was
+  confirmed not to support Password Protection without a paid plan/add-on. The
+  owner removed password setup and deployment from this lane and kept the Astro
+  deployment in a separate session. No Vercel project or deployment was
+  created, and the repository records no preview URL or live-host claim.
+
+## 2026-08-25 — Gate 6 local legal, freshness and verification package
+
+**Status:** Complete locally; live-deployment evidence remains open
+
+### Goal
+
+Package the unstyled static baseline for the owner's separate deployment lane
+without touching design, styling, typography, the boundary presentation or the
+map lab, and without inventing legal or host facts.
+
+### Participants and scopes
+
+- Project owner: removed password/deployment work from this lane and retained
+  the separate Astro deployment/design sessions; owns the four legal identity
+  decisions and final acceptance.
+- Main agent (Codex; repository `research` skill, Vercel deployments guidance
+  and gstack `browse` QA): implemented and verified the repository package.
+- Read-only privacy-evidence subagent: inspected the existing Gate 6 finding,
+  decisions, tests and static architecture and proposed an observation matrix;
+  it made no edits, deployment or external/provider call.
+
+### Multi-agent architecture
+
+The research skill required one bounded background lane so the main agent could
+continue repository inspection. The lane returned a useful three-layer split
+between application, deployment/access and host/CDN behavior plus an eight-area
+observation matrix. The main agent accepted that structure, rewrote it as an
+explicitly incomplete production record, and independently checked every
+repository claim. No live-host conclusion was accepted because no deployment
+URL or account evidence existed.
+
+### Work performed
+
+- Added unstyled static Impressum and Article 13 draft routes. Provider identity,
+  postal address, permanent monitored contact and the § 18(2) MStV decision are
+  owner placeholders; request logging, retention, subprocessors and transfers
+  remain live-evidence placeholders.
+- Rechecked C-010 against the 19 June parliamentary answer, 6 July district
+  update and current HOWOGE page. Kept the exact planned German claim and added
+  a build-time warning that changes after 31 August to say the date passed with
+  no recorded confirmation; completion is never inferred.
+- Added local route/link/mobile/keyboard evidence, rewrote the README opening
+  around the restricted-preview candidate, and proposed the phase-to-main merge
+  plan. The QA browser's local state directory was added to `.gitignore` so its
+  logs and control tokens cannot enter Git.
+
+### Decisions
+
+- Chose to retain the C-010 plan with a date-aware no-confirmation warning. A
+  passed planned date is neither completion nor delay evidence.
+- Kept the production-behavior finding incomplete rather than deriving account
+  facts from generic provider pages or the local export.
+- Did not add a screenshot because the owner explicitly excluded page design
+  from this lane and the unstyled structural checks produced sufficient
+  evidence.
+
+### Verification
+
+- 173 Python tests passed; Astro generated 12 static pages and no client
+  JavaScript.
+- The five-file generated bundle and all 12 Astro files passed the regenerated
+  known-withheld and sentinel scans.
+- All internal links resolved in the export. Nine unique evidence-source links
+  and four attribution targets returned HTTP 200 with redirects and a browser
+  User-Agent.
+- All 12 routes returned HTTP 200 and fit a 320 CSS-pixel viewport without
+  horizontal overflow. Real Tab/Enter traversal reached every landing link,
+  opened native evidence details and focused the revealed source link.
+- The local export made one same-origin HTML request on reload, set no cookie,
+  and left local/session storage, IndexedDB, Cache Storage and service workers
+  empty.
+
+### Failures and limitations
+
+- The exact live deployment, host/CDN requests, analytics setting, operational
+  logs, retention, subprocessors and transfers remain unobserved. Live route and
+  source-link verification also remains open.
+- The first localhost server/browser attempts were blocked by the sandbox's
+  loopback policy. The approved localhost-only rerun succeeded; this was a test-
+  harness restriction, not a site defect.
+
+### Evidence
+
+- `docs/research/findings/2026-08-25-c010-milestone-recheck.md`
+- `docs/research/findings/2026-08-25-local-route-accessibility-verification.md`
+- `docs/research/findings/2026-08-25-restricted-preview-production-behaviour.md`
+- `docs/phase-4-merge-plan.md`
+
 - 2026-08-20 — Codex (`/tdd` skill; official Berlin and OpenStreetMap source
   checks): completed the pre-design static-export baseline. The raw Astro build
   now generates all three dossiers, project and named-organization correction

@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { milestoneDisplayWarnings } from "./milestone-freshness.mjs";
 
 export type PublicFact = {
   factId: string;
@@ -54,6 +55,16 @@ function fail(message: string): never {
   throw new Error(`Public projection cannot build: ${message}`);
 }
 
+function displayFact(fact: PublicFact): PublicFact {
+  return {
+    ...fact,
+    displayWarnings: milestoneDisplayWarnings(
+      fact,
+      process.env.PUBLICATION_AS_OF_DATE,
+    ),
+  };
+}
+
 function pageRecord(project: ProjectRecord): PublicProjectPage {
   const factsById = new Map(project.facts.map((fact) => [fact.factId, fact]));
   const conflictMemberIds = new Set(
@@ -102,7 +113,7 @@ function pageRecord(project: ProjectRecord): PublicProjectPage {
     correctionPath: project.correctionPath,
     publishedFacts: project.facts.filter(
       (fact) => fact.state === "published" && !conflictMemberIds.has(fact.factId),
-    ),
+    ).map(displayFact),
     withheldFacts: project.facts.filter((fact) => fact.state === "withheld"),
     conflicts,
   };

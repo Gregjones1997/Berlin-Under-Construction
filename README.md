@@ -2,13 +2,28 @@
 
 > An independent, source-backed map that helps people understand what is being built across Berlin, who is responsible, what was promised, what changed, and what the public can reliably know.
 
-**Project status:** Portfolio pivot sprint — Gate 3 design handoff pending;
-Friday ships as an access-restricted preview, not a public release; Phase 2
-remains incomplete
+Berlin, Under Construction connects a small set of Berlin construction-project
+records to the exact German evidence behind their dates, status, money and
+institutional roles. It preserves conflicts, withheld facts and stale claims
+instead of smoothing them into a single confident story.
 
-The public launch remains targeted for before 1 September 2026, after provider
-identity and the Article 13 privacy notice are resolved. No Friday artifact or
-deployment should be described as public.
+## Restricted preview
+
+The current Astro build is a **restricted-preview candidate**, not a public
+release. It contains three evidence-backed dossiers, contextual correction
+routes, an AI-method page, and draft Impressum and Article 13 routes. The static
+export currently contains 12 HTML pages and zero client JavaScript.
+
+The project owner is handling deployment and the Gate 3 design/map work in
+separate sessions. No preview URL is recorded here until that exact deployment
+has passed live route, privacy and operational-behavior checks. Nothing in this
+repository should describe an unverified deployment as public or released.
+
+Public launch remains blocked on four owner decisions: provider identity,
+complete postal address, permanent monitored contact, and whether § 18(2) MStV
+requires a named responsible person. The production host's actual request
+logging, retention, subprocessors and transfer safeguards must also be observed
+and reflected in the final Article 13 notice.
 
 **Geographic focus:** Berlin, Germany
 
@@ -75,11 +90,12 @@ remain post-v0 work.
 
 ## Current status
 
-This project is not yet a finished application. All three pilot dossiers remain
-in v0 and are evidence-complete and frozen. Current implementation work is the
-Phase 2 typed data core and review tooling. The release may show bounded pipeline
-behavior, cost and latency, but it will not describe those observations as an
-accuracy result while the glossary and golden set are unverified.
+This project is not yet a finished application. The three pilot dossiers remain
+in v0 and are evidence-complete and frozen. The `phase-4-public-slice` branch is
+being packaged for a restricted preview while Phase 2 remains incomplete. The
+preview may show bounded pipeline behavior, cost and latency, but it does not
+describe those observations as an accuracy result while the glossary and golden
+set are unverified.
 
 The first public release will focus on a narrow, working vertical slice:
 

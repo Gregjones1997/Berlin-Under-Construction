@@ -10,7 +10,9 @@ This is the operational source of truth for what is complete, what is in progres
 
 ## Delivery targets
 
-- **Friday 21 August target:** Password-protected access-restricted preview.
+- **Friday 21 August target:** Access-restricted preview. The password setup was
+  not completed and the owner removed deployment from this repository lane on
+  25 August; the separate deployment still requires recorded live evidence.
 - **First public release target:** Before 1 September 2026, after provider
   identity and the Article 13 privacy notice are resolved.
 - **First release:** Three evidence-backed projects, bounded extraction with disclosed metering and limitations, evidence-backed dossiers, and a deployable 2D map. Scored evaluation follows post-v0.
@@ -20,21 +22,21 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Portfolio pivot sprint — Gate 3 design handoff; Phase 2
-remains incomplete
+**Current phase:** Gate 3 owner design handoff with Gate 6 local packaging in a
+separate non-overlapping lane; Phase 2 remains incomplete
 
-**Current status:** IN PROGRESS — REVIEW REQUIRED
+**Current status:** IN PROGRESS — owner design/deployment work and live evidence
+remain pending; local Gate 6 package is green
 
-**Next action:** Hold C-014 styling until the owner's separate HTML/CSS design
-handoff arrives, then reimplement it as Astro components rather than copying the
-artifact. The pre-design baseline now contains contextual project correction
-routes, all three dossier routes, the static local Berlin boundary presentation
-and the AI-method route; preserve their green export-level regressions during
-design integration. Do not add a client island; if one appears necessary, stop
-for a separate owner decision. CI must keep scanning the real `web/dist/`
-export. Phase 2 remains incomplete.
-Make no provider call. The glossary-review handoff and 25 August C-010 recheck
-remain required outside this sprint unless a displayed value depends on them.
+**Next action:** Integrate the owner's separate HTML/CSS design handoff as Astro
+components without copying the artifact, then run the exact candidate through
+the phase-boundary review and `docs/phase-4-merge-plan.md`. In the owner's
+separate deployment lane, record the exact URL/commit and complete
+`docs/research/findings/2026-08-25-restricted-preview-production-behaviour.md`
+against the live artifact before adding any URL to the README. Preserve the 173
+green tests, 12-page zero-JavaScript export, known-withheld/sentinel scans and
+C-010 passed-date/no-confirmation warning. Do not add a client island or make a
+model/extraction-provider call. Phase 2 remains incomplete.
 
 Non-blocking later-gate preparation: the Gate 6 legal/privacy/source-use review
 is recorded in
@@ -45,6 +47,13 @@ and correction-route requirements are evidenced.
 Gate 5's evidence-backed prose and figures are recorded in
 [`docs/ai-method.md`](ai-method.md) and rendered without styling at `/method`.
 Page design remains deferred.
+
+**Gate 6 local checkpoint, 2026-08-25:** The unstyled repository baseline now
+contains draft `/impressum` and `/privacy` routes with four explicit owner
+decision placeholders, a dated C-010 display treatment, and a local route/link/
+mobile/keyboard evidence record. The owner is handling the Astro deployment in
+a separate session and removed password/deployment work from this lane. No live
+URL, host behavior or account-specific privacy fact is recorded as complete.
 
 **Invoked fallback, 2026-08-20:** Friday's deployment is an access-restricted,
 password-protected preview. It is not the public release. Public launch moves
@@ -204,9 +213,12 @@ before a human-authored golden set and verified glossary exist.
   but unplaced while its location fact is withheld.
 - [ ] Add basic address or project search.
 - [ ] Add stable URLs and share previews.
-- [ ] Verify mobile and keyboard behavior.
+- [x] Verify mobile and keyboard behavior. Evidence: all 12 unstyled routes fit
+  at 320 CSS pixels; real Tab/Enter traversal reached landing-page links and
+  native evidence expansion, recorded in
+  `docs/research/findings/2026-08-25-local-route-accessibility-verification.md`.
 - [ ] Verify public-site legal, privacy and source-use requirements using authoritative guidance.
-- [ ] Deploy the password-protected access-restricted preview.
+- [ ] Record and verify the owner-managed access-restricted preview deployment.
 - [ ] Resolve provider identity and the Article 13 privacy notice, then deploy
   the first public release before 1 September 2026.
 - [ ] Record a short demo walkthrough.

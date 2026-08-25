@@ -45,3 +45,4 @@ docs/research/proposals/
 # Editor settings
 .idea/
 .vscode/
+.gstack/

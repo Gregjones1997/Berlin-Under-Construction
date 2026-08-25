@@ -9,10 +9,13 @@ This document is the single newest-first timeline of how Berlin, Under Construct
   owner removed password setup and deployment from this lane and kept the Astro
   deployment in a separate session. No Vercel project or deployment was
   created, and the repository records no preview URL or live-host claim.
+  `4c301a7`
 
 ## 2026-08-25 — Gate 6 local legal, freshness and verification package
 
 **Status:** Complete locally; live-deployment evidence remains open
+
+**Commit:** `4c301a7` — `feat(web): package legal and freshness preview gates`
 
 ### Goal
 

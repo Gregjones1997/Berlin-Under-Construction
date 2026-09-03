@@ -5,7 +5,7 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 - 2026-09-03 — Project owner and Codex: the owner confirmed a public Vercel
   Hobby launch with the unresolved processor/DPA position disclosed. The
   serviceable postal address and live verification remain required; no project
-  or deployment was created as part of this decision record.
+  or deployment was created as part of this decision record. `6d56f44`
 
 ## 2026-09-03 — Public release candidate and phase review
 

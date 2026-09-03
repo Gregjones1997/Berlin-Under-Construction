@@ -25,17 +25,18 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 **Current phase:** Gate 3 public-site implementation and Gate 6 legal/deployment
 packaging; Phase 2 remains incomplete
 
-**Current status:** IN PROGRESS — the public-site build is being prepared; the
-postal address, Hobby processor/DPA resolution and live evidence remain pending
+**Current status:** IN PROGRESS — the local candidate is reviewed and green;
+the postal address, deployment and live evidence remain pending
 
 **Next action:** Obtain the owner's complete serviceable postal address and a
-decision on the unresolved Vercel Hobby processor/DPA position. Then build and
-deploy the exact candidate with `PUBLICATION_AS_OF_DATE`, record the URL/commit,
-and complete the live network, cookie, storage, analytics and operational-log
-evidence before adding the URL to the README. Preserve the 13-page
-zero-JavaScript export, known-withheld/sentinel scans and C-010
-passed-date/no-confirmation warning. Do not make a model/extraction-provider
-call. Phase 2 remains incomplete.
+then create/link the Vercel Hobby project, build and deploy the exact candidate
+with `PUBLICATION_AS_OF_DATE`, record the URL/commit, and complete the live
+network, cookie, storage, analytics and operational-log evidence before adding
+the URL to the README. The owner accepted launch on Hobby with the processor/DPA
+ambiguity disclosed on 3 September 2026. Preserve the 13-page zero-JavaScript
+export, known-withheld/sentinel scans and C-010 passed-date/no-confirmation
+warning. Do not make a model/extraction-provider call. Phase 2 remains
+incomplete.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's
 handover wording to `Anfang September 2026`; the current HOWOGE page still says

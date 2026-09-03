@@ -1078,6 +1078,12 @@ Pro and Enterprise processor relationships, while the Hobby Terms incorporate a
 different older DPA link. The repository and privacy notice must disclose that
 conflict; the deployment must not represent current-DPA coverage as established.
 
+**Amended 2026-09-03 (Hobby ambiguity accepted for launch)** — the owner
+explicitly confirmed proceeding on Vercel Hobby with the unresolved processor/
+DPA position disclosed. This resolves the hosting-plan choice, not the legal
+uncertainty itself. The serviceable postal address and live-deployment evidence
+remain fail-closed public-launch gates.
+
 **Scope:** Friday deployment, public-launch boundary, map scope and correction
 route sequencing
 

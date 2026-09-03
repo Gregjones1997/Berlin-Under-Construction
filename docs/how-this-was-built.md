@@ -2,6 +2,11 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-09-03 — Project owner and Codex: the owner confirmed a public Vercel
+  Hobby launch with the unresolved processor/DPA position disclosed. The
+  serviceable postal address and live verification remain required; no project
+  or deployment was created as part of this decision record.
+
 ## 2026-09-03 — Public release candidate and phase review
 
 **Status:** Complete locally; owner address, hosting decision and live evidence remain open

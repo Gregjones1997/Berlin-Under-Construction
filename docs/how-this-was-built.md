@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete locally; owner address, hosting decision and live evidence remain open
 
+**Commit:** `5ce1487` — `feat(web): finish public release candidate`
+
 ### Goal
 
 Turn the styled working-tree candidate into the smallest reviewed artifact that

@@ -53,7 +53,10 @@ Run from the repository root unless a working directory is stated:
 .venv/bin/python -m pytest -q
 
 cd web
-PUBLICATION_AS_OF_DATE=2026-08-25 npm run build
+# Set both variables in the process environment before running this command:
+# PUBLICATION_AS_OF_DATE must be the real merge-day YYYY-MM-DD.
+# LEGAL_ADDRESS must be the owner's complete serviceable postal address.
+npm run build
 cd ..
 
 .venv/bin/python -m public_release \
@@ -63,7 +66,7 @@ cd ..
   --export-output web/dist
 ```
 
-Use the real merge-day date for `PUBLICATION_AS_OF_DATE`. After 31 August the
+The command must fail if either required value is absent. After 31 August the
 C-010 display must render the passed-date/no-confirmation warning and must not
 assert completion.
 

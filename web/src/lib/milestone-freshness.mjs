@@ -7,14 +7,14 @@ function exactGermanDate(canonicalDe) {
   return `${year}-${month}-${day}`;
 }
 
-function buildDate(explicitDate) {
-  if (explicitDate) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(explicitDate)) {
-      throw new Error("PUBLICATION_AS_OF_DATE must use YYYY-MM-DD");
-    }
-    return explicitDate;
+export function publicationAsOfDate(explicitDate) {
+  if (!explicitDate) {
+    throw new Error("PUBLICATION_AS_OF_DATE is required");
   }
-  return new Date().toISOString().slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(explicitDate)) {
+    throw new Error("PUBLICATION_AS_OF_DATE must use YYYY-MM-DD");
+  }
+  return explicitDate;
 }
 
 export function milestoneDisplayWarnings(fact, explicitBuildDate) {
@@ -37,7 +37,7 @@ export function milestoneDisplayWarnings(fact, explicitBuildDate) {
   }
 
   const sourceDate = fact.asOfDate?.value ?? "an unstated source date";
-  if (buildDate(explicitBuildDate) > plannedDate) {
+  if (publicationAsOfDate(explicitBuildDate) > plannedDate) {
     return [
       `The source planned this milestone for ${fact.dateValue.canonicalDe} as of ${sourceDate}. ` +
         "That date has passed, but no confirming source is recorded. Completion is not asserted.",

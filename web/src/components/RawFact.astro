@@ -3,12 +3,26 @@ import {
   EVIDENCE_LABEL_GLOSSARY,
   type PublicFact,
 } from "../lib/public-projects";
+import { organizationCorrectionForFact } from "../lib/organization-corrections";
 
 interface Props {
   fact: PublicFact;
+  lead?: boolean;
 }
 
-const { fact } = Astro.props;
+const { fact, lead = false } = Astro.props;
+
+const FACT_LABELS: Record<string, string> = {
+  financial_measure: "Financial measure",
+  milestone: "Milestone",
+  organization_role: "Organization role",
+  project_location: "Project location",
+  project_name: "Project name",
+  status: "Project status",
+};
+
+const factLabel = FACT_LABELS[fact.factType] ?? "Project fact";
+const humanize = (value: unknown) => String(value).replaceAll("_", " ");
 
 const qualifiers = Array.isArray(fact.qualifiers) ? fact.qualifiers : [];
 const warnings = Array.isArray(fact.displayWarnings) ? fact.displayWarnings : [];
@@ -25,49 +39,42 @@ const asOfDate = fact.asOfDate as
   | { state?: string; value?: string }
   | undefined;
 const freshness = fact.freshness as { state?: string } | undefined;
-const organizationCorrection =
-  fact.factId === "c019-financing-commitment"
-    ? {
-        name: "50Hertz",
-        path: "/corrections/organizations/50hertz/",
-      }
-    : undefined;
+const organizationCorrection = organizationCorrectionForFact(fact.factId);
 ---
 
 <article data-fact-id={fact.factId}>
-  <h3>{fact.factId}</h3>
-  <p>Fact type: {fact.factType}</p>
-  <p lang="de">{fact.valueDe}</p>
-  {fact.milestoneType && <p>Milestone type: {String(fact.milestoneType)}</p>}
+  <h3>{factLabel}</h3>
+  <p lang="de" class={lead ? "value" : undefined}>{fact.valueDe}</p>
+  {fact.milestoneType && <p class="meta">Milestone type: {humanize(fact.milestoneType)}</p>}
   {fact.milestoneTermDe && (
-    <p>Milestone term: <span lang="de">{String(fact.milestoneTermDe)}</span></p>
+    <p class="meta">Milestone term: <span lang="de">{String(fact.milestoneTermDe)}</span></p>
   )}
   {dateValue?.canonicalDe && (
-    <p>Date: <span lang="de">{dateValue.canonicalDe}</span> ({dateValue.precision})</p>
+    <p class="meta">Date: <span lang="de">{dateValue.canonicalDe}</span> ({humanize(dateValue.precision)})</p>
   )}
-  {fact.measureType && <p>Financial measure: {String(fact.measureType)}</p>}
+  {fact.measureType && <p class="meta">Financial measure: {humanize(fact.measureType)}</p>}
   {amount?.value !== undefined && (
-    <p>Amount: {amount.value} {amount.currency}</p>
+    <p class="meta">Amount: {amount.value} {amount.currency}</p>
   )}
   {fact.taxTreatment && (
-    <p>Tax treatment: {String((fact.taxTreatment as { state?: string }).state)}</p>
+    <p class="meta">Tax treatment: {humanize((fact.taxTreatment as { state?: string }).state)}</p>
   )}
   {fact.priceBasis && (
-    <p>Price basis: {String((fact.priceBasis as { state?: string }).state)}</p>
+    <p class="meta">Price basis: {humanize((fact.priceBasis as { state?: string }).state)}</p>
   )}
   {fact.budgetReference && (
-    <p>Budget reference: {String((fact.budgetReference as { state?: string }).state)}</p>
+    <p class="meta">Budget reference: {humanize((fact.budgetReference as { state?: string }).state)}</p>
   )}
   {qualifiers.map((qualifier) => (
-    <p>
+    <p class="meta">
       Qualifier: <span lang="de">{String((qualifier as { tokenDe?: string }).tokenDe)}</span>
     </p>
   ))}
   {asOfDate?.state && (
-    <p>As of: {asOfDate.value ?? asOfDate.state}</p>
+    <p class="meta">As of: {asOfDate.value ?? humanize(asOfDate.state)}</p>
   )}
-  {freshness?.state && <p>Freshness: {freshness.state}</p>}
-  {warnings.map((warning) => <p>{String(warning)}</p>)}
+  {freshness?.state && <p class="meta">Freshness: {humanize(freshness.state)}</p>}
+  {warnings.map((warning) => <p class="meta"><strong>{String(warning)}</strong></p>)}
   {organizationCorrection && (
     <p>
       <a href={organizationCorrection.path}>
@@ -85,7 +92,7 @@ const organizationCorrection =
       </p>
       <blockquote lang="de">{fact.evidence.exactTextDe}</blockquote>
       {publicationDate?.state && (
-        <p>Source publication date: {publicationDate.value ?? publicationDate.state}</p>
+        <p>Source publication date: {publicationDate.value ?? humanize(publicationDate.state)}</p>
       )}
       <p><a href={fact.evidence.sourceUrl}>Original source</a></p>
     </details>

@@ -1,0 +1,43 @@
+---
+interface Props {
+  context: string;
+}
+
+const { context } = Astro.props;
+const contact = "jonesg158@gmail.com";
+---
+
+<section>
+  <h2>Contact</h2>
+  <p>
+    Send requests to <a href={`mailto:${contact}`}>{contact}</a> and include
+    the context <strong>{context}</strong>. This monitored address handles the
+    three channels below; naming the request type keeps their procedures distinct.
+  </p>
+</section>
+
+<section>
+  <h2>Evidence correction</h2>
+  <p>
+    For an ordinary evidence correction, identify the displayed statement, the
+    proposed correction and the primary source supporting it.
+  </p>
+</section>
+
+<section>
+  <h2>Formal right of reply</h2>
+  <p>
+    State explicitly that the message is a formal right-of-reply request and
+    identify the passage concerned. It will not be treated as an ordinary
+    evidence correction.
+  </p>
+</section>
+
+<section>
+  <h2>Data-protection request</h2>
+  <p>
+    State explicitly that the message is a data-protection request and identify
+    the affected information or GDPR right. It will be handled separately from
+    editorial corrections and rights of reply.
+  </p>
+</section>

@@ -1,29 +1,12 @@
 ---
+import CorrectionChannels from "../../components/CorrectionChannels.astro";
+import Base from "../../layouts/Base.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Corrections — restricted preview</title>
-  </head>
-  <body>
-    <main>
-      <h1>Corrections and formal requests</h1>
-      <p>
-        This is a preview arrangement, not the permanent public correction
-        channel. During the access-restricted preview, use the monitored channel
-        through which you received access and include the affected project or
-        organization.
-      </p>
-      <h2>Evidence correction</h2>
-      <p>Identify the displayed statement, the proposed correction and its source.</p>
-      <h2>Formal right of reply</h2>
-      <p>State that the request is a formal right-of-reply request and identify the passage concerned.</p>
-      <h2>Data-protection request</h2>
-      <p>State that the request concerns data protection and describe the affected information or right.</p>
-      <p>A permanent monitored address is required before public release.</p>
-    </main>
-  </body>
-</html>
+<Base
+  title="Corrections and formal requests — Berlin, Under Construction"
+  heading="Corrections and formal requests"
+  subtitle="Evidence corrections, rights of reply and data-protection requests follow distinct channels."
+>
+  <CorrectionChannels context="the affected project or organization" />
+</Base>

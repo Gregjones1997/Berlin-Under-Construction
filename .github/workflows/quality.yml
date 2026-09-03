@@ -26,6 +26,9 @@ jobs:
       - run: python -m pytest
       - run: npm run build
         working-directory: web
+        env:
+          PUBLICATION_AS_OF_DATE: "2026-08-25"
+          LEGAL_ADDRESS: "CI test address — not a deployment value"
       - run: >-
           python -m public_release
           --output build/gate3-public-release

@@ -10,11 +10,11 @@ This is the operational source of truth for what is complete, what is in progres
 
 ## Delivery targets
 
-- **Friday 21 August target:** Access-restricted preview. The password setup was
-  not completed and the owner removed deployment from this repository lane on
-  25 August; the separate deployment still requires recorded live evidence.
-- **First public release target:** Before 1 September 2026, after provider
-  identity and the Article 13 privacy notice are resolved.
+- **Missed 25 August target:** The local Vercel Hobby candidate was prepared,
+  but the public launch did not occur because the serviceable postal address and
+  recorded live evidence were still missing.
+- **Current recovery target:** 3 September 2026, subject to the same fail-closed
+  legal and live-verification gates. The missed date does not lower them.
 - **First release:** Three evidence-backed projects, bounded extraction with disclosed metering and limitations, evidence-backed dossiers, and a deployable 2D map. Scored evaluation follows post-v0.
 - **After first release:** Expand toward ten projects, then ship the technical-illustration 3D experience as a second public milestone.
 
@@ -22,31 +22,37 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Gate 3 owner design handoff with Gate 6 local packaging in a
-separate non-overlapping lane; Phase 2 remains incomplete
+**Current phase:** Gate 3 public-site implementation and Gate 6 legal/deployment
+packaging; Phase 2 remains incomplete
 
-**Current status:** IN PROGRESS — owner design/deployment work and live evidence
-remain pending; local Gate 6 package is green
+**Current status:** IN PROGRESS — the public-site build is being prepared; the
+postal address, Hobby processor/DPA resolution and live evidence remain pending
 
-**Next action:** Integrate the owner's separate HTML/CSS design handoff as Astro
-components without copying the artifact, then run the exact candidate through
-the phase-boundary review and `docs/phase-4-merge-plan.md`. In the owner's
-separate deployment lane, record the exact URL/commit and complete
-`docs/research/findings/2026-08-25-restricted-preview-production-behaviour.md`
-against the live artifact before adding any URL to the README. Preserve the 173
-green tests, 12-page zero-JavaScript export, known-withheld/sentinel scans and
-C-010 passed-date/no-confirmation warning. Do not add a client island or make a
-model/extraction-provider call. Phase 2 remains incomplete.
+**Next action:** Obtain the owner's complete serviceable postal address and a
+decision on the unresolved Vercel Hobby processor/DPA position. Then build and
+deploy the exact candidate with `PUBLICATION_AS_OF_DATE`, record the URL/commit,
+and complete the live network, cookie, storage, analytics and operational-log
+evidence before adding the URL to the README. Preserve the 13-page
+zero-JavaScript export, known-withheld/sentinel scans and C-010
+passed-date/no-confirmation warning. Do not make a model/extraction-provider
+call. Phase 2 remains incomplete.
+
+**3 September launch recheck:** A newer 25 August district source moves C-010's
+handover wording to `Anfang September 2026`; the current HOWOGE page still says
+`Im Bau`, and no checked source explicitly confirms handover. The public build
+therefore retains the passed-date/no-confirmation warning and does not assert
+completion. Evidence:
+[`docs/research/findings/2026-09-03-c010-milestone-recheck.md`](research/findings/2026-09-03-c010-milestone-recheck.md).
 
 Non-blocking later-gate preparation: the Gate 6 legal/privacy/source-use review
 is recorded in
 [`docs/research/findings/2026-08-19-public-site-legal-privacy-source-use.md`](research/findings/2026-08-19-public-site-legal-privacy-source-use.md).
-It does not advance Gate 3. Public deployment remains blocked; use an
-access-restricted preview until its attribution, host/privacy, provider identity
-and correction-route requirements are evidenced.
+It does not advance Gate 3. The owner has selected a public launch without
+password protection; attribution, host/privacy, legal identity, address and
+correction-route requirements remain binding.
 Gate 5's evidence-backed prose and figures are recorded in
-[`docs/ai-method.md`](ai-method.md) and rendered without styling at `/method`.
-Page design remains deferred.
+[`docs/ai-method.md`](ai-method.md) and rendered at `/method` in the shared
+static site layout.
 
 **Gate 6 local checkpoint, 2026-08-25:** The unstyled repository baseline now
 contains draft `/impressum` and `/privacy` routes with four explicit owner
@@ -197,14 +203,22 @@ before a human-authored golden set and verified glossary exist.
 
 ## Phase 4 — First public 2D vertical slice
 
-- [ ] Create the responsive project dossier page.
-- [ ] Display expected end date prominently.
-- [ ] Display start date and all supported date changes.
-- [ ] Display status, as-of date and freshness.
-- [ ] Display precise financial measures without blending definitions.
-- [ ] Display organizations only by documented role.
-- [ ] Keep delay and cost variance attached to the project unless explicit causal evidence exists.
-- [ ] Display evidence spans and links to original sources.
+- [x] Create the responsive project dossier page. Evidence: 375 px flagship
+  browser check and 13-route export in the 3 September candidate verification.
+- [x] Display expected end date prominently. Evidence: the current source-stated
+  position leads each dossier; C-014 history follows separately.
+- [x] Display start date and all supported date changes. Evidence: C-014's
+  completion and construction history renders from the accepted projection.
+- [x] Display status, as-of date and freshness. Evidence: export tests cover the
+  named fields and the live component renders them separately.
+- [x] Display precise financial measures without blending definitions. Evidence:
+  accepted budget and financing facts retain measure type, amount, qualifiers,
+  tax, price-basis and budget-reference states; conflicts stay isolated.
+- [x] Display organizations only by documented role. Evidence: the two named
+  organization presentations retain their source-stated approval or financing
+  context and contextual correction routes.
+- [x] Keep delay and cost variance attached to the project unless explicit causal evidence exists.
+- [x] Display evidence spans and links to original sources.
 - [x] Add a working contextual correction route for every published project
   and named organization.
 - [x] Create the accessible static Berlin boundary SVG with linked dossier
@@ -219,11 +233,13 @@ before a human-authored golden set and verified glossary exist.
   `docs/research/findings/2026-08-25-local-route-accessibility-verification.md`.
 - [ ] Verify public-site legal, privacy and source-use requirements using authoritative guidance.
 - [ ] Record and verify the owner-managed access-restricted preview deployment.
-- [ ] Resolve provider identity and the Article 13 privacy notice, then deploy
-  the first public release before 1 September 2026.
+- [ ] Resolve the remaining Article 13/address blocker, then deploy the overdue
+  first public release as soon as the live gate can be completed.
 - [ ] Record a short demo walkthrough.
-- [ ] Demonstrate that accepted, verified claims render publicly while withheld
-  claims remain non-public.
+- [x] Demonstrate that accepted, verified claims render publicly while withheld
+  claims remain non-public. Evidence: 178 tests plus the three-file bundle and
+  14-file Astro known-withheld/sentinel scans recorded in
+  [`docs/research/findings/2026-09-03-public-candidate-verification.md`](research/findings/2026-09-03-public-candidate-verification.md).
 
 **Phase 4 exit evidence:** A user can locate one of three projects, see its
 expected end date and history, and inspect the evidence behind every

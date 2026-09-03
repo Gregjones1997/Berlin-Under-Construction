@@ -7,23 +7,27 @@ records to the exact German evidence behind their dates, status, money and
 institutional roles. It preserves conflicts, withheld facts and stale claims
 instead of smoothing them into a single confident story.
 
-## Restricted preview
+## Public-site candidate
 
-The current Astro build is a **restricted-preview candidate**, not a public
-release. It contains three evidence-backed dossiers, contextual correction
-routes, an AI-method page, and draft Impressum and Article 13 routes. The static
-export currently contains 12 HTML pages and zero client JavaScript.
+![Berlin, Under Construction public-site candidate](docs/images/portfolio-preview.png)
 
-The project owner is handling deployment and the Gate 3 design/map work in
-separate sessions. No preview URL is recorded here until that exact deployment
-has passed live route, privacy and operational-behavior checks. Nothing in this
-repository should describe an unverified deployment as public or released.
+The Astro candidate is the deployable product surface: three evidence-backed project
+dossiers, a static Berlin orientation map, contextual correction routes, the
+recorded AI-method page, an Impressum and an Article 13 privacy notice. Its
+static export contains 13 HTML pages and zero client JavaScript. It makes no
+runtime request to a font, map tile, analytics or other third-party service.
 
-Public launch remains blocked on four owner decisions: provider identity,
-complete postal address, permanent monitored contact, and whether § 18(2) MStV
-requires a named responsible person. The production host's actual request
-logging, retention, subprocessors and transfer safeguards must also be observed
-and reflected in the final Article 13 notice.
+Every build requires `PUBLICATION_AS_OF_DATE` and the owner's complete
+serviceable postal address in `LEGAL_ADDRESS`. The first value is displayed in
+every page footer and controls the C-010 passed-date warning; the second is used
+on both legal routes. A missing value fails the build.
+
+No live URL is recorded here until that exact deployment has passed route,
+keyboard, mobile-width, network, cookie, storage and operational-behavior
+checks. The owner-supplied identity and monitored contact are present. The
+postal address is still required. Official Vercel documents also leave the
+applicability of the current processor DPA to a Hobby deployment unresolved;
+the privacy notice discloses that conflict instead of claiming coverage.
 
 **Geographic focus:** Berlin, Germany
 
@@ -92,8 +96,8 @@ remain post-v0 work.
 
 This project is not yet a finished application. The three pilot dossiers remain
 in v0 and are evidence-complete and frozen. The `phase-4-public-slice` branch is
-being packaged for a restricted preview while Phase 2 remains incomplete. The
-preview may show bounded pipeline behavior, cost and latency, but it does not
+being packaged as the first public site while Phase 2 remains incomplete. The
+site may show bounded pipeline behavior, cost and latency, but it does not
 describe those observations as an accuracy result while the glossary and golden
 set are unverified.
 

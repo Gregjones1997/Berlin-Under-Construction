@@ -1065,6 +1065,19 @@ no URL may be described as public or verified until the separate live checks are
 recorded. See the 2026-08-25 Gate 6 local-package entry in
 `docs/how-this-was-built.md`.
 
+**Amended 2026-08-25 (public-launch decision)** — the owner subsequently
+reversed the access-restriction decision and directed that the site launch
+publicly on Vercel Hobby without password protection. This amendment supersedes
+the password requirement and the deployment reassignment above; it does not
+waive the legal, privacy, evidence or live-verification gates. The owner supplied
+the provider/controller name Gregory Anthony Jones and monitored contact
+`jonesg158@gmail.com`. The serviceable postal address must still be supplied and
+the build fails closed without it. Official Vercel documents checked on the same
+date create a new unresolved issue: the current canonical DPA expressly covers
+Pro and Enterprise processor relationships, while the Hobby Terms incorporate a
+different older DPA link. The repository and privacy notice must disclose that
+conflict; the deployment must not represent current-DPA coverage as established.
+
 **Scope:** Friday deployment, public-launch boundary, map scope and correction
 route sequencing
 

@@ -1,97 +1,110 @@
 ---
+import Base from "../layouts/Base.astro";
+import { requireLegalAddress } from "../lib/legal-contact";
+
+const address = requireLegalAddress(process.env.LEGAL_ADDRESS);
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Article 13 privacy notice draft — restricted preview</title>
-  </head>
-  <body>
-    <main>
-      <h1>Article 13 privacy notice — evidence-bound draft</h1>
-      <p>
-        This route is a restricted-preview draft. Bracketed text marks facts
-        that must be supplied by the project owner or established by observation
-        of the live deployment. It must not be presented as a complete public
-        notice until every placeholder is resolved.
-      </p>
+<Base
+  title="Privacy notice — Berlin, Under Construction"
+  heading="Privacy notice"
+  subtitle="Information under Article 13 GDPR"
+>
+  <section>
+    <h2>Controller</h2>
+    <p>
+      Gregory Anthony Jones<br />
+      {address}<br />
+      Germany<br />
+      Email: <a href="mailto:jonesg158@gmail.com">jonesg158@gmail.com</a>
+    </p>
+  </section>
 
-      <h2>Controller and contact</h2>
-      <p data-owner-decision-placeholder="provider-identity">
-        [OWNER DECISION REQUIRED: provider/controller identity]
-      </p>
-      <p data-owner-decision-placeholder="postal-address">
-        [OWNER DECISION REQUIRED: complete postal address]
-      </p>
-      <p data-owner-decision-placeholder="monitored-contact">
-        [OWNER DECISION REQUIRED: permanent monitored contact for privacy
-        requests]
-      </p>
+  <section>
+    <h2>Application behavior</h2>
+    <p>
+      This site is a static Astro export. The application uses no
+      cookies, no analytics, no tracking, no third-party requests, no client
+      JavaScript, no user accounts and no forms. It contains no code that reads
+      or writes local storage, session storage, IndexedDB or service-worker
+      storage. A visitor who follows an original-source link initiates a
+      navigation to that source; the source is not embedded by this site.
+    </p>
+  </section>
 
-      <h2>Application behavior</h2>
-      <p>
-        The committed Astro application is a static site. It has no user
-        accounts, submission form, product analytics, tracking pixel, external
-        embed or client JavaScript. It does not contain application code that
-        reads or writes cookies, local storage, session storage, IndexedDB or
-        service-worker storage. Following an original-source link is a
-        user-initiated navigation to that source, not an embedded request.
-      </p>
-      <p>
-        These statements describe the committed application export. They do not
-        establish what the deployment host, CDN or any access-control layer
-        processes.
-      </p>
+  <section>
+    <h2>Hosting and request data</h2>
+    <p>
+      The planned public host is Vercel Inc., 440 N Barranca Avenue #4133,
+      Covina, CA 91723, United States. When a visitor requests a page, Vercel states
+      that it receives website traffic information including the IP address,
+      location derived from the IP address and system configuration
+      information. Its service-generated information can also include log
+      files, proxy-server, diagnostic, capacity, usage, performance, data-setting
+      and system-configuration information.
+    </p>
+    <p>
+      The controller processes the request data necessary to deliver, operate
+      and secure this site on the basis of Art. 6(1)(f) GDPR. The legitimate
+      interests are reliable delivery, abuse prevention, troubleshooting and
+      security. Vercel also describes some service-generated data processing
+      under its own responsibility in its
+      <a href="https://vercel.com/legal/privacy-notice">Privacy Notice</a>.
+    </p>
+  </section>
 
-      <h2>Live delivery and operational data</h2>
-      <p data-deployment-observation-placeholder="request-processing">
-        [LIVE DEPLOYMENT OBSERVATION REQUIRED: record request metadata actually
-        processed by the host/CDN, the purposes and the applicable legal basis]
-      </p>
-      <p data-deployment-observation-placeholder="cookies-storage">
-        [LIVE DEPLOYMENT OBSERVATION REQUIRED: record any cookies or browser
-        storage introduced by the deployed delivery or access-control layer]
-      </p>
+  <section>
+    <h2>Recipient, processor status and transfers</h2>
+    <p>
+      Vercel Inc. is the hosting recipient. Vercel's Terms of Service say that
+      personal information is processed as controller or processor as
+      applicable and link a data-processing addendum. However, Vercel's current
+      canonical <a href="https://vercel.com/legal/dpa">Data Processing Addendum</a>
+      expressly limits its processor terms to Pro and Enterprise customers.
+      This deployment is intended for the Hobby plan. The public official
+      documents therefore do not establish that the current DPA applies to
+      this deployment, and this notice does not claim that it does.
+    </p>
+    <p>
+      Vercel states that information may be processed in the United States and
+      other jurisdictions and that, where required, it uses Standard
+      Contractual Clauses or other appropriate mechanisms. Its Privacy Notice
+      also states participation in the EU–U.S. Data Privacy Framework. The
+      exact subprocessors and transfer mechanism applicable to this Hobby
+      deployment remain unverified; a service-wide provider list is not treated
+      as proof that a named company processes requests for this site.
+    </p>
+  </section>
 
-      <h2>Recipients, subprocessors and transfers</h2>
-      <p data-deployment-observation-placeholder="recipients-subprocessors">
-        [LIVE ACCOUNT EVIDENCE REQUIRED: identify applicable recipients and
-        subprocessors for the services actually enabled]
-      </p>
-      <p data-deployment-observation-placeholder="transfers-safeguards">
-        [LIVE ACCOUNT EVIDENCE REQUIRED: identify any non-EEA transfers and the
-        operative safeguard for each transfer]
-      </p>
+  <section>
+    <h2>Retention</h2>
+    <p>
+      Vercel documents a 12-hour customer-visible retention window for base
+      Observability events on Hobby and a one-hour window for runtime logs.
+      This static site has no serverless function runtime. Those dashboard
+      windows do not establish deletion from every Vercel system. Vercel's
+      Privacy Notice gives no fixed period for its internal operational data;
+      it states that information is kept for the minimum period necessary for
+      legal, contractual and legitimate purposes and is deleted or anonymized
+      when there is no ongoing legitimate business need, with secure retention
+      where deletion is not possible, such as backups.
+    </p>
+  </section>
 
-      <h2>Retention</h2>
-      <p data-deployment-observation-placeholder="retention">
-        [LIVE ACCOUNT EVIDENCE REQUIRED: state the retention period or evidenced
-        deletion criterion for each operational record]
-      </p>
-
-      <h2>Your rights</h2>
-      <p>
-        Subject to the GDPR's conditions and exceptions, a data subject may
-        request access, rectification, erasure or restriction, receive data that
-        is portable where that right applies, and object to processing based on
-        legitimate interests. A data subject may also complain to a competent
-        data-protection supervisory authority.
-      </p>
-      <p>
-        [LIVE/OWNER EVIDENCE REQUIRED: complete any right-to-withdraw wording if
-        consent is used, and explain whether providing any personal data is
-        required and the consequences of not providing it.]
-      </p>
-
-      <h2>Automated decision-making</h2>
-      <p>
-        The static preview makes no decision about a visitor based on personal
-        data and performs no profiling. Operational security measures applied by
-        the deployment host must be checked against the live account before this
-        statement is finalized.
-      </p>
-    </main>
-  </body>
-</html>
+  <section>
+    <h2>Your rights</h2>
+    <p>
+      Subject to the statutory conditions, you have the right of access under
+      Art. 15 GDPR, rectification under Art. 16, erasure under Art. 17,
+      restriction under Art. 18, data portability under Art. 20 and objection
+      under Art. 21. Because this site's request processing relies on legitimate
+      interests, you may object on grounds relating to your particular
+      situation. Contact the controller at the email address above.
+    </p>
+    <p>
+      You also have the right to complain to a supervisory authority. The local
+      authority is the <a href="https://www.datenschutz-berlin.de/">Berliner
+      Beauftragte für Datenschutz und Informationsfreiheit</a>.
+    </p>
+  </section>
+</Base>

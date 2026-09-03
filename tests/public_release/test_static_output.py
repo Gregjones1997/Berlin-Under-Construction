@@ -194,10 +194,51 @@ def test_withheld_fixture_sentinel_cannot_enter_generated_assets(
     assert {path.name for path in scanned} == {
         "berlin-boundary.geojson",
         "berlin-boundary.provenance.json",
-        "index.html",
         "display-model.json",
-        "projection.js",
     }
+
+
+def test_public_bundle_contains_no_client_javascript_or_html_shell(
+    tmp_path: Path,
+) -> None:
+    output = tmp_path / "out"
+
+    built = build_public_bundle(
+        projection_path=PROJECTION,
+        schema_path=SCHEMA,
+        boundary_path=BOUNDARY,
+        boundary_provenance_path=PROVENANCE,
+        review_decisions_path=DECISIONS,
+        name_allowlist_path=NAME_ALLOWLIST,
+        output_dir=output,
+    )
+
+    assert len(built) == 3
+    assert not tuple(output.rglob("*.js"))
+    assert not tuple(output.rglob("*.html"))
+
+
+def test_public_bundle_removes_legacy_client_artifacts(tmp_path: Path) -> None:
+    output = tmp_path / "out"
+    legacy_script = output / "static" / "projection.js"
+    legacy_script.parent.mkdir(parents=True)
+    legacy_script.write_text("window.__OLD_BUNDLE__ = true;", encoding="utf-8")
+    (output / "index.html").write_text(
+        '<script src="/static/projection.js"></script>', encoding="utf-8"
+    )
+
+    build_public_bundle(
+        projection_path=PROJECTION,
+        schema_path=SCHEMA,
+        boundary_path=BOUNDARY,
+        boundary_provenance_path=PROVENANCE,
+        review_decisions_path=DECISIONS,
+        name_allowlist_path=NAME_ALLOWLIST,
+        output_dir=output,
+    )
+
+    assert not legacy_script.exists()
+    assert not (output / "index.html").exists()
 
 
 def test_scanner_checks_generated_javascript_not_only_source_json(

@@ -1,22 +1,20 @@
 ---
+import Base from "../layouts/Base.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>AI method — recorded evidence and limits</title>
-  </head>
-  <body>
-    <main>
-      <h1>AI method: recorded run, failed attempt and limits</h1>
+<Base
+  title="AI method — recorded evidence and limits"
+  heading="AI method: recorded run, failed attempt and limits"
+>
+      <section>
       <p>
         The retained private store contains one completed extraction run for one
         C-014 source document. It is not evidence of an absolute historical
         provider-request figure, so none is published.
       </p>
+      </section>
 
+      <section>
       <h2>Completed run</h2>
       <dl>
         <dt>Uncached input tokens</dt><dd>3</dd>
@@ -30,7 +28,9 @@
         the cache is unestablished; no origin or historical request total is
         inferred.
       </p>
+      </section>
 
+      <section>
       <h2>Failed attempt on 13 August 2026</h2>
       <p>
         A later authorized request returned an incomplete response. The adapter
@@ -44,10 +44,12 @@
         reconstruct the missing accounting or establish the cause of the failed
         attempt.
       </p>
+      </section>
 
+      <section>
       <h2>What has and has not been demonstrated</h2>
       <p>
-        The current recorded repository suite passes 169 tests covering schemas,
+        The current recorded repository suite passes 178 tests covering schemas,
         storage, evidence and publication gates, adapter behavior, static export
         and leak scans. Engineering tests do not measure model extraction quality.
       </p>
@@ -56,6 +58,5 @@
         empty, so there is no basis for an extraction-quality percentage or a
         comparative model claim.
       </p>
-    </main>
-  </body>
-</html>
+      </section>
+</Base>

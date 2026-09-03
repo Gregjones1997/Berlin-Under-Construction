@@ -1,0 +1,18 @@
+---
+import CorrectionChannels from "../../../components/CorrectionChannels.astro";
+import Base from "../../../layouts/Base.astro";
+
+const organization =
+  "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen";
+---
+
+<Base
+  title={`Correction concerning ${organization} — Berlin, Under Construction`}
+  heading="Correction or formal request"
+  subtitle={`Organization context: ${organization}`}
+>
+  <CorrectionChannels context={organization} />
+  <section>
+    <p><a href="/projects/europaplatz-sued/">Return to project</a></p>
+  </section>
+</Base>

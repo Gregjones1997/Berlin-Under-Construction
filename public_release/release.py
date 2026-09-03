@@ -531,9 +531,18 @@ def build_public_bundle(
         Path("data/display-model.json"),
         Path("data/map/berlin-boundary.geojson"),
         Path("data/map/berlin-boundary.provenance.json"),
+    }
+    legacy_client_files = {
         Path("static/projection.js"),
         Path("index.html"),
     }
+    for relative_path in legacy_client_files:
+        legacy_path = output / relative_path
+        if legacy_path.is_file():
+            legacy_path.unlink()
+    legacy_static_directory = output / "static"
+    if legacy_static_directory.is_dir() and not any(legacy_static_directory.iterdir()):
+        legacy_static_directory.rmdir()
     if output.exists():
         existing = {
             path.relative_to(output) for path in output.rglob("*") if path.is_file()
@@ -560,25 +569,7 @@ def build_public_bundle(
     )
     for source, target in targets:
         shutil.copyfile(source, target)
-    static_output = output / "static"
-    static_output.mkdir(parents=True, exist_ok=True)
-    inline_target = static_output / "projection.js"
-    inline_target.write_text(
-        "window.__PUBLIC_DISPLAY_MODEL__="
-        + json.dumps(display_model, ensure_ascii=False, separators=(",", ":"))
-        + ";\n",
-        encoding="utf-8",
-    )
-    index_target = output / "index.html"
-    index_target.write_text(
-        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
-        '<script src="/static/projection.js"></script></head><body></body></html>\n',
-        encoding="utf-8",
-    )
-    return (display_target,) + tuple(target for _, target in targets) + (
-        inline_target,
-        index_target,
-    )
+    return (display_target,) + tuple(target for _, target in targets)
 
 
 def regenerate_known_withheld_manifest(

@@ -1,6 +1,7 @@
 ---
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import Base from "../layouts/Base.astro";
 import { loadPublicProjectPages } from "../lib/public-projects";
 
 type Position = {
@@ -91,17 +92,31 @@ if (!c019 || c019Location?.reasonCode !== "source_string_requires_owner_verifica
 }
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Berlin, Under Construction — restricted preview</title>
-  </head>
-  <body>
-    <main>
-      <h1>Berlin, Under Construction</h1>
-      <p>Access-restricted preview. This is not the public release.</p>
+<Base
+  title="Berlin, Under Construction"
+  heading="Berlin, Under Construction"
+  subtitle="A source-backed map of what is being built, what was promised and what changed."
+>
+      <section aria-labelledby="introduction-heading">
+        <h2 id="introduction-heading">About this project</h2>
+        <p>
+          Displayed project data is human-curated from primary sources. The retained store currently contains one completed extraction run over one document; the repository does not establish a total historical provider-call count.
+        </p>
+      </section>
+      <section aria-labelledby="demonstrates-heading">
+        <h2 id="demonstrates-heading">What this demonstrates</h2>
+        <p>
+          A working vertical slice: a typed Python extraction pipeline, strict
+          evidence and withholding gates, a validated public-data projection,
+          and an Astro/TypeScript static site with no client JavaScript.
+        </p>
+        <p>
+          AI assists with bounded document extraction; deterministic checks and
+          human review decide what can be shown. See the
+          <a href="https://github.com/Gregjones1997/Berlin-Under-Construction">source code and build record</a>.
+        </p>
+      </section>
+      <section aria-labelledby="map-heading">
       <figure aria-labelledby="map-heading map-caption">
         <h2 id="map-heading">Pilot projects within Berlin</h2>
         <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby="map-title map-description">
@@ -136,32 +151,31 @@ if (!c019 || c019Location?.reasonCode !== "source_string_requires_owner_verifica
           </p>
         </figcaption>
       </figure>
+      </section>
 
       <section aria-labelledby="unplaced-heading">
         <h2 id="unplaced-heading">Project with location withheld</h2>
-        <p>
+        <p data-reason-code={c019Location.reasonCode}>
           <a href={`/projects/${c019.slug}/`}>C-019 — <span lang="de">{c019.projectNameDe}</span></a><br />
           Location withheld pending source verification.<br />
-          Reason code: {c019Location.reasonCode}
+          This fact is withheld until the source wording is verified by the project owner.
         </p>
       </section>
 
-      <nav aria-label="All pilot projects">
+      <section><nav aria-label="All pilot projects">
         <h2>All pilot projects</h2>
         <ul>
           {projects.map((project) => (
             <li><a href={`/projects/${project.slug}/`}>{project.projectId} — <span lang="de">{project.projectNameDe}</span></a></li>
           ))}
         </ul>
-      </nav>
+      </nav></section>
 
-      <nav aria-label="Preview legal drafts">
-        <h2>Preview legal drafts</h2>
+      <section><nav aria-label="Legal information">
+        <h2>Legal information</h2>
         <ul>
-          <li><a href="/impressum/">Impressum draft</a></li>
-          <li><a href="/privacy/">Article 13 privacy notice draft</a></li>
+          <li><a href="/impressum/">Impressum</a></li>
+          <li><a href="/privacy/">Privacy notice</a></li>
         </ul>
-      </nav>
-    </main>
-  </body>
-</html>
+      </nav></section>
+</Base>

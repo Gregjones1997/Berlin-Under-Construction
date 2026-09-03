@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from html.parser import HTMLParser
+import os
 from pathlib import Path
 import subprocess
 
@@ -15,6 +16,47 @@ DIST = WEB / "dist"
 PROJECTION = ROOT / "public" / "data" / "projects.json"
 WITHHELD_CATALOG = ROOT / "public_release" / "known-withheld-candidates.json"
 SENTINEL = "WITHHELD_SENTINEL_DO_NOT_SHIP"
+TEST_BUILD_DATE = "2026-08-25"
+TEST_LEGAL_ADDRESS = "Testanschrift 1, 10115 Berlin (test-only)"
+MONITORED_CONTACT = "jonesg158@gmail.com"
+
+
+def _build_environment(
+    *, publication_date: str | None = TEST_BUILD_DATE,
+    legal_address: str | None = TEST_LEGAL_ADDRESS,
+) -> dict[str, str]:
+    environment = os.environ.copy()
+    if publication_date is None:
+        environment.pop("PUBLICATION_AS_OF_DATE", None)
+    else:
+        environment["PUBLICATION_AS_OF_DATE"] = publication_date
+    if legal_address is None:
+        environment.pop("LEGAL_ADDRESS", None)
+    else:
+        environment["LEGAL_ADDRESS"] = legal_address
+    return environment
+
+
+def _run_build(
+    output_directory: Path | None = None,
+    *,
+    publication_date: str | None = TEST_BUILD_DATE,
+    legal_address: str | None = TEST_LEGAL_ADDRESS,
+) -> subprocess.CompletedProcess[str]:
+    command = ["npm", "run", "build"]
+    if output_directory is not None:
+        command.extend(["--", "--outDir", str(output_directory)])
+    return subprocess.run(
+        command,
+        cwd=WEB,
+        env=_build_environment(
+            publication_date=publication_date,
+            legal_address=legal_address,
+        ),
+        capture_output=True,
+        text=True,
+        check=False,
+    )
 
 
 class _FactLocationParser(HTMLParser):
@@ -57,13 +99,7 @@ class _LinkParser(HTMLParser):
 
 @pytest.fixture(scope="module")
 def c014_export() -> str:
-    result = subprocess.run(
-        ["npm", "run", "build"],
-        cwd=WEB,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
+    result = _run_build()
     assert result.returncode == 0, result.stdout + result.stderr
     page = DIST / "projects" / "europaplatz-sued" / "index.html"
     assert page.is_file()
@@ -100,6 +136,11 @@ def test_c014_static_route_renders_every_accepted_fact_and_withheld_state(
         assert reason_code in c014_export
     assert "3.183.000 € brutto" in c014_export
     assert "3 .183.000" not in c014_export
+    assert c014_export.index("Current source-stated position") < c014_export.index(
+        "Completion and construction history"
+    )
+    assert "Earlier source-stated dates remain visible" in c014_export
+    assert "Translation unverified" in c014_export
 
 
 def test_every_project_has_a_stable_static_dossier_route(c014_export: str) -> None:
@@ -143,8 +184,7 @@ def test_project_correction_routes_preserve_context_and_request_type(
         correction_export = correction_page.read_text(encoding="utf-8")
         assert project_id in correction_export
         assert project_name in correction_export
-        assert "preview arrangement" in correction_export.lower()
-        assert "channel through which you received access" in correction_export
+        assert f"mailto:{MONITORED_CONTACT}" in correction_export
         assert "Evidence correction" in correction_export
         assert "Formal right of reply" in correction_export
         assert "Data-protection request" in correction_export
@@ -160,10 +200,36 @@ def test_project_correction_routes_preserve_context_and_request_type(
     assert organization_page.is_file()
     organization_export = organization_page.read_text(encoding="utf-8")
     assert "Organization context: 50Hertz" in organization_export
-    assert "preview arrangement" in organization_export.lower()
+    assert f"mailto:{MONITORED_CONTACT}" in organization_export
     assert "Evidence correction" in organization_export
     assert "Formal right of reply" in organization_export
     assert "Data-protection request" in organization_export
+
+    c014_export = (
+        DIST / "projects" / "europaplatz-sued" / "index.html"
+    ).read_text(encoding="utf-8")
+    senate_route = (
+        "/corrections/organizations/"
+        "senatsverwaltung-stadtentwicklung-bauen-wohnen/"
+    )
+    assert f'href="{senate_route}"' in c014_export
+    senate_page = (
+        DIST
+        / "corrections"
+        / "organizations"
+        / "senatsverwaltung-stadtentwicklung-bauen-wohnen"
+        / "index.html"
+    )
+    assert senate_page.is_file()
+    senate_export = senate_page.read_text(encoding="utf-8")
+    assert (
+        "Organization context: Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen"
+        in senate_export
+    )
+    assert f"mailto:{MONITORED_CONTACT}" in senate_export
+    assert "Evidence correction" in senate_export
+    assert "Formal right of reply" in senate_export
+    assert "Data-protection request" in senate_export
 
 
 def test_static_boundary_places_two_projects_and_keeps_c019_visible_unplaced(
@@ -186,6 +252,12 @@ def test_static_boundary_places_two_projects_and_keeps_c019_visible_unplaced(
     assert "(Daten verändert)" in landing_export
     assert "https://www.bkg.bund.de" in landing_export
     assert "https://www.govdata.de/dl-de/by-2-0" in landing_export
+    assert "typed Python extraction pipeline" in landing_export
+    assert "AI assists with bounded document extraction" in landing_export
+    assert (
+        'href="https://github.com/Gregjones1997/Berlin-Under-Construction"'
+        in landing_export
+    )
 
 
 def test_ai_method_route_reports_only_established_measurements(
@@ -195,7 +267,14 @@ def test_ai_method_route_reports_only_established_measurements(
     assert method_page.is_file()
     method_export = method_page.read_text(encoding="utf-8")
 
-    for measurement in ("3", "17,682", "1,053", "USD 0.00161784", "10,017 ms"):
+    for measurement in (
+        "3",
+        "17,682",
+        "1,053",
+        "USD 0.00161784",
+        "10,017 ms",
+        "178 tests",
+    ):
         assert measurement in method_export
     assert "primed the cache is unestablished" in method_export
     assert "no stored extraction run and no stored claim" in method_export
@@ -205,7 +284,7 @@ def test_ai_method_route_reports_only_established_measurements(
     assert "total provider-call count" not in method_export
 
 
-def test_legal_draft_routes_keep_owner_and_live_facts_as_placeholders(
+def test_legal_routes_publish_only_owner_supplied_identity_and_evidenced_facts(
     c014_export: str,
 ) -> None:
     landing_export = (DIST / "index.html").read_text(encoding="utf-8")
@@ -215,31 +294,92 @@ def test_legal_draft_routes_keep_owner_and_live_facts_as_placeholders(
     impressum = (DIST / "impressum" / "index.html").read_text(
         encoding="utf-8"
     )
-    for placeholder in (
-        "provider identity",
-        "complete postal address",
-        "permanent monitored contact",
-        "decide whether § 18(2) MStV applies",
-    ):
-        assert f"OWNER DECISION REQUIRED: {placeholder}" in impressum
-    assert "not approved for a public launch" in impressum
+    assert "Gregory Anthony Jones" in impressum
+    assert TEST_LEGAL_ADDRESS in impressum
+    assert MONITORED_CONTACT in impressum
+    assert "Verantwortlich für den Inhalt" in impressum
+    assert "non-commercial personal project" in impressum
+    assert "no advertising" in impressum
+    assert "no affiliate links" in impressum
+    assert "no monetisation" in impressum
+    assert "[[ANSCHRIFT]]" not in impressum
 
     privacy = (DIST / "privacy" / "index.html").read_text(encoding="utf-8")
-    for placeholder in (
-        "provider/controller identity",
-        "complete postal address",
-        "permanent monitored contact for privacy requests",
+    for controller_detail in (
+        "Gregory Anthony Jones",
+        TEST_LEGAL_ADDRESS,
+        MONITORED_CONTACT,
     ):
-        assert f"OWNER DECISION REQUIRED: {placeholder}" in privacy
-    for live_fact in (
-        "request metadata actually processed",
-        "cookies or browser storage",
-        "applicable recipients and subprocessors",
-        "non-EEA transfers",
-        "retention period or evidenced deletion criterion",
+        assert controller_detail in privacy
+    assert "IP address" in privacy
+    assert "Art. 6(1)(f) GDPR" in privacy
+    assert "Vercel" in privacy
+    assert 'href="https://vercel.com/legal/dpa"' in privacy
+    for right in ("Art. 15", "Art. 16", "Art. 17", "Art. 18", "Art. 20", "Art. 21"):
+        assert right in privacy
+    assert "Berliner Beauftragte für Datenschutz und Informationsfreiheit" in privacy
+    for absent_feature in (
+        "no cookies",
+        "no analytics",
+        "no tracking",
+        "no third-party requests",
+        "no client JavaScript",
+        "no user accounts",
+        "no forms",
     ):
-        assert live_fact in privacy
-    assert "It must not be presented as a complete public notice" in privacy
+        assert absent_feature in privacy
+
+
+def test_legal_address_placeholder_occurs_once_and_fails_closed(
+    tmp_path: Path,
+) -> None:
+    route_sources = tuple((WEB / "src" / "pages").rglob("*.astro"))
+    assert sum(
+        source.read_text(encoding="utf-8").count("[[ANSCHRIFT]]")
+        for source in route_sources
+    ) == 1
+
+    result = _run_build(tmp_path / "missing-address", legal_address=None)
+
+    assert result.returncode != 0
+    assert "LEGAL_ADDRESS" in result.stdout + result.stderr
+
+
+def test_publication_date_is_required_and_appears_on_every_route(
+    c014_export: str, tmp_path: Path
+) -> None:
+    result = _run_build(tmp_path / "missing-date", publication_date=None)
+    assert result.returncode != 0
+    assert "PUBLICATION_AS_OF_DATE" in result.stdout + result.stderr
+
+    pages = tuple(DIST.rglob("*.html"))
+    assert len(pages) == 13
+    footer_sentence = f"This page was generated on {TEST_BUILD_DATE}."
+    for page in pages:
+        export = page.read_text(encoding="utf-8")
+        assert footer_sentence in export, page.relative_to(DIST)
+
+
+def test_rebuild_after_planned_date_changes_footer_and_c010_caveat(
+    tmp_path: Path,
+) -> None:
+    before_dir = tmp_path / "before"
+    after_dir = tmp_path / "after"
+    before = _run_build(before_dir, publication_date="2026-08-25")
+    after = _run_build(after_dir, publication_date="2026-09-01")
+    assert before.returncode == 0, before.stdout + before.stderr
+    assert after.returncode == 0, after.stdout + after.stderr
+
+    route = Path("projects/heinrich-hertz-gymnasium-ostbahnhof/index.html")
+    before_export = (before_dir / route).read_text(encoding="utf-8")
+    after_export = (after_dir / route).read_text(encoding="utf-8")
+    assert "This page was generated on 2026-08-25." in before_export
+    assert "This page was generated on 2026-09-01." in after_export
+    assert "This is not evidence that the milestone has happened." in before_export
+    assert (
+        "That date has passed, but no confirming source is recorded. "
+        "Completion is not asserted."
+    ) in after_export
 
 
 def test_every_internal_link_resolves_in_the_static_export(

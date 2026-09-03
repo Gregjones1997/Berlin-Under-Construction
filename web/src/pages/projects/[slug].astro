@@ -1,5 +1,6 @@
 ---
 import RawFact from "../../components/RawFact.astro";
+import Base from "../../layouts/Base.astro";
 import {
   loadPublicProjectPages,
   type PublicProjectPage,
@@ -15,51 +16,128 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const identityFacts = project.publishedFacts.filter((fact) =>
+  ["project_name", "project_location"].includes(fact.factType),
+);
+const leadFact =
+  project.publishedFacts.find(
+    (fact) => fact.factType === "milestone" && fact.factId.endsWith("current"),
+  ) ?? project.publishedFacts.find((fact) => fact.factType === "milestone");
+const currentFacts = project.publishedFacts.filter(
+  (fact) => fact.factType === "status" || fact.factId === leadFact?.factId,
+);
+const historyFacts = project.publishedFacts.filter((fact) =>
+  fact.factId.includes("history"),
+);
+const groupedFactIds = new Set(
+  [...identityFacts, ...currentFacts, ...historyFacts].map((fact) => fact.factId),
+);
+const otherFacts = project.publishedFacts.filter(
+  (fact) => !groupedFactIds.has(fact.factId),
+);
+
+const FACT_LABELS: Record<string, string> = {
+  financial_measure: "Financial measure",
+  milestone: "Milestone",
+  organization_role: "Organization role",
+  project_location: "Project location",
+  project_name: "Project name",
+  status: "Project status",
+};
+
+const WITHHELD_REASONS: Record<string, string> = {
+  owner_review_required: "This fact is withheld pending an owner review.",
+  source_string_requires_owner_verification:
+    "This fact is withheld until the source wording is verified by the project owner.",
+  multi_source_synthesis_has_no_exact_span:
+    "This conclusion is withheld because no single exact evidence span supports it.",
+  milestone_vocabulary_unresolved:
+    "This milestone is withheld because its German term has not been resolved for display.",
+  role_vocabulary_unresolved:
+    "This organization role is withheld because its role vocabulary remains unresolved.",
+};
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{project.projectId} — {project.slug}</title>
-  </head>
-  <body>
-    <main>
-      <h1>{project.projectId} — {project.slug}</h1>
+<Base
+  title={`${project.projectNameDe} — Berlin, Under Construction`}
+  heading={project.projectNameDe}
+  headingLang="de"
+  subtitle={`${project.projectId} · source-backed project dossier`}
+>
+  <section aria-labelledby="identity-heading">
+    <h2 id="identity-heading">Project identity</h2>
+    {identityFacts.map((fact) => <RawFact fact={fact} />)}
+  </section>
 
-      <section aria-labelledby="published-heading">
-        <h2 id="published-heading">Published facts</h2>
-        {project.publishedFacts.map((fact) => <RawFact fact={fact} />)}
-      </section>
+  <section aria-labelledby="current-heading">
+    <h2 id="current-heading">Current source-stated position</h2>
+    {currentFacts.map((fact) => (
+      <RawFact fact={fact} lead={fact.factId === leadFact?.factId} />
+    ))}
+  </section>
 
-      <section aria-labelledby="conflicts-heading">
-        <h2 id="conflicts-heading">Conflicts</h2>
-        {project.conflicts.map((conflict) => (
-          <section data-conflict-id={conflict.conflictId}>
-            <h3>{conflict.conflictId}</h3>
-            <p>State: {String(conflict.state)}</p>
-            {conflict.measureType && (
-              <p>Financial measure: {String(conflict.measureType)}</p>
-            )}
-            {conflict.scopeKey && <p>Scope: {String(conflict.scopeKey)}</p>}
+  {historyFacts.length > 0 && (
+    <section aria-labelledby="history-heading">
+      <h2 id="history-heading">Completion and construction history</h2>
+      <p class="section-intro">
+        Earlier source-stated dates remain visible so changes are not erased.
+      </p>
+      {historyFacts.map((fact) => <RawFact fact={fact} />)}
+    </section>
+  )}
+
+  {otherFacts.length > 0 && (
+    <section aria-labelledby="other-facts-heading">
+      <h2 id="other-facts-heading">Other verified facts</h2>
+      {otherFacts.map((fact) => <RawFact fact={fact} />)}
+    </section>
+  )}
+
+  {project.conflicts.length > 0 && (
+    <section aria-labelledby="conflicts-heading">
+      <h2 id="conflicts-heading">Conflicting source values</h2>
+      {project.conflicts.map((conflict) => (
+        <section class="conflict" data-conflict-id={conflict.conflictId}>
+          <h3>Unresolved official-source conflict</h3>
+          <div class="pair">
             {conflict.facts.map((fact) => <RawFact fact={fact} />)}
-          </section>
-        ))}
-      </section>
+          </div>
+          <p class="note">
+            The two official sources disagree, and neither source retracts the
+            other. Neither value is promoted.
+          </p>
+        </section>
+      ))}
+    </section>
+  )}
 
-      <section aria-labelledby="withheld-heading">
-        <h2 id="withheld-heading">Withheld facts</h2>
-        {project.withheldFacts.map((fact) => (
-          <article data-fact-id={fact.factId}>
-            <h3>{fact.factId}</h3>
-            <p>Fact type: {fact.factType}</p>
-            <p>Reason code: {fact.reasonCode}</p>
-          </article>
-        ))}
-      </section>
+  {project.withheldFacts.length > 0 && (
+    <section aria-labelledby="withheld-heading">
+      <h2 id="withheld-heading">Withheld facts</h2>
+      {project.withheldFacts.map((fact) => (
+        <article
+          class="withheld"
+          data-fact-id={fact.factId}
+          data-reason-code={fact.reasonCode}
+        >
+          <h3>{FACT_LABELS[fact.factType] ?? "Project fact"}</h3>
+          <p>{WITHHELD_REASONS[fact.reasonCode ?? ""] ?? "This fact is withheld pending review."}</p>
+        </article>
+      ))}
+    </section>
+  )}
 
-      <p><a href={project.correctionPath}>Correction</a></p>
-    </main>
-  </body>
-</html>
+  <section aria-labelledby="language-heading">
+    <h2 id="language-heading">Language boundary</h2>
+    <p>
+      <strong>Translation unverified.</strong> German source wording is
+      canonical. English is used for structural labels only; unresolved types
+      are withheld rather than guessed.
+    </p>
+  </section>
+
+  <section>
+    <h2>Corrections</h2>
+    <p><a href={project.correctionPath}>Request an evidence correction or make a formal request</a></p>
+  </section>
+</Base>

@@ -2,6 +2,98 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-09-03 — Public release candidate and phase review
+
+**Status:** Complete locally; owner address, hosting decision and live evidence remain open
+
+### Goal
+
+Turn the styled working-tree candidate into the smallest reviewed artifact that
+can be deployed for portfolio applications without weakening the evidence,
+privacy, naming or zero-JavaScript boundaries.
+
+### Participants and scopes
+
+- Project owner: set the same-day completion goal; owns the serviceable postal
+  address, Vercel Hobby/DPA choice and final public acceptance.
+- Main agent (Codex; gstack `browse`, repository `code-review`, Vercel CLI and
+  Vercel deployments guidance): inspected, integrated, corrected and verified
+  the release candidate.
+- Standards-review subagent: checked the full `main...phase-4-public-slice`
+  candidate plus working tree against `AGENTS.md` and the code-smell baseline.
+- Specification-review subagent: checked the same candidate against the
+  accepted portfolio pivot, merge plan and active checklist gate.
+- Earlier read-only privacy-source subagent: supplied the official Vercel source
+  list preserved in the 25 August Hobby privacy finding; it made no edits.
+
+### Multi-agent architecture
+
+Parallel read-only review lanes were used because the phase boundary requires
+both repository-standard and product-spec checks without letting either hide
+the other. The standards lane found the legacy script bundle, missing
+organization correction route, stale checklist/design-integration wording and
+the missing disclosure for the earlier privacy-source lane. The specification
+lane found the missing live evidence, weak flagship timeline hierarchy, absent
+translation-status copy, stale build recipe and premature host wording.
+
+The main agent reproduced every accepted finding against the source and diff,
+implemented the corrections, and independently reran the complete test, build,
+scan and browser gates. The remaining duplicated display-label maps and parallel
+Python/TypeScript display-model logic were accepted as post-release design debt;
+refactoring them does not remove a same-day launch blocker.
+
+### Work performed
+
+- Reimplemented the owner's visual direction in the shared Astro layout and
+  repository stylesheet, added a recruiter-facing product/technology summary
+  and captured the local candidate screenshot.
+- Made C-014's current source-stated completion and history explicit, displayed
+  the unverified language boundary and added the missing organization-context
+  correction route.
+- Removed the legacy generated JavaScript/HTML shell so both the data bundle and
+  Astro site are client-JavaScript-free.
+- Rechecked C-010 after its 31 August planned date against official district,
+  Senate and HOWOGE sources. A newer source moved the plan to early September,
+  but no checked source explicitly confirmed handover; the site does not assert
+  completion.
+- Updated the public method count, legal-host wording, reproducible build recipe,
+  README and checklist to match the candidate.
+
+### Course correction
+
+The 25 August Hobby privacy finding recorded a read-only source-reconciliation
+lane without adding its orchestration to the build log in the same session.
+This entry repairs the disclosure but cannot make it timely. The omission was
+caught by the standards phase review before the candidate was committed or
+deployed.
+
+### Verification
+
+- 178 Python tests passed.
+- Astro built 13 HTML routes and one CSS asset with the real 3 September
+  publication date and a clearly marked test-only legal address.
+- The three-file data bundle and all 14 Astro export files passed the
+  known-withheld and sentinel scans; neither output contains client JavaScript.
+- Desktop landing and 375 px flagship browser checks showed no horizontal
+  overflow or console errors. Tab/Enter opened native evidence disclosure and
+  exposed the original-source link.
+- Both read-only review lanes were independently dispositioned by the main
+  agent. Neither reviewer edited the tree.
+
+### Failures and limitations
+
+- A combined verification command ran `npm` from the repository root and failed
+  because the package lives in `/web`; rerunning from `/web` built all 13 pages.
+- No Vercel project or deployment exists yet. The real legal address, owner
+  decision on the disclosed Hobby DPA ambiguity, and every live-host check remain
+  required before the site is called public.
+
+### Evidence
+
+- `docs/research/findings/2026-09-03-c010-milestone-recheck.md`
+- `docs/research/findings/2026-09-03-public-candidate-verification.md`
+- `docs/images/portfolio-preview.png`
+
 - **Course correction** — 2026-08-25 — Project owner and Codex (Vercel CLI and
   Vercel deployments guidance): the attempted password-protected preview lane
   stopped before project creation when the authenticated Hobby account was

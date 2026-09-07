@@ -1,181 +1,379 @@
 ---
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import Base from "../layouts/Base.astro";
 import { loadPublicProjectPages } from "../lib/public-projects";
-
-type Position = {
-  projectId: string;
-  latitude: number;
-  longitude: number;
-};
-
-type Boundary = {
-  features: Array<{
-    geometry: {
-      type: "MultiPolygon";
-      coordinates: number[][][][];
-    };
-  }>;
-};
-
-const dataRoot = resolve(process.cwd(), "../public/data/map");
-const boundary = JSON.parse(
-  readFileSync(resolve(dataRoot, "berlin-boundary.geojson"), "utf8"),
-) as Boundary;
-const markerData = JSON.parse(
-  readFileSync(resolve(dataRoot, "pilot-marker-positions.json"), "utf8"),
-) as { positions: Position[] };
+import { publicationAsOfDate } from "../lib/milestone-freshness.mjs";
+import RawFact from "../components/RawFact.astro";
+import Icon from "../components/AtlasIcon.astro";
+import "../styles/atlas.css";
 const projects = loadPublicProjectPages();
-const projectById = new Map(projects.map((project) => [project.projectId, project]));
-
-if (markerData.positions.some((position) => position.projectId === "C-019")) {
-  throw new Error("C-019 must remain unplaced while its location is withheld");
-}
-
-const width = 800;
-const height = 600;
-const padding = 30;
-const rings = boundary.features.flatMap((feature) =>
-  feature.geometry.coordinates.flatMap((polygon) => polygon),
-);
-const points = rings.flat();
-const longitudes = points.map(([longitude]) => longitude);
-const latitudes = points.map(([, latitude]) => latitude);
-const minLongitude = Math.min(...longitudes);
-const maxLongitude = Math.max(...longitudes);
-const minLatitude = Math.min(...latitudes);
-const maxLatitude = Math.max(...latitudes);
-
-function mapPoint(longitude: number, latitude: number) {
-  return {
-    x:
-      padding +
-      ((longitude - minLongitude) / (maxLongitude - minLongitude)) *
-        (width - 2 * padding),
-    y:
-      padding +
-      ((maxLatitude - latitude) / (maxLatitude - minLatitude)) *
-        (height - 2 * padding),
-  };
-}
-
-const boundaryPaths = rings.map((ring) =>
-  ring
-    .map(([longitude, latitude], index) => {
-      const { x, y } = mapPoint(longitude, latitude);
-      return `${index === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`;
-    })
-    .join(" ") + " Z",
-);
-
-const placedProjects = markerData.positions.map((position) => {
-  const project = projectById.get(position.projectId);
-  if (!project) {
-    throw new Error(`Unknown marker project ${position.projectId}`);
-  }
-  const publishedLocation = project.publishedFacts.some(
-    (fact) => fact.factType === "project_location",
-  );
-  if (!publishedLocation) {
-    throw new Error(`Marker project ${position.projectId} has no published location`);
-  }
-  return { ...project, ...mapPoint(position.longitude, position.latitude) };
-});
-
-const c019 = projectById.get("C-019");
-const c019Location = c019?.withheldFacts.find(
-  (fact) => fact.factId === "c019-project-location",
-);
-if (!c019 || c019Location?.reasonCode !== "source_string_requires_owner_verification") {
-  throw new Error("C-019 withheld-location state is missing");
-}
+const positions = JSON.parse(
+  readFileSync(
+    resolve("../public/data/map/pilot-marker-positions.json"),
+    "utf8",
+  ),
+).positions as { projectId: string; latitude: number; longitude: number }[];
+const generatedOn = publicationAsOfDate(process.env.PUBLICATION_AS_OF_DATE);
+const records = projects.map((project) => ({
+  ...project,
+  position: positions.find((p) => p.projectId === project.projectId),
+  lead:
+    project.publishedFacts.find(
+      (f) => f.factType === "milestone" && f.factId.endsWith("current"),
+    ) ?? project.publishedFacts.find((f) => f.factType === "milestone"),
+  history: project.publishedFacts.filter((f) => f.factId.includes("history")),
+}));
 ---
 
-<Base
-  title="Berlin, Under Construction"
-  heading="Berlin, Under Construction"
-  subtitle="A source-backed map of what is being built, what was promised and what changed."
->
-      <section aria-labelledby="introduction-heading">
-        <h2 id="introduction-heading">About this project</h2>
-        <p>
-          Displayed project data is human-curated from primary sources. The retained store currently contains one completed extraction run over one document; the repository does not establish a total historical provider-call count.
-        </p>
-      </section>
-      <section aria-labelledby="demonstrates-heading">
-        <h2 id="demonstrates-heading">What this demonstrates</h2>
-        <p>
-          A working vertical slice: a typed Python extraction pipeline, strict
-          evidence and withholding gates, a validated public-data projection,
-          and an Astro/TypeScript static site with no client JavaScript.
-        </p>
-        <p>
-          AI assists with bounded document extraction; deterministic checks and
-          human review decide what can be shown. See the
-          <a href="https://github.com/Gregjones1997/Berlin-Under-Construction">source code and build record</a>.
-        </p>
-      </section>
-      <section aria-labelledby="map-heading">
-      <figure aria-labelledby="map-heading map-caption">
-        <h2 id="map-heading">Pilot projects within Berlin</h2>
-        <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby="map-title map-description">
-          <title id="map-title">Berlin boundary with two placed pilot projects</title>
-          <desc id="map-description">C-014 and C-010 are placed. C-019 is listed separately because its location is withheld.</desc>
-          {boundaryPaths.map((path) => <path d={path} fill="none" stroke="currentColor" />)}
-          {placedProjects.map((project) => (
-            <a
-              href={`/projects/${project.slug}/`}
-              data-map-marker="placed"
-              data-project-id={project.projectId}
-              aria-label={`${project.projectId}: ${project.projectNameDe}`}
+<!doctype html>
+<html lang="en">
+  <head
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    /><meta
+      name="description"
+      content="Explore Berlin through an architectural city model and source-backed construction records. What is being built, what was promised, and what changed."
+    /><meta name="theme-color" content="#f3f1eb" /><title>
+      Berlin, Under Construction — The city, in progress.
+    </title></head
+  >
+  <body class="atlas-page">
+    <a class="skip-link" href="#project-list">Skip to project records</a>
+    <header class="atlas-header">
+      <a href="/" class="wordmark" aria-label="Berlin, Under Construction home"
+        ><span class="brand-symbol" aria-hidden="true">▥</span><span
+          >BERLIN<span class="wordmark-sub">UNDER CONSTRUCTION</span></span
+        ></a
+      >
+      <nav aria-label="Main navigation">
+        <a class="nav-active" href="/" aria-current="page">The atlas</a><a
+          href="/records/">Project index</a
+        ><a href="/method/">How it works <span aria-hidden="true">↗</span></a>
+      </nav>
+      <span class="edition"
+        ><i></i> Independent city atlas <span>01 / BERLIN</span></span
+      >
+    </header>
+    <main id="atlas" class="atlas-shell">
+      <div
+        id="map-stage"
+        class="map-stage"
+        role="region"
+        aria-label="Interactive architectural map of Berlin"
+      >
+        <div class="map-loading" id="map-loading" role="status">
+          <span class="loading-mark">B<span>.</span></span><p
+            id="loading-message"
+          >
+            Assembling the city
+          </p><small>Real geometry. A closer look.</small>
+        </div>
+        <div class="map-failure" id="map-failure" hidden>
+          <h2>The atlas could not load.</h2><p id="failure-message">
+            Your browser may not support this 3D view.
+          </p><a href="/records/">Explore the accessible project index →</a
+          ><button id="retry-map" type="button">Try again</button>
+        </div>
+        <div class="map-markers" id="map-markers">
+          {
+            records
+              .filter((r) => r.position)
+              .map((project, index) => (
+                <button
+                  class="project-pin"
+                  data-project={project.projectId}
+                  data-lon={project.position!.longitude}
+                  data-lat={project.position!.latitude}
+                  aria-label={`Explore ${project.projectNameDe}`}
+                  hidden
+                >
+                  <>
+                    <span class="pin-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span class="pin-label" lang="de">
+                      {project.projectNameDe}
+                    </span>
+                  </>
+                </button>
+              ))
+          }
+        </div>
+      </div>
+      <aside class="atlas-left" aria-label="Explore project records">
+        <div class="atlas-intro">
+          <p class="eyebrow">A SOURCE-BACKED VIEW OF BERLIN</p><h1>
+            The city,<br /><em>in progress.</em>
+          </h1><p>What is being built.<br />What was promised. What changed.</p>
+        </div>
+        <details class="project-picker" open id="project-picker">
+          <summary id="project-list"
+            ><span>Explore the projects</span><span class="count">03</span
+            ></summary
+          >
+          <div class="project-list">
+            {
+              records.map((project, index) => (
+                <div class="project-entry">
+                  <>
+                    <button
+                      class="project-select"
+                      data-project={project.projectId}
+                      aria-controls={`record-${project.projectId}`}
+                      aria-expanded="false"
+                    >
+                      <>
+                        <span class="project-number">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span>
+                          <>
+                            <strong lang="de">{project.projectNameDe}</strong>
+                            <small>
+                              {project.position
+                                ? "Placed in the atlas"
+                                : "Location withheld"}
+                            </small>
+                          </>
+                        </span>
+                        <span class="entry-arrow" aria-hidden="true">
+                          ↗
+                        </span>
+                      </>
+                    </button>
+                    <a class="entry-static" href={`/projects/${project.slug}/`}>
+                      Read dossier →
+                    </a>
+                  </>
+                </div>
+              ))
+            }
+          </div>
+          <p class="picker-note">
+            <span class="orange-dot"></span> Two located projects. Three evidence
+            records.
+          </p>
+        </details>
+      </aside>
+      <div class="appearance-controls" role="group" aria-label="Map appearance">
+        <button class="active" id="paper-mode" aria-pressed="true"
+          ><Icon name="sun" /> Paper</button
+        ><button id="night-mode" aria-pressed="false"
+          ><Icon name="moon" /> Ink</button>
+      </div>
+      <aside
+        class="record-panel"
+        id="record-panel"
+        aria-label="Selected project"
+        hidden
+        tabindex="-1"
+      >
+        <button
+          class="panel-close icon-button"
+          id="close-record"
+          aria-label="Close project record"><Icon name="close" /></button
+        >
+        {
+          records.map((project, index) => (
+            <section
+              id={`record-${project.projectId}`}
+              class="project-record"
+              hidden
             >
-              <circle cx={project.x} cy={project.y} r="8" />
-              <text x={project.x + 12} y={project.y + 4}>{project.projectId}</text>
-            </a>
-          ))}
-        </svg>
-        <figcaption id="map-caption">
-          <p>
-            Two of three pilot projects are placed. C-019 remains reachable below,
-            with its location withheld pending source verification.
-          </p>
-          <p>
-            Boundary: © <a href="https://www.bkg.bund.de">BKG</a> 2026
-            <a href="https://www.govdata.de/dl-de/by-2-0">dl-de/by-2-0</a>
-            (Daten verändert), Datenquellen:
-            <a href="https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf">BKG source record</a>.
-          </p>
-          <p>
-            Marker positions: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL 1.0.
-          </p>
-        </figcaption>
-      </figure>
-      </section>
-
-      <section aria-labelledby="unplaced-heading">
-        <h2 id="unplaced-heading">Project with location withheld</h2>
-        <p data-reason-code={c019Location.reasonCode}>
-          <a href={`/projects/${c019.slug}/`}>C-019 — <span lang="de">{c019.projectNameDe}</span></a><br />
-          Location withheld pending source verification.<br />
-          This fact is withheld until the source wording is verified by the project owner.
-        </p>
-      </section>
-
-      <section><nav aria-label="All pilot projects">
-        <h2>All pilot projects</h2>
-        <ul>
-          {projects.map((project) => (
-            <li><a href={`/projects/${project.slug}/`}>{project.projectId} — <span lang="de">{project.projectNameDe}</span></a></li>
-          ))}
-        </ul>
-      </nav></section>
-
-      <section><nav aria-label="Legal information">
-        <h2>Legal information</h2>
-        <ul>
-          <li><a href="/impressum/">Impressum</a></li>
-          <li><a href="/privacy/">Privacy notice</a></li>
-        </ul>
-      </nav></section>
-</Base>
+              <div class="record-heading">
+                <>
+                  <p class="eyebrow">
+                    PROJECT RECORD / {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h2 lang="de">{project.projectNameDe}</h2>
+                  <p class="record-id">
+                    {project.projectId} · Source-backed dossier
+                  </p>
+                </>
+              </div>
+              {!project.position && (
+                <p class="withheld-note">
+                  Location withheld pending source verification. This record
+                  remains available without a map marker.
+                </p>
+              )}
+              <div
+                class="record-tabs"
+                role="group"
+                aria-label="Project sections"
+              >
+                <>
+                  <button
+                    class="active"
+                    data-record-tab="overview"
+                    aria-pressed="true"
+                  >
+                    Overview
+                  </button>
+                  <button data-record-tab="history" aria-pressed="false">
+                    Source history
+                  </button>
+                </>
+              </div>
+              <div data-record-section="overview">
+                <p class="section-label">CURRENT SOURCE-STATED POSITION</p>
+                {project.lead ? (
+                  <RawFact fact={project.lead} lead />
+                ) : (
+                  <p>No completion milestone is published in this record.</p>
+                )}
+                <p class="language-note">
+                  German wording is canonical. Glossary v1.0 is unverified.
+                </p>
+              </div>
+              <div data-record-section="history" hidden>
+                <p class="history-note">
+                  Dates describe source statements, not observed construction
+                  progress.
+                </p>
+                {project.history.length ? (
+                  project.history.map((f) => <RawFact fact={f} />)
+                ) : (
+                  <p>
+                    No separate milestone history is published for this project.
+                  </p>
+                )}
+              </div>
+              <div class="record-actions">
+                <>
+                  <a class="primary-link" href={`/projects/${project.slug}/`}>
+                    Open full dossier <Icon name="arrow" />
+                  </a>
+                  <a href={project.correctionPath} class="correction-link">
+                    Suggest a correction
+                  </a>
+                </>
+              </div>
+            </section>
+          ))
+        }
+      </aside>
+      <div class="map-right-controls" role="group" aria-label="Map navigation">
+        <button id="north" class="north-button" aria-label="Orient map north"
+          ><span id="north-arrow">↑</span><small>N</small></button
+        ><div class="zoom-stack">
+          <button id="zoom-in" aria-label="Zoom in"><Icon name="plus" /></button
+          ><button id="zoom-out" aria-label="Zoom out"
+            ><Icon name="minus" /></button>
+        </div>
+      </div>
+      <div class="map-bottom">
+        <div class="map-readout">
+          <span class="eyebrow" id="view-label">CENTRAL BERLIN</span><span
+            class="scale-rule"
+            id="scale-rule"></span><span id="scale-label">1 km</span>
+        </div>
+        <div class="map-toolbar" role="group" aria-label="Atlas controls">
+          <button id="home-view"
+            ><Icon name="compass" /><span>Overview</span></button
+          ><button id="orbit-view" aria-pressed="false"
+            ><Icon name="play" /><span>Orbit</span></button
+          ><span class="toolbar-divider"></span><button
+            id="plan-view"
+            aria-pressed="false"
+            ><Icon name="layers" /><span>Plan view</span></button
+          ><button id="labels-view" aria-pressed="true"
+            ><Icon name="map" /><span>Labels</span></button
+          ><span class="toolbar-divider"></span><button
+            id="fullscreen-view"
+            aria-label="Enter fullscreen"><Icon name="expand" /></button>
+        </div>
+        <button id="about-map" class="about-map" aria-haspopup="dialog"
+          ><Icon name="info" /> About this model</button
+        >
+      </div>
+      <p class="interaction-hint" id="interaction-hint">
+        Drag to explore <span>·</span> Scroll to zoom <span>·</span> Right-drag to
+        rotate
+      </p>
+      <div
+        class="selection-status sr-only"
+        id="selection-status"
+        aria-live="polite"
+      >
+      </div>
+    </main>
+    <footer class="atlas-footer">
+      <span
+        >Geometry: <a
+          href="https://daten.berlin.de/datensaetze/gebaudehohen-umweltatlas-wfs-d918088d"
+          >Geoportal Berlin</a
+        > · <a href="https://www.openstreetmap.org/copyright"
+          >© OpenStreetMap contributors</a
+        ></span
+      ><span class="footer-center"
+        >A model of the city. An evidence trail for its future.</span
+      ><nav aria-label="Legal information">
+        <a href="/impressum/">Impressum</a><a href="/privacy/">Privacy</a><a
+          href="/corrections/">Corrections</a>
+      </nav>
+    </footer>
+    <dialog id="model-dialog">
+      <button
+        class="dialog-close icon-button"
+        id="close-model"
+        aria-label="Close model information"><Icon name="close" /></button
+      ><p class="eyebrow">THE MAP, EXPLAINED</p><h2>
+        A city model.<br /><em>Not a live survey.</em>
+      </h2><p>
+        This architectural view uses real building footprints and
+        source-recorded heights. Buildings are simplified extrusions; roof
+        shapes and facades are not reconstructed. The model does not show
+        current construction progress.
+      </p><dl>
+        <div>
+          <dt>Building geometry</dt><dd>
+            Geoportal Berlin · Gebäudehöhen 2022 (Umweltatlas), derived from
+            ALKIS footprints and the LoD2 model. <a
+              href="https://www.govdata.de/dl-de/zero-2-0">dl-de/zero-2-0</a
+            >.
+          </dd>
+        </div><div>
+          <dt>Geographic context</dt><dd>
+            © <a href="https://www.openstreetmap.org/copyright"
+              >OpenStreetMap contributors</a
+            >, ODbL. Simplified water, green space and transport geometry. Road
+            widths and bridge elevations are illustrative.
+          </dd>
+        </div><div>
+          <dt>Coverage & precision</dt><dd id="model-coverage">
+            Detailed central-Berlin study. Building shapes smaller than 50 m²
+            are omitted; coordinates are rounded to 0.5 m. Source gaps remain
+            gaps. Geometry predates these project records.
+          </dd>
+        </div><div>
+          <dt>Project evidence</dt><dd>
+            Only two of three pilot projects have published positions. Dates and
+            statements retain their individual sources; map geometry is not
+            project-status evidence.
+          </dd>
+        </div><div>
+          <dt>Privacy & access</dt><dd>
+            Model assets are served with this site. No map provider, analytics,
+            location permission or account is required. The <a href="/records/"
+              >project index</a
+            > and dossiers work without JavaScript.
+          </dd>
+        </div>
+      </dl><p class="model-date">
+        This page was generated on {generatedOn}. Data dates vary by source.
+      </p><a href="/method/" class="primary-link"
+        >Read the method <Icon name="arrow" /></a>
+    </dialog>
+    <noscript
+      ><div class="noscript-note">
+        The 3D atlas requires JavaScript. <a href="/records/"
+          >Open the accessible map and project index →</a>
+      </div></noscript
+    >
+    <script>
+      import "../atlas/controller";
+    </script>
+  </body>
+</html>

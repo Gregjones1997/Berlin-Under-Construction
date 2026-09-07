@@ -235,7 +235,7 @@ def test_project_correction_routes_preserve_context_and_request_type(
 def test_static_boundary_places_two_projects_and_keeps_c019_visible_unplaced(
     c014_export: str,
 ) -> None:
-    landing_page = DIST / "index.html"
+    landing_page = DIST / "records" / "index.html"
     assert landing_page.is_file()
     landing_export = landing_page.read_text(encoding="utf-8")
 
@@ -323,7 +323,6 @@ def test_legal_routes_publish_only_owner_supplied_identity_and_evidenced_facts(
         "no analytics",
         "no tracking",
         "no third-party requests",
-        "no client JavaScript",
         "no user accounts",
         "no forms",
     ):
@@ -353,7 +352,7 @@ def test_publication_date_is_required_and_appears_on_every_route(
     assert "PUBLICATION_AS_OF_DATE" in result.stdout + result.stderr
 
     pages = tuple(DIST.rglob("*.html"))
-    assert len(pages) == 13
+    assert len(pages) == 14
     footer_sentence = f"This page was generated on {TEST_BUILD_DATE}."
     for page in pages:
         export = page.read_text(encoding="utf-8")
@@ -429,14 +428,19 @@ def test_export_contains_named_fields_not_serialized_objects(
     assert "Milestone type:" in c014_export
 
 
-def test_astro_export_ships_no_javascript(c014_export: str) -> None:
-    exported_html = "\n".join(
-        page.read_text(encoding="utf-8") for page in DIST.rglob("*.html")
-    )
-    assert "<script" not in exported_html.lower()
-    assert not tuple(DIST.rglob("*.js"))
-    assert not tuple(DIST.rglob("*.json"))
+def test_only_atlas_ships_javascript(c014_export: str) -> None:
+    atlas = (DIST / "index.html").read_text(encoding="utf-8")
+    assert '<script type="module" src="/_astro/' in atlas
+    assert '<noscript>' in atlas
+    for page in DIST.rglob("*.html"):
+        if page != DIST / "index.html":
+            assert "<script" not in page.read_text(encoding="utf-8").lower()
+    assert {p.relative_to(DIST).as_posix() for p in DIST.rglob("*.json")} == {
+        "atlas/model.json", "atlas/provenance.json"
+    }
     assert not (DIST / "data").exists()
+    assert atlas.count('class="project-pin"') == 2
+    assert 'class="project-pin" data-project="C-019"' not in atlas
 
 
 def test_real_astro_export_passes_withheld_and_sentinel_scans(

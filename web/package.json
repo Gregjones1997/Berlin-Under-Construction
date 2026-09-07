@@ -4,9 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build"
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "astro": "7.2.3"
+    "@types/three": "^0.185.4",
+    "astro": "7.2.3",
+    "proj4": "^2.22.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^7.0.2"
   }
 }

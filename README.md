@@ -9,17 +9,20 @@ instead of smoothing them into a single confident story.
 
 ## Public-site candidate
 
-![Berlin, Under Construction public-site candidate](docs/images/portfolio-preview.png)
+![Berlin, Under Construction public-site candidate](docs/images/atlas-paper.png)
 
 The Astro candidate is the deployable product surface: three evidence-backed project
-dossiers, a static Berlin orientation map, contextual correction routes, the
-recorded AI-method page, an Impressum and an Article 13 privacy notice. Its
-static export contains 13 HTML pages and zero client JavaScript. It makes no
+dossiers, an interactive architectural atlas of central Berlin, a static map
+and project index, contextual correction routes, the recorded AI-method page,
+an Impressum and an Article 13 privacy notice. Its static export contains 14
+HTML pages. Only the atlas loads client JavaScript (Three.js); all other routes
+remain JavaScript-free. The self-hosted model contains 84,895 building shapes
+and is approximately 26 MB; see [model provenance and limitations](docs/atlas-model.md). It makes no
 runtime request to a font, map tile, analytics or other third-party service.
 
 Every build requires `PUBLICATION_AS_OF_DATE` and the owner's complete
 serviceable postal address in `LEGAL_ADDRESS`. The first value is displayed in
-every page footer and controls the C-010 passed-date warning; the second is used
+every page (the atlas places it in its model-information dialog) and controls the C-010 passed-date warning; the second is used
 on both legal routes. A missing value fails the build.
 
 No live URL is recorded here until that exact deployment has passed route,
@@ -110,7 +113,9 @@ The first public release will focus on a narrow, working vertical slice:
 - A bounded document-intelligence workflow with metering and visible limitations; scored evaluation follows after v0.
 - A deployable 2D map connected to evidence-backed project pages.
 
-The technical-illustration 3D experience remains an important differentiator, but it follows the first working 2D release so that geospatial rendering does not delay evidence of the core data and AI work.
+On 7 September the owner reopened the 3D release sequence (ADR-024). The local
+candidate now includes an architectural atlas while preserving the static index
+and the core evidence and AI work. Public launch remains gated.
 
 Features described in the roadmap are planned work unless they are explicitly marked as complete in the project documentation.
 
@@ -199,14 +204,14 @@ default, not an irrevocable constraint: the project owner may reopen or change
 any choice. Prototypes may refine interfaces inside these boundaries:
 
 - **Web application:** Astro and TypeScript static output in `/web`, deployed on
-  Vercel. Gate 3 uses no client islands or runtime data access.
+  Vercel. The atlas has a client renderer; evidence is projected at build time.
 - **Data layer:** Supabase Postgres with PostGIS.
 - **Source archive:** Source metadata, retrieval dates and content hashes, with private artifact retention only where appropriate and lawful.
 - **Document intelligence:** A Python pipeline in `/pipeline`, shaped as
   deployable idempotent jobs but invoked locally until v0 ships.
 - **Review workflows:** Human review for uncertain claims, contradictions, corrections and resident submissions.
-- **Geospatial layer:** MapLibre GL JS for the public 2D map, with Berlin
-  EPSG:25833 data reprojected for web display. Experimental 3D follows v0.
+- **Geospatial layer:** Three.js for the architectural atlas, using metric EPSG:25833
+  coordinates and self-hosted geometry; an SVG boundary supports the static index.
 - **Evaluation:** pytest harnesses citation, routing, cost and latency now;
   scored evaluation against a committed, human-authored JSON golden set follows
   post-v0.

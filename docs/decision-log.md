@@ -1148,3 +1148,45 @@ monitored address is required before public launch and must not be invented.
 Provider identity and the Article 13 notice are approved for public launch, or
 an interactive map can be added without weakening the display, privacy,
 licensing or no-client-JavaScript constraints.
+
+## ADR-024 — Authorize an interactive, self-hosted architectural atlas
+
+**Date:** 2026-09-07
+**Status:** Accepted by the project owner for local implementation; public acceptance and deployment remain open.
+
+### Context and owner decision
+
+After reviewing Marseille and Seoul map references and two conceptual visual
+studies, the owner explicitly requested the strongest practical interactive 3D
+Berlin implementation and authorized framework changes. This reopens the prior
+no-client-JavaScript and post-v0 3D sequencing decisions in ADR-022/023 and the
+standing design constraints. It does not authorize publishing unsupported
+claims or changing human-authored evaluation data.
+
+### Decision
+
+Retain Astro and the evidence pipeline. Add a Three.js architectural atlas to
+`/`, with source-backed numeric geometry served from the same origin. Move the
+existing static boundary and project list to `/records/`; all dossiers, evidence
+expansion and correction routes remain static and JavaScript-free. No external
+runtime assets, analytics, storage, location permission or account are added.
+The privacy notice describes the authorized client JavaScript accurately.
+
+The owner also authorized command-line downloads specifically for public
+building and OpenStreetMap data after Chrome export failures. Browsing and
+visual testing stay in Chrome.
+
+### Consequences
+
+The local export now has fourteen HTML routes. Only the atlas loads JavaScript;
+its 26 MB central-Berlin model trades initial load size for detailed geometry.
+This is a simplified 2022 building-height model, not a current survey or a
+whole-Berlin reconstruction. No roofs, construction phases or withheld project
+locations are fabricated. Existing evidence, naming, correction, source privacy
+and human-authority rules continue to apply. The postal-address and production
+verification gates remain open; this decision does not authorize deployment.
+
+See `atlas-model.md` for the source licenses, exact reproduction queries,
+measurements and limitations, and `visual-direction-study.md` for the visual
+rationale. Future progressive loading and wider coverage should be evaluated
+against actual low-end-device measurements.

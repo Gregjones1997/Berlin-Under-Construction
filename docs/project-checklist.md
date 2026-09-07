@@ -16,7 +16,7 @@ This is the operational source of truth for what is complete, what is in progres
 - **Current recovery target:** 3 September 2026, subject to the same fail-closed
   legal and live-verification gates. The missed date does not lower them.
 - **First release:** Three evidence-backed projects, bounded extraction with disclosed metering and limitations, evidence-backed dossiers, and a deployable 2D map. Scored evaluation follows post-v0.
-- **After first release:** Expand toward ten projects, then ship the technical-illustration 3D experience as a second public milestone.
+- **7 September owner revision:** The local candidate now includes the technical-illustration 3D atlas (ADR-024). Expand beyond central Berlin and toward ten projects after measuring this version and obtaining public acceptance.
 
 Targets are planning constraints, not promises. Scope should shrink before trust, evaluation or evidence quality is compromised.
 
@@ -28,15 +28,14 @@ packaging; Phase 2 remains incomplete
 **Current status:** IN PROGRESS — the local candidate is reviewed and green;
 the postal address, deployment and live evidence remain pending
 
-**Next action:** Obtain the owner's complete serviceable postal address and a
-then create/link the Vercel Hobby project, build and deploy the exact candidate
-with `PUBLICATION_AS_OF_DATE`, record the URL/commit, and complete the live
-network, cookie, storage, analytics and operational-log evidence before adding
-the URL to the README. The owner accepted launch on Hobby with the processor/DPA
-ambiguity disclosed on 3 September 2026. Preserve the 13-page zero-JavaScript
-export, known-withheld/sentinel scans and C-010 passed-date/no-confirmation
-warning. Do not make a model/extraction-provider call. Phase 2 remains
-incomplete.
+**Next action:** Review the local architectural atlas with the owner, especially
+Paper/Ink appearance, camera framing and the central-Berlin coverage. ADR-024
+records the authorized JavaScript/3D change. The 14-route export retains static
+records/dossiers and the known-withheld/sentinel safeguards; see
+`atlas-model.md` for model size and provenance. Public release still requires
+the complete serviceable postal address, an exact Vercel build/deployment, and
+live network, cookie, storage and operational-log evidence. Do not make a
+model/extraction-provider call. Phase 2 remains incomplete.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's
 handover wording to `Anfang September 2026`; the current HOWOGE page still says

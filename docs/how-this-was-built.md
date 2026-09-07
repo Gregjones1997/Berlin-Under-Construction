@@ -2,6 +2,82 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+
+## 2026-09-07 — Real architectural atlas of central Berlin
+
+**Status:** Complete locally; owner visual acceptance and public deployment remain open
+
+### Goal
+
+Make the city itself the portfolio entry point, taking the owner's Marseille
+and Seoul references seriously while retaining the project's evidence contract.
+
+### Participants and scopes
+
+- Project owner: supplied both references, selected the immersive direction,
+  authorized interactive 3D and framework changes, required Chrome for web work,
+  and subsequently authorized public-geodata command-line downloads.
+- Main agent (Codex; design-consultation and imagegen skills, built-in image
+  generation, Browser and Chrome skills): inspected the existing product and
+  references, generated two conceptual images, then implemented and verified the
+  Astro/Three.js interface and offline geometry compiler. Generated images
+  informed composition only; no invented geometry or claims from them ships.
+- No subagents or external reviewer were used. Main agent was the sole writer.
+
+### Work performed and decisions
+
+Retained Astro and the validated publication pipeline. Added a self-hosted
+orthographic model of 84,895 central-Berlin building shapes, using official
+2022 footprints/ridge heights and OSM context. Paper and Ink treatments, project
+flights, pan/zoom/orbit, overhead view, source history, deep links, native
+evidence expansion, provenance and responsive panels form the new atlas. Moved
+the existing static boundary/index to `/records/`. ADR-024 records the owner's
+JavaScript exception; all other routes stay static. C-019 stays unplaced.
+
+The numeric compiler projects context into EPSG:25833, triangulates courtyards,
+preserves multipolygon holes, omits shapes under 50 m² and quantizes coordinates
+to 0.5 m. The resulting model is 26,252,745 bytes compressed, with 200 building
+tiles. An initial larger model was reduced by removing small shapes and packing
+coordinates. Source heights are not exaggerated; reconstructed roofs and live
+construction progress are not claimed.
+
+### Verification
+
+- Complete Python suite: 180 tests passed, including withheld/sentinel export
+  scans, conflict-safe display, legal fail-closed builds and geometry integrity.
+- TypeScript check passed; Astro produced 14 routes. Only the atlas includes
+  scripts; its numeric manifest/provenance are the only public JSON files.
+- Chrome: reference-site drag/zoom and Seoul location/appearance changes;
+  local Paper/Ink, project selection, source history, unplaced record, plan view,
+  orbit cancellation on drag, provenance dialog and a 390 × 844 layout with no
+  horizontal overflow. Final loaded overview reported no warnings or errors.
+- Screenshot: `docs/images/atlas-paper.png`. Browser checks caught and corrected
+  mobile framing and a deprecated Three.js shadow setting.
+
+### Failures and limitations
+
+Large Chrome dataset exports repeatedly timed out. Automatic approval review
+initially rejected command-line retrieval under the owner's Chrome-only rule;
+the owner then explicitly allowed public building/OSM downloads. A Geofabrik
+PBF download also timed out; an Overpass geometry export succeeded. Temporary
+Python dependencies were unnecessary; unused PBF/shapefile packages were removed.
+Chrome automation occasionally timed out and needed reconnecting.
+
+The model covers central Berlin, not the whole city; it is 2022 geometry with
+simplified roofs and illustrative ground/road/bridge treatments. The 26 MB
+initial model and approximately 672 KB renderer chunk remain material loading
+costs. Progressive loading and low-end-device profiling are follow-up work;
+no performance benchmark is claimed. No extraction-provider call or golden-set
+change occurred. Test-address builds are local only; no public deployment was
+created and the existing postal-address/live-verification gates remain open.
+
+### Evidence
+
+`docs/atlas-model.md`, `docs/visual-direction-study.md`, ADR-024,
+`web/site-public/atlas/provenance.json`, `tests/public_release/test_atlas_geometry.py`,
+and the checked static export and screenshot.
+
+
 - 2026-09-03 — Project owner and Codex: the owner confirmed a public Vercel
   Hobby launch with the unresolved processor/DPA position disclosed. The
   serviceable postal address and live verification remain required; no project

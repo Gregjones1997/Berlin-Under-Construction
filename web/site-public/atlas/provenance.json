@@ -1,0 +1,28 @@
+{
+  "retrievedOn": "2026-09-07",
+  "buildingSource": "https://gdi.berlin.de/services/wfs/ua_gebaeudehoehen",
+  "buildingDataset": "Gebäudehöhen 2022 (Umweltatlas)",
+  "buildingLicense": "dl-de-zero-2.0",
+  "sourceCrs": "EPSG:25833",
+  "origin": [
+    391000,
+    5820000
+  ],
+  "contextSource": "https://overpass-api.de/api/interpreter",
+  "contextLicense": "ODbL-1.0",
+  "contextAttribution": "© OpenStreetMap contributors",
+  "contextInputSha256": "sha256:c6e54718f9804ea18a5cf93035fbac7b08a367c063de754b983df1d264e096a7",
+  "contextTimestamp": "2026-09-07T08:52:19Z",
+  "buildingInputSha256": "sha256:f2aff0c8e4d9270d6467b71a0156ef9a077c6965e844dcea6ae4bf54dda107e7",
+  "modelSha256": "sha256:18104d8bcbd7a76a87f5cbe9c50e91bbc1df96bda5a1202b001e73a6b850f5a8",
+  "transformation": "Numeric geometry only; buildings smaller than 50 m² and unknown/nonpositive heights omitted; Coordinates quantized to the packed model precision (see model manifest); flat roof extrusions at source ridge heights; no vertical exaggeration; ground plane, road widths and bridge elevations are illustrative. Context is reprojected from WGS84 into EPSG:25833. No building names, addresses, or contributor details retained.",
+  "buildings": 84895,
+  "sourceFeatures": 155815,
+  "missingHeights": 0,
+  "bounds": [
+    -6055,
+    -2900.4,
+    6892,
+    5259.5
+  ]
+}

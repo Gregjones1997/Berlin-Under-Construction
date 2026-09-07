@@ -77,7 +77,8 @@ export class CityRenderer {
   private reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   private abort = new AbortController();
   private pins: HTMLButtonElement[];
-  private labels = true;
+  private labels = { projects: true, water: true, parks: true };
+  private contextLabels: HTMLElement[];
   private activeHalo: THREE.Mesh;
   private meshes: THREE.Object3D[] = [];
   private tickTime = 0;
@@ -205,6 +206,9 @@ export class CityRenderer {
     this.activeHalo.renderOrder = 5;
     this.scene.add(this.activeHalo);
     this.pins = [...host.querySelectorAll<HTMLButtonElement>(".project-pin")];
+    this.contextLabels = [
+      ...host.querySelectorAll<HTMLElement>(".context-label"),
+    ];
     this.observer = new ResizeObserver(() => this.resize());
     this.observer.observe(host);
     document.addEventListener(
@@ -293,7 +297,7 @@ export class CityRenderer {
         this.meshes.push(lines);
       }
       if (i % 15 === 0) {
-        await new Promise<void>((r) => requestAnimationFrame(() => r()));
+        await new Promise<void>((r) => setTimeout(r, 0));
       }
     }
     addMesh(manifest.water, this.materials.water);
@@ -328,18 +332,51 @@ export class CityRenderer {
   }
   private placePins() {
     const r = this.host.getBoundingClientRect();
+    const occupied: { x: number; y: number }[] = [];
     for (const p of this.pins) {
       const [x, z] = cityPoint(Number(p.dataset.lon), Number(p.dataset.lat));
       const v = new THREE.Vector3(x, 55, z).project(this.camera);
       const visible =
-        this.labels &&
+        this.labels.projects &&
         v.z >= -1 &&
         v.z <= 1 &&
         Math.abs(v.x) < 1.1 &&
         Math.abs(v.y) < 1.1;
+      if (visible)
+        occupied.push({
+          x: (v.x * 0.5 + 0.5) * r.width + (v.x > 0.3 ? -80 : 80),
+          y: (-v.y * 0.5 + 0.5) * r.height,
+        });
       p.classList.toggle("label-left", v.x > 0.3);
       p.style.visibility = visible ? "visible" : "hidden";
       p.style.transform = `translate(${(v.x * 0.5 + 0.5) * r.width - 14}px,${(-v.y * 0.5 + 0.5) * r.height - 14}px)`;
+    }
+    for (const label of this.contextLabels) {
+      const [x, z] = cityPoint(
+        Number(label.dataset.lon),
+        Number(label.dataset.lat),
+      );
+      const v = new THREE.Vector3(x, 8, z).project(this.camera);
+      const px = (v.x * 0.5 + 0.5) * r.width,
+        py = (-v.y * 0.5 + 0.5) * r.height;
+      const kind = label.dataset.kind as "water" | "parks";
+      const visible =
+        this.labels[kind] &&
+        this.camera.zoom >= 0.55 &&
+        v.z >= -1 &&
+        v.z <= 1 &&
+        px > 85 &&
+        px < r.width - 85 &&
+        py > 65 &&
+        py < r.height - 100 &&
+        !occupied.some(
+          (p) => Math.abs(p.x - px) < 155 && Math.abs(p.y - py) < 32,
+        );
+      label.hidden = !visible;
+      if (visible) {
+        label.style.transform = `translate(${px}px,${py}px) translate(-50%,-50%)`;
+        occupied.push({ x: px, y: py });
+      }
     }
   }
   private wake() {
@@ -463,8 +500,8 @@ export class CityRenderer {
     );
     this.wake();
   }
-  setLabels(value: boolean) {
-    this.labels = value;
+  setLabelKind(kind: "projects" | "water" | "parks", value: boolean) {
+    this.labels[kind] = value;
     this.placePins();
     this.wake();
   }

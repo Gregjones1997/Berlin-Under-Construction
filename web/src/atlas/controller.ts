@@ -13,7 +13,6 @@ let city: CityRenderer | undefined;
 let selection: string | null = null;
 let returnFocus: HTMLElement | null = null;
 let plan = false,
-  labels = true,
   orbit = false;
 const pressed = (id: string, value: boolean) =>
   $(id).setAttribute("aria-pressed", String(value));
@@ -70,7 +69,8 @@ document.addEventListener("keydown", (e) => {
   if (
     e.key === "Escape" &&
     !$<HTMLDialogElement>("model-dialog").open &&
-    selection
+    selection &&
+    $("label-panel").hidden
   )
     close();
 });
@@ -122,10 +122,39 @@ $("plan-view").addEventListener("click", () => {
   pressed("plan-view", plan);
   city?.setPlan(plan);
 });
-$("labels-view").addEventListener("click", () => {
-  labels = !labels;
-  pressed("labels-view", labels);
-  city?.setLabels(labels);
+const labelPanel = $("label-panel");
+const labelButton = $("labels-view");
+function showLabels(open: boolean) {
+  labelPanel.hidden = !open;
+  labelButton.setAttribute("aria-expanded", String(open));
+}
+labelButton.addEventListener("click", () =>
+  showLabels(Boolean(labelPanel.hidden)),
+);
+$("close-labels").addEventListener("click", () => {
+  showLabels(false);
+  labelButton.focus();
+});
+document
+  .querySelectorAll<HTMLInputElement>("[data-label-kind]")
+  .forEach((input) =>
+    input.addEventListener("change", () =>
+      city?.setLabelKind(
+        input.dataset.labelKind as "projects" | "water" | "parks",
+        input.checked,
+      ),
+    ),
+  );
+document.addEventListener("click", (event) => {
+  const target = event.target as Node;
+  if (!labelPanel.contains(target) && !labelButton.contains(target))
+    showLabels(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !labelPanel.hidden) {
+    showLabels(false);
+    labelButton.focus();
+  }
 });
 $("orbit-view").addEventListener("click", () => city?.setOrbit(!orbit));
 stage.addEventListener("atlas-orbit", (e: Event) => {
@@ -212,6 +241,14 @@ async function start() {
     );
     $("model-coverage").textContent =
       `${manifest.buildings.toLocaleString("en-GB")} building and building-part shapes in central Berlin. Building shapes smaller than 50 m² are omitted; coordinates are rounded to 0.5 m. Source heights are used without vertical exaggeration; unknown heights are omitted. Roofs are simplified. The 2022 geometry is not a current survey.`;
+    document
+      .querySelectorAll<HTMLInputElement>("[data-label-kind]")
+      .forEach((input) =>
+        city?.setLabelKind(
+          input.dataset.labelKind as "projects" | "water" | "parks",
+          input.checked,
+        ),
+      );
     $("map-loading").hidden = true;
     theme(document.body.dataset.theme === "ink");
     if (location.hash) choose(location.hash.slice(1), false);

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "package:vercel": "node scripts/package-vercel.mjs"
   },
   "dependencies": {
     "@types/three": "^0.185.4",

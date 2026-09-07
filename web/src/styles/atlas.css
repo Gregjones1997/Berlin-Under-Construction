@@ -81,79 +81,6 @@ svg {
   padding: 15px;
   background: var(--panel);
 }
-.atlas-header {
-  height: 82px;
-  border-bottom: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  gap: 32px;
-  position: relative;
-  z-index: 5;
-  background: var(--paper);
-}
-.wordmark {
-  display: flex;
-  gap: 13px;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  line-height: 1;
-}
-.wordmark-sub {
-  display: block;
-  font: 9px/1 var(--mono);
-  letter-spacing: 0.14em;
-  margin-top: 8px;
-}
-.brand-symbol {
-  color: var(--accent);
-  font-size: 39px;
-  transform: rotate(-6deg);
-}
-.atlas-header nav {
-  display: flex;
-  gap: 32px;
-  font-size: 12px;
-  height: 100%;
-  align-items: center;
-}
-.atlas-header nav a {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-}
-.nav-active:after {
-  content: "";
-  height: 2px;
-  background: var(--accent);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.edition {
-  font: 9px var(--mono);
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.edition i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #708577;
-}
-.edition > span {
-  margin-left: 18px;
-  color: var(--muted);
-}
 .atlas-shell {
   height: calc(100svh - 119px);
   min-height: 610px;
@@ -1124,4 +1051,148 @@ body[data-theme="ink"] .pin-number {
   position: absolute;
   right: calc(100% + 5px);
   margin-left: 0;
+}
+.context-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.context-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 190px;
+  font: italic 12px/1.3 var(--serif);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  color: #416565;
+  text-shadow:
+    0 1px 4px var(--paper),
+    0 0 8px var(--paper);
+  padding: 4px 7px;
+  background: color-mix(in srgb, var(--paper) 62%, transparent);
+  border-radius: 2px;
+}
+.context-label[data-kind="parks"] {
+  color: #536148;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+body[data-theme="ink"] .context-label {
+  color: #c3dddd;
+}
+body[data-theme="ink"] .context-label[data-kind="parks"] {
+  color: #d5dfbd;
+}
+.label-panel {
+  position: absolute;
+  bottom: 94px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  z-index: 12;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+.label-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.label-panel h2 {
+  font: 14px var(--sans);
+  margin: 0;
+}
+.label-panel label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--rule);
+  padding: 13px 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+.label-panel label small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.label-panel input {
+  margin-left: auto;
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.legend-symbol {
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.legend-project {
+  background: var(--accent);
+  color: var(--paper);
+  font: 9px var(--mono);
+  border-radius: 50%;
+}
+.legend-water {
+  height: 9px;
+  border-bottom: 2px solid #71999b;
+  border-top: 2px solid #71999b;
+  border-radius: 40%;
+}
+.legend-park {
+  background: #adbba0;
+  border: 1px solid #829276;
+  border-radius: 3px;
+}
+.label-panel > p {
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+.map-toolbar [aria-expanded="true"] {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.label-sources {
+  font-size: 12px;
+  border-block: 1px solid var(--rule);
+  padding: 15px 0;
+  margin-top: 20px;
+}
+.label-sources summary {
+  cursor: pointer;
+}
+.label-sources ul {
+  padding-left: 18px;
+  columns: 2;
+}
+.label-sources li {
+  margin: 6px 0;
+}
+@media (max-width: 700px) {
+  .label-panel {
+    bottom: 97px;
+    width: min(300px, calc(100% - 24px));
+  }
+  .context-label {
+    font-size: 10px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .context-label[data-kind="parks"] {
+    font-size: 9px;
+  }
 }

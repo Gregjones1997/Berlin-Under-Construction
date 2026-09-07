@@ -3,6 +3,55 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-07 — Shared navigation, label categories and public build packaging
+
+**Status:** Complete locally; public verification follows deployment
+
+### Goal and owner decisions
+
+The owner accepted the architectural atlas, requested consistent navigation and
+label types, clarified that “loading bar” meant a shared top navigation, and
+supplied the serviceable postal address for the public legal pages.
+
+### Participants and work
+
+Main agent (Codex; Chrome skill, Vercel deployments/CLI skills and Vercel
+connector) implemented the shared Astro header, native content transitions,
+three independent label categories and eighteen source-linked OSM place labels.
+No subagents were used. Existing evidence routes remain JavaScript-free. A
+source-only geometry model remains separate from the cartographic name layer.
+
+The public static packager rejects test-address content, address/date mismatch
+and private source artifacts. It packages only the static export, adds explicit
+routes and same-origin response policies, and caches content-hashed model assets.
+The new Vercel project was created in the existing Hobby team and linked locally;
+link/environment files are ignored. No retained documents were uploaded.
+
+### Verification
+
+The integrated tree passed all 183 Python tests and TypeScript checking. Astro
+built fourteen routes with the supplied address, and packaging produced fourteen
+HTML routes plus seven assets, without server functions. Chrome checked shared
+navigation, active links, geographic labels and independent category toggles;
+a 390 px project-index view had no horizontal overflow and kept all three links.
+Source and deployment configuration documentation were read in Chrome.
+
+### Corrections and remaining limits
+
+A named-header transition left the wordmark unpainted after navigation in Chrome;
+limiting transitions to page content fixed it and was checked by navigating
+between the index and method pages. Loading now yields to timers rather than
+animation frames so geometry compilation is not tied to a foreground frame.
+The original model's loading size and central-Berlin scope remain unchanged.
+Chrome automation occasionally timed out and required reconnecting. Live hosting
+behavior is not claimed as verified by these local checks.
+
+### Evidence
+
+`docs/atlas-model.md`, `docs/public-deployment.md`, `SiteHeader.astro`, the label
+compiler/source manifest, and `tests/public_release/test_vercel_package.py`.
+
+
 ## 2026-09-07 — Real architectural atlas of central Berlin
 
 **Status:** Complete locally; owner visual acceptance and public deployment remain open

@@ -26,16 +26,14 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 packaging; Phase 2 remains incomplete
 
 **Current status:** IN PROGRESS — the local candidate is reviewed and green;
-the postal address, deployment and live evidence remain pending
+the owner supplied the postal address on 7 September; deployment and live evidence remain pending
 
-**Next action:** Review the local architectural atlas with the owner, especially
-Paper/Ink appearance, camera framing and the central-Berlin coverage. ADR-024
-records the authorized JavaScript/3D change. The 14-route export retains static
-records/dossiers and the known-withheld/sentinel safeguards; see
-`atlas-model.md` for model size and provenance. Public release still requires
-the complete serviceable postal address, an exact Vercel build/deployment, and
-live network, cookie, storage and operational-log evidence. Do not make a
-model/extraction-provider call. Phase 2 remains incomplete.
+**Next action:** Deploy the checked public-address build to the newly linked
+Vercel Hobby project, then verify and record the live routes, Chrome appearance,
+network/storage behavior and platform logs. The owner accepted the architectural
+atlas visually on 7 September and requested the now-implemented shared navigation
+and label categories. No legal-address placeholder remains in the release build.
+Do not make a model/extraction-provider call; Phase 2 remains incomplete.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's
 handover wording to `Anfang September 2026`; the current HOWOGE page still says

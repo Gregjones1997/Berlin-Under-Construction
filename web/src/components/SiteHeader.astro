@@ -1,0 +1,42 @@
+---
+import "../styles/site-shell.css";
+const pathname = Astro.url.pathname;
+const links = [
+  { href: "/", label: "The atlas", active: pathname === "/" },
+  {
+    href: "/records/",
+    label: "Project index",
+    active:
+      pathname.startsWith("/records/") || pathname.startsWith("/projects/"),
+  },
+  {
+    href: "/method/",
+    label: "How it works",
+    active: pathname.startsWith("/method/"),
+  },
+];
+---
+
+<header class="site-header">
+  <a
+    href="/"
+    class="site-wordmark"
+    aria-label="Berlin, Under Construction home"
+  >
+    <span class="site-symbol" aria-hidden="true">▥</span>
+    <span>BERLIN<span class="site-wordmark-sub">UNDER CONSTRUCTION</span></span>
+  </a>
+  <nav aria-label="Main navigation">
+    {
+      links.map((link) => (
+        <a href={link.href} aria-current={link.active ? "page" : undefined}>
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+  <span class="site-edition"
+    ><i aria-hidden="true"></i> Independent city atlas <span>01 / BERLIN</span
+    ></span
+  >
+</header>

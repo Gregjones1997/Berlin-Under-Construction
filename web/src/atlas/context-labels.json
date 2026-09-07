@@ -1,0 +1,134 @@
+{
+  "sourceTimestamp": "2026-09-07T08:52:19Z",
+  "inputSha256": "sha256:c6e54718f9804ea18a5cf93035fbac7b08a367c063de754b983df1d264e096a7",
+  "license": "ODbL-1.0",
+  "anchorMethod": "Feature bounding-box center for cartographic placement; not a project location.",
+  "labels": [
+    {
+      "name": "Viktoriapark",
+      "kind": "parks",
+      "longitude": 13.38081485,
+      "latitude": 52.4874655,
+      "sourceUrl": "https://www.openstreetmap.org/way/4638994"
+    },
+    {
+      "name": "Urbanhafen",
+      "kind": "water",
+      "longitude": 13.40987095,
+      "latitude": 52.49579695,
+      "sourceUrl": "https://www.openstreetmap.org/way/4686373"
+    },
+    {
+      "name": "Nordhafen",
+      "kind": "water",
+      "longitude": 13.36349625,
+      "latitude": 52.53678145,
+      "sourceUrl": "https://www.openstreetmap.org/way/4778261"
+    },
+    {
+      "name": "Rummelsburger See",
+      "kind": "water",
+      "longitude": 13.47680295,
+      "latitude": 52.49592235,
+      "sourceUrl": "https://www.openstreetmap.org/way/10295991"
+    },
+    {
+      "name": "Görlitzer Park",
+      "kind": "parks",
+      "longitude": 13.438118450000001,
+      "latitude": 52.4966005,
+      "sourceUrl": "https://www.openstreetmap.org/way/15740772"
+    },
+    {
+      "name": "Lustgarten",
+      "kind": "parks",
+      "longitude": 13.3991923,
+      "latitude": 52.518609049999995,
+      "sourceUrl": "https://www.openstreetmap.org/way/16000014"
+    },
+    {
+      "name": "Berlin-Spandauer Schifffahrtskanal",
+      "kind": "water",
+      "longitude": 13.277433599999998,
+      "latitude": 52.5520104,
+      "sourceUrl": "https://www.openstreetmap.org/way/23381024"
+    },
+    {
+      "name": "Humboldthafen",
+      "kind": "water",
+      "longitude": 13.37230055,
+      "latitude": 52.52507655,
+      "sourceUrl": "https://www.openstreetmap.org/way/52189421"
+    },
+    {
+      "name": "Invalidenpark",
+      "kind": "parks",
+      "longitude": 13.376011949999999,
+      "latitude": 52.5296493,
+      "sourceUrl": "https://www.openstreetmap.org/way/176696872"
+    },
+    {
+      "name": "Monbijoupark",
+      "kind": "parks",
+      "longitude": 13.39681735,
+      "latitude": 52.523176649999996,
+      "sourceUrl": "https://www.openstreetmap.org/way/340138573"
+    },
+    {
+      "name": "Spreebogenpark",
+      "kind": "parks",
+      "longitude": 13.37228775,
+      "latitude": 52.52190055,
+      "sourceUrl": "https://www.openstreetmap.org/way/737280675"
+    },
+    {
+      "name": "Neuer See",
+      "kind": "water",
+      "longitude": 13.34400655,
+      "latitude": 52.51149515,
+      "sourceUrl": "https://www.openstreetmap.org/relation/26993"
+    },
+    {
+      "name": "Volkspark Friedrichshain",
+      "kind": "parks",
+      "longitude": 13.43518965,
+      "latitude": 52.52716255,
+      "sourceUrl": "https://www.openstreetmap.org/relation/3099987"
+    },
+    {
+      "name": "Park am Gleisdreieck – Ostpark",
+      "kind": "parks",
+      "longitude": 13.37639505,
+      "latitude": 52.49500605,
+      "sourceUrl": "https://www.openstreetmap.org/relation/3582343"
+    },
+    {
+      "name": "Großer Tiergarten",
+      "kind": "parks",
+      "longitude": 13.354375099999999,
+      "latitude": 52.51445845,
+      "sourceUrl": "https://www.openstreetmap.org/relation/7643526"
+    },
+    {
+      "name": "Kleiner Tiergarten",
+      "kind": "parks",
+      "longitude": 13.34451215,
+      "latitude": 52.5255122,
+      "sourceUrl": "https://www.openstreetmap.org/relation/8676818"
+    },
+    {
+      "name": "Volkspark Humboldthain",
+      "kind": "parks",
+      "longitude": 13.3856426,
+      "latitude": 52.5452135,
+      "sourceUrl": "https://www.openstreetmap.org/relation/14524667"
+    },
+    {
+      "name": "Fritz-Schloß-Park",
+      "kind": "parks",
+      "longitude": 13.356122,
+      "latitude": 52.5288193,
+      "sourceUrl": "https://www.openstreetmap.org/relation/15803725"
+    }
+  ]
+}

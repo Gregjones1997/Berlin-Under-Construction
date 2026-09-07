@@ -5,6 +5,8 @@ import { loadPublicProjectPages } from "../lib/public-projects";
 import { publicationAsOfDate } from "../lib/milestone-freshness.mjs";
 import RawFact from "../components/RawFact.astro";
 import Icon from "../components/AtlasIcon.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import contextLabels from "../atlas/context-labels.json";
 import "../styles/atlas.css";
 const projects = loadPublicProjectPages();
 const positions = JSON.parse(
@@ -40,21 +42,7 @@ const records = projects.map((project) => ({
   >
   <body class="atlas-page">
     <a class="skip-link" href="#project-list">Skip to project records</a>
-    <header class="atlas-header">
-      <a href="/" class="wordmark" aria-label="Berlin, Under Construction home"
-        ><span class="brand-symbol" aria-hidden="true">▥</span><span
-          >BERLIN<span class="wordmark-sub">UNDER CONSTRUCTION</span></span
-        ></a
-      >
-      <nav aria-label="Main navigation">
-        <a class="nav-active" href="/" aria-current="page">The atlas</a><a
-          href="/records/">Project index</a
-        ><a href="/method/">How it works <span aria-hidden="true">↗</span></a>
-      </nav>
-      <span class="edition"
-        ><i></i> Independent city atlas <span>01 / BERLIN</span></span
-      >
-    </header>
+    <SiteHeader />
     <main id="atlas" class="atlas-shell">
       <div
         id="map-stage"
@@ -74,6 +62,22 @@ const records = projects.map((project) => ({
             Your browser may not support this 3D view.
           </p><a href="/records/">Explore the accessible project index →</a
           ><button id="retry-map" type="button">Try again</button>
+        </div>
+        <div class="context-labels" aria-hidden="true">
+          {
+            contextLabels.labels.map((label) => (
+              <span
+                class="context-label"
+                data-kind={label.kind}
+                data-lon={label.longitude}
+                data-lat={label.latitude}
+                lang="de"
+                hidden
+              >
+                {label.name}
+              </span>
+            ))
+          }
         </div>
         <div class="map-markers" id="map-markers">
           {
@@ -160,7 +164,8 @@ const records = projects.map((project) => ({
         <button class="active" id="paper-mode" aria-pressed="true"
           ><Icon name="sun" /> Paper</button
         ><button id="night-mode" aria-pressed="false"
-          ><Icon name="moon" /> Ink</button>
+          ><Icon name="moon" /> Ink</button
+        >
       </div>
       <aside
         class="record-panel"
@@ -260,7 +265,8 @@ const records = projects.map((project) => ({
         ><div class="zoom-stack">
           <button id="zoom-in" aria-label="Zoom in"><Icon name="plus" /></button
           ><button id="zoom-out" aria-label="Zoom out"
-            ><Icon name="minus" /></button>
+            ><Icon name="minus" /></button
+          >
         </div>
       </div>
       <div class="map-bottom">
@@ -278,16 +284,52 @@ const records = projects.map((project) => ({
             id="plan-view"
             aria-pressed="false"
             ><Icon name="layers" /><span>Plan view</span></button
-          ><button id="labels-view" aria-pressed="true"
+          ><button
+            id="labels-view"
+            aria-expanded="false"
+            aria-controls="label-panel"
             ><Icon name="map" /><span>Labels</span></button
           ><span class="toolbar-divider"></span><button
             id="fullscreen-view"
-            aria-label="Enter fullscreen"><Icon name="expand" /></button>
+            aria-label="Enter fullscreen"><Icon name="expand" /></button
+          >
         </div>
         <button id="about-map" class="about-map" aria-haspopup="dialog"
           ><Icon name="info" /> About this model</button
         >
       </div>
+      <section
+        class="label-panel"
+        id="label-panel"
+        aria-label="Map labels and legend"
+        hidden
+      >
+        <div class="label-panel-heading">
+          <h2>Labels &amp; map key</h2><button
+            id="close-labels"
+            class="icon-button"
+            aria-label="Close label controls"><Icon name="close" /></button>
+        </div>
+        <label
+          ><span class="legend-symbol legend-project">01</span><span
+            >Projects<small>Source-backed evidence records</small></span
+          ><input type="checkbox" data-label-kind="projects" checked /></label
+        >
+        <label
+          ><span class="legend-symbol legend-water"></span><span
+            >Water<small>Harbours, canals and lakes</small></span
+          ><input type="checkbox" data-label-kind="water" checked /></label
+        >
+        <label
+          ><span class="legend-symbol legend-park"></span><span
+            >Green spaces<small>Parks and public gardens</small></span
+          ><input type="checkbox" data-label-kind="parks" checked /></label
+        >
+        <p>
+          Geographic names provide orientation. They do not describe project
+          progress. Labels simplify as you zoom out.
+        </p>
+      </section>
       <p class="interaction-hint" id="interaction-hint">
         Drag to explore <span>·</span> Scroll to zoom <span>·</span> Right-drag to
         rotate
@@ -311,7 +353,8 @@ const records = projects.map((project) => ({
         >A model of the city. An evidence trail for its future.</span
       ><nav aria-label="Legal information">
         <a href="/impressum/">Impressum</a><a href="/privacy/">Privacy</a><a
-          href="/corrections/">Corrections</a>
+          href="/corrections/">Corrections</a
+        >
       </nav>
     </footer>
     <dialog id="model-dialog">
@@ -361,15 +404,36 @@ const records = projects.map((project) => ({
             > and dossiers work without JavaScript.
           </dd>
         </div>
-      </dl><p class="model-date">
+      </dl><details class="label-sources">
+        <summary
+          >Geographic label sources · {contextLabels.labels.length}</summary
+        ><p>
+          German place names from OpenStreetMap, snapshot 7 September 2026.
+          Label anchors are approximate cartographic positions, not project
+          locations.
+        </p><ul>
+          {
+            contextLabels.labels.map((label) => (
+              <li>
+                <a href={label.sourceUrl} lang="de">
+                  {label.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+      <p class="model-date">
         This page was generated on {generatedOn}. Data dates vary by source.
       </p><a href="/method/" class="primary-link"
-        >Read the method <Icon name="arrow" /></a>
+        >Read the method <Icon name="arrow" /></a
+      >
     </dialog>
     <noscript
       ><div class="noscript-note">
         The 3D atlas requires JavaScript. <a href="/records/"
-          >Open the accessible map and project index →</a>
+          >Open the accessible map and project index →</a
+        >
       </div></noscript
     >
     <script>

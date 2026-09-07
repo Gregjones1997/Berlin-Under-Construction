@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
 import { publicationAsOfDate } from "../lib/milestone-freshness.mjs";
 
 interface Props {
@@ -18,26 +19,34 @@ const generatedOn = publicationAsOfDate(process.env.PUBLICATION_AS_OF_DATE);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Source-backed records of major Berlin construction projects." />
+    <meta
+      name="description"
+      content="Source-backed records of major Berlin construction projects."
+    />
     <title>{title}</title>
   </head>
   <body>
-    <main>
+    <SiteHeader />
+    <main id="page-content">
       <header class="mast">
-        <div class="rail">
-          <a href="/">Berlin, Under Construction</a>
-          <span>Source-backed project records</span>
-        </div>
+        <p class="document-eyebrow">BERLIN / PROJECT RECORDS</p>
         <h1 lang={headingLang}>{heading}</h1>
         {subtitle && <p class="sub">{subtitle}</p>}
       </header>
       <slot />
       <footer>
         <p>
-          <a href="/method/">Method</a> · <a href="/corrections/">Corrections and formal requests</a>
-          · <a href="/impressum/">Impressum</a> · <a href="/privacy/">Privacy</a>
+          <a href="/method/">Method</a> · <a href="/corrections/"
+            >Corrections and formal requests</a
+          >
+          · <a href="/impressum/">Impressum</a> · <a href="/privacy/">Privacy</a
+          >
         </p>
-        <p>This page was generated on {generatedOn}. Project data may have earlier source and retrieval dates; each fact links to its original source.</p>
+        <p>
+          This page was generated on {generatedOn}. Project data may have
+          earlier source and retrieval dates; each fact links to its original
+          source.
+        </p>
       </footer>
     </main>
   </body>

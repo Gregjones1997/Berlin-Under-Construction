@@ -75,3 +75,28 @@ export tests keep JavaScript confined to the atlas route, enforce static routes,
 scan withheld/sentinel values and check the numeric payload against its manifest
 and SHA-256 provenance. These checks do not establish production network,
 performance or legal readiness.
+
+## Navigation and geographic labels — 7 September follow-up
+
+The owner accepted the atlas visually and requested a shared, persistent top
+navigation with smooth transitions, plus selectable label types. All fourteen
+routes now use `SiteHeader.astro`. Native CSS cross-document transitions animate
+only page content, leaving the header stable; reduced-motion preferences disable
+them. Other browsers retain normal link navigation. This adds no scripts to the
+static routes. Implementation reference, inspected in Chrome:
+[Chrome cross-document view transitions](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document).
+
+The Labels menu independently controls project markers, water and green spaces.
+Eighteen selected geographic names are compiled verbatim from the same retained
+OSM export by `web/scripts/build-labels.mjs`. Their source identifiers, input hash
+and snapshot timestamp are retained in `web/src/atlas/context-labels.json`;
+source links are available in the model-information dialog. Label anchors use
+feature bounding-box centers for cartographic placement. These are orientation
+labels, not new construction claims or precise project locations. The model
+binary and its geographic coverage are unchanged.
+
+Rebuild label data from `/web` with:
+
+```sh
+node scripts/build-labels.mjs /tmp/berlin-context.json
+```

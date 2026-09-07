@@ -31,8 +31,8 @@ Evidence and verification limits: [public deployment](public-deployment.md).
 
 **Next action:** Prepare the job-application walkthrough and technical case study
 around the live atlas, evidence gates and measured AI run. Collect the owner's
-specific copy edits, then measure model loading and rendering before expanding
-geographic coverage. Do not make a model/extraction-provider call; human glossary
+specific copy edits, then measure loading and rendering on representative low-end devices. Whole-city
+geometry is implemented with 263 streamed tiles; evidence coverage remains three pilots. Do not make a model/extraction-provider call; human glossary
 verification and the golden set remain incomplete.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's

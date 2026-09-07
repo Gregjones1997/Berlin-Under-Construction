@@ -1,18 +1,52 @@
 {
-  "sourceTimestamp": "2026-09-07T08:52:19Z",
-  "inputSha256": "sha256:c6e54718f9804ea18a5cf93035fbac7b08a367c063de754b983df1d264e096a7",
+  "sourceTimestamp": "2026-09-07T12:49:21Z",
+  "inputSha256": "sha256:dff16a01c99c74ba9ead70275dd92806485bc606e48500ba31c772de0fbdeb0e",
   "license": "ODbL-1.0",
   "anchorMethod": "Feature bounding-box center for cartographic placement; not a project location.",
   "labels": [
     {
+      "name": "Schlachtensee",
+      "minZoom": 0.55,
+      "kind": "water",
+      "longitude": 13.213748800000001,
+      "latitude": 52.44125635,
+      "sourceUrl": "https://www.openstreetmap.org/way/4317997"
+    },
+    {
+      "name": "Großer Wannsee",
+      "minZoom": 0.055,
+      "kind": "water",
+      "longitude": 13.1725083,
+      "latitude": 52.427835400000006,
+      "sourceUrl": "https://www.openstreetmap.org/way/4436463"
+    },
+    {
+      "name": "Krumme Lanke",
+      "minZoom": 0.55,
+      "kind": "water",
+      "longitude": 13.235095300000001,
+      "latitude": 52.45145945,
+      "sourceUrl": "https://www.openstreetmap.org/way/4469529"
+    },
+    {
       "name": "Viktoriapark",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.38081485,
       "latitude": 52.4874655,
       "sourceUrl": "https://www.openstreetmap.org/way/4638994"
     },
     {
+      "name": "Treptower Park",
+      "minZoom": 0.55,
+      "kind": "parks",
+      "longitude": 13.47105145,
+      "latitude": 52.48835435,
+      "sourceUrl": "https://www.openstreetmap.org/way/4685998"
+    },
+    {
       "name": "Urbanhafen",
+      "minZoom": 0.55,
       "kind": "water",
       "longitude": 13.40987095,
       "latitude": 52.49579695,
@@ -20,6 +54,7 @@
     },
     {
       "name": "Nordhafen",
+      "minZoom": 0.55,
       "kind": "water",
       "longitude": 13.36349625,
       "latitude": 52.53678145,
@@ -27,6 +62,7 @@
     },
     {
       "name": "Rummelsburger See",
+      "minZoom": 0.55,
       "kind": "water",
       "longitude": 13.47680295,
       "latitude": 52.49592235,
@@ -34,6 +70,7 @@
     },
     {
       "name": "Görlitzer Park",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.438118450000001,
       "latitude": 52.4966005,
@@ -41,6 +78,7 @@
     },
     {
       "name": "Lustgarten",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.3991923,
       "latitude": 52.518609049999995,
@@ -48,6 +86,7 @@
     },
     {
       "name": "Berlin-Spandauer Schifffahrtskanal",
+      "minZoom": 0.55,
       "kind": "water",
       "longitude": 13.277433599999998,
       "latitude": 52.5520104,
@@ -55,6 +94,7 @@
     },
     {
       "name": "Humboldthafen",
+      "minZoom": 0.55,
       "kind": "water",
       "longitude": 13.37230055,
       "latitude": 52.52507655,
@@ -62,13 +102,23 @@
     },
     {
       "name": "Invalidenpark",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.376011949999999,
       "latitude": 52.5296493,
       "sourceUrl": "https://www.openstreetmap.org/way/176696872"
     },
     {
+      "name": "Großer Müggelsee",
+      "minZoom": 0.055,
+      "kind": "water",
+      "longitude": 13.6499233,
+      "latitude": 52.43678415,
+      "sourceUrl": "https://www.openstreetmap.org/way/277545599"
+    },
+    {
       "name": "Monbijoupark",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.39681735,
       "latitude": 52.523176649999996,
@@ -76,20 +126,47 @@
     },
     {
       "name": "Spreebogenpark",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.37228775,
       "latitude": 52.52190055,
       "sourceUrl": "https://www.openstreetmap.org/way/737280675"
     },
     {
+      "name": "Schlosspark Charlottenburg",
+      "minZoom": 0.55,
+      "kind": "parks",
+      "longitude": 13.2924385,
+      "latitude": 52.52449475,
+      "sourceUrl": "https://www.openstreetmap.org/way/815670035"
+    },
+    {
+      "name": "Grunewald",
+      "minZoom": 0.055,
+      "kind": "parks",
+      "longitude": 13.22740325,
+      "latitude": 52.47086335,
+      "sourceUrl": "https://www.openstreetmap.org/relation/3410"
+    },
+    {
       "name": "Neuer See",
+      "minZoom": 0.55,
       "kind": "water",
       "longitude": 13.34400655,
       "latitude": 52.51149515,
       "sourceUrl": "https://www.openstreetmap.org/relation/26993"
     },
     {
+      "name": "Tegeler See",
+      "minZoom": 0.055,
+      "kind": "water",
+      "longitude": 13.250233699999999,
+      "latitude": 52.57453745,
+      "sourceUrl": "https://www.openstreetmap.org/relation/451908"
+    },
+    {
       "name": "Volkspark Friedrichshain",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.43518965,
       "latitude": 52.52716255,
@@ -97,6 +174,7 @@
     },
     {
       "name": "Park am Gleisdreieck – Ostpark",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.37639505,
       "latitude": 52.49500605,
@@ -104,6 +182,7 @@
     },
     {
       "name": "Großer Tiergarten",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.354375099999999,
       "latitude": 52.51445845,
@@ -111,6 +190,7 @@
     },
     {
       "name": "Kleiner Tiergarten",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.34451215,
       "latitude": 52.5255122,
@@ -118,6 +198,7 @@
     },
     {
       "name": "Volkspark Humboldthain",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.3856426,
       "latitude": 52.5452135,
@@ -125,6 +206,7 @@
     },
     {
       "name": "Fritz-Schloß-Park",
+      "minZoom": 0.55,
       "kind": "parks",
       "longitude": 13.356122,
       "latitude": 52.5288193,

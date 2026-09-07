@@ -59,3 +59,17 @@ def test_package_rejects_test_only_content(tmp_path: Path) -> None:
     result = package(tmp_path)
     assert result.returncode != 0
     assert 'Test address' in result.stderr
+
+
+def test_streamed_tiles_receive_gzip_media_type(tmp_path: Path) -> None:
+    fixture_export(tmp_path)
+    atlas = tmp_path / 'dist/atlas'
+    (atlas / 'berlin-detail.bin.gz').write_bytes(b'tile')
+    (atlas / 'model.json').write_text(json.dumps({'version': 2, 'geometry': '/atlas/berlin-fixture.bin.gz', 'tiles': [{'geometry': '/atlas/berlin-detail.bin.gz'}]}))
+    result = package(tmp_path)
+    assert result.returncode == 0, result.stderr
+    config = json.loads((tmp_path / '.vercel/output/config.json').read_text())
+    assert config['overrides'] == {
+        'atlas/berlin-fixture.bin.gz': {'contentType': 'application/gzip'},
+        'atlas/berlin-detail.bin.gz': {'contentType': 'application/gzip'},
+    }

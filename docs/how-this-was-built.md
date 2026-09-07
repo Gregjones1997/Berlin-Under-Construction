@@ -3,6 +3,49 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-07 — Whole-Berlin geometry and progressive detail
+
+**Status:** Implemented and verified locally; production verification follows.
+
+### Goal and participants
+
+The owner asked to continue with the rest of Berlin. Main agent (Codex, Chrome
+skill and Vercel CLI workflow) expanded geographic coverage while preserving the
+accepted visual direction and evidence boundaries. No subagents or extraction
+provider calls were used. No golden values or project facts changed.
+
+### Work and measurements
+
+Downloaded and checked all 954,230 source features in ten sorted WFS pages;
+compiled 440,361 eligible building/building-part shapes into 263 detail tiles.
+Added citywide OSM water, forest and transport geometry, 26 geographic labels
+and eleven source-backed navigation anchors. Only derived map assets ship.
+
+The initial overview is 9,025,128 bytes instead of the prior 26,252,745-byte
+blocking model. The full city payload is 118,236,713 bytes. Visible-area loading
+uses two requests at a time, caps detail residency at 32 tiles, disposes departed
+geometry and retains the base map on failure. Detailed shapes use source heights
+and 0.5 m coordinates; the overview uses simplified footprints at 1 m precision.
+
+### Verification and limits
+
+All 184 Python tests passed, including integrity, hash, segment and reconstructed
+coordinate checks for every tile and a streamed-asset media-type packaging test.
+TypeScript and the fourteen-route Astro build passed. Chrome checked Spandau,
+Köpenick, Wannsee in Ink, city Overview and Tegel on a 390 px viewport, with no
+reported warning/error entries in the checked views. An initial area-picker
+placement overlapped the theme controls; moving it below them fixed the layout.
+The initial overview compiler produced 17 MB; restricting and simplifying the
+explicit overview footprint layer reduced it to 9 MB while retaining full detail.
+These checks are not a low-end-device or frame-rate benchmark. Existing 2022
+source gaps, simplified roofs and three-project evidence coverage remain disclosed.
+
+### Evidence
+
+`docs/atlas-model.md`, model/tile provenance, `tests/public_release/test_atlas_geometry.py`,
+`tests/public_release/test_vercel_package.py`, and `docs/images/atlas-wannsee-ink.png`.
+
+
 - 2026-09-07 — Codex (Chrome skill, Vercel CLI/connector): released the checked static export, verified all fourteen live pages and seven asset hashes anonymously, checked public navigation/mobile/legal routes in Chrome, and recorded the production URL and verification limits in `docs/public-deployment.md`. No subagents used. Browser automation intermittently timed out on the heavy atlas; fresh static-route checks succeeded. `97d3396`
 
 - 2026-09-07 — Codex: updated the privacy notice from planned to actual Vercel Hobby hosting after the production deployment reported READY and anonymous checks matched all fourteen pages and seven assets. Provider-policy uncertainties remain disclosed. `af3298c`

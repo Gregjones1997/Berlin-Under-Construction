@@ -7,6 +7,14 @@ const raw = readFileSync(path);
 const context = JSON.parse(raw);
 // Cartographic selection; never a source of construction-project claims.
 const selected = new Set([
+  "way/4317997",
+  "way/4436463",
+  "way/4469529",
+  "way/4685998",
+  "way/277545599",
+  "way/815670035",
+  "relation/3410",
+  "relation/451908",
   "relation/7643526",
   "relation/3099987",
   "relation/14524667",
@@ -30,7 +38,7 @@ const labels = context.elements
   .filter((e) => selected.has(`${e.type}/${e.id}`))
   .map((e) => {
     const kind =
-      e.tags.leisure === "park"
+      e.tags.leisure === "park" || e.tags.landuse === "forest"
         ? "parks"
         : e.tags.natural === "water"
           ? "water"
@@ -53,6 +61,7 @@ const labels = context.elements
       2;
     return {
       name: e.tags.name,
+      minZoom: [4436463, 277545599, 3410, 451908].includes(e.id) ? 0.055 : 0.55,
       kind,
       longitude,
       latitude,

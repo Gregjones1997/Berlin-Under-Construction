@@ -107,8 +107,23 @@ $("night-mode").addEventListener("click", () => theme(true));
 $("home-view").addEventListener("click", () => {
   close();
   city?.overview();
+  $("view-label").textContent = "BERLIN · CITY OVERVIEW";
+  ($("explore-area") as HTMLSelectElement).value = "";
+  plan = true;
+  pressed("plan-view", true);
+});
+stage.addEventListener("atlas-detail", (event: Event) => {
+  $("detail-status").textContent = (event as CustomEvent<string>).detail;
+});
+$("explore-area").addEventListener("change", (event) => {
+  const select = event.target as HTMLSelectElement;
+  if (!select.value) return;
+  const [lon, lat] = select.value.split(",").map(Number);
+  close();
+  city?.explore(lon, lat);
   plan = false;
   pressed("plan-view", false);
+  $("view-label").textContent = select.selectedOptions[0].textContent;
 });
 $("zoom-in").addEventListener("click", () => city?.zoom(1.5));
 $("zoom-out").addEventListener("click", () => city?.zoom(1 / 1.5));
@@ -222,15 +237,19 @@ async function start() {
       const metersPerPixel = (half * 2) / (height * zoom);
       const target = metersPerPixel * 78;
       const unit =
-        target >= 1000
-          ? 1000
-          : target >= 500
-            ? 500
-            : target >= 200
-              ? 200
-              : target >= 100
-                ? 100
-                : 50;
+        target >= 5000
+          ? 5000
+          : target >= 2000
+            ? 2000
+            : target >= 1000
+              ? 1000
+              : target >= 500
+                ? 500
+                : target >= 200
+                  ? 200
+                  : target >= 100
+                    ? 100
+                    : 50;
       $("scale-label").textContent =
         unit >= 1000 ? `${unit / 1000} km` : `${unit} m`;
       $("scale-rule").style.width = `${unit / metersPerPixel}px`;
@@ -240,7 +259,7 @@ async function start() {
       (message) => ($("loading-message").textContent = message),
     );
     $("model-coverage").textContent =
-      `${manifest.buildings.toLocaleString("en-GB")} building and building-part shapes in central Berlin. Building shapes smaller than 50 m² are omitted; coordinates are rounded to 0.5 m. Source heights are used without vertical exaggeration; unknown heights are omitted. Roofs are simplified. The 2022 geometry is not a current survey.`;
+      `${manifest.buildings.toLocaleString("en-GB")} building and building-part shapes across Berlin. Detail loads by area; the overview shows simplified footprints of shapes at least 500 m². Building shapes smaller than 50 m² are omitted; coordinates are rounded to 0.5 m. Source heights are used without vertical exaggeration; unknown heights are omitted. Roofs are simplified. The 2022 geometry is not a current survey.`;
     document
       .querySelectorAll<HTMLInputElement>("[data-label-kind]")
       .forEach((input) =>

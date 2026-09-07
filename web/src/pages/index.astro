@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from "node:fs";
+import places from "../atlas/places.json";
 import { resolve } from "node:path";
 import { loadPublicProjectPages } from "../lib/public-projects";
 import { publicationAsOfDate } from "../lib/milestone-freshness.mjs";
@@ -69,6 +70,7 @@ const records = projects.map((project) => ({
               <span
                 class="context-label"
                 data-kind={label.kind}
+                data-min-zoom={label.minZoom}
                 data-lon={label.longitude}
                 data-lat={label.latitude}
                 lang="de"
@@ -259,6 +261,17 @@ const records = projects.map((project) => ({
           ))
         }
       </aside>
+      <div class="city-explorer">
+        <label for="explore-area">Explore Berlin</label><select
+          id="explore-area"
+          aria-label="Explore an area of Berlin"
+          ><option value="">Choose an area</option>{
+            places.places.map((p) => (
+              <option value={`${p.longitude},${p.latitude}`}>{p.name}</option>
+            ))
+          }</select
+        ><span id="detail-status" role="status"></span>
+      </div>
       <div class="map-right-controls" role="group" aria-label="Map navigation">
         <button id="north" class="north-button" aria-label="Orient map north"
           ><span id="north-arrow">↑</span><small>N</small></button
@@ -271,7 +284,7 @@ const records = projects.map((project) => ({
       </div>
       <div class="map-bottom">
         <div class="map-readout">
-          <span class="eyebrow" id="view-label">CENTRAL BERLIN</span><span
+          <span class="eyebrow" id="view-label">BERLIN</span><span
             class="scale-rule"
             id="scale-rule"></span><span id="scale-label">1 km</span>
         </div>
@@ -308,7 +321,8 @@ const records = projects.map((project) => ({
           <h2>Labels &amp; map key</h2><button
             id="close-labels"
             class="icon-button"
-            aria-label="Close label controls"><Icon name="close" /></button>
+            aria-label="Close label controls"><Icon name="close" /></button
+          >
         </div>
         <label
           ><span class="legend-symbol legend-project">01</span><span
@@ -386,9 +400,11 @@ const records = projects.map((project) => ({
           </dd>
         </div><div>
           <dt>Coverage & precision</dt><dd id="model-coverage">
-            Detailed central-Berlin study. Building shapes smaller than 50 m²
-            are omitted; coordinates are rounded to 0.5 m. Source gaps remain
-            gaps. Geometry predates these project records.
+            Citywide building coverage with detail loaded as you explore.
+            Building shapes smaller than 50 m² are omitted; coordinates are
+            rounded to 0.5 m. The overview uses simplified footprints of shapes
+            at least 500 m². Source gaps remain gaps. Geometry predates these
+            project records.
           </dd>
         </div><div>
           <dt>Project evidence</dt><dd>
@@ -405,6 +421,19 @@ const records = projects.map((project) => ({
           </dd>
         </div>
       </dl><details class="label-sources">
+        <summary>Explore Berlin · navigation sources</summary><p>
+          Area names and navigation anchors from OpenStreetMap; these are not
+          project locations.
+        </p><ul>
+          {
+            places.places.map((p) => (
+              <li>
+                <a href={p.sourceUrl}>{p.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </details><details class="label-sources">
         <summary
           >Geographic label sources · {contextLabels.labels.length}</summary
         ><p>

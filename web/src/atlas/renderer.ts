@@ -3,20 +3,30 @@ import { MapControls } from "three/addons/controls/MapControls.js";
 import { cityPoint } from "./geo";
 
 type Segment = { start: number; count: number };
-type Tile = { surface: Segment; edges: Segment };
-type Manifest = {
-  version: number;
+type Payload = {
+  geometry: string;
   quantization: number;
+  surfaceFloats: number;
+  edgeFloats: number;
+  offset: number[];
+  bytes: number;
+};
+type Tile = Payload & {
+  id: string;
+  bounds: number[];
+  maxHeight: number;
+  buildings: number;
+};
+type Manifest = Payload & {
+  version: number;
   buildings: number;
   tiles: Tile[];
+  overview: Segment;
   water: Segment;
   parks: Segment;
   roads: Segment;
   rail: Segment;
   bounds: number[];
-  surfaceFloats: number;
-  edgeFloats: number;
-  geometry: string;
 };
 type Fly = {
   start: number;
@@ -80,8 +90,14 @@ export class CityRenderer {
   private labels = { projects: true, water: true, parks: true };
   private contextLabels: HTMLElement[];
   private activeHalo: THREE.Mesh;
-  private meshes: THREE.Object3D[] = [];
   private tickTime = 0;
+  private manifest: Manifest | null = null;
+  private loaded = new Map<string, THREE.Group>();
+  private pending = new Set<string>();
+  private failed = new Map<string, number>();
+  private wanted: Tile[] = [];
+  private tileTimer: ReturnType<typeof setTimeout> | undefined;
+  private mapBounds = [-8500, -5000, 9000, 6500];
   constructor(
     private host: HTMLElement,
     private onChange: (zoom: number, angle: number) => void,
@@ -111,7 +127,7 @@ export class CityRenderer {
       1600,
       -1600,
       1,
-      70000,
+      200000,
     );
     const center = cityPoint(13.38, 52.521);
     this.camera.zoom = 1.35;
@@ -121,7 +137,7 @@ export class CityRenderer {
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.085;
     this.controls.screenSpacePanning = false;
-    this.controls.minZoom = 0.13;
+    this.controls.minZoom = 0.045;
     this.controls.maxZoom = 16;
     this.controls.minPolarAngle = 0.02;
     this.controls.maxPolarAngle = Math.PI * 0.43;
@@ -136,6 +152,7 @@ export class CityRenderer {
     this.controls.addEventListener("change", () => {
       this.dirty = true;
       this.idleFrames = 0;
+      this.scheduleTiles();
       this.placePins();
       this.onChange(this.camera.zoom, this.controls.getAzimuthalAngle());
     });
@@ -183,7 +200,7 @@ export class CityRenderer {
       }),
     };
     this.ground = new THREE.Mesh(
-      new THREE.PlaneGeometry(80000, 80000),
+      new THREE.PlaneGeometry(240000, 240000),
       new THREE.MeshLambertMaterial({ color: PAPER.ground }),
     );
     this.ground.rotation.x = -Math.PI / 2;
@@ -237,85 +254,207 @@ export class CityRenderer {
     this.resize();
     this.wake();
   }
+  private async decode(payload: Payload) {
+    if (!/^\/atlas\/berlin-[a-f0-9]{12}\.bin\.gz$/.test(payload.geometry))
+      throw new Error("Invalid model asset path");
+    const res = await fetch(payload.geometry, { signal: this.abort.signal });
+    if (!res.ok || !res.body)
+      throw new Error("The city geometry could not be downloaded.");
+    const buffer = await new Response(
+      res.body.pipeThrough(new DecompressionStream("gzip")),
+    ).arrayBuffer();
+    if (buffer.byteLength !== (payload.surfaceFloats + payload.edgeFloats) * 2)
+      throw new Error("Incomplete model download. Please try again.");
+    return Float32Array.from(
+      new Int16Array(buffer),
+      (v) => v / payload.quantization,
+    );
+  }
+  private geometry(source: Float32Array, segment: Segment) {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute(
+      "position",
+      new THREE.BufferAttribute(
+        source.subarray(segment.start, segment.start + segment.count),
+        3,
+      ),
+    );
+    g.computeBoundingSphere();
+    return g;
+  }
+  private mesh(
+    group: THREE.Group,
+    source: Float32Array,
+    segment: Segment,
+    material: THREE.Material,
+  ) {
+    if (!segment.count) return;
+    const geometry = this.geometry(source, segment);
+    geometry.computeVertexNormals();
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.castShadow = material === this.materials.building;
+    group.add(mesh);
+  }
   async load(onProgress: (message: string) => void) {
     const response = await fetch("/atlas/model.json", {
       signal: this.abort.signal,
     });
     if (!response.ok) throw new Error("The city model is unavailable.");
     const manifest = (await response.json()) as Manifest;
-    if (manifest.version !== 1 || !manifest.geometry.startsWith("/atlas/"))
-      throw new Error("Unsupported city model.");
-    onProgress("Loading the architectural model");
-    const res = await fetch(manifest.geometry, { signal: this.abort.signal });
-    if (!res.ok || !res.body)
-      throw new Error("The city geometry could not be downloaded.");
-    const buffer = await new Response(
-      res.body.pipeThrough(new DecompressionStream("gzip")),
-    ).arrayBuffer();
-    if (
-      buffer.byteLength !==
-      (manifest.surfaceFloats + manifest.edgeFloats) * 2
-    )
-      throw new Error("Incomplete model download. Please try again.");
-    const decoded = Float32Array.from(
-      new Int16Array(buffer),
-      (v) => v / manifest.quantization,
-    );
+    if (manifest.version !== 2) throw new Error("Unsupported city model.");
+    onProgress("Unfolding the whole city");
+    const decoded = await this.decode(manifest);
+    if (!this.running) return manifest;
     const surfaces = decoded.subarray(0, manifest.surfaceFloats);
     const edges = decoded.subarray(manifest.surfaceFloats);
-    const geometry = (source: Float32Array, s: Segment) => {
-      const g = new THREE.BufferGeometry();
-      g.setAttribute(
-        "position",
-        new THREE.BufferAttribute(
-          source.subarray(s.start, s.start + s.count),
-          3,
+    const group = new THREE.Group();
+    this.mesh(group, surfaces, manifest.overview, this.materials.building);
+    this.mesh(group, surfaces, manifest.water, this.materials.water);
+    this.mesh(group, surfaces, manifest.parks, this.materials.park);
+    this.mesh(group, surfaces, manifest.roads, this.materials.road);
+    if (manifest.rail.count)
+      group.add(
+        new THREE.LineSegments(
+          this.geometry(edges, manifest.rail),
+          this.materials.rail,
         ),
       );
-      g.computeBoundingSphere();
-      return g;
-    };
-    onProgress("Tracing the city’s outlines");
-    const addMesh = (segment: Segment, mat: THREE.Material) => {
-      if (!segment.count) return;
-      const g = geometry(surfaces, segment);
-      g.computeVertexNormals();
-      const m = new THREE.Mesh(g, mat);
-      m.castShadow = mat === this.materials.building;
-      this.scene.add(m);
-      this.meshes.push(m);
-    };
-    for (let i = 0; i < manifest.tiles.length; i++) {
-      const t = manifest.tiles[i];
-      addMesh(t.surface, this.materials.building);
-      if (t.edges.count) {
-        const lines = new THREE.LineSegments(
-          geometry(edges, t.edges),
-          this.materials.edge,
-        );
-        this.scene.add(lines);
-        this.meshes.push(lines);
-      }
-      if (i % 15 === 0) {
-        await new Promise<void>((r) => setTimeout(r, 0));
-      }
-    }
-    addMesh(manifest.water, this.materials.water);
-    addMesh(manifest.parks, this.materials.park);
-    addMesh(manifest.roads, this.materials.road);
-    if (manifest.rail.count) {
-      const rail = new THREE.LineSegments(
-        geometry(edges, manifest.rail),
-        this.materials.rail,
-      );
-      this.scene.add(rail);
-      this.meshes.push(rail);
-    }
-    this.renderer.shadowMap.needsUpdate = true;
+    this.scene.add(group);
+    this.manifest = manifest;
+    this.mapBounds = manifest.bounds;
+    this.fitZoomLimit();
     this.pins.forEach((p) => (p.hidden = false));
+    this.updateTiles();
+    // The overview is immediately usable; detail arrives without blocking navigation.
     this.placePins();
     this.wake();
     return manifest;
+  }
+  private scheduleTiles() {
+    if (!this.manifest) return;
+    clearTimeout(this.tileTimer);
+    this.tileTimer = setTimeout(() => this.updateTiles(), 180);
+  }
+  private updateTiles() {
+    if (!this.manifest || !this.running) return;
+    this.camera.updateMatrixWorld();
+    const frustum = new THREE.Frustum().setFromProjectionMatrix(
+      new THREE.Matrix4().multiplyMatrices(
+        this.camera.projectionMatrix,
+        this.camera.matrixWorldInverse,
+      ),
+    );
+    const target = this.controls.target;
+    this.wanted =
+      this.camera.zoom < 0.45
+        ? []
+        : this.manifest.tiles
+            .filter((t) =>
+              frustum.intersectsBox(
+                new THREE.Box3(
+                  new THREE.Vector3(t.bounds[0], 0, t.bounds[1]),
+                  new THREE.Vector3(t.bounds[2], t.maxHeight, t.bounds[3]),
+                ),
+              ),
+            )
+            .sort((a, b) => {
+              const distance = (t: Tile) =>
+                Math.hypot(
+                  (t.bounds[0] + t.bounds[2]) / 2 - target.x,
+                  (t.bounds[1] + t.bounds[3]) / 2 - target.z,
+                );
+              return distance(a) - distance(b);
+            })
+            .slice(0, 32);
+    const wanted = new Set(this.wanted.map((t) => t.id));
+    for (const [id, group] of this.loaded) {
+      if (!wanted.has(id)) {
+        this.scene.remove(group);
+        group.traverse((o) => {
+          if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments)
+            o.geometry.dispose();
+        });
+        this.loaded.delete(id);
+      }
+    }
+    // Keep the shadow frustum centred on the area being explored.
+    this.sun.position.set(target.x - 4000, 6000, target.z + 2500);
+    this.sun.target.position.set(target.x, 0, target.z);
+    this.sun.target.updateMatrixWorld();
+    this.renderer.shadowMap.enabled = this.camera.zoom >= 0.45;
+    this.renderer.shadowMap.needsUpdate = true;
+    this.pumpTiles();
+    this.wake();
+  }
+  private pumpTiles() {
+    if (!this.running) return;
+    for (const tile of this.wanted) {
+      if (this.pending.size >= 2) break;
+      if (
+        this.loaded.has(tile.id) ||
+        this.pending.has(tile.id) ||
+        (this.failed.get(tile.id) ?? 0) > Date.now()
+      )
+        continue;
+      this.pending.add(tile.id);
+      void this.loadTile(tile);
+    }
+    const missing = this.wanted.filter((t) => !this.loaded.has(t.id));
+    const failed = missing.some(
+      (t) => (this.failed.get(t.id) ?? 0) > Date.now(),
+    );
+    this.host.dispatchEvent(
+      new CustomEvent("atlas-detail", {
+        detail: failed
+          ? "Some detail is unavailable · move the map to retry"
+          : missing.length
+            ? `Adding building detail · ${this.wanted.length - missing.length}/${this.wanted.length}`
+            : "",
+      }),
+    );
+  }
+  private async loadTile(tile: Tile) {
+    try {
+      const decoded = await this.decode(tile);
+      if (!this.running || !this.wanted.some((t) => t.id === tile.id)) return;
+      const group = new THREE.Group();
+      group.position.set(tile.offset[0], 0, tile.offset[1]);
+      this.mesh(
+        group,
+        decoded,
+        { start: 0, count: tile.surfaceFloats },
+        this.materials.building,
+      );
+      group.add(
+        new THREE.LineSegments(
+          this.geometry(decoded, {
+            start: tile.surfaceFloats,
+            count: tile.edgeFloats,
+          }),
+          this.materials.edge,
+        ),
+      );
+      this.scene.add(group);
+      this.loaded.set(tile.id, group);
+      this.renderer.shadowMap.needsUpdate = true;
+      this.wake();
+    } catch (error) {
+      if (this.running) this.failed.set(tile.id, Date.now() + 15000);
+    } finally {
+      this.pending.delete(tile.id);
+      this.pumpTiles();
+    }
+  }
+  private fitZoomLimit() {
+    this.controls.minZoom = Math.min(
+      0.045,
+      ((this.camera.right - this.camera.left) /
+        (this.mapBounds[2] - this.mapBounds[0])) *
+        0.7,
+      ((this.camera.top - this.camera.bottom) /
+        (this.mapBounds[3] - this.mapBounds[1])) *
+        0.7,
+    );
   }
   private resize() {
     const { width, height } = this.host.getBoundingClientRect();
@@ -328,6 +467,8 @@ export class CityRenderer {
     this.camera.bottom = -half;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(width, height);
+    this.fitZoomLimit();
+    this.scheduleTiles();
     this.wake();
   }
   private placePins() {
@@ -362,7 +503,7 @@ export class CityRenderer {
       const kind = label.dataset.kind as "water" | "parks";
       const visible =
         this.labels[kind] &&
-        this.camera.zoom >= 0.55 &&
+        this.camera.zoom >= Number(label.dataset.minZoom ?? 0.55) &&
         v.z >= -1 &&
         v.z <= 1 &&
         px > 85 &&
@@ -416,8 +557,8 @@ export class CityRenderer {
   }
   private clampTarget() {
     const t = this.controls.target;
-    const x = THREE.MathUtils.clamp(t.x, -8500, 9000),
-      z = THREE.MathUtils.clamp(t.z, -5000, 6500);
+    const x = THREE.MathUtils.clamp(t.x, this.mapBounds[0], this.mapBounds[2]),
+      z = THREE.MathUtils.clamp(t.z, this.mapBounds[1], this.mapBounds[3]);
     if (x !== t.x || z !== t.z) {
       this.camera.position.x += x - t.x;
       this.camera.position.z += z - t.z;
@@ -456,10 +597,25 @@ export class CityRenderer {
     this.wake();
   }
   overview() {
-    const [x, z] = cityPoint(13.385, 52.5175);
+    const [minX, minZ, maxX, maxZ] = this.mapBounds;
+    const width = maxX - minX,
+      height = maxZ - minZ;
+    const zoom =
+      Math.min(
+        (this.camera.right - this.camera.left) / width,
+        (this.camera.top - this.camera.bottom) / height,
+      ) * 0.82;
+    this.move(
+      new THREE.Vector3((minX + maxX) / 2, 0, (minZ + maxZ) / 2),
+      zoom,
+      new THREE.Vector3(0, 28000, 0.01),
+    );
+  }
+  explore(lon: number, lat: number) {
+    const [x, z] = cityPoint(lon, lat);
     this.move(
       new THREE.Vector3(x, 0, z),
-      0.7,
+      1.15,
       new THREE.Vector3(1400, 2400, 2200),
     );
   }
@@ -524,6 +680,7 @@ export class CityRenderer {
   dispose() {
     this.running = false;
     this.abort.abort();
+    clearTimeout(this.tileTimer);
     cancelAnimationFrame(this.raf);
     this.observer.disconnect();
     this.controls.dispose();

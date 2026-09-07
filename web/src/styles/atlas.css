@@ -1196,3 +1196,57 @@ body[data-theme="ink"] .context-label[data-kind="parks"] {
     font-size: 9px;
   }
 }
+
+.city-explorer {
+  position: absolute;
+  top: 94px;
+  right: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  z-index: 6;
+  max-width: 220px;
+}
+.city-explorer label {
+  font: 10px var(--mono, monospace);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.city-explorer select {
+  font-family: inherit;
+  font-size: 13px;
+  border: 1px solid #a9afa0;
+  border-radius: 3px;
+  background: #f7f7ef;
+  color: #283b33;
+  padding: 10px 30px 10px 12px;
+  max-width: 220px;
+}
+#detail-status {
+  font: 10px var(--mono, monospace);
+  max-width: 210px;
+  line-height: 1.5;
+}
+body[data-theme="ink"] .city-explorer select {
+  background: #243c46;
+  color: #f4e5d2;
+}
+@media (max-width: 700px) {
+  .city-explorer {
+    top: 120px;
+    right: 14px;
+    max-width: 150px;
+  }
+  .city-explorer select {
+    max-width: 150px;
+    font-size: 11px;
+    padding: 8px;
+  }
+  .city-explorer label {
+    font-size: 9px;
+  }
+  #detail-status {
+    font-size: 9px;
+    max-width: 145px;
+  }
+}

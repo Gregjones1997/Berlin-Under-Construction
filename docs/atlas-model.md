@@ -7,19 +7,34 @@ the numeric city model is geographic context, not construction-status evidence.
 
 ## Coverage and limitations
 
-The 7 September 2026 model contains 84,895 building/building-part shapes in
-central Berlin, approximately 13 km east–west and 8 km north–south. It is not
-whole-city coverage. The official source export contains 155,815 features;
-shapes below 50 m² are omitted. Heights are 2022 source ridge heights, with no
-vertical exaggeration. Roofs are flat extrusions rather than reconstructed LoD2
-roof surfaces. Coordinates are quantized to 0.5 m. Terrain, road widths and
-bridge elevations are illustrative. Water and park polygon holes are retained.
+The citywide 7 September expansion contains **440,361 building/building-part
+shapes**, compiled from all **954,230** features returned by the official Berlin
+building-height dataset. It spans approximately 45.4 km east–west and 36.2 km
+north–south. Source shapes below 50 m² and missing/nonpositive heights remain
+omitted. Heights describe the 2022 source, not current construction progress.
+Roofs are flat extrusions; terrain, road widths and bridge elevations are illustrative.
 
-The compressed model is 26,252,745 bytes; it contains 3,056,925 triangles and
-2,033,253 outline/rail segments. Geometry is grouped into 200 building tiles for
-frustum culling, but this version downloads the complete model before use.
-Progressive loading, lower-detail citywide coverage and low-end-device profiling
-remain follow-up work. No frame-rate or mobile-performance benchmark is claimed.
+The initial overview is **9,025,128 bytes**, compared with the previous central
+model's 26,252,745-byte blocking download. It includes water, forests, parks,
+transport and simplified flat footprints of shapes at least 500 m². Overview
+coordinates use 1 m precision; detailed geometry retains 0.5 m precision.
+
+There are **263 independently compressed, content-hashed detail tiles** grouped
+on a 2 km grid. The complete asset set is **118,236,713 bytes**, but the browser
+does not fetch it all on entry. At detailed zoom it requests visible areas,
+prioritizes those nearest the camera target, limits concurrency to two requests
+and keeps at most 32 detail tiles resident. Leaving an area disposes its GPU
+geometry. Moving during a request discards an obsolete result before attaching
+it. The same-origin immutable cache can serve revisited tiles. Failed areas keep
+the overview visible and show a retry message; moving after fifteen seconds
+allows another attempt. The largest compressed detail tile is 1,613,582 bytes.
+
+The base overview contains 1,212,209 triangles. These are payload measurements,
+not a frame-rate or low-end-device benchmark. Chrome checked central Berlin,
+Spandau, Köpenick, Wannsee in Ink, whole-city Overview, and Tegel at 390 px.
+The city picker exposes eleven source-backed area anchors; it is not an address
+search. Construction evidence still covers three pilot dossiers and only two
+published project positions. Wider geometry does not imply wider project coverage.
 
 ## Provenance and licenses
 
@@ -28,9 +43,9 @@ remain follow-up work. No frame-rate or mobile-performance benchmark is claimed.
   WFS geometry is EPSG:25833. Only geometry, height, area and the numeric feature
   identifier were requested; names and addresses were not requested.
 - Context: [OpenStreetMap contributors](https://www.openstreetmap.org/copyright),
-  ODbL 1.0. Overpass snapshot timestamp: 2026-09-07T08:52:19Z. Numeric context
+  ODbL 1.0. Overpass snapshot timestamps are recorded in the model and label provenance. Numeric context
   geometry is distributed in the same model; its ODbL terms continue to apply.
-- Input hashes, output hash, origin, transformation and retrieval date are in
+- Per-page input hashes, per-tile output hashes, origin, transformation and retrieval date are in
   [`provenance.json`](../web/site-public/atlas/provenance.json). Model layout and
   coordinate quantization are in [`model.json`](../web/site-public/atlas/model.json).
   The model contains numeric coordinates only, not source-document artifacts.
@@ -43,22 +58,25 @@ command-line public geodata downloads after Chrome exports timed out; all
 website browsing and visual testing remain in Chrome.
 
 ```sh
-curl --fail --get 'https://gdi.berlin.de/services/wfs/ua_gebaeudehoehen' \
-  --data-urlencode 'service=WFS' --data-urlencode 'version=2.0.0' \
-  --data-urlencode 'request=GetFeature' \
-  --data-urlencode 'typeNames=ua_gebaeudehoehen:gebaeudehoehen' \
-  --data-urlencode 'outputFormat=application/json' \
-  --data-urlencode 'propertyName=geom,hoehe,shape_area,gisid' \
-  --data-urlencode 'bbox=13.3072,52.4742,13.4926,52.5432,urn:ogc:def:crs:OGC:1.3:CRS84' \
-  --data-urlencode 'count=200000' -o /tmp/berlin-buildings.json
-curl --fail --get 'https://overpass-api.de/api/interpreter' \
-  --data-urlencode 'data=[out:json][timeout:90];(way["natural"="water"](52.47,13.30,52.55,13.50);relation["natural"="water"](52.47,13.30,52.55,13.50);way["leisure"="park"](52.47,13.30,52.55,13.50);relation["leisure"="park"](52.47,13.30,52.55,13.50);way["highway"~"^(primary|secondary|tertiary|residential|pedestrian)$"](52.47,13.30,52.55,13.50);way["railway"="rail"](52.47,13.30,52.55,13.50););out geom;' \
-  -o /tmp/berlin-context.json
+python3 web/scripts/download-atlas-buildings.py /tmp/berlin-city
+# Download the public OSM context/places queries recorded below into that directory.
 cd web
 npm ci
-node scripts/build-atlas.mjs /tmp/berlin-buildings.json /tmp/berlin-context.json
+node --max-old-space-size=8192 scripts/build-atlas.mjs /tmp/berlin-city /tmp/berlin-city/context.json
+node scripts/build-labels.mjs /tmp/berlin-city/context.json
+node scripts/build-places.mjs /tmp/berlin-city/places.json
 npm run typecheck
 ```
+
+The context query uses Overpass JSON with `out geom`, bounding box
+`(52.33,13.08,52.68,13.77)`, and a 180-second timeout. It selects ways and
+relations with `natural=water|wood`, `leisure=park`, or `landuse=forest`, plus
+ways with `highway=motorway|trunk|primary|secondary|tertiary|residential|pedestrian`
+and `railway=rail`. The separate places query selects nodes with
+`place=suburb|quarter` in the same box and uses `out`. These raw exports remain
+outside the public site. The compiler partitions complete, duplicate-free WFS
+pages before triangulating one tile at a time. Do not publish the raw downloads.
+
 
 Live exports can change. The compiler rejects incomplete building exports,
 Overpass error remarks and out-of-range coordinates; a new retrieval requires
@@ -87,16 +105,15 @@ static routes. Implementation reference, inspected in Chrome:
 [Chrome cross-document view transitions](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document).
 
 The Labels menu independently controls project markers, water and green spaces.
-Eighteen selected geographic names are compiled verbatim from the same retained
+Twenty-six selected geographic names are compiled verbatim from the citywide retained
 OSM export by `web/scripts/build-labels.mjs`. Their source identifiers, input hash
 and snapshot timestamp are retained in `web/src/atlas/context-labels.json`;
 source links are available in the model-information dialog. Label anchors use
 feature bounding-box centers for cartographic placement. These are orientation
-labels, not new construction claims or precise project locations. The model
-binary and its geographic coverage are unchanged.
+labels, not new construction claims or precise project locations. The whole-city expansion also adds eleven source-linked OSM navigation anchors.
 
 Rebuild label data from `/web` with:
 
 ```sh
-node scripts/build-labels.mjs /tmp/berlin-context.json
+node scripts/build-labels.mjs /tmp/berlin-city/context.json
 ```

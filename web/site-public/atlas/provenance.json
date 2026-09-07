@@ -11,18 +11,70 @@
   "contextSource": "https://overpass-api.de/api/interpreter",
   "contextLicense": "ODbL-1.0",
   "contextAttribution": "© OpenStreetMap contributors",
-  "contextInputSha256": "sha256:c6e54718f9804ea18a5cf93035fbac7b08a367c063de754b983df1d264e096a7",
-  "contextTimestamp": "2026-09-07T08:52:19Z",
-  "buildingInputSha256": "sha256:f2aff0c8e4d9270d6467b71a0156ef9a077c6965e844dcea6ae4bf54dda107e7",
-  "modelSha256": "sha256:18104d8bcbd7a76a87f5cbe9c50e91bbc1df96bda5a1202b001e73a6b850f5a8",
-  "transformation": "Numeric geometry only; buildings smaller than 50 m² and unknown/nonpositive heights omitted; Coordinates quantized to the packed model precision (see model manifest); flat roof extrusions at source ridge heights; no vertical exaggeration; ground plane, road widths and bridge elevations are illustrative. Context is reprojected from WGS84 into EPSG:25833. No building names, addresses, or contributor details retained.",
-  "buildings": 84895,
-  "sourceFeatures": 155815,
+  "contextInputSha256": "sha256:dff16a01c99c74ba9ead70275dd92806485bc606e48500ba31c772de0fbdeb0e",
+  "contextTimestamp": "2026-09-07T12:49:21Z",
+  "buildingInputs": [
+    {
+      "file": "buildings-0000000.json",
+      "sha256": "sha256:91fa68348515068ff35d2103a65913ce106c185a8ba7c132bcc3d01ea4256f67",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0100000.json",
+      "sha256": "sha256:a0552bcabe67e201bf7bcf2fb479cd85d3fdb05a70b0cf658e0394455e384083",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0200000.json",
+      "sha256": "sha256:faae66948d405385cd7fa83eb3fc5f574fb752631b9a3213bccfe4875acc7605",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0300000.json",
+      "sha256": "sha256:5f5941ae612a3d9c4c472686e2b453b5933b145f85aa9280897b2c9402c36a59",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0400000.json",
+      "sha256": "sha256:37d059ccb87907df9130c0a1a65e3a7153d6a188d15a71df4af525dd27026873",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0500000.json",
+      "sha256": "sha256:6775c7ffe7f375c8eb99c681cbe8856a6e3c6a7179d8fd664615675c62578f95",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0600000.json",
+      "sha256": "sha256:c1286a747b05ac09e181f4ec4c72d1aba19a42bec964014186f28f3b9b386649",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0700000.json",
+      "sha256": "sha256:41e92c7f366dea037c060e63a7eaad01ca6c3e11c50a06e34dbffff1cc1e840e",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0800000.json",
+      "sha256": "sha256:2410ec9cf62fb8dd339530e816378bd532b1d910c6bfc057fb8c016e30c45dda",
+      "features": 100000
+    },
+    {
+      "file": "buildings-0900000.json",
+      "sha256": "sha256:701143aeadd9b5c8aa53133586530cf05c09df6599cef806cd415429ba42b352",
+      "features": 54230
+    }
+  ],
+  "modelSha256": "sha256:11e9292ce56859dc0fb0c402f0ca15e7f33b51456872a7a834fd72fe20761eed",
+  "transformation": "Numeric geometry only; detailed buildings smaller than 50 m² and unknown/nonpositive heights omitted; detailed tile coordinates quantized to 0.5 m, city overview to 1 m; overview shows flat footprints of shapes at least 500 m² with simplified outlines; flat roof extrusions at source ridge heights; no vertical exaggeration; ground plane, road widths and bridge elevations are illustrative. Context reprojected from WGS84 to EPSG:25833. No building names, addresses or contributor details retained.",
+  "buildings": 440361,
+  "sourceFeatures": 954230,
   "missingHeights": 0,
   "bounds": [
-    -6055,
-    -2900.4,
-    6892,
-    5259.5
-  ]
+    -20768.6,
+    -15876.6,
+    24635.5,
+    20300.1
+  ],
+  "compressedBytes": 118236713
 }

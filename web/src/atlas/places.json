@@ -1,0 +1,73 @@
+{
+  "sourceTimestamp": "2026-09-07T12:53:28Z",
+  "inputSha256": "sha256:d1f023b12b5ba6c27e699dee79cfdcb1f3341fcae164c60bd4ef35a9d45fcb5d",
+  "license": "ODbL-1.0",
+  "places": [
+    {
+      "name": "Charlottenburg",
+      "longitude": 13.3096834,
+      "latitude": 52.515747,
+      "sourceUrl": "https://www.openstreetmap.org/node/29336704"
+    },
+    {
+      "name": "Köpenick",
+      "longitude": 13.5754153,
+      "latitude": 52.4450491,
+      "sourceUrl": "https://www.openstreetmap.org/node/288659908"
+    },
+    {
+      "name": "Lichtenberg",
+      "longitude": 13.4950457,
+      "latitude": 52.5196723,
+      "sourceUrl": "https://www.openstreetmap.org/node/331139102"
+    },
+    {
+      "name": "Marzahn",
+      "longitude": 13.563142,
+      "latitude": 52.5429481,
+      "sourceUrl": "https://www.openstreetmap.org/node/151013231"
+    },
+    {
+      "name": "Mitte",
+      "longitude": 13.4040601,
+      "latitude": 52.5178855,
+      "sourceUrl": "https://www.openstreetmap.org/node/162012321"
+    },
+    {
+      "name": "Neukölln",
+      "longitude": 13.4353501,
+      "latitude": 52.4811497,
+      "sourceUrl": "https://www.openstreetmap.org/node/129875262"
+    },
+    {
+      "name": "Pankow",
+      "longitude": 13.4063334,
+      "latitude": 52.5671778,
+      "sourceUrl": "https://www.openstreetmap.org/node/1583388419"
+    },
+    {
+      "name": "Spandau",
+      "longitude": 13.1977924,
+      "latitude": 52.535788,
+      "sourceUrl": "https://www.openstreetmap.org/node/1775453665"
+    },
+    {
+      "name": "Tegel",
+      "longitude": 13.2790461,
+      "latitude": 52.5873891,
+      "sourceUrl": "https://www.openstreetmap.org/node/33790061"
+    },
+    {
+      "name": "Wannsee",
+      "longitude": 13.1589374,
+      "latitude": 52.4211482,
+      "sourceUrl": "https://www.openstreetmap.org/node/560483804"
+    },
+    {
+      "name": "Zehlendorf",
+      "longitude": 13.2589298,
+      "latitude": 52.4343217,
+      "sourceUrl": "https://www.openstreetmap.org/node/31451386"
+    }
+  ]
+}

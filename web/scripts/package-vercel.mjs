@@ -77,7 +77,12 @@ const model = JSON.parse(readFileSync(join(root, "atlas/model.json"), "utf8"));
 const config = {
   version: 3,
   routes,
-  overrides: { [model.geometry.slice(1)]: { contentType: "application/gzip" } },
+  overrides: Object.fromEntries(
+    [
+      model.geometry,
+      ...(model.version === 2 ? model.tiles.map((t) => t.geometry) : []),
+    ].map((path) => [path.slice(1), { contentType: "application/gzip" }]),
+  ),
   framework: {
     version: JSON.parse(readFileSync("package.json", "utf8")).dependencies
       .astro,

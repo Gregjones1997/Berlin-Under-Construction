@@ -14,12 +14,12 @@ instead of smoothing them into a single confident story.
 [Open the live atlas](https://berlin-under-construction.vercel.app).
 
 The Astro release includes: three evidence-backed project
-dossiers, an interactive architectural atlas of central Berlin, a static map
+dossiers, an interactive architectural atlas of Berlin, a static map
 and project index, contextual correction routes, the recorded AI-method page,
 an Impressum and an Article 13 privacy notice. Its static export contains 14
 HTML pages. Only the atlas loads client JavaScript (Three.js); all other routes
-remain JavaScript-free. The self-hosted model contains 84,895 building shapes
-and is approximately 26 MB; see [model provenance and limitations](docs/atlas-model.md). It makes no
+remain JavaScript-free. The self-hosted model contains 440,361 building shapes across Berlin. Its 9 MB overview loads first;
+detailed geometry streams by area from 263 self-hosted tiles; see [model provenance and limitations](docs/atlas-model.md). It makes no
 runtime request to a font, map tile, analytics or other third-party service.
 
 Every build requires `PUBLICATION_AS_OF_DATE` and the owner's complete

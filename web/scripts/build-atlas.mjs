@@ -1,5 +1,12 @@
 /** Offline mesh compiler. No source text, addresses or names enter the runtime model. */
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import {
+  readFileSync,
+  writeFileSync,
+  mkdirSync,
+  readdirSync,
+  appendFileSync,
+  rmSync,
+} from "node:fs";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 import { ShapeUtils, Vector2 } from "three";
@@ -7,7 +14,7 @@ import proj4 from "proj4";
 const [buildingPath, osmPath] = process.argv.slice(2);
 if (!buildingPath || !osmPath)
   throw new Error(
-    "Usage: node scripts/build-atlas.mjs buildings.json context.json",
+    "Usage: node scripts/build-atlas.mjs building-pages-directory context.json",
   );
 const UTM = "+proj=utm +zone=33 +ellps=GRS80 +units=m +no_defs";
 const origin = [391000, 5820000];
@@ -15,21 +22,50 @@ const project = (lon, lat) => {
   const [e, n] = proj4("EPSG:4326", UTM, [lon, lat]);
   return [e - origin[0], origin[1] - n];
 };
-const raw = readFileSync(buildingPath);
-const data = JSON.parse(raw);
-if (!Array.isArray(data.features) || !data.features.length)
-  throw new Error("No building features");
-if (data.numberMatched > data.features.length)
-  throw new Error(
-    `Truncated export: ${data.features.length}/${data.numberMatched}`,
-  );
 const surface = [],
-  edges = [],
-  tiles = new Map();
+  edges = [];
+const output = "site-public/atlas";
+mkdirSync(output, { recursive: true });
+const spool = `${buildingPath}/mesh-spool`;
+rmSync(spool, { recursive: true, force: true });
+mkdirSync(spool, { recursive: true });
+const bounds = [Infinity, Infinity, -Infinity, -Infinity];
 let count = 0,
   missing = 0,
-  invalid = 0;
-const bounds = [Infinity, Infinity, -Infinity, -Infinity];
+  invalid = 0,
+  sourceFeatures = 0,
+  expected;
+const inputHashes = [];
+const ids = new Set();
+const overview = [];
+const manifestTiles = [];
+function pack(surfaces, lines, offset = [0, 0], quantization = 2) {
+  const packed = new Int16Array(surfaces.length + lines.length);
+  for (let i = 0; i < packed.length; i++) {
+    const value =
+      i < surfaces.length ? surfaces[i] : lines[i - surfaces.length];
+    const q = Math.round(
+      (value - (i % 3 === 0 ? offset[0] : i % 3 === 2 ? offset[1] : 0)) *
+        quantization,
+    );
+    if (!Number.isFinite(q) || q < -32768 || q > 32767)
+      throw new Error("Geometry exceeds packed coordinate range");
+    packed[i] = q;
+  }
+  const gzip = gzipSync(new Uint8Array(packed.buffer), { level: 9 });
+  const hash = createHash("sha256").update(gzip).digest("hex");
+  const filename = `berlin-${hash.slice(0, 12)}.bin.gz`;
+  writeFileSync(`${output}/${filename}`, gzip);
+  return {
+    geometry: `/atlas/${filename}`,
+    sha256: `sha256:${hash}`,
+    bytes: gzip.length,
+    surfaceFloats: surfaces.length,
+    edgeFloats: lines.length,
+    offset,
+    quantization,
+  };
+}
 function cleaned(ring) {
   const pts = ring.map(([e, n]) => [
     Math.round((e - origin[0]) * 10) / 10,
@@ -45,6 +81,27 @@ function cleaned(ring) {
     (p, i) =>
       i === 0 || Math.hypot(p[0] - pts[i - 1][0], p[1] - pts[i - 1][1]) > 0.15,
   );
+}
+// Reduce nearly collinear vertices only in the zoomed-out footprint layer.
+function overviewRing(ring) {
+  let result = ring;
+  for (let pass = 0; pass < 3; pass++) {
+    const next = [];
+    for (let i = 0; i < result.length; i++) {
+      const a = next.at(-1) ?? result.at(-1),
+        b = result[i],
+        c = result[(i + 1) % result.length];
+      const length = Math.hypot(c[0] - a[0], c[1] - a[1]);
+      const distance = length
+        ? Math.abs(
+            (c[0] - a[0]) * (a[1] - b[1]) - (a[0] - b[0]) * (c[1] - a[1]),
+          ) / length
+        : Infinity;
+      if (distance >= 2 || next.length + result.length - i <= 3) next.push(b);
+    }
+    if (next.length >= 3) result = next;
+  }
+  return result;
 }
 function polygonMesh(rings, height, positions, linePositions, base = 0) {
   if (rings[0].length < 3) return;
@@ -106,45 +163,96 @@ function polygonMesh(rings, height, positions, linePositions, base = 0) {
     }
   }
 }
-for (const f of data.features) {
-  const h = f.properties.hoehe;
-  if (typeof h !== "number" || !Number.isFinite(h) || h <= 0) {
-    missing++;
-    continue;
-  }
-  if (!f.geometry || f.geometry.type !== "MultiPolygon") {
-    invalid++;
-    continue;
-  }
-  if (f.properties.shape_area < 50) continue;
-  const polygons = f.geometry.coordinates.map((p) => p.map(cleaned));
-  for (const rings of polygons) {
-    if (rings[0].length < 3) continue;
-    const p = rings[0][0];
-    const key = `${Math.floor(p[0] / 750)}:${Math.floor(p[1] / 750)}`;
-    if (!tiles.has(key)) tiles.set(key, { surface: [], edges: [] });
-    const tile = tiles.get(key);
-    polygonMesh(rings, h, tile.surface, tile.edges);
-    for (const [x, z] of rings[0]) {
-      bounds[0] = Math.min(bounds[0], x);
-      bounds[1] = Math.min(bounds[1], z);
-      bounds[2] = Math.max(bounds[2], x);
-      bounds[3] = Math.max(bounds[3], z);
+// Partition source pages before triangulation, keeping peak compiler memory bounded.
+for (const name of readdirSync(buildingPath)
+  .filter((n) => /^buildings-.*\.json$/.test(n))
+  .sort()) {
+  const raw = readFileSync(`${buildingPath}/${name}`);
+  const data = JSON.parse(raw);
+  expected ??= data.numberMatched;
+  if (expected !== data.numberMatched)
+    throw new Error("Source count changed during pagination");
+  inputHashes.push({
+    file: name,
+    sha256: "sha256:" + createHash("sha256").update(raw).digest("hex"),
+    features: data.features.length,
+  });
+  sourceFeatures += data.features.length;
+  const groups = new Map();
+  for (const f of data.features) {
+    if (ids.has(f.properties.gisid))
+      throw new Error("Duplicate source feature across pages");
+    ids.add(f.properties.gisid);
+    const h = f.properties.hoehe;
+    if (typeof h !== "number" || !Number.isFinite(h) || h <= 0) {
+      missing++;
+      continue;
+    }
+    if (!f.geometry || f.geometry.type !== "MultiPolygon") {
+      invalid++;
+      continue;
+    }
+    if (f.properties.shape_area < 50) continue;
+    count++;
+    for (const polygon of f.geometry.coordinates) {
+      const rings = polygon.map(cleaned);
+      if (rings[0].length < 3) continue;
+      const p = rings[0][0];
+      const key = `${Math.floor(p[0] / 2000)}_${Math.floor(p[1] / 2000)}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push({ rings, h, area: f.properties.shape_area });
+      for (const [x, z] of rings[0]) {
+        bounds[0] = Math.min(bounds[0], x);
+        bounds[1] = Math.min(bounds[1], z);
+        bounds[2] = Math.max(bounds[2], x);
+        bounds[3] = Math.max(bounds[3], z);
+      }
     }
   }
-  count++;
+  for (const [key, features] of groups)
+    appendFileSync(
+      `${spool}/${key}.jsonl`,
+      features.map((f) => JSON.stringify(f)).join("\n") + "\n",
+    );
+  console.log(`Partitioned ${sourceFeatures}/${expected} features`);
 }
-const manifestTiles = [];
-for (const t of tiles.values()) {
-  const s = { start: surface.length, count: t.surface.length },
-    e = { start: edges.length, count: t.edges.length };
-  for (const n of t.surface) surface.push(n);
-  for (const n of t.edges) edges.push(n);
-  manifestTiles.push({ surface: s, edges: e });
+if (!expected || sourceFeatures !== expected)
+  throw new Error(`Incomplete city export: ${sourceFeatures}/${expected}`);
+for (const file of readdirSync(spool).sort()) {
+  const key = file.replace(".jsonl", "");
+  const [tx, tz] = key.split("_").map(Number);
+  const offset = [tx * 2000 + 1000, tz * 2000 + 1000];
+  const ts = [],
+    te = [],
+    tb = [Infinity, Infinity, -Infinity, -Infinity];
+  let buildings = 0,
+    maxHeight = 0;
+  for (const line of readFileSync(`${spool}/${file}`, "utf8")
+    .trim()
+    .split("\n")) {
+    const { rings, h, area } = JSON.parse(line);
+    polygonMesh(rings, h, ts, te);
+    // Overview is explicitly a flat footprint layer, not a substitute height model.
+    if (area >= 500)
+      polygonMesh(rings.map(overviewRing), 0.4, overview, null, 0.4);
+    buildings++;
+    maxHeight = Math.max(maxHeight, h);
+    for (const [x, z] of rings[0]) {
+      tb[0] = Math.min(tb[0], x);
+      tb[1] = Math.min(tb[1], z);
+      tb[2] = Math.max(tb[2], x);
+      tb[3] = Math.max(tb[3], z);
+    }
+  }
+  manifestTiles.push({
+    id: key,
+    bounds: tb,
+    maxHeight,
+    buildings,
+    ...pack(ts, te, offset),
+  });
 }
-console.log(
-  `Buildings: ${count}, tiles: ${tiles.size}, missing heights: ${missing}`,
-);
+console.log(`Buildings: ${count}, streamed tiles: ${manifestTiles.length}`);
 // Retain geometry only from the public OpenStreetMap export.
 const nodes = new Map(),
   ways = new Map(),
@@ -358,84 +466,60 @@ function append(target, values) {
   for (const n of values) target.push(n);
   return s;
 }
-const waterSeg = append(surface, water),
+const overviewSeg = append(surface, overview),
+  waterSeg = append(surface, water),
   parkSeg = append(surface, parks),
   roadSeg = append(surface, roads),
   railSeg = append(edges, rail);
-const maxCoordinate = Math.max(
-  ...bounds.map(Math.abs),
-  ...surface.filter((_, i) => i % 10000 === 0).map(Math.abs),
-);
-const quantization = maxCoordinate < 16000 ? 2 : 1;
-const packed = new Int16Array(surface.length + edges.length);
-for (let i = 0; i < surface.length + edges.length; i++) {
-  const value = i < surface.length ? surface[i] : edges[i - surface.length];
-  const q = Math.round(value * quantization);
-  if (!Number.isFinite(q) || q < -32768 || q > 32767)
-    throw new Error("Geometry exceeds packed coordinate range");
-  packed[i] = q;
-}
-const gzip = gzipSync(new Uint8Array(packed.buffer), { level: 9 });
-const hash = createHash("sha256").update(gzip).digest("hex");
-const output = "site-public/atlas";
-mkdirSync(output, { recursive: true });
-const filename = `berlin-${hash.slice(0, 12)}.bin.gz`;
-writeFileSync(`${output}/${filename}`, gzip);
+// Whole-city coordinates use metre precision; detailed tiles retain half metres.
+const base = pack(surface, edges, [0, 0], 1);
 const manifest = {
-  version: 1,
-  quantization,
+  version: 2,
+  ...base,
   buildings: count,
   missingHeights: missing,
   invalidGeometry: invalid,
   tiles: manifestTiles,
+  overview: overviewSeg,
   water: waterSeg,
   parks: parkSeg,
   roads: roadSeg,
   rail: railSeg,
   bounds,
-  surfaceFloats: surface.length,
-  edgeFloats: edges.length,
-  geometry: `/atlas/${filename}`,
 };
 writeFileSync(`${output}/model.json`, JSON.stringify(manifest));
-writeFileSync(
-  `${output}/provenance.json`,
-  JSON.stringify(
-    {
-      retrievedOn: "2026-09-07",
-      buildingSource: "https://gdi.berlin.de/services/wfs/ua_gebaeudehoehen",
-      buildingDataset: "Gebäudehöhen 2022 (Umweltatlas)",
-      buildingLicense: "dl-de-zero-2.0",
-      sourceCrs: "EPSG:25833",
-      origin,
-      contextSource: "https://overpass-api.de/api/interpreter",
-      contextLicense: "ODbL-1.0",
-      contextAttribution: "© OpenStreetMap contributors",
-      contextInputSha256:
-        "sha256:" +
-        createHash("sha256").update(readFileSync(osmPath)).digest("hex"),
-      contextTimestamp: JSON.parse(readFileSync(osmPath, "utf8")).osm3s
-        ?.timestamp_osm_base,
-      buildingInputSha256:
-        "sha256:" + createHash("sha256").update(raw).digest("hex"),
-      modelSha256: "sha256:" + hash,
-      transformation:
-        "Numeric geometry only; buildings smaller than 50 m² and unknown/nonpositive heights omitted; Coordinates quantized to the packed model precision (see model manifest); flat roof extrusions at source ridge heights; no vertical exaggeration; ground plane, road widths and bridge elevations are illustrative. Context is reprojected from WGS84 into EPSG:25833. No building names, addresses, or contributor details retained.",
-      buildings: count,
-      sourceFeatures: data.features.length,
-      missingHeights: missing,
-      bounds,
-    },
-    null,
-    2,
-  ),
-);
+const provenance = {
+  retrievedOn: new Date().toISOString().slice(0, 10),
+  buildingSource: "https://gdi.berlin.de/services/wfs/ua_gebaeudehoehen",
+  buildingDataset: "Gebäudehöhen 2022 (Umweltatlas)",
+  buildingLicense: "dl-de-zero-2.0",
+  sourceCrs: "EPSG:25833",
+  origin,
+  contextSource: "https://overpass-api.de/api/interpreter",
+  contextLicense: "ODbL-1.0",
+  contextAttribution: "© OpenStreetMap contributors",
+  contextInputSha256:
+    "sha256:" +
+    createHash("sha256").update(readFileSync(osmPath)).digest("hex"),
+  contextTimestamp: JSON.parse(readFileSync(osmPath, "utf8")).osm3s
+    ?.timestamp_osm_base,
+  buildingInputs: inputHashes,
+  modelSha256: base.sha256,
+  transformation:
+    "Numeric geometry only; detailed buildings smaller than 50 m² and unknown/nonpositive heights omitted; detailed tile coordinates quantized to 0.5 m, city overview to 1 m; overview shows flat footprints of shapes at least 500 m² with simplified outlines; flat roof extrusions at source ridge heights; no vertical exaggeration; ground plane, road widths and bridge elevations are illustrative. Context reprojected from WGS84 to EPSG:25833. No building names, addresses or contributor details retained.",
+  buildings: count,
+  sourceFeatures,
+  missingHeights: missing,
+  bounds,
+  compressedBytes: base.bytes + manifestTiles.reduce((n, t) => n + t.bytes, 0),
+};
+writeFileSync(`${output}/provenance.json`, JSON.stringify(provenance, null, 2));
 console.log(
   JSON.stringify({
     buildings: count,
-    triangles: surface.length / 9,
-    edges: edges.length / 6,
-    gzipMB: gzip.length / 1e6,
+    tiles: manifestTiles.length,
+    overviewMB: base.bytes / 1e6,
+    totalMB: provenance.compressedBytes / 1e6,
     bounds,
   }),
 );

@@ -3,6 +3,8 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+- 2026-09-07 — Codex (Chrome skill, Vercel CLI/connector): released the checked static export, verified all fourteen live pages and seven asset hashes anonymously, checked public navigation/mobile/legal routes in Chrome, and recorded the production URL and verification limits in `docs/public-deployment.md`. No subagents used. Browser automation intermittently timed out on the heavy atlas; fresh static-route checks succeeded.
+
 - 2026-09-07 — Codex: updated the privacy notice from planned to actual Vercel Hobby hosting after the production deployment reported READY and anonymous checks matched all fourteen pages and seven assets. Provider-policy uncertainties remain disclosed.
 
 ## 2026-09-07 — Shared navigation, label categories and public build packaging

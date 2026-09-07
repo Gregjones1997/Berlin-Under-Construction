@@ -22,18 +22,18 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 ## Current position
 
-**Current phase:** Gate 3 public-site implementation and Gate 6 legal/deployment
-packaging; Phase 2 remains incomplete
+**Current phase:** First public vertical slice released; Phase 2 remains incomplete.
 
-**Current status:** IN PROGRESS — the local candidate is reviewed and green;
-the owner supplied the postal address on 7 September; deployment and live evidence remain pending
+**Current status:** LIVE — the 7 September release is available at
+[Berlin, Under Construction](https://berlin-under-construction.vercel.app).
+The owner accepted the atlas; shared navigation and label categories are implemented.
+Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Deploy the checked public-address build to the newly linked
-Vercel Hobby project, then verify and record the live routes, Chrome appearance,
-network/storage behavior and platform logs. The owner accepted the architectural
-atlas visually on 7 September and requested the now-implemented shared navigation
-and label categories. No legal-address placeholder remains in the release build.
-Do not make a model/extraction-provider call; Phase 2 remains incomplete.
+**Next action:** Prepare the job-application walkthrough and technical case study
+around the live atlas, evidence gates and measured AI run. Collect the owner's
+specific copy edits, then measure model loading and rendering before expanding
+geographic coverage. Do not make a model/extraction-provider call; human glossary
+verification and the golden set remain incomplete.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's
 handover wording to `Anfang September 2026`; the current HOWOGE page still says
@@ -231,8 +231,10 @@ before a human-authored golden set and verified glossary exist.
   `docs/research/findings/2026-08-25-local-route-accessibility-verification.md`.
 - [ ] Verify public-site legal, privacy and source-use requirements using authoritative guidance.
 - [ ] Record and verify the owner-managed access-restricted preview deployment.
-- [ ] Resolve the remaining Article 13/address blocker, then deploy the overdue
-  first public release as soon as the live gate can be completed.
+- [x] Supply the public legal address and deploy the first public release. Evidence:
+  7 September READY deployment, Chrome legal-page checks and matching anonymous
+  response hashes in `docs/public-deployment.md`. Hosting-policy uncertainties
+  remain explicitly disclosed.
 - [ ] Record a short demo walkthrough.
 - [x] Demonstrate that accepted, verified claims render publicly while withheld
   claims remain non-public. Evidence: 178 tests plus the three-file bundle and
@@ -311,7 +313,8 @@ claims do not.
 
 ## Launch readiness
 
-- [ ] Public 2D product is live.
+- [x] Public atlas and static project index are live. Evidence: 7 September
+  production deployment and fourteen matching route responses.
 - [ ] Three evidence-backed project stories are demonstrable.
 - [ ] Original German extraction and controlled translation are demonstrated.
 - [ ] Data and provenance model are explained.

@@ -37,8 +37,37 @@ Configuration reference, inspected in Chrome:
 
 ## Release evidence
 
-Record the exact deployment URL, source commit, readiness, public routes,
-Chrome visual checks, external-request/storage findings and platform error/log
-results after deployment. Static application behavior must not be confused with
-unverified hosting-layer behavior. Do not add a public URL to the README before
-these checks are recorded.
+Released on 7 September 2026 at
+[berlin-under-construction.vercel.app](https://berlin-under-construction.vercel.app).
+Final production deployment: `dpl_6nmDkFLR7Uz88KtQkH3ZpSCZKTr3`, READY,
+source commit `af3298c` (shared navigation and labels: `7952f79`).
+[Immutable deployment](https://berlin-under-construction-hgir4mt0h-jonesg158-8681s-projects.vercel.app).
+
+- All 183 Python tests and TypeScript checking passed before release. The final
+  hosting-copy correction rebuilt all fourteen routes and passed static packaging.
+- [Anonymous HTTP evidence](research/findings/2026-09-07-live-release.json): all
+  fourteen HTML pages and seven assets return 200 and match the local export's
+  SHA-256 hashes. Sampled responses have no Set-Cookie header and include the
+  same-origin CSP. Four private paths return 404.
+- Served JavaScript contains none of the checked browser-storage API identifiers.
+  This is a source check, not inspection of browser storage; no browser profile,
+  stored cookies or authentication state was read. CSP constrains runtime
+  connections to the same origin. These checks do not prove host-wide retention
+  or processing behavior.
+- Chrome rendered the public 3D atlas with geographic labels and no reported
+  warning/error console entries. Public dossier → index → method navigation
+  worked. The [390 px public index](images/public-index-mobile.png) kept all three
+  navigation links and readable content. The final legal pages displayed the
+  supplied address and actual hosting wording.
+- Local Chrome checks additionally covered independent label categories and
+  smooth content transitions. Named-header transitions initially left the logo
+  unpainted; limiting transitions to main content corrected that behavior.
+- Vercel's runtime-error query returned no errors. Its static-log aggregation
+  returned an empty table; that is not evidence of absent hosting logs or data
+  retention. The public privacy notice preserves the unresolved Hobby DPA and
+  transfer/retention limits.
+
+The atlas still downloads approximately 26 MB and covers central Berlin. No
+accuracy score is claimed; human glossary verification and golden-set work remain
+open. Browser automation intermittently timed out on the heavy atlas; fresh static
+route checks succeeded. This is not a comprehensive device-performance audit.

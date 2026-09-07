@@ -1,0 +1,284 @@
+{
+  "checkedAt": "2026-09-07T09:56:59.525Z",
+  "origin": "https://berlin-under-construction.vercel.app",
+  "pass": true,
+  "findings": [
+    {
+      "path": "/_astro/Base.iIgsGmqw.css",
+      "status": 200,
+      "bytes": 4629,
+      "sha256": "sha256:ce61146d41972e542587c9f984c49ca63120e8c0c934d2ed24592b95b160a240",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/css; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/_astro/index.astro_astro_type_script_index_0_lang.IdFnMzNJ.js",
+      "status": 200,
+      "bytes": 7307,
+      "sha256": "sha256:6155e90d2e01ee452afb2c961ce4b1b40345b7832651085973319c67ab4d3ad5",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "application/javascript; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+      "storageApiIdentifiers": false
+    },
+    {
+      "path": "/_astro/index.D3_vX3Dr.css",
+      "status": 200,
+      "bytes": 16948,
+      "sha256": "sha256:03362ddba81532ce72a48f0e5069a341d005b245c991325291944b3e6d95a4a1",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/css; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/_astro/renderer.BG1Ifwqr.js",
+      "status": 200,
+      "bytes": 685895,
+      "sha256": "sha256:ec5de2ecfad5f0d0ee3d7248d31feb3954ac0a4e4bf40c42e4d53e8380167801",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "application/javascript; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+      "storageApiIdentifiers": false
+    },
+    {
+      "path": "/atlas/model.json",
+      "status": 200,
+      "bytes": 17443,
+      "sha256": "sha256:b76709826d22d31137290c28c0e612f3bd3841fbfa59a71ad660dd75bc19ebd1",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "application/json; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/atlas/provenance.json",
+      "status": 200,
+      "bytes": 1346,
+      "sha256": "sha256:cc24c19595e771f42530b7f2f76c1e2b458e007abcb6008966256d80ee67abf6",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "application/json; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/corrections/",
+      "status": 200,
+      "bytes": 4821,
+      "sha256": "sha256:7a06ee68d074ecc83c77f8532acdd82907a38dd255e4c6591f18c73e77ead46e",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/atlas/berlin-18104d8bcbd7.bin.gz",
+      "status": 200,
+      "bytes": 26252745,
+      "sha256": "sha256:18104d8bcbd7a76a87f5cbe9c50e91bbc1df96bda5a1202b001e73a6b850f5a8",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "application/gzip",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/corrections/organizations/senatsverwaltung-stadtentwicklung-bauen-wohnen/",
+      "status": 200,
+      "bytes": 4956,
+      "sha256": "sha256:39fbbae8bff7aa5b46bd147a498faf0faaba9cf5debccc68a3b058d39880b651",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/corrections/projects/C-014/",
+      "status": 200,
+      "bytes": 4849,
+      "sha256": "sha256:8f0c1c76f562b2954afc33beaf79818fb4acb0df96df3bad71a08192060b9179",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/corrections/projects/C-010/",
+      "status": 200,
+      "bytes": 4902,
+      "sha256": "sha256:1aead3f159a0345fdc74a6c4e4e818d70d5054ce2bcabbd1cefb7e97558ca63c",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/corrections/organizations/50hertz/",
+      "status": 200,
+      "bytes": 4826,
+      "sha256": "sha256:6770ba25042ed4c50e9258c728c82df592cb816edc7359a3068b29813cf85980",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/impressum/",
+      "status": 200,
+      "bytes": 4379,
+      "sha256": "sha256:568bba3002ac7bdf8432b7c7fd3a4851cc88a84a9dcde1870f92430fbf483f89",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/method/",
+      "status": 200,
+      "bytes": 5404,
+      "sha256": "sha256:6cadf0f09bfc68183dd791d2ae46b500029a3b438817f340d32a987219050b20",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/corrections/projects/C-019/",
+      "status": 200,
+      "bytes": 4900,
+      "sha256": "sha256:5a37e88d621b4adaeda7f69532fd1507234c0076f2095fcc490e7a755c97549e",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 31909,
+      "sha256": "sha256:3806ca8f010c4b7d2fbe733b5b58b0f870b49ab7e30092009b273de6543706fa",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "bytes": 7899,
+      "sha256": "sha256:ef7a3632e9d094b3a843a6ca89e76ce4e8c4619d1407a4c521f54bc519476f81",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/projects/heinrich-hertz-gymnasium-ostbahnhof/",
+      "status": 200,
+      "bytes": 8321,
+      "sha256": "sha256:cfa912d539aa02b32a27e4a93f25e94b3e231ce3790469df1d7b9bbb02b1bc11",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/projects/europaplatz-sued/",
+      "status": 200,
+      "bytes": 18748,
+      "sha256": "sha256:5b54335a220b2923e51a213045fc7f99e4bbff4bfd07ee6b0c6c20feabab5c65",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/projects/power-to-heat-heizkraftwerk-mitte/",
+      "status": 200,
+      "bytes": 8141,
+      "sha256": "sha256:5f34c98551c051a3a06fa279f2202b992e9dcbb039561ebeb55b545e67f0a8dc",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "path": "/records/",
+      "status": 200,
+      "bytes": 23173,
+      "sha256": "sha256:310f742b514faf18dd7f317cf760285a43519a483bd9543a8f25ec50812b973c",
+      "matchesLocal": true,
+      "setCookie": false,
+      "contentType": "text/html; charset=utf-8",
+      "contentEncoding": null,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+    }
+  ],
+  "privatePaths": [
+    {
+      "path": "/data/projects.json",
+      "status": 404,
+      "setCookie": false
+    },
+    {
+      "path": "/data/artifacts/",
+      "status": 404,
+      "setCookie": false
+    },
+    {
+      "path": "/.env.local",
+      "status": 404,
+      "setCookie": false
+    },
+    {
+      "path": "/pipeline/",
+      "status": 404,
+      "setCookie": false
+    }
+  ],
+  "scope": "Anonymous requests only; no browser profile, stored cookies, authentication or storage was read. Hashes compare live responses with the verified local export. Source/API identifier checks do not inspect browser storage."
+}

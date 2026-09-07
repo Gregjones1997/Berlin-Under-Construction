@@ -7,11 +7,13 @@ records to the exact German evidence behind their dates, status, money and
 institutional roles. It preserves conflicts, withheld facts and stale claims
 instead of smoothing them into a single confident story.
 
-## Public-site candidate
+## Live portfolio release
 
-![Berlin, Under Construction public-site candidate](docs/images/atlas-paper.png)
+![Berlin, Under Construction architectural atlas](docs/images/atlas-paper.png)
 
-The Astro candidate is the deployable product surface: three evidence-backed project
+[Open the live atlas](https://berlin-under-construction.vercel.app).
+
+The Astro release includes: three evidence-backed project
 dossiers, an interactive architectural atlas of central Berlin, a static map
 and project index, contextual correction routes, the recorded AI-method page,
 an Impressum and an Article 13 privacy notice. Its static export contains 14
@@ -25,12 +27,13 @@ serviceable postal address in `LEGAL_ADDRESS`. The first value is displayed in
 every page (the atlas places it in its model-information dialog) and controls the C-010 passed-date warning; the second is used
 on both legal routes. A missing value fails the build.
 
-No live URL is recorded here until that exact deployment has passed route,
-keyboard, mobile-width, network, cookie, storage and operational-behavior
-checks. The owner-supplied identity and monitored contact are present. The
-postal address is still required. Official Vercel documents also leave the
-applicability of the current processor DPA to a Hobby deployment unresolved;
-the privacy notice discloses that conflict instead of claiming coverage.
+The public release was deployed on 7 September 2026. All fourteen pages and
+seven assets matched the checked export in anonymous HTTP verification; sampled
+responses set no cookies and private paths returned 404. Chrome verified the
+atlas, shared navigation, mobile index and legal routes. See the exact scope and
+limitations in [release evidence](docs/public-deployment.md). The supplied public
+address is present on both legal routes. The privacy notice retains the unresolved
+applicability of Vercel's current processor DPA to Hobby deployments.
 
 **Geographic focus:** Berlin, Germany
 
@@ -97,14 +100,13 @@ remain post-v0 work.
 
 ## Current status
 
-This project is not yet a finished application. The three pilot dossiers remain
-in v0 and are evidence-complete and frozen. The `phase-4-public-slice` branch is
-being packaged as the first public site while Phase 2 remains incomplete. The
+The first public vertical slice is live. The three pilot dossiers remain
+in v0 and are evidence-complete and frozen. Phase 2 remains incomplete. The
 site may show bounded pipeline behavior, cost and latency, but it does not
 describe those observations as an accuracy result while the glossary and golden
 set are unverified.
 
-The first public release will focus on a narrow, working vertical slice:
+The public release focuses on a narrow, working vertical slice:
 
 - Three representative Berlin construction projects, expanding toward ten after the first release.
 - A source registry and manually verified project dossiers.
@@ -113,9 +115,9 @@ The first public release will focus on a narrow, working vertical slice:
 - A bounded document-intelligence workflow with metering and visible limitations; scored evaluation follows after v0.
 - A deployable 2D map connected to evidence-backed project pages.
 
-On 7 September the owner reopened the 3D release sequence (ADR-024). The local
-candidate now includes an architectural atlas while preserving the static index
-and the core evidence and AI work. Public launch remains gated.
+On 7 September the owner reopened the 3D release sequence (ADR-024). The public
+release now includes an architectural atlas while preserving the static index
+and the core evidence and AI work.
 
 Features described in the roadmap are planned work unless they are explicitly marked as complete in the project documentation.
 

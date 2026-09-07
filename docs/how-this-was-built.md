@@ -3,6 +3,8 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+- 2026-09-07 — Codex: updated the privacy notice from planned to actual Vercel Hobby hosting after the production deployment reported READY and anonymous checks matched all fourteen pages and seven assets. Provider-policy uncertainties remain disclosed.
+
 ## 2026-09-07 — Shared navigation, label categories and public build packaging
 
 **Status:** Complete locally; public verification follows deployment

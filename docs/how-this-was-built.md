@@ -3,11 +3,13 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
-- 2026-09-07 — Codex (Chrome skill, Vercel CLI): published citywide source commit `7842a09` to the existing public site. Verified READY deployment, all fourteen live pages and 270 asset hashes, private-path 404s, no Set-Cookie on sampled responses, and live Spandau geometry with no reported console warnings/errors. Recorded scope limits and screenshots in `docs/public-deployment.md`; no subagents used.
+- 2026-09-07 — Codex (Chrome skill, Vercel CLI): published citywide source commit `7842a09` to the existing public site. Verified READY deployment, all fourteen live pages and 270 asset hashes, private-path 404s, no Set-Cookie on sampled responses, and live Spandau geometry with no reported console warnings/errors. Recorded scope limits and screenshots in `docs/public-deployment.md`; no subagents used. `5e119ff`
 
 ## 2026-09-07 — Whole-Berlin geometry and progressive detail
 
 **Status:** Implemented and verified locally; production verification follows.
+
+**Commit:** `7842a09` — `feat(map): stream architectural geometry across all Berlin`
 
 ### Goal and participants
 

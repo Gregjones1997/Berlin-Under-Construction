@@ -7,6 +7,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Complete locally; owner visual acceptance and public deployment remain open
 
+**Commit:** `e49e47f` — `feat(map): build self-hosted Berlin architectural atlas`
+
 ### Goal
 
 Make the city itself the portfolio entry point, taking the owner's Marseille

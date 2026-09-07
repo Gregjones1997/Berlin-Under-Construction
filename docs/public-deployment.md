@@ -5,6 +5,27 @@ Only the checked Astro export is uploaded through Vercel's Build Output API.
 The retained PDF artifacts, SQLite store, pipeline source and environment files
 are never deployment inputs.
 
+## Current production update — whole Berlin
+
+Source commit `7842a09` is deployed READY at the stable public URL.
+Deployment: `dpl_AEZAWYx74e9z6iEEohAeYQkHrTgx`.
+[Immutable citywide deployment](https://berlin-under-construction-aazimu4wt-jonesg158-8681s-projects.vercel.app).
+The static envelope now contains fourteen HTML pages and 270 assets, including
+263 detailed building tiles. All 184 Python tests and TypeScript checking passed.
+The citywide model's coverage, 9 MB overview, tile-loading limits and remaining
+source limitations are documented in [atlas-model.md](atlas-model.md).
+
+[Anonymous citywide release checks](research/findings/2026-09-07-citywide-release.json)
+passed: all fourteen pages and 270 assets returned 200 and matched local SHA-256
+hashes. Sampled responses set no cookies; all four private-path probes returned
+404. Served script identifier checks and same-origin CSP passed with the same
+scope limits as the initial release. Chrome loaded the live Spandau detail view
+with no warning/error console entries; see [public screenshot](images/atlas-spandau-live.png).
+The [whole-city overview](images/atlas-citywide-overview.png) was checked locally,
+including a keyboard-activated 390 px fit after adapting the minimum zoom to the
+viewport. Browser automation intermittently timed out; the completed interaction
+and screenshots, rather than timed-out calls, are the evidence.
+
 ## Build and package
 
 Supply the owner-approved serviceable address and the actual build date through
@@ -35,7 +56,7 @@ media type and is decompressed by the client renderer.
 Configuration reference, inspected in Chrome:
 [Vercel Build Output API configuration](https://vercel.com/docs/build-output-api/v3/configuration).
 
-## Release evidence
+## Initial release evidence (before the citywide expansion)
 
 Released on 7 September 2026 at
 [berlin-under-construction.vercel.app](https://berlin-under-construction.vercel.app).

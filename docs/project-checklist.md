@@ -26,7 +26,8 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** LIVE — the 7 September release is available at
 [Berlin, Under Construction](https://berlin-under-construction.vercel.app).
-The owner accepted the atlas; shared navigation and label categories are implemented.
+The owner accepted the atlas; shared navigation, label categories and whole-Berlin
+geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
 **Next action:** Prepare the job-application walkthrough and technical case study

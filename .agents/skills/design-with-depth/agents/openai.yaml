@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design with Depth"
+  short_description: "Research-led design with clear cause and effect"
+  default_prompt: "Use $design-with-depth to improve this product's visual experience through reference research, explicit design reasoning, and a verified interactive journey."

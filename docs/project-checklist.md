@@ -30,7 +30,7 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** With the requested Matt Pocock skills installation complete, prepare the C-009 building dossier from the [seven-candidate
+**Next action:** Prepare the C-009 building dossier from the [seven-candidate
 screening](research/findings/2026-09-08-seven-candidate-screening.md), verify an
 authoritative map position and precise building scope, and assemble proposed
 public facts for the existing review gates. Then prepare C-001/002 bridge dossiers.
@@ -46,7 +46,8 @@ reviewer does not block preparation, source research or tooling; independent
 verification still gates verified meanings and scored evaluation. Do not make a
 model/extraction-provider call. Human glossary verification and the golden set
 remain incomplete. Atlas device measurements and the final portfolio walkthrough
-remain follow-up work; current evidence coverage is three pilots.
+remain follow-up work; current evidence coverage is three pilots. The custom
+`design-with-depth` skill now captures the accepted design method for future visual work.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's
 handover wording to `Anfang September 2026`; the current HOWOGE page still says

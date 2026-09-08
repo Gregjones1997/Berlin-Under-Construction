@@ -2,6 +2,8 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+- 2026-09-08 — Main agent (Codex, writing-for-agents and skill-creator skills): created the owner-requested `design-with-depth` project skill, with a causal design workflow and a historical Berlin case study. The writing guidance shaped completion criteria and reference disclosure; skill-creator supplied packaging validation. Verified frontmatter, UI metadata, linked resources and evidence paths; manually reviewed scope and observed-versus-hypothesized claims. This is structural/editorial validation, not a fresh design run. The validator's missing PyYAML dependency was installed only in a temporary directory. No subagents used; the public application is unchanged.
+
 - 2026-09-08 — Main agent (Codex), skills CLI 1.5.25: ran the owner-requested `npx skills@latest add mattpocock/skills`. Installer exited successfully; verified 37 installed skill files and 37 matching lockfile entries. Existing project skills were updated; no installed skill was invoked. `c100aab`
 
 ## 2026-09-08 — Screen seven expansion candidates

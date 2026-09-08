@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Review preparation complete; semantic verification pending.
 
+**Commit:** `04bb23e` — `feat(review): inventory app German and bound review workload`
+
 ### Goal and participants
 
 Main agent (Codex) built a bounded review package for the owner's German-language

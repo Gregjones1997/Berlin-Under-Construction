@@ -4,6 +4,12 @@
 **Phase:** Phase 1 — research foundation
 **Last updated:** 2026-08-06
 
+**8 September screening supplement:** [Seven expansion candidates](findings/2026-09-08-seven-candidate-screening.md)
+were rechecked against current official sources. Consult that dated record before
+using C-001/002/003/004/005/008/009 wording below; these discovery rows are historical
+leads, and some source wording has changed. The supplement does not approve new
+public facts or map coordinates.
+
 The rows below are discovery leads assembled from prior multi-agent research
 and broad source-family review. Except for C-010, C-014 and C-019, which now
 have evidence-pass dossiers, they are not verified project dossiers. Names,

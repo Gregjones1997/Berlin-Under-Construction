@@ -2,6 +2,46 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-09-08 — Screen seven expansion candidates
+
+**Status:** Source screening complete; dossiers and publication review pending.
+
+### Participants and orchestration
+
+Main agent (Codex, research skill, web retrieval) owned synthesis and all writes.
+The research skill required background research: one read-only agent checked
+C-003/004/005 while the main agent checked C-001/002/008/009. The agent used the
+vercel:agent-browser skill for supplementary access retries. Its useful output
+was official source leads, short schedule/location excerpts and scope questions.
+The main agent independently reopened, downloaded and checked the selected
+transport evidence. Those excerpts were accepted; supplementary browser findings
+remain labelled leads rather than integrated claim evidence. No lane was failed
+or redundant, and no agent made a publication decision.
+
+### Work and verification
+
+Retained ten HTTP-200 source artifacts privately, recording content hashes,
+publication/retrieval dates and 18 checked excerpts (110 words) in the screening
+data. Literal glossary matching found 11 rows, three already in the app pack and
+eight additional rows. The combined 24-row scope is review preparation only.
+The older Pankow notice failed web retrieval twice but served with a browser
+User-Agent. Updated the ledger pointer and next-action handoff.
+
+Checked excerpts against decoded HTML with whitespace normalization, recalculated
+hashes and vocabulary counts, verified private artifacts remain gitignored and
+reviewed the documentation diff. A first text-check attempt incorrectly inserted
+spaces inside inline HTML; preserving inline text boundaries fixed the check
+before output was written. No source text was changed to make a check pass.
+
+### Limits and evidence
+
+No coordinates, app facts, glossary meanings or golden answers were approved.
+No extraction-provider calls were made. This targeted screening did not audit
+financial or procurement sources or measure semantic accuracy. Added term review
+is estimated at 8–24 minutes using prior assumptions, excluding contextual checks
+and other work. The evidence and delegation disposition are recorded in
+`docs/research/findings/2026-09-08-seven-candidate-screening.md` and its JSON companion.
+
 ## 2026-09-08 — Build the app-linked German review inventory
 
 **Status:** Review preparation complete; semantic verification pending.

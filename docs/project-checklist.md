@@ -30,9 +30,12 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Research seven additional candidate projects from the existing
-candidate ledger, checking source availability, location evidence and vocabulary
-reuse before preparing new public facts. The [app-linked review pack](research/glossary-review/app-v1/README.md)
+**Next action:** Prepare the C-009 building dossier from the [seven-candidate
+screening](research/findings/2026-09-08-seven-candidate-screening.md), verify an
+authoritative map position and precise building scope, and assemble proposed
+public facts for the existing review gates. Then prepare C-001/002 bridge dossiers.
+Seven candidates now have checked source excerpts and textual location evidence;
+none has new approved coordinates or app publication. The [app-linked review pack](research/glossary-review/app-v1/README.md)
 now inventories 20 public passages (184 words) and 16 literally matched glossary
 rows, with blank review sheets and an unvalidated 75–198 minute initial-pack
 estimate excluding additional source reading. Obtain a timed human sample when

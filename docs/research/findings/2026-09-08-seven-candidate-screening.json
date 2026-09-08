@@ -1,0 +1,351 @@
+{
+  "status": "candidate-screening-only",
+  "retrieved_on": "2026-09-08",
+  "summary": {
+    "candidates": 7,
+    "sources": 10,
+    "checked_excerpt_occurrences": 18,
+    "unique_source_excerpts": 18,
+    "excerpt_words": 110,
+    "matched_glossary_rows": 11,
+    "already_in_app_review_pack": 3,
+    "additional_existing_glossary_rows": 8
+  },
+  "glossary_input_hash": "sha256:186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+  "matching_method": "Case-insensitive literal glossary aliases with word boundaries over retained short excerpts only; no semantic coverage claim.",
+  "matched_glossary_rows": [
+    {
+      "id": "G013",
+      "german": "`Bauzeit`",
+      "already_in_app_pack": false
+    },
+    {
+      "id": "G014",
+      "german": "`Voraussichtliche Bauzeit`",
+      "already_in_app_pack": false
+    },
+    {
+      "id": "G016",
+      "german": "`Fertigstellung`",
+      "already_in_app_pack": true
+    },
+    {
+      "id": "G017",
+      "german": "`vollständige Fertigstellung`",
+      "already_in_app_pack": false
+    },
+    {
+      "id": "G020",
+      "german": "`Fertigstellungstermin`",
+      "already_in_app_pack": false
+    },
+    {
+      "id": "G028",
+      "german": "`Umzug`",
+      "already_in_app_pack": false
+    },
+    {
+      "id": "G080",
+      "german": "`bis`",
+      "already_in_app_pack": true
+    },
+    {
+      "id": "G081",
+      "german": "`ab`",
+      "already_in_app_pack": false
+    },
+    {
+      "id": "G085",
+      "german": "`vorgesehen`",
+      "already_in_app_pack": true
+    },
+    {
+      "id": "G087",
+      "german": "`soll`",
+      "already_in_app_pack": false
+    },
+    {
+      "id": "G092",
+      "german": "`nicht belastbar`",
+      "already_in_app_pack": false
+    }
+  ],
+  "candidates": [
+    {
+      "project_id": "C-001",
+      "name_de": "Ersatzneubau der Elsenbrücke",
+      "sources": [
+        {
+          "key": "elsen",
+          "url": "https://www.berlin.de/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/elsenbruecke/",
+          "publication_date": null,
+          "spans": [
+            "Voraussichtliche Bauzeit: 2020 bis 2028",
+            "Sie verbindet die beiden Bezirke Friedrichshain-Kreuzberg und Treptow-Köpenick miteinander."
+          ],
+          "content_hash": "sha256:91517e450e4f7c4c11585229445163d54abebfd142662b494fcae18ea8fd4516",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        }
+      ],
+      "location_assessment": "Official page describes bridge and street approaches; no numeric coordinates checked.",
+      "review_questions": [
+        "Retain the construction-period wording rather than assigning an opening date.",
+        "Reconcile staged works and remaining works before describing current completion."
+      ],
+      "priority": "dossier preparation",
+      "review_status": "candidate-screening-only",
+      "glossary_version": "1.1",
+      "glossary_verification_status": "unverified",
+      "literal_glossary_ids": [
+        "G013",
+        "G014",
+        "G080"
+      ]
+    },
+    {
+      "project_id": "C-002",
+      "name_de": "Ersatzneubau der Mühlendammbrücke",
+      "sources": [
+        {
+          "key": "muehlen",
+          "url": "https://www.berlin.de/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/muehlendammbruecke/",
+          "publication_date": null,
+          "spans": [
+            "Voraussichtliche Bauzeit: 2024 bis 2029",
+            "vom Molkenmarkt zur Fischerinsel über die Spree"
+          ],
+          "content_hash": "sha256:82ce24378c259e29cdab40fa2a8f29eb52c30195d485c77941b8f389d19b6213",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        }
+      ],
+      "location_assessment": "Official text describes the crossing; no numeric coordinates checked.",
+      "review_questions": [
+        "Preserve the expected construction period and distinguish partial works from whole-project completion.",
+        "Earlier ledger sentence was not found on the current page; do not carry it forward as current."
+      ],
+      "priority": "dossier preparation",
+      "review_status": "candidate-screening-only",
+      "glossary_version": "1.1",
+      "glossary_verification_status": "unverified",
+      "literal_glossary_ids": [
+        "G013",
+        "G014",
+        "G080"
+      ]
+    },
+    {
+      "project_id": "C-003",
+      "name_de": "Verlängerung der U3 zum Mexikoplatz",
+      "sources": [
+        {
+          "key": "u3",
+          "url": "https://bvg-projekt.de/projekte/verlaengerung-u-bahnlinie-u3-nachhaltigkeits-pilotprojekt-berlin-steglitz-zehlendorf/",
+          "publication_date": null,
+          "spans": [
+            "2030 soll das Projekt abgeschlossen sein.",
+            "Die U-Bahnlinie U3 wird vom Bahnhof „Krumme Lanke“ bis zum Mexikoplatz verlängert."
+          ],
+          "content_hash": "sha256:9782408257a7b6bedb1cbde331a1063c6b1e6823d5848f0cefcf401debd64105",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        }
+      ],
+      "location_assessment": "Official route endpoints given; underground storage beyond the station also described. No numeric coordinates checked.",
+      "review_questions": [
+        "Retain soll and do not replace the current wording with the old ledger milestone label.",
+        "Freeze station, tunnel and storage scope before mapping; a route is not a single building point.",
+        "Page still labels planning status; calendar arrival alone does not establish construction start."
+      ],
+      "priority": "dossier preparation; scope review",
+      "review_status": "candidate-screening-only",
+      "glossary_version": "1.1",
+      "glossary_verification_status": "unverified",
+      "literal_glossary_ids": [
+        "G080",
+        "G087"
+      ]
+    },
+    {
+      "project_id": "C-004",
+      "name_de": "Reaktivierung der Siemensbahn",
+      "sources": [
+        {
+          "key": "siemens",
+          "url": "https://www.deutschebahn.com/de/presse/presse-regional/pr-berlin-de/aktuell/presseinformationen/Meilenstein-fuer-die-Siemensbahn-Allianz-Partner-fuer-die-Reaktivierung-stehen-fest-13569054",
+          "publication_date": "2025-09-29",
+          "spans": [
+            "Siemensbahn geht 2029 wieder ans Netz",
+            "Strecke zwischen Jungfernheide und Gartenfeld"
+          ],
+          "content_hash": "sha256:50b3b12b89cec68c049a82232de0e415dc0962f53a7b20af33a4235962c1d452",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        },
+        {
+          "key": "db2026",
+          "url": "https://www.deutschebahn.com/de/presse/presse-regional/pr-berlin-de/Bauprojekte/Bauen-bei-der-DB-InfraGO-2026-10057136",
+          "publication_date": null,
+          "spans": [
+            "Reaktivierung der historischen Siemensbahn 2026–2029"
+          ],
+          "content_hash": "sha256:2ee0bb0c731c0a6df4b32fc931d8a727b930e18aea6cc6d51c0541f750f94827",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        }
+      ],
+      "location_assessment": "Route endpoints directly supported; route geometry and construction segments not checked.",
+      "review_questions": [
+        "The current source uses wieder ans Netz, not the former ledger quotation. Keep it verbatim pending contextual mapping.",
+        "Separate route reactivation from possible later extensions and adjacent works."
+      ],
+      "priority": "dossier preparation; vocabulary exception",
+      "review_status": "candidate-screening-only",
+      "glossary_version": "1.1",
+      "glossary_verification_status": "unverified",
+      "literal_glossary_ids": []
+    },
+    {
+      "project_id": "C-005",
+      "name_de": "Umbau Bahnhof Köpenick zum Regionalbahnhof",
+      "sources": [
+        {
+          "key": "koepenick",
+          "url": "https://www.deutschebahn.com/de/presse/presse-regional/pr-berlin-de/aktuell/presseinformationen/Zeitplan-fuer-Ausbauprojekt-Berlin-Frankfurt-Oder-angepasst--13508236",
+          "publication_date": "2025-09-11",
+          "spans": [
+            "Regionalzüge werden dort ab Dezember 2027 halten.",
+            "Bahnhof Köpenick"
+          ],
+          "content_hash": "sha256:3a69945db7ea004a2f01020b89f82b2ee838d2a395e181066b9a06f673e088ca",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        },
+        {
+          "key": "db2026",
+          "url": "https://www.deutschebahn.com/de/presse/presse-regional/pr-berlin-de/Bauprojekte/Bauen-bei-der-DB-InfraGO-2026-10057136",
+          "publication_date": null,
+          "spans": [
+            "IBN Bahnhof Köpenick 12/2027",
+            "Eisenbahnbrücke Hämmerlingstraße"
+          ],
+          "content_hash": "sha256:2ee0bb0c731c0a6df4b32fc931d8a727b930e18aea6cc6d51c0541f750f94827",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        }
+      ],
+      "location_assessment": "Station identity and bridge street supported; street address and numeric coordinates not checked.",
+      "review_questions": [
+        "Station service timing differs from the wider corridor completion; do not merge them.",
+        "IBN is not an existing glossary alias; retain it as a review question rather than expand it as verified."
+      ],
+      "priority": "dossier preparation; station scope review",
+      "review_status": "candidate-screening-only",
+      "glossary_version": "1.1",
+      "glossary_verification_status": "unverified",
+      "literal_glossary_ids": [
+        "G081"
+      ]
+    },
+    {
+      "project_id": "C-008",
+      "name_de": "Grundschule am Weißen See — Sanierung / Ausbau",
+      "sources": [
+        {
+          "key": "school",
+          "url": "https://www.berlin.de/ba-pankow/aktuelles/pressemitteilungen/2026/pressemitteilung.1703602.php",
+          "publication_date": "2026-08-17",
+          "spans": [
+            "Der Umzug ist für den Zeitraum vom 19. bis 21. August 2026 vorgesehen.",
+            "Amalienstraße 6"
+          ],
+          "content_hash": "sha256:7487b835dc93a1960ed524d0b01e44443686ee687e870cfff6ac36e68a0a62ef",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        },
+        {
+          "key": "school-old",
+          "url": "https://www.berlin.de/ba-pankow/aktuelles/pressemitteilungen/2026/pressemitteilung.1663498.php",
+          "publication_date": "2026-04-22",
+          "spans": [
+            "ein konkreter Fertigstellungstermin weiterhin nicht belastbar zu benennen"
+          ],
+          "content_hash": "sha256:53d94b72eda750e40faad7e4eb78f6c9f00740e69a030c54e805fc71cd2bbf51",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        }
+      ],
+      "location_assessment": "Official newer notice supplies Amalienstraße 6; no numeric coordinates checked.",
+      "review_questions": [
+        "Newer notice schedules a move; it does not retrospectively confirm that it occurred.",
+        "Keep the old uncertainty and new move statement as different dated claims.",
+        "No calendar resolution of a relative anchor was performed in this screening."
+      ],
+      "priority": "history example; confirm outcome",
+      "review_status": "candidate-screening-only",
+      "glossary_version": "1.1",
+      "glossary_verification_status": "unverified",
+      "literal_glossary_ids": [
+        "G020",
+        "G028",
+        "G080",
+        "G085",
+        "G092"
+      ]
+    },
+    {
+      "project_id": "C-009",
+      "name_de": "Das Fliegende Klassenzimmer 2.0 — Friedenauer Gemeinschaftsschule",
+      "sources": [
+        {
+          "key": "dfk",
+          "url": "https://www.berlin.de/ba-tempelhof-schoeneberg/aktuelles/pressemitteilungen/2026/pressemitteilung.1689531.php",
+          "publication_date": "2026-07-03",
+          "spans": [
+            "die vollständige Fertigstellung ist für Mai 2027 vorgesehen"
+          ],
+          "content_hash": "sha256:e02f641637808df1d7d96345508569218bf27a464e740775e7b8a7d00520fc31",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        },
+        {
+          "key": "dfk-location",
+          "url": "https://www.berlin.de/ba-tempelhof-schoeneberg/aktuelles/pressemitteilungen/2026/pressemitteilung.1686950.php",
+          "publication_date": "2026-06-29",
+          "spans": [
+            "Rubensstraße 63, 12157 Berlin"
+          ],
+          "content_hash": "sha256:4f2fd2c21fdaf7721e3e059a996f89991a37621b05bf8e736559f9033a3f1353",
+          "retrieved_on": "2026-09-08",
+          "http_status": 200,
+          "span_check": "exact substring after HTML entity decoding and whitespace collapse; not semantic validation"
+        }
+      ],
+      "location_assessment": "District invitation identifies school and address; building footprint and numeric coordinates unchecked.",
+      "review_questions": [
+        "Scope is this school building, not the citywide building system.",
+        "Preserve the source qualifier and full-completion wording."
+      ],
+      "priority": "dossier preparation",
+      "review_status": "candidate-screening-only",
+      "glossary_version": "1.1",
+      "glossary_verification_status": "unverified",
+      "literal_glossary_ids": [
+        "G016",
+        "G017",
+        "G085"
+      ]
+    }
+  ]
+}

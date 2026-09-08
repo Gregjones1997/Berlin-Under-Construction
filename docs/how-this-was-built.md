@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Source screening complete; dossiers and publication review pending.
 
+**Commit:** `c51cd0b` — `docs(research): screen seven construction expansion candidates`
+
 ### Participants and orchestration
 
 Main agent (Codex, research skill, web retrieval) owned synthesis and all writes.

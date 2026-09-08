@@ -30,7 +30,7 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Prepare the C-009 building dossier from the [seven-candidate
+**Next action:** With the requested Matt Pocock skills installation complete, prepare the C-009 building dossier from the [seven-candidate
 screening](research/findings/2026-09-08-seven-candidate-screening.md), verify an
 authoritative map position and precise building scope, and assemble proposed
 public facts for the existing review gates. Then prepare C-001/002 bridge dossiers.

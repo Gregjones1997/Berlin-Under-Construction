@@ -2,6 +2,46 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-09-08 — Build the app-linked German review inventory
+
+**Status:** Review preparation complete; semantic verification pending.
+
+### Goal and participants
+
+Main agent (Codex) built a bounded review package for the owner's German-language
+workflow and ten-project direction. No subagents or model-provider calls were used.
+
+### Work and decisions
+
+Added a deterministic public-projection/glossary inventory generator, blank term
+and passage review sheets, input hashes and review instructions. Reused the
+existing 95-row glossary rather than generating translations. Found 20 public
+passages containing 184 words, with literal matches to 16 glossary rows in 13
+passages. Six withheld facts contribute only public IDs and reason codes.
+Separated 17 routine passages from three existing conflict/context exceptions.
+Updated the handoff to additional candidate research.
+
+### Verification
+
+Seventeen targeted tests passed, including the existing golden-set boundary tests
+and new withheld-sentinel, word-boundary and shared-passage tests. Regenerating the
+pack produced identical bytes; `git diff --check` passed. Counts derive from the
+committed public projection, not a fresh source retrieval or model-quality test.
+
+### Limits
+
+The 75–198 minute estimate uses explicit assumed rates and excludes additional
+source reading and broader historical questions. It is not observed reviewer
+time or a full-dossier estimate. Short public excerpts may lack adequate context.
+No interpretation, golden value or public app fact was changed or newly verified.
+The existing broad review pack remains available, including the C-010 cluster.
+
+### Evidence
+
+`scripts/build_german_review_pack.py`, `tests/test_german_review_pack.py` and
+`docs/research/glossary-review/app-v1/` contain the reproducible implementation,
+checks, counts, assumptions and blank review artifacts.
+
 - 2026-09-08 — Main agent (Codex, writing-for-agents skill): recorded the owner's selection of GPT-6 Astra as the preferred builder through Codex in `AGENTS.md`. The skill informed the concise role instruction; verified that single-writer ownership and historical attribution remain intact. This documents model preference, not a host-setting change. `7f73962`
 
 - 2026-09-08 — **Course correction** — Main agent (Codex): the owner corrected a proposal centered on paid verification and limitation disclosure; the intended outcome is accurate German-centered app work despite not speaking German, with bounded colleague effort. Recorded the free preparation path, ten-project target and review-time estimation method in the README, workflow plan and handoff. Cost: conversational rework; no implementation or measured time loss claimed. Verified documentation against ADR-008/015 and the existing pending evaluation state; no golden values, provider calls or app facts changed. `7f73962`

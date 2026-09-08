@@ -1,5 +1,11 @@
 # German glossary review package v1.0
 
+**8 September follow-up:** The [app-linked pack](app-v1/README.md) narrows initial
+review to the current public facts, with reproducible counts, blank answer sheets
+and an explicitly assumed time estimate. This broader 95-row package remains
+unverified; the reviewer description below is a template, not evidence that a
+reviewer has been recruited or has completed work.
+
 ## Project in three sentences
 
 Berlin, Under Construction is an independent, source-backed map explaining what is being built across Berlin, who is responsible, what was promised, and what changed. Source claims are extracted and stored in German, with short evidence spans and links back to the publishing authority. English is a display layer only: this review checks whether the proposed display wording preserves distinctions in the German rather than replacing it.

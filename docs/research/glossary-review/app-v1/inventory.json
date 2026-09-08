@@ -1,0 +1,681 @@
+{
+  "status": "unverified-review-preparation",
+  "glossary_version": "1.1",
+  "inputs": {
+    "public/data/projects.json": "sha256:801b30ef08c9f9fa73d320e25ccc6a00ba149f99442d75c35725acc33e3d0edb",
+    "docs/glossary.md": "sha256:186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316"
+  },
+  "counts": {
+    "projects": 3,
+    "published_facts": 20,
+    "withheld_facts_excluded": 6,
+    "passages": 20,
+    "source_words": 184,
+    "distinct_text_words": 184,
+    "glossary_rows_total": 95,
+    "matched_glossary_rows": 16,
+    "matched_german_term_words": 25,
+    "passages_with_literal_match": 13,
+    "routine_passages": 17,
+    "exception_passages": 3
+  },
+  "assumed_minutes_range": [
+    75,
+    198
+  ],
+  "glossary": [
+    {
+      "id": "G001",
+      "section": "Milestones, phases and status terms",
+      "german": "`Baubeginn`",
+      "proposed_english": "construction start",
+      "distinction": "Not planning start, site setup or opening",
+      "aliases": [
+        "Baubeginn"
+      ]
+    },
+    {
+      "id": "G006",
+      "section": "Milestones, phases and status terms",
+      "german": "`Baumaßnahme`",
+      "proposed_english": "construction measure",
+      "distinction": "Scope noun; not automatically a whole project",
+      "aliases": [
+        "Baumaßnahme"
+      ]
+    },
+    {
+      "id": "G016",
+      "section": "Milestones, phases and status terms",
+      "german": "`Fertigstellung`",
+      "proposed_english": "completion",
+      "distinction": "Retain what is completed and date precision",
+      "aliases": [
+        "Fertigstellung"
+      ]
+    },
+    {
+      "id": "G025",
+      "section": "Milestones, phases and status terms",
+      "german": "`Übergabe`",
+      "proposed_english": "handover",
+      "distinction": "State the recipient only when source-supported",
+      "aliases": [
+        "Übergabe"
+      ]
+    },
+    {
+      "id": "G030",
+      "section": "Milestones, phases and status terms",
+      "german": "`Inbetriebnahme`",
+      "proposed_english": "commissioning / entry into operation",
+      "distinction": "Distinct from physical completion and public opening",
+      "aliases": [
+        "Inbetriebnahme"
+      ]
+    },
+    {
+      "id": "G047",
+      "section": "Milestones, phases and status terms",
+      "german": "`technische Übergabe`",
+      "proposed_english": "technical handover",
+      "distinction": "Distinct from `Übergabe an den Bezirk` and from `bauliche Fertigstellung`; a technical handover is not occupancy or operation",
+      "aliases": [
+        "technische Übergabe"
+      ]
+    },
+    {
+      "id": "G048",
+      "section": "Milestones, phases and status terms",
+      "german": "`Bauplanungsunterlage` (BPU)",
+      "proposed_english": "building planning documents",
+      "distinction": "Approval of the BPU is a dated planning milestone with its own approved cost; it is not construction start",
+      "aliases": [
+        "Bauplanungsunterlage"
+      ]
+    },
+    {
+      "id": "G052",
+      "section": "Financial, budget and procurement-context terms",
+      "german": "`Gesamtkosten`",
+      "proposed_english": "total costs",
+      "distinction": "Retain scope, tax, price basis and as-of date",
+      "aliases": [
+        "Gesamtkosten"
+      ]
+    },
+    {
+      "id": "G066",
+      "section": "Financial, budget and procurement-context terms",
+      "german": "`finanziert aus dem Plätzeprogramm`",
+      "proposed_english": "financed from the public-squares programme",
+      "distinction": "Funding source, not total project cost",
+      "aliases": [
+        "finanziert aus dem Plätzeprogramm"
+      ]
+    },
+    {
+      "id": "G080",
+      "section": "Date qualifiers and modal wording",
+      "german": "`bis`",
+      "proposed_english": "by / no later than",
+      "distinction": "Makes the date an upper bound. `bis Ende 2028` is not equivalent to the point estimate `Ende 2028`.",
+      "aliases": [
+        "bis"
+      ]
+    },
+    {
+      "id": "G082",
+      "section": "Date qualifiers and modal wording",
+      "german": "`Anfang` / `Mitte` / `Ende`",
+      "proposed_english": "early / mid / late",
+      "distinction": "Adds sub-year precision that must be retained and never rounded to the bare year.",
+      "aliases": [
+        "Anfang",
+        "Mitte",
+        "Ende"
+      ]
+    },
+    {
+      "id": "G083",
+      "section": "Date qualifiers and modal wording",
+      "german": "`voraussichtlich`",
+      "proposed_english": "expected",
+      "distinction": "Marks explicit uncertainty and must never be dropped in display.",
+      "aliases": [
+        "voraussichtlich"
+      ]
+    },
+    {
+      "id": "G084",
+      "section": "Date qualifiers and modal wording",
+      "german": "`geplant`",
+      "proposed_english": "planned",
+      "distinction": "Records an intention as at the source publication date, not an accomplished fact.",
+      "aliases": [
+        "geplant"
+      ]
+    },
+    {
+      "id": "G085",
+      "section": "Date qualifiers and modal wording",
+      "german": "`vorgesehen`",
+      "proposed_english": "envisaged",
+      "distinction": "Expresses a weaker intention than `geplant` and often applies at programme rather than project level.",
+      "aliases": [
+        "vorgesehen"
+      ]
+    },
+    {
+      "id": "G090",
+      "section": "Date qualifiers and modal wording",
+      "german": "`rund` / `etwa` / `ca.`",
+      "proposed_english": "approximately",
+      "distinction": "Reduces precision; the approximation qualifier must be retained.",
+      "aliases": [
+        "rund",
+        "etwa",
+        "ca."
+      ]
+    },
+    {
+      "id": "G094",
+      "section": "Date qualifiers and modal wording",
+      "german": "`bis zu` (before an amount)",
+      "proposed_english": "up to",
+      "distinction": "Upper bound on a sum. Distinct in kind from `bis` before a date; `bis zu 75 Millionen Euro` is a financing ceiling, not a cost.",
+      "aliases": [
+        "bis zu"
+      ]
+    }
+  ],
+  "passages": [
+    {
+      "id": "P001",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/sbw/presse/pressemeldungen/2023/pressemitteilung.1338536.php",
+      "exact_text_de": "Umgestaltung des Europaplatzes Süd",
+      "source_id": "c014-pm-2023-06-26",
+      "publication_date": {
+        "state": "verified",
+        "value": "2023-06-26"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-project-name",
+          "app_field": "project_name",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [],
+      "exception_reasons": [],
+      "word_count": 4
+    },
+    {
+      "id": "P002",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1637393.php",
+      "exact_text_de": "dem Vorplatz des Hauptbahnhofs an der Invalidenstraße",
+      "source_id": "c014-pm-2026-01-26",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-01-26"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-project-location",
+          "app_field": "project_location",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [],
+      "exception_reasons": [],
+      "word_count": 7
+    },
+    {
+      "id": "P003",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
+      "exact_text_de": "finanziert aus dem Plätzeprogramm: 1.900.000 €",
+      "source_id": "c014-project-page",
+      "publication_date": {
+        "state": "not_stated"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-places-programme-page-figure",
+          "app_field": "financial_measure",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G066"
+      ],
+      "exception_reasons": [
+        "existing_conflict_member"
+      ],
+      "word_count": 5
+    },
+    {
+      "id": "P004",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/",
+      "exact_text_de": "Das Berliner Plätzeprogramm steuert rund 1,7 Mio. Euro zur Maßnahme bei.",
+      "source_id": "c014-places-programme-index-2026-01-26",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-01-26"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-places-programme-index-figure",
+          "app_field": "financial_measure",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G090"
+      ],
+      "exception_reasons": [
+        "existing_conflict_member"
+      ],
+      "word_count": 11
+    },
+    {
+      "id": "P005",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
+      "exact_text_de": "Laufende Maßnahme",
+      "source_id": "c014-project-page",
+      "publication_date": {
+        "state": "not_stated"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-current-status",
+          "app_field": "status",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [],
+      "exception_reasons": [],
+      "word_count": 2
+    },
+    {
+      "id": "P006",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php",
+      "exact_text_de": "Fertigstellung: 2026",
+      "source_id": "c014-project-page",
+      "publication_date": {
+        "state": "not_stated"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-expected-completion-current",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G016"
+      ],
+      "exception_reasons": [],
+      "word_count": 2
+    },
+    {
+      "id": "P007",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/2023/pressemitteilung.1374721.php",
+      "exact_text_de": "Die Fertigstellung der anspruchsvollen Bauaufgabe ist bis Ende 2025 vorgesehen.",
+      "source_id": "c014-pm-2023-10-12",
+      "publication_date": {
+        "state": "verified",
+        "value": "2023-10-12"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-completion-history-2023",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G016",
+        "G080",
+        "G082",
+        "G085"
+      ],
+      "exception_reasons": [],
+      "word_count": 10
+    },
+    {
+      "id": "P008",
+      "project_id": "C-014",
+      "source_url": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+      "exact_text_de": "Die Umsetzung der Baumaßnahme wird nach zeitnaher Ausschreibung (2025) in 2026 durchgeführt (Fertigstellung geplant für Sommer 2026).",
+      "source_id": "c014-hauptausschuss-2025-10-06",
+      "publication_date": {
+        "state": "verified",
+        "value": "2025-10-06"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-completion-history-2025-a",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G006",
+        "G016",
+        "G084"
+      ],
+      "exception_reasons": [],
+      "word_count": 17
+    },
+    {
+      "id": "P009",
+      "project_id": "C-014",
+      "source_url": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+      "exact_text_de": "Die Baumaßnahme wird im Sommer 2026 abgeschlossen werden.",
+      "source_id": "c014-hauptausschuss-2025-10-06",
+      "publication_date": {
+        "state": "verified",
+        "value": "2025-10-06"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-completion-history-2025-b",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G006"
+      ],
+      "exception_reasons": [],
+      "word_count": 8
+    },
+    {
+      "id": "P010",
+      "project_id": "C-014",
+      "source_url": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+      "exact_text_de": "Die Fertigstellung der Baumaßnahme wird voraussichtlich in 2026 erfolgen.",
+      "source_id": "c014-hauptausschuss-2025-10-06",
+      "publication_date": {
+        "state": "verified",
+        "value": "2025-10-06"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-completion-history-2025-c",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G006",
+        "G016",
+        "G083"
+      ],
+      "exception_reasons": [],
+      "word_count": 9
+    },
+    {
+      "id": "P011",
+      "project_id": "C-014",
+      "source_url": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+      "exact_text_de": "Der Baubeginn wird erst im Januar 2026 erfolgen.",
+      "source_id": "c014-hauptausschuss-2025-10-06",
+      "publication_date": {
+        "state": "verified",
+        "value": "2025-10-06"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-construction-start-history",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G001"
+      ],
+      "exception_reasons": [],
+      "word_count": 8
+    },
+    {
+      "id": "P012",
+      "project_id": "C-014",
+      "source_url": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1637393.php",
+      "exact_text_de": "Die Umgestaltung des südlichen Europaplatzes, dem Vorplatz des Hauptbahnhofs an der Invalidenstraße, beginnt am 2. Februar 2026.",
+      "source_id": "c014-pm-2026-01-26",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-01-26"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-construction-start-current",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [],
+      "exception_reasons": [],
+      "word_count": 17
+    },
+    {
+      "id": "P013",
+      "project_id": "C-014",
+      "source_url": "https://www.parlament-berlin.de/adosservice/19/Haupt/vorgang/h19-2449-v.pdf",
+      "exact_text_de": "Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3.183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.",
+      "source_id": "c014-hauptausschuss-2025-10-06",
+      "publication_date": {
+        "state": "verified",
+        "value": "2025-10-06"
+      },
+      "facts": [
+        {
+          "fact_id": "c014-approved-total-cost",
+          "app_field": "financial_measure",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G048",
+        "G052"
+      ],
+      "exception_reasons": [],
+      "word_count": 29
+    },
+    {
+      "id": "P014",
+      "project_id": "C-010",
+      "source_url": "https://www.howoge.de/schulbau/heinrich-hertz-gymnasium-projektuebersicht",
+      "exact_text_de": "Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof",
+      "source_id": "c010-howoge-project-page",
+      "publication_date": {
+        "state": "not_stated"
+      },
+      "facts": [
+        {
+          "fact_id": "c010-project-name",
+          "app_field": "project_name",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [],
+      "exception_reasons": [],
+      "word_count": 4
+    },
+    {
+      "id": "P015",
+      "project_id": "C-010",
+      "source_url": "https://www.howoge.de/schulbau/heinrich-hertz-gymnasium-projektuebersicht",
+      "exact_text_de": "Lange Straße/Straße der Pariser Kommune, 10243 Berlin – Friedrichshain-Kreuzberg",
+      "source_id": "c010-howoge-project-page",
+      "publication_date": {
+        "state": "not_stated"
+      },
+      "facts": [
+        {
+          "fact_id": "c010-project-location",
+          "app_field": "project_location",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [],
+      "exception_reasons": [],
+      "word_count": 8
+    },
+    {
+      "id": "P016",
+      "project_id": "C-010",
+      "source_url": "https://pardok.parlament-berlin.de/starweb/adis/citat/VT/19/SchrAnfr/S19-26230.pdf",
+      "exact_text_de": "Die Umsetzung des Schulneubaus liegt im Zeitplan.",
+      "source_id": "c010-drucksache-19-26230",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-06-19"
+      },
+      "facts": [
+        {
+          "fact_id": "c010-current-status",
+          "app_field": "status",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [],
+      "exception_reasons": [],
+      "word_count": 7
+    },
+    {
+      "id": "P017",
+      "project_id": "C-010",
+      "source_url": "https://pardok.parlament-berlin.de/starweb/adis/citat/VT/19/SchrAnfr/S19-26230.pdf",
+      "exact_text_de": "Die technische Übergabe des Neubaus an den Bezirk ist für den 31.08.2026 geplant.",
+      "source_id": "c010-drucksache-19-26230",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-06-19"
+      },
+      "facts": [
+        {
+          "fact_id": "c010-technical-handover-current",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G025",
+        "G047",
+        "G084"
+      ],
+      "exception_reasons": [
+        "documented_c010_milestone_context_question"
+      ],
+      "word_count": 13
+    },
+    {
+      "id": "P018",
+      "project_id": "C-019",
+      "source_url": "https://www.bew.berlin/aktuelles-und-presse/2026/120-megawatt-am-heizkraftwerk-berlin-mitte/",
+      "exact_text_de": "Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte",
+      "source_id": "c019-bew-2026-05-04",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-05-04"
+      },
+      "facts": [
+        {
+          "fact_id": "c019-project-name",
+          "app_field": "project_name",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G082"
+      ],
+      "exception_reasons": [],
+      "word_count": 4
+    },
+    {
+      "id": "P019",
+      "project_id": "C-019",
+      "source_url": "https://www.bew.berlin/aktuelles-und-presse/2026/120-megawatt-am-heizkraftwerk-berlin-mitte/",
+      "exact_text_de": "Die Inbetriebnahme ist bis Ende 2028 geplant.",
+      "source_id": "c019-bew-2026-05-04",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-05-04"
+      },
+      "facts": [
+        {
+          "fact_id": "c019-commissioning-current",
+          "app_field": "milestone",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G030",
+        "G080",
+        "G082",
+        "G084"
+      ],
+      "exception_reasons": [],
+      "word_count": 7
+    },
+    {
+      "id": "P020",
+      "project_id": "C-019",
+      "source_url": "https://www.bew.berlin/aktuelles-und-presse/2026/120-megawatt-am-heizkraftwerk-berlin-mitte/",
+      "exact_text_de": "50Hertz finanziert den Bau der PtH-Anlage mit bis zu 75 Millionen Euro.",
+      "source_id": "c019-bew-2026-05-04",
+      "publication_date": {
+        "state": "verified",
+        "value": "2026-05-04"
+      },
+      "facts": [
+        {
+          "fact_id": "c019-financing-commitment",
+          "app_field": "financial_measure",
+          "translation_state": "german_canonical"
+        }
+      ],
+      "glossary_ids": [
+        "G080",
+        "G094"
+      ],
+      "exception_reasons": [],
+      "word_count": 12
+    }
+  ],
+  "withheld": [
+    {
+      "fact_id": "c014-completion-period-2026",
+      "reason": "milestone_vocabulary_unresolved"
+    },
+    {
+      "fact_id": "c014-completion-outcome",
+      "reason": "multi_source_synthesis_has_no_exact_span"
+    },
+    {
+      "fact_id": "c014-organization-roles",
+      "reason": "role_vocabulary_unresolved"
+    },
+    {
+      "fact_id": "c010-organization-roles",
+      "reason": "role_vocabulary_unresolved"
+    },
+    {
+      "fact_id": "c019-project-location",
+      "reason": "source_string_requires_owner_verification"
+    },
+    {
+      "fact_id": "c019-organization-roles",
+      "reason": "role_vocabulary_unresolved"
+    }
+  ]
+}

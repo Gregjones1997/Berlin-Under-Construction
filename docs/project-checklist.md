@@ -30,10 +30,14 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Inventory the German terms and contextual passages used by the
-three pilots, mapping them to glossary entries and app fields; count the review
-work and prepare a blank colleague-review pack with an explicitly assumed time
-estimate. Follow [the German workflow plan](german-workflow-plan.md) toward ten
+**Next action:** Research seven additional candidate projects from the existing
+candidate ledger, checking source availability, location evidence and vocabulary
+reuse before preparing new public facts. The [app-linked review pack](research/glossary-review/app-v1/README.md)
+now inventories 20 public passages (184 words) and 16 literally matched glossary
+rows, with blank review sheets and an unvalidated 75–198 minute initial-pack
+estimate excluding additional source reading. Obtain a timed human sample when
+available; broader dossier and historical-context verification remains open.
+Follow [the German workflow plan](german-workflow-plan.md) toward ten
 evidence-backed projects and an integrated glossary demonstration. Finding a
 reviewer does not block preparation, source research or tooling; independent
 verification still gates verified meanings and scored evaluation. Do not make a

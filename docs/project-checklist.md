@@ -30,11 +30,16 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Prepare the job-application walkthrough and technical case study
-around the live atlas, evidence gates and measured AI run. Collect the owner's
-specific copy edits, then measure loading and rendering on representative low-end devices. Whole-city
-geometry is implemented with 263 streamed tiles; evidence coverage remains three pilots. Do not make a model/extraction-provider call; human glossary
-verification and the golden set remain incomplete.
+**Next action:** Inventory the German terms and contextual passages used by the
+three pilots, mapping them to glossary entries and app fields; count the review
+work and prepare a blank colleague-review pack with an explicitly assumed time
+estimate. Follow [the German workflow plan](german-workflow-plan.md) toward ten
+evidence-backed projects and an integrated glossary demonstration. Finding a
+reviewer does not block preparation, source research or tooling; independent
+verification still gates verified meanings and scored evaluation. Do not make a
+model/extraction-provider call. Human glossary verification and the golden set
+remain incomplete. Atlas device measurements and the final portfolio walkthrough
+remain follow-up work; current evidence coverage is three pilots.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's
 handover wording to `Anfang September 2026`; the current HOWOGE page still says

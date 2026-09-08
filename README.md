@@ -98,6 +98,27 @@ English label. Every glossary-derived display publishes the glossary version and
 its verification status. Human glossary verification and the golden truth set
 remain post-v0 work.
 
+### Next milestone: German-language reliability and ten-project coverage
+
+The author does not speak German. Finding someone to verify the German has
+been the project's largest bottleneck. The next milestone turns that dependency
+into a bounded review workflow integrated with the construction app: a reusable,
+source-linked domain glossary, explicit contextual exceptions and an inspectable
+path from German evidence to English explanation and public project facts.
+
+The target is ten evidence-backed projects, with map locations only where
+supported. The portfolio should demonstrate both interpretation quality and the
+German-speaking colleague time required to achieve it. Glossary entries, words
+and passages needing review will be counted; initial setup, routine review and
+exception handling will be estimated separately, then measured when a reviewer
+is available. Neither accuracy nor review-time savings have been established.
+
+Work proceeds without paid-review dependence: prepare the vocabulary inventory,
+review tooling, additional source research and app integration while independent
+verification remains pending. Unverified mappings never become verified through
+reuse or model agreement. See the [execution plan](docs/german-workflow-plan.md)
+for deliverables, evidence requirements and the next action.
+
 ## Current status
 
 The first public vertical slice is live. The three pilot dossiers remain

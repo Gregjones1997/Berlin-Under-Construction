@@ -22,9 +22,14 @@ and next action, `docs/decision-log.md` for choices already made.
 | Participant | Owns |
 | --- | --- |
 | Project owner | Product, legal and naming decisions. Golden-set acceptance. Final acceptance. |
-| Main agent (Codex) | The repository. All file writes and all commits. |
+| Main agent / builder (GPT-6 Astra through Codex) | The repository. All file writes and all commits. |
 | Reviewer (Claude) | Review, planning, adversarial critique. Proposes diffs and design artifacts in chat or as published Artifacts; does not write to the tree. |
 | Subagent | A bounded task delegated by the main agent. Output is a proposal until verified. |
+
+**Builder model.** The owner selected GPT-6 Astra (`gpt-6-astra`) on 8 September
+2026 for builder work through Codex. This is the preferred builder model for
+future sessions; actual model selection happens in the host. Record actual
+participants in build logs and preserve historical model attribution.
 
 **Single writer.** Only the main agent commits. A reviewer that wants a change
 proposes it; the main agent or the project owner applies it. Do not have two

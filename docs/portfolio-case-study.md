@@ -85,3 +85,12 @@ Start with the [README](../README.md), [decision log](decision-log.md),
 [deployment record](public-deployment.md). Run the documented setup, pytest and
 web TypeScript checks. CI builds use a test-only address and are never deployment
 artifacts. Deployment requires a fresh, correctly configured and checked export.
+
+## Bulk coverage research
+
+The [September 9 research batch](research/findings/2026-09-09-bulk-discovery/README.md)
+contains 150 source-cited candidates across all 12 boroughs. Each has an official
+page title match, a short German source excerpt and register-supplied coordinates.
+These are research records awaiting scope/category/publication review; the public
+site still has three dossiers and two map positions. The batch documents selection
+bias, exclusions and duplicate checks rather than claiming 150 verified projects.

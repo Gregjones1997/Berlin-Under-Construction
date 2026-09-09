@@ -1,0 +1,289 @@
+[
+  {
+    "key": "schools",
+    "url": "https://www.berlin.de/sen/bildung/service/daten/schulbaumassnahmen-2026.xlsx",
+    "content_hash": "sha256:4c0fbb9bf631984da9526ae4a5afd8854274ccc6d0dca39c0ce0bd4e3dc9de93",
+    "retrieved_on": "2026-09-09",
+    "http_status": 200,
+    "named_measure_rows": 370,
+    "handover_2026_or_later_rows": 124,
+    "columns": {
+      "A": "BSO-Tranche",
+      "B": "Berliner Schulnummer",
+      "C": "Schulname",
+      "D": "Bezirk",
+      "E": "Schulart",
+      "F": "Baumaßnahme",
+      "G": "Beschreibung",
+      "H": "gebaute bzw. geplante Schulplätze",
+      "I": "Schulplätze nach Baumaßnahme",
+      "J": "Zügigkeit nach Baumaßnahme",
+      "K": "Nutzungsübergabe",
+      "L": "Gesamtkosten in EURO",
+      "M": "Adresse",
+      "N": "PLZ",
+      "O": "Ort",
+      "P": "Längengrad",
+      "Q": "Breitengrad"
+    }
+  },
+  {
+    "key": "bridges",
+    "url": "https://www.berlin.de/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/",
+    "content_hash": "sha256:161d1c772dcbe1caf55e7a1ad0f3f1fd6d4d4af3530aa864d7b01729f161f366",
+    "retrieved_on": "2026-09-09",
+    "http_status": 200,
+    "marker_sites": 36,
+    "distinct_project_links": 31,
+    "sites": [
+      {
+        "title_de": "Behmstraßenbrücke",
+        "longitude": 13.398685,
+        "latitude": 52.550947,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/behmstrassenbruecke/"
+      },
+      {
+        "title_de": "Bismarcksfelder Brücke",
+        "longitude": 13.567742,
+        "latitude": 52.475174,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bismarckfelder-bruecke/"
+      },
+      {
+        "title_de": "Brücken über den Breitenbachplatz",
+        "longitude": 13.309181895614508,
+        "latitude": 52.46750298401748,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bruecken-ueber-den-breitenbachplatz/"
+      },
+      {
+        "title_de": "Rampenbauwerke der Brücke An der Wuhlheide",
+        "longitude": 13.514556830652111,
+        "latitude": 52.46877817485998,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bruecke-an-der-wuhlheide/"
+      },
+      {
+        "title_de": "Brücke über Bahnanlage Europa City Berlin",
+        "longitude": 13.364162560526188,
+        "latitude": 52.53138830799517,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bruecke-ueber-bahnanlage-europa-city-berlin/"
+      },
+      {
+        "title_de": "Brücke über den Königsgraben",
+        "longitude": 13.374730753754982,
+        "latitude": 52.40715629057952,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bruecke-ueber-den-koenigsgraben/"
+      },
+      {
+        "title_de": "Fußgängerbrücke Pulvermühle IV",
+        "longitude": 13.225629,
+        "latitude": 52.54533,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bruecken-pulvermuehle-iv-vii-und-viii/"
+      },
+      {
+        "title_de": "Fußgängerbrücke Pulvermühle VII",
+        "longitude": 13.224629,
+        "latitude": 52.546539,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bruecken-pulvermuehle-iv-vii-und-viii/"
+      },
+      {
+        "title_de": "Fußgängerbrücke Pulvermühle VIII",
+        "longitude": 13.223669,
+        "latitude": 52.544663,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/bruecken-pulvermuehle-iv-vii-und-viii/"
+      },
+      {
+        "title_de": "Buchenhainer Brücke",
+        "longitude": 13.564151,
+        "latitude": 52.478432,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/buchenhainer-bruecke/"
+      },
+      {
+        "title_de": "Dunckerbrücke",
+        "longitude": 13.423764,
+        "latitude": 52.545848,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/dunckerbruecke/"
+      },
+      {
+        "title_de": "Elsenbrücke",
+        "longitude": 13.463016,
+        "latitude": 52.49584,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/elsenbruecke/"
+      },
+      {
+        "title_de": "Fürst-Bismarck-Steg",
+        "longitude": 13.311594,
+        "latitude": 52.609695,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/fuerst-bismarck-steg/"
+      },
+      {
+        "title_de": "Hegemeisterbrücke",
+        "longitude": 13.691441221312813,
+        "latitude": 52.44967231347239,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/hegemeisterbruecke/"
+      },
+      {
+        "title_de": "Hellersdorfer Brücken",
+        "longitude": 13.581712,
+        "latitude": 52.539815,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/hellersdorfer-bruecken/"
+      },
+      {
+        "title_de": "Holzbrücke Bremer Weg West",
+        "longitude": 13.344532364243829,
+        "latitude": 52.51354301238923,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/holzbruecke-bremer-weg-west/"
+      },
+      {
+        "title_de": "Holzbrücken Spandau: Spektegrabensteg",
+        "longitude": 13.145916,
+        "latitude": 52.551919,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/holzbruecken-spandau/"
+      },
+      {
+        "title_de": "Holzbrücken Spandau: Steg über die Spektelake",
+        "longitude": 13.146294,
+        "latitude": 52.54808,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/holzbruecken-spandau/"
+      },
+      {
+        "title_de": "Holzbrücken Spandau: Südparkbrücke",
+        "longitude": 13.191671,
+        "latitude": 52.516952,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/holzbruecken-spandau/"
+      },
+      {
+        "title_de": "Köpenicker-Allee-Brücke",
+        "longitude": 13.552853,
+        "latitude": 52.469093,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/koepenicker-allee-bruecke/"
+      },
+      {
+        "title_de": "Lange Brücke",
+        "longitude": 13.571888,
+        "latitude": 52.444862,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/lange-bruecke"
+      },
+      {
+        "title_de": "Marzahner Knoten",
+        "longitude": 13.53948,
+        "latitude": 52.539845,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/marzahner-knoten/"
+      },
+      {
+        "title_de": "Mühlendammbrücke",
+        "longitude": 13.407043,
+        "latitude": 52.515111,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/muehlendammbruecke/"
+      },
+      {
+        "title_de": "Neue Gertraudenbrücke",
+        "longitude": 13.403013,
+        "latitude": 52.512163,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/neue-gertraudenbruecke/"
+      },
+      {
+        "title_de": "Nordhafenbrücke",
+        "longitude": 13.364548,
+        "latitude": 52.53656,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/nordhafenbruecke/"
+      },
+      {
+        "title_de": "Nordwegbrücke",
+        "longitude": 13.363817460410825,
+        "latitude": 52.516177838744035,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/nordwegbruecke/"
+      },
+      {
+        "title_de": "Östliche Bucher-Straßen-Brücke",
+        "longitude": 13.446662,
+        "latitude": 52.616498,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/oestliche-bucher-strassen-bruecke/"
+      },
+      {
+        "title_de": "Pyramidenbrücke",
+        "longitude": 13.56677,
+        "latitude": 52.455273,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/pyramidenbruecke/"
+      },
+      {
+        "title_de": "Rhenaniabrücke",
+        "longitude": 13.236707,
+        "latitude": 52.550132,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/rhenaniabruecke/"
+      },
+      {
+        "title_de": "Schlossparkbrücke III",
+        "longitude": 13.414629,
+        "latitude": 52.579421,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/schlossparkbruecke-iii/"
+      },
+      {
+        "title_de": "Schönfließer Brücke",
+        "longitude": 13.408151,
+        "latitude": 52.549652,
+        "source_path": "/sen/uvk/verkehr/infrastruktur/brueckenbau/schoenfliesser-bruecke/"
+      },
+      {
+        "title_de": "Schönhauser Allee Brücke",
+        "longitude": 13.413695,
+        "latitude": 52.549438,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/schoenhauser-allee-bruecke/"
+      },
+      {
+        "title_de": "Schulenburgbrücke",
+        "longitude": 13.204502,
+        "latitude": 52.524264,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/schulenburgbruecke/"
+      },
+      {
+        "title_de": "Sellheimbrücke",
+        "longitude": 13.469233,
+        "latitude": 52.599737,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/sellheimbruecke/"
+      },
+      {
+        "title_de": "Spektelakesteg I",
+        "longitude": 13.1519,
+        "latitude": 52.54626,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/spektelakesteg-i-und-ii/"
+      },
+      {
+        "title_de": "Spektelakesteg II",
+        "longitude": 13.16138,
+        "latitude": 52.54491,
+        "source_path": "/sen/uvk/mobilitaet-und-verkehr/infrastruktur/brueckenbau/spektelakesteg-i-und-ii/"
+      }
+    ]
+  },
+  {
+    "key": "bvg",
+    "url": "https://bvg-projekt.de/projekte/",
+    "content_hash": "sha256:1f5a3e49b2ed1bdcc73029957e96f1e17729e7d09340d6e1419ee3112e52dd4d",
+    "retrieved_on": "2026-09-09",
+    "http_status": 200,
+    "scope": "Retrieved inventory; section-level import remains follow-up"
+  },
+  {
+    "key": "howoge",
+    "url": "https://www.howoge.de/immobiliensuche/neubauprojekte",
+    "content_hash": "sha256:338132df6a85d8eff14dbc188a43463fb7dc384b34db84c1cce9ad97286fc61e",
+    "retrieved_on": "2026-09-09",
+    "http_status": 200,
+    "scope": "Retrieved inventory; section-level import remains follow-up"
+  },
+  {
+    "key": "gewobag",
+    "url": "https://www.gewobag.de/bauen-in-berlin/bauprojekte/",
+    "content_hash": "sha256:f17662bffb59126bbbca3c04a10f376e1581e70d862754880f2774eb20a3e8aa",
+    "retrieved_on": "2026-09-09",
+    "http_status": 200,
+    "scope": "Retrieved inventory; section-level import remains follow-up"
+  },
+  {
+    "key": "stadtundland",
+    "url": "https://stadtundland.de/bauen/neubau",
+    "content_hash": "sha256:1bc446172d182b6610525750f919d11d7fe5cd6d8c95bde0da86ffddaf987bf0",
+    "retrieved_on": "2026-09-09",
+    "http_status": 200,
+    "scope": "Retrieved inventory; section-level import remains follow-up"
+  }
+]

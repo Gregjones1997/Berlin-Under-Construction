@@ -3,6 +3,59 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Research 150 cited construction candidates
+
+### Participants and orchestration
+
+Main agent (Codex, GPT-6 Astra, research and Browser skills), single writer.
+Three read-only research lanes ran while the main agent investigated the central
+meinBerlin register and built the importer. School lane returned the official
+spreadsheet, field layout, counts and school-year caveats; independently downloaded
+and parsed by the main agent (370 rows, 124 handover-period prefixes >=2026).
+Housing lane returned HOWOGE, Gewobag and STADT UND LAND inventories and reported
+section counts; main independently retrieved all three, retained hashes and accepted
+inventory leads only, not the unparsed per-project counts or unverified coordinates.
+Transport lane returned 36 bridge markers/31 dossier links plus BVG project leads;
+main independently fetched/parsed the bridge markers and fetched BVG. Shared bridge
+components remain grouped leads, not inflated project counts. Other reported road,
+energy and GESOBAU leads were not integrated. No agent wrote to the tree. All three
+lanes contributed supplementary inventories; the first 150-record catalog comes
+from the central official register, not an unverified merger of agent lists.
+
+### Implementation and findings
+
+Screened 1,230 official plan-register records into 150 candidates with source
+navigation points; retained a reason for every exclusion/reserve. Retrieved and
+matched every candidate's individual page heading, captured short German source
+excerpts and linked field-level JSON pointers/selectors to privately retained hashes.
+Added repeatable live and retained-artifact modes, two-request concurrency, proposed
+category rules, duplicate flags, blank review CSV and an internal linked map.
+No source contacts, full artifacts, cost/status interpretations or approvals were
+exported. Excerpts remain source wording awaiting review, not normalized fact claims.
+
+Category precedence was corrected during implementation so a playground's street
+address does not turn it into road work; tests cover this case. Two similar cycle
+street title pairs were retained after checking distinct street labels and points.
+All twelve boroughs occur; source order and filtering create a documented geographic
+and category bias. Housing has only two selected records; independent housing
+inventories are reserved for subsequent balancing. No representative-sampling or
+exhaustive-coverage claim is made.
+
+### Verification and limits
+
+All 200 tests passed, including six bulk-discovery tests. All 150 headings match
+retained individual pages; 150 short source excerpts and supplied coordinates are
+recorded. The main agent inspected the generated map in Browser; screenshot:
+`/private/tmp/berlin-150-research-map.png`. The official inventory endpoint was
+located through the public Kiezradar page. Supplementary HTTP retrieval succeeded
+for six inventories. Full source artifacts remain private. No paid extraction API
+call, scheduler, golden value or public project approval was created.
+
+The public app still has three dossiers/two located projects. This batch is research
+preparation, not 150 independently verified construction projects. Mechanical title
+matching and passing tests do not measure model extraction accuracy. Details and
+citations: [batch evidence](research/findings/2026-09-09-bulk-discovery/README.md).
+
 ## 2026-09-09 — Batch candidate research and location preview
 
 **Commit:** `14027ee` — `feat(research): batch candidate checks and map location proposals`.

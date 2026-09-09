@@ -3,6 +3,14 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Mobile readthrough
+
+Main agent (Codex, GPT-6 Astra, Browser skill), no delegation. Read-only interface
+review at 390 × 844: captured homepage, card, expanded overview, index and method;
+verified open/back/close and shared navigation. Findings and limits are recorded
+in [the mobile readthrough](research/findings/2026-09-09-mobile-readthrough.md).
+No application changes or physical-device acceptance claimed.
+
 ## 2026-09-09 — Prepare the GitHub portfolio checkpoint
 
 **Commit:** `ac90231` — `docs(portfolio): add reviewer evidence guide and checkpoint checks`.

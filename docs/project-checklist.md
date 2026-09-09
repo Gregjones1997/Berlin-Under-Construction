@@ -30,7 +30,9 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Check GitHub CI for the pushed portfolio checkpoint, then implement German-default pages with a top-right DE / EN selector,
+**Next action:** GitHub CI passed for checkpoint 8483760. Address the
+[mobile readthrough](research/findings/2026-09-09-mobile-readthrough.md): tiny navigation,
+crowded map controls and content priority in the index/expanded record. Then implement German-default pages with a top-right DE / EN selector,
 preserving the current project/view when switching languages and canonical evidence
 in both versions. The owner requested this language direction on 9 September.
 Keep the accepted small-card layout. Improve which source-backed

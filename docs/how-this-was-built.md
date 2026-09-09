@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Compress the brief into status and dates
 
+**Commit:** `6d74379` — `feat(atlas): condense project brief into status and dates`.
+
 **Status:** Implemented locally; production unchanged.
 
 ### Participants and course correction

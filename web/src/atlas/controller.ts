@@ -196,7 +196,7 @@ document
   .forEach((input) =>
     input.addEventListener("change", () =>
       city?.setLabelKind(
-        input.dataset.labelKind as "projects" | "water" | "parks",
+        input.dataset.labelKind as "projects" | "basic" | "water" | "parks",
         input.checked,
       ),
     ),
@@ -305,7 +305,7 @@ async function start() {
       .querySelectorAll<HTMLInputElement>("[data-label-kind]")
       .forEach((input) =>
         city?.setLabelKind(
-          input.dataset.labelKind as "projects" | "water" | "parks",
+          input.dataset.labelKind as "projects" | "basic" | "water" | "parks",
           input.checked,
         ),
       );

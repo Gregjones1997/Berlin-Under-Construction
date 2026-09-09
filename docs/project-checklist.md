@@ -30,10 +30,9 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Review and integrate a bounded set of basic listings from the
-[150-candidate cited batch](research/findings/2026-09-09-bulk-discovery/README.md),
-then expand housing coverage from the retained official inventories. All 150 have
-source page matches and navigation coordinates; none is newly publication-approved.
+**Next action:** Verify the 150-basic-listing production release, then enrich a
+small batch with sourced milestone dates and balance housing coverage. Basic
+publication covers official register titles and reference points only (ADR-025).
 Keep basic listing and full dossier pin treatments distinct. Continue using the
 [batch research queue](research-queue.md).
 Seven candidates have refreshed evidence; four have independently checked official

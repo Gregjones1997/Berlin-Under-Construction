@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from "node:fs";
+import basicListings from "../atlas/basic-listings.json";
 import places from "../atlas/places.json";
 import { resolve } from "node:path";
 import { loadPublicProjectPages } from "../lib/public-projects";
@@ -107,6 +108,7 @@ const records = projects.map((project) => ({
                 </button>
               ))
           }
+        {basicListings.records.map(project => <button class="project-pin basic-pin" data-depth="basic" data-project={project.id} data-lon={project.longitude} data-lat={project.latitude} aria-label={`Explore basic listing: ${project.nameDe}`} hidden><span class="pin-number"><Icon name="pin" /></span><span class="pin-label" lang="de">{project.nameDe}</span></button>)}
         </div>
       </div>
       <aside class="atlas-left" aria-label="Explore project records">
@@ -250,6 +252,16 @@ const records = projects.map((project) => ({
             </section>
           ))
         }
+        {basicListings.records.map(project => <section id={`record-${project.id}`} class="project-record basic-record" hidden>
+          <div class="record-heading"><p class="eyebrow">BASIC LISTING · RESEARCH ONGOING</p><h2 lang="de">{project.nameDe}</h2></div>
+          <div class="project-brief status-brief" data-record-section="overview">
+            <p lang="de">{project.locationDe}</p>
+            <p class="brief-source-key">Official register reference point. Site extent and construction progress have not been verified.</p>
+            <a class="brief-more brief-overview-link" href={project.sourceUrl}><span><strong>Official project page</strong></span><Icon name="arrow" /></a>
+            <details class="basic-evidence"><summary>Source details</summary><p>Title and location reproduced from the official meinBerlin register, checked {basicListings.reviewedOn}.</p><a href={project.evidence.inventory_url}>Register source</a><p>Location field: <code>{project.evidence.location_pointer}</code></p><p>Source fingerprint: <code>{project.evidence.artifact_hash}</code></p></details>
+            <a href="/corrections/" class="correction-link">Suggest a correction · {project.id}</a>
+          </div>
+        </section>)}
       </aside>
       <div class="city-explorer">
         <span class="explorer-label">Explore Berlin</span>
@@ -316,15 +328,17 @@ const records = projects.map((project) => ({
         </div>
         <label
           ><span class="legend-symbol legend-category"><Icon name="pin" /></span><span
-            >Project markers<small>Source-backed evidence records</small></span
+            >Project markers<small>2 dossier pins · 150 basic listings</small></span
           ><input type="checkbox" data-label-kind="projects" checked /></label
         >
+        <label><span class="legend-symbol"><Icon name="pin" /></span><span>Basic listings<small>Official register references · research ongoing</small></span><input type="checkbox" data-label-kind="basic" checked /></label>
         <div class="project-category-key">
           <button class="legend-project-link" data-project="C-014"><span class="legend-symbol legend-category"><Icon name="publicspace" /></span><span>Public space<small>Europaplatz Süd</small></span></button>
           <button class="legend-project-link" data-project="C-010"><span class="legend-symbol legend-category"><Icon name="school" /></span><span>School<small>Heinrich-Hertz-Gymnasium</small></span></button>
           <button class="legend-project-link" data-project="C-019"><span class="legend-symbol legend-category"><Icon name="energy" /></span><span>Energy<small>Power-to-Heat · location withheld</small></span></button>
         </div>
-        <p>Project types describe the work, not its progress. More types appear as researched projects are added.</p>
+        <p>Solid pins: full dossiers. Smaller outlined pins: basic listings, research ongoing.</p>
+        <details class="basic-directory"><summary>Browse 150 basic listings</summary>{basicListings.records.map(project => <button class="project-select" data-project={project.id} aria-expanded="false"><strong lang="de">{project.nameDe}</strong><Icon name="arrow" /></button>)}</details>
       </section>
       <p class="interaction-hint" id="interaction-hint">
         Drag to explore <span>·</span> Scroll to zoom <span>·</span> Right-drag to
@@ -390,7 +404,7 @@ const records = projects.map((project) => ({
           </dd>
         </div><div>
           <dt>Project evidence</dt><dd>
-            Only two of three pilot projects have published positions. Dates and
+            Two of three full dossiers have published positions. Another 150 basic listings use official register reference points, not verified site boundaries. Dates and
             statements retain their individual sources; map geometry is not
             project-status evidence.
           </dd>

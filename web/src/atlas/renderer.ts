@@ -77,7 +77,7 @@ export class CityRenderer {
   private reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   private abort = new AbortController();
   private pins: HTMLButtonElement[];
-  private labels = { projects: true, water: false, parks: false };
+  private labels = { projects: true, basic: true, water: false, parks: false };
   private contextLabels: HTMLElement[];
   private activeHalo: THREE.Mesh;
   private tickTime = 0;
@@ -486,7 +486,7 @@ export class CityRenderer {
       const [x, z] = cityPoint(Number(p.dataset.lon), Number(p.dataset.lat));
       const v = new THREE.Vector3(x, 55, z).project(this.camera);
       const visible =
-        this.labels.projects &&
+        this.labels.projects && (p.dataset.depth !== "basic" || this.labels.basic) &&
         v.z >= -1 &&
         v.z <= 1 &&
         Math.abs(v.x) < 1.1 &&
@@ -609,7 +609,7 @@ export class CityRenderer {
   }
   introduce() {
     // Frame approved project positions only; withheld sites never supply geometry.
-    const points = this.pins.map((pin) => {
+    const points = this.pins.filter(pin => pin.dataset.depth !== "basic").map((pin) => {
       const [x, z] = cityPoint(Number(pin.dataset.lon), Number(pin.dataset.lat));
       return new THREE.Vector3(x, 0, z);
     });
@@ -716,7 +716,7 @@ export class CityRenderer {
     );
     this.wake();
   }
-  setLabelKind(kind: "projects" | "water" | "parks", value: boolean) {
+  setLabelKind(kind: "projects" | "basic" | "water" | "parks", value: boolean) {
     this.labels[kind] = value;
     this.placePins();
     this.wake();

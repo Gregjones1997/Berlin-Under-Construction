@@ -4,6 +4,7 @@ from html.parser import HTMLParser
 import os
 from pathlib import Path
 import subprocess
+from urllib.parse import urlsplit
 
 import pytest
 
@@ -390,8 +391,9 @@ def test_every_internal_link_resolves_in_the_static_export(
         for href in parser.hrefs:
             if not href.startswith("/"):
                 continue
-            target = DIST / href.lstrip("/")
-            if href.endswith("/"):
+            path = urlsplit(href).path
+            target = DIST / path.lstrip("/")
+            if path.endswith("/"):
                 target = target / "index.html"
             assert target.is_file(), f"{page.relative_to(DIST)} -> {href}"
 
@@ -461,3 +463,26 @@ def test_real_astro_export_passes_withheld_and_sentinel_scans(
     )
 
     assert DIST / "projects" / "europaplatz-sued" / "index.html" in scanned
+
+
+def test_basic_listings_have_evidence_and_addressable_map_cards(c014_export: str) -> None:
+    import json
+    listing = json.loads((WEB / "src/atlas/basic-listings.json").read_text())
+    candidates = json.loads((ROOT / "docs/research/findings/2026-09-09-bulk-discovery/catalog.json").read_text())
+    research = {r["candidate_id"]: r for r in candidates["records"]}
+    atlas = (DIST / "index.html").read_text()
+    assert len(listing["records"]) == 150
+    assert atlas.count('data-depth="basic"') == 150
+    assert len({r["id"] for r in listing["records"]}) == 150
+    for row in listing["records"]:
+        original = research[row["id"]]
+        assert row["nameDe"] == original["evidence"]["exact_title_de"]
+        assert [row["longitude"], row["latitude"]] == original["location"]["coordinates"]
+        assert row["evidence"] == original["evidence"]
+        assert row["pageHash"] == original["page_check"]["artifact_hash"]
+        assert original["page_check"]["status"] == "title_matched"
+        assert row["sourceUrl"].startswith("https://mein.berlin.de/vorhaben/")
+        assert f'id="record-{row["id"]}"' in atlas
+        assert f'data-project="{row["id"]}"' in atlas
+        assert not {"status", "start", "end", "category_proposal", "register_status_code"}.intersection(row)
+    assert "not verified site boundaries" in atlas

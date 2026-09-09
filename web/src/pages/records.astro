@@ -1,6 +1,7 @@
 ---
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import basicListings from "../atlas/basic-listings.json";
 import Base from "../layouts/Base.astro";
 import { loadPublicProjectPages } from "../lib/public-projects";
 
@@ -217,6 +218,7 @@ if (
     </nav>
   </section>
 
+  <section aria-labelledby="basic-heading"><h2 id="basic-heading">150 basic listings · research ongoing</h2><p>Official register reference points. These listings do not establish construction progress or exact site boundaries.</p><ul>{basicListings.records.map(project => <li><a href={`/#${project.id}`} lang="de">{project.nameDe}</a> · <a href={project.sourceUrl}>Original source</a> · <a href="/corrections/">Correction</a></li>)}</ul></section>
   <section>
     <nav aria-label="Legal information">
       <h2>Legal information</h2>

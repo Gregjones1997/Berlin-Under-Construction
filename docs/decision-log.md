@@ -1190,3 +1190,17 @@ See `atlas-model.md` for the source licenses, exact reproduction queries,
 measurements and limitations, and `visual-direction-study.md` for the visual
 rationale. Future progressive loading and wider coverage should be evaluated
 against actual low-end-device measurements.
+
+## ADR-025 — Publish bounded basic register listings alongside full dossiers
+
+**Accepted:** 9 September 2026, owner instruction to populate the main map with
+smaller, visually distinct basic listings and proceed with integration.
+
+Basic publication is limited to the official register's verbatim project title,
+location label and navigation point, with a direct source link and correction
+route. A navigation point does not establish a site boundary. Register workflow
+codes, lexical category proposals, extracted progress and unreviewed prose are
+not published as facts. Full dossier publication and golden-set human-authority
+requirements remain unchanged. The research catalog remains an immutable record
+of its earlier unapproved state; the separate public projection records this
+narrow release. No claim of human German-language verification is added.

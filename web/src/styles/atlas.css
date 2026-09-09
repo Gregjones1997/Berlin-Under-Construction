@@ -1313,3 +1313,19 @@ dialog dd a {
   .has-selection .city-return { left: 12px; right: auto; }
   .label-panel { left: 12px; right: 12px; bottom: 76px; width: auto; max-height: calc(100% - 96px); overflow-y: auto; }
 }
+
+/* Basic register references remain distinct from evidence-backed dossiers. */
+.project-pin.basic-pin { width: 44px; height: 44px; background: transparent; }
+.project-pin.basic-pin .pin-number { width: 22px; height: 22px; min-width: 22px; border: 2px solid #526e66; background: #f5f4ece6; color: #526e66; box-shadow: none; }
+.project-pin.basic-pin .pin-number svg { width: 13px; height: 13px; }
+.project-pin.basic-pin .pin-label { display: none; max-width: 260px; white-space: normal; }
+.project-pin.basic-pin:hover .pin-label, .project-pin.basic-pin:focus-visible .pin-label, .project-pin.basic-pin.selected .pin-label { display: block; }
+.project-pin.basic-pin.selected .pin-number { border-color: #d65429; color: #d65429; }
+.basic-directory { max-height: 32dvh; overflow-y: auto; }
+.basic-directory summary { padding: 12px 0; cursor: pointer; }
+.basic-directory .project-select { width: 100%; padding: 14px 4px; border-bottom: 1px solid var(--line, #d6d9ce); text-align: left; }
+.basic-directory strong { font-size: 14px; font-weight: 400; }
+.basic-evidence { margin-top: 20px; font-size: 13px; overflow-wrap: anywhere; }
+.basic-record .record-heading h2 { font-size: clamp(24px, 2.1vw, 36px); }
+.basic-record .record-heading { padding-bottom: 12px; }
+@media(max-width:700px) { .basic-pin.selected .pin-label { display: none !important; } }

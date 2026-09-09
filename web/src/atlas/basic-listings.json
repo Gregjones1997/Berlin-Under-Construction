@@ -1,0 +1,2706 @@
+{
+  "scope": "Official register reference points; not site boundaries or verified construction progress",
+  "reviewedOn": "2026-09-09",
+  "records": [
+    {
+      "id": "MB-2026-01482",
+      "nameDe": "Sanierung des Kunstrasen Großspielfeldes - Schönfließer Strasse",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01482/",
+      "longitude": 13.291998,
+      "latitude": 52.643142,
+      "locationDe": "Sportanlage Schönfließer Straße 12A, 13465 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/1/title",
+        "exact_title_de": "Sanierung des Kunstrasen Großspielfeldes - Schönfließer Strasse",
+        "location_pointer": "/1/point/geometry/coordinates",
+        "location_label_pointer": "/1/point_label"
+      },
+      "pageHash": "sha256:bb82538d978d9a72ff890dc176fe5d0d9750d4141bc0cd9b9275661117bb476d",
+      "retrievedAt": "2026-09-09T14:18:45.784463+00:00"
+    },
+    {
+      "id": "MB-2026-01465",
+      "nameDe": "Neubau einer Kindertageseinrichtung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01465/",
+      "longitude": 13.216919,
+      "latitude": 52.599949,
+      "locationDe": "Elchdamm 217",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/15/title",
+        "exact_title_de": "Neubau einer Kindertageseinrichtung",
+        "location_pointer": "/15/point/geometry/coordinates",
+        "location_label_pointer": "/15/point_label"
+      },
+      "pageHash": "sha256:4389e47e230ed3fbe93ea07ef80cd2ebaebc5ba9157e84b16ef7cb4bceb96301",
+      "retrievedAt": "2026-09-09T14:18:45.783944+00:00"
+    },
+    {
+      "id": "MB-2026-01446",
+      "nameDe": "Neugestaltung der Außenanlagen Schule am Zwickauer Damm",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01446/",
+      "longitude": 13.483181,
+      "latitude": 52.421931,
+      "locationDe": "Schule am Zwickauer Damm, Zwickauer Damm 17-22, 12353 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/32/title",
+        "exact_title_de": "Neugestaltung der Außenanlagen Schule am Zwickauer Damm",
+        "location_pointer": "/32/point/geometry/coordinates",
+        "location_label_pointer": "/32/point_label"
+      },
+      "pageHash": "sha256:729be06bcff49d106fec803dc441d377d66cba5ed4b0d4000622d7324a6e4748",
+      "retrievedAt": "2026-09-09T14:18:46.024510+00:00"
+    },
+    {
+      "id": "MB-2026-01444",
+      "nameDe": "Paul-Klee-Grundschule: Umbau, Sanierung und Erweiterung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01444/",
+      "longitude": 13.37547,
+      "latitude": 52.453834,
+      "locationDe": "Konradinstraße 15-17, 12105 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/34/title",
+        "exact_title_de": "Paul-Klee-Grundschule: Umbau, Sanierung und Erweiterung",
+        "location_pointer": "/34/point/geometry/coordinates",
+        "location_label_pointer": "/34/point_label"
+      },
+      "pageHash": "sha256:f2ea2ea0bd54ef28c5a40c91f49fa775f09218198b4e3eb4b051004c4431e55d",
+      "retrievedAt": "2026-09-09T14:18:46.023848+00:00"
+    },
+    {
+      "id": "MB-2026-01443",
+      "nameDe": "Marianne-Cohn-Schule: Sanierung/Neubau des Schulhofes und der Sportanlage",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01443/",
+      "longitude": 13.418223,
+      "latitude": 52.464231,
+      "locationDe": "Holzmannstraße 7, 12099 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/35/title",
+        "exact_title_de": "Marianne-Cohn-Schule: Sanierung/Neubau des Schulhofes und der Sportanlage",
+        "location_pointer": "/35/point/geometry/coordinates",
+        "location_label_pointer": "/35/point_label"
+      },
+      "pageHash": "sha256:c2aa46eaa78fb1f33efe42e699e083605178d8447967efd31a535b239955bd08",
+      "retrievedAt": "2026-09-09T14:18:46.268354+00:00"
+    },
+    {
+      "id": "MB-2026-01441",
+      "nameDe": "Friedrich-Bergius-Schule: Neubau einer Typen-Sporthalle am Standort Perelsplatz 6-9",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01441/",
+      "longitude": 13.335198,
+      "latitude": 52.47652,
+      "locationDe": "Lauterstraße 41, 12159 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/37/title",
+        "exact_title_de": "Friedrich-Bergius-Schule: Neubau einer Typen-Sporthalle am Standort Perelsplatz 6-9",
+        "location_pointer": "/37/point/geometry/coordinates",
+        "location_label_pointer": "/37/point_label"
+      },
+      "pageHash": "sha256:ee6c21ff8c2854091fdf78db10bbcc7d5061ef1d28b42fc3ae0a1deabd2f24c8",
+      "retrievedAt": "2026-09-09T14:18:46.274480+00:00"
+    },
+    {
+      "id": "MB-2026-01440",
+      "nameDe": "Ruppin-Grundschule: Sanierung, Umbau und Erweiterung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01440/",
+      "longitude": 13.321117,
+      "latitude": 52.475227,
+      "locationDe": "Offenbacher Str. 5a, 14197 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/38/title",
+        "exact_title_de": "Ruppin-Grundschule: Sanierung, Umbau und Erweiterung",
+        "location_pointer": "/38/point/geometry/coordinates",
+        "location_label_pointer": "/38/point_label"
+      },
+      "pageHash": "sha256:7e7bc2e585436d2d103895f0876c6e6767a919fdc28445d18d51ca1d64793a3a",
+      "retrievedAt": "2026-09-09T14:18:46.492487+00:00"
+    },
+    {
+      "id": "MB-2026-01438",
+      "nameDe": "Rückert-Gymnasium: Großsanierung von Schulgebäuden (BSO VI), Gesamtsanierung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01438/",
+      "longitude": 13.338039,
+      "latitude": 52.479767,
+      "locationDe": "Mettestraße 8, 10825 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/40/title",
+        "exact_title_de": "Rückert-Gymnasium: Großsanierung von Schulgebäuden (BSO VI), Gesamtsanierung",
+        "location_pointer": "/40/point/geometry/coordinates",
+        "location_label_pointer": "/40/point_label"
+      },
+      "pageHash": "sha256:00e524a1ccacb101e4fd26e91026ca326c322c82d259322e3dd55660b39ad5d9",
+      "retrievedAt": "2026-09-09T14:18:46.521099+00:00"
+    },
+    {
+      "id": "MB-2026-01435",
+      "nameDe": "Georg-Büchner-Gymnasium: Ersatzneubau mit Sporthalle",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01435/",
+      "longitude": 13.405079,
+      "latitude": 52.392694,
+      "locationDe": "Lichtenrader Damm 222, 224, 240, 12305 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/43/title",
+        "exact_title_de": "Georg-Büchner-Gymnasium: Ersatzneubau mit Sporthalle",
+        "location_pointer": "/43/point/geometry/coordinates",
+        "location_label_pointer": "/43/point_label"
+      },
+      "pageHash": "sha256:36a3a4738651f11e1c13a0ce030db0981daaf1e338e59922e19ba904fc820abc",
+      "retrievedAt": "2026-09-09T14:18:46.726350+00:00"
+    },
+    {
+      "id": "MB-2026-01432",
+      "nameDe": "Solling-Schule: Ersatzneubau",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01432/",
+      "longitude": 13.365287,
+      "latitude": 52.413977,
+      "locationDe": "Alt-Marienfelde 52, 12277 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/46/title",
+        "exact_title_de": "Solling-Schule: Ersatzneubau",
+        "location_pointer": "/46/point/geometry/coordinates",
+        "location_label_pointer": "/46/point_label"
+      },
+      "pageHash": "sha256:c06b1feda770d4d203b1a1762eb15a89b601a60b091ffbf3eaa8a522cca06b47",
+      "retrievedAt": "2026-09-09T14:18:46.735173+00:00"
+    },
+    {
+      "id": "MB-2026-01431",
+      "nameDe": "Marienfelder Schule (Grundschule): Erweiterungsneubau",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01431/",
+      "longitude": 13.352407,
+      "latitude": 52.412,
+      "locationDe": "Erbendorfer Weg 13, 12279 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/47/title",
+        "exact_title_de": "Marienfelder Schule (Grundschule): Erweiterungsneubau",
+        "location_pointer": "/47/point/geometry/coordinates",
+        "location_label_pointer": "/47/point_label"
+      },
+      "pageHash": "sha256:f75edd76feb06f556ce1d8d7c65ca58975ca9a1c339f486f7e0aee2e4c3aaf02",
+      "retrievedAt": "2026-09-09T14:18:46.948675+00:00"
+    },
+    {
+      "id": "MB-2026-01430",
+      "nameDe": "07Kn01 ISS am Tirschenreuther Ring: Neubau ISS mit Sporthalle",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01430/",
+      "longitude": 13.354134,
+      "latitude": 52.409759,
+      "locationDe": "Tirschenreuther Ring 69, 12279 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/48/title",
+        "exact_title_de": "07Kn01 ISS am Tirschenreuther Ring: Neubau ISS mit Sporthalle",
+        "location_pointer": "/48/point/geometry/coordinates",
+        "location_label_pointer": "/48/point_label"
+      },
+      "pageHash": "sha256:3ad6be33722072d163c30523328e16073101d136713f980012e77e6ed0846759",
+      "retrievedAt": "2026-09-09T14:18:46.960616+00:00"
+    },
+    {
+      "id": "MB-2026-01429",
+      "nameDe": "Grundschule Marienfelder Allee: Neubau Grundschule mit Sporthalle",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01429/",
+      "longitude": 13.357397,
+      "latitude": 52.406943,
+      "locationDe": "Marienfelder Allee 224-236, 12279 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/49/title",
+        "exact_title_de": "Grundschule Marienfelder Allee: Neubau Grundschule mit Sporthalle",
+        "location_pointer": "/49/point/geometry/coordinates",
+        "location_label_pointer": "/49/point_label"
+      },
+      "pageHash": "sha256:c7dfa6fd058ff2aea91530b007940507fea98e2b46f7651d5fd66785f049ed48",
+      "retrievedAt": "2026-09-09T14:18:47.267575+00:00"
+    },
+    {
+      "id": "MB-2026-01428",
+      "nameDe": "Schätzelberg-Grundschule: Errichtung eines modularen Ergänzungsbaus in Holzmodulbauweise (HoMEB)",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01428/",
+      "longitude": 13.400559,
+      "latitude": 52.44868,
+      "locationDe": "Wolfsburger Weg 13-19, 12109 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/50/title",
+        "exact_title_de": "Schätzelberg-Grundschule: Errichtung eines modularen Ergänzungsbaus in Holzmodulbauweise (HoMEB)",
+        "location_pointer": "/50/point/geometry/coordinates",
+        "location_label_pointer": "/50/point_label"
+      },
+      "pageHash": "sha256:6d7e2c028e3437c7d0ee94bdd30417172734ab6438ad96b0380177344bad6284",
+      "retrievedAt": "2026-09-09T14:18:47.278453+00:00"
+    },
+    {
+      "id": "MB-2026-01425",
+      "nameDe": "Prignitz-Schule: Umzug an den Standort Alt-Tempelhof 53-57, Errichtung eines MEB Flex G",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01425/",
+      "longitude": 13.378902,
+      "latitude": 52.464875,
+      "locationDe": "Pöppelmannstr. 2, 12157 Berlin Umzug nach Alt-Tempelhof 53-57, 12103 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/53/title",
+        "exact_title_de": "Prignitz-Schule: Umzug an den Standort Alt-Tempelhof 53-57, Errichtung eines MEB Flex G",
+        "location_pointer": "/53/point/geometry/coordinates",
+        "location_label_pointer": "/53/point_label"
+      },
+      "pageHash": "sha256:e2de09277101ebf2178aa30cd10d76efb163f7bbf811a9275fe1e53852a0f22f",
+      "retrievedAt": "2026-09-09T14:18:47.530771+00:00"
+    },
+    {
+      "id": "MB-2026-01421",
+      "nameDe": "40. Schule (Grundschule): Reaktivierung und Erweiterung des Bestandsgebäudes mit Einbindung von außerschulischen Bedarfe",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01421/",
+      "longitude": 13.357406,
+      "latitude": 52.478317,
+      "locationDe": "Ella-Barowsky-Straße 62-64, 10829 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/56/title",
+        "exact_title_de": "40. Schule (Grundschule): Reaktivierung und Erweiterung des Bestandsgebäudes mit Einbindung von außerschulischen Bedarfe",
+        "location_pointer": "/56/point/geometry/coordinates",
+        "location_label_pointer": "/56/point_label"
+      },
+      "pageHash": "sha256:a7afcceb3d0aa52b161d24511e86986dc64d34422eb349a6e5cb482cd945c83f",
+      "retrievedAt": "2026-09-09T14:18:47.531088+00:00"
+    },
+    {
+      "id": "MB-2026-01417",
+      "nameDe": "Reaktivierung und Neugestaltung des Spielplatzes Britzer Wiesen",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01417/",
+      "longitude": 13.399173,
+      "latitude": 52.439807,
+      "locationDe": "Britzer Straße 79/Grüntenstraße 92, 12109, Mariendorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/60/title",
+        "exact_title_de": "Reaktivierung und Neugestaltung des Spielplatzes Britzer Wiesen",
+        "location_pointer": "/60/point/geometry/coordinates",
+        "location_label_pointer": "/60/point_label"
+      },
+      "pageHash": "sha256:8e4f890acd21326c126b5b45141cc9ed75907074bb8cbef246de4480266ed087",
+      "retrievedAt": "2026-09-09T14:18:47.792603+00:00"
+    },
+    {
+      "id": "MB-2026-01412",
+      "nameDe": "Sanierung des Spielplatzes \"Platz S\" mit Schwerpunkt auf der Etablierung eines Jugendstandorts",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01412/",
+      "longitude": 13.45709,
+      "latitude": 52.483115,
+      "locationDe": "Spielplatz auf dem „Platz S\" (Teupitzer Straße / Ecke Harzer Straße / Treptower Straße, 12059 Berlin)",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/64/title",
+        "exact_title_de": "Sanierung des Spielplatzes \"Platz S\" mit Schwerpunkt auf der Etablierung eines Jugendstandorts",
+        "location_pointer": "/64/point/geometry/coordinates",
+        "location_label_pointer": "/64/point_label"
+      },
+      "pageHash": "sha256:cf701100fc88be744edfdbf2b2cac3116edde35febd6da2fb34794106cb5fcb1",
+      "retrievedAt": "2026-09-09T14:18:47.818902+00:00"
+    },
+    {
+      "id": "MB-2026-01409",
+      "nameDe": "Neubau Straße „Alt-Lübars“",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01409/",
+      "longitude": 13.356149,
+      "latitude": 52.619674,
+      "locationDe": "Straße Alt-Lübars zwischen Zabel-Krüger-Damm und Blankenfelder Chaussee, Ortsteil Lübars",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/67/title",
+        "exact_title_de": "Neubau Straße „Alt-Lübars“",
+        "location_pointer": "/67/point/geometry/coordinates",
+        "location_label_pointer": "/67/point_label"
+      },
+      "pageHash": "sha256:813a1e714be5949be281fd82d22e87926765afd140b0fafdec12ca6e1272f0fc",
+      "retrievedAt": "2026-09-09T14:18:48.030528+00:00"
+    },
+    {
+      "id": "MB-2026-01383",
+      "nameDe": "Umbau Müncheberger Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01383/",
+      "longitude": 13.436193,
+      "latitude": 52.512706,
+      "locationDe": "Müncheberger Straße, Friedrichshain-Kreuzberg",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/91/title",
+        "exact_title_de": "Umbau Müncheberger Straße",
+        "location_pointer": "/91/point/geometry/coordinates",
+        "location_label_pointer": "/91/point_label"
+      },
+      "pageHash": "sha256:deb478f5ac7ef05d915828d45f07a47eb5c04ff6bae3cde7766a1a1b3a8cbe12",
+      "retrievedAt": "2026-09-09T14:18:48.041203+00:00"
+    },
+    {
+      "id": "MB-2026-01382",
+      "nameDe": "Umbau Enckestraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01382/",
+      "longitude": 13.393401,
+      "latitude": 52.503775,
+      "locationDe": "Enckestraße, Friedrichshain-Kreuzberg",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/92/title",
+        "exact_title_de": "Umbau Enckestraße",
+        "location_pointer": "/92/point/geometry/coordinates",
+        "location_label_pointer": "/92/point_label"
+      },
+      "pageHash": "sha256:ccc0e4c3e67db24163c8bda2ca032ba1fb0e6314e78e4f0fa1d9de7a7bab91c6",
+      "retrievedAt": "2026-09-09T14:18:48.269693+00:00"
+    },
+    {
+      "id": "MB-2026-01373",
+      "nameDe": "Neubau Freilufthalle Sportkomplex Rennbahnstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01373/",
+      "longitude": 13.453786,
+      "latitude": 52.562647,
+      "locationDe": "Rennbahnstraße 45, 13086 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/101/title",
+        "exact_title_de": "Neubau Freilufthalle Sportkomplex Rennbahnstraße",
+        "location_pointer": "/101/point/geometry/coordinates",
+        "location_label_pointer": "/101/point_label"
+      },
+      "pageHash": "sha256:2f18eec79435420a21a3540ee1b51eda8ad8a9798914e4754e63811cb0c5a388",
+      "retrievedAt": "2026-09-09T14:18:48.287431+00:00"
+    },
+    {
+      "id": "MB-2026-01371",
+      "nameDe": "Ersatzneubau des Spielplatzes Rütlistraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01371/",
+      "longitude": 13.435504,
+      "latitude": 52.487965,
+      "locationDe": "Rütlistraße, 12045 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/103/title",
+        "exact_title_de": "Ersatzneubau des Spielplatzes Rütlistraße",
+        "location_pointer": "/103/point/geometry/coordinates",
+        "location_label_pointer": "/103/point_label"
+      },
+      "pageHash": "sha256:618da8bbda243ebf1cdc50f0959971ea4dcbef0fcea164f53c3ad45e5a244347",
+      "retrievedAt": "2026-09-09T14:18:48.570902+00:00"
+    },
+    {
+      "id": "MB-2026-01364",
+      "nameDe": "Ersatzneubau Kinderspielplatz Wildenbruchplatz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01364/",
+      "longitude": 13.445205,
+      "latitude": 52.483087,
+      "locationDe": "Wildenbruchplatz 8-9, 12045 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/108/title",
+        "exact_title_de": "Ersatzneubau Kinderspielplatz Wildenbruchplatz",
+        "location_pointer": "/108/point/geometry/coordinates",
+        "location_label_pointer": "/108/point_label"
+      },
+      "pageHash": "sha256:facac749cdc87df9f9b468a41b895f350d4c7a4996247668a48ef77ca0011296",
+      "retrievedAt": "2026-09-09T14:18:48.570308+00:00"
+    },
+    {
+      "id": "MB-2026-01362",
+      "nameDe": "Wohnungsneubau in der Cité Foch (Baufeld WA10)",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01362/",
+      "longitude": 13.322469,
+      "latitude": 52.600255,
+      "locationDe": "Cité Foch, Wittenau",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/109/title",
+        "exact_title_de": "Wohnungsneubau in der Cité Foch (Baufeld WA10)",
+        "location_pointer": "/109/point/geometry/coordinates",
+        "location_label_pointer": "/109/point_label"
+      },
+      "pageHash": "sha256:9a3c1c5362fcc35294b9b00c59424b2d4599c8eccc5f3cb32b848252b79e3f01",
+      "retrievedAt": "2026-09-09T14:18:48.823302+00:00"
+    },
+    {
+      "id": "MB-2026-01359",
+      "nameDe": "Neugestaltung des Spielplatzes und Senkgartens Rohrbeckstraße 2",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01359/",
+      "longitude": 13.417286,
+      "latitude": 52.462434,
+      "locationDe": "Rohrbeckstraße 2, 12099, Tempelhof",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/112/title",
+        "exact_title_de": "Neugestaltung des Spielplatzes und Senkgartens Rohrbeckstraße 2",
+        "location_pointer": "/112/point/geometry/coordinates",
+        "location_label_pointer": "/112/point_label"
+      },
+      "pageHash": "sha256:da78abafe61c961469245afa124514f66c495947dd95056460930475a8ef2a11",
+      "retrievedAt": "2026-09-09T14:18:48.863429+00:00"
+    },
+    {
+      "id": "MB-2026-01357",
+      "nameDe": "Neugestaltung der Grünfläche mit Spielplatz Fontane Eck",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01357/",
+      "longitude": 13.499976,
+      "latitude": 52.634443,
+      "locationDe": "Karower Straße 1",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/114/title",
+        "exact_title_de": "Neugestaltung der Grünfläche mit Spielplatz Fontane Eck",
+        "location_pointer": "/114/point/geometry/coordinates",
+        "location_label_pointer": "/114/point_label"
+      },
+      "pageHash": "sha256:910cdc3ed4cb3562e7753e995a09c4985a6918a5abe2cc799470c13bb2e22be9",
+      "retrievedAt": "2026-09-09T14:18:49.051295+00:00"
+    },
+    {
+      "id": "MB-2026-01350",
+      "nameDe": "Sanierung der Klosterkirchenruine",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01350/",
+      "longitude": 13.412049,
+      "latitude": 52.51829,
+      "locationDe": "Bezirksregion Alexanderplatz, Klosterstr. 73a, 10179 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/121/title",
+        "exact_title_de": "Sanierung der Klosterkirchenruine",
+        "location_pointer": "/121/point/geometry/coordinates",
+        "location_label_pointer": "/121/point_label"
+      },
+      "pageHash": "sha256:885aae4c57e74adc0f2a0530a2daf3dcd4211b81d76c509b099d4439990a4c98",
+      "retrievedAt": "2026-09-09T14:18:49.092194+00:00"
+    },
+    {
+      "id": "MB-2026-01349",
+      "nameDe": "Bauliche und energetische Sanierung und Modernisierung der Bibliothek am Luisenbad",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01349/",
+      "longitude": 13.378958,
+      "latitude": 52.553565,
+      "locationDe": "Bezirksregion Wedding-Zentrum Badstr. 39, 13357 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/122/title",
+        "exact_title_de": "Bauliche und energetische Sanierung und Modernisierung der Bibliothek am Luisenbad",
+        "location_pointer": "/122/point/geometry/coordinates",
+        "location_label_pointer": "/122/point_label"
+      },
+      "pageHash": "sha256:02854a86becea42c24bd3820e4bd4ea36ad1b17abebd848da8193e0df33e3c70",
+      "retrievedAt": "2026-09-09T14:18:49.275878+00:00"
+    },
+    {
+      "id": "MB-2026-01347",
+      "nameDe": "Wohnungsneubau Jan-Petersen-Straße 14",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01347/",
+      "longitude": 13.56469,
+      "latitude": 52.54898,
+      "locationDe": "Jan-Petersen-Straße 14",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/124/title",
+        "exact_title_de": "Wohnungsneubau Jan-Petersen-Straße 14",
+        "location_pointer": "/124/point/geometry/coordinates",
+        "location_label_pointer": "/124/point_label"
+      },
+      "pageHash": "sha256:f341c818325f2f4eba7c6039ec3fd1522542d63cc7c2342fe6f3a1eece522264",
+      "retrievedAt": "2026-09-09T14:18:49.311100+00:00"
+    },
+    {
+      "id": "MB-2026-01338",
+      "nameDe": "Sanierung des Kunstrasen Großspielfeldes - Uranusweg",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01338/",
+      "longitude": 13.313947,
+      "latitude": 52.565862,
+      "locationDe": "Sportanlage Uranusweg 34, 13405 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/132/title",
+        "exact_title_de": "Sanierung des Kunstrasen Großspielfeldes - Uranusweg",
+        "location_pointer": "/132/point/geometry/coordinates",
+        "location_label_pointer": "/132/point_label"
+      },
+      "pageHash": "sha256:49dbdaa0087f3f750c964427e0ce28cc592c83a183bb158366c073cd3443fca8",
+      "retrievedAt": "2026-09-09T14:18:49.518068+00:00"
+    },
+    {
+      "id": "MB-2026-01337",
+      "nameDe": "Sanierung des Kunststoff Basketball Spielfeldes Uranusweg",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01337/",
+      "longitude": 13.313499,
+      "latitude": 52.565219,
+      "locationDe": "Sportanlage Uranusweg 34, 13405 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/133/title",
+        "exact_title_de": "Sanierung des Kunststoff Basketball Spielfeldes Uranusweg",
+        "location_pointer": "/133/point/geometry/coordinates",
+        "location_label_pointer": "/133/point_label"
+      },
+      "pageHash": "sha256:189ab450ec1283ab3772203451e4e0a2e33dd2563b15d01ec33055afa40601a9",
+      "retrievedAt": "2026-09-09T14:18:49.527015+00:00"
+    },
+    {
+      "id": "MB-2026-01336",
+      "nameDe": "Sanierung von Fenstern und Fassade des Bootshauses Tegel",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01336/",
+      "longitude": 13.277061,
+      "latitude": 52.584177,
+      "locationDe": "Bootshaus Tegel, Eisenhammerweg 22-24, 13507 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/134/title",
+        "exact_title_de": "Sanierung von Fenstern und Fassade des Bootshauses Tegel",
+        "location_pointer": "/134/point/geometry/coordinates",
+        "location_label_pointer": "/134/point_label"
+      },
+      "pageHash": "sha256:fbebde18eae8b8fcb8dfa45a8ef85c31468395d02b42649cf7f6b8641e1cae73",
+      "retrievedAt": "2026-09-09T14:18:49.755004+00:00"
+    },
+    {
+      "id": "MB-2026-01334",
+      "nameDe": "Sanierung des Ballfangzaunes - Sportanlage Hatzfeldtallee",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2026-01334/",
+      "longitude": 13.295506,
+      "latitude": 52.593844,
+      "locationDe": "Sportanlage Hatzfeldtallee 33, 13509 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/136/title",
+        "exact_title_de": "Sanierung des Ballfangzaunes - Sportanlage Hatzfeldtallee",
+        "location_pointer": "/136/point/geometry/coordinates",
+        "location_label_pointer": "/136/point_label"
+      },
+      "pageHash": "sha256:b659d33756809f60a1ba2ca7527f008f4429da4a0e6a5c42bd9c200186f5bb50",
+      "retrievedAt": "2026-09-09T14:18:49.752220+00:00"
+    },
+    {
+      "id": "MB-2025-01330",
+      "nameDe": "Umgestaltung des Kranoldplatzes",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01330/",
+      "longitude": 13.32702,
+      "latitude": 52.42821,
+      "locationDe": "Kranoldplatz",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/140/title",
+        "exact_title_de": "Umgestaltung des Kranoldplatzes",
+        "location_pointer": "/140/point/geometry/coordinates",
+        "location_label_pointer": "/140/point_label"
+      },
+      "pageHash": "sha256:9f0f26868a75dfe84ec1ab06e106abde866274b2df6f0dcd58fdd67b49d99bd9",
+      "retrievedAt": "2026-09-09T14:18:49.974138+00:00"
+    },
+    {
+      "id": "MB-2025-01328",
+      "nameDe": "Reaktivierung der Stammstrecke der Heidekrautbahn",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01328/",
+      "longitude": 13.367862,
+      "latitude": 52.587949,
+      "locationDe": "Bahnstrecke vom Regionalbahnhof Berlin-Wilhelmsruh bis zum Abzweig Schönwalde (durch den Bezirk Berlin-Pankow sowie die Gemeinden Mühlenbecker Land und Wandlitz)",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/142/title",
+        "exact_title_de": "Reaktivierung der Stammstrecke der Heidekrautbahn",
+        "location_pointer": "/142/point/geometry/coordinates",
+        "location_label_pointer": "/142/point_label"
+      },
+      "pageHash": "sha256:11a9642b9bb5916d81687b1f09cec90ad0f3eab3169c9b68a471bfdf0e9fff79",
+      "retrievedAt": "2026-09-09T14:18:49.977811+00:00"
+    },
+    {
+      "id": "MB-2025-01316",
+      "nameDe": "Umbau und bauliche Anpassung der Gehwege im Kreuzungsbereich Hertastraße/ Kranoldstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01316/",
+      "longitude": 13.43453,
+      "latitude": 52.46614,
+      "locationDe": "Kreuzung Hertastraße/ Kranoldstraße in 12051 Berlin-Neukölln",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/153/title",
+        "exact_title_de": "Umbau und bauliche Anpassung der Gehwege im Kreuzungsbereich Hertastraße/ Kranoldstraße",
+        "location_pointer": "/153/point/geometry/coordinates",
+        "location_label_pointer": "/153/point_label"
+      },
+      "pageHash": "sha256:1f59e9225fd7a2c17aecdf8cfb469994600f37a62a973fbb9702947a800a3598",
+      "retrievedAt": "2026-09-09T14:18:50.265950+00:00"
+    },
+    {
+      "id": "MB-2025-01304",
+      "nameDe": "Neugestaltung Dresdener Str. 127 zu einem Ort für alle Generationen",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01304/",
+      "longitude": 13.417,
+      "latitude": 52.50055,
+      "locationDe": "Dresdener Str. 127 - Spielplatz und angrenzendes Straßenland",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/164/title",
+        "exact_title_de": "Neugestaltung Dresdener Str. 127 zu einem Ort für alle Generationen",
+        "location_pointer": "/164/point/geometry/coordinates",
+        "location_label_pointer": "/164/point_label"
+      },
+      "pageHash": "sha256:7d461e1c6ac9bc15055d6bae816baeb9764003cc2fa7373e32a34fb1c519f04a",
+      "retrievedAt": "2026-09-09T14:18:50.277163+00:00"
+    },
+    {
+      "id": "MB-2025-01295",
+      "nameDe": "Kabelsanierung in der Altstadt Spandau",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01295/",
+      "longitude": 13.20957,
+      "latitude": 52.53381,
+      "locationDe": "Altstadt Spandau",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/173/title",
+        "exact_title_de": "Kabelsanierung in der Altstadt Spandau",
+        "location_pointer": "/173/point/geometry/coordinates",
+        "location_label_pointer": "/173/point_label"
+      },
+      "pageHash": "sha256:30f63200768a8ff5a21ae8e5e9811e0ef56e7cf54e275892efb39f9f8594c5e3",
+      "retrievedAt": "2026-09-09T14:18:50.511018+00:00"
+    },
+    {
+      "id": "MB-2025-01294",
+      "nameDe": "Carl-Bosch-Oberschule Sanierung und Erweiterung der Bestandsgebäude der ISS und der ehemaligen Kinderklinik",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01294/",
+      "longitude": 13.293607,
+      "latitude": 52.622988,
+      "locationDe": "Frohnauer Str. 74-80, 13467 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/174/title",
+        "exact_title_de": "Carl-Bosch-Oberschule Sanierung und Erweiterung der Bestandsgebäude der ISS und der ehemaligen Kinderklinik",
+        "location_pointer": "/174/point/geometry/coordinates",
+        "location_label_pointer": "/174/point_label"
+      },
+      "pageHash": "sha256:a85a55ca22ff16bc512b728fcc831da688876835c3d6d624e3d16b4f7eec2b72",
+      "retrievedAt": "2026-09-09T14:18:50.538660+00:00"
+    },
+    {
+      "id": "MB-2025-01292",
+      "nameDe": "„Von Drachen und Nixen“ – Neubau Spielplatz Zossener Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01292/",
+      "longitude": 13.58497,
+      "latitude": 52.54602,
+      "locationDe": "Zossener Straße 66, 12629 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/176/title",
+        "exact_title_de": "„Von Drachen und Nixen“ – Neubau Spielplatz Zossener Straße",
+        "location_pointer": "/176/point/geometry/coordinates",
+        "location_label_pointer": "/176/point_label"
+      },
+      "pageHash": "sha256:4fbd0a809e85ae8ea17703fcc26984c71c26793324c08287f8f6d68be6db368e",
+      "retrievedAt": "2026-09-09T14:18:50.787208+00:00"
+    },
+    {
+      "id": "MB-2025-01290",
+      "nameDe": "Umgestaltung der Schillingstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01290/",
+      "longitude": 13.420575,
+      "latitude": 52.517354,
+      "locationDe": "Schillingstraße mit ihrer Promenade und ihren beiden Spielplätze vom U- und S-Bahnhof Jannowitzbrücke bis hin zum U-Bahnhof Schillingstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/178/title",
+        "exact_title_de": "Umgestaltung der Schillingstraße",
+        "location_pointer": "/178/point/geometry/coordinates",
+        "location_label_pointer": "/178/point_label"
+      },
+      "pageHash": "sha256:3c40b84d4b49d5ea8ebabb4c1f8f10aa9a7f39aa1b72b16a75432c562b5d9d5b",
+      "retrievedAt": "2026-09-09T14:18:50.841853+00:00"
+    },
+    {
+      "id": "MB-2025-01265",
+      "nameDe": "Neubau \"Haus der Jugend\" am Werner-Voss-Damm 47",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01265/",
+      "longitude": 13.370073232337605,
+      "latitude": 52.47423705125965,
+      "locationDe": "Werner-Voß-Damm 47, 12101 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/196/title",
+        "exact_title_de": "Neubau \"Haus der Jugend\" am Werner-Voss-Damm 47",
+        "location_pointer": "/196/point/geometry/coordinates",
+        "location_label_pointer": "/196/point_label"
+      },
+      "pageHash": "sha256:d6bd9afe5b4b0c40a50501855a36038af8989cb1480fd0fb507465c7ee8cb89c",
+      "retrievedAt": "2026-09-09T14:18:51.220733+00:00"
+    },
+    {
+      "id": "MB-2025-01255",
+      "nameDe": "Christoph-Földerich-Grundschule Neubau Sporthalle und Sanierung Schulhof",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01255/",
+      "longitude": 13.193055871287712,
+      "latitude": 52.52030201513556,
+      "locationDe": "Földerichplatz 5",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/205/title",
+        "exact_title_de": "Christoph-Földerich-Grundschule Neubau Sporthalle und Sanierung Schulhof",
+        "location_pointer": "/205/point/geometry/coordinates",
+        "location_label_pointer": "/205/point_label"
+      },
+      "pageHash": "sha256:ea1152a01dbcf7fe8f13c60d85d2909a35dd82eedf9428b0ea0c378e351c3adf",
+      "retrievedAt": "2026-09-09T14:18:51.154972+00:00"
+    },
+    {
+      "id": "MB-2025-01251",
+      "nameDe": "Neubau Götelstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01251/",
+      "longitude": 13.203206,
+      "latitude": 52.519864,
+      "locationDe": "Götelstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/206/title",
+        "exact_title_de": "Neubau Götelstraße",
+        "location_pointer": "/206/point/geometry/coordinates",
+        "location_label_pointer": "/206/point_label"
+      },
+      "pageHash": "sha256:bdacfc5b0fe820433932651142aa0e82f399adfca892a2f06e5cc5c0fe4c23ac",
+      "retrievedAt": "2026-09-09T14:18:51.400484+00:00"
+    },
+    {
+      "id": "MB-2025-01246",
+      "nameDe": "Neugestaltung Freifläche Neuenburgerstraße / Lindenstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01246/",
+      "longitude": 13.395295,
+      "latitude": 52.500268,
+      "locationDe": "Neuenburgerstraße / Lindenstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/211/title",
+        "exact_title_de": "Neugestaltung Freifläche Neuenburgerstraße / Lindenstraße",
+        "location_pointer": "/211/point/geometry/coordinates",
+        "location_label_pointer": "/211/point_label"
+      },
+      "pageHash": "sha256:e690718ac45f5b643f6cf6bd02fa6bbbf906e769d17d7e25e009bb8141a3eb69",
+      "retrievedAt": "2026-09-09T14:18:51.805283+00:00"
+    },
+    {
+      "id": "MB-2025-01241",
+      "nameDe": "Bibliothek am Schäfersee  - Energetische Sanierung und Herstellung der Barrierefreiheit",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01241/",
+      "longitude": 13.359675,
+      "latitude": 52.565806,
+      "locationDe": "Stargardtstraße 11-13, 13407 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/216/title",
+        "exact_title_de": "Bibliothek am Schäfersee  - Energetische Sanierung und Herstellung der Barrierefreiheit",
+        "location_pointer": "/216/point/geometry/coordinates",
+        "location_label_pointer": "/216/point_label"
+      },
+      "pageHash": "sha256:38c0b5a4f45698aafe77fe007d86e7e2f01a7301213c1ef3a9990308069efc8c",
+      "retrievedAt": "2026-09-09T14:18:51.653671+00:00"
+    },
+    {
+      "id": "MB-2025-01233",
+      "nameDe": "Erneuerung Spielplatz Germaniastraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01233/",
+      "longitude": 13.389566336870107,
+      "latitude": 52.465560858335344,
+      "locationDe": "Spielplatz Germaniastraße, Tempelhof",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/222/title",
+        "exact_title_de": "Erneuerung Spielplatz Germaniastraße",
+        "location_pointer": "/222/point/geometry/coordinates",
+        "location_label_pointer": "/222/point_label"
+      },
+      "pageHash": "sha256:f0d266a0bae6f0a83989ea9e180329834fabf48ed60dc82804194b3bb9892525",
+      "retrievedAt": "2026-09-09T14:18:51.891877+00:00"
+    },
+    {
+      "id": "MB-2025-01230",
+      "nameDe": "Erneuerung Spielplatz Götzstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01230/",
+      "longitude": 13.394973579672868,
+      "latitude": 52.462035159739976,
+      "locationDe": "Götzstraße, Tempelhof",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/225/title",
+        "exact_title_de": "Erneuerung Spielplatz Götzstraße",
+        "location_pointer": "/225/point/geometry/coordinates",
+        "location_label_pointer": "/225/point_label"
+      },
+      "pageHash": "sha256:f2bc5d9341d190b08b90001a0d8804424fff435996296d8ad6a1a30ec3de18d6",
+      "retrievedAt": "2026-09-09T14:18:52.051545+00:00"
+    },
+    {
+      "id": "MB-2025-01228",
+      "nameDe": "Neugestaltung Grünanlage",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01228/",
+      "longitude": 13.404672,
+      "latitude": 52.500803,
+      "locationDe": "Alexandrinenstraße Durchgang zur Lobeckstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/227/title",
+        "exact_title_de": "Neugestaltung Grünanlage",
+        "location_pointer": "/227/point/geometry/coordinates",
+        "location_label_pointer": "/227/point_label"
+      },
+      "pageHash": "sha256:f174238838a5f4a43f3bc8b6690a1722edf7cb6cac26af45e371e54ae3233be9",
+      "retrievedAt": "2026-09-09T14:18:52.130221+00:00"
+    },
+    {
+      "id": "MB-2025-01224",
+      "nameDe": "Neugestaltung Blücherstraße zwischen Baerwaldstraße und Südstern",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01224/",
+      "longitude": 13.403385,
+      "latitude": 52.491678,
+      "locationDe": "Blücherstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/231/title",
+        "exact_title_de": "Neugestaltung Blücherstraße zwischen Baerwaldstraße und Südstern",
+        "location_pointer": "/231/point/geometry/coordinates",
+        "location_label_pointer": "/231/point_label"
+      },
+      "pageHash": "sha256:65ec2c5453be39b4ee5cfe42c6067b0510d60ba0abd8aa902155246b7525c726",
+      "retrievedAt": "2026-09-09T14:18:52.291877+00:00"
+    },
+    {
+      "id": "MB-2025-01200",
+      "nameDe": "Neugestaltung Spielplatz Waldemarstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01200/",
+      "longitude": 13.422943,
+      "latitude": 52.503122,
+      "locationDe": "Spielplatz am Bethanien",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/249/title",
+        "exact_title_de": "Neugestaltung Spielplatz Waldemarstraße",
+        "location_pointer": "/249/point/geometry/coordinates",
+        "location_label_pointer": "/249/point_label"
+      },
+      "pageHash": "sha256:713816fa44b04008d1b647914fe63a582d9bee44e789074030836c033c9c0b23",
+      "retrievedAt": "2026-09-09T14:18:52.341837+00:00"
+    },
+    {
+      "id": "MB-2025-01199",
+      "nameDe": "Neugestaltung der Kinderspielplätze am Richardplatz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01199/",
+      "longitude": 13.446795338846517,
+      "latitude": 52.474713430628626,
+      "locationDe": "Richardplatz 28 (neben der alten Schmiede) Richardplatz 9 (neben dem Comeniusgarten)",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/250/title",
+        "exact_title_de": "Neugestaltung der Kinderspielplätze am Richardplatz",
+        "location_pointer": "/250/point/geometry/coordinates",
+        "location_label_pointer": "/250/point_label"
+      },
+      "pageHash": "sha256:c3a908117e2fb6e8ac1efbc5bd0c4cd6831dfcd83a246100e03a7ed335b831e5",
+      "retrievedAt": "2026-09-09T14:18:52.545521+00:00"
+    },
+    {
+      "id": "MB-2025-01195",
+      "nameDe": "Neubau Umspannwerk Kurt-Schumacher-Damm",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01195/",
+      "longitude": 13.303667637547745,
+      "latitude": 52.55716886282206,
+      "locationDe": "Rue Charles Calmette 11c, 13405 Berlin (Cité Pasteur)",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/254/title",
+        "exact_title_de": "Neubau Umspannwerk Kurt-Schumacher-Damm",
+        "location_pointer": "/254/point/geometry/coordinates",
+        "location_label_pointer": "/254/point_label"
+      },
+      "pageHash": "sha256:9dabb16d0e8f62f8de40916e767bd3b0611c9e3ed8f8e55026a2152c92b5f310",
+      "retrievedAt": "2026-09-09T14:18:52.564809+00:00"
+    },
+    {
+      "id": "MB-2025-01194",
+      "nameDe": "denkmalgerechte Modernisierung des Brunnenplatzes",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01194/",
+      "longitude": 13.375625152397644,
+      "latitude": 52.550812532616135,
+      "locationDe": "Brunnenplatz",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/255/title",
+        "exact_title_de": "denkmalgerechte Modernisierung des Brunnenplatzes",
+        "location_pointer": "/255/point/geometry/coordinates",
+        "location_label_pointer": "/255/point_label"
+      },
+      "pageHash": "sha256:1e6faf85ef53dfbe85a4038243714da334553b3b5c15c181bd37c05345859328",
+      "retrievedAt": "2026-09-09T14:18:52.831079+00:00"
+    },
+    {
+      "id": "MB-2025-01168",
+      "nameDe": "Neubau Radverkehrsanlage in der Oranienburger Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01168/",
+      "longitude": 13.326437,
+      "latitude": 52.604794,
+      "locationDe": "Oranienburger Straße/Oraniendamm zwischen Wittenauer Straße und Zabel-Krüger-Damm, Ortsteil Wittenau/Waidmannslust",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/269/title",
+        "exact_title_de": "Neubau Radverkehrsanlage in der Oranienburger Straße",
+        "location_pointer": "/269/point/geometry/coordinates",
+        "location_label_pointer": "/269/point_label"
+      },
+      "pageHash": "sha256:c484382fc20585d96f47f33a8334c2e6c7392a2d81678823b2d7ba3415bef47d",
+      "retrievedAt": "2026-09-09T14:18:52.794152+00:00"
+    },
+    {
+      "id": "MB-2025-01155",
+      "nameDe": "Amtshaus Buchholz: Grundinstandsetzung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01155/",
+      "longitude": 13.43118,
+      "latitude": 52.60155,
+      "locationDe": "Nachbarschaftszentrum Amtshaus Buchholz in Französisch-Buchholz zwischen Berliner Straße und Schönhauser Straße direkt an der Bus- und Tramhaltestelle Blankenfelder Straße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/279/title",
+        "exact_title_de": "Amtshaus Buchholz: Grundinstandsetzung",
+        "location_pointer": "/279/point/geometry/coordinates",
+        "location_label_pointer": "/279/point_label"
+      },
+      "pageHash": "sha256:6d08c4dedb4e8226c5ff81f1b896e3fc4ecba97ae19ad8f071542c3001b0dac9",
+      "retrievedAt": "2026-09-09T14:18:53.026712+00:00"
+    },
+    {
+      "id": "MB-2025-01152",
+      "nameDe": "Sanierung des Kunstrasen Großspielfeldes Königshorster Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01152/",
+      "longitude": 13.349698,
+      "latitude": 52.598991,
+      "locationDe": "Königshorster Str. 15, 13439 Berlin-Reinickendorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/280/title",
+        "exact_title_de": "Sanierung des Kunstrasen Großspielfeldes Königshorster Straße",
+        "location_pointer": "/280/point/geometry/coordinates",
+        "location_label_pointer": "/280/point_label"
+      },
+      "pageHash": "sha256:c944e6f3def6eba0afca5427d94526b28e5389c35040e6f900326466b1926731",
+      "retrievedAt": "2026-09-09T14:18:53.045941+00:00"
+    },
+    {
+      "id": "MB-2025-01151",
+      "nameDe": "Freizeitpark Lübars - Wegesanierung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01151/",
+      "longitude": 13.367692,
+      "latitude": 52.611581,
+      "locationDe": "Freizeitpark Lübars",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/281/title",
+        "exact_title_de": "Freizeitpark Lübars - Wegesanierung",
+        "location_pointer": "/281/point/geometry/coordinates",
+        "location_label_pointer": "/281/point_label"
+      },
+      "pageHash": "sha256:f1dc8b01a38a2ca2be5515820e6d4a7bfecafa871a03bf212434d7c1f47f4593",
+      "retrievedAt": "2026-09-09T14:18:53.338001+00:00"
+    },
+    {
+      "id": "MB-2025-01148",
+      "nameDe": "Umbau der Adalbertstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01148/",
+      "longitude": 13.422619947610103,
+      "latitude": 52.50565180169532,
+      "locationDe": "Bezirksregion Alexanderplatz, Adalbertstraße, 10179 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/284/title",
+        "exact_title_de": "Umbau der Adalbertstraße",
+        "location_pointer": "/284/point/geometry/coordinates",
+        "location_label_pointer": "/284/point_label"
+      },
+      "pageHash": "sha256:840a872a6622b5b5750dfcc3f2b8854cf89d1e299374cfe4b43e6bd8721064e8",
+      "retrievedAt": "2026-09-09T14:18:53.347826+00:00"
+    },
+    {
+      "id": "MB-2025-01145",
+      "nameDe": "Ausbau der Schmidtstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01145/",
+      "longitude": 13.417573,
+      "latitude": 52.508615,
+      "locationDe": "Bezirksregion Alexanderplatz, Schmidtstraße, 10179 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/287/title",
+        "exact_title_de": "Ausbau der Schmidtstraße",
+        "location_pointer": "/287/point/geometry/coordinates",
+        "location_label_pointer": "/287/point_label"
+      },
+      "pageHash": "sha256:605c8eada1586b955bc5223a0669345cc13975c2eddb44fd102b85f40051d071",
+      "retrievedAt": "2026-09-09T14:18:53.582111+00:00"
+    },
+    {
+      "id": "MB-2025-01135",
+      "nameDe": "Sanierung Germersheimer Platz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01135/",
+      "longitude": 13.187796726224251,
+      "latitude": 52.5441641543991,
+      "locationDe": "Germersheimer Platz 13583, Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/297/title",
+        "exact_title_de": "Sanierung Germersheimer Platz",
+        "location_pointer": "/297/point/geometry/coordinates",
+        "location_label_pointer": "/297/point_label"
+      },
+      "pageHash": "sha256:aabd4010375640ff6813fcb3ad1a3d4edc426f769336a35627dbfe41a2500d44",
+      "retrievedAt": "2026-09-09T14:18:53.584329+00:00"
+    },
+    {
+      "id": "MB-2025-01131",
+      "nameDe": "Umgestaltung Potentialflächen Sportplatz Maybachufer",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01131/",
+      "longitude": 13.43574336167208,
+      "latitude": 52.489359537148076,
+      "locationDe": "Pflügerstr. 46, Maybachufer, Nord-Neukölln",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/299/title",
+        "exact_title_de": "Umgestaltung Potentialflächen Sportplatz Maybachufer",
+        "location_pointer": "/299/point/geometry/coordinates",
+        "location_label_pointer": "/299/point_label"
+      },
+      "pageHash": "sha256:ab6ff17d861d6f8f47449b7495831b62dbc210f101b7bf5d582be82d8c0cbb14",
+      "retrievedAt": "2026-09-09T14:18:53.910534+00:00"
+    },
+    {
+      "id": "MB-2025-01129",
+      "nameDe": "Netzausbau Tempelhof-Schöneberg; Marienfelde",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01129/",
+      "longitude": 13.392849,
+      "latitude": 52.416843,
+      "locationDe": "Marienfelde",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/300/title",
+        "exact_title_de": "Netzausbau Tempelhof-Schöneberg; Marienfelde",
+        "location_pointer": "/300/point/geometry/coordinates",
+        "location_label_pointer": "/300/point_label"
+      },
+      "pageHash": "sha256:25e5419f2905ce3cb7c5fadca6dfa5d6c32cff35429212ec306124df8761f107",
+      "retrievedAt": "2026-09-09T14:18:53.817827+00:00"
+    },
+    {
+      "id": "MB-2025-01125",
+      "nameDe": "Neugestaltung Lausitzer Platz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01125/",
+      "longitude": 13.430657,
+      "latitude": 52.500353,
+      "locationDe": "Lausitzer Platz",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/303/title",
+        "exact_title_de": "Neugestaltung Lausitzer Platz",
+        "location_pointer": "/303/point/geometry/coordinates",
+        "location_label_pointer": "/303/point_label"
+      },
+      "pageHash": "sha256:b0d94a862f9b3f15953bb21457add19433663e4447d0816d1644dcf9d4fe0e27",
+      "retrievedAt": "2026-09-09T14:18:54.100822+00:00"
+    },
+    {
+      "id": "MB-2025-01122",
+      "nameDe": "Sanierung und Ersatzanbau Kindervilla Lucy-Lameck Str. 31",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01122/",
+      "longitude": 13.421848603366058,
+      "latitude": 52.48353918293268,
+      "locationDe": "Lucy-Lameck Str. 31, Neukölln",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/304/title",
+        "exact_title_de": "Sanierung und Ersatzanbau Kindervilla Lucy-Lameck Str. 31",
+        "location_pointer": "/304/point/geometry/coordinates",
+        "location_label_pointer": "/304/point_label"
+      },
+      "pageHash": "sha256:14b8b9aa3554b7928cc2175824f0ca614e2c725f4b8d4c498bfc1a85d5ebf0e9",
+      "retrievedAt": "2026-09-09T14:18:54.152836+00:00"
+    },
+    {
+      "id": "MB-2025-01119",
+      "nameDe": "Erweiterung und Umgestaltung am Sprengelpark",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01119/",
+      "longitude": 13.353807,
+      "latitude": 52.540169,
+      "locationDe": "Teile des Sprengelparks, der Kiautschoustraße und des Pekinger Platzes",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/307/title",
+        "exact_title_de": "Erweiterung und Umgestaltung am Sprengelpark",
+        "location_pointer": "/307/point/geometry/coordinates",
+        "location_label_pointer": "/307/point_label"
+      },
+      "pageHash": "sha256:4f4754cb9d195f3b480b4dcd3c8a34bf3bbce975eec577d7a9616842ec652fcd",
+      "retrievedAt": "2026-09-09T14:18:54.383976+00:00"
+    },
+    {
+      "id": "MB-2025-01115",
+      "nameDe": "Umgestaltung nördlicher Grünzug Gropiusstadt",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01115/",
+      "longitude": 13.452351,
+      "latitude": 52.430387,
+      "locationDe": "Johannesthaler Chaussee 326, 12353 Berlin, bis etwa 100 m vor dem Ortsende Gropiusstadt / dem Ortsanfang Britz-Süd.",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/310/title",
+        "exact_title_de": "Umgestaltung nördlicher Grünzug Gropiusstadt",
+        "location_pointer": "/310/point/geometry/coordinates",
+        "location_label_pointer": "/310/point_label"
+      },
+      "pageHash": "sha256:42a2a3f54c9e2762223bb10d12fb67ec9449ddba636ed2fd7791d7d3bb4343f2",
+      "retrievedAt": "2026-09-09T14:18:54.540639+00:00"
+    },
+    {
+      "id": "MB-2025-01112",
+      "nameDe": "Schulhofneubau Ringelnatz-Grundschule",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01112/",
+      "longitude": 13.338175,
+      "latitude": 52.585862,
+      "locationDe": "Wilhelm-Gericke-Straße 7, 13437 Berlin-Reinickendorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/313/title",
+        "exact_title_de": "Schulhofneubau Ringelnatz-Grundschule",
+        "location_pointer": "/313/point/geometry/coordinates",
+        "location_label_pointer": "/313/point_label"
+      },
+      "pageHash": "sha256:3f7cf6ac5323e708d7d968b83b3e66f06eb4e9aa0b1df1e174eb169a4c545c49",
+      "retrievedAt": "2026-09-09T14:18:54.629291+00:00"
+    },
+    {
+      "id": "MB-2025-01110",
+      "nameDe": "Schulhofneubau der Charlie-Chaplin-Grundschule",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01110/",
+      "longitude": 13.36504,
+      "latitude": 52.597652,
+      "locationDe": "Wilhelmsruher Damm 90 - 94  13439 Berlin - Reinickendorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/314/title",
+        "exact_title_de": "Schulhofneubau der Charlie-Chaplin-Grundschule",
+        "location_pointer": "/314/point/geometry/coordinates",
+        "location_label_pointer": "/314/point_label"
+      },
+      "pageHash": "sha256:ec415d0c99aa183c1ac6568f0f6b7eb1d5cd589aff0c6fe2fadb86e8ce08a6ca",
+      "retrievedAt": "2026-09-09T14:18:54.778171+00:00"
+    },
+    {
+      "id": "MB-2025-01107",
+      "nameDe": "Umgestaltung Grünanlage Carl-Herz-Ufer und Bau barrierefreier Spielplatz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01107/",
+      "longitude": 13.399297,
+      "latitude": 52.496689,
+      "locationDe": "Carl-Herz-Ufer 34",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/315/title",
+        "exact_title_de": "Umgestaltung Grünanlage Carl-Herz-Ufer und Bau barrierefreier Spielplatz",
+        "location_pointer": "/315/point/geometry/coordinates",
+        "location_label_pointer": "/315/point_label"
+      },
+      "pageHash": "sha256:cafe1c69c532c932c2714dc01f236b2da8c058c66c2a6595df8a40aabf4fd206",
+      "retrievedAt": "2026-09-09T14:18:54.854224+00:00"
+    },
+    {
+      "id": "MB-2025-01096",
+      "nameDe": "Neugestaltung der Freiflächen Koppen-/Palisadenstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01096/",
+      "longitude": 13.436462,
+      "latitude": 52.51864,
+      "locationDe": "",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/326/title",
+        "exact_title_de": "Neugestaltung der Freiflächen Koppen-/Palisadenstraße",
+        "location_pointer": "/326/point/geometry/coordinates",
+        "location_label_pointer": "/326/point_label"
+      },
+      "pageHash": "sha256:708e286ffd212687e39b7dfae772d6ced591110fb89291b8267f749b697c946b",
+      "retrievedAt": "2026-09-09T14:18:55.070123+00:00"
+    },
+    {
+      "id": "MB-2025-01095",
+      "nameDe": "Neubau Schulsportanlage für die Spartacus-Grundschule",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2025-01095/",
+      "longitude": 13.436698,
+      "latitude": 52.519953,
+      "locationDe": "Freifläche zwischen Frieden- Koppen- und Palisadenstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/327/title",
+        "exact_title_de": "Neubau Schulsportanlage für die Spartacus-Grundschule",
+        "location_pointer": "/327/point/geometry/coordinates",
+        "location_label_pointer": "/327/point_label"
+      },
+      "pageHash": "sha256:5b3fdd1170bfcf40fd1a13e2578a961db8846efa22de8bf2ec7bd834c21eea71",
+      "retrievedAt": "2026-09-09T14:18:55.082981+00:00"
+    },
+    {
+      "id": "MB-2024-01081",
+      "nameDe": "Umgestaltung der Schillerpromenade und des Herrfurthplatzes",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01081/",
+      "longitude": 13.422297,
+      "latitude": 52.477099,
+      "locationDe": "Mittelstreifen der Schillerpromenade zwischen Oker- und Selchower Straße inklusive des Herrfurthplatzes",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/341/title",
+        "exact_title_de": "Umgestaltung der Schillerpromenade und des Herrfurthplatzes",
+        "location_pointer": "/341/point/geometry/coordinates",
+        "location_label_pointer": "/341/point_label"
+      },
+      "pageHash": "sha256:4d96d410103615a7c27c00133b3dfb9f4e9ba73ced709919f1f1680d5163adfb",
+      "retrievedAt": "2026-09-09T14:18:55.470499+00:00"
+    },
+    {
+      "id": "MB-2024-01080",
+      "nameDe": "Sanierung des Gartendenkmals Marienhöhe",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01080/",
+      "longitude": 13.371313367877784,
+      "latitude": 52.45284918849058,
+      "locationDe": "Tempelhof | Marienhöher Weg 82, 12105 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/342/title",
+        "exact_title_de": "Sanierung des Gartendenkmals Marienhöhe",
+        "location_pointer": "/342/point/geometry/coordinates",
+        "location_label_pointer": "/342/point_label"
+      },
+      "pageHash": "sha256:9f4b6b3784d6cb2c099cfc701629ecffa16e944c7777a847f325110342ccd1c7",
+      "retrievedAt": "2026-09-09T14:18:55.319813+00:00"
+    },
+    {
+      "id": "MB-2024-01075",
+      "nameDe": "Ersatzneubau Sport- und Funktionsgebäude Ella-Kay-Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01075/",
+      "longitude": 13.429597115283574,
+      "latitude": 52.5382675652828,
+      "locationDe": "Hockeyplatz Ella-Kay-Straße 2/ Ecke Danziger Straße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/346/title",
+        "exact_title_de": "Ersatzneubau Sport- und Funktionsgebäude Ella-Kay-Straße",
+        "location_pointer": "/346/point/geometry/coordinates",
+        "location_label_pointer": "/346/point_label"
+      },
+      "pageHash": "sha256:66de33478a3b62208913c4485d52a69b16145d79bd2ce4edfd839620b813928f",
+      "retrievedAt": "2026-09-09T14:18:55.553233+00:00"
+    },
+    {
+      "id": "MB-2024-01063",
+      "nameDe": "Schulhofsanierung Märkische Grundschule",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01063/",
+      "longitude": 13.36053,
+      "latitude": 52.59497,
+      "locationDe": "Märkische Grundschule",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/355/title",
+        "exact_title_de": "Schulhofsanierung Märkische Grundschule",
+        "location_pointer": "/355/point/geometry/coordinates",
+        "location_label_pointer": "/355/point_label"
+      },
+      "pageHash": "sha256:1cb3dccc4464bc74c37784b640584e64cc4ef155310614d7560e46e147072fc0",
+      "retrievedAt": "2026-09-09T14:18:55.693179+00:00"
+    },
+    {
+      "id": "MB-2024-01045",
+      "nameDe": "Neubau GE-Förderzentrum Waidmannsluster Damm",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01045/",
+      "longitude": 13.28841,
+      "latitude": 52.595323,
+      "locationDe": "Waidmannsluster Damm 10-14, 13467 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/371/title",
+        "exact_title_de": "Neubau GE-Förderzentrum Waidmannsluster Damm",
+        "location_pointer": "/371/point/geometry/coordinates",
+        "location_label_pointer": "/371/point_label"
+      },
+      "pageHash": "sha256:678f7f7d2214d9b62047b41c789268ae58eaf427486d27f860b8f2e4ac71629e",
+      "retrievedAt": "2026-09-09T14:18:55.770788+00:00"
+    },
+    {
+      "id": "MB-2024-01043",
+      "nameDe": "Modernisierung der Begegnungsstätte Haus Bottrop",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01043/",
+      "longitude": 13.37390228865035,
+      "latitude": 52.54289242260716,
+      "locationDe": "Bezirksregion Brunnenstraße Nord,  Schönwalder Straße 4, 13347 Berlin, direkt an der Panke.",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/373/title",
+        "exact_title_de": "Modernisierung der Begegnungsstätte Haus Bottrop",
+        "location_pointer": "/373/point/geometry/coordinates",
+        "location_label_pointer": "/373/point_label"
+      },
+      "pageHash": "sha256:416cfab0fa1d7cc4557da9db9f0ad308163ca0240786b42e954040ecaf1d44ba",
+      "retrievedAt": "2026-09-09T14:18:55.977989+00:00"
+    },
+    {
+      "id": "MB-2024-01042",
+      "nameDe": "Sanierung des Otawitreffs",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01042/",
+      "longitude": 13.337161522032583,
+      "latitude": 52.55300039292823,
+      "locationDe": "Bezirksregion Parkviertel, Otawistraße 46, 13351 Berlin, in unmittelbarer Nähe zum Volkspark Rehberge",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/374/title",
+        "exact_title_de": "Sanierung des Otawitreffs",
+        "location_pointer": "/374/point/geometry/coordinates",
+        "location_label_pointer": "/374/point_label"
+      },
+      "pageHash": "sha256:b9ffe843365c4c8bfe3b3679b2da3b0811188a4c276635694e0c9466ceb8bde7",
+      "retrievedAt": "2026-09-09T14:18:55.996311+00:00"
+    },
+    {
+      "id": "MB-2024-01041",
+      "nameDe": "Schulhofsanierung Hoffmann-von-Fallersleben-Grundschule",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01041/",
+      "longitude": 13.295180312129313,
+      "latitude": 52.58735574698007,
+      "locationDe": "Hoffmann-von-Fallersleben Grundschule",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/375/title",
+        "exact_title_de": "Schulhofsanierung Hoffmann-von-Fallersleben-Grundschule",
+        "location_pointer": "/375/point/geometry/coordinates",
+        "location_label_pointer": "/375/point_label"
+      },
+      "pageHash": "sha256:502b8a41eb19378b88797e679ba63254c8b6ad29ee7b153f1da690823d833043",
+      "retrievedAt": "2026-09-09T14:18:56.327766+00:00"
+    },
+    {
+      "id": "MB-2024-01039",
+      "nameDe": "Sanierung des Uferwanderweges Tegel",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01039/",
+      "longitude": 13.258438,
+      "latitude": 52.578826,
+      "locationDe": "Tegel",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/376/title",
+        "exact_title_de": "Sanierung des Uferwanderweges Tegel",
+        "location_pointer": "/376/point/geometry/coordinates",
+        "location_label_pointer": "/376/point_label"
+      },
+      "pageHash": "sha256:f80b5e6f77735853ea8988004efcc7c4e48bcd9ff2d44c84c5ad48f948c08dc0",
+      "retrievedAt": "2026-09-09T14:18:56.327352+00:00"
+    },
+    {
+      "id": "MB-2024-01038",
+      "nameDe": "Sanierung des Uferwanderweges Konradshöhe",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01038/",
+      "longitude": 13.235779,
+      "latitude": 52.568511,
+      "locationDe": "Konradshöhe",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/377/title",
+        "exact_title_de": "Sanierung des Uferwanderweges Konradshöhe",
+        "location_pointer": "/377/point/geometry/coordinates",
+        "location_label_pointer": "/377/point_label"
+      },
+      "pageHash": "sha256:0a7b9b7ab0f3bcd6f748d20c9376f06b434e180c8e4dadd1ab93e0576b892469",
+      "retrievedAt": "2026-09-09T14:18:56.587003+00:00"
+    },
+    {
+      "id": "MB-2024-01028",
+      "nameDe": "Grundinstandsetzung Jugendfreizeitstätte Fuchsbau",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01028/",
+      "longitude": 13.35397,
+      "latitude": 52.57144,
+      "locationDe": "Fuchsbau",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/387/title",
+        "exact_title_de": "Grundinstandsetzung Jugendfreizeitstätte Fuchsbau",
+        "location_pointer": "/387/point/geometry/coordinates",
+        "location_label_pointer": "/387/point_label"
+      },
+      "pageHash": "sha256:765bc1bdf271c6e2803e53a9d2749fa62d2ee065306c3609b0382afd02a873dc",
+      "retrievedAt": "2026-09-09T14:18:56.586639+00:00"
+    },
+    {
+      "id": "MB-2024-01023",
+      "nameDe": "Umgestaltung der Ella-Barowsky-Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01023/",
+      "longitude": 13.357396604982016,
+      "latitude": 52.47797409387799,
+      "locationDe": "Schöneberg | Ella-Barowsky-Straße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/392/title",
+        "exact_title_de": "Umgestaltung der Ella-Barowsky-Straße",
+        "location_pointer": "/392/point/geometry/coordinates",
+        "location_label_pointer": "/392/point_label"
+      },
+      "pageHash": "sha256:5e4eee73deedb88d56786e4cc26b685554f757f3ce25b94ddab37bd070027321",
+      "retrievedAt": "2026-09-09T14:18:56.840156+00:00"
+    },
+    {
+      "id": "MB-2024-01020",
+      "nameDe": "Umgestaltung des Kinderspielplatzes in der Silbersteinstraße 119",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01020/",
+      "longitude": 13.425368300584534,
+      "latitude": 52.465537604939435,
+      "locationDe": "Silbersteinstraße 119, 12051 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/395/title",
+        "exact_title_de": "Umgestaltung des Kinderspielplatzes in der Silbersteinstraße 119",
+        "location_pointer": "/395/point/geometry/coordinates",
+        "location_label_pointer": "/395/point_label"
+      },
+      "pageHash": "sha256:12713b402d7200a85647fdd5ee2bf987293ab0ba22ae29d88abb5b80fcff9124",
+      "retrievedAt": "2026-09-09T14:18:56.839511+00:00"
+    },
+    {
+      "id": "MB-2024-01014",
+      "nameDe": "Sanierung und Erweiterung der Jugendfreizeiteinrichtung Düppel",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01014/",
+      "longitude": 13.223497320041176,
+      "latitude": 52.428063099350936,
+      "locationDe": "JFE Düppel",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/398/title",
+        "exact_title_de": "Sanierung und Erweiterung der Jugendfreizeiteinrichtung Düppel",
+        "location_pointer": "/398/point/geometry/coordinates",
+        "location_label_pointer": "/398/point_label"
+      },
+      "pageHash": "sha256:4dbfb6f0f9e3a99b2e9e6d77c093920f4b8d1bde41a8deed6ea494aca8a93607",
+      "retrievedAt": "2026-09-09T14:18:57.180033+00:00"
+    },
+    {
+      "id": "MB-2024-01002",
+      "nameDe": "Umbau der Ilsestraße zur Fahrradstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-01002/",
+      "longitude": 13.43577786026843,
+      "latitude": 52.46933991841853,
+      "locationDe": "Ilsestraße zwischen Thomasstraße und Emser Straße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/408/title",
+        "exact_title_de": "Umbau der Ilsestraße zur Fahrradstraße",
+        "location_pointer": "/408/point/geometry/coordinates",
+        "location_label_pointer": "/408/point_label"
+      },
+      "pageHash": "sha256:bdbec8ad2f1cf173a8a80c0a76ecf5cc7dbae68c20dfc0babe4409048128ef09",
+      "retrievedAt": "2026-09-09T14:18:57.179571+00:00"
+    },
+    {
+      "id": "MB-2024-00999",
+      "nameDe": "Aufwertung und Sanierung des Rosengartens in Reinickendorf",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00999/",
+      "longitude": 13.318461,
+      "latitude": 52.569666,
+      "locationDe": "Reinickendorf West, Grünfläche zwischen Zobeltitz- und General Barbystraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/410/title",
+        "exact_title_de": "Aufwertung und Sanierung des Rosengartens in Reinickendorf",
+        "location_pointer": "/410/point/geometry/coordinates",
+        "location_label_pointer": "/410/point_label"
+      },
+      "pageHash": "sha256:5fcb24342e26af8db08ba9bf845e8f35f2044cc6d9c515923752d54dd2f9609a",
+      "retrievedAt": "2026-09-09T14:18:57.421633+00:00"
+    },
+    {
+      "id": "MB-2024-00994",
+      "nameDe": "Neubau Umspannwerk Amalienhof",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00994/",
+      "longitude": 13.181201,
+      "latitude": 52.524225,
+      "locationDe": "Amalienhof",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/415/title",
+        "exact_title_de": "Neubau Umspannwerk Amalienhof",
+        "location_pointer": "/415/point/geometry/coordinates",
+        "location_label_pointer": "/415/point_label"
+      },
+      "pageHash": "sha256:7d5ee5b49cddd4452ba399d36c78f216c3684e787039bc186ed08c1bf50651a3",
+      "retrievedAt": "2026-09-09T14:18:57.429042+00:00"
+    },
+    {
+      "id": "MB-2024-00987",
+      "nameDe": "Neubau Beratungszentrum am Senftenberger Ring 27a",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00987/",
+      "longitude": 13.359439489877827,
+      "latitude": 52.60200101939716,
+      "locationDe": "Senftenberger Ring 27 a, 13435 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/420/title",
+        "exact_title_de": "Neubau Beratungszentrum am Senftenberger Ring 27a",
+        "location_pointer": "/420/point/geometry/coordinates",
+        "location_label_pointer": "/420/point_label"
+      },
+      "pageHash": "sha256:452bc0b70ff2d76c71291edb6f0b8b6e3618312d0f3556e5c0c5f63ee4b76eaa",
+      "retrievedAt": "2026-09-09T14:18:57.673031+00:00"
+    },
+    {
+      "id": "MB-2024-00983",
+      "nameDe": "Gesamtsanierung der Miriam-Makeba-Grundschule – Gebäudehülle und Innensanierung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00983/",
+      "longitude": 13.33149185677904,
+      "latitude": 52.523376846004844,
+      "locationDe": "Bezirksregion Moabit West, Zinzendorfstraße 15 – 16, 10555 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/423/title",
+        "exact_title_de": "Gesamtsanierung der Miriam-Makeba-Grundschule – Gebäudehülle und Innensanierung",
+        "location_pointer": "/423/point/geometry/coordinates",
+        "location_label_pointer": "/423/point_label"
+      },
+      "pageHash": "sha256:93f3ba111165bee8425978530c07ee399fd1d205e5f4795bca8640a17dfacdb3",
+      "retrievedAt": "2026-09-09T14:18:57.662625+00:00"
+    },
+    {
+      "id": "MB-2024-00981",
+      "nameDe": "Neubau einer Gemeinschaftsschule an der Pankstraße 70 / Orthstraße 1",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00981/",
+      "longitude": 13.374159,
+      "latitude": 52.548749,
+      "locationDe": "Bezirksregion Wedding Zentrum, Grundstück zwischen Pankstraße, Schönstedtstraße und Wiesenstraße, 13357 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/425/title",
+        "exact_title_de": "Neubau einer Gemeinschaftsschule an der Pankstraße 70 / Orthstraße 1",
+        "location_pointer": "/425/point/geometry/coordinates",
+        "location_label_pointer": "/425/point_label"
+      },
+      "pageHash": "sha256:6a6d16ca07a65af41c87e39df21d37d71d828f7962ab0a410c97c2a40a749434",
+      "retrievedAt": "2026-09-09T14:18:57.898940+00:00"
+    },
+    {
+      "id": "MB-2024-00979",
+      "nameDe": "Neubau Gymnasium Schulstraße 97",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00979/",
+      "longitude": 13.369687710696882,
+      "latitude": 52.553820956567414,
+      "locationDe": "",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/427/title",
+        "exact_title_de": "Neubau Gymnasium Schulstraße 97",
+        "location_pointer": "/427/point/geometry/coordinates",
+        "location_label_pointer": "/427/point_label"
+      },
+      "pageHash": "sha256:c1201ec8bcb3c0ea2e487f879304639db8d2a62b121a6014a810f9417b350d79",
+      "retrievedAt": "2026-09-09T14:18:57.898546+00:00"
+    },
+    {
+      "id": "MB-2024-00978",
+      "nameDe": "Carl-Kraemer-Grundschule, Gesamtsanierung",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00978/",
+      "longitude": 13.38280799235317,
+      "latitude": 52.56114782417177,
+      "locationDe": "Bezirksregion Osloer Straße, Zechliner Straße 4, 13359 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/428/title",
+        "exact_title_de": "Carl-Kraemer-Grundschule, Gesamtsanierung",
+        "location_pointer": "/428/point/geometry/coordinates",
+        "location_label_pointer": "/428/point_label"
+      },
+      "pageHash": "sha256:921ae905966404473d6851934c44736e54301a13b465905b0aaad1cb745b7b4a",
+      "retrievedAt": "2026-09-09T14:18:58.138986+00:00"
+    },
+    {
+      "id": "MB-2024-00973",
+      "nameDe": "Erneuerung der Uferwege und Freiflächen am Urbanhafen in Friedrichshain-Kreuzberg",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00973/",
+      "longitude": 13.407075,
+      "latitude": 52.495376,
+      "locationDe": "Urbanhafen",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/432/title",
+        "exact_title_de": "Erneuerung der Uferwege und Freiflächen am Urbanhafen in Friedrichshain-Kreuzberg",
+        "location_pointer": "/432/point/geometry/coordinates",
+        "location_label_pointer": "/432/point_label"
+      },
+      "pageHash": "sha256:148458ca7beea8750400cb06b13adb3a59b24a1e95b6d7efe89f8c2fca09c567",
+      "retrievedAt": "2026-09-09T14:18:58.192554+00:00"
+    },
+    {
+      "id": "MB-2024-00958",
+      "nameDe": "Neugestaltung Europaplatz Nord",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00958/",
+      "longitude": 13.368827,
+      "latitude": 52.527302,
+      "locationDe": "Europaplatz Nord, Mitte",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/438/title",
+        "exact_title_de": "Neugestaltung Europaplatz Nord",
+        "location_pointer": "/438/point/geometry/coordinates",
+        "location_label_pointer": "/438/point_label"
+      },
+      "pageHash": "sha256:efc433d65658f7eb5623227b23623faa6fa8411d816db3ce61151687f8e6dbe1",
+      "retrievedAt": "2026-09-09T14:18:58.431953+00:00"
+    },
+    {
+      "id": "MB-2024-00955",
+      "nameDe": "Neubau Wegeverbindung am Stangenpfuhl",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00955/",
+      "longitude": 13.317575,
+      "latitude": 52.413441,
+      "locationDe": "Stangenpfuhl",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/439/title",
+        "exact_title_de": "Neubau Wegeverbindung am Stangenpfuhl",
+        "location_pointer": "/439/point/geometry/coordinates",
+        "location_label_pointer": "/439/point_label"
+      },
+      "pageHash": "sha256:a9f89989a897ed30671d44a48d1b40141bd9efa73df4192b4280c20cb946953d",
+      "retrievedAt": "2026-09-09T14:18:58.414295+00:00"
+    },
+    {
+      "id": "MB-2024-00951",
+      "nameDe": "Sanierung des Bolzplatzes Bernkastler Platz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00951/",
+      "longitude": 13.346307,
+      "latitude": 52.440152,
+      "locationDe": "Bernkastler Platz",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/440/title",
+        "exact_title_de": "Sanierung des Bolzplatzes Bernkastler Platz",
+        "location_pointer": "/440/point/geometry/coordinates",
+        "location_label_pointer": "/440/point_label"
+      },
+      "pageHash": "sha256:b776126918fb4e4375545c8469c3ef31f7e823f3ead4077e2541d68c77d426ba",
+      "retrievedAt": "2026-09-09T14:18:58.666780+00:00"
+    },
+    {
+      "id": "MB-2024-00949",
+      "nameDe": "Umgestaltung des Hermann-Ehlers-Platz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00949/",
+      "longitude": 13.322039,
+      "latitude": 52.45682,
+      "locationDe": "Hermann-Ehlers-Platz",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/441/title",
+        "exact_title_de": "Umgestaltung des Hermann-Ehlers-Platz",
+        "location_pointer": "/441/point/geometry/coordinates",
+        "location_label_pointer": "/441/point_label"
+      },
+      "pageHash": "sha256:c5dc298e1ee1b20543f404aea9cb46bdba3abd6a111a3b8f4f5cfa2b86e54699",
+      "retrievedAt": "2026-09-09T14:18:58.666907+00:00"
+    },
+    {
+      "id": "MB-2024-00917",
+      "nameDe": "Umgestaltung des Barbarossaplatzes",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00917/",
+      "longitude": 13.349020377430325,
+      "latitude": 52.492385139046974,
+      "locationDe": "Schöneberg | Barbarossaplatz",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/462/title",
+        "exact_title_de": "Umgestaltung des Barbarossaplatzes",
+        "location_pointer": "/462/point/geometry/coordinates",
+        "location_label_pointer": "/462/point_label"
+      },
+      "pageHash": "sha256:c133cb064c1c17d14c01d789443141931d826fb829370347e688ffed00381fca",
+      "retrievedAt": "2026-09-09T14:18:58.971905+00:00"
+    },
+    {
+      "id": "MB-2024-00914",
+      "nameDe": "Sanierung Bolzplatz Singerstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00914/",
+      "longitude": 13.425235320796006,
+      "latitude": 52.51665738047076,
+      "locationDe": "Bezirksregion Alexanderplatz, Singerstraße 109, 10178 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/465/title",
+        "exact_title_de": "Sanierung Bolzplatz Singerstraße",
+        "location_pointer": "/465/point/geometry/coordinates",
+        "location_label_pointer": "/465/point_label"
+      },
+      "pageHash": "sha256:28665f861bf36292c018e9d9e1e3703a331a8f92858c2e0b09346691f6cf94e2",
+      "retrievedAt": "2026-09-09T14:18:58.907366+00:00"
+    },
+    {
+      "id": "MB-2024-00910",
+      "nameDe": "Modernisierung Umspannwerk Kladow",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00910/",
+      "longitude": 13.151411243139382,
+      "latitude": 52.45744264469395,
+      "locationDe": "Kladow",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/468/title",
+        "exact_title_de": "Modernisierung Umspannwerk Kladow",
+        "location_pointer": "/468/point/geometry/coordinates",
+        "location_label_pointer": "/468/point_label"
+      },
+      "pageHash": "sha256:2f48da7aad928decb48f814b9b6d27523537e651213fdf4b0c535866c4c0c1a5",
+      "retrievedAt": "2026-09-09T14:18:59.171874+00:00"
+    },
+    {
+      "id": "MB-2024-00906",
+      "nameDe": "Erneuerung Kinderspielplatz Agnes-Sorma Platz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00906/",
+      "longitude": 13.382622,
+      "latitude": 52.523427,
+      "locationDe": "Bezirksregion Alexanderplatz, Agnes-Sorma-Park, 10117 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/472/title",
+        "exact_title_de": "Erneuerung Kinderspielplatz Agnes-Sorma Platz",
+        "location_pointer": "/472/point/geometry/coordinates",
+        "location_label_pointer": "/472/point_label"
+      },
+      "pageHash": "sha256:546fe2f8bff33890fe34ffe4a33b6cc858ec0c8d88b95812333b1cbfdb0edc3d",
+      "retrievedAt": "2026-09-09T14:18:59.225004+00:00"
+    },
+    {
+      "id": "MB-2024-00901",
+      "nameDe": "Grundinstandsetzung Tunnel Schlangenbader Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00901/",
+      "longitude": 13.319224382474763,
+      "latitude": 52.47180237233338,
+      "locationDe": "Bezirk Charlottenburg-Wilmersdorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/477/title",
+        "exact_title_de": "Grundinstandsetzung Tunnel Schlangenbader Straße",
+        "location_pointer": "/477/point/geometry/coordinates",
+        "location_label_pointer": "/477/point_label"
+      },
+      "pageHash": "sha256:8b641d25182a5375644426299ee10f606d27be10f5ebe5437dd8eb244beb3c96",
+      "retrievedAt": "2026-09-09T14:18:59.427764+00:00"
+    },
+    {
+      "id": "MB-2024-00882",
+      "nameDe": "Grunderneuerung Promenadenwege Rudower Fließ",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00882/",
+      "longitude": 13.495331,
+      "latitude": 52.408074,
+      "locationDe": "Rudower Fließ, entlang der Groß-Ziethener Chaussee 50",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/492/title",
+        "exact_title_de": "Grunderneuerung Promenadenwege Rudower Fließ",
+        "location_pointer": "/492/point/geometry/coordinates",
+        "location_label_pointer": "/492/point_label"
+      },
+      "pageHash": "sha256:e66be613bfbd1b686db2c67a31b575a2446431c66f2dcc2604cfd027b3d76cb3",
+      "retrievedAt": "2026-09-09T14:18:59.438129+00:00"
+    },
+    {
+      "id": "MB-2024-00867",
+      "nameDe": "Baumaßnahme zur Sanierung und Umnutzung des denkmalgeschützten Kioskgebäudes am Schäfersee",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00867/",
+      "longitude": 13.363688,
+      "latitude": 52.564149,
+      "locationDe": "Kiosk am Schäfersee, Residenzstraße / Ecke Am Schäfersee",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/504/title",
+        "exact_title_de": "Baumaßnahme zur Sanierung und Umnutzung des denkmalgeschützten Kioskgebäudes am Schäfersee",
+        "location_pointer": "/504/point/geometry/coordinates",
+        "location_label_pointer": "/504/point_label"
+      },
+      "pageHash": "sha256:b8e5c035cb55133b1ad835c22655bdc8163bd95d5d92e23b070f2b61d3cb5c35",
+      "retrievedAt": "2026-09-09T14:18:59.753597+00:00"
+    },
+    {
+      "id": "MB-2024-00866",
+      "nameDe": "Neubau Jugend- und Stadtteilzentrum Auguste-Viktoria-Allee",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00866/",
+      "longitude": 13.32461,
+      "latitude": 52.57028,
+      "locationDe": "Auguste-Viktoria-Allee 16C in 13403 Berlin Reinickendorf, Ortsteil Reinickendorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/505/title",
+        "exact_title_de": "Neubau Jugend- und Stadtteilzentrum Auguste-Viktoria-Allee",
+        "location_pointer": "/505/point/geometry/coordinates",
+        "location_label_pointer": "/505/point_label"
+      },
+      "pageHash": "sha256:c5d992c89042ac57b34c092b262d6a1bd16440e63a3a30cdd4f40d871c97b12b",
+      "retrievedAt": "2026-09-09T14:18:59.753956+00:00"
+    },
+    {
+      "id": "MB-2024-00858",
+      "nameDe": "Neubau Gollanczstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00858/",
+      "longitude": 13.286834,
+      "latitude": 52.641962,
+      "locationDe": "Gollanczstraße Straße zwischen Schönfließer Straße und Markgrafenstraße, Ortsteil Frohnau",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/510/title",
+        "exact_title_de": "Neubau Gollanczstraße",
+        "location_pointer": "/510/point/geometry/coordinates",
+        "location_label_pointer": "/510/point_label"
+      },
+      "pageHash": "sha256:5da7057111059939b0f38709dfe271e8ccdb1d136ac7b5b10dffd953bc8ee39d",
+      "retrievedAt": "2026-09-09T14:19:00.097400+00:00"
+    },
+    {
+      "id": "MB-2024-00854",
+      "nameDe": "Neubau Spielplatz Freizeitpark Lübars",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00854/",
+      "longitude": 13.366113,
+      "latitude": 52.607374,
+      "locationDe": "Alte Fasanerie/ Quickborner Straße, Freizeitpark Lübars",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/513/title",
+        "exact_title_de": "Neubau Spielplatz Freizeitpark Lübars",
+        "location_pointer": "/513/point/geometry/coordinates",
+        "location_label_pointer": "/513/point_label"
+      },
+      "pageHash": "sha256:a7b6db38b2c522e3d8700dc6fa22a4bad74f1c9136ca09f0cb3a69a7c173719b",
+      "retrievedAt": "2026-09-09T14:19:00.085430+00:00"
+    },
+    {
+      "id": "MB-2024-00853",
+      "nameDe": "Neubau Außenanlagen Dachsbau",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00853/",
+      "longitude": 13.230436,
+      "latitude": 52.606577,
+      "locationDe": "Heiligenseestraße 112, 13503 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/514/title",
+        "exact_title_de": "Neubau Außenanlagen Dachsbau",
+        "location_pointer": "/514/point/geometry/coordinates",
+        "location_label_pointer": "/514/point_label"
+      },
+      "pageHash": "sha256:648e295e35830cf2d9a8b39170fe68f1f9832265e7ea1b624b9c7615e44bcf2e",
+      "retrievedAt": "2026-09-09T14:19:00.300979+00:00"
+    },
+    {
+      "id": "MB-2024-00852",
+      "nameDe": "Neubau einer 4-zügigen Grundschule mit Sporthalle - Cité Foch",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2024-00852/",
+      "longitude": 13.31897,
+      "latitude": 52.600311,
+      "locationDe": "Rue Racine 7a und Avenue Charles de Gaulle 33, 35A, Cité Foch",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/515/title",
+        "exact_title_de": "Neubau einer 4-zügigen Grundschule mit Sporthalle - Cité Foch",
+        "location_pointer": "/515/point/geometry/coordinates",
+        "location_label_pointer": "/515/point_label"
+      },
+      "pageHash": "sha256:145f828227a5921354ad71eb3afcebcb56a89b3fea46a5513999d3d612f13663",
+      "retrievedAt": "2026-09-09T14:19:00.329217+00:00"
+    },
+    {
+      "id": "MB-2023-00846",
+      "nameDe": "Neugestaltung (Spiel-)Platz an der Remise",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00846/",
+      "longitude": 13.201278362219586,
+      "latitude": 52.53684441760915,
+      "locationDe": "Spielplatz an der Remise, Jüdenstraße 1, 13597 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/519/title",
+        "exact_title_de": "Neugestaltung (Spiel-)Platz an der Remise",
+        "location_pointer": "/519/point/geometry/coordinates",
+        "location_label_pointer": "/519/point_label"
+      },
+      "pageHash": "sha256:bf4db28b732dff3a430480f92a0c470a53e60625ae7ca348f2efba4096c9686a",
+      "retrievedAt": "2026-09-09T14:19:00.618490+00:00"
+    },
+    {
+      "id": "MB-2023-00844",
+      "nameDe": "Erneuerung der Prenzlauer Promenade zwischen Am Steinberg und Rothenbachstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00844/",
+      "longitude": 13.429492881231933,
+      "latitude": 52.5570819021702,
+      "locationDe": "Prenzlauer Promenade",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/521/title",
+        "exact_title_de": "Erneuerung der Prenzlauer Promenade zwischen Am Steinberg und Rothenbachstraße",
+        "location_pointer": "/521/point/geometry/coordinates",
+        "location_label_pointer": "/521/point_label"
+      },
+      "pageHash": "sha256:855f8bfe500419aad591183886593bab8606bca8744b83e75f48df2288d1d1a1",
+      "retrievedAt": "2026-09-09T14:19:00.663319+00:00"
+    },
+    {
+      "id": "MB-2023-00837",
+      "nameDe": "Neubau Markgrafenstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00837/",
+      "longitude": 13.291233,
+      "latitude": 52.637855,
+      "locationDe": "Markgrafenstraße Straße zwischen Gollanczstraße und Zeltinger Straße, Ortsteil Frohnau",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/526/title",
+        "exact_title_de": "Neubau Markgrafenstraße",
+        "location_pointer": "/526/point/geometry/coordinates",
+        "location_label_pointer": "/526/point_label"
+      },
+      "pageHash": "sha256:7d4a179b225065c61fdfd4840c18402383fb2c0bdc5cec21855f8a3e594b9a3d",
+      "retrievedAt": "2026-09-09T14:19:00.848539+00:00"
+    },
+    {
+      "id": "MB-2023-00831",
+      "nameDe": "Ausbau Kinder- und Jugendhaus Nahariyastraße zum Familiencampus",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00831/",
+      "longitude": 13.419543478831285,
+      "latitude": 52.392375209096166,
+      "locationDe": "Lichtenrade | Nahariyastraße 19",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/531/title",
+        "exact_title_de": "Ausbau Kinder- und Jugendhaus Nahariyastraße zum Familiencampus",
+        "location_pointer": "/531/point/geometry/coordinates",
+        "location_label_pointer": "/531/point_label"
+      },
+      "pageHash": "sha256:85ae00eab32af18c9e7853a40358cf2586633cc1a036e6f9bfe2447afb1b6399",
+      "retrievedAt": "2026-09-09T14:19:00.922289+00:00"
+    },
+    {
+      "id": "MB-2023-00826",
+      "nameDe": "Klima- und denkmalgerechte Umgestaltung des Ensembles „Dorfanger Bohnsdorf“",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00826/",
+      "longitude": 13.5554,
+      "latitude": 52.39908,
+      "locationDe": "Dorfanger Bohnsdorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/536/title",
+        "exact_title_de": "Klima- und denkmalgerechte Umgestaltung des Ensembles „Dorfanger Bohnsdorf“",
+        "location_pointer": "/536/point/geometry/coordinates",
+        "location_label_pointer": "/536/point_label"
+      },
+      "pageHash": "sha256:f419c19221fbfb63126efbaf62e04ce047a0e338aad1fe80a82acf426ea83037",
+      "retrievedAt": "2026-09-09T14:19:01.117318+00:00"
+    },
+    {
+      "id": "MB-2023-00824",
+      "nameDe": "Sanierung des Gartendenkmals Volkspark Mariendorf",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00824/",
+      "longitude": 13.391154,
+      "latitude": 52.443272,
+      "locationDe": "Mariendorf | Volkspark Mariendorf",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/538/title",
+        "exact_title_de": "Sanierung des Gartendenkmals Volkspark Mariendorf",
+        "location_pointer": "/538/point/geometry/coordinates",
+        "location_label_pointer": "/538/point_label"
+      },
+      "pageHash": "sha256:b6a25d8a13e04a4779f3aa609af3a319e1ff8bd48cd337a5326453b5fd2283ef",
+      "retrievedAt": "2026-09-09T14:19:01.191789+00:00"
+    },
+    {
+      "id": "MB-2023-00823",
+      "nameDe": "Sanierung des Dorfteichs Lichtenrade",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00823/",
+      "longitude": 13.410471,
+      "latitude": 52.390625,
+      "locationDe": "Lichtenrade | Alt-Lichtenrade 118, Dorfteich Lichtenrade, 12309 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/539/title",
+        "exact_title_de": "Sanierung des Dorfteichs Lichtenrade",
+        "location_pointer": "/539/point/geometry/coordinates",
+        "location_label_pointer": "/539/point_label"
+      },
+      "pageHash": "sha256:7f4c0ee1a770d5858aa5a2befb6e25a063ea74bd51c46ee116881c897788dea4",
+      "retrievedAt": "2026-09-09T14:19:01.438480+00:00"
+    },
+    {
+      "id": "MB-2023-00817",
+      "nameDe": "Umbau der Bahnhofstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00817/",
+      "longitude": 13.398014085752177,
+      "latitude": 52.38682774814279,
+      "locationDe": "Lichtenrade | Bahnhofstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/545/title",
+        "exact_title_de": "Umbau der Bahnhofstraße",
+        "location_pointer": "/545/point/geometry/coordinates",
+        "location_label_pointer": "/545/point_label"
+      },
+      "pageHash": "sha256:d7095d2ce60b40eb21b9bfb775322c7429e6224a154b34fdc3acabbfb395e79e",
+      "retrievedAt": "2026-09-09T14:19:01.421956+00:00"
+    },
+    {
+      "id": "MB-2023-00810",
+      "nameDe": "Neubau Senheimer Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00810/",
+      "longitude": 13.291989,
+      "latitude": 52.639138,
+      "locationDe": "Senheimer Straße zwischen Zeltinger und Schönfließer Straße, Ortsteil Frohnau",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/552/title",
+        "exact_title_de": "Neubau Senheimer Straße",
+        "location_pointer": "/552/point/geometry/coordinates",
+        "location_label_pointer": "/552/point_label"
+      },
+      "pageHash": "sha256:6d15c9ff269cff20cfcf77ba0793b3e184a75d57ed8a7b4c6dd05db9bf076ea9",
+      "retrievedAt": "2026-09-09T14:19:01.677315+00:00"
+    },
+    {
+      "id": "MB-2023-00798",
+      "nameDe": "Neubau eines Umspannwerks in Berlin Mitte",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00798/",
+      "longitude": 13.414977,
+      "latitude": 52.517873,
+      "locationDe": "Umspannwerk in Berlin Mitte",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/563/title",
+        "exact_title_de": "Neubau eines Umspannwerks in Berlin Mitte",
+        "location_pointer": "/563/point/geometry/coordinates",
+        "location_label_pointer": "/563/point_label"
+      },
+      "pageHash": "sha256:2775f094f6ac2aa6c6dc03c4b06bac6d1df7b2c2c858016d09ef79f503ec4f30",
+      "retrievedAt": "2026-09-09T14:19:01.678720+00:00"
+    },
+    {
+      "id": "MB-2023-00794",
+      "nameDe": "Nachnutzung Flughafen Tegel - Netzausbau",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00794/",
+      "longitude": 13.291503494496542,
+      "latitude": 52.554128560166724,
+      "locationDe": "Netzausbau Flughafen Tegel",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/567/title",
+        "exact_title_de": "Nachnutzung Flughafen Tegel - Netzausbau",
+        "location_pointer": "/567/point/geometry/coordinates",
+        "location_label_pointer": "/567/point_label"
+      },
+      "pageHash": "sha256:02e2f55e505fd196d6f5563bd6a831e0f1db987f9a20b696130ca20a504ca96c",
+      "retrievedAt": "2026-09-09T14:19:01.988084+00:00"
+    },
+    {
+      "id": "MB-2023-00792",
+      "nameDe": "Neubau eines Umspannwerks im Rollberg-Kiez",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00792/",
+      "longitude": 13.436685484349022,
+      "latitude": 52.479409444702114,
+      "locationDe": "Umspannwerk im Rollberg-Kiez",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/569/title",
+        "exact_title_de": "Neubau eines Umspannwerks im Rollberg-Kiez",
+        "location_pointer": "/569/point/geometry/coordinates",
+        "location_label_pointer": "/569/point_label"
+      },
+      "pageHash": "sha256:4d92bf6f8b2bdb436034e8f13865b38c7813af898ad15af8ec3702436df57978",
+      "retrievedAt": "2026-09-09T14:19:01.987638+00:00"
+    },
+    {
+      "id": "MB-2023-00791",
+      "nameDe": "Netzsanierung rund um die Claszeile und Modernisierung des Umspannwerks Claszeile",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00791/",
+      "longitude": 13.256514566712633,
+      "latitude": 52.422041440866145,
+      "locationDe": "Claszeile",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/570/title",
+        "exact_title_de": "Netzsanierung rund um die Claszeile und Modernisierung des Umspannwerks Claszeile",
+        "location_pointer": "/570/point/geometry/coordinates",
+        "location_label_pointer": "/570/point_label"
+      },
+      "pageHash": "sha256:a44e0afc5ac813d8879e0022aa6bb2df9c90b9f91a96bd5123810baabe642448",
+      "retrievedAt": "2026-09-09T14:19:02.216578+00:00"
+    },
+    {
+      "id": "MB-2023-00790",
+      "nameDe": "Neubau eines Umspannwerks in Marzahn",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00790/",
+      "longitude": 13.541747334177932,
+      "latitude": 52.54188725988691,
+      "locationDe": "Umspannwerk Marzahn",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/571/title",
+        "exact_title_de": "Neubau eines Umspannwerks in Marzahn",
+        "location_pointer": "/571/point/geometry/coordinates",
+        "location_label_pointer": "/571/point_label"
+      },
+      "pageHash": "sha256:7a5fb70c6b62fb6439dff56b6d7071e6a89e43971b8a3b579d6b399045c66fd1",
+      "retrievedAt": "2026-09-09T14:19:02.216707+00:00"
+    },
+    {
+      "id": "MB-2023-00789",
+      "nameDe": "Erweiterungsneubau am Umspannwerk Tiefwerder",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00789/",
+      "longitude": 13.213144506252625,
+      "latitude": 52.533958571495184,
+      "locationDe": "Umspannwerk Tiefwerder",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/572/title",
+        "exact_title_de": "Erweiterungsneubau am Umspannwerk Tiefwerder",
+        "location_pointer": "/572/point/geometry/coordinates",
+        "location_label_pointer": "/572/point_label"
+      },
+      "pageHash": "sha256:4a98c7f059ce9a19b3dc70283973cf0b79c9012e9bbd789a20f3626290bb8329",
+      "retrievedAt": "2026-09-09T14:19:02.620886+00:00"
+    },
+    {
+      "id": "MB-2023-00781",
+      "nameDe": "Sanierung und Ausbau der Gustave-Eiffel-Schule",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00781/",
+      "longitude": 13.448624408813389,
+      "latitude": 52.54080246059016,
+      "locationDe": "Hanns-Eisler-Straße 78, 10409 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/580/title",
+        "exact_title_de": "Sanierung und Ausbau der Gustave-Eiffel-Schule",
+        "location_pointer": "/580/point/geometry/coordinates",
+        "location_label_pointer": "/580/point_label"
+      },
+      "pageHash": "sha256:3915891557f05e9aca7866e5c3524cd006549c147b9d9ecbb8c68cfa6afb1ebb",
+      "retrievedAt": "2026-09-09T14:19:02.743417+00:00"
+    },
+    {
+      "id": "MB-2023-00777",
+      "nameDe": "Neubau - Sportjugendclub Wildwuchs",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00777/",
+      "longitude": 13.203292148962706,
+      "latitude": 52.51704472222462,
+      "locationDe": "SJC Wildwuchs - Götelstraße 64, 13595 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/584/title",
+        "exact_title_de": "Neubau - Sportjugendclub Wildwuchs",
+        "location_pointer": "/584/point/geometry/coordinates",
+        "location_label_pointer": "/584/point_label"
+      },
+      "pageHash": "sha256:3a31722e04d83d043a2820b9a0634bd233e72bffbb824149b5cb8edae49551a5",
+      "retrievedAt": "2026-09-09T14:19:02.986884+00:00"
+    },
+    {
+      "id": "MB-2023-00775",
+      "nameDe": "Neugestaltung - Metzer Platz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00775/",
+      "longitude": 13.196898,
+      "latitude": 52.525266,
+      "locationDe": "Metzer Platz - 13595 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/586/title",
+        "exact_title_de": "Neugestaltung - Metzer Platz",
+        "location_pointer": "/586/point/geometry/coordinates",
+        "location_label_pointer": "/586/point_label"
+      },
+      "pageHash": "sha256:d67bc6d2804d665b66adcbd25dc2390b47e23dc84d8806f6edd97c1ac56b441d",
+      "retrievedAt": "2026-09-09T14:19:03.135445+00:00"
+    },
+    {
+      "id": "MB-2023-00766",
+      "nameDe": "Sanierung und Klimaanpassung Park am Weißen See",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00766/",
+      "longitude": 13.46386,
+      "latitude": 52.554263,
+      "locationDe": "Park am Weißen See",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/594/title",
+        "exact_title_de": "Sanierung und Klimaanpassung Park am Weißen See",
+        "location_pointer": "/594/point/geometry/coordinates",
+        "location_label_pointer": "/594/point_label"
+      },
+      "pageHash": "sha256:a9163c05a301e3f74fde4f8f1c7710c715bffa9d756ac78024d035243088467b",
+      "retrievedAt": "2026-09-09T14:19:03.363884+00:00"
+    },
+    {
+      "id": "MB-2023-00756",
+      "nameDe": "Ersatzneubau Schulenburgbrücke",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00756/",
+      "longitude": 13.204451,
+      "latitude": 52.524212,
+      "locationDe": "Ersatzneubau der Schulenburgbrücke",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/603/title",
+        "exact_title_de": "Ersatzneubau Schulenburgbrücke",
+        "location_pointer": "/603/point/geometry/coordinates",
+        "location_label_pointer": "/603/point_label"
+      },
+      "pageHash": "sha256:c1ecc31078b45fa0b4a811531289386565abf0bb2d76424158c438627ba9d292",
+      "retrievedAt": "2026-09-09T14:19:03.500097+00:00"
+    },
+    {
+      "id": "MB-2023-00735",
+      "nameDe": "Neugestaltung der Liebensteiner Promenade (nördlicher Teil)",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00735/",
+      "longitude": 13.562407,
+      "latitude": 52.559337,
+      "locationDe": "Liebensteiner Promenade (nördlicher Teil)",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/623/title",
+        "exact_title_de": "Neugestaltung der Liebensteiner Promenade (nördlicher Teil)",
+        "location_pointer": "/623/point/geometry/coordinates",
+        "location_label_pointer": "/623/point_label"
+      },
+      "pageHash": "sha256:ea6996dcfdb64078c897bf48cabb4bf0f331361576a13557486be1d2b111740f",
+      "retrievedAt": "2026-09-09T14:19:03.724844+00:00"
+    },
+    {
+      "id": "MB-2023-00733",
+      "nameDe": "Erneuerung der Torstraße in Mitte; 1. Teilabschnitt zwischen Chausseestraße und Rosenthaler Platz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00733/",
+      "longitude": 13.397129613990355,
+      "latitude": 52.52950237558862,
+      "locationDe": "",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/624/title",
+        "exact_title_de": "Erneuerung der Torstraße in Mitte; 1. Teilabschnitt zwischen Chausseestraße und Rosenthaler Platz",
+        "location_pointer": "/624/point/geometry/coordinates",
+        "location_label_pointer": "/624/point_label"
+      },
+      "pageHash": "sha256:8c4f943fd9d1df58ad02ad93b275954e95c9405d91b52a05f72621fa48af858e",
+      "retrievedAt": "2026-09-09T14:19:03.724417+00:00"
+    },
+    {
+      "id": "MB-2023-00731",
+      "nameDe": "Sanierung Rummelsburger See",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00731/",
+      "longitude": 13.471556,
+      "latitude": 52.500235,
+      "locationDe": "Rummelsburger See - Bezirke Friedrichshain-Kreuzberg und Lichtenberg",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/626/title",
+        "exact_title_de": "Sanierung Rummelsburger See",
+        "location_pointer": "/626/point/geometry/coordinates",
+        "location_label_pointer": "/626/point_label"
+      },
+      "pageHash": "sha256:a50038a1485ba22d57270a8bf783189e629c570d8a3e30db5c248506b25735e8",
+      "retrievedAt": "2026-09-09T14:19:03.992242+00:00"
+    },
+    {
+      "id": "MB-2023-00716",
+      "nameDe": "Umbau der Karl-Marx-Straße - 3. Bauabschnitt zwischen Briesestraße und Weichselstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00716/",
+      "longitude": 13.424792581257876,
+      "latitude": 52.48634651913848,
+      "locationDe": "Karl-Marx-Straße (zwischen Briese- und Weichselstraße), Nord-Neukölln",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/641/title",
+        "exact_title_de": "Umbau der Karl-Marx-Straße - 3. Bauabschnitt zwischen Briesestraße und Weichselstraße",
+        "location_pointer": "/641/point/geometry/coordinates",
+        "location_label_pointer": "/641/point_label"
+      },
+      "pageHash": "sha256:bd6984811a1df6fc905da434fd221f7c491a60683f5eb2032f0ffdf7a59e18ae",
+      "retrievedAt": "2026-09-09T14:19:03.960932+00:00"
+    },
+    {
+      "id": "MB-2023-00707",
+      "nameDe": "Umgestaltung Blochplatz",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00707/",
+      "longitude": 13.384983077926464,
+      "latitude": 52.55014967166201,
+      "locationDe": "Bezirksregion Brunnenstraße Nord, Badstraße 67, 13357 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/647/title",
+        "exact_title_de": "Umgestaltung Blochplatz",
+        "location_pointer": "/647/point/geometry/coordinates",
+        "location_label_pointer": "/647/point_label"
+      },
+      "pageHash": "sha256:da6565d2ecaae08d327b79f5be3d3e96542aa591d63dc7c0ad294d6adda9d277",
+      "retrievedAt": "2026-09-09T14:19:04.206153+00:00"
+    },
+    {
+      "id": "MB-2023-00706",
+      "nameDe": "Ausbau der Weserstraße zur Fahrradstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00706/",
+      "longitude": 13.444174859134693,
+      "latitude": 52.48188868519892,
+      "locationDe": "Weserstraße in Nord-Neukölln",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/648/title",
+        "exact_title_de": "Ausbau der Weserstraße zur Fahrradstraße",
+        "location_pointer": "/648/point/geometry/coordinates",
+        "location_label_pointer": "/648/point_label"
+      },
+      "pageHash": "sha256:6a23a02136d95faffd448d8305b47cbdbe2bde3b4ff616f7a0a14b47aa19cc85",
+      "retrievedAt": "2026-09-09T14:19:04.285741+00:00"
+    },
+    {
+      "id": "MB-2023-00705",
+      "nameDe": "Erneuerung der Weichselstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00705/",
+      "longitude": 13.434294502919201,
+      "latitude": 52.485087095833485,
+      "locationDe": "Weichselstraße in Nord-Neukölln",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/649/title",
+        "exact_title_de": "Erneuerung der Weichselstraße",
+        "location_pointer": "/649/point/geometry/coordinates",
+        "location_label_pointer": "/649/point_label"
+      },
+      "pageHash": "sha256:93b1efa6cb076c454be1e1687f01669db6616a5b8953bf15d611d2f3b1bae78b",
+      "retrievedAt": "2026-09-09T14:19:04.542790+00:00"
+    },
+    {
+      "id": "MB-2023-00704",
+      "nameDe": "Umgestaltung und Neugestaltung der Elbestraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00704/",
+      "longitude": 13.438540661499676,
+      "latitude": 52.48286855085789,
+      "locationDe": "Elbestraße in Nord-Neukölln",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/650/title",
+        "exact_title_de": "Umgestaltung und Neugestaltung der Elbestraße",
+        "location_pointer": "/650/point/geometry/coordinates",
+        "location_label_pointer": "/650/point_label"
+      },
+      "pageHash": "sha256:9a834c1cde73d61679add36d7201b442bff272768e831b3d7c14cf5dde16d1d6",
+      "retrievedAt": "2026-09-09T14:19:04.618768+00:00"
+    },
+    {
+      "id": "MB-2023-00691",
+      "nameDe": "Grundhafte Erneuerung der B1 – Schloßstraße/Unter den Eichen zwischen Wolfensteindamm und Thielallee",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00691/",
+      "longitude": 13.297992,
+      "latitude": 52.447185,
+      "locationDe": "Unter den Eichen - Schloßstraße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/660/title",
+        "exact_title_de": "Grundhafte Erneuerung der B1 – Schloßstraße/Unter den Eichen zwischen Wolfensteindamm und Thielallee",
+        "location_pointer": "/660/point/geometry/coordinates",
+        "location_label_pointer": "/660/point_label"
+      },
+      "pageHash": "sha256:0d3701185119f969c32df38b5ae42243580a5cf7b3058a518de70cb7beb1c69c",
+      "retrievedAt": "2026-09-09T14:19:04.791735+00:00"
+    },
+    {
+      "id": "MB-2023-00683",
+      "nameDe": "Neugestaltung des Spielplatzes Singerstraße 114-117",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00683/",
+      "longitude": 13.424665,
+      "latitude": 52.516939,
+      "locationDe": "Singerstraße 114-117",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/666/title",
+        "exact_title_de": "Neugestaltung des Spielplatzes Singerstraße 114-117",
+        "location_pointer": "/666/point/geometry/coordinates",
+        "location_label_pointer": "/666/point_label"
+      },
+      "pageHash": "sha256:c0b702b15df55d42b536937fdb0ca8d9d26c985468a4b069ae89ca7348d8ecf0",
+      "retrievedAt": "2026-09-09T14:19:04.849347+00:00"
+    },
+    {
+      "id": "MB-2023-00661",
+      "nameDe": "Neue Höfe. Mehr Nutzen. Klimagerechter Umbau des Serenadenhofes",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2023-00661/",
+      "longitude": 13.436065,
+      "latitude": 52.481643,
+      "locationDe": "Karl-Marx-Straße 83",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/685/title",
+        "exact_title_de": "Neue Höfe. Mehr Nutzen. Klimagerechter Umbau des Serenadenhofes",
+        "location_pointer": "/685/point/geometry/coordinates",
+        "location_label_pointer": "/685/point_label"
+      },
+      "pageHash": "sha256:9cb8560aaa33f0744a4b8e557b0ee0808238b6e24aa36e2106e4c0108b926c5b",
+      "retrievedAt": "2026-09-09T14:19:05.031592+00:00"
+    },
+    {
+      "id": "MB-2022-00547",
+      "nameDe": "Sanierung Spielplatz Panketal",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2022-00547/",
+      "longitude": 13.380887501329003,
+      "latitude": 52.558482693958744,
+      "locationDe": "Bezirksregion Osloer Straße, Koloniestr. 24B, 13359 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/787/title",
+        "exact_title_de": "Sanierung Spielplatz Panketal",
+        "location_pointer": "/787/point/geometry/coordinates",
+        "location_label_pointer": "/787/point_label"
+      },
+      "pageHash": "sha256:2211ffa2285c672717d3e5b06802b5cb7b8481d966ca80a0bd2ace258730e0f5",
+      "retrievedAt": "2026-09-09T14:19:05.074874+00:00"
+    },
+    {
+      "id": "MB-2022-00543",
+      "nameDe": "Gehwegsanierung am Spittelmarkt",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2022-00543/",
+      "longitude": 13.402184405923594,
+      "latitude": 52.51232982512618,
+      "locationDe": "Bezirksregion Regierungsviertel, Spittelmarkt, 10117 Berlin",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/790/title",
+        "exact_title_de": "Gehwegsanierung am Spittelmarkt",
+        "location_pointer": "/790/point/geometry/coordinates",
+        "location_label_pointer": "/790/point_label"
+      },
+      "pageHash": "sha256:d0a555aee5918f153b4121b021c8117add703c263b59aa660378352a914704cf",
+      "retrievedAt": "2026-09-09T14:19:05.272112+00:00"
+    },
+    {
+      "id": "MB-2022-00520",
+      "nameDe": "Neubau Begegnungszentrum Westerwaldstraße mit Stadtteilzentrum, Seniorenklub, JugendTheaterwerkstatt",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2022-00520/",
+      "longitude": 13.178178856660685,
+      "latitude": 52.55068470862562,
+      "locationDe": "Am Standort der ev. Zufluchtskirche, Westerwaldstraße 16-18, 13589 Berlin Spandau",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/813/title",
+        "exact_title_de": "Neubau Begegnungszentrum Westerwaldstraße mit Stadtteilzentrum, Seniorenklub, JugendTheaterwerkstatt",
+        "location_pointer": "/813/point/geometry/coordinates",
+        "location_label_pointer": "/813/point_label"
+      },
+      "pageHash": "sha256:3cf76c2615b35d88051c649db355b4afe788cbc5143dcaa68f024f85eab9bccf",
+      "retrievedAt": "2026-09-09T14:19:05.299144+00:00"
+    },
+    {
+      "id": "MB-2022-00516",
+      "nameDe": "Umgestaltung der Spiel- und Sportflächen an der Bornsdorfer Straße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2022-00516/",
+      "longitude": 13.437378,
+      "latitude": 52.475216,
+      "locationDe": "Lessinghöhe, Bornsdorfer Straße",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/815/title",
+        "exact_title_de": "Umgestaltung der Spiel- und Sportflächen an der Bornsdorfer Straße",
+        "location_pointer": "/815/point/geometry/coordinates",
+        "location_label_pointer": "/815/point_label"
+      },
+      "pageHash": "sha256:7690ff8c38cdf90a0f8706bfd17d493156f4085f992399b7e7bf9477e7420110",
+      "retrievedAt": "2026-09-09T14:19:05.579631+00:00"
+    },
+    {
+      "id": "MB-2021-00469",
+      "nameDe": "Neugestaltung Schmollerplatz Alt-Treptow",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2021-00469/",
+      "longitude": 13.445092,
+      "latitude": 52.490435,
+      "locationDe": "Schmollerplatz, 12435 Alt-Treptow",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/852/title",
+        "exact_title_de": "Neugestaltung Schmollerplatz Alt-Treptow",
+        "location_pointer": "/852/point/geometry/coordinates",
+        "location_label_pointer": "/852/point_label"
+      },
+      "pageHash": "sha256:9fc637f4d39f92a2e9cfbe6c3bdca4de4363420fa82b0636ad1400007f1c6da5",
+      "retrievedAt": "2026-09-09T14:19:05.635085+00:00"
+    },
+    {
+      "id": "MB-2021-00464",
+      "nameDe": "Ausbau der Oderstraße zur Fahrradstraße",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2021-00464/",
+      "longitude": 13.420066405177772,
+      "latitude": 52.47223298392179,
+      "locationDe": "Oderstraße Neukölln zwischen Herrfurthstraße und Anita-Berber-Park",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/857/title",
+        "exact_title_de": "Ausbau der Oderstraße zur Fahrradstraße",
+        "location_pointer": "/857/point/geometry/coordinates",
+        "location_label_pointer": "/857/point_label"
+      },
+      "pageHash": "sha256:c2ab9a2a412c273a102d5a024a45edf70d5770a6ba6c14030a847553645048e4",
+      "retrievedAt": "2026-09-09T14:19:05.872220+00:00"
+    },
+    {
+      "id": "MB-2021-00462",
+      "nameDe": "Grundhafte Erneuerung und Umgestaltung der Straße Unter den Linden von Pariser Platz bis Schloßbrücke",
+      "sourceUrl": "https://mein.berlin.de/vorhaben/2021-00462/",
+      "longitude": 13.388901,
+      "latitude": 52.516937,
+      "locationDe": "Unter den Linden",
+      "evidence": {
+        "inventory_url": "https://mein.berlin.de/api/plans/",
+        "artifact_hash": "sha256:a66f6886b33fd0379e3e62942ec346d68f1b70bd058f8c3440e136ac06f126cb",
+        "title_pointer": "/859/title",
+        "exact_title_de": "Grundhafte Erneuerung und Umgestaltung der Straße Unter den Linden von Pariser Platz bis Schloßbrücke",
+        "location_pointer": "/859/point/geometry/coordinates",
+        "location_label_pointer": "/859/point_label"
+      },
+      "pageHash": "sha256:def0981f55dd70d61d02da7a9aa389a1436eef7919b295ace725cd9d944ac402",
+      "retrievedAt": "2026-09-09T14:19:05.964470+00:00"
+    }
+  ]
+}

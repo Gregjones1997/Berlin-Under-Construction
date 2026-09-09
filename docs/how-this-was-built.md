@@ -3,6 +3,36 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Add 150 basic register references to the main atlas
+
+### Participants
+
+Main agent (Codex, GPT-6 Astra; Browser and Vercel CLI skills), single writer.
+No delegation in this integration session. Browser inspection checked mobile
+selection and navigation; Vercel CLI skill supplied the prebuilt deployment flow.
+
+### Implementation and authority
+
+Owner authorized distinct basic pins on the main map. Published only official
+register titles, location labels and navigation points, with source links and
+correction routes; no inferred category, progress, dates or source contact fields.
+ADR-025 defines this scope. Kept the original three dossiers and their gates.
+Added smaller outlined pins, a separately switchable basic layer, an accessible
+150-entry index, and short source-linked cards. Initial framing still uses the
+two full-dossier positions. No golden data or human verification tags changed.
+
+### Verification and limitations
+
+All 150 titles and coordinates were compared to their exact JSON pointers in the
+retained inventory; inventory and individual page artifact hashes matched.
+One heading differed in repeated whitespace only. The source-provided point is
+not a verified site footprint. Automated title matching is not semantic review.
+201 Python tests and TypeScript checking passed. The export contains 14 routes;
+static packaging passed with the existing published legal address. Mobile browser
+inspection verified opening a basic record from the map key; release verification
+is recorded in public-deployment.md. The link checker now handles URL fragments.
+
+
 ## 2026-09-09 — Research 150 cited construction candidates
 
 **Commit:** `f211c6d` — `feat(research): document 150 source-cited construction candidates`.

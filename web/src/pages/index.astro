@@ -96,7 +96,7 @@ const records = projects.map((project) => ({
                 >
                   <>
                     <span class="pin-number">
-                      {String(index + 1).padStart(2, "0")}
+                      <Icon name={project.projectId === "C-014" ? "publicspace" : "school"} />
                     </span>
                     <span class="pin-label" lang="de">
                       {project.projectNameDe}
@@ -228,17 +228,22 @@ const records = projects.map((project) => ({
                     </div>
                   ) : <p>No confirmed milestone available.</p>}
                 </div>
-                <div class="brief-answer">
-                  <h3>Is it on time?</h3>
-                  <p class="brief-state"><span aria-hidden="true">◷</span> Not confirmed</p>
-                  <p class="brief-explanation">The published statements do not confirm progress today.</p>
-                  {((project.lead?.displayWarnings ?? []) as string[]).map(warning => <p class="brief-warning">{warning}</p>)}
-                </div>
-                <div class="brief-answer">
-                  <h3>Time underway</h3>
-                  <p>Actual start not confirmed</p>
-                  <p class="brief-explanation">A planned start date cannot establish time spent building.</p>
-                </div>
+                {project.publishedFacts.filter(f => f.factType === "status").map(fact => (
+                  <div class="brief-answer" data-fact-id={fact.factId}>
+                    <h3>Last source-reported status · {String((fact.asOfDate as {value?: string})?.value ?? "date not stated")}</h3>
+                    <p lang="de">{fact.valueDe}</p>
+                    <details class="brief-source"><summary>Source &amp; date</summary>
+                      <p>As of: {String((fact.asOfDate as {value?: string})?.value ?? "Not stated")}</p>
+                      <blockquote lang="de">{fact.evidence?.exactTextDe}</blockquote>
+                      <a href={fact.evidence?.sourceUrl}>Original source</a>
+                    </details>
+                  </div>
+                ))}
+                {((project.lead?.displayWarnings ?? []) as string[]).map(warning => <p class="brief-warning">{warning}</p>)}
+                <details class="brief-unknowns">
+                  <summary><Icon name="info" /> Still to confirm</summary>
+                  <p>Whether the project is currently on time, and its actual construction start. Planned dates alone do not establish current progress or time underway.</p>
+                </details>
                 <button class="brief-more primary-link" data-expand-record>View full record &amp; sources <Icon name="arrow" /></button>
                 <a href={project.correctionPath} class="correction-link">Suggest a correction</a>
               </div>
@@ -338,14 +343,14 @@ const records = projects.map((project) => ({
           >
         </div>
         <label
-          ><span class="legend-symbol legend-project">01</span><span
-            >Projects<small>Source-backed evidence records</small></span
+          ><span class="legend-symbol legend-category"><Icon name="pin" /></span><span
+            >Project markers<small>Source-backed evidence records</small></span
           ><input type="checkbox" data-label-kind="projects" checked /></label
         >
         <div class="project-category-key">
-          <button class="legend-project-link" data-project="C-014"><span class="legend-symbol legend-project">01</span><span>Public space<small>Europaplatz Süd</small></span></button>
-          <button class="legend-project-link" data-project="C-010"><span class="legend-symbol legend-project">02</span><span>School<small>Heinrich-Hertz-Gymnasium</small></span></button>
-          <button class="legend-project-link" data-project="C-019"><span class="legend-symbol">◇</span><span>Energy<small>Power-to-Heat · location withheld</small></span></button>
+          <button class="legend-project-link" data-project="C-014"><span class="legend-symbol legend-category"><Icon name="publicspace" /></span><span>Public space<small>Europaplatz Süd</small></span></button>
+          <button class="legend-project-link" data-project="C-010"><span class="legend-symbol legend-category"><Icon name="school" /></span><span>School<small>Heinrich-Hertz-Gymnasium</small></span></button>
+          <button class="legend-project-link" data-project="C-019"><span class="legend-symbol legend-category"><Icon name="energy" /></span><span>Energy<small>Power-to-Heat · location withheld</small></span></button>
         </div>
         <p>Project types describe the work, not its progress. More types appear as researched projects are added.</p>
       </section>

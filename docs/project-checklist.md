@@ -32,8 +32,8 @@ Evidence and verification limits: [public deployment](public-deployment.md).
 
 **Next action:** Resume C-009 dossier preparation from the seven-candidate screening:
 verify the precise school-building scope and authoritative map location, and look
-for explicit actual-start/progress evidence to answer the concise card’s currently
-unconfirmed timing questions. Then prepare
+for explicit actual-start/progress evidence to answer the concise card’s “Still to confirm”
+timing questions. Then prepare
 C-001/002 bridge dossiers. The owner accepted the local visual direction; the latest
 navigation memory, building-detail fade/cache and project key are ready for critique.
 Keep the production deployment and portfolio security checks open; then finish the [recruiter-ready release plan](portfolio-release-plan.md):

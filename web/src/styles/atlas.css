@@ -1247,3 +1247,23 @@ dialog dd a {
 .brief-source p { font-size: 11px; margin-top: 10px; }
 .brief-more { width: 100%; cursor: pointer; }
 .atlas-shell:not(.record-expanded) .full-record-actions { display: none; }
+
+.brief-unknowns { margin: 18px 0; padding-top: 12px; border-top: 1px solid var(--rule); color: var(--muted); }
+.brief-unknowns summary { display: flex; align-items: center; gap: 8px; font-size: 11px; cursor: pointer; }
+.brief-unknowns p { font-size: 11px; line-height: 1.6; margin-top: 10px; }
+.brief-unknowns summary::after { content: "+"; margin-left: auto; }
+.brief-unknowns[open] summary::after { content: "−"; }
+.legend-category { color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--paper)); border-radius: 6px; width: 30px; height: 30px; }
+.project-category-key { max-height: min(40vh, 320px); overflow-y: auto; overscroll-behavior: contain; scroll-behavior: smooth; scrollbar-width: thin; }
+.label-panel { background: var(--paper); }
+.pin-number svg { width: 16px; height: 16px; }
+@media (prefers-reduced-motion: no-preference) {
+  .map-toolbar button, .area-options button, .legend-project-link, .project-select, .primary-link, .city-return, .icon-button { transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+  .legend-project-link .legend-symbol, .entry-arrow, .primary-link svg { transition: transform 180ms ease; }
+  .legend-project-link:hover .legend-symbol, .legend-project-link:focus-visible .legend-symbol { transform: translateY(-2px); }
+  .project-select:hover .entry-arrow, .primary-link:hover svg { transform: translateX(3px); }
+  .map-toolbar button:hover, .city-return:hover { transform: translateY(-2px); box-shadow: 0 4px 12px #252d2a12; }
+  .map-toolbar button:active, .city-return:active, .primary-link:active { transform: translateY(1px); }
+  .area-options button:hover { transform: translateX(2px); }
+}
+@media (prefers-reduced-motion: reduce) { .project-category-key { scroll-behavior: auto; } }

@@ -3,6 +3,34 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Lead with supported information and distinguish project icons
+
+**Status:** Implemented locally; production unchanged.
+
+### Participants and work
+
+Main agent (Codex, GPT-6 Astra, Browser skill) implemented the owner's next visual
+critique without delegation. The card now leads with the canonical milestone and
+last source-reported status, explicitly dated. Unconfirmed progress and actual-start
+questions moved into a quiet, expandable Still to confirm section. C-010's passed-date
+warning remains outside that section. No unknown fact was newly verified.
+
+Added distinct inline SVG icons for public space, school, energy and the marker
+visibility control; mapped project pins share their key's category icon. Added a
+bounded scroll area and subtle hover/focus/press transitions. Motion is conditional
+on the user's reduced-motion preference. No external icon service or runtime request.
+
+### Verification
+
+187 tests passed in 26.34 seconds; TypeScript and the 14-page static build passed.
+Browser inspected C-014's concise card, the distinct icons and expandable unknowns;
+the school key button opened C-010 and its warning remained visible. A screenshot
+records the card and key together. The key intentionally dismisses on outside click;
+the check reopened it before selecting School. Preview configuration remains local
+and must not be deployed. This iteration does not complete the outstanding timing
+research or independent glossary verification.
+
+
 ## 2026-09-09 — Center the card on project timing
 
 **Status:** Implemented locally; production unchanged.

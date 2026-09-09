@@ -6,6 +6,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Local dependency remediation complete; wider release checks remain open.
 
+**Commit:** `ad921d1` — `fix(release): patch dependencies and record portfolio audit`.
+
 ### Participants and scope
 
 Main agent (Codex, GPT-6 Astra) performed the repository inspection, targeted

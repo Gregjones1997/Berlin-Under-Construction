@@ -1,0 +1,176 @@
+{
+  "date": "2026-09-09",
+  "source_commit": "687058e",
+  "host": "https://berlin-under-construction.vercel.app",
+  "basic_listings": 150,
+  "full_dossiers": 3,
+  "full_dossier_pins": 2,
+  "checked": [
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "bfa3dbbb9044ea84255d81d54e79e16ce160cf1a0a9afe9190e4f5f02ff4ae63",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/records/",
+      "status": 200,
+      "sha256": "d768a0cf9622e8e637e1bf8484270e27e0bbcdcb38b1b06651d25da47d0d5748",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "sha256": "ac22a8d4c01c8aef94bdb32d2b884668c74bf189169d23ac8a36add13fc45ed9",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/projects/heinrich-hertz-gymnasium-ostbahnhof/",
+      "status": 200,
+      "sha256": "f7eac94eb27d1d825af90915f7840402a11b7bee88d45f479d7278e3168d23a9",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/projects/europaplatz-sued/",
+      "status": 200,
+      "sha256": "16af86b3dc0f650c8a24ebeb29963e7ed626158fe0e381519816fcfd8640d0a1",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/projects/power-to-heat-heizkraftwerk-mitte/",
+      "status": 200,
+      "sha256": "4007d34aa5720e441652140143eb4aa2abb6244d12c35b00ffd07f2ea2ec0104",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/impressum/",
+      "status": 200,
+      "sha256": "c0bb6fb3f195346fb7f862f1ba0d121212a543956e7e0407f8f02c08b49d595c",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/method/",
+      "status": 200,
+      "sha256": "03e8b22bf022709c7e56789030e74936ac69a59078e6bed87151cd233125e8d0",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/",
+      "status": 200,
+      "sha256": "640b751b01781719db9429f52def7b2b84c87ab3adb44669889b329fa4de88b9",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/organizations/senatsverwaltung-stadtentwicklung-bauen-wohnen/",
+      "status": 200,
+      "sha256": "cd2c5cd498ee0f5992d9dddfd5eb7841d191ec207b90e27bae2f27396c7f9b92",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/organizations/50hertz/",
+      "status": 200,
+      "sha256": "08f8c4e6ac7fa7b240e7074dd5b88ee4f9c3b01d0b59a1a1b1ce21e7335faae1",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/projects/C-014/",
+      "status": 200,
+      "sha256": "1a7dac646d746950fc14ba4779911612a0ec2c777ab775fd0d5ab23e9dd6d382",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/projects/C-010/",
+      "status": 200,
+      "sha256": "e9294ec2dc62177ae73fc58ea611244da12045ec1ed9a20a71555dd0f37744cd",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/projects/C-019/",
+      "status": 200,
+      "sha256": "dc190af60b558ee9c2e08abcfc1744b6384024c3fee418bdf92b26234499ec16",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/index.astro_astro_type_script_index_0_lang.DsbhFJvO.js",
+      "status": 200,
+      "sha256": "6f7764d8458f71b23b160f45165e4819e7cfb230bd629701e6f10740bbb47f47",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/index.nDrrSXIt.css",
+      "status": 200,
+      "sha256": "5529d0a825c0ccbf66ef57ce568f946f05c510c60d37f94105b94477043605ab",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/renderer.CGObN9Dc.js",
+      "status": 200,
+      "sha256": "968c93b469b3919e924e0ca9396e365aaede44333f25c71409ac2218bf8b6b7b",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/Base.iIgsGmqw.css",
+      "status": 200,
+      "sha256": "ce61146d41972e542587c9f984c49ca63120e8c0c934d2ed24592b95b160a240",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/atlas/model.json",
+      "status": 200,
+      "sha256": "70d9423ca07d7c7584d7cb801291e629517ea4a01675a993aa1e656d9a9498e0",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/atlas/provenance.json",
+      "status": 200,
+      "sha256": "802e3fc89c2e8e956183f8aed187c33e2888c01851aea0168a6770716657b646",
+      "matches_local": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/atlas/berlin-11e9292ce568.bin.gz",
+      "status": 200,
+      "sha256": "11e9292ce56859dc0fb0c402f0ca15e7f33b51456872a7a834fd72fe20761eed",
+      "matches_local": true,
+      "sets_cookie": false
+    }
+  ],
+  "private_probes": [
+    {
+      "path": "/data/artifacts/",
+      "status": 404
+    },
+    {
+      "path": "/.env",
+      "status": 404
+    },
+    {
+      "path": "/pipeline/",
+      "status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404
+    }
+  ],
+  "scope": "All HTML, all CSS/JS, model metadata and overview geometry. Detailed geometry tiles unchanged; not re-downloaded."
+}

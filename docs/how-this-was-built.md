@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Add 150 basic register references to the main atlas
 
+**Commit:** `687058e` — `feat(atlas): publish 150 cited basic register listings`.
+
 ### Participants
 
 Main agent (Codex, GPT-6 Astra; Browser and Vercel CLI skills), single writer.
@@ -30,7 +32,9 @@ not a verified site footprint. Automated title matching is not semantic review.
 201 Python tests and TypeScript checking passed. The export contains 14 routes;
 static packaging passed with the existing published legal address. Mobile browser
 inspection verified opening a basic record from the map key; release verification
-is recorded in public-deployment.md. The link checker now handles URL fragments.
+is recorded in public-deployment.md. Live 21-file hash checks and four private-path
+404 probes passed; the public mobile map contains 150 basic pins and two dossier
+pins. The link checker now handles URL fragments.
 
 
 ## 2026-09-09 — Research 150 cited construction candidates

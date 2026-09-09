@@ -26,12 +26,13 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 
 **Current status:** LIVE — the 7 September release is available at
 [Berlin, Under Construction](https://berlin-under-construction.vercel.app).
-The owner accepted the atlas; shared navigation, label categories and whole-Berlin
-geometry are implemented. The citywide production update uses source commit `7842a09`.
+The main atlas now includes 150 basic official-register listings alongside the
+three full dossiers (two located). The 9 September production update uses source
+commit `687058e`, including the mobile layout improvements.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Verify the 150-basic-listing production release, then enrich a
-small batch with sourced milestone dates and balance housing coverage. Basic
+**Next action:** Enrich a small batch of the 150 live basic listings with sourced
+milestone dates and balance housing coverage. The production release is verified. Basic
 publication covers official register titles and reference points only (ADR-025).
 Keep basic listing and full dossier pin treatments distinct. Continue using the
 [batch research queue](research-queue.md).

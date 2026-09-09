@@ -5,7 +5,28 @@ Only the checked Astro export is uploaded through Vercel's Build Output API.
 The retained PDF artifacts, SQLite store, pipeline source and environment files
 are never deployment inputs.
 
-## Current production update — whole Berlin
+## Current production update — 150 basic listings, 9 September
+
+Source commit `687058e` is READY on the stable public URL.
+Deployment: `dpl_9w8A7TYp7GrxKra3FXubgfWzNc7g`.
+[Immutable release](https://berlin-under-construction-3k46rk237-jonesg158-8681s-projects.vercel.app).
+
+The main map now has 150 smaller outlined official-register reference pins and
+two solid dossier pins. All three full dossiers remain available. Basic listings
+publish source identity and reference location only, not verified progress or site
+boundaries (ADR-025). The release also includes the previously local mobile
+layout fixes and removal of Paper/Ink controls.
+
+201 tests, TypeScript checking, the static privacy/withheld scan and packaging
+passed. [Anonymous verification](research/findings/2026-09-09-basic-listings-live.json)
+matched all 14 HTML routes, four CSS/JS files, two metadata files and overview
+geometry to local hashes; four private-path probes returned 404. Unchanged detail
+tiles were not downloaded again. Browser inspection confirmed 150 basic pins,
+two dossier pins, and a 390 × 844 viewport with equal page height. Local browser
+checks also exercised basic-card selection and return to the previous map view.
+[Live mobile screenshot](images/atlas-basic-listings-mobile.png).
+
+## Previous production update — whole Berlin
 
 Source commit `7842a09` is deployed READY at the stable public URL.
 Deployment: `dpl_AEZAWYx74e9z6iEEohAeYQkHrTgx`.

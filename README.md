@@ -17,7 +17,8 @@ product role, AI contribution, traceable examples, measurements and limitations.
 [Open the live atlas](https://berlin-under-construction.vercel.app).
 
 The Astro release includes: three evidence-backed project
-dossiers, an interactive architectural atlas of Berlin, a static map
+dossiers, 150 distinct basic listings with official register reference points,
+an interactive architectural atlas of Berlin, a static map
 and project index, contextual correction routes, the recorded AI-method page,
 an Impressum and an Article 13 privacy notice. Its static export contains 14
 HTML pages. Only the atlas loads client JavaScript (Three.js); all other routes

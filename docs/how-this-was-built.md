@@ -2,6 +2,43 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+## 2026-09-09 — Start recruiter-release audit and patch dependencies
+
+**Status:** Local dependency remediation complete; wider release checks remain open.
+
+### Participants and scope
+
+Main agent (Codex, GPT-6 Astra) performed the repository inspection, targeted
+credential scan, npm dependency audit, dependency updates and release planning.
+No agents were delegated. The CSO skill was inspected for applicability but its
+full audit workflow was not run; this is a bounded initial release check.
+
+### Work and verification
+
+The working tree was initially clean. Validated 92 build-log hashes against
+reachable history. A redacted-format scan of 848 blobs across locally reachable
+Git refs found no selected private-key/provider-token/database-credential patterns.
+This is not proof of the absence of all secrets. The baseline suite passed 187
+tests and TypeScript passed. npm audit identified four affected packages; updated
+Astro from 7.2.3 to 7.3.2 and refreshed compatible transitive dependencies. The
+subsequent npm audit fix reported zero vulnerabilities, and TypeScript passed.
+The complete suite passed again after the update: 187 tests in 23.94 seconds,
+including Astro export and publication-boundary checks. `git diff --check` passed.
+
+Recorded the owner's portfolio-first finish order and optional pending-research
+layer in `docs/portfolio-release-plan.md`; updated the next-action handoff. Checked
+the existing ledger's 33 rows and seven-candidate screening before describing
+coverage. No new project claims, categories or coordinates were published.
+
+### Limitations
+
+Credential checks cover selected formats and locally reachable history only.
+Deployment configuration/output, Python dependency advisories, fresh source checks,
+the full live walkthrough and portfolio packaging remain open. Static output
+limits production exposure but does not make affected build dependencies acceptable.
+No production deployment was performed. Test exports contain test configuration
+and must not be uploaded as a release.
+
 - 2026-09-08 — Main agent (Codex, writing-for-agents and skill-creator skills): created the owner-requested `design-with-depth` project skill, with a causal design workflow and a historical Berlin case study. The writing guidance shaped completion criteria and reference disclosure; skill-creator supplied packaging validation. Verified frontmatter, UI metadata, linked resources and evidence paths; manually reviewed scope and observed-versus-hypothesized claims. This is structural/editorial validation, not a fresh design run. The validator's missing PyYAML dependency was installed only in a temporary directory. No subagents used; the public application is unchanged. `5ad5ffd`
 
 - 2026-09-08 — Main agent (Codex), skills CLI 1.5.25: ran the owner-requested `npx skills@latest add mattpocock/skills`. Installer exited successfully; verified 37 installed skill files and 37 matching lockfile entries. Existing project skills were updated; no installed skill was invoked. `c100aab`

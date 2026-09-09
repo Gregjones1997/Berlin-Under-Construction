@@ -30,7 +30,13 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Prepare the C-009 building dossier from the [seven-candidate
+**Next action:** Finish the [recruiter-ready release plan](portfolio-release-plan.md):
+close dependency and credential/deployment-output checks, walk through all three
+published cases, package the AI evidence and portfolio story, and verify mobile
+and desktop before a fresh release. A pending-research map layer is optional and
+requires supported identities, categories and locations; no placeholder count or
+invented markers. The owner's 9 September portfolio deadline takes priority over
+coverage expansion. After this release, prepare the C-009 building dossier from the [seven-candidate
 screening](research/findings/2026-09-08-seven-candidate-screening.md), verify an
 authoritative map position and precise building scope, and assemble proposed
 public facts for the existing review gates. Then prepare C-001/002 bridge dossiers.

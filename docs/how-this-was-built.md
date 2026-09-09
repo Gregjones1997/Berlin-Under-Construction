@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Record six milestone enrichment candidates
 
+**Commit:** `bd4e0a8` — `docs(research): retain cited milestone evidence for six listings`.
+
 ### Participants and orchestration
 
 Main agent (Codex, GPT-6 Astra, research skill and web tool), single writer.

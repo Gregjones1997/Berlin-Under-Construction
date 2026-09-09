@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Prepare the GitHub portfolio checkpoint
 
+**Commit:** `ac90231` — `docs(portfolio): add reviewer evidence guide and checkpoint checks`.
+
 Main agent (Codex, GPT-6 Astra; Vercel connector, existing Vercel CLI credentials
 for a read-only project-settings request, and Browser skill). No delegation.
 Added a README-linked portfolio evidence guide separating owner decisions, AI

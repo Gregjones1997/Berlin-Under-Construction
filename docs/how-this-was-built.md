@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Simplify date labels and source arrows
 
+**Commit:** `e47e603` — `fix(atlas): simplify date labels and unify source arrows`.
+
 Main agent (Codex, GPT-6 Astra, Browser skill); no delegation. Applied owner
 feedback: Start and Planned replace the two-level date labels; source links use
 the same SVG line arrow as navigation, with hover/focus color and reduced-motion

@@ -26,6 +26,9 @@ allowed_hosts = [
   "www.howoge.de",
   "unternehmen.howoge.de",
   "www.bew.berlin",
+  # Official sources retained by the seven-candidate screening (8 September).
+  "bvg-projekt.de",
+  "www.deutschebahn.com",
   "www.entwicklungsstadt.de",
 ]
 

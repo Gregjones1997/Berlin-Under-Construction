@@ -3,6 +3,41 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Batch candidate research and location preview
+
+### Participants and orchestration
+
+Main agent (Codex, GPT-6 Astra, research and Browser skills) is the single writer.
+The research skill requested a background lane so implementation could continue.
+One read-only agent checked official map locations for C-001/002/008/009 and
+returned URLs, marker attributes, bridge geometry leads and scope caveats. The
+main agent independently fetched all four official HTML sources, retained hashes,
+matched coordinate tags and inspected their contexts. Accepted as proposals:
+two project-map centers, one school-construction marker and one approximate campus
+point. Exact building placement for C-009 was not accepted. Linked bridge geometry
+was a useful lead but not integrated or independently verified this turn. No other
+lanes, no agent file writes, no model-provider calls or golden-set changes.
+
+### Change and evidence
+
+Added a repeatable internal queue: deduplicated live retrieval, retained-artifact
+checks, visible failures and changed-document review, coordinate evidence checks,
+and a linked map/report outside the public export. Existing retrieval guards are
+reused. Added the already-screened BVG/DB hosts to the transport allowlist. Seven
+candidates and ten distinct source URLs were refreshed; all 18 screened excerpts
+remain present. Four locations have evidence proposals; zero new public approvals.
+Initial raw-HTML matching falsely flagged inline markup as missing text; local
+inspection corrected normalization and a regression test covers split words and
+block boundaries. No false missing-source claim was published.
+
+The main agent inspected the generated map and source/review links in Browser.
+Screenshot: `/private/tmp/berlin-research-queue.png`. Full suite passed 194 tests,
+including seven focused queue checks. Existing public map remains at two located projects and three dossiers.
+Details: [queue workflow](research-queue.md), [run evidence](research/findings/2026-09-09-queue-run.json),
+[location proposals](research/findings/2026-09-09-candidate-location-proposals.json).
+No deployment, scheduler, paid extraction, semantic accuracy or automatic publication
+is claimed. Location/scope and publication review still gates public expansion.
+
 ## 2026-09-09 — Clear the mobile opening map
 
 **Commit:** `609e629` — `fix(atlas): clear mobile opening view and fit viewport`.

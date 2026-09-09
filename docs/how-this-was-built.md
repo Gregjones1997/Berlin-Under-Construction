@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Batch candidate research and location preview
 
+**Commit:** `14027ee` — `feat(research): batch candidate checks and map location proposals`.
+
 ### Participants and orchestration
 
 Main agent (Codex, GPT-6 Astra, research and Browser skills) is the single writer.

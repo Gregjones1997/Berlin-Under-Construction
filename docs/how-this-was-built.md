@@ -7,6 +7,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Implemented locally; production unchanged.
 
+**Commit:** `43b4a38` — `feat(atlas): move full overview access to card footer`.
+
 ### Participants and course correction
 
 Main agent (Codex, GPT-6 Astra, Browser skill). The owner clarified that the

@@ -31,13 +31,11 @@ three full dossiers (two located). The 9 September production update uses source
 commit `687058e`, including the mobile layout improvements.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Follow linked authority progress reports for the
-[six-project milestone batch](research/findings/2026-09-09-milestone-enrichment.md),
-resolve schedule supersession and actual-start evidence, then prepare eligible
-milestone display proposals through the existing publication gate. Balance housing
-coverage using retained provider inventories. The 150-basic-listing production
-release is verified; ADR-025 still limits basic publication to register identity
-and reference location.
+**Next action:** Verify the scoped six-date release on five basic cards, then
+resolve Waldemarstraße start accounts and Karl-Marx-Straße schedule supersession.
+See the [publication review](research/findings/2026-09-09-milestone-publication-review.md).
+Continue another bounded milestone batch and balance housing coverage. Basic
+pins remain distinct from full dossiers; no on-time assessment is supported.
 Keep basic listing and full dossier pin treatments distinct. Continue using the
 [batch research queue](research-queue.md).
 Seven candidates have refreshed evidence; four have independently checked official

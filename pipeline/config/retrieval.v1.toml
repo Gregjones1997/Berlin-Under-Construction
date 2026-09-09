@@ -21,6 +21,8 @@ allowed_hosts = [
   "www.berlin.de",
   "berlin.de",
   "mein.berlin.de",
+  # Developer press-release publisher retained in the September milestone review.
+  "www.feldhoff-cie.de",
   "www.parlament-berlin.de",
   "pardok.parlament-berlin.de",
   "www.howoge.de",

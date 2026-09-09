@@ -1204,3 +1204,26 @@ not published as facts. Full dossier publication and golden-set human-authority
 requirements remain unchanged. The research catalog remains an immutable record
 of its earlier unapproved state; the separate public projection records this
 narrow release. No claim of human German-language verification is added.
+
+## ADR-026 — Enrich basic cards with bounded source-stated milestones
+
+**Accepted:** 9 September 2026. The owner instructed the builder to proceed after
+being told straightforward sourced facts would be prepared, checked and deployed,
+while disputed facts would remain held and genuine German interpretation questions
+would go to human review.
+
+This authorizes six literal date fields for five existing basic listings in the
+frozen `public/data/basic-milestone-release.json` release. Planned completion and
+planned end remain different stored kinds; the only reported start is the explicit
+Dorfteich sentence, corroborated by the responsible district. Dates are substrings
+of retained, checked German evidence. Seasonal/year precision is preserved.
+No relative expression is resolved to a fabricated day. Source dates are source
+edit dates, not observation dates. No on-time assessment is published.
+
+This is delegated source-stated publication, not an assertion that the owner
+reviewed each new German passage. It neither creates golden values nor claims
+human language verification. Full dossiers keep their original approval registry.
+Basic pins remain basic pins. The frozen release excludes disputed start claims
+and Karl-Marx-Straße schedule supersession; a missing or changed evidence mapping
+fails the build. Future additions require another scoped review, not automatic
+promotion of the research queue.

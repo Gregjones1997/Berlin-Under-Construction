@@ -486,3 +486,15 @@ def test_basic_listings_have_evidence_and_addressable_map_cards(c014_export: str
         assert f'data-project="{row["id"]}"' in atlas
         assert not {"status", "start", "end", "category_proposal", "register_status_code"}.intersection(row)
     assert "not verified site boundaries" in atlas
+
+
+def test_basic_dates_publish_without_disputed_start_or_completion(c014_export: str) -> None:
+    import re
+    atlas = (DIST / "index.html").read_text()
+    assert atlas.count('data-basic-milestone=') == 6
+    for pid in ('MB-2023-00716', 'MB-2025-01200', 'MB-2026-01347'):
+        card = re.search(r'id="record-' + pid + r'".*?</section>', atlas).group(0)
+        assert 'data-basic-milestone="reported_start"' not in card
+        if pid == 'MB-2023-00716':
+            assert 'data-basic-milestone=' not in card
+    assert 'data-basic-milestone="reported_start"' in atlas

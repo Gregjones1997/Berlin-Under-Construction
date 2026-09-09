@@ -1,0 +1,101 @@
+[
+  {
+    "project_id": "MB-2023-00823",
+    "url": "https://www.berlin.de/ba-tempelhof-schoeneberg/politik-und-verwaltung/aemter/strassen-und-gruenflaechenamt/aktuelles/projekte/artikel.1585456.php",
+    "content_hash": "sha256:f7bbca11818ac25467784bbd1389940b743d1eac4bae2d2c4eeb36ff950ffdf5",
+    "retrieved_on": "2026-09-09T17:41:06.469239+00:00",
+    "publication_date_de": "26.11.2025",
+    "spans": [
+      "Baubeginn Ende Januar 2025, voraussichtliche Dauer bis Herbst 2026"
+    ],
+    "exact_span_check": true,
+    "attempts": [
+      {
+        "status": 200,
+        "outcome": "received",
+        "user_agent": "default"
+      }
+    ]
+  },
+  {
+    "project_id": "MB-2025-01200",
+    "url": "https://www.berlin.de/ba-friedrichshain-kreuzberg/politik-und-verwaltung/aemter/strassen-und-gruenflaechenamt/artikel.1236256.php",
+    "content_hash": "sha256:5c9e781a31e3e4ceb98a8a068ac56868e15a5e50e1bd7dbba9e7e4140d10776c",
+    "retrieved_on": "2026-09-09T17:41:07.280362+00:00",
+    "publication_date_de": "07.04.2026",
+    "spans": [
+      "07.04.2026: Diese Woche beginnt der Bau zur Neugestaltung des Spielplatz Waldemarstraße.",
+      "11.02.2026",
+      "sind die Umbauarbeiten an zwei Spielplätzen gestartet"
+    ],
+    "exact_span_check": true,
+    "attempts": [
+      {
+        "status": 200,
+        "outcome": "received",
+        "user_agent": "default"
+      }
+    ],
+    "scope_note": "The February archive item names the Bethanien/Waldemarstraße playground; April describes work beginning that week. Do not infer a single actual-start date."
+  },
+  {
+    "project_id": "MB-2026-01441",
+    "url": "https://www.berlin.de/rbmskzl/aktuelles/pressemitteilungen/2026/pressemitteilung.1682290.php",
+    "content_hash": "sha256:ce45957ae560bcccdc3d964c438203b3ccb21073789335317e2dced89f446665",
+    "retrieved_on": "2026-09-09T17:41:07.615221+00:00",
+    "publication_date_de": "16.06.2026",
+    "spans": [
+      "Die Zustimmung des Berliner Abgeordnetenhauses steht noch aus."
+    ],
+    "exact_span_check": true,
+    "attempts": [
+      {
+        "status": 200,
+        "outcome": "received",
+        "user_agent": "default"
+      }
+    ]
+  },
+  {
+    "project_id": "MB-2026-01347",
+    "url": "https://www.feldhoff-cie.de/media/pages/pressreleases/greystar-und-ten-brinke-legen-grundstein-fuer-428-mietwohnungen-in-berlin-marzahn/d190344444-1788425621/260903_fci_greystar_ten-brinke_pm-grundsteinlegung-berlin-marzahn_final_korrektur.pdf",
+    "content_hash": "sha256:2a840e6743364449e23d9dbbdbb6039b922c898c3e24af06aafe3cfca75ffcbe",
+    "pre_transform_hash": "sha256:d1772a2cfa7b8b30efb226cd9583218cfa5975aa94faffb8db5e53618796c7f8",
+    "retrieved_on": "2026-09-09T17:45:37.868165+00:00",
+    "publication_date_de": "03.09.2026",
+    "spans": [
+      "Auf dem Grundstück laufen derzeit die Abbrucharbeiten, im Anschluss beginnen die Hochbauarbeiten."
+    ],
+    "locator": "PDF page 2",
+    "exact_span_check": true,
+    "verification_status": "span_present",
+    "attempts": [
+      {
+        "status": 200,
+        "outcome": "received",
+        "user_agent": "default"
+      }
+    ]
+  },
+  {
+    "project_id": "MB-2024-01075",
+    "url": "https://www.berlin.de/ba-pankow/aktuelles/pressemitteilungen/2025/pressemitteilung.1597361.php",
+    "content_hash": "sha256:dcc6e7660d9d47821e23371ffd7e405581e7656974f4256d3f38d494ec911fec",
+    "pre_transform_hash": "sha256:dcc6e7660d9d47821e23371ffd7e405581e7656974f4256d3f38d494ec911fec",
+    "retrieved_on": "2026-09-09T17:45:38.255475+00:00",
+    "publication_date_de": "12.09.2025",
+    "spans": [
+      "Die Fertigstellung ist für Mitte 2027 geplant."
+    ],
+    "locator": "press release body",
+    "exact_span_check": false,
+    "verification_status": "page_body_missing_expected_span",
+    "attempts": [
+      {
+        "status": 200,
+        "outcome": "received",
+        "user_agent": "default"
+      }
+    ]
+  }
+]

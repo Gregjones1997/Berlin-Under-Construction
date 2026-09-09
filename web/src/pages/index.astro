@@ -1,5 +1,6 @@
 ---
 import { readFileSync } from "node:fs";
+import { loadBasicMilestones } from "../lib/basic-milestones.mjs";
 import basicListings from "../atlas/basic-listings.json";
 import places from "../atlas/places.json";
 import { resolve } from "node:path";
@@ -11,6 +12,7 @@ import SiteHeader from "../components/SiteHeader.astro";
 import contextLabels from "../atlas/context-labels.json";
 import "../styles/atlas.css";
 const projects = loadPublicProjectPages();
+const basicMilestones = loadBasicMilestones(basicListings.records.map(project => project.id));
 const positions = JSON.parse(
   readFileSync(
     resolve("../public/data/map/pilot-marker-positions.json"),
@@ -256,9 +258,10 @@ const records = projects.map((project) => ({
           <div class="record-heading"><p class="eyebrow">BASIC LISTING · RESEARCH ONGOING</p><h2 lang="de">{project.nameDe}</h2></div>
           <div class="project-brief status-brief" data-record-section="overview">
             <p lang="de">{project.locationDe}</p>
+            {basicMilestones.some(fact => fact.projectId === project.id) && <dl class="brief-dates basic-dates" aria-label="Source-reported milestones">{basicMilestones.filter(fact => fact.projectId === project.id).map(fact => <div data-basic-milestone={fact.kind}><dt>{fact.label}</dt><dd><span lang="de">{fact.valueDe}</span><a class="fact-source" href={fact.sourceUrl} aria-label={`Source for ${fact.label.toLowerCase()}`} title={fact.exactTextDe}><Icon name="arrow" /></a></dd></div>)}</dl>}
             <p class="brief-source-key">Official register reference point. Site extent and construction progress have not been verified.</p>
             <a class="brief-more brief-overview-link" href={project.sourceUrl}><span><strong>Official project page</strong></span><Icon name="arrow" /></a>
-            <details class="basic-evidence"><summary>Source details</summary><p>Title and location reproduced from the official meinBerlin register, checked {basicListings.reviewedOn}.</p><a href={project.evidence.inventory_url}>Register source</a><p>Location field: <code>{project.evidence.location_pointer}</code></p><p>Source fingerprint: <code>{project.evidence.artifact_hash}</code></p></details>
+            <details class="basic-evidence"><summary>Source details</summary><p>Title and location reproduced from the official meinBerlin register, checked {basicListings.reviewedOn}.</p>{basicMilestones.filter(fact => fact.projectId === project.id).map(fact => <div class="milestone-evidence"><p lang="de">{fact.exactTextDe}</p><p>Source edited <span lang="de">{fact.sourceModifiedDateDe}</span> · retrieved {fact.retrievedOn.slice(0,10)}</p><a href={fact.sourceUrl}>Original milestone source</a></div>)}<a href={project.evidence.inventory_url}>Register source</a><p>Location field: <code>{project.evidence.location_pointer}</code></p><p>Source fingerprint: <code>{project.evidence.artifact_hash}</code></p></details>
             <a href="/corrections/" class="correction-link">Suggest a correction · {project.id}</a>
           </div>
         </section>)}

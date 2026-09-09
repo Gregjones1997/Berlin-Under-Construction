@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "facts": [
+    {
+      "projectId": "MB-2026-01441",
+      "kind": "planned_completion",
+      "valueDe": "2028",
+      "sourceIndex": 0,
+      "spanIndex": 0
+    },
+    {
+      "projectId": "MB-2026-01347",
+      "kind": "planned_completion",
+      "valueDe": "Ende 2028",
+      "sourceIndex": 0,
+      "spanIndex": 0
+    },
+    {
+      "projectId": "MB-2025-01200",
+      "kind": "planned_completion",
+      "valueDe": "Frühjahr 2027",
+      "sourceIndex": 0,
+      "spanIndex": 1
+    },
+    {
+      "projectId": "MB-2024-01075",
+      "kind": "planned_completion",
+      "valueDe": "Mitte 2027",
+      "sourceIndex": 0,
+      "spanIndex": 0
+    },
+    {
+      "projectId": "MB-2023-00823",
+      "kind": "reported_start",
+      "valueDe": "Ende Januar 2025",
+      "sourceIndex": 0,
+      "spanIndex": 0
+    },
+    {
+      "projectId": "MB-2023-00823",
+      "kind": "planned_end",
+      "valueDe": "Herbst 2026",
+      "sourceIndex": 0,
+      "spanIndex": 1
+    }
+  ]
+}

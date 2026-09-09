@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "scope": "Owner-authorized source-stated milestone display; no golden or human-language verification claim",
+  "decisionRef": "docs/decision-log.md",
+  "decisionId": "ADR-026",
+  "checkedOn": "2026-09-09",
+  "payloadSha256": "sha256:2d465bb3d1f8d3388fa9bf2855bfa4346749d66a77bce14feb26b012f9a2b968",
+  "excludedFacts": [
+    {
+      "projectId": "MB-2023-00716",
+      "kind": "all_milestones",
+      "reason": "Schedule supersession remains unresolved."
+    },
+    {
+      "projectId": "MB-2025-01200",
+      "kind": "reported_start",
+      "reason": "Authority updates give differing commencement accounts."
+    },
+    {
+      "projectId": "MB-2026-01347",
+      "kind": "reported_start",
+      "reason": "Demolition, groundbreaking and structural work are different milestones."
+    },
+    {
+      "projectId": "MB-2026-01441",
+      "kind": "reported_start",
+      "reason": "Forecast year does not establish actual start."
+    },
+    {
+      "projectId": "MB-2024-01075",
+      "kind": "reported_start",
+      "reason": "Start including demolition must not be presented as an unqualified building start."
+    }
+  ],
+  "researchSha256": "sha256:6158c375a17384c8ffdd4171f182c6f276862b385111b305878be0aca62d17ab"
+}

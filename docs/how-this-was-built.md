@@ -3,6 +3,40 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Publish six source-stated dates on five basic cards
+
+### Participants and orchestration
+
+Main agent (Codex, GPT-6 Astra; research, Browser and Vercel CLI skills), single
+writer. One read-only lane searched newer housing and sports-building sources
+while the main agent checked district, playground and school sources and built
+the publication gate. Accepted its German developer PDF after independent web
+inspection, pipeline retrieval, metadata stripping and page-2 text matching.
+Rejected its older sports press-release corroboration as fresh evidence: the
+retrieved page had a heading/date but lacked the expected body passage. No
+subagent writes or extra lanes occurred. Browser inspected the mobile card;
+Vercel CLI skill supplies the checked-static-output deployment flow.
+
+### Changes and evidence
+
+Added a frozen six-field release for five basic listings, with payload and source
+ledger fingerprints, exact German substring checks, scoped kind/identity checks
+and explicit exclusions. The owner authorized straightforward source-stated
+publication (ADR-026); no individual human-language review, golden provenance or
+full-dossier acceptance is invented. Display uses compact dates and source arrows;
+source wording and edit/retrieval dates expand below. Original three dossiers and
+150 basic pin treatments remain unchanged. No model-provider extraction calls
+were made; interactive agent usage is not represented as a zero-cost extraction.
+
+The [review](research/findings/2026-09-09-milestone-publication-review.md) and
+[follow-up ledger](research/findings/2026-09-09-milestone-followup-sources.json)
+preserve both usable and failed checks. 207 tests passed before release, including
+missing-evidence, invented-day, modified-payload and excluded-fact cases.
+TypeScript checking passed. The 390 × 844 mobile card shows reported start and
+planned finish with accessible source links. Deployment evidence follows in
+public-deployment.md. No on-time claim or exact seasonal date was inferred.
+
+
 ## 2026-09-09 — Record six milestone enrichment candidates
 
 **Commit:** `bd4e0a8` — `docs(research): retain cited milestone evidence for six listings`.

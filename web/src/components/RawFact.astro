@@ -8,9 +8,10 @@ import { organizationCorrectionForFact } from "../lib/organization-corrections";
 interface Props {
   fact: PublicFact;
   lead?: boolean;
+  compact?: boolean;
 }
 
-const { fact, lead = false } = Astro.props;
+const { fact, lead = false, compact = false } = Astro.props;
 
 const FACT_LABELS: Record<string, string> = {
   financial_measure: "Financial measure",
@@ -45,7 +46,7 @@ const organizationCorrection = organizationCorrectionForFact(fact.factId);
 <article data-fact-id={fact.factId}>
   <h3>{factLabel}</h3>
   <p lang="de" class={lead ? "value" : undefined}>{fact.valueDe}</p>
-  {fact.milestoneType && <p class="meta">Milestone type: {humanize(fact.milestoneType)}</p>}
+  {compact ? (<details class="fact-context"><summary>Terminology & details</summary><div>  {fact.milestoneType && <p class="meta">Milestone type: {humanize(fact.milestoneType)}</p>}
   {fact.milestoneTermDe && (
     <p class="meta">Milestone term: <span lang="de">{String(fact.milestoneTermDe)}</span></p>
   )}
@@ -70,6 +71,32 @@ const organizationCorrection = organizationCorrectionForFact(fact.factId);
       Qualifier: <span lang="de">{String((qualifier as { tokenDe?: string }).tokenDe)}</span>
     </p>
   ))}
+</div></details>) : (<>  {fact.milestoneType && <p class="meta">Milestone type: {humanize(fact.milestoneType)}</p>}
+  {fact.milestoneTermDe && (
+    <p class="meta">Milestone term: <span lang="de">{String(fact.milestoneTermDe)}</span></p>
+  )}
+  {dateValue?.canonicalDe && (
+    <p class="meta">Date: <span lang="de">{dateValue.canonicalDe}</span> ({humanize(dateValue.precision)})</p>
+  )}
+  {fact.measureType && <p class="meta">Financial measure: {humanize(fact.measureType)}</p>}
+  {amount?.value !== undefined && (
+    <p class="meta">Amount: {amount.value} {amount.currency}</p>
+  )}
+  {fact.taxTreatment && (
+    <p class="meta">Tax treatment: {humanize((fact.taxTreatment as { state?: string }).state)}</p>
+  )}
+  {fact.priceBasis && (
+    <p class="meta">Price basis: {humanize((fact.priceBasis as { state?: string }).state)}</p>
+  )}
+  {fact.budgetReference && (
+    <p class="meta">Budget reference: {humanize((fact.budgetReference as { state?: string }).state)}</p>
+  )}
+  {qualifiers.map((qualifier) => (
+    <p class="meta">
+      Qualifier: <span lang="de">{String((qualifier as { tokenDe?: string }).tokenDe)}</span>
+    </p>
+  ))}
+</>)}
   {asOfDate?.state && (
     <p class="meta">As of: {asOfDate.value ?? humanize(asOfDate.state)}</p>
   )}

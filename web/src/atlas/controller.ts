@@ -20,10 +20,22 @@ function choose(id: string, updateHash = true) {
   const button = selects.find((b) => b.dataset.project === id);
   const record = $(`record-${id}`);
   if (!button || !record) return;
+  record.querySelectorAll<HTMLButtonElement>("[data-record-tab]").forEach(b => {
+    const active = b.dataset.recordTab === "overview";
+    b.classList.toggle("active", active);
+    b.setAttribute("aria-pressed", String(active));
+  });
+  record.querySelectorAll<HTMLElement>("[data-record-section]").forEach(section => {
+    section.hidden = section.dataset.recordSection !== "overview";
+  });
   returnFocus = document.activeElement as HTMLElement;
   selection = id;
+  city?.setOrbit(false);
   panel.hidden = false;
   panel.scrollTop = 0;
+  shell.classList.remove("record-expanded");
+  $<HTMLDetailsElement>("area-picker").open = false;
+  $("back-to-city").hidden = false;
   shell.classList.add("has-selection");
   document
     .querySelectorAll<HTMLElement>(".project-record")
@@ -45,7 +57,7 @@ function choose(id: string, updateHash = true) {
 }
 function close() {
   panel.hidden = true;
-  shell.classList.remove("has-selection");
+  shell.classList.remove("has-selection", "record-expanded");
   selection = null;
   selects.forEach((b) => b.setAttribute("aria-expanded", "false"));
   pins.forEach((p) => p.classList.remove("selected"));
@@ -64,7 +76,8 @@ selects
   .forEach((b) =>
     b.addEventListener("click", () => choose(b.dataset.project!)),
   );
-$("close-record").addEventListener("click", close);
+$("close-record").addEventListener("click", cityOverview);
+$("back-to-city").addEventListener("click", cityOverview);
 document.addEventListener("keydown", (e) => {
   if (
     e.key === "Escape" &&
@@ -72,12 +85,13 @@ document.addEventListener("keydown", (e) => {
     selection &&
     $("label-panel").hidden
   )
-    close();
+    cityOverview();
 });
 document
   .querySelectorAll<HTMLButtonElement>("[data-record-tab]")
   .forEach((button) =>
     button.addEventListener("click", () => {
+      shell.classList.toggle("record-expanded", button.dataset.recordTab === "history");
       const record = button.closest(".project-record")!;
       record
         .querySelectorAll<HTMLButtonElement>("[data-record-tab]")
@@ -94,26 +108,44 @@ document
       panel.scrollTop = 0;
     }),
   );
-$("home-view").addEventListener("click", () => {
+function cityOverview() {
   close();
-  city?.overview();
+  city?.introduce();
   $("view-label").textContent = "BERLIN · CITY OVERVIEW";
-  ($("explore-area") as HTMLSelectElement).value = "";
-  plan = true;
-  pressed("plan-view", true);
-});
+  $("area-name").textContent = "City overview";
+  $("back-to-city").hidden = true;
+  $<HTMLDetailsElement>("area-picker").open = false;
+  plan = false;
+  pressed("plan-view", false);
+}
+$("home-view").addEventListener("click", cityOverview);
 stage.addEventListener("atlas-detail", (event: Event) => {
   $("detail-status").textContent = (event as CustomEvent<string>).detail;
 });
-$("explore-area").addEventListener("change", (event) => {
-  const select = event.target as HTMLSelectElement;
-  if (!select.value) return;
-  const [lon, lat] = select.value.split(",").map(Number);
-  close();
-  city?.explore(lon, lat);
-  plan = false;
-  pressed("plan-view", false);
-  $("view-label").textContent = select.selectedOptions[0].textContent;
+document.querySelectorAll<HTMLButtonElement>("[data-area]").forEach(button => {
+  button.addEventListener("click", () => {
+    if (button.dataset.area === "overview") { cityOverview(); return; }
+    const [lon, lat] = button.dataset.area!.split(",").map(Number);
+    close();
+    city?.explore(lon, lat);
+    plan = false;
+    pressed("plan-view", false);
+    $("area-name").textContent = button.textContent;
+    $("view-label").textContent = button.textContent;
+    $("back-to-city").hidden = false;
+    $<HTMLDetailsElement>("area-picker").open = false;
+    $("area-picker").querySelector("summary")!.focus();
+  });
+});
+document.addEventListener("click", event => {
+  if (!$("area-picker").contains(event.target as Node))
+    $<HTMLDetailsElement>("area-picker").open = false;
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && $<HTMLDetailsElement>("area-picker").open) {
+    $<HTMLDetailsElement>("area-picker").open = false;
+    $("area-picker").querySelector("summary")!.focus();
+  }
 });
 $("zoom-in").addEventListener("click", () => city?.zoom(1.5));
 $("zoom-out").addEventListener("click", () => city?.zoom(1 / 1.5));

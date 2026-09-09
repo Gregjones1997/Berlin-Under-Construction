@@ -30,9 +30,9 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Obtain owner visual critique of the local desktop atlas refinement
-(diffused headline backdrop, automatic two-project opening orbit, paper-only palette,
-readable area selector and simplified project card); then finish the [recruiter-ready release plan](portfolio-release-plan.md):
+**Next action:** Obtain owner visual critique of the local project-reading refinement
+(full-width row selection, unobstructed summary, expanded source history, branded
+area picker and return-to-city controls); then finish the [recruiter-ready release plan](portfolio-release-plan.md):
 close dependency and credential/deployment-output checks, check the deployed
 presentation of the three already owner-verified dossiers (do not repeat source
 acceptance), package the AI evidence and portfolio story, and verify mobile

@@ -3,6 +3,47 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Refine project reading and area navigation
+
+**Status:** Implemented locally; owner design acceptance and deployment pending.
+
+### Participants and work
+
+Main agent (Codex, GPT-6 Astra, Browser skill) implemented the owner's screenshot
+critique. No delegation. Project-row selection now fills the card width; opening
+records hides the conflicting area control. Added explicit return-to-city controls
+for projects and area browsing. Replaced the native select with a branded details
+menu of ordinary keyboard-focusable buttons, including City overview, outside-click
+and Escape dismissal. Returning to the city restores the two-project opening view.
+
+Project summaries expose approved milestone, status and financial wording, retaining
+visible dates, freshness and warnings while collapsing terminology metadata. Source
+history expands to a full-width reading surface containing the accepted record,
+conflicts within their conflict sections and withheld reasons without values.
+Selecting another project resets the summary state. Evidence indicators describe
+source linkage rather than asserting construction outcomes. Original dossiers,
+accepted values and publication decisions were not modified.
+
+### Course correction
+
+The owner's screenshots caught a selection fill inset and an area control covering
+the record heading in the previous refinement. These were real layout oversights
+missed in the earlier browser check; corrected both and checked the selected state.
+Cost: another visual iteration; no measured duration is claimed.
+
+### Verification and limits
+
+187 regression tests passed in 23.07 seconds after the structural changes; final
+spacing and orbit-stop adjustments passed TypeScript and the 14-route static build.
+Browser checks at 1440 × 900 confirmed the selected fill, hidden area control,
+1376-pixel expanded record, return-to-city actions and the custom area menu.
+All three summaries were inspected: C-010 retains its passed-date warning and C-019
+retains withheld location and its financing qualifier. Screenshots captured summary,
+expanded record and area menu. Mobile layout rules are included but this iteration
+was visually checked on desktop only. Preview output uses test/local legal values;
+it is not deployable. Production is unchanged.
+
+
 ## 2026-09-09 — Refine the atlas from owner visual critique
 
 **Status:** Implemented locally; owner visual acceptance and deployment pending.

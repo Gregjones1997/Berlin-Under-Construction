@@ -158,6 +158,7 @@ const records = projects.map((project) => ({
           </div>
         </details>
       </aside>
+      <button class="city-return" id="back-to-city" hidden><Icon name="arrow" /> Back to city</button>
       <aside
         class="record-panel"
         id="record-panel"
@@ -213,12 +214,15 @@ const records = projects.map((project) => ({
                 </>
               </div>
               <div data-record-section="overview">
-                <p class="section-label">CURRENT SOURCE-STATED POSITION</p>
+                <p class="section-label">AT A GLANCE</p>
+                <p class="record-status"><span aria-hidden="true">◷</span> Source-linked record</p>
                 {project.lead ? (
-                  <RawFact fact={project.lead} lead />
+                  <RawFact fact={project.lead} lead compact />
                 ) : (
                   <p>No completion milestone is published in this record.</p>
                 )}
+                {project.publishedFacts.filter((f) => f.factType === "status" || f.factType === "financial_measure").map((fact) => <RawFact fact={fact} compact />)}
+                {project.conflicts.length > 0 && <p class="record-status">◇ {project.conflicts.length} unresolved source conflict(s) · see full record</p>}
                 <p class="language-note">
                   German wording is canonical. Glossary v1.0 is unverified.
                 </p>
@@ -228,6 +232,7 @@ const records = projects.map((project) => ({
                   Dates describe source statements, not observed construction
                   progress.
                 </p>
+                <h3 class="history-title">Source history</h3>
                 {project.history.length ? (
                   project.history.map((f) => <RawFact fact={f} />)
                 ) : (
@@ -235,6 +240,10 @@ const records = projects.map((project) => ({
                     No separate milestone history is published for this project.
                   </p>
                 )}
+                <h3 class="history-title">Full project record</h3>
+                {project.publishedFacts.filter((f) => !project.history.includes(f)).map((fact) => <RawFact fact={fact} />)}
+                {project.conflicts.map((conflict) => <section class="record-conflict" data-conflict-id={conflict.conflictId}><h3>Unresolved source conflict</h3>{conflict.facts.map((fact) => <RawFact fact={fact} />)}</section>)}
+                {project.withheldFacts.length > 0 && <section class="record-withheld"><h3>Withheld facts</h3>{project.withheldFacts.map((fact) => <p>{fact.factType.replaceAll("_", " ")} · {fact.reasonCode?.replaceAll("_", " ")}</p>)}</section>}
               </div>
               <div class="record-actions">
                 <>
@@ -251,15 +260,15 @@ const records = projects.map((project) => ({
         }
       </aside>
       <div class="city-explorer">
-        <label for="explore-area">Explore Berlin</label><select
-          id="explore-area"
-          aria-label="Explore an area of Berlin"
-          ><option value="">Choose an area</option>{
-            places.places.map((p) => (
-              <option value={`${p.longitude},${p.latitude}`}>{p.name}</option>
-            ))
-          }</select
-        ><span id="detail-status" role="status"></span>
+        <span class="explorer-label">Explore Berlin</span>
+        <details id="area-picker">
+          <summary><span id="area-name">Choose an area</span><span aria-hidden="true">⌄</span></summary>
+          <div class="area-options">
+            <button type="button" data-area="overview">City overview</button>
+            {places.places.map((p) => <button type="button" data-area={`${p.longitude},${p.latitude}`}>{p.name}</button>)}
+          </div>
+        </details>
+        <span id="detail-status" role="status"></span>
       </div>
       <div class="map-right-controls" role="group" aria-label="Map navigation">
         <button id="north" class="north-button" aria-label="Orient map north"

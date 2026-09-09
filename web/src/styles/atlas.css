@@ -1176,3 +1176,57 @@ dialog dd a {
     max-width: 145px;
   }
 }
+
+/* Project reading states share the atlas paper surface. */
+.project-entry { margin-inline: 0; }
+.project-select { padding-inline: 18px; }
+.project-picker { overflow: hidden; }
+.record-panel { top: 28px; max-height: calc(100% - 138px); background: var(--paper); z-index: 9; }
+.has-selection .city-explorer { visibility: hidden; pointer-events: none; }
+.city-return { position: absolute; right: 280px; top: 28px; z-index: 10; padding: 12px 16px; background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; display: flex; gap: 10px; align-items: center; font-size: 12px; }
+.has-selection .city-return { right: 390px; }
+.city-return svg { width: 16px; transform: rotate(180deg); }
+.record-status { display: flex; gap: 8px; align-items: center; font: 10px/1.5 var(--sans); color: var(--muted); margin: 0 0 18px; }
+.record-status span { color: var(--accent); }
+.project-record [data-record-section="overview"] > article { padding-block: 15px; border-bottom: 1px solid var(--rule); }
+.project-record .fact-context { margin: 0; border: 0; }
+.project-record .fact-context summary { padding: 5px 0; color: var(--muted); }
+.record-expanded .record-panel { left: 32px; right: 32px; top: 80px; width: auto; max-height: calc(100% - 104px); }
+.record-expanded .city-return { right: 32px; }
+.record-expanded .record-heading h2 { max-width: 850px; font-size: 36px; }
+.record-expanded [data-record-section] { max-width: 1050px; margin-inline: auto; }
+.record-expanded .record-actions { max-width: 1050px; margin-inline: auto; }
+.record-expanded .project-record article { padding: 22px 0; }
+.record-expanded .project-record article p[lang="de"] { font-size: 23px; }
+.record-expanded .project-record .meta, .record-expanded .project-record article details p { font-size: 13px; }
+.record-expanded .record-tabs { position: sticky; top: 0; background: var(--paper); z-index: 2; }
+.history-title { font: 24px var(--serif); margin: 24px 0; }
+.record-conflict, .record-withheld { border: 1px solid var(--rule); padding: 20px; margin-top: 24px; }
+.record-conflict { border-left: 3px solid var(--accent); }
+.record-withheld p { font-size: 12px; line-height: 1.6; }
+.explorer-label { font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+#area-picker { position: relative; min-width: 170px; }
+#area-picker summary { cursor: pointer; display: flex; justify-content: space-between; gap: 24px; border: 1px solid var(--rule); padding: 12px; font-size: 12px; list-style: none; }
+#area-picker summary::-webkit-details-marker { display: none; }
+.area-options { position: absolute; right: -14px; top: calc(100% + 14px); width: 220px; max-height: min(55vh, 420px); overflow: auto; padding: 8px; background: var(--paper); border: 1px solid var(--rule); box-shadow: var(--shadow); }
+.area-options button { display: block; width: 100%; padding: 12px; text-align: left; font-size: 12px; }
+.area-options button:hover, .area-options button:focus-visible { background: color-mix(in srgb, var(--accent) 10%, var(--paper)); color: var(--accent); }
+.area-options button:first-child { border-bottom: 1px solid var(--rule); margin-bottom: 4px; }
+@media (max-width: 1000px) { .has-selection .city-return { right: 355px; } .record-expanded .city-return { right: 24px; } }
+@media (max-width: 700px) {
+  .city-return { top: 14px; left: 14px; right: auto; }
+  .has-selection .city-return { left: auto; right: 14px; }
+  .has-selection .record-panel { top: 65px; max-height: calc(100% - 160px); }
+  .record-expanded .record-panel { left: 12px; right: 12px; width: auto; max-height: calc(100% - 80px); }
+  .record-expanded .record-heading h2 { font-size: 27px; }
+  #area-picker { min-width: 120px; }
+  .area-options { width: 190px; }
+}
+
+.project-record [data-record-section="overview"] { padding-top: 15px; }
+.project-record [data-record-section="overview"] .section-label { margin-bottom: 10px; }
+.project-record [data-record-section="overview"] .record-status { margin-bottom: 8px; }
+.project-record [data-record-section="overview"] > article { padding-block: 10px; }
+.project-record [data-record-section="overview"] article details { margin-top: 8px; }
+.project-record [data-record-section="overview"] article .fact-context { margin-top: 0; }
+.project-record [data-record-section="overview"] article summary { padding-block: 7px; }

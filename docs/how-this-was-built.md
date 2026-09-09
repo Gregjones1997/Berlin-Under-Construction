@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Clear the mobile opening map
 
+**Commit:** `609e629` — `fix(atlas): clear mobile opening view and fit viewport`.
+
 Main agent (Codex, GPT-6 Astra, Browser skill), no delegation. Owner phone
 screenshots showed the older production Paper/Ink interface and crowded cards.
 Mobile-only CSS now hides opening intro/project/area cards, retains on-demand

@@ -3,6 +3,37 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Compress the brief into status and dates
+
+**Status:** Implemented locally; production unchanged.
+
+### Participants and course correction
+
+Main agent (Codex, GPT-6 Astra, Browser skill) applied the owner's screenshot
+correction: stacked source/date disclosures still made the brief feel like a
+text-heavy dossier. Replaced them with source-status treatment, announced start and
+planned milestone rows, inline accessible source arrows and a small arrow key.
+C-014's short location description is an exact substring of its already-published
+construction-start statement, linked to that source. Other project titles already
+identify the work; no new descriptions were invented. No delegation.
+
+Date values use the existing canonical German date fields. C-014's announced
+2. Februar 2026 is not an observed start; C-010 retains technische Übergabe and
+C-019 retains Inbetriebnahme / bis Ende 2028. Missing starts say Not recorded.
+The school brief keeps a concise passed-date warning; the full warning and all
+original sentences remain in the expanded overview. Source-status dates remain
+visible so historic wording does not claim today's progress. The correction link
+and full-overview footer remain. No approved data, golden values or source history
+was altered. Cost: another information-density iteration; no timed cost claimed.
+
+### Verification
+
+TypeScript passed; all 187 regression tests passed; the static build produced 14
+routes. Browser inspection at 1440 × 900 confirmed the brief dates and labelled
+source links. Screenshot: `/private/tmp/berlin-status-date-card.png`. Local preview
+only; the existing bundle-size warning remains.
+
+
 ## 2026-09-09 — Move history navigation to the card footer
 
 **Status:** Implemented locally; production unchanged.

@@ -33,11 +33,12 @@ Evidence and verification limits: [public deployment](public-deployment.md).
 **Next action:** Keep the accepted small-card layout. Improve which source-backed
 information leads (what changes, expected milestone, latest meaningful update),
 and review the header/footer; the owner clarified that the selection-layout study
-was a misunderstanding, not a request to replace the card. The small card now has
+was a misunderstanding, not a request to replace the card. The small card now uses a status badge and concise announced/planned date rows with
+inline source arrows, plus
 one bottom route to the full project overview and cited history.
 Resume C-009 dossier preparation from the seven-candidate screening:
 verify the precise school-building scope and authoritative map location, and look
-for explicit actual-start/progress evidence to answer the concise card’s “Still to confirm”
+for explicit actual-start/progress evidence to answer the project’s outstanding timing
 timing questions. Then prepare
 C-001/002 bridge dossiers. The owner accepted the local visual direction; the latest
 navigation memory, building-detail fade/cache and project key are ready for critique.

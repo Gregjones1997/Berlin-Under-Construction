@@ -1273,3 +1273,18 @@ dialog dd a {
 .brief-overview-link small { display: block; margin-top: 5px; font-size: 10px; color: var(--muted); }
 .brief-overview-link:hover, .brief-overview-link:focus-visible { color: var(--accent); }
 @media (prefers-reduced-motion: no-preference) { .brief-overview-link svg { transition: transform 180ms ease; } .brief-overview-link:hover svg { transform: translateX(3px); } }
+
+.status-brief .brief-description { font: 13px/1.6 var(--sans); color: var(--muted); margin: 0 0 16px; }
+.status-line { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+.source-status { font: 12px/1.5 var(--sans); background: #e6ebe2; color: #3b5540; border-radius: 4px; padding: 6px 9px; }
+.status-line small { width: 100%; font-size: 9px; color: var(--muted); padding-top: 2px; }
+.brief-dates { margin: 0; }
+.brief-dates > div { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 13px 0; border-top: 1px solid var(--rule); }
+.brief-dates dt { font-size: 12px; }
+.brief-dates dt small { display: block; color: var(--muted); font-size: 9px; margin-top: 3px; }
+.brief-dates dd { margin: 0; font-size: 14px; text-align: right; }
+.fact-source { color: var(--accent); text-decoration: none; padding: 4px 5px; display: inline-block; }
+.fact-source:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.date-missing { font-size: 11px; color: var(--muted); }
+.status-brief .brief-source-key { font-size: 9px; line-height: 1.5; color: var(--muted); margin: 10px 0 15px; }
+.brief-source-key span { display: block; margin-top: 5px; }

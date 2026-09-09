@@ -3,6 +3,29 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Prepare the GitHub portfolio checkpoint
+
+Main agent (Codex, GPT-6 Astra; Vercel connector, existing Vercel CLI credentials
+for a read-only project-settings request, and Browser skill). No delegation.
+Added a README-linked portfolio evidence guide separating owner decisions, AI
+contributions, reviewed dossiers, recorded extraction metrics and unfinished
+accuracy evaluation. Preserved coherent historical commits; no history rewrite.
+
+Verification: refreshed origin; 46 outgoing commits before this documentation
+checkpoint. All 187 tests and TypeScript passed. Build-log references validated.
+A targeted scan of 494 outgoing blobs found no matches for private-key headers,
+selected provider/GitHub/AWS token formats or credentialed Postgres URLs. This is
+not a comprehensive credential audit. Generated exports, Vercel configuration and
+private source artifacts are untracked; only `.env.example` matched the checked
+environment-file set. Diff whitespace check passes with CSV CRLF recognized.
+
+GitHub reported no repository hooks. The full Vercel project API reported
+`link: null`; this project has no connected Git repository. The browser settings
+page required sign-in and was not used as verification; the authenticated API
+resolved the question. Existing production deployment remains the recorded
+September 7 citywide version. Push is a repository checkpoint, not deployment.
+The local preview build retains a test-only address and must not be published.
+
 ## 2026-09-09 — Simplify date labels and source arrows
 
 **Commit:** `e47e603` — `fix(atlas): simplify date labels and unify source arrows`.

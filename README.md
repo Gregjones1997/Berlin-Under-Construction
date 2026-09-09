@@ -7,6 +7,9 @@ records to the exact German evidence behind their dates, status, money and
 institutional roles. It preserves conflicts, withheld facts and stale claims
 instead of smoothing them into a single confident story.
 
+For a focused review, start with the [portfolio evidence guide](docs/portfolio-case-study.md):
+product role, AI contribution, traceable examples, measurements and limitations.
+
 ## Live portfolio release
 
 ![Berlin, Under Construction architectural atlas](docs/images/atlas-paper.png)

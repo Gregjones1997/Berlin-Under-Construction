@@ -30,7 +30,7 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Implement German-default pages with a top-right DE / EN selector,
+**Next action:** Check GitHub CI for the pushed portfolio checkpoint, then implement German-default pages with a top-right DE / EN selector,
 preserving the current project/view when switching languages and canonical evidence
 in both versions. The owner requested this language direction on 9 September.
 Keep the accepted small-card layout. Improve which source-backed

@@ -7,6 +7,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Local design proposal; no production application change.
 
+**Commit:** `8bdd319` — `docs(design): compare project selection models and category palette`.
+
 ### Participants and output
 
 Main agent (Codex, GPT-6 Astra, design-with-depth and Browser skills) built an

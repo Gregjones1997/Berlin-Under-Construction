@@ -7,6 +7,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Implemented locally; production unchanged.
 
+**Commit:** `71728f7` — `feat(atlas): focus project brief on timing questions`.
+
 ### Participants and course correction
 
 Main agent (Codex, GPT-6 Astra, Browser skill) responded to the owner's correction
@@ -34,6 +36,8 @@ Further actual-start and progress research is now explicit in the handoff.
 ## 2026-09-09 — Preserve explored views and soften detail loading
 
 **Status:** Implemented locally; production deployment pending.
+
+**Commit:** `efa7102` — `feat(atlas): restore explored views and soften detail loading`.
 
 ### Participants and work
 

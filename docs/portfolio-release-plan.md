@@ -12,11 +12,19 @@ full dossier. The live product is a prototype; scored AI accuracy is not establi
    tests, type checking and build-log hashes. Preserve coherent historical commits
    and attribution. If credentials are found, revoke/rotate before any separately
    coordinated history rewrite. Check deployment output separately from Git.
-2. **Three-case walkthrough.** Verify C-014 Europaplatz, C-010 Heinrich-Hertz school
-   and C-019 Power-to-Heat from index to dossier to source evidence. Check dates,
-   conflicts, withheld values and correction routes. Two located projects and
+2. **Three-case presentation walkthrough.** The owner already verified the original
+   source wording for the three frozen dossiers; do not repeat that acceptance task.
+   Evidence: owner confirmations in `docs/research/dossiers/`, the completed Phase 1
+   checklist items, and `public/data/accepted-review-decisions.json` (including the
+   later C-014 publication decisions). Check that deployed C-014 Europaplatz,
+   C-010 Heinrich-Hertz school and C-019 Power-to-Heat correctly present the accepted
+   records, evidence links, conflicts, withheld values and correction routes.
+   Two located projects and
    three records is the current contract; do not invent a third map position.
    Recheck time-sensitive source wording before updating publication freshness.
+   The separate `evaluation/golden-set.json` still contains placeholders; that
+   deferred accuracy-evaluation work does not invalidate completed dossier review
+   or block this portfolio release.
 3. **AI proof.** Make the existing source-to-extraction-to-validation example easy
    to find. Use recorded metering and actual rejection behavior. Distinguish
    deterministic checks from independently measured extraction accuracy.

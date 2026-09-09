@@ -31,8 +31,9 @@ geometry are implemented. The citywide production update uses source commit `784
 Evidence and verification limits: [public deployment](public-deployment.md).
 
 **Next action:** Finish the [recruiter-ready release plan](portfolio-release-plan.md):
-close dependency and credential/deployment-output checks, walk through all three
-published cases, package the AI evidence and portfolio story, and verify mobile
+close dependency and credential/deployment-output checks, check the deployed
+presentation of the three already owner-verified dossiers (do not repeat source
+acceptance), package the AI evidence and portfolio story, and verify mobile
 and desktop before a fresh release. A pending-research map layer is optional and
 requires supported identities, categories and locations; no placeholder count or
 invented markers. The owner's 9 September portfolio deadline takes priority over

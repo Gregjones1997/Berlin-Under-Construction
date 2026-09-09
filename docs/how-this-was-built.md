@@ -7,6 +7,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Implemented locally; owner design acceptance and deployment pending.
 
+**Commit:** `beed895` — `feat(atlas): simplify project reading and brand area navigation`.
+
 ### Participants and work
 
 Main agent (Codex, GPT-6 Astra, Browser skill) implemented the owner's screenshot

@@ -1234,3 +1234,16 @@ dialog dd a {
 .legend-project-link { display: flex; width: 100%; gap: 12px; align-items: center; text-align: left; padding: 12px 0; border-top: 1px solid var(--rule); font-size: 12px; }
 .legend-project-link small { display: block; color: var(--muted); font-size: 10px; margin-top: 5px; }
 .legend-project-link:hover { color: var(--accent); }
+
+.project-brief .brief-answer { padding: 0 0 16px; margin-bottom: 16px; border-bottom: 1px solid var(--rule); }
+.project-brief h3 { font: 11px var(--sans); color: var(--muted); margin: 0 0 9px; }
+.project-brief p { font: 15px/1.4 var(--sans); margin: 0; }
+.project-brief .brief-milestone { font: 23px/1.2 var(--serif); letter-spacing: -.02em; }
+.project-brief .brief-explanation { font-size: 11px; line-height: 1.5; color: var(--muted); margin-top: 7px; }
+.project-brief .brief-warning { font-size: 11px; line-height: 1.5; margin-top: 8px; color: #915022; }
+.brief-state span { color: var(--accent); margin-right: 5px; }
+.brief-source { margin-top: 10px; font-size: 11px; }
+.brief-source summary { cursor: pointer; color: var(--muted); }
+.brief-source p { font-size: 11px; margin-top: 10px; }
+.brief-more { width: 100%; cursor: pointer; }
+.atlas-shell:not(.record-expanded) .full-record-actions { display: none; }

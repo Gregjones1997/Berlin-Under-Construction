@@ -213,19 +213,34 @@ const records = projects.map((project) => ({
                   </button>
                 </>
               </div>
-              <div data-record-section="overview">
-                <p class="section-label">AT A GLANCE</p>
-                <p class="record-status"><span aria-hidden="true">◷</span> Source-linked record</p>
-                {project.lead ? (
-                  <RawFact fact={project.lead} lead compact />
-                ) : (
-                  <p>No completion milestone is published in this record.</p>
-                )}
-                {project.publishedFacts.filter((f) => f.factType === "status" || f.factType === "financial_measure").map((fact) => <RawFact fact={fact} compact />)}
-                {project.conflicts.length > 0 && <p class="record-status">◇ {project.conflicts.length} unresolved source conflict(s) · see full record</p>}
-                <p class="language-note">
-                  German wording is canonical. Glossary v1.0 is unverified.
-                </p>
+              <div data-record-section="overview" class="project-brief">
+                <div class="brief-answer">
+                  <h3>Expected milestone</h3>
+                  {project.lead ? (
+                    <div data-fact-id={project.lead.factId}>
+                      <p class="brief-milestone" lang="de">{project.lead.valueDe}</p>
+                      <details class="brief-source">
+                        <summary>Source &amp; date</summary>
+                        <p>As of: {String((project.lead.asOfDate as {value?: string})?.value ?? "Not stated")}</p>
+                        <blockquote lang="de">{project.lead.evidence?.exactTextDe}</blockquote>
+                        <a href={project.lead.evidence?.sourceUrl}>Original source</a>
+                      </details>
+                    </div>
+                  ) : <p>No confirmed milestone available.</p>}
+                </div>
+                <div class="brief-answer">
+                  <h3>Is it on time?</h3>
+                  <p class="brief-state"><span aria-hidden="true">◷</span> Not confirmed</p>
+                  <p class="brief-explanation">The published statements do not confirm progress today.</p>
+                  {((project.lead?.displayWarnings ?? []) as string[]).map(warning => <p class="brief-warning">{warning}</p>)}
+                </div>
+                <div class="brief-answer">
+                  <h3>Time underway</h3>
+                  <p>Actual start not confirmed</p>
+                  <p class="brief-explanation">A planned start date cannot establish time spent building.</p>
+                </div>
+                <button class="brief-more primary-link" data-expand-record>View full record &amp; sources <Icon name="arrow" /></button>
+                <a href={project.correctionPath} class="correction-link">Suggest a correction</a>
               </div>
               <div data-record-section="history" hidden>
                 <p class="history-note">
@@ -245,7 +260,7 @@ const records = projects.map((project) => ({
                 {project.conflicts.map((conflict) => <section class="record-conflict" data-conflict-id={conflict.conflictId}><h3>Unresolved source conflict</h3>{conflict.facts.map((fact) => <RawFact fact={fact} />)}</section>)}
                 {project.withheldFacts.length > 0 && <section class="record-withheld"><h3>Withheld facts</h3>{project.withheldFacts.map((fact) => <p>{fact.factType.replaceAll("_", " ")} · {fact.reasonCode?.replaceAll("_", " ")}</p>)}</section>}
               </div>
-              <div class="record-actions">
+              <div class="record-actions full-record-actions">
                 <>
                   <a class="primary-link" href={`/projects/${project.slug}/`}>
                     Open full dossier <Icon name="arrow" />

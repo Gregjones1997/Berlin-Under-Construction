@@ -146,6 +146,11 @@ function cityOverview() {
   plan = false;
   pressed("plan-view", false);
 }
+document.querySelectorAll<HTMLButtonElement>("[data-expand-record]").forEach(button => {
+  button.addEventListener("click", () => {
+    button.closest(".project-record")?.querySelector<HTMLButtonElement>("[data-record-tab='history']")?.click();
+  });
+});
 $("home-view").addEventListener("click", cityOverview);
 stage.addEventListener("atlas-detail", (event: Event) => {
   $("detail-status").textContent = (event as CustomEvent<string>).detail;

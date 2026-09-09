@@ -3,6 +3,34 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Center the card on project timing
+
+**Status:** Implemented locally; production unchanged.
+
+### Participants and course correction
+
+Main agent (Codex, GPT-6 Astra, Browser skill) responded to the owner's correction
+that the revised card still prioritized metadata over the product's core questions.
+Removed the technical summary and finance blocks from the small card. It now shows
+the approved expected milestone, whether current timing is confirmed and whether
+an actual start supports elapsed construction time. The three current projections
+do not establish those latter outcomes, so the card says they are unconfirmed.
+No actual start or on-time verdict was inferred from a planned date or older status.
+Cost: another design iteration; no timed cost claimed. No delegation.
+
+### Verification and limits
+
+Inspected the three projects' published milestone/status values before choosing
+these fallbacks. Original German milestone wording and an expandable exact source
+remain in the brief; passed-date warnings remain visible. All accepted information,
+conflicts and withheld reasons stay in the full record. The correction link stays
+available on the brief. Browser verified the concise C-014 card and full-record
+expansion/back behavior; a fresh screenshot captured the settled panel after its
+entry animation. 187 tests passed in 24.95 seconds, TypeScript and the 14-route
+static build passed. No golden values, source approvals or live deployment changed.
+Further actual-start and progress research is now explicit in the handoff.
+
+
 ## 2026-09-09 — Preserve explored views and soften detail loading
 
 **Status:** Implemented locally; production deployment pending.

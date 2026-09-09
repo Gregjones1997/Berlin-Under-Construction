@@ -2,7 +2,7 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
-- 2026-09-09 — **Course correction** — Main agent (Codex, GPT-6 Astra): the owner corrected a release plan that made completed dossier verification sound outstanding. Re-read the three dossier confirmations, C-014 publication decisions, accepted-decision registry and completed Phase 1 checklist items. Updated the finish plan and handoff to require only presentation checks of accepted material, with new freshness claims checked separately. The placeholder evaluation dataset remains a distinct deferred task. Cost: conversational rework; no repeated owner review was performed. The owner recalls approximately 30 minutes for the earlier source review; this is self-reported, not a timed glossary or accuracy measurement.
+- 2026-09-09 — **Course correction** — Main agent (Codex, GPT-6 Astra): the owner corrected a release plan that made completed dossier verification sound outstanding. Re-read the three dossier confirmations, C-014 publication decisions, accepted-decision registry and completed Phase 1 checklist items. Updated the finish plan and handoff to require only presentation checks of accepted material, with new freshness claims checked separately. The placeholder evaluation dataset remains a distinct deferred task. Cost: conversational rework; no repeated owner review was performed. The owner recalls approximately 30 minutes for the earlier source review; this is self-reported, not a timed glossary or accuracy measurement. `17bc29b`
 
 ## 2026-09-09 — Start recruiter-release audit and patch dependencies
 

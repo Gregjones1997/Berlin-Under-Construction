@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Mobile readthrough
 
+**Commit:** `5f20c53` — `docs(review): record mobile readability walkthrough`.
+
 Main agent (Codex, GPT-6 Astra, Browser skill), no delegation. Read-only interface
 review at 390 × 844: captured homepage, card, expanded overview, index and method;
 verified open/back/close and shared navigation. Findings and limits are recorded

@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Research 150 cited construction candidates
 
+**Commit:** `f211c6d` — `feat(research): document 150 source-cited construction candidates`.
+
 ### Participants and orchestration
 
 Main agent (Codex, GPT-6 Astra, research and Browser skills), single writer.

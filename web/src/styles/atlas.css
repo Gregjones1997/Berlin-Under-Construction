@@ -1267,3 +1267,9 @@ dialog dd a {
   .area-options button:hover { transform: translateX(2px); }
 }
 @media (prefers-reduced-motion: reduce) { .project-category-key { scroll-behavior: auto; } }
+
+.brief-overview-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 0 10px; border-top: 1px solid var(--rule); text-align: left; }
+.brief-overview-link strong { font-size: 13px; font-weight: 500; }
+.brief-overview-link small { display: block; margin-top: 5px; font-size: 10px; color: var(--muted); }
+.brief-overview-link:hover, .brief-overview-link:focus-visible { color: var(--accent); }
+@media (prefers-reduced-motion: no-preference) { .brief-overview-link svg { transition: transform 180ms ease; } .brief-overview-link:hover svg { transform: translateX(3px); } }

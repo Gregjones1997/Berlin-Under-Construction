@@ -3,6 +3,36 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Move history navigation to the card footer
+
+**Status:** Implemented locally; production unchanged.
+
+### Participants and course correction
+
+Main agent (Codex, GPT-6 Astra, Browser skill). The owner clarified that the
+selection-layout alternatives misunderstood an information-priority concern.
+The current card layout is retained; the standalone study is not an accepted
+direction. Cost: an unnecessary design-study iteration; no measured time claimed.
+No delegation. Corrected the next-action handoff accordingly.
+
+Removed Overview/Source history tabs from the small card. A quiet bottom section,
+Full project overview — Details, cited history & sources, now opens the existing
+expanded reading surface. That surface leads with the project record, followed by
+cited source history, conflicts and withheld reasons. Returning restores the small
+card and keyboard focus to its opening button. Exact evidence and correction links
+remain available; no source values or approval records changed.
+
+### Verification and limits
+
+187 tests passed in 26.76 seconds; TypeScript and the 14-route local build passed.
+Browser confirmed no small-card tabs, overview before source history in the expanded
+record, and Back returning keyboard focus to the footer button. Captured the settled
+card screenshot.
+Header/footer polish and better selection/research of useful opening information
+remain next work. No production deployment; local preview configuration is not a
+release artifact.
+
+
 ## 2026-09-09 — Compare project-selection models
 
 **Status:** Local design proposal; no production application change.

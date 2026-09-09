@@ -195,24 +195,6 @@ const records = projects.map((project) => ({
                   remains available without a map marker.
                 </p>
               )}
-              <div
-                class="record-tabs"
-                role="group"
-                aria-label="Project sections"
-              >
-                <>
-                  <button
-                    class="active"
-                    data-record-tab="overview"
-                    aria-pressed="true"
-                  >
-                    Overview
-                  </button>
-                  <button data-record-tab="history" aria-pressed="false">
-                    Source history
-                  </button>
-                </>
-              </div>
               <div data-record-section="overview" class="project-brief">
                 <div class="brief-answer">
                   <h3>Expected milestone</h3>
@@ -244,7 +226,7 @@ const records = projects.map((project) => ({
                   <summary><Icon name="info" /> Still to confirm</summary>
                   <p>Whether the project is currently on time, and its actual construction start. Planned dates alone do not establish current progress or time underway.</p>
                 </details>
-                <button class="brief-more primary-link" data-expand-record>View full record &amp; sources <Icon name="arrow" /></button>
+                <button class="brief-more brief-overview-link" data-expand-record><span><strong>Full project overview</strong><small>Details, cited history &amp; sources</small></span><Icon name="arrow" /></button>
                 <a href={project.correctionPath} class="correction-link">Suggest a correction</a>
               </div>
               <div data-record-section="history" hidden>
@@ -252,6 +234,8 @@ const records = projects.map((project) => ({
                   Dates describe source statements, not observed construction
                   progress.
                 </p>
+                <h3 class="history-title">Project overview</h3>
+                {project.publishedFacts.filter((f) => !project.history.includes(f)).map((fact) => <RawFact fact={fact} />)}
                 <h3 class="history-title">Source history</h3>
                 {project.history.length ? (
                   project.history.map((f) => <RawFact fact={f} />)
@@ -260,8 +244,6 @@ const records = projects.map((project) => ({
                     No separate milestone history is published for this project.
                   </p>
                 )}
-                <h3 class="history-title">Full project record</h3>
-                {project.publishedFacts.filter((f) => !project.history.includes(f)).map((fact) => <RawFact fact={fact} />)}
                 {project.conflicts.map((conflict) => <section class="record-conflict" data-conflict-id={conflict.conflictId}><h3>Unresolved source conflict</h3>{conflict.facts.map((fact) => <RawFact fact={fact} />)}</section>)}
                 {project.withheldFacts.length > 0 && <section class="record-withheld"><h3>Withheld facts</h3>{project.withheldFacts.map((fact) => <p>{fact.factType.replaceAll("_", " ")} · {fact.reasonCode?.replaceAll("_", " ")}</p>)}</section>}
               </div>

@@ -30,9 +30,11 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Review the [selection design study](design/project-selection-study.md)
-(bottom strip, map label or split view) before replacing the current project card.
-The owner requested a product-design pass and category palette exploration.
+**Next action:** Keep the accepted small-card layout. Improve which source-backed
+information leads (what changes, expected milestone, latest meaningful update),
+and review the header/footer; the owner clarified that the selection-layout study
+was a misunderstanding, not a request to replace the card. The small card now has
+one bottom route to the full project overview and cited history.
 Resume C-009 dossier preparation from the seven-candidate screening:
 verify the precise school-building scope and authoritative map location, and look
 for explicit actual-start/progress evidence to answer the concise card’s “Still to confirm”

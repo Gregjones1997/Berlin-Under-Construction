@@ -20,7 +20,7 @@ function rememberView() {
 }
 function previousView() {
   if (shell.classList.contains("record-expanded")) {
-    panel.querySelector<HTMLElement>(".project-record:not([hidden]) [data-record-tab='overview']")?.click();
+    showFullRecord(false);
     return;
   }
   close();
@@ -44,11 +44,6 @@ function choose(id: string, updateHash = true, remember = true) {
   const button = selects.find((b) => b.dataset.project === id);
   const record = $(`record-${id}`);
   if (!button || !record) return;
-  record.querySelectorAll<HTMLButtonElement>("[data-record-tab]").forEach(b => {
-    const active = b.dataset.recordTab === "overview";
-    b.classList.toggle("active", active);
-    b.setAttribute("aria-pressed", String(active));
-  });
   record.querySelectorAll<HTMLElement>("[data-record-section]").forEach(section => {
     section.hidden = section.dataset.recordSection !== "overview";
   });
@@ -114,27 +109,17 @@ document.addEventListener("keydown", (e) => {
   )
     previousView();
 });
-document
-  .querySelectorAll<HTMLButtonElement>("[data-record-tab]")
-  .forEach((button) =>
-    button.addEventListener("click", () => {
-      shell.classList.toggle("record-expanded", button.dataset.recordTab === "history");
-      const record = button.closest(".project-record")!;
-      record
-        .querySelectorAll<HTMLButtonElement>("[data-record-tab]")
-        .forEach((b) => {
-          b.classList.toggle("active", b === button);
-          b.setAttribute("aria-pressed", String(b === button));
-        });
-      record
-        .querySelectorAll<HTMLElement>("[data-record-section]")
-        .forEach(
-          (s) =>
-            (s.hidden = s.dataset.recordSection !== button.dataset.recordTab),
-        );
-      panel.scrollTop = 0;
-    }),
-  );
+function showFullRecord(expanded: boolean) {
+  if (!selection) return;
+  const record = $(`record-${selection}`);
+  shell.classList.toggle("record-expanded", expanded);
+  record.querySelectorAll<HTMLElement>("[data-record-section]").forEach(section => {
+    section.hidden = section.dataset.recordSection !== (expanded ? "history" : "overview");
+  });
+  panel.scrollTop = 0;
+  if (expanded) panel.focus({ preventScroll: true });
+  else record.querySelector<HTMLButtonElement>("[data-expand-record]")?.focus({ preventScroll: true });
+}
 function cityOverview() {
   viewHistory.length = 0;
   close();
@@ -148,7 +133,7 @@ function cityOverview() {
 }
 document.querySelectorAll<HTMLButtonElement>("[data-expand-record]").forEach(button => {
   button.addEventListener("click", () => {
-    button.closest(".project-record")?.querySelector<HTMLButtonElement>("[data-record-tab='history']")?.click();
+    showFullRecord(true);
   });
 });
 $("home-view").addEventListener("click", cityOverview);

@@ -30,7 +30,10 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Resume C-009 dossier preparation from the seven-candidate screening:
+**Next action:** Review the [selection design study](design/project-selection-study.md)
+(bottom strip, map label or split view) before replacing the current project card.
+The owner requested a product-design pass and category palette exploration.
+Resume C-009 dossier preparation from the seven-candidate screening:
 verify the precise school-building scope and authoritative map location, and look
 for explicit actual-start/progress evidence to answer the concise card’s “Still to confirm”
 timing questions. Then prepare

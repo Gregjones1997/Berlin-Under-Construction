@@ -3,6 +3,34 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Compare project-selection models
+
+**Status:** Local design proposal; no production application change.
+
+### Participants and output
+
+Main agent (Codex, GPT-6 Astra, design-with-depth and Browser skills) built an
+interactive comparison after the owner questioned the small record-card approach.
+No delegation. Design-with-depth supplied the first-action brief, material inventory,
+mechanism/tradeoff table and reference-boundary discipline. Its historical Berlin
+case study informed alternatives; external references were not freshly browsed.
+
+Created bottom-strip, map-label and split-view alternatives with a reading-sheet
+interaction, using a local atlas screenshot as a static background and existing
+C-014 source wording. Proposed moss/ochre/teal category colors with orange reserved
+for selection. These proposals have not been accepted or applied to the live app.
+The screenshot backdrop was reframed after the first crop included competing controls.
+
+### Verification and limits
+
+Browser exercised all layout switches, project entry and return controls and
+inspected a desktop screenshot. The static backdrop does not provide map interaction;
+no performance/comprehension improvement is measured. Files and rationale are in
+`docs/design/project-selection-study.*`. Local preview uses port 48762. Actual atlas
+remains available on port 48761. No test run was needed for this standalone study;
+no source values, model calls, evaluation data or release output changed.
+
+
 ## 2026-09-09 — Lead with supported information and distinguish project icons
 
 **Status:** Implemented locally; production unchanged.

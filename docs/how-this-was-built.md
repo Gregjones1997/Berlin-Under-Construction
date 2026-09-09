@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-09 — Publish six source-stated dates on five basic cards
 
+**Commit:** `57c1e68` — `feat(atlas): publish six source-stated milestone dates`.
+
 ### Participants and orchestration
 
 Main agent (Codex, GPT-6 Astra; research, Browser and Vercel CLI skills), single
@@ -34,7 +36,11 @@ preserve both usable and failed checks. 207 tests passed before release, includi
 missing-evidence, invented-day, modified-payload and excluded-fact cases.
 TypeScript checking passed. The 390 × 844 mobile card shows reported start and
 planned finish with accessible source links. Deployment evidence follows in
-public-deployment.md. No on-time claim or exact seasonal date was inferred.
+public-deployment.md. The first deploy attempt returned an authentication error;
+checking the existing login and retrying succeeded without changing credentials
+or the release. Live verification matched 21 files and four private-path 404s;
+the public mobile DOM contained six date fields and 150 basic pins. No on-time
+claim or exact seasonal date was inferred.
 
 
 ## 2026-09-09 — Record six milestone enrichment candidates

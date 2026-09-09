@@ -31,8 +31,9 @@ three full dossiers (two located). The 9 September production update uses source
 commit `687058e`, including the mobile layout improvements.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Verify the scoped six-date release on five basic cards, then
-resolve Waldemarstraße start accounts and Karl-Marx-Straße schedule supersession.
+**Next action:** Resolve Waldemarstraße start accounts and Karl-Marx-Straße
+schedule supersession. Six source-stated date fields on five basic cards are now
+live and verified (source commit `57c1e68`).
 See the [publication review](research/findings/2026-09-09-milestone-publication-review.md).
 Continue another bounded milestone batch and balance housing coverage. Basic
 pins remain distinct from full dossiers; no on-time assessment is supported.

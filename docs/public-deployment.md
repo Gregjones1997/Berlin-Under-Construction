@@ -5,7 +5,28 @@ Only the checked Astro export is uploaded through Vercel's Build Output API.
 The retained PDF artifacts, SQLite store, pipeline source and environment files
 are never deployment inputs.
 
-## Current production update — 150 basic listings, 9 September
+## Current production update — source-stated milestone cards
+
+Source commit `57c1e68` is READY on the stable public URL.
+Deployment: `dpl_CS87Mn7ScXVj1CcpxWtR7Ldmk1P8`.
+[Immutable release](https://berlin-under-construction-1juvnqtne-jonesg158-8681s-projects.vercel.app).
+
+Six source-stated date fields now appear on five basic cards, with source arrows
+and expandable exact German evidence. The total remains 150 basic listings and
+three full dossiers (two located). Disputed dates and unsupported actual-start
+claims stay excluded. Scope and authority: ADR-026 and the
+[publication review](research/findings/2026-09-09-milestone-publication-review.md).
+
+207 tests, TypeScript checking, static privacy/withheld scanning and packaging
+passed. [Live file verification](research/findings/2026-09-09-milestones-live.json)
+matched all 14 HTML routes, four CSS/JS files, two metadata files and overview
+geometry; four private-path probes returned 404. Unchanged detail tiles were not
+re-downloaded. The live mobile DOM showed six dates, 150 basic pins, and page
+height equal to the 844 px viewport. [Mobile card evidence](images/atlas-milestone-mobile.png).
+An initial authentication rejection cleared after verifying the existing CLI
+session and retrying the same checked prebuilt release.
+
+## Earlier production update — 150 basic listings, 9 September
 
 Source commit `687058e` is READY on the stable public URL.
 Deployment: `dpl_9w8A7TYp7GrxKra3FXubgfWzNc7g`.

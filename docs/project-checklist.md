@@ -30,7 +30,9 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** GitHub CI passed for checkpoint 8483760. Address the
+**Next action:** Verify and deploy the locally simplified mobile map so the owner
+can test it on their phone. Opening cards are hidden on mobile and viewport sizing
+uses dynamic height. GitHub CI passed for checkpoint 8483760. Continue the
 [mobile readthrough](research/findings/2026-09-09-mobile-readthrough.md): tiny navigation,
 crowded map controls and content priority in the index/expanded record. Then implement German-default pages with a top-right DE / EN selector,
 preserving the current project/view when switching languages and canonical evidence

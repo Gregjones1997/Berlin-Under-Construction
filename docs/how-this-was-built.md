@@ -3,6 +3,22 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Clear the mobile opening map
+
+Main agent (Codex, GPT-6 Astra, Browser skill), no delegation. Owner phone
+screenshots showed the older production Paper/Ink interface and crowded cards.
+Mobile-only CSS now hides opening intro/project/area cards, retains on-demand
+records through markers and the project key, enlarges markers and simplifies
+controls. Dynamic viewport flex sizing removes the old minimum-height overflow.
+Paper/Ink was already removed locally in earlier work. Desktop remains unchanged.
+
+Verified: TypeScript and 14-route build passed (existing bundle warning). Browser
+checked 390 × 844 and 390 × 650; map canvas matches its container height. Project
+key opened the unlocated energy record and close returned to the map. Screenshots:
+`/private/tmp/berlin-mobile-map-clear.png` and
+`/private/tmp/berlin-mobile-map-compact.png`. Physical Safari validation and
+deployment remain open. Preview uses test-only legal values; do not deploy it.
+
 ## 2026-09-09 — Mobile readthrough
 
 **Commit:** `5f20c53` — `docs(review): record mobile readability walkthrough`.

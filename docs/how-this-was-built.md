@@ -2,6 +2,41 @@
 
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
+
+## 2026-09-09 — Refine the atlas from owner visual critique
+
+**Status:** Implemented locally; owner visual acceptance and deployment pending.
+
+### Participants and work
+
+Main agent (Codex, GPT-6 Astra, Browser skill) implemented the owner's desktop
+critique and used the browser for visual/interaction checks. No delegation.
+Diffused the headline backdrop beyond its box using a blurred pseudo-element;
+removed the Paper/Ink controls and Ink implementation; placed the area selector
+on a readable paper panel; removed the project-card count footer. Kept the current
+paper palette: seasonal commemorative themes and candidate counts remain proposals.
+Softened existing native cross-document transitions without adding JavaScript to
+static evidence routes.
+
+The opening camera derives its framing from approved map pins, descends into a
+wider view and starts a gentle orbit. Pause and map interaction stop automatic
+motion; reduced-motion preferences disable it. Selecting a hash-linked project
+retains the direct project flow. Continuous movement exposed a tile-request
+starvation risk in the existing debounce; changed scheduling to a bounded throttle
+so detail loads while orbiting.
+
+### Verification and limits
+
+All 187 regression tests passed in 34.80 seconds; TypeScript and the static build
+passed. Browser checks at desktop size confirmed
+both project pins in view, changing pin positions during orbit, Pause changing back
+to Orbit, and project selection opening the evidence panel. Inspected the diffused
+backdrop and readable selector in screenshots. Test builds use preview-only legal
+configuration and must not be deployed. Browser verification is desktop Chromium;
+real-device motion/performance and reduced-motion behavior were not separately
+measured. Native navigation transitions depend on browser support. No production
+publication, new claims, new map coordinates or historical dossier changes.
+
 - 2026-09-09 — **Course correction** — Main agent (Codex, GPT-6 Astra): the owner corrected a release plan that made completed dossier verification sound outstanding. Re-read the three dossier confirmations, C-014 publication decisions, accepted-decision registry and completed Phase 1 checklist items. Updated the finish plan and handoff to require only presentation checks of accepted material, with new freshness claims checked separately. The placeholder evaluation dataset remains a distinct deferred task. Cost: conversational rework; no repeated owner review was performed. The owner recalls approximately 30 minutes for the earlier source review; this is self-reported, not a timed glossary or accuracy measurement. `17bc29b`
 
 ## 2026-09-09 — Start recruiter-release audit and patch dependencies

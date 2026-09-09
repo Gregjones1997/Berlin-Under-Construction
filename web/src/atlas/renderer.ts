@@ -50,18 +50,6 @@ const PAPER = {
   ambient: 0xd4e1e3,
   sun: 0xffffff,
 };
-const INK = {
-  background: 0x1b303b,
-  ground: 0x243c46,
-  building: 0xe0b191,
-  edge: 0x8b7062,
-  water: 0x142b38,
-  park: 0x314d48,
-  road: 0x506269,
-  rail: 0x77858a,
-  ambient: 0xc0d6ef,
-  sun: 0xffddbd,
-};
 export class CityRenderer {
   private scene = new THREE.Scene();
   private renderer: THREE.WebGLRenderer;
@@ -80,6 +68,7 @@ export class CityRenderer {
   private sun = new THREE.DirectionalLight(PAPER.sun, 1.55);
   private ambient = new THREE.HemisphereLight(0xffffff, PAPER.ambient, 1.2);
   private fly: Fly | null = null;
+  private orbitAfterArrival = false;
   private raf = 0;
   private running = true;
   private dirty = true;
@@ -332,8 +321,11 @@ export class CityRenderer {
   }
   private scheduleTiles() {
     if (!this.manifest) return;
-    clearTimeout(this.tileTimer);
-    this.tileTimer = setTimeout(() => this.updateTiles(), 180);
+    if (this.tileTimer) return;
+    this.tileTimer = setTimeout(() => {
+      this.tileTimer = undefined;
+      this.updateTiles();
+    }, 180);
   }
   private updateTiles() {
     if (!this.manifest || !this.running) return;
@@ -541,7 +533,10 @@ export class CityRenderer {
       this.camera.position.copy(this.controls.target).add(offset);
       this.camera.zoom = THREE.MathUtils.lerp(f.fromZoom, f.toZoom, t);
       this.camera.updateProjectionMatrix();
-      if (progress === 1) this.fly = null;
+      if (progress === 1) {
+        this.fly = null;
+        if (this.orbitAfterArrival) this.setOrbit(true);
+      }
       this.dirty = true;
     }
     this.controls.update(delta);
@@ -580,6 +575,28 @@ export class CityRenderer {
       toZoom: zoom,
     };
     this.wake();
+  }
+  introduce() {
+    // Frame approved project positions only; withheld sites never supply geometry.
+    const points = this.pins.map((pin) => {
+      const [x, z] = cityPoint(Number(pin.dataset.lon), Number(pin.dataset.lat));
+      return new THREE.Vector3(x, 0, z);
+    });
+    if (!points.length) return;
+    const bounds = new THREE.Box3().setFromPoints(points);
+    const center = bounds.getCenter(new THREE.Vector3());
+    const radius = Math.max(1200, bounds.getSize(new THREE.Vector3()).length() / 2);
+    // Leave room for labels and the project card throughout the gentle orbit.
+    const span = Math.min(this.camera.right - this.camera.left,
+      this.camera.top - this.camera.bottom);
+    const zoom = Math.min(1.15, span / (radius * 2.9));
+    this.controls.target.copy(center);
+    this.camera.position.copy(center).add(new THREE.Vector3(1800, 4200, 3000));
+    this.camera.zoom = zoom * (this.reduced ? 1 : 0.82);
+    this.camera.updateProjectionMatrix();
+    this.controls.update();
+    this.move(center, zoom, new THREE.Vector3(1400, 2600, 2800));
+    this.orbitAfterArrival = !this.reduced;
   }
   select(lon: number, lat: number) {
     const [x, z] = cityPoint(lon, lat);
@@ -649,6 +666,7 @@ export class CityRenderer {
     );
   }
   setOrbit(value: boolean) {
+    this.orbitAfterArrival = false;
     this.controls.autoRotate = value && !this.reduced;
     this.controls.autoRotateSpeed = 0.38;
     this.host.dispatchEvent(
@@ -659,22 +677,6 @@ export class CityRenderer {
   setLabelKind(kind: "projects" | "water" | "parks", value: boolean) {
     this.labels[kind] = value;
     this.placePins();
-    this.wake();
-  }
-  theme(ink: boolean) {
-    const p = ink ? INK : PAPER;
-    this.scene.background = new THREE.Color(p.background);
-    (this.ground.material as THREE.MeshLambertMaterial).color.set(p.ground);
-    this.materials.building.color.set(p.building);
-    this.materials.edge.color.set(p.edge);
-    this.materials.edge.opacity = ink ? 0.42 : 0.48;
-    this.materials.water.color.set(p.water);
-    this.materials.park.color.set(p.park);
-    this.materials.road.color.set(p.road);
-    this.materials.rail.color.set(p.rail);
-    this.renderer.shadowMap.needsUpdate = true;
-    this.sun.color.set(p.sun);
-    this.ambient.groundColor.set(p.ambient);
     this.wake();
   }
   dispose() {

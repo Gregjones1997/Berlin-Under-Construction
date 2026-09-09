@@ -94,16 +94,6 @@ document
       panel.scrollTop = 0;
     }),
   );
-function theme(ink: boolean) {
-  document.body.dataset.theme = ink ? "ink" : "paper";
-  pressed("paper-mode", !ink);
-  pressed("night-mode", ink);
-  $("paper-mode").classList.toggle("active", !ink);
-  $("night-mode").classList.toggle("active", ink);
-  city?.theme(ink);
-}
-$("paper-mode").addEventListener("click", () => theme(false));
-$("night-mode").addEventListener("click", () => theme(true));
 $("home-view").addEventListener("click", () => {
   close();
   city?.overview();
@@ -269,9 +259,9 @@ async function start() {
         ),
       );
     $("map-loading").hidden = true;
-    theme(document.body.dataset.theme === "ink");
     if (location.hash) choose(location.hash.slice(1), false);
     else if (selection) choose(selection, false);
+    else city.introduce();
   } catch (error) {
     city?.dispose();
     fail(

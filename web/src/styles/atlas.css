@@ -207,46 +207,11 @@ svg {
   color: var(--muted);
   padding: 0 5px 12px 31px;
 }
-.picker-note {
-  padding: 12px 16px;
-  margin: 0;
-  border-top: 1px solid var(--rule);
-  font-size: 9px;
-  color: var(--muted);
-}
-.orange-dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: var(--accent);
-  border-radius: 50%;
-  margin-right: 6px;
-}
-.appearance-controls {
-  position: absolute;
-  right: 32px;
-  top: 26px;
-  display: flex;
-  padding: 4px;
-  gap: 3px;
-  background: var(--panel);
-  border: 1px solid #c6cac063;
-  border-radius: 4px;
-  box-shadow: var(--shadow);
-  z-index: 3;
-}
-.appearance-controls button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  padding: 9px 15px;
-  border-radius: 2px;
-}
-.appearance-controls .active {
-  background: var(--ink);
-  color: var(--paper);
-}
+
+
+
+
+
 .record-panel {
   position: absolute;
   right: 32px;
@@ -706,32 +671,6 @@ dialog dd a {
 .model-date {
   font: 9px var(--mono) !important;
 }
-body[data-theme="ink"] {
-  --paper: #172a33;
-  --panel: rgba(23, 42, 51, 0.97);
-  --ink: #ece6d7;
-  --muted: #b3bebd;
-  --rule: #3d4e51;
-  --accent: #f5a575;
-  --shadow: 0 8px 40px #0002;
-  color-scheme: dark;
-}
-body[data-theme="ink"] .atlas-intro > p:last-child {
-  color: var(--muted);
-}
-body[data-theme="ink"] .map-toolbar [aria-pressed="true"] {
-  background: #384c50;
-}
-body[data-theme="ink"] .atlas-intro {
-  text-shadow: 0 1px 14px #172a33;
-}
-body[data-theme="ink"] .appearance-controls .active {
-  background: #eed6bb;
-  color: #172a33;
-}
-body[data-theme="ink"] .pin-number {
-  color: #172a33;
-}
 .atlas-shell:fullscreen {
   height: 100svh;
 }
@@ -808,9 +747,7 @@ body[data-theme="ink"] .pin-number {
   .about-map {
     font-size: 0;
   }
-  .appearance-controls {
-    right: 22px;
-  }
+
 }
 @media (max-width: 700px) {
   .atlas-header {
@@ -856,21 +793,9 @@ body[data-theme="ink"] .pin-number {
   .atlas-intro {
     margin-bottom: 22px;
   }
-  .appearance-controls {
-    top: 20px;
-    right: 13px;
-    flex-direction: column;
-    gap: 1px;
-    padding: 3px;
-  }
-  .appearance-controls button {
-    padding: 9px;
-    font-size: 10px;
-    gap: 5px;
-  }
-  .appearance-controls svg {
-    width: 13px;
-  }
+
+
+
   .project-picker summary {
     padding: 13px 12px;
     font-size: 9px;
@@ -883,9 +808,7 @@ body[data-theme="ink"] .pin-number {
     font-size: 10px;
   }
   .project-select small,
-  .picker-note {
-    font-size: 8px;
-  }
+
   .project-entry {
     margin: 0 8px;
   }
@@ -1007,15 +930,23 @@ body[data-theme="ink"] .pin-number {
 .project-select {
   padding-block: 19px;
 }
-.project-picker .picker-note {
-  font-size: 9px;
-}
+
 .atlas-intro {
-  background: radial-gradient(
-    ellipse at 0% 35%,
-    var(--paper) 0%,
-    transparent 74%
-  );
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+.atlas-intro::before {
+  content: "";
+  position: absolute;
+  inset: -90px -110px -75px -100px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 40% 43%,
+    color-mix(in srgb, var(--paper) 92%, transparent) 0%,
+    color-mix(in srgb, var(--paper) 65%, transparent) 32%,
+    transparent 72%);
+  filter: blur(24px);
 }
 @media (max-height: 780px) and (min-width: 701px) {
   .atlas-left {
@@ -1080,12 +1011,6 @@ body[data-theme="ink"] .pin-number {
   font-family: var(--sans);
   font-size: 10px;
   letter-spacing: 0.06em;
-}
-body[data-theme="ink"] .context-label {
-  color: #c3dddd;
-}
-body[data-theme="ink"] .context-label[data-kind="parks"] {
-  color: #d5dfbd;
 }
 .label-panel {
   position: absolute;
@@ -1199,13 +1124,18 @@ body[data-theme="ink"] .context-label[data-kind="parks"] {
 
 .city-explorer {
   position: absolute;
-  top: 94px;
+  top: 28px;
   right: 32px;
   display: flex;
   flex-direction: column;
   gap: 7px;
   z-index: 6;
   max-width: 220px;
+  padding: 14px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--ink);
 }
 .city-explorer label {
   font: 10px var(--mono, monospace);
@@ -1227,13 +1157,9 @@ body[data-theme="ink"] .context-label[data-kind="parks"] {
   max-width: 210px;
   line-height: 1.5;
 }
-body[data-theme="ink"] .city-explorer select {
-  background: #243c46;
-  color: #f4e5d2;
-}
 @media (max-width: 700px) {
   .city-explorer {
-    top: 120px;
+    top: 24px;
     right: 14px;
     max-width: 150px;
   }

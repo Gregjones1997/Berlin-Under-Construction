@@ -3,6 +3,30 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Record six milestone enrichment candidates
+
+### Participants and orchestration
+
+Main agent (Codex, GPT-6 Astra, research skill and web tool), single writer.
+The research skill requested a background lane: one read-only agent examined
+transport/public-space sources while the main agent checked housing, school and
+sports sources. It returned three short milestone proposals and the stale
+Karl-Marx-Straße schedule warning. All three were accepted as research evidence
+only, after the main agent independently opened their URLs, freshly retrieved
+artifacts and checked exact passages. No agent wrote files; no redundant or
+failed lanes occurred.
+
+### Evidence and limits
+
+The [ledger](research/findings/2026-09-09-milestone-enrichment.json) records six
+sources, nine German evidence spans, content hashes, retrieval timestamps, source
+edit dates and review scope. The existing retained-artifact checker independently
+passed all six hashes and nine spans. Source files remain private. No model API
+extraction call, human-authored golden value, publication approval or live-date
+change was made. Seasonal dates and stale schedule text remain unresolved where
+appropriate; this batch makes no on-time assessment.
+
+
 ## 2026-09-09 — Add 150 basic register references to the main atlas
 
 **Commit:** `687058e` — `feat(atlas): publish 150 cited basic register listings`.

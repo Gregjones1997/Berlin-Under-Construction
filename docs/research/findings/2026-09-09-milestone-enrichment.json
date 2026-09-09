@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-09-09",
+  "scope": "First bounded enrichment batch; no publication approvals or golden values",
+  "model_provider_calls": 0,
+  "candidates": [
+    {
+      "project_id": "MB-2026-01441",
+      "name_de": "Friedrich-Bergius-Schule: Neubau einer Typen-Sporthalle am Standort Perelsplatz 6-9",
+      "sources": [
+        {
+          "url": "https://mein.berlin.de/vorhaben/2026-01441/",
+          "content_hash": "sha256:ee6c21ff8c2854091fdf78db10bbcc7d5061ef1d28b42fc3ae0a1deabd2f24c8",
+          "publication_date": null,
+          "source_modified_date_de": "30. Juni 2026",
+          "retrieved_on": "2026-09-09T16:45:54.430320+00:00",
+          "spans": [
+            "Baubeginn 2026 bis Prognose Fertigstellung 2028"
+          ],
+          "locator": "Laufzeit",
+          "span_match": true,
+          "attempts": [
+            {
+              "status": 200,
+              "outcome": "received",
+              "user_agent": "default"
+            }
+          ]
+        }
+      ],
+      "review_state": "source_span_checked_semantic_review_pending",
+      "publication_state": "research_only",
+      "scope_note": "Register schedule field; start year is not evidence of an actual start. Title and location use different street addresses; retain existing reference point only.",
+      "on_time_assessment": "not_established",
+      "golden_set_changed": false
+    },
+    {
+      "project_id": "MB-2026-01347",
+      "name_de": "Wohnungsneubau Jan-Petersen-Straße 14",
+      "sources": [
+        {
+          "url": "https://mein.berlin.de/vorhaben/2026-01347/",
+          "content_hash": "sha256:f341c818325f2f4eba7c6039ec3fd1522542d63cc7c2342fe6f3a1eece522264",
+          "publication_date": null,
+          "source_modified_date_de": "16. Februar 2026",
+          "retrieved_on": "2026-09-09T16:45:54.662520+00:00",
+          "spans": [
+            "Nach aktuellem Stand ist die Fertigstellung Ende 2028 geplant."
+          ],
+          "locator": "project description",
+          "span_match": true,
+          "attempts": [
+            {
+              "status": 200,
+              "outcome": "received",
+              "user_agent": "default"
+            }
+          ]
+        }
+      ],
+      "review_state": "source_span_checked_semantic_review_pending",
+      "publication_state": "research_only",
+      "scope_note": "Planned completion wording only; does not establish actual construction start. Demolition and new construction are distinct scopes.",
+      "on_time_assessment": "not_established",
+      "golden_set_changed": false
+    },
+    {
+      "project_id": "MB-2025-01200",
+      "name_de": "Neugestaltung Spielplatz Waldemarstraße",
+      "sources": [
+        {
+          "url": "https://mein.berlin.de/vorhaben/2025-01200/",
+          "content_hash": "sha256:713816fa44b04008d1b647914fe63a582d9bee44e789074030836c033c9c0b23",
+          "publication_date": null,
+          "source_modified_date_de": "30. März 2026",
+          "retrieved_on": "2026-09-09T16:45:54.916801+00:00",
+          "spans": [
+            "Der Bau des neuen Spielplatzes startet im April 2026.",
+            "Die Fertigstellung ist bis Frühjahr 2027 geplant."
+          ],
+          "locator": "project description",
+          "span_match": true,
+          "attempts": [
+            {
+              "status": 200,
+              "outcome": "received",
+              "user_agent": "default"
+            }
+          ]
+        }
+      ],
+      "review_state": "source_span_checked_semantic_review_pending",
+      "publication_state": "research_only",
+      "scope_note": "March source is forward-looking; April passing does not verify actual commencement. Preserve seasonal wording.",
+      "on_time_assessment": "not_established",
+      "golden_set_changed": false
+    },
+    {
+      "project_id": "MB-2024-01075",
+      "name_de": "Ersatzneubau Sport- und Funktionsgebäude Ella-Kay-Straße",
+      "sources": [
+        {
+          "url": "https://mein.berlin.de/vorhaben/2024-01075/",
+          "content_hash": "sha256:66de33478a3b62208913c4485d52a69b16145d79bd2ce4edfd839620b813928f",
+          "publication_date": null,
+          "source_modified_date_de": "4. August 2026",
+          "retrieved_on": "2026-09-09T16:45:55.142744+00:00",
+          "spans": [
+            "Die Fertigstellung ist für Mitte 2027 geplant."
+          ],
+          "locator": "project description",
+          "span_match": true,
+          "attempts": [
+            {
+              "status": 200,
+              "outcome": "received",
+              "user_agent": "default"
+            }
+          ]
+        }
+      ],
+      "review_state": "source_span_checked_semantic_review_pending",
+      "publication_state": "research_only",
+      "scope_note": "Preserve Mitte 2027; do not manufacture an exact day. Distinguish the replacement building from the earlier sports-field works.",
+      "on_time_assessment": "not_established",
+      "golden_set_changed": false
+    },
+    {
+      "project_id": "MB-2023-00823",
+      "name_de": "Sanierung des Dorfteichs Lichtenrade",
+      "sources": [
+        {
+          "url": "https://mein.berlin.de/vorhaben/2023-00823/",
+          "content_hash": "sha256:7f4c0ee1a770d5858aa5a2befb6e25a063ea74bd51c46ee116881c897788dea4",
+          "publication_date": null,
+          "source_modified_date_de": "17. Juni 2026",
+          "retrieved_on": "2026-09-09T16:45:55.441027+00:00",
+          "spans": [
+            "Baubeginn war Ende Januar 2025.",
+            "Die Maßnahme soll im Herbst 2026 beendet sein."
+          ],
+          "locator": "project description",
+          "span_match": true,
+          "attempts": [
+            {
+              "status": 200,
+              "outcome": "received",
+              "user_agent": "default"
+            }
+          ]
+        }
+      ],
+      "review_state": "source_span_checked_semantic_review_pending",
+      "publication_state": "research_only",
+      "scope_note": "Source reports actual start and anticipated end for pond and surrounding green-space works. Preserve season wording; no exact-date or on-time inference.",
+      "on_time_assessment": "not_established",
+      "golden_set_changed": false
+    },
+    {
+      "project_id": "MB-2023-00716",
+      "name_de": "Umbau der Karl-Marx-Straße - 3. Bauabschnitt zwischen Briesestraße und Weichselstraße",
+      "sources": [
+        {
+          "url": "https://mein.berlin.de/vorhaben/2023-00716/",
+          "content_hash": "sha256:bd6984811a1df6fc905da434fd221f7c491a60683f5eb2032f0ffdf7a59e18ae",
+          "publication_date": null,
+          "source_modified_date_de": "25. September 2025",
+          "retrieved_on": "2026-09-09T16:45:55.680781+00:00",
+          "spans": [
+            "Der Umbau zwischen Briese- und Weichselstraße wurde im Sommer 2025 abgeschlossen.",
+            "Der Bau wird voraussichtlich 2024 fertiggestellt."
+          ],
+          "locator": "project description",
+          "span_match": true,
+          "attempts": [
+            {
+              "status": 200,
+              "outcome": "received",
+              "user_agent": "default"
+            }
+          ]
+        }
+      ],
+      "review_state": "source_span_checked_semantic_review_pending",
+      "publication_state": "research_only",
+      "scope_note": "Same page reports completion in summer 2025 while retaining an expected 2024 completion. Preserve both; scope is third street section, not all Karl-Marx-Straße. No computed delay.",
+      "on_time_assessment": "not_established",
+      "golden_set_changed": false
+    }
+  ],
+  "independent_retained_artifact_recheck": [
+    {
+      "project_id": "MB-2026-01441",
+      "status": "screened_spans_present",
+      "spans_checked": 1
+    },
+    {
+      "project_id": "MB-2026-01347",
+      "status": "screened_spans_present",
+      "spans_checked": 1
+    },
+    {
+      "project_id": "MB-2025-01200",
+      "status": "screened_spans_present",
+      "spans_checked": 2
+    },
+    {
+      "project_id": "MB-2024-01075",
+      "status": "screened_spans_present",
+      "spans_checked": 1
+    },
+    {
+      "project_id": "MB-2023-00823",
+      "status": "screened_spans_present",
+      "spans_checked": 2
+    },
+    {
+      "project_id": "MB-2023-00716",
+      "status": "screened_spans_present",
+      "spans_checked": 2
+    }
+  ]
+}

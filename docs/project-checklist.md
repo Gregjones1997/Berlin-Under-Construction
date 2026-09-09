@@ -31,9 +31,13 @@ three full dossiers (two located). The 9 September production update uses source
 commit `687058e`, including the mobile layout improvements.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Enrich a small batch of the 150 live basic listings with sourced
-milestone dates and balance housing coverage. The production release is verified. Basic
-publication covers official register titles and reference points only (ADR-025).
+**Next action:** Follow linked authority progress reports for the
+[six-project milestone batch](research/findings/2026-09-09-milestone-enrichment.md),
+resolve schedule supersession and actual-start evidence, then prepare eligible
+milestone display proposals through the existing publication gate. Balance housing
+coverage using retained provider inventories. The 150-basic-listing production
+release is verified; ADR-025 still limits basic publication to register identity
+and reference location.
 Keep basic listing and full dossier pin treatments distinct. Continue using the
 [batch research queue](research-queue.md).
 Seven candidates have refreshed evidence; four have independently checked official
@@ -41,8 +45,7 @@ location proposals. Prepare C-001/C-002 bridge and C-008 school publication revi
 resolve the exact C-009 building scope (only a coarse campus point is known), then
 route/station geometry for C-003/004/005. These remain proposals, not public records.
 The owner prioritized pipeline/map expansion while away on 9 September.
-The mobile layout is fixed locally but still needs physical-phone validation and
-a correctly configured deployment. Then implement German-default pages with a top-right DE / EN selector,
+The mobile layout is deployed and checked in a simulated mobile viewport; physical-phone validation remains. Then implement German-default pages with a top-right DE / EN selector,
 preserving the current project/view when switching languages and canonical evidence
 in both versions. The owner requested this language direction on 9 September.
 Keep the accepted small-card layout. Improve which source-backed

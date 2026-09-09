@@ -28,6 +28,7 @@ type Manifest = Payload & {
   rail: Segment;
   bounds: number[];
 };
+export type MapView = { target: number[]; offset: number[]; zoom: number };
 type Fly = {
   start: number;
   duration: number;
@@ -76,12 +77,13 @@ export class CityRenderer {
   private reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   private abort = new AbortController();
   private pins: HTMLButtonElement[];
-  private labels = { projects: true, water: true, parks: true };
+  private labels = { projects: true, water: false, parks: false };
   private contextLabels: HTMLElement[];
   private activeHalo: THREE.Mesh;
   private tickTime = 0;
   private manifest: Manifest | null = null;
   private loaded = new Map<string, THREE.Group>();
+  private fading = new Map<THREE.Group, number>();
   private pending = new Set<string>();
   private failed = new Map<string, number>();
   private wanted: Tile[] = [];
@@ -360,11 +362,14 @@ export class CityRenderer {
             .slice(0, 32);
     const wanted = new Set(this.wanted.map((t) => t.id));
     for (const [id, group] of this.loaded) {
-      if (!wanted.has(id)) {
+      if (!wanted.has(id) && this.loaded.size > 40) {
         this.scene.remove(group);
+        this.fading.delete(group);
         group.traverse((o) => {
-          if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments)
+          if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments) {
             o.geometry.dispose();
+            (o.material as THREE.Material).dispose();
+          }
         });
         this.loaded.delete(id);
       }
@@ -426,6 +431,17 @@ export class CityRenderer {
           this.materials.edge,
         ),
       );
+      group.traverse(o => {
+        if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments) {
+          const material = (o.material as THREE.Material).clone();
+          material.userData.targetOpacity = material.opacity;
+          material.userData.originalTransparent = material.transparent;
+          material.transparent = true;
+          material.opacity = this.reduced ? material.userData.targetOpacity : 0;
+          o.material = material;
+        }
+      });
+      if (!this.reduced) this.fading.set(group, performance.now());
       this.scene.add(group);
       this.loaded.set(tile.id, group);
       this.renderer.shadowMap.needsUpdate = true;
@@ -539,6 +555,21 @@ export class CityRenderer {
       }
       this.dirty = true;
     }
+    for (const [group, start] of this.fading) {
+      const amount = Math.min(1, (now - start) / 650);
+      group.traverse(o => {
+        if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments) {
+          const material = o.material as THREE.Material;
+          material.opacity = material.userData.targetOpacity * amount;
+          if (amount === 1) {
+            material.transparent = material.userData.originalTransparent;
+            material.needsUpdate = true;
+          }
+        }
+      });
+      if (amount === 1) this.fading.delete(group);
+      this.dirty = true;
+    }
     this.controls.update(delta);
     this.clampTarget();
     if (this.dirty || this.controls.autoRotate || this.fly) {
@@ -597,6 +628,17 @@ export class CityRenderer {
     this.controls.update();
     this.move(center, zoom, new THREE.Vector3(1400, 2600, 2800));
     this.orbitAfterArrival = !this.reduced;
+  }
+  captureView(): MapView {
+    if (this.fly) return { target: this.fly.toTarget.toArray(),
+      offset: this.fly.toOffset.toArray(), zoom: this.fly.toZoom };
+    return { target: this.controls.target.toArray(),
+      offset: this.camera.position.clone().sub(this.controls.target).toArray(),
+      zoom: this.camera.zoom };
+  }
+  restoreView(view: MapView) {
+    this.move(new THREE.Vector3().fromArray(view.target), view.zoom,
+      new THREE.Vector3().fromArray(view.offset));
   }
   select(lon: number, lat: number) {
     const [x, z] = cityPoint(lon, lat);
@@ -690,6 +732,11 @@ export class CityRenderer {
       if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments)
         o.geometry.dispose();
     });
+    this.loaded.forEach(group => group.traverse(o => {
+      if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments)
+        (o.material as THREE.Material).dispose();
+    }));
+    this.fading.clear();
     Object.values(this.materials).forEach((m) => m.dispose());
     (this.ground.material as THREE.Material).dispose();
     (this.activeHalo.material as THREE.Material).dispose();

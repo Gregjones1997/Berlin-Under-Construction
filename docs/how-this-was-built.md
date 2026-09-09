@@ -3,6 +3,44 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Preserve explored views and soften detail loading
+
+**Status:** Implemented locally; production deployment pending.
+
+### Participants and work
+
+Main agent (Codex, GPT-6 Astra, Browser skill) implemented owner feedback. No
+subagents. Added an in-memory, bounded twenty-entry atlas view history preserving
+camera target, orientation, zoom, selected project, area label and plan state.
+Back first collapses expanded source history, then restores the preceding view.
+Explicit Overview clears that history and restores the opening framing. This
+history is within the atlas document; it does not persist across full page loads.
+
+Building detail now fades in over 650 ms (instant with reduced motion), and nearby
+loaded tiles are retained with a forty-tile retention threshold rather than removed
+as soon as they leave view. Tile-specific fade materials are disposed on eviction
+and renderer teardown. Visible requests remain capped at 32; pending loads may
+briefly exceed the retention threshold. This reduces abrupt arrivals/reloads but
+is not a measured performance result and does not eliminate network staggering.
+
+Replaced water/park label controls with a project key for the existing public-space,
+school and energy records, grounded in the frozen dossier identities/categories.
+Key entries open their records; the energy record remains explicitly unlocated.
+Water and park labels default off. No apartment/road categories or coverage counts
+were invented. Source records and golden evaluation data are unchanged.
+
+### Verification
+
+187 tests passed in 26.06 seconds after the main change. Subsequent project-history
+restoration passed TypeScript and the 14-route static build. Browser confirmed
+Charlottenburg → C-014 → C-010 → Back restores C-014; closing restores Charlottenburg
+with no selected record. Inspected the three-entry project key. Initial browser
+checks needed the collapsed project picker opened after a narrow viewport and a
+heading locator corrected; these were test-control issues. No production deployment.
+GPU/memory performance and the visual fade on a slow real device remain unmeasured.
+Preview builds contain local test configuration and must not be deployed.
+
+
 ## 2026-09-09 — Refine project reading and area navigation
 
 **Status:** Implemented locally; owner design acceptance and deployment pending.

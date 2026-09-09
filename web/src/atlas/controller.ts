@@ -1,5 +1,5 @@
 document.documentElement.classList.add("has-js");
-import type { CityRenderer } from "./renderer";
+import type { CityRenderer, MapView } from "./renderer";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id) as T;
 const shell = $("atlas");
@@ -11,12 +11,36 @@ const selects = [
 const pins = [...document.querySelectorAll<HTMLButtonElement>(".project-pin")];
 let city: CityRenderer | undefined;
 let selection: string | null = null;
+const viewHistory: { camera: MapView; label: string; area: string; plan: boolean; project: string | null }[] = [];
+function rememberView() {
+  if (!city) return;
+  viewHistory.push({ camera: city.captureView(), label: $("view-label").textContent ?? "BERLIN",
+    area: $("area-name").textContent ?? "Choose an area", plan, project: selection });
+  if (viewHistory.length > 20) viewHistory.shift();
+}
+function previousView() {
+  if (shell.classList.contains("record-expanded")) {
+    panel.querySelector<HTMLElement>(".project-record:not([hidden]) [data-record-tab='overview']")?.click();
+    return;
+  }
+  close();
+  const previous = viewHistory.pop();
+  if (previous) {
+    if (previous.project) choose(previous.project, true, false);
+    city?.restoreView(previous.camera);
+    $("view-label").textContent = previous.label;
+    $("area-name").textContent = previous.area;
+    plan = previous.plan;
+    pressed("plan-view", plan);
+  }
+  $("back-to-city").hidden = viewHistory.length === 0 && !selection;
+}
 let returnFocus: HTMLElement | null = null;
 let plan = false,
   orbit = false;
 const pressed = (id: string, value: boolean) =>
   $(id).setAttribute("aria-pressed", String(value));
-function choose(id: string, updateHash = true) {
+function choose(id: string, updateHash = true, remember = true) {
   const button = selects.find((b) => b.dataset.project === id);
   const record = $(`record-${id}`);
   if (!button || !record) return;
@@ -28,8 +52,11 @@ function choose(id: string, updateHash = true) {
   record.querySelectorAll<HTMLElement>("[data-record-section]").forEach(section => {
     section.hidden = section.dataset.recordSection !== "overview";
   });
+  if (remember && selection !== id) rememberView();
   returnFocus = document.activeElement as HTMLElement;
   selection = id;
+  $("label-panel").hidden = true;
+  $("labels-view").setAttribute("aria-expanded", "false");
   city?.setOrbit(false);
   panel.hidden = false;
   panel.scrollTop = 0;
@@ -72,12 +99,12 @@ function close() {
   }
 }
 selects
-  .concat(pins)
+  .concat(pins, [...document.querySelectorAll<HTMLButtonElement>(".legend-project-link")])
   .forEach((b) =>
     b.addEventListener("click", () => choose(b.dataset.project!)),
   );
-$("close-record").addEventListener("click", cityOverview);
-$("back-to-city").addEventListener("click", cityOverview);
+$("close-record").addEventListener("click", previousView);
+$("back-to-city").addEventListener("click", previousView);
 document.addEventListener("keydown", (e) => {
   if (
     e.key === "Escape" &&
@@ -85,7 +112,7 @@ document.addEventListener("keydown", (e) => {
     selection &&
     $("label-panel").hidden
   )
-    cityOverview();
+    previousView();
 });
 document
   .querySelectorAll<HTMLButtonElement>("[data-record-tab]")
@@ -109,6 +136,7 @@ document
     }),
   );
 function cityOverview() {
+  viewHistory.length = 0;
   close();
   city?.introduce();
   $("view-label").textContent = "BERLIN · CITY OVERVIEW";
@@ -125,6 +153,7 @@ stage.addEventListener("atlas-detail", (event: Event) => {
 document.querySelectorAll<HTMLButtonElement>("[data-area]").forEach(button => {
   button.addEventListener("click", () => {
     if (button.dataset.area === "overview") { cityOverview(); return; }
+    rememberView();
     const [lon, lat] = button.dataset.area!.split(",").map(Number);
     close();
     city?.explore(lon, lat);

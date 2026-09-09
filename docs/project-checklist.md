@@ -30,9 +30,11 @@ The owner accepted the atlas; shared navigation, label categories and whole-Berl
 geometry are implemented. The citywide production update uses source commit `7842a09`.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Obtain owner visual critique of the local project-reading refinement
-(full-width row selection, unobstructed summary, expanded source history, branded
-area picker and return-to-city controls); then finish the [recruiter-ready release plan](portfolio-release-plan.md):
+**Next action:** Resume C-009 dossier preparation from the seven-candidate screening:
+verify the precise school-building scope and authoritative map location, then prepare
+C-001/002 bridge dossiers. The owner accepted the local visual direction; the latest
+navigation memory, building-detail fade/cache and project key are ready for critique.
+Keep the production deployment and portfolio security checks open; then finish the [recruiter-ready release plan](portfolio-release-plan.md):
 close dependency and credential/deployment-output checks, check the deployed
 presentation of the three already owner-verified dossiers (do not repeat source
 acceptance), package the AI evidence and portfolio story, and verify mobile

@@ -3,6 +3,20 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-09 — Simplify date labels and source arrows
+
+Main agent (Codex, GPT-6 Astra, Browser skill); no delegation. Applied owner
+feedback: Start and Planned replace the two-level date labels; source links use
+the same SVG line arrow as navigation, with hover/focus color and reduced-motion
+handling. Precise milestone wording remains on the link and in the full overview.
+Recorded the requested German-default / English-selector direction for the next
+language pass; no language switcher is claimed implemented. Source data unchanged.
+
+Verification: TypeScript and the 14-route static build passed. Desktop browser
+inspection confirmed single-line labels and matching SVG arrows; screenshot at
+`/private/tmp/berlin-clean-date-labels.png`. Existing bundle-size warning remains.
+Local preview only; production unchanged.
+
 ## 2026-09-09 — Compress the brief into status and dates
 
 **Commit:** `6d74379` — `feat(atlas): condense project brief into status and dates`.

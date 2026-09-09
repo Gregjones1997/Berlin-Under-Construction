@@ -198,24 +198,24 @@ const records = projects.map((project) => ({
                 </p>
               )}
               <div data-record-section="overview" class="project-brief status-brief">
-                {project.projectId === "C-014" && project.start && <p class="brief-description" lang="de">Vorplatz des Hauptbahnhofs an der Invalidenstraße <a class="fact-source" href={project.start.evidence?.sourceUrl} aria-label="Source for project description">↗</a></p>}
+                {project.projectId === "C-014" && project.start && <p class="brief-description" lang="de">Vorplatz des Hauptbahnhofs an der Invalidenstraße <a class="fact-source" href={project.start.evidence?.sourceUrl} aria-label="Source for project description"><Icon name="arrow" /></a></p>}
                 {project.status && <div class="status-line" data-fact-id={project.status.factId}>
                   <span class="source-status" lang="de">{project.status.valueDe}</span>
-                  <a class="fact-source" href={project.status.evidence?.sourceUrl} aria-label="Source for reported status">↗</a>
+                  <a class="fact-source" href={project.status.evidence?.sourceUrl} aria-label="Source for reported status"><Icon name="arrow" /></a>
                   <small>Source status · {String((project.status.asOfDate as {value?: string})?.value ?? "date not stated")}</small>
                 </div>}
                 <dl class="brief-dates">
                   <div>
-                    <dt>Start <small>announced</small></dt>
-                    <dd>{project.start ? <><span lang="de">{String((project.start.dateValue as {canonicalDe?: string})?.canonicalDe ?? project.start.valueDe)}</span><a class="fact-source" href={project.start.evidence?.sourceUrl} aria-label="Source for announced start">↗</a></> : <span class="date-missing">Not recorded</span>}</dd>
+                    <dt>Start</dt>
+                    <dd>{project.start ? <><span lang="de">{String((project.start.dateValue as {canonicalDe?: string})?.canonicalDe ?? project.start.valueDe)}</span><a class="fact-source" href={project.start.evidence?.sourceUrl} aria-label="Source for announced start"><Icon name="arrow" /></a></> : <span class="date-missing">Not recorded</span>}</dd>
                   </div>
                   <div>
-                    <dt><span lang="de">{String(project.lead?.milestoneTermDe ?? "End")}</span> <small>planned</small></dt>
-                    <dd>{project.lead ? <><span lang="de">{String((project.lead.dateValue as {canonicalDe?: string})?.canonicalDe ?? project.lead.valueDe)}</span><a class="fact-source" href={project.lead.evidence?.sourceUrl} aria-label="Source for planned milestone">↗</a></> : <span class="date-missing">Not recorded</span>}</dd>
+                    <dt>Planned</dt>
+                    <dd>{project.lead ? <><span lang="de">{String((project.lead.dateValue as {canonicalDe?: string})?.canonicalDe ?? project.lead.valueDe)}</span><a class="fact-source" href={project.lead.evidence?.sourceUrl} aria-label={`Source for planned milestone: ${project.lead.milestoneTermDe ?? "milestone"}`} title={String(project.lead.milestoneTermDe ?? "Planned milestone")}><Icon name="arrow" /></a></> : <span class="date-missing">Not recorded</span>}</dd>
                   </div>
                 </dl>
                 {((project.lead?.displayWarnings ?? []) as string[]).length > 0 && <p class="brief-warning">Target date passed; completion unconfirmed.</p>}
-                <p class="brief-source-key">Planned dates do not confirm actual progress. <span>↗ Original source</span></p>
+                <p class="brief-source-key">Planned dates do not confirm actual progress. <span><Icon name="arrow" /> Original source</span></p>
                 <button class="brief-more brief-overview-link" data-expand-record><span><strong>Full project overview</strong><small>Details, cited history &amp; sources</small></span><Icon name="arrow" /></button>
                 <a href={project.correctionPath} class="correction-link">Suggest a correction</a>
               </div>

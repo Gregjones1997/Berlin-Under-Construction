@@ -7,6 +7,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 **Status:** Implemented locally; owner visual acceptance and deployment pending.
 
+**Commit:** `b9ea96d` — `feat(atlas): refine desktop presentation and opening motion`.
+
 ### Participants and work
 
 Main agent (Codex, GPT-6 Astra, Browser skill) implemented the owner's desktop

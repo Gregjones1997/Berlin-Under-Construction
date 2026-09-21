@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-21 — Correct and close the launch handoff
 
+**Commit:** `2595005` — `fix(portfolio): correct launch assets and complete handoff`.
+
 **Course correction** — Main agent (Codex, GPT-6 Astra; Browser skill), single
 writer, no delegation: the owner identified JPEG captures mislabeled as PNG and
 invalid dimensions in the earlier AI-prepared handoff. Renamed four files without

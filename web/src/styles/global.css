@@ -1,11 +1,5 @@
+@import "./design-tokens.css";
 :root {
-  --paper: #f5f3ed;
-  --ink: #252d2a;
-  --accent: #d45a2c;
-  --muted: #747b73;
-  --ink-2: #565249;
-  --ink-3: #8b857a;
-  --rule: #e4e1da;
   --rule-2: #f1efea;
   --flag: #a5121a;
   --flag-bg: #fcf5f4;
@@ -13,10 +7,6 @@
   --hold-bg: #fbf8ec;
   --content-width: 51.25rem;
   --page-gutter: clamp(18px, 5vw, 32px);
-  --serif: ui-serif, Georgia, "Times New Roman", serif;
-  --sans: "Avenir Next", "Segoe UI", sans-serif;
-  --mono:
-    ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
 * {
   box-sizing: border-box;
@@ -312,3 +302,32 @@ footer p {
   color: var(--accent);
   margin-bottom: 20px;
 }
+
+/* Shared reading hierarchy; German source values keep their canonical rendering. */
+.mast h1 { font-family:var(--sans); font-weight:650; letter-spacing:-.045em; text-wrap:balance; }
+.mast { padding-top:var(--space-4); }
+h2 { color:var(--ink); }
+summary { min-height:44px; padding-block:10px; }
+.records-page { --content-width:78rem; }
+.records-page .mast h1 { font-size:var(--text-display); }
+.index-opening { display:grid; grid-template-columns:1.15fr 1fr; gap:var(--space-4); }
+.index-opening > section { border-bottom:0; min-width:0; }
+.directory-heading h2 { font:600 30px/1.1 var(--sans); letter-spacing:-.035em; text-transform:none; }
+.dossier-cards { list-style:none; padding:0; margin:24px 0 0; }
+.dossier-cards li { border-top:1px solid var(--rule); margin:0; }
+.dossier-cards a { display:grid; padding:18px 0; text-decoration:none; color:var(--ink); }
+.dossier-number { font:10px/1.4 var(--mono); color:var(--muted); margin-bottom:10px; }
+.dossier-cards strong[lang] { font:500 clamp(20px,2.1vw,26px)/1.2 var(--sans); letter-spacing:-.025em; }
+.dossier-card-action { display:flex; justify-content:space-between; margin-top:16px; color:var(--accent); font-size:12px; }
+.dossier-cards a:hover { background:#e9eee8; }
+.index-opening figure { margin:0; background:#e9eee8; padding:22px; }
+.index-opening figure svg { display:block; width:100%; height:auto; max-height:310px; color:#52645a; }
+.index-opening figcaption { font-size:12px; }
+.register-directory ul { columns:2; column-gap:40px; padding-left:20px; }
+.register-directory li { break-inside:avoid; padding:10px 0; border-bottom:1px solid var(--rule); font-size:12px; }
+.register-directory li [lang] { font:500 15px/1.45 var(--sans); }
+.index-method { border-block:1px solid var(--rule); padding:15px 0; }
+.index-method > summary { font-weight:600; cursor:pointer; }
+@media(prefers-reduced-motion:no-preference) { .dossier-cards a { transition:background-color 150ms ease; } }
+@media(max-width:700px) { .index-opening { grid-template-columns:1fr; gap:0; } .register-directory ul { columns:1; } .directory-heading h2 { font-size:27px; } }
+.mast h1[lang] { font-size:clamp(32px,5vw,46px); line-height:1.16; }

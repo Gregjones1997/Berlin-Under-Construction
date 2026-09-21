@@ -1,14 +1,6 @@
+@import "./design-tokens.css";
 :root {
-  --paper: #f5f3ed;
-  --panel: rgba(252, 251, 247, 0.96);
-  --ink: #252d2a;
-  --muted: #747b73;
-  --rule: #dcded5;
-  --accent: #d45a2c;
   --shadow: 0 8px 40px #2532250a;
-  --sans: "Avenir Next", "Segoe UI", sans-serif;
-  --serif: Georgia, "Times New Roman", serif;
-  --mono: "SFMono-Regular", Consolas, monospace;
   color-scheme: light;
 }
 * {
@@ -1329,3 +1321,32 @@ dialog dd a {
 .basic-record .record-heading h2 { font-size: clamp(24px, 2.1vw, 36px); }
 .basic-record .record-heading { padding-bottom: 12px; }
 @media(max-width:700px) { .basic-pin.selected .pin-label { display: none !important; } }
+
+/* City Desk: a bounded reading surface beside the geographic evidence. */
+.atlas-left { top:24px; width:300px; }
+.atlas-intro { background:var(--panel); border-top:3px solid var(--accent); padding:20px 20px 16px; margin-bottom:0; text-shadow:none; }
+.atlas-intro .eyebrow { font-size:9px; margin-bottom:15px; }
+.atlas-intro h1 { font:650 36px/1.04 var(--sans); letter-spacing:-.05em; margin-bottom:14px; text-wrap:balance; }
+.atlas-intro > p:last-child { color:var(--muted); font-size:13px; line-height:1.5; margin-bottom:0; }
+.project-picker { border-radius:0; box-shadow:none; border-top:1px solid var(--rule); }
+.project-picker summary { font-size:11px; }
+.project-select strong { font-size:13px; }
+.atlas-coverage { position:static; pointer-events:auto; background:var(--panel); padding:10px 14px; border-left:3px solid var(--accent); }
+.atlas-coverage a { font:600 11px/1.5 var(--sans); }
+.atlas-coverage a span { padding:0 5px; color:var(--accent); }
+.atlas-coverage small { display:block; font:10px/1.5 var(--sans); color:var(--muted); }
+.has-selection .atlas-coverage { display:none; }
+@media(max-width:700px) {
+ .has-js .atlas-left { display:block; top:12px; left:12px; right:12px; width:auto; }
+ .has-js .atlas-intro, .has-js .project-picker { display:none; }
+ .has-js .has-selection .atlas-left { display:none; }
+ .atlas-coverage { padding:10px 12px; width:max-content; max-width:100%; }
+ .atlas-coverage a { font-size:12px; }
+ .atlas-coverage small { font-size:11px; }
+}
+@media(min-width:701px) and (max-height:800px) {
+ .atlas-intro { padding:14px 18px; }
+ .atlas-intro h1 { font-size:30px; }
+ .atlas-intro .eyebrow { margin-bottom:10px; }
+ .project-select { padding-top:12px; padding-bottom:12px; }
+}

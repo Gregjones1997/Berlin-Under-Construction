@@ -1,0 +1,29 @@
+/* Lumos adaptation: primitives → semantic roles → native component styles.
+   Mapping and metric choices: briefs/berlin-design/BRAND.md. */
+:root {
+  --swatch-paper: #f6f7f4;
+  --swatch-white: #ffffff;
+  --swatch-ink: #202925;
+  --swatch-secondary: #536059;
+  --swatch-line: #d7ded8;
+  --swatch-action: #a83d1c;
+  --font-ui: "Helvetica Neue", Arial, sans-serif;
+  --font-reading: Georgia, "Times New Roman", serif;
+  --font-reference: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: clamp(1.25rem, 2vw, 2rem);
+  --space-4: clamp(2rem, 4vw, 4rem);
+  --text-display: clamp(2.25rem, 4vw, 4.5rem);
+  --paper: var(--swatch-paper);
+  --panel: rgba(255,255,255,.97);
+  --ink: var(--swatch-ink);
+  --muted: var(--swatch-secondary);
+  --ink-2: var(--swatch-secondary);
+  --ink-3: var(--swatch-secondary);
+  --rule: var(--swatch-line);
+  --accent: var(--swatch-action);
+  --sans: var(--font-ui);
+  --serif: var(--font-reading);
+  --mono: var(--font-reference);
+}

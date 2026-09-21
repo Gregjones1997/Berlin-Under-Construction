@@ -102,33 +102,16 @@ if (
 ---
 
 <Base
-  title="Berlin, Under Construction"
+  pageClass="records-page"
+  title="Project index — Berlin, Under Construction"
   heading="The project index"
   subtitle="A source-backed map of what is being built, what was promised and what changed."
 >
-  <section aria-labelledby="introduction-heading">
-    <h2 id="introduction-heading">About this project</h2>
-    <p>
-      Displayed project data is human-curated from primary sources. The retained
-      store currently contains one completed extraction run over one document;
-      the repository does not establish a total historical provider-call count.
-    </p>
-  </section>
-  <section aria-labelledby="demonstrates-heading">
-    <h2 id="demonstrates-heading">What this demonstrates</h2>
-    <p>
-      A working vertical slice: a typed Python extraction pipeline, strict
-      evidence and withholding gates, a validated public-data projection, and an
-      Astro/TypeScript site with static evidence pages and a self-hosted 3D
-      atlas.
-    </p>
-    <p>
-      AI assists with bounded document extraction; deterministic checks and
-      human review decide what can be shown. See the
-      <a href="https://github.com/Gregjones1997/Berlin-Under-Construction"
-        >source code and build record</a
-      >.
-    </p>
+  <div class="index-opening">
+  <section class="dossier-directory" aria-labelledby="dossiers-heading">
+    <div class="directory-heading"><p class="document-eyebrow">START WITH THE EVIDENCE</p><h2 id="dossiers-heading">Three projects.<br />A closer look.</h2></div>
+    <p>Full dossiers bring source statements, history and unresolved questions together. Choose a project to follow its evidence.</p>
+    <nav aria-label="All pilot projects"><ol class="dossier-cards">{projects.map((project, index) => <li><a href={`/projects/${project.slug}/`}><span class="dossier-number">0{index + 1} / {project.projectId}</span><strong lang="de">{project.projectNameDe}</strong><span class="dossier-card-action">Read the dossier <span aria-hidden="true">↗</span></span></a></li>)}</ol></nav>
   </section>
   <section aria-labelledby="map-heading">
     <figure aria-labelledby="map-heading map-caption">
@@ -189,6 +172,7 @@ if (
     </figure>
   </section>
 
+  </div>
   <section aria-labelledby="unplaced-heading">
     <h2 id="unplaced-heading">Project with location withheld</h2>
     <p data-reason-code={c019Location.reasonCode}>
@@ -200,25 +184,32 @@ if (
     </p>
   </section>
 
-  <section>
-    <nav aria-label="All pilot projects">
-      <h2>All pilot projects</h2>
-      <ul>
-        {
-          projects.map((project) => (
-            <li>
-              <a href={`/projects/${project.slug}/`}>
-                {project.projectId} —{" "}
-                <span lang="de">{project.projectNameDe}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+  <section class="register-directory" aria-labelledby="basic-heading"><h2 id="basic-heading">150 basic listings · research ongoing</h2><p>Official register reference points. These listings do not establish construction progress or exact site boundaries.</p><ul>{basicListings.records.map(project => <li><a href={`/#${project.id}`} lang="de">{project.nameDe}</a> · <a href={project.sourceUrl}>Original source</a> · <a href="/corrections/">Correction</a></li>)}</ul></section>
+  <details class="index-method"><summary>How these records are made</summary>  <section aria-labelledby="introduction-heading">
+    <h2 id="introduction-heading">About this project</h2>
+    <p>
+      Displayed project data is human-curated from primary sources. The retained
+      store currently contains one completed extraction run over one document;
+      the repository does not establish a total historical provider-call count.
+    </p>
   </section>
-
-  <section aria-labelledby="basic-heading"><h2 id="basic-heading">150 basic listings · research ongoing</h2><p>Official register reference points. These listings do not establish construction progress or exact site boundaries.</p><ul>{basicListings.records.map(project => <li><a href={`/#${project.id}`} lang="de">{project.nameDe}</a> · <a href={project.sourceUrl}>Original source</a> · <a href="/corrections/">Correction</a></li>)}</ul></section>
+  <section aria-labelledby="demonstrates-heading">
+    <h2 id="demonstrates-heading">What this demonstrates</h2>
+    <p>
+      A working vertical slice: a typed Python extraction pipeline, strict
+      evidence and withholding gates, a validated public-data projection, and an
+      Astro/TypeScript site with static evidence pages and a self-hosted 3D
+      atlas.
+    </p>
+    <p>
+      AI assists with bounded document extraction; deterministic checks and
+      human review decide what can be shown. See the
+      <a href="https://github.com/Gregjones1997/Berlin-Under-Construction"
+        >source code and build record</a
+      >.
+    </p>
+  </section>
+</details>
   <section>
     <nav aria-label="Legal information">
       <h2>Legal information</h2>

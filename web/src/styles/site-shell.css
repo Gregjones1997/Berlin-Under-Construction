@@ -175,3 +175,10 @@
     animation: none !important;
   }
 }
+
+/* City Desk identity: the open building grid connects wordmark and atlas. */
+.site-symbol { display:flex; transform:none; }
+.site-wordmark { font-weight:750; letter-spacing:-.035em; }
+.site-wordmark-sub { letter-spacing:.11em; font-weight:500; }
+.site-header nav { font-size:13px; }
+@media(max-width:700px) { .site-header nav { font-size:10px; gap:11px; } .site-symbol svg { width:23px; } }

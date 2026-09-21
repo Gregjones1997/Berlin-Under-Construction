@@ -32,14 +32,13 @@ commit `57c1e68`, including six source-stated dates on five basic listings.
 The 21 September handoff recheck matched the published release; no redeploy was needed.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Integrate [the completed portfolio package](portfolio/README.md)
-for the 21 September 17:00 Europe/Berlin launch, then check final portfolio links
-and desktop/mobile layout. The handoff is READY AS CASE STUDY: JPEG filenames,
-actual dimensions, card/case-study copy and an 80-second walkthrough are checked;
-[verification](portfolio/verification.json) records anonymous release matching and
-live evidence/navigation checks. Today's 207-test/typecheck record is reused
-because tested source is unchanged. The shared portfolio repository was not
-edited. Keep ten-dossier expansion out of today's launch scope.
+**Next action:** Review the [City Desk design handoff](../briefs/berlin-design/INDEX.md)
+and its three rendered proposals. The agent-selected direction is implemented and
+verified locally; production remains unchanged. If selected for release, use the existing
+production legal configuration, deploy and refresh the portfolio screenshots only after
+live verification. The earlier [portfolio package](portfolio/README.md) still describes the
+current public release and remains READY AS CASE STUDY. Shared portfolio untouched;
+no ten-dossier expansion in this design session.
 
 **Deferred product backlog (not today's handoff):**
 For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße

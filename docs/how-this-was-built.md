@@ -3,6 +3,71 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-21 — City Desk personal-design handoff
+
+**Status:** Complete locally; not deployed or owner-selected.
+
+### Goal
+
+Recover relevant owner context, compare three visual directions and implement the
+recommended direction without changing the evidence or publication boundary.
+
+### Participants and scopes
+
+- Main agent (Codex, personal-design skill, Refero design skill, Browser skill):
+  context recovery, synthesis, all file writes, original UI implementation and verification.
+- Research subagent (Codex, read-only): official Lumos guidance, commissioned map/editorial
+  work, The Futur strategy and font-license candidates.
+- Proposal subagent (Codex, read-only): three compositions, recommendation and source-code
+  risk review. No subagent edited the tree or produced shipping code.
+- Project owner: requested the autonomous handoff; has not selected the resulting direction.
+
+### Multi-agent architecture
+
+The invoked personal-design workflow requested parallel lanes. Research and creative
+critique could proceed independently while the main agent inspected the existing product.
+Accepted the research lane's map-to-entry hierarchy and native Lumos mapping; retained
+system fonts instead of installing the researched OFL candidates. Accepted the proposal
+lane's City Desk recommendation and its warning that the existing mobile view hides the
+intro. Modified the proposed headline scale to fit existing map controls. Preserved City
+Edition and Field Instrument as separate static composition studies; did not build three
+map engines. Neither lane failed or produced repository changes. The lead checked primary
+sources, existing data and final rendered output independently before accepting the work.
+
+### Work performed
+
+Shared typography/theme primitives, original building-grid wordmark, compact atlas intro,
+coverage link visible on phones, dossier-first static index, adjacent attributed boundary
+map, native method disclosure and document heading correction. Created a linked brief,
+research/brand rationale, three rendered alternatives and type/component audition under
+`briefs/berlin-design/`. Existing portfolio handoff and live release remain unchanged.
+No project values, golden data, release manifests or extraction behavior changed.
+
+### Verification
+
+207 tests passed in 25.61s, TypeScript passed, final Astro build emitted 14 routes, and
+`git diff --check` passed. In-app browser review covered desktop and 390px layouts,
+dossier navigation, keyboard evidence expansion, project-key/withheld selection and
+three proposal compositions. Screenshot bytes and dimensions checked. Source inspection
+confirmed retained reduced-motion branches; runtime OS emulation was unavailable.
+See `briefs/berlin-design/VERIFICATION.md` for the exact scope and screenshots.
+
+### Failures and limitations
+
+Refero's three style searches returned inactive subscription. Chrome automation repeatedly
+failed loading its request-header policy; the in-app browser worked. Initial build failed
+closed without LEGAL_ADDRESS; final loopback-only preview uses an explicit non-publication
+placeholder. Browser review caught overlapping coverage placement and a too-small German
+heading; both were corrected and rechecked. Two evidence-selector/navigation attempts
+missed during page transitions; settled DOM inspection and keyboard checks succeeded.
+System font rendering varies across platforms. Reference page text was inspected, not
+external motion. No deployment, source expansion or new accuracy claim.
+
+### Evidence
+
+`briefs/berlin-design/INDEX.md`, its verification and image assets, `web/src/styles/`,
+`web/src/pages/records.astro`, `web/src/pages/index.astro`, shared header and layout.
+
 ## 2026-09-21 — Correct and close the launch handoff
 
 **Commit:** `2595005` — `fix(portfolio): correct launch assets and complete handoff`.

@@ -47,7 +47,7 @@ const records = projects.map((project) => ({
     </title></head
   >
   <body class="atlas-page">
-    <a class="skip-link" href="#project-list">Skip to project records</a>
+    <a class="skip-link" href="/records/">Skip to project records</a>
     <SiteHeader />
     <main id="atlas" class="atlas-shell">
       <div
@@ -113,15 +113,16 @@ const records = projects.map((project) => ({
         {basicListings.records.map(project => <button class="project-pin basic-pin" data-depth="basic" data-project={project.id} data-lon={project.longitude} data-lat={project.latitude} aria-label={`Explore basic listing: ${project.nameDe}`} hidden><span class="pin-number"><Icon name="pin" /></span><span class="pin-label" lang="de">{project.nameDe}</span></button>)}
         </div>
       </div>
+
       <aside class="atlas-left" aria-label="Explore project records">
         <div class="atlas-intro">
           <p class="eyebrow">A SOURCE-BACKED VIEW OF BERLIN</p><h1>
-            The city,<br /><em>in progress.</em>
-          </h1><p>What is being built.<br />What was promised. What changed.</p>
+            A city in progress.<br />A record of change.
+          </h1><p>Explore Berlin’s construction projects and the public sources behind them.</p>
         </div>
         <details class="project-picker" open id="project-picker">
           <summary id="project-list"
-            ><span>Explore the projects</span><span class="count">03</span
+            ><span>Full dossiers</span><span class="count">{String(records.length).padStart(2, "0")}</span
             ></summary
           >
           <div class="project-list">
@@ -163,6 +164,7 @@ const records = projects.map((project) => ({
             }
           </div>
         </details>
+      <div class="atlas-coverage"><a href="/records/">{records.length} full dossiers <span> / </span> {basicListings.records.length} basic listings <span aria-hidden="true">↗</span></a><small>Source records, not a live progress survey</small></div>
       </aside>
       <button class="city-return" id="back-to-city" hidden><Icon name="arrow" /> Back to previous view</button>
       <aside

@@ -8,9 +8,10 @@ interface Props {
   heading: string;
   subtitle?: string;
   headingLang?: string;
+  pageClass?: string;
 }
 
-const { title, heading, subtitle, headingLang } = Astro.props;
+const { title, heading, subtitle, headingLang, pageClass } = Astro.props;
 const generatedOn = publicationAsOfDate(process.env.PUBLICATION_AS_OF_DATE);
 ---
 
@@ -27,7 +28,7 @@ const generatedOn = publicationAsOfDate(process.env.PUBLICATION_AS_OF_DATE);
   </head>
   <body>
     <SiteHeader />
-    <main id="page-content">
+    <main id="page-content" class={pageClass}>
       <header class="mast">
         <p class="document-eyebrow">BERLIN / PROJECT RECORDS</p>
         <h1 lang={headingLang}>{heading}</h1>

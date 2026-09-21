@@ -3,6 +3,16 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-21 — Patch the portfolio-check dependency finding
+
+Main agent (Codex, GPT-6 Astra; npm audit): updated transitive devalue from 5.9.0
+to 5.9.4 after a moderate malformed-input denial-of-service advisory was reported.
+Only the compatible lockfile entry changed. Verification: 207 tests passed in
+26.48 seconds and TypeScript checking passed; npm reported zero known
+vulnerabilities after the update. This is not a claim of production exploitability
+or a complete security audit. No production redeployment was made.
+
+
 ## 2026-09-09 — Publish six source-stated dates on five basic cards
 
 **Commit:** `57c1e68` — `feat(atlas): publish six source-stated milestone dates`.

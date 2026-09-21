@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-21 — Prepare the finished portfolio handoff
 
+**Commit:** `278f0da` — `docs(portfolio): package case study and verified live screenshots`.
+
 Main agent (Codex, GPT-6 Astra; Browser skill), single writer; no delegation.
 The owner requested a portable package for another person to integrate. Prepared
 first-person case-study copy, a CMS-ready project-card record, image captions/alt
@@ -24,6 +26,8 @@ preview was restored afterward. No personal portfolio was edited or deployed.
 
 
 ## 2026-09-21 — Patch the portfolio-check dependency finding
+
+**Commit:** `2a1e6f3` — `fix(deps): patch devalue during portfolio readiness check`.
 
 Main agent (Codex, GPT-6 Astra; npm audit): updated transitive devalue from 5.9.0
 to 5.9.4 after a moderate malformed-input denial-of-service advisory was reported.

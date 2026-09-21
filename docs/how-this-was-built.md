@@ -5,6 +5,8 @@ This document is the single newest-first timeline of how Berlin, Under Construct
 
 ## 2026-09-21 — City Desk personal-design handoff
 
+**Commit:** `776aca6` — `feat(design): deliver City Desk atlas and proposal handoff`.
+
 **Status:** Complete locally; not deployed or owner-selected.
 
 ### Goal

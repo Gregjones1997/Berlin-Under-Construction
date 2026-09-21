@@ -1,7 +1,7 @@
 {
   "title": "Berlin, Under Construction",
   "subtitle": "Making Berlin’s construction projects easier to understand",
-  "summary": "An AI-assisted city atlas that connects Berlin construction projects to original sources, keeping planned dates, reported progress and uncertainty clearly separated.",
+  "summary": "An independent Berlin construction atlas connecting three reviewed dossiers and 150 basic register listings to original sources. I led product direction, visual design and publication decisions, with AI assisting research and implementation. The prototype keeps conflicting dates, withheld facts and unverified German terminology visible; architectural geometry does not establish construction progress.",
   "role": "Product direction, visual design and research workflow; built with AI agents.",
   "status": "Working proof of concept",
   "tags": [
@@ -14,28 +14,43 @@
     "demo": "https://berlin-under-construction.vercel.app/",
     "code": "https://github.com/Gregjones1997/Berlin-Under-Construction/tree/phase-4-public-slice",
     "method": "https://berlin-under-construction.vercel.app/method/",
-    "caseStudyFile": "case-study.md"
+    "caseStudyFile": "case-study.md",
+    "walkthroughFile": "walkthrough.md"
   },
   "images": [
     {
-      "path": "assets/atlas-desktop.png",
+      "path": "assets/atlas-desktop.jpg",
       "alt": "Architectural map of Berlin with solid dossier markers and smaller outlined basic-listing markers.",
-      "placement": "hero"
+      "placement": "hero",
+      "width": 1280,
+      "height": 720,
+      "mediaType": "image/jpeg"
     },
     {
-      "path": "assets/project-card-desktop.png",
-      "alt": "Europaplatz Süd project card with source-linked dates and a full project overview button.",
-      "placement": "supporting desktop"
+      "path": "assets/project-card-desktop.jpg",
+      "alt": "Europaplatz Süd dossier card with source-linked announced start and planned completion dates, plus a reminder that planned dates do not confirm actual progress.",
+      "placement": "supporting desktop",
+      "width": 1280,
+      "height": 720,
+      "mediaType": "image/jpeg"
     },
     {
-      "path": "assets/milestone-mobile.png",
+      "path": "assets/milestone-mobile.jpg",
       "alt": "Mobile Dorfteich Lichtenrade listing with a reported start and planned finish linked to official evidence.",
-      "placement": "supporting mobile"
+      "placement": "supporting mobile",
+      "width": 390,
+      "height": 844,
+      "mediaType": "image/jpeg"
     },
     {
-      "path": "assets/evidence-mobile.png",
+      "path": "assets/evidence-mobile.jpg",
       "alt": "Expanded mobile source details showing the original German date statements and source dates.",
-      "placement": "optional evidence detail"
+      "placement": "optional evidence detail",
+      "width": 390,
+      "height": 844,
+      "mediaType": "image/jpeg"
     }
-  ]
+  ],
+  "verifiedOn": "2026-09-21",
+  "liveSourceRevision": "57c1e68d492d891dc57d3dd8f044f56521619cc2"
 }

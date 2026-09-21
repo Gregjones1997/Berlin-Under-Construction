@@ -10,7 +10,7 @@ prototype, it makes uncertainty visible and keeps evidence close to every claim.
 [View the code](https://github.com/Gregjones1997/Berlin-Under-Construction/tree/phase-4-public-slice) ·
 [Explore the method](https://berlin-under-construction.vercel.app/method/)
 
-![Architectural map of Berlin with solid dossier markers and smaller outlined basic-listing markers.](assets/atlas-desktop.png)
+![Architectural map of Berlin with solid dossier markers and smaller outlined basic-listing markers.](assets/atlas-desktop.jpg)
 
 ### My role
 
@@ -26,7 +26,7 @@ announcements. A completion forecast is different from a handover date. An older
 promise and a newer update may disagree. Combining them into one confident status
 can make a polished interface misleading.
 
-As a non-native German speaker, I made that language barrier part of the design
+I cannot read German, so I made that language barrier part of the design
 problem. The system preserves original German evidence and separates literal
 source matching from interpretation that needs human language judgment.
 
@@ -36,7 +36,8 @@ The prototype combines an architectural 3D map with concise project cards and
 expandable evidence. Its 150 basic listings use official register titles and
 reference points. They remain visually distinct from three reviewed dossiers,
 two of which have published map positions. Five basic listings also carry six
-source-stated date fields.
+source-stated date fields. Architectural geometry supplies orientation, not
+evidence of current construction progress.
 
 AI agents helped locate sources, prepare extraction proposals, implement the
 interface and develop validation checks. Source collection and span matching are
@@ -69,23 +70,20 @@ traceable date fields and explicit handling of missing or conflicting evidence.
 The September 21 engineering check passed **207 tests** and TypeScript checking.
 That is evidence of tested software behavior, not an extraction-accuracy score.
 
-One recorded extraction ran in 10,017 ms with USD 0.00161784 in recorded provider
-cost. It is a single stored run, not a benchmark, total project cost or proof of
-production-scale economics. The method record also discloses a rejected incomplete
-response and missing accounting for that failed attempt.
-
 ### What comes next
 
 Independent German glossary verification and scored extraction evaluation remain
 unfinished. More milestone research, a German/English interface and physical-phone
 performance checks are next steps. There are no claimed adoption or impact metrics.
 
-A business adaptation could fit translation and terminology checks into an
-existing internal review process. That is a proposed application, not an
-integration this prototype already delivers.
+### Walk the evidence trail
 
-### Try it in two minutes
+Open [Europaplatz Süd](https://berlin-under-construction.vercel.app/#C-014),
+expand its overview and follow a dated German evidence span to the original
+source. The [80-second walkthrough](walkthrough.md) also covers the static index
+and withheld location. The [build log](https://github.com/Gregjones1997/Berlin-Under-Construction/blob/phase-4-public-slice/docs/how-this-was-built.md) records human
+decisions, AI contributions and course corrections.
 
-1. Open [Europaplatz Süd](https://berlin-under-construction.vercel.app/#C-014), inspect its dates, then expand the project overview to see evidence and history.
-2. Open [Dorfteich Lichtenrade](https://berlin-under-construction.vercel.app/#MB-2023-00823) to compare a basic listing with sourced dates against a full dossier.
-3. Visit [How it works](https://berlin-under-construction.vercel.app/method/) for the AI contribution, recorded run and limitations.
+Verified 21 September 2026 against published source revision
+`57c1e68d492d891dc57d3dd8f044f56521619cc2`; see [verification details](verification.json).
+Checking the release did not refresh every construction source.

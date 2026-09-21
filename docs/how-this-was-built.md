@@ -3,6 +3,26 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-21 — Correct and close the launch handoff
+
+**Course correction** — Main agent (Codex, GPT-6 Astra; Browser skill), single
+writer, no delegation: the owner identified JPEG captures mislabeled as PNG and
+invalid dimensions in the earlier AI-prepared handoff. Renamed four files without
+changing bytes; corrected references, MIME types, dimensions and the desktop
+caption. Kept the existing release and research scope. Delivered a 51-word card,
+577-word case study and 80-second walkthrough script. Browser checks confirmed
+the atlas → Europaplatz → original source path, mobile return/navigation, static
+index and withheld-location presentation; all four corrected images were visually
+inspected. Anonymous HTTP hashes matched 20 recorded release files; four private
+paths returned 404. New package checks verified image headers/decoded dimensions,
+original byte identity, references and word counts. Reused today's 207-test and
+TypeScript record after confirming only docs changed since the tested revision.
+The prior credential scan remains explicitly historical. Verification and limits:
+[portfolio handoff](portfolio/README.md), [dated record](portfolio/verification.json).
+No deployment, private-artifact publication or shared-portfolio edit; independent
+German review and physical-phone testing remain unfinished.
+
+
 ## 2026-09-21 — Prepare the finished portfolio handoff
 
 **Commit:** `278f0da` — `docs(portfolio): package case study and verified live screenshots`.

@@ -28,12 +28,20 @@ Targets are planning constraints, not promises. Scope should shrink before trust
 [Berlin, Under Construction](https://berlin-under-construction.vercel.app).
 The main atlas now includes 150 basic official-register listings alongside the
 three full dossiers (two located). The 9 September production update uses source
-commit `687058e`, including the mobile layout improvements.
+commit `57c1e68`, including six source-stated dates on five basic listings.
+The 21 September handoff recheck matched the published release; no redeploy was needed.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Hand off [the portfolio package](portfolio/README.md) for integration
-into the owner's personal site, then verify its final links/layout there. The
-September 21 desktop/mobile walkthrough, 207 tests and TypeScript check passed.
+**Next action:** Integrate [the completed portfolio package](portfolio/README.md)
+for the 21 September 17:00 Europe/Berlin launch, then check final portfolio links
+and desktop/mobile layout. The handoff is READY AS CASE STUDY: JPEG filenames,
+actual dimensions, card/case-study copy and an 80-second walkthrough are checked;
+[verification](portfolio/verification.json) records anonymous release matching and
+live evidence/navigation checks. Today's 207-test/typecheck record is reused
+because tested source is unchanged. The shared portfolio repository was not
+edited. Keep ten-dossier expansion out of today's launch scope.
+
+**Deferred product backlog (not today's handoff):**
 For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße
 schedule supersession. Continue a bounded milestone batch and balance housing
 coverage. Six date fields on five basic cards remain live; no on-time assessment
@@ -60,11 +68,10 @@ for explicit actual-start/progress evidence to answer the project’s outstandin
 questions. Then prepare
 C-001/002 bridge dossiers. The owner accepted the local visual direction; the latest
 navigation memory, building-detail fade/cache and project key are ready for critique.
-Keep the production deployment and portfolio security checks open; then finish the [recruiter-ready release plan](portfolio-release-plan.md):
-close dependency and credential/deployment-output checks, check the deployed
-presentation of the three already owner-verified dossiers (do not repeat source
-acceptance), package the AI evidence and portfolio story, and verify mobile
-and desktop before a fresh release. A pending-research map layer is optional and
+The current release and bounded portfolio checks are recorded in the
+[handoff](portfolio/README.md) and [release plan](portfolio-release-plan.md).
+Repeat appropriate deployment checks if product code changes; do not repeat
+acceptance of the three dossiers merely to integrate the case study. A pending-research map layer is optional and
 requires supported identities, categories and locations; no placeholder count or
 invented markers. The owner's 9 September portfolio deadline takes priority over
 coverage expansion. After this release, prepare the C-009 building dossier from the [seven-candidate
@@ -82,8 +89,8 @@ evidence-backed projects and an integrated glossary demonstration. Finding a
 reviewer does not block preparation, source research or tooling; independent
 verification still gates verified meanings and scored evaluation. Do not make a
 model/extraction-provider call. Human glossary verification and the golden set
-remain incomplete. Atlas device measurements and the final portfolio walkthrough
-remain follow-up work; current evidence coverage is three pilots. The custom
+remain incomplete. Atlas physical-device measurements remain follow-up work; the portfolio walkthrough
+is packaged and current evidence coverage is three pilots. The custom
 `design-with-depth` skill now captures the accepted design method for future visual work.
 
 **3 September launch recheck:** A newer 25 August district source moves C-010's

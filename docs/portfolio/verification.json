@@ -1,125 +1,145 @@
 {
   "checked_on": "2026-09-21",
-  "live_source_commit": "57c1e68",
+  "live_source_commit": "57c1e68d492d891dc57d3dd8f044f56521619cc2",
   "public_checks": [
     {
       "path": "/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "34451135ff08a461a86eb2ebaa907416d26e13d4ee84e3d46ae100cd20c2b8ad",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/records/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "d768a0cf9622e8e637e1bf8484270e27e0bbcdcb38b1b06651d25da47d0d5748",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/privacy/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "ac22a8d4c01c8aef94bdb32d2b884668c74bf189169d23ac8a36add13fc45ed9",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/projects/heinrich-hertz-gymnasium-ostbahnhof/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "f7eac94eb27d1d825af90915f7840402a11b7bee88d45f479d7278e3168d23a9",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/projects/europaplatz-sued/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "16af86b3dc0f650c8a24ebeb29963e7ed626158fe0e381519816fcfd8640d0a1",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/projects/power-to-heat-heizkraftwerk-mitte/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "4007d34aa5720e441652140143eb4aa2abb6244d12c35b00ffd07f2ea2ec0104",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/impressum/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "c0bb6fb3f195346fb7f862f1ba0d121212a543956e7e0407f8f02c08b49d595c",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/method/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "03e8b22bf022709c7e56789030e74936ac69a59078e6bed87151cd233125e8d0",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/corrections/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "640b751b01781719db9429f52def7b2b84c87ab3adb44669889b329fa4de88b9",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/corrections/organizations/senatsverwaltung-stadtentwicklung-bauen-wohnen/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "cd2c5cd498ee0f5992d9dddfd5eb7841d191ec207b90e27bae2f27396c7f9b92",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/corrections/organizations/50hertz/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "08f8c4e6ac7fa7b240e7074dd5b88ee4f9c3b01d0b59a1a1b1ce21e7335faae1",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/corrections/projects/C-014/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "1a7dac646d746950fc14ba4779911612a0ec2c777ab775fd0d5ab23e9dd6d382",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/corrections/projects/C-010/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "e9294ec2dc62177ae73fc58ea611244da12045ec1ed9a20a71555dd0f37744cd",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/corrections/projects/C-019/",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "dc190af60b558ee9c2e08abcfc1744b6384024c3fee418bdf92b26234499ec16",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/_astro/index.astro_astro_type_script_index_0_lang.DsbhFJvO.js",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "6f7764d8458f71b23b160f45165e4819e7cfb230bd629701e6f10740bbb47f47",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/_astro/index.nDrrSXIt.css",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "5529d0a825c0ccbf66ef57ce568f946f05c510c60d37f94105b94477043605ab",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/_astro/renderer.CGObN9Dc.js",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "968c93b469b3919e924e0ca9396e365aaede44333f25c71409ac2218bf8b6b7b",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/_astro/Base.iIgsGmqw.css",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "ce61146d41972e542587c9f984c49ca63120e8c0c934d2ed24592b95b160a240",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/atlas/model.json",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "70d9423ca07d7c7584d7cb801291e629517ea4a01675a993aa1e656d9a9498e0",
+      "matches_recorded_release": true,
       "sets_cookie": false
     },
     {
       "path": "/atlas/provenance.json",
       "status": 200,
-      "matches_packaged_release": true,
+      "sha256": "802e3fc89c2e8e956183f8aed187c33e2888c01851aea0168a6770716657b646",
+      "matches_recorded_release": true,
       "sets_cookie": false
     }
   ],
@@ -147,41 +167,108 @@
   "python_tests": "207 passed in 26.48s after devalue patch",
   "typecheck": "passed",
   "dependency_patch": "devalue 5.9.0 to 5.9.4; npm reported zero known vulnerabilities after update",
-  "live_scope": "Read-only check of existing public release; no source freshness re-verification or new deployment. Detailed model tiles not re-downloaded.",
+  "live_scope": "Existing September 9 release, unchanged across 14 HTML routes, four CSS/JS assets and two atlas metadata files. Anonymous hashes matched September 9 ledger. Four private-path probes returned 404. No deployment, broad source freshness review or detailed geometry tile re-download.",
   "browser": {
-    "desktop": "Live atlas; dossier selection; full overview includes source history/conflict; energy location withheld",
-    "mobile": "390x844: milestone card; original evidence expansion; index navigation; direct-link Back closes selection; no horizontal overflow",
+    "desktop": "Atlas project list -> Europaplatz -> Full project overview -> start Evidence -> Original source; original Berlin.de January 26 release loaded with matching February 2 start sentence. Source history and unresolved financing conflict visible.",
+    "mobile": "390x844: mobile direct-link C-014 card -> Back to previous view closes selection and clears hash; Project index -> C-019 dossier; The atlas returns to map; Dorfteich listing -> Source details expands German evidence. No horizontal overflow in checked index and cards.",
     "console_errors_or_warnings_in_checked_session": 0,
-    "physical_phone_tested": false
+    "physical_phone_tested": false,
+    "checked_at": "2026-09-21T12:31:49.771760+00:00",
+    "static_index": "0 script elements; 150 basic listings distinguished from three dossiers; two SVG project links and linked BKG attribution.",
+    "withheld_location": "C-019 is listed separately in index without a map marker. Dossier Project location shows withholding reason, no value. Translation unverified remains visible.",
+    "automation_note": "One mobile link click did not navigate; fresh visible-DOM targeting succeeded. Mobile atlas sidebar is hidden at this viewport; energy dossier was checked through its static-index route."
   },
   "screenshots": [
     {
-      "file": "assets/atlas-desktop.png",
-      "width": 65536,
-      "height": 4292542531,
+      "file": "assets/atlas-desktop.jpg",
+      "width": 1280,
+      "height": 720,
       "source": "live public site",
-      "captured_on": "2026-09-21"
+      "captured_on": "2026-09-21",
+      "media_type": "image/jpeg",
+      "sha256": "cc820e7942a8e74e43627103a40ed4087d285874b5b6868dc12b9f166e48e248",
+      "bytes": 179717,
+      "visually_inspected_on": "2026-09-21",
+      "unchanged_capture_bytes": true
     },
     {
-      "file": "assets/evidence-mobile.png",
-      "width": 65536,
-      "height": 4292542531,
+      "file": "assets/evidence-mobile.jpg",
+      "width": 390,
+      "height": 844,
       "source": "live public site",
-      "captured_on": "2026-09-21"
+      "captured_on": "2026-09-21",
+      "media_type": "image/jpeg",
+      "sha256": "1c5ca3301bf997eba4eec944bbca2727a535fb816e7b0bd7a96a968c2a58de29",
+      "bytes": 51153,
+      "visually_inspected_on": "2026-09-21",
+      "unchanged_capture_bytes": true
     },
     {
-      "file": "assets/milestone-mobile.png",
-      "width": 65536,
-      "height": 4292542531,
+      "file": "assets/milestone-mobile.jpg",
+      "width": 390,
+      "height": 844,
       "source": "live public site",
-      "captured_on": "2026-09-21"
+      "captured_on": "2026-09-21",
+      "media_type": "image/jpeg",
+      "sha256": "803ffb86e592f9d4a01fc7c8be3ab01ca5e176b7a2bf9bc44a1c38ed9b66b3e5",
+      "bytes": 38110,
+      "visually_inspected_on": "2026-09-21",
+      "unchanged_capture_bytes": true
     },
     {
-      "file": "assets/project-card-desktop.png",
-      "width": 65536,
-      "height": 4292542531,
+      "file": "assets/project-card-desktop.jpg",
+      "width": 1280,
+      "height": 720,
       "source": "live public site",
-      "captured_on": "2026-09-21"
+      "captured_on": "2026-09-21",
+      "media_type": "image/jpeg",
+      "sha256": "03dfa55a33e2408e904abf68a8fd4928e1706bd7ba76524f2421bab5d6d51896",
+      "bytes": 131084,
+      "visually_inspected_on": "2026-09-21",
+      "unchanged_capture_bytes": true
     }
-  ]
+  ],
+  "handoff_status": "READY AS CASE STUDY",
+  "handoff_due_at": "2026-09-21T15:00:00+02:00",
+  "portfolio_launch_at": "2026-09-21T17:00:00+02:00",
+  "timezone": "Europe/Berlin",
+  "public_url": "https://berlin-under-construction.vercel.app/",
+  "handoff_base_commit": "ce47e0e4cb5568d2712b3c60f53811ea22e87ba7",
+  "public_checked_at": "2026-09-21T12:28:35.078977+00:00",
+  "anonymous_http_method": "HTTP GET without Cookie or Authorization headers; SHA-256 compared with September 9 release ledger. No detailed geometry tiles fetched.",
+  "private_probes_checked_at": "2026-09-21T12:31:12.591562+00:00",
+  "secret_scan_provenance": "Reused September 21 pre-handoff scan recorded in 278f0da; not rerun in this packaging pass. The 186-file count is historical.",
+  "engineering_record": {
+    "tested_on": "2026-09-21",
+    "tested_source_commit": "2a1e6f33ebf0f6e4ec0a97a98abf4cf93dc665d3",
+    "reused": true,
+    "reason": "git diff from tested revision contains only docs changes; no application, pipeline, tests, public data or dependency changes. No regression suite, build or dependency audit rerun for document and image-extension changes.",
+    "evidence": "../how-this-was-built.md#2026-09-21--patch-the-portfolio-check-dependency-finding",
+    "uncommitted_user_work_at_start": false
+  },
+  "evidence_path": {
+    "atlas": "https://berlin-under-construction.vercel.app/",
+    "selection": "https://berlin-under-construction.vercel.app/#C-014",
+    "dossier": "https://berlin-under-construction.vercel.app/projects/europaplatz-sued/",
+    "original_source": "https://www.berlin.de/sen/stadt/presse/pressemeldungen/pressemitteilung.1637393.php",
+    "source_publication_date": "2026-01-26",
+    "checked_claim": "Announced start on 2. Februar 2026, not confirmation of actual construction progress."
+  },
+  "package_checks": {
+    "checked_at": "2026-09-21T12:31:50.349594+00:00",
+    "card_summary_words": 51,
+    "case_study_visible_words": 577,
+    "word_count_method": "Whitespace tokens; Markdown image and URL syntax removed from case study, headings and link labels included.",
+    "walkthrough_seconds": 80,
+    "walkthrough_format": "Timed narration script and click guide; not prerecorded video.",
+    "walkthrough_narration_words": 152,
+    "jpeg_magic_and_sips_decoded_dimensions": "passed: all four screenshots",
+    "original_capture_byte_comparison": "passed: all four identical to files in ce47e0e before extension correction",
+    "local_links_and_image_references": "passed",
+    "stale_png_references": "none in package",
+    "image_metadata_matches_project_card": "passed",
+    "tested_source_unchanged": "passed: only docs differ from 2a1e6f3",
+    "deployment_needed": false,
+    "shared_portfolio_repository_edited": false
+  }
 }

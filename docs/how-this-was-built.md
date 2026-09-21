@@ -3,6 +3,26 @@
 This document is the single newest-first timeline of how Berlin, Under Construction is developed. The logging policy, roles and full-entry template live in [`build-log-conventions.md`](build-log-conventions.md).
 
 
+## 2026-09-21 — Prepare the finished portfolio handoff
+
+Main agent (Codex, GPT-6 Astra; Browser skill), single writer; no delegation.
+The owner requested a portable package for another person to integrate. Prepared
+first-person case-study copy, a CMS-ready project-card record, image captions/alt
+text and placement instructions under `docs/portfolio/`. Corrected the older guide
+that still called the 150 listings unpublished and cited 187 tests. Kept the role
+and AI attribution, single-run metering limits, source dates and unfinished German
+semantic evaluation explicit.
+
+Browser produced four unaltered live screenshots and checked desktop selection,
+source history/conflict, withheld location, mobile evidence expansion, index
+navigation and direct-link return. The mobile viewport was 390 × 844; no physical
+phone or performance benchmark is claimed. Read-only HTTP checks matched 20 public
+files and four private-path exclusions. A scoped scan of 186 tracked text files
+found no selected credential patterns. The dated JSON report records these limits.
+Regression tests generated test-only HTML locally; the existing packaged public
+preview was restored afterward. No personal portfolio was edited or deployed.
+
+
 ## 2026-09-21 — Patch the portfolio-check dependency finding
 
 Main agent (Codex, GPT-6 Astra; npm audit): updated transitive devalue from 5.9.0

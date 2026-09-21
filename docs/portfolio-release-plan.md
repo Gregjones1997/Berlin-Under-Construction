@@ -5,7 +5,29 @@ personal portfolio, check repository hygiene and credentials, and consider a
 separate pending-research layer. This takes priority over preparing the next
 full dossier. The live product is a prototype; scored AI accuracy is not established.
 
-## Finish order
+## Portfolio handoff checkpoint — 21 September 2026
+
+The [finished package](portfolio/README.md) supersedes the older pending-layer
+scope below. It includes copy, CMS-ready metadata, four fresh screenshots and
+[verification evidence](portfolio/verification.json).
+
+- [x] Corrected stale coverage and test claims: 150 basic listings, three full dossiers, six date fields on five basic listings.
+- [x] Recorded owner role, AI contribution, language limits and an honest two-minute walkthrough.
+- [x] Re-ran 207 tests and TypeScript checking; patched devalue 5.9.0 to 5.9.4, with zero known npm vulnerabilities reported afterward.
+- [x] Checked desktop dossier selection, source-history/conflict display and withheld location; checked mobile date/evidence expansion, direct-link return and index navigation.
+- [x] Captured desktop and mobile screenshots from production.
+- [x] Matched 20 public HTML/CSS/JS/metadata files to the packaged release; four private-path probes returned 404. No detailed tile re-download or new source-freshness claim.
+- [x] Scanned 186 current tracked text files for selected credential patterns; no matches. This is not a complete security audit or a rescan of all history.
+- [ ] Integrate the package into the owner's separate portfolio and verify its final links/layout there; owner requested a handoff.
+- [ ] Physical-phone performance, independent glossary verification and scored extraction evaluation remain future work.
+
+No production redeployment was needed for this documentation handoff. The dependency
+patch is in the repository; the live static build remains the verified milestone
+release. The following sections retain the original September 9 plan and findings
+as historical context, not current open work in every case.
+
+## Original finish order (9 September)
+
 
 1. **Repository and release hygiene.** Check reachable commit history for
    credentials without printing values; check ignored private inputs, dependencies,

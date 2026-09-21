@@ -31,12 +31,13 @@ three full dossiers (two located). The 9 September production update uses source
 commit `687058e`, including the mobile layout improvements.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Resolve Waldemarstraße start accounts and Karl-Marx-Straße
-schedule supersession. Six source-stated date fields on five basic cards are now
-live and verified (source commit `57c1e68`).
-See the [publication review](research/findings/2026-09-09-milestone-publication-review.md).
-Continue another bounded milestone batch and balance housing coverage. Basic
-pins remain distinct from full dossiers; no on-time assessment is supported.
+**Next action:** Hand off [the portfolio package](portfolio/README.md) for integration
+into the owner's personal site, then verify its final links/layout there. The
+September 21 desktop/mobile walkthrough, 207 tests and TypeScript check passed.
+For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße
+schedule supersession. Continue a bounded milestone batch and balance housing
+coverage. Six date fields on five basic cards remain live; no on-time assessment
+is supported. Source statements were not refreshed by the portfolio walkthrough.
 Keep basic listing and full dossier pin treatments distinct. Continue using the
 [batch research queue](research-queue.md).
 Seven candidates have refreshed evidence; four have independently checked official

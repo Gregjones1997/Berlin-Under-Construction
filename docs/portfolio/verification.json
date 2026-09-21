@@ -1,0 +1,187 @@
+{
+  "checked_on": "2026-09-21",
+  "live_source_commit": "57c1e68",
+  "public_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/records/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/projects/heinrich-hertz-gymnasium-ostbahnhof/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/projects/europaplatz-sued/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/projects/power-to-heat-heizkraftwerk-mitte/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/impressum/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/method/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/organizations/senatsverwaltung-stadtentwicklung-bauen-wohnen/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/organizations/50hertz/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/projects/C-014/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/projects/C-010/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/corrections/projects/C-019/",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/index.astro_astro_type_script_index_0_lang.DsbhFJvO.js",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/index.nDrrSXIt.css",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/renderer.CGObN9Dc.js",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/_astro/Base.iIgsGmqw.css",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/atlas/model.json",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    },
+    {
+      "path": "/atlas/provenance.json",
+      "status": 200,
+      "matches_packaged_release": true,
+      "sets_cookie": false
+    }
+  ],
+  "private_probes": [
+    {
+      "path": "/.env",
+      "status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404
+    },
+    {
+      "path": "/data/artifacts/",
+      "status": 404
+    },
+    {
+      "path": "/pipeline/",
+      "status": 404
+    }
+  ],
+  "tracked_text_files_scanned": 186,
+  "credential_pattern_matching_files": [],
+  "secret_scan_scope": "Current tracked text files only; selected key/token patterns. Does not cover ignored files, remote-only history or every credential format.",
+  "python_tests": "207 passed in 26.48s after devalue patch",
+  "typecheck": "passed",
+  "dependency_patch": "devalue 5.9.0 to 5.9.4; npm reported zero known vulnerabilities after update",
+  "live_scope": "Read-only check of existing public release; no source freshness re-verification or new deployment. Detailed model tiles not re-downloaded.",
+  "browser": {
+    "desktop": "Live atlas; dossier selection; full overview includes source history/conflict; energy location withheld",
+    "mobile": "390x844: milestone card; original evidence expansion; index navigation; direct-link Back closes selection; no horizontal overflow",
+    "console_errors_or_warnings_in_checked_session": 0,
+    "physical_phone_tested": false
+  },
+  "screenshots": [
+    {
+      "file": "assets/atlas-desktop.png",
+      "width": 65536,
+      "height": 4292542531,
+      "source": "live public site",
+      "captured_on": "2026-09-21"
+    },
+    {
+      "file": "assets/evidence-mobile.png",
+      "width": 65536,
+      "height": 4292542531,
+      "source": "live public site",
+      "captured_on": "2026-09-21"
+    },
+    {
+      "file": "assets/milestone-mobile.png",
+      "width": 65536,
+      "height": 4292542531,
+      "source": "live public site",
+      "captured_on": "2026-09-21"
+    },
+    {
+      "file": "assets/project-card-desktop.png",
+      "width": 65536,
+      "height": 4292542531,
+      "source": "live public site",
+      "captured_on": "2026-09-21"
+    }
+  ]
+}

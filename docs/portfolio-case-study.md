@@ -1,9 +1,13 @@
 # Berlin, Under Construction — portfolio evidence guide
 
 An independent map that connects Berlin construction projects to the German
-sources behind their dates and status. The public prototype contains three
-reviewed dossiers; two have published map positions. The map is an architectural
+sources behind their dates and status. The public prototype contains 150 basic register listings and three
+reviewed dossiers; two dossiers have published map positions. Five basic listings
+also carry six source-stated date fields. The map is an architectural
 model, not evidence of current construction progress.
+
+The [finished portfolio handoff](portfolio/README.md) includes ready-to-use copy,
+a project-card JSON record and fresh desktop/mobile screenshots.
 
 ## The problem and the owner's role
 
@@ -34,13 +38,18 @@ the owner manually wrote all code or that AI independently verified its output.
 4. Use the evidence links below to inspect the implementation and decisions.
 
 The live site and current branch can differ. [Deployment evidence](public-deployment.md)
-identifies the published commit; September 9 interface refinements are repository
-checkpoints until separately deployed.
+identifies the published commit. The September 21 walkthrough confirmed the
+public September 9 milestone release; it did not refresh all underlying sources.
 
 ## How the evidence reaches the interface
 
-German source → exact evidence span → structured extraction proposal → deterministic
-validation → human publication decision → public projection → project card/dossier.
+Full dossier path: German source → exact evidence span → structured extraction
+proposal → deterministic validation → human publication decision → public projection
+→ project card/dossier.
+
+Basic listings use the bounded owner-authorized publication scopes in ADR-025 and
+ADR-026. Literal source-stated dates have a separate frozen release; these are not
+new human-verified golden values or full dossier approvals.
 
 See the [C-014 dossier](research/dossiers/),
 [accepted publication decisions](../public/data/accepted-review-decisions.json),
@@ -67,11 +76,12 @@ for that failed attempt.
 
 ## What has been demonstrated—and what remains open
 
-The September 9 checkpoint passes 187 engineering tests and TypeScript checking.
+The September 21 check passes 207 engineering tests and TypeScript checking.
 That validates tested software behavior, not model accuracy. Three dossier reviews
 are complete; independent glossary verification and the scored golden set remain
 unfinished. No extraction accuracy, precision, recall or user-impact percentage
-is claimed. Mobile/performance acceptance of the latest interface remains open.
+is claimed. The live desktop and simulated 390 × 844 mobile walkthrough passed the checked
+flows; physical-phone performance and accessibility audit coverage remain open.
 
 A business adaptation could route terminology and translation through an existing
 internal review team. That is a proposed application, not implemented departmental
@@ -91,6 +101,7 @@ artifacts. Deployment requires a fresh, correctly configured and checked export.
 The [September 9 research batch](research/findings/2026-09-09-bulk-discovery/README.md)
 contains 150 source-cited candidates across all 12 boroughs. Each has an official
 page title match, a short German source excerpt and register-supplied coordinates.
-These are research records awaiting scope/category/publication review; the public
-site still has three dossiers and two map positions. The batch documents selection
-bias, exclusions and duplicate checks rather than claiming 150 verified projects.
+The source-backed register identity/reference-point subset is now live as 150
+basic listings. These are not 150 verified dossiers or site footprints. Category
+proposals and unsupported progress remain unpromoted. The batch documents selection
+bias, exclusions and duplicate checks rather than claiming exhaustive coverage.

@@ -1,0 +1,131 @@
+{
+  "captured_on": "2026-09-22",
+  "note": "Screenshots are actual browser captures. Before/after and scope are documented in the report; official full source pages were not saved.",
+  "assets": [
+    {
+      "file": "basic-listing-mobile.jpg",
+      "bytes": 38589,
+      "sha256": "a210c2e960bd1bf4c1a54be170b8ddde2608f26e423d51fe96a4618a788bb06a"
+    },
+    {
+      "file": "basic-listing.txt",
+      "bytes": 329,
+      "sha256": "88126e7871592441fec24464521108ff7e2deba2eb7c4103813cd98aa5b385fd"
+    },
+    {
+      "file": "browser-warnings.json",
+      "bytes": 1436,
+      "sha256": "382f8b2d86330b95d0f8a69d8b72f34971355c21f532c58f8e038ea461eb2095"
+    },
+    {
+      "file": "build.txt",
+      "bytes": 1949,
+      "sha256": "bca3d2b230c9f827a2da951071c144fc4437be8f9f1f823f93c777f2af101e73"
+    },
+    {
+      "file": "checks.json",
+      "bytes": 1008,
+      "sha256": "f573eedf73f38ac5852daca676d4f5f1e31506108f60b222eba2bc5ea961fb70"
+    },
+    {
+      "file": "correction-handoff.txt",
+      "bytes": 2017,
+      "sha256": "61cfc5c402f674b83fdc8df9761dd6a1285a23b67f9c52b624929ddcd1dc1833"
+    },
+    {
+      "file": "dossier-after.txt",
+      "bytes": 9020,
+      "sha256": "879053fc093eeb1af5bcc0d88853d775f5f10e795ae82403de3d00310697725e"
+    },
+    {
+      "file": "dossier-mobile-after.jpg",
+      "bytes": 35437,
+      "sha256": "fde3929ad94238c8d8a5cdc0d0f66917ab9b841f16ddd5faf0a3ce3569e06ab2"
+    },
+    {
+      "file": "dossier-mobile-before.jpg",
+      "bytes": 31324,
+      "sha256": "d9fef0213adfdfaa5278ac6a0f5cbedeb34d6c6d718c1af0c77b3c7df5e7f255"
+    },
+    {
+      "file": "evidence-mobile-after.jpg",
+      "bytes": 43656,
+      "sha256": "874afce869bf0605d6ec93450490d4e0940d818dbe0990a0d34f15d10214a76d"
+    },
+    {
+      "file": "failure-server.py",
+      "bytes": 838,
+      "sha256": "a729b2b2ef461409c473e32e760eccdbb8781a4edd2b802e09792962f724e65f"
+    },
+    {
+      "file": "index-mobile.jpg",
+      "bytes": 39864,
+      "sha256": "13d36fb573297deaf185a904d72fa79e30c990b6f36587f96aa25a008005c714"
+    },
+    {
+      "file": "local-desktop-after.jpg",
+      "bytes": 164153,
+      "sha256": "a035abb4bf57806eace4e53bbad9670ade035d89df1b23fabe4274545678dc3b"
+    },
+    {
+      "file": "local-entry-before.jpg",
+      "bytes": 164003,
+      "sha256": "a27730dd768a0e09bbcdc1268f9edcecd7a5990f5134b89def1e6f88506d1747"
+    },
+    {
+      "file": "local-mobile-entry-after.jpg",
+      "bytes": 68901,
+      "sha256": "f84cdd6709213dc5ae02177718bf94b533203fc4b8dfdefae3bfccd45a4f2eb1"
+    },
+    {
+      "file": "local-mobile-entry.jpg",
+      "bytes": 42477,
+      "sha256": "686a15cd483bd5f8e43335dd1d4222b3a8b8a66a4bb3455609fd921ed094ea4b"
+    },
+    {
+      "file": "model-failure-mobile.jpg",
+      "bytes": 28252,
+      "sha256": "45a04c4525d27a8794ae8e7fed6c9372936db8d0b522395f1d50d608d9227752"
+    },
+    {
+      "file": "model-failure.txt",
+      "bytes": 3231,
+      "sha256": "7a0624fb2de1e1ed8f72fbaf8d9fe8b7e31451a00d90b7293b44def3b142cb43"
+    },
+    {
+      "file": "public-entry.jpg",
+      "bytes": 163436,
+      "sha256": "6cdade609e18b98be35beed1726b74ee3161047100d4b9fa3bcdec547bf3f48c"
+    },
+    {
+      "file": "public-entry.txt",
+      "bytes": 10113,
+      "sha256": "8492aa9954cbf2f8daae0aa0ac75ec7b1b984dfd82aa56d1aaada202f603c1b9"
+    },
+    {
+      "file": "return-mobile.jpg",
+      "bytes": 39746,
+      "sha256": "fd84aa76cd3c47c09ebd3184abe1464418409064176c54c70d6fea67ca0a0a42"
+    },
+    {
+      "file": "return-selection.txt",
+      "bytes": 362,
+      "sha256": "6a08609562179e04b0fd609c97a2d13cc38b273be253ec396cd936986a7786ce"
+    },
+    {
+      "file": "school-current.txt",
+      "bytes": 707,
+      "sha256": "7ee248f3236b956d040d75f06b1bc10d3d4f7d881fb59d8a4eb28403e7b70781"
+    },
+    {
+      "file": "typecheck.txt",
+      "bytes": 65,
+      "sha256": "d5b1158aea3dfdb9836d547a2420c4563471227810007956784e0489ca48c1e4"
+    },
+    {
+      "file": "withheld-project.txt",
+      "bytes": 3580,
+      "sha256": "530bb504bda5dfc19dde01c4ba0a9b9f17a2661cd03aebe5500179c3e89e6b3a"
+    }
+  ]
+}

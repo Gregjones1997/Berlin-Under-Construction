@@ -1,0 +1,46 @@
+- banner:
+  - link "Berlin, Under Construction home":
+    - /url: /
+    - text: BERLIN
+    - generic: UNDER CONSTRUCTION
+  - navigation "Main navigation":
+    - link "The atlas":
+      - /url: /
+    - link "Project index":
+      - /url: /records/
+    - link "How it works":
+      - /url: /method/
+- main:
+  - paragraph: BERLIN / PROJECT RECORDS
+  - heading "Correction or formal request" [level=1]
+  - paragraph: C-014 · Europaplatz Süd — Umgestaltung
+  - heading "Contact" [level=2]
+  - paragraph:
+    - text: Send requests to
+    - link "jonesg158@gmail.com":
+      - /url: mailto:jonesg158@gmail.com
+    - text: and include the context
+    - strong: C-014 — Europaplatz Süd — Umgestaltung
+    - text: . This monitored address handles the three channels below; naming the request type keeps their procedures distinct.
+  - heading "Evidence correction" [level=2]
+  - paragraph: For an ordinary evidence correction, identify the displayed statement, the proposed correction and the primary source supporting it.
+  - heading "Formal right of reply" [level=2]
+  - paragraph: State explicitly that the message is a formal right-of-reply request and identify the passage concerned. It will not be treated as an ordinary evidence correction.
+  - heading "Data-protection request" [level=2]
+  - paragraph: State explicitly that the message is a data-protection request and identify the affected information or GDPR right. It will be handled separately from editorial corrections and rights of reply.
+  - paragraph:
+    - link "Return to project":
+      - /url: /projects/europaplatz-sued/
+  - paragraph:
+    - link "Method":
+      - /url: /method/
+    - text: ·
+    - link "Corrections and formal requests":
+      - /url: /corrections/
+    - text: ·
+    - link "Impressum":
+      - /url: /impressum/
+    - text: ·
+    - link "Privacy":
+      - /url: /privacy/
+  - paragraph: This page was generated on 2026-09-21. Project data may have earlier source and retrieval dates; each fact links to its original source.

@@ -23,9 +23,10 @@ const leadFact =
   project.publishedFacts.find(
     (fact) => fact.factType === "milestone" && fact.factId.endsWith("current"),
   ) ?? project.publishedFacts.find((fact) => fact.factType === "milestone");
-const currentFacts = project.publishedFacts.filter(
-  (fact) => fact.factType === "status" || fact.factId === leadFact?.factId,
-);
+const currentFacts = [
+  ...(leadFact ? [leadFact] : []),
+  ...project.publishedFacts.filter((fact) => fact.factType === "status"),
+];
 const historyFacts = project.publishedFacts.filter((fact) =>
   fact.factId.includes("history"),
 );
@@ -64,16 +65,21 @@ const WITHHELD_REASONS: Record<string, string> = {
   headingLang="de"
   subtitle={`${project.projectId} · source-backed project dossier`}
 >
-  <section aria-labelledby="identity-heading">
-    <h2 id="identity-heading">Project identity</h2>
-    {identityFacts.map((fact) => <RawFact fact={fact} />)}
-  </section>
-
   <section aria-labelledby="current-heading">
     <h2 id="current-heading">Current source-stated position</h2>
+    <p class="section-intro">
+      Dates describe source statements, not observed construction progress.
+      Freshness has not been assessed.
+    </p>
     {currentFacts.map((fact) => (
       <RawFact fact={fact} lead={fact.factId === leadFact?.factId} />
     ))}
+    <p><a href={`/#${project.projectId}`}>Return to this project in the atlas</a></p>
+  </section>
+
+  <section aria-labelledby="identity-heading">
+    <h2 id="identity-heading">Project identity</h2>
+    {identityFacts.map((fact) => <RawFact fact={fact} />)}
   </section>
 
   {historyFacts.length > 0 && (

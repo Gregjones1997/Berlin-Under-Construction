@@ -3031,3 +3031,61 @@ Turn the product blueprint into an honest README and an operational build sequen
 - `README.md`
 - `docs/project-checklist.md`
 - `docs/how-this-was-built.md`
+
+
+## 2026-09-22 — Review the resident evidence journey
+
+**Status:** Complete locally; not deployed.
+
+### Goal
+
+Experience the resident's construction-question journey, fix bounded interaction
+and clarity problems, and distinguish usable behavior from assumed demand.
+
+### Participants and scopes
+
+- Project owner: requested the full product review and local fixes; prohibited
+  deployment and external messages.
+- Main agent (Codex, GPT-6 Astra; Browser skill): inspected public entry and local
+  City Desk candidate, exercised desktop/phone journeys, applied three small UI
+  changes and independently retested the resulting export. No delegation.
+
+### Work performed
+
+Moved the existing milestone ahead of identity metadata, added the source-statement
+caveat and a project-specific atlas return, and gave the compact coverage card an
+explicit purpose sentence. Preserved City Desk styling, German facts, conflict and
+withholding rules, the renderer and existing unverified-language boundary. Saved
+report, screenshots, UI observations and a loopback-only model-failure fixture under
+`docs/product-review/`. Updated the checklist handoff.
+
+### Decisions
+
+Accepted the earlier review's evidence-first and return-context recommendations
+where reproduced locally. Recognized the pre-existing City Desk coverage/index work
+instead of implementing it again. Need remains a hypothesis; no scope expansion,
+source refresh, golden values, model call, external message or deployment.
+
+### Verification
+
+207 tests passed in 124.68 seconds after the dossier change. Final typecheck and
+14-page build passed after the atlas wording change. Browser retests exercised the
+C-014 source/evidence/return/reload loop, basic listing, correction handoff, C-019
+withheld location, C-010 passed-date warning and isolated model-503 recovery through
+the static index. Screenshots were visually inspected; final evidence captures
+followed an explicit reload of the static export.
+
+### Failures and limitations
+
+Initial loopback server binding needed sandbox escalation and then succeeded.
+Some browser automation clicks required fresh visible-DOM targeting. Native view
+transition errors were observed; their attribution remains unresolved and no
+error-free browser claim is made. Phone testing is simulated, not physical-device
+validation. The actual portfolio entry click, live AI, delivery and broad source
+freshness remain untested. Local legal configuration is explicitly non-public.
+
+### Evidence
+
+[Product review](product-review/2026-09-22-review.md), its evidence folder and the
+three changed web source files. Owner acceptance and resident validation remain
+next actions; production and shared portfolio are unchanged.

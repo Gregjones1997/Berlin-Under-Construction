@@ -1,0 +1,38 @@
+[
+  {
+    "level": "error",
+    "message": "InvalidStateError: Transition was aborted because of invalid state. Page already revealed",
+    "timestamp": "2026-09-22T10:14:23.478Z",
+    "url": "http://127.0.0.1:48768/#C-014"
+  },
+  {
+    "level": "error",
+    "message": "InvalidStateError: Transition was aborted because of invalid state. Page already revealed",
+    "timestamp": "2026-09-22T10:15:08.941Z",
+    "url": "http://127.0.0.1:48768/projects/power-to-heat-heizkraftwerk-mitte/"
+  },
+  {
+    "level": "error",
+    "message": "InvalidStateError: Transition was aborted because of invalid state. Page already revealed",
+    "timestamp": "2026-09-22T10:15:32.538Z",
+    "url": "http://127.0.0.1:48768/#C-019"
+  },
+  {
+    "level": "error",
+    "message": "InvalidStateError: Transition was aborted because of invalid state. Page already revealed",
+    "timestamp": "2026-09-22T10:15:44.225Z",
+    "url": "http://127.0.0.1:48768/records/"
+  },
+  {
+    "level": "error",
+    "message": "InvalidStateError: Transition was aborted because of invalid state. Page already revealed",
+    "timestamp": "2026-09-22T10:15:54.380Z",
+    "url": "http://127.0.0.1:48768/projects/heinrich-hertz-gymnasium-ostbahnhof/"
+  },
+  {
+    "level": "error",
+    "message": "InvalidStateError: Transition was aborted because of invalid state. Page already revealed",
+    "timestamp": "2026-09-22T10:16:02.239Z",
+    "url": "http://127.0.0.1:48768/"
+  }
+]

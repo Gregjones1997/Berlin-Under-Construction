@@ -1333,6 +1333,7 @@ dialog dd a {
 .project-select strong { font-size:13px; }
 .atlas-coverage { position:static; pointer-events:auto; background:var(--panel); padding:10px 14px; border-left:3px solid var(--accent); }
 .atlas-coverage a { font:600 11px/1.5 var(--sans); }
+.atlas-coverage .coverage-purpose { margin:0 0 5px; font:500 12px/1.5 var(--sans); }
 .atlas-coverage a span { padding:0 5px; color:var(--accent); }
 .atlas-coverage small { display:block; font:10px/1.5 var(--sans); color:var(--muted); }
 .has-selection .atlas-coverage { display:none; }

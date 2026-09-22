@@ -1,0 +1,164 @@
+- link "Skip to project records":
+  - /url: "#project-list"
+- banner:
+  - link "Berlin, Under Construction home":
+    - /url: /
+    - generic: ▥
+    - text: BERLIN
+    - generic: UNDER CONSTRUCTION
+  - navigation "Main navigation":
+    - link "The atlas":
+      - /url: /
+    - link "Project index":
+      - /url: /records/
+    - link "How it works":
+      - /url: /method/
+  - text: Independent city atlas
+  - generic: 01 / BERLIN
+- main:
+  - region "Interactive architectural map of Berlin":
+    - generic "Berlin 3D map. Drag to pan, right-drag to rotate, scroll to zoom. Use the labelled map controls or project list for keyboard navigation."
+    - button "Explore Europaplatz Süd — Umgestaltung":
+      - generic: Europaplatz Süd — Umgestaltung
+    - button "Explore Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof":
+      - generic: Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof
+    - 'button "Explore basic listing: Friedrich-Bergius-Schule: Neubau einer Typen-Sporthalle am Standort Perelsplatz 6-9"':
+    - 'button "Explore basic listing: Ruppin-Grundschule: Sanierung, Umbau und Erweiterung"':
+    - 'button "Explore basic listing: Rückert-Gymnasium: Großsanierung von Schulgebäuden (BSO VI), Gesamtsanierung"':
+    - 'button "Explore basic listing: 40. Schule (Grundschule): Reaktivierung und Erweiterung des Bestandsgebäudes mit Einbindung von außerschulischen Bedarfe"':
+    - 'button "Explore basic listing: Sanierung des Spielplatzes \"Platz S\" mit Schwerpunkt auf der Etablierung eines Jugendstandorts"':
+    - 'button "Explore basic listing: Umbau Müncheberger Straße"':
+    - 'button "Explore basic listing: Umbau Enckestraße"':
+    - 'button "Explore basic listing: Neubau Freilufthalle Sportkomplex Rennbahnstraße"':
+    - 'button "Explore basic listing: Ersatzneubau des Spielplatzes Rütlistraße"':
+    - 'button "Explore basic listing: Ersatzneubau Kinderspielplatz Wildenbruchplatz"':
+    - 'button "Explore basic listing: Sanierung der Klosterkirchenruine"':
+    - 'button "Explore basic listing: Bauliche und energetische Sanierung und Modernisierung der Bibliothek am Luisenbad"':
+    - 'button "Explore basic listing: Sanierung des Kunstrasen Großspielfeldes - Uranusweg"':
+    - 'button "Explore basic listing: Sanierung des Kunststoff Basketball Spielfeldes Uranusweg"':
+    - 'button "Explore basic listing: Neugestaltung Dresdener Str. 127 zu einem Ort für alle Generationen"':
+    - 'button "Explore basic listing: Umgestaltung der Schillingstraße"':
+    - 'button "Explore basic listing: Neubau \"Haus der Jugend\" am Werner-Voss-Damm 47"':
+    - 'button "Explore basic listing: Neugestaltung Freifläche Neuenburgerstraße / Lindenstraße"':
+    - 'button "Explore basic listing: Bibliothek am Schäfersee - Energetische Sanierung und Herstellung der Barrierefreiheit"':
+    - 'button "Explore basic listing: Neugestaltung Grünanlage"':
+    - 'button "Explore basic listing: Neugestaltung Blücherstraße zwischen Baerwaldstraße und Südstern"':
+    - 'button "Explore basic listing: Neugestaltung Spielplatz Waldemarstraße"':
+    - 'button "Explore basic listing: Neugestaltung der Kinderspielplätze am Richardplatz"':
+    - 'button "Explore basic listing: Neubau Umspannwerk Kurt-Schumacher-Damm"':
+    - 'button "Explore basic listing: denkmalgerechte Modernisierung des Brunnenplatzes"':
+    - 'button "Explore basic listing: Umbau der Adalbertstraße"':
+    - 'button "Explore basic listing: Ausbau der Schmidtstraße"':
+    - 'button "Explore basic listing: Umgestaltung Potentialflächen Sportplatz Maybachufer"':
+    - 'button "Explore basic listing: Neugestaltung Lausitzer Platz"':
+    - 'button "Explore basic listing: Sanierung und Ersatzanbau Kindervilla Lucy-Lameck Str. 31"':
+    - 'button "Explore basic listing: Erweiterung und Umgestaltung am Sprengelpark"':
+    - 'button "Explore basic listing: Umgestaltung Grünanlage Carl-Herz-Ufer und Bau barrierefreier Spielplatz"':
+    - 'button "Explore basic listing: Neugestaltung der Freiflächen Koppen-/Palisadenstraße"':
+    - 'button "Explore basic listing: Neubau Schulsportanlage für die Spartacus-Grundschule"':
+    - 'button "Explore basic listing: Umgestaltung der Schillerpromenade und des Herrfurthplatzes"':
+    - 'button "Explore basic listing: Ersatzneubau Sport- und Funktionsgebäude Ella-Kay-Straße"':
+    - 'button "Explore basic listing: Modernisierung der Begegnungsstätte Haus Bottrop"':
+    - 'button "Explore basic listing: Sanierung des Otawitreffs"':
+    - 'button "Explore basic listing: Grundinstandsetzung Jugendfreizeitstätte Fuchsbau"':
+    - 'button "Explore basic listing: Umgestaltung der Ella-Barowsky-Straße"':
+    - 'button "Explore basic listing: Aufwertung und Sanierung des Rosengartens in Reinickendorf"':
+    - 'button "Explore basic listing: Gesamtsanierung der Miriam-Makeba-Grundschule – Gebäudehülle und Innensanierung"':
+    - 'button "Explore basic listing: Neubau einer Gemeinschaftsschule an der Pankstraße 70 / Orthstraße 1"':
+    - 'button "Explore basic listing: Neubau Gymnasium Schulstraße 97"':
+    - 'button "Explore basic listing: Carl-Kraemer-Grundschule, Gesamtsanierung"':
+    - 'button "Explore basic listing: Erneuerung der Uferwege und Freiflächen am Urbanhafen in Friedrichshain-Kreuzberg"':
+    - 'button "Explore basic listing: Neugestaltung Europaplatz Nord"':
+    - 'button "Explore basic listing: Umgestaltung des Barbarossaplatzes"':
+    - 'button "Explore basic listing: Sanierung Bolzplatz Singerstraße"':
+    - 'button "Explore basic listing: Erneuerung Kinderspielplatz Agnes-Sorma Platz"':
+    - 'button "Explore basic listing: Baumaßnahme zur Sanierung und Umnutzung des denkmalgeschützten Kioskgebäudes am Schäfersee"':
+    - 'button "Explore basic listing: Neubau Jugend- und Stadtteilzentrum Auguste-Viktoria-Allee"':
+    - 'button "Explore basic listing: Erneuerung der Prenzlauer Promenade zwischen Am Steinberg und Rothenbachstraße"':
+    - 'button "Explore basic listing: Neubau eines Umspannwerks in Berlin Mitte"':
+    - 'button "Explore basic listing: Nachnutzung Flughafen Tegel - Netzausbau"':
+    - 'button "Explore basic listing: Neubau eines Umspannwerks im Rollberg-Kiez"':
+    - 'button "Explore basic listing: Sanierung und Ausbau der Gustave-Eiffel-Schule"':
+    - 'button "Explore basic listing: Sanierung und Klimaanpassung Park am Weißen See"':
+    - 'button "Explore basic listing: Erneuerung der Torstraße in Mitte; 1. Teilabschnitt zwischen Chausseestraße und Rosenthaler Platz"':
+    - 'button "Explore basic listing: Sanierung Rummelsburger See"':
+    - 'button "Explore basic listing: Umbau der Karl-Marx-Straße - 3. Bauabschnitt zwischen Briesestraße und Weichselstraße"':
+    - 'button "Explore basic listing: Umgestaltung Blochplatz"':
+    - 'button "Explore basic listing: Ausbau der Weserstraße zur Fahrradstraße"':
+    - 'button "Explore basic listing: Erneuerung der Weichselstraße"':
+    - 'button "Explore basic listing: Umgestaltung und Neugestaltung der Elbestraße"':
+    - 'button "Explore basic listing: Neugestaltung des Spielplatzes Singerstraße 114-117"':
+    - 'button "Explore basic listing: Neue Höfe. Mehr Nutzen. Klimagerechter Umbau des Serenadenhofes"':
+    - 'button "Explore basic listing: Sanierung Spielplatz Panketal"':
+    - 'button "Explore basic listing: Gehwegsanierung am Spittelmarkt"':
+    - 'button "Explore basic listing: Umgestaltung der Spiel- und Sportflächen an der Bornsdorfer Straße"':
+    - 'button "Explore basic listing: Neugestaltung Schmollerplatz Alt-Treptow"':
+    - 'button "Explore basic listing: Ausbau der Oderstraße zur Fahrradstraße"':
+    - 'button "Explore basic listing: Grundhafte Erneuerung und Umgestaltung der Straße Unter den Linden von Pariser Platz bis Schloßbrücke"':
+  - complementary "Explore project records":
+    - paragraph: A SOURCE-BACKED VIEW OF BERLIN
+    - heading "The city, in progress." [level=1]:
+      - text: The city,
+      - emphasis: in progress.
+    - paragraph:
+      - text: What is being built.
+      - text: What was promised. What changed.
+    - generic "Explore the projects 03":
+      - generic: Explore the projects
+      - generic: "03"
+    - button "01 Europaplatz Süd — Umgestaltung Placed in the atlas":
+      - generic: "01"
+      - strong: Europaplatz Süd — Umgestaltung
+      - generic: Placed in the atlas
+      - generic: ↗
+    - button "02 Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof Placed in the atlas":
+      - generic: "02"
+      - strong: Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof
+      - generic: Placed in the atlas
+      - generic: ↗
+    - button "03 Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte Location withheld":
+      - generic: "03"
+      - strong: Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte
+      - generic: Location withheld
+      - generic: ↗
+  - generic: Explore Berlin
+  - generic "Choose an area":
+    - generic: Choose an area
+    - generic: ⌄
+  - status
+  - group "Map navigation":
+    - button "Orient map north":
+      - generic: ↑
+      - generic: "N"
+    - button "Zoom in":
+    - button "Zoom out":
+  - generic: BERLIN
+  - generic: 500 m
+  - group "Atlas controls":
+    - button "Overview":
+      - generic: Overview
+    - button "Pause" [pressed]:
+      - generic: Pause
+    - button "Plan view":
+      - generic: Plan view
+    - button "Project key":
+      - generic: Project key
+    - button "Enter fullscreen":
+  - button "About this model":
+    - text: About this model
+  - paragraph: Drag to explore · Scroll to zoom · Right-drag to rotate
+- contentinfo:
+  - text: "Geometry:"
+  - link "Geoportal Berlin":
+    - /url: https://daten.berlin.de/datensaetze/gebaudehohen-umweltatlas-wfs-d918088d
+  - text: ·
+  - link "© OpenStreetMap contributors":
+    - /url: https://www.openstreetmap.org/copyright
+  - generic: A model of the city. An evidence trail for its future.
+  - navigation "Legal information":
+    - link "Impressum":
+      - /url: /impressum/
+    - link "Privacy":
+      - /url: /privacy/
+    - link "Corrections":
+      - /url: /corrections/

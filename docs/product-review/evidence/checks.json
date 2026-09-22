@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-22",
+  "base_revision": "1fbd88c7d87b8c37ee406ee29c537b252093a05a",
+  "initial_working_tree": "clean",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "result": "207 passed in 124.68s",
+    "scope": "after dossier change; later atlas wording verified by final build and browser"
+  },
+  "typecheck": "passed",
+  "build": "14 pages; existing chunk-size warning",
+  "publication_as_of_date": "2026-09-22",
+  "legal_address": "local non-public review marker; not publishable",
+  "deployment": false,
+  "model_calls": 0,
+  "external_messages": 0,
+  "browser": "Codex in-app browser",
+  "phone_viewport": [
+    390,
+    844
+  ],
+  "final_desktop_dom_viewport": [
+    1280,
+    720
+  ],
+  "physical_phone_tested": false,
+  "portfolio_entry_click_tested": false,
+  "source_check": "Europaplatz official page displays Fertigstellung: 2026; no confirmation of actual completion",
+  "browser_warning": "Native view transition InvalidStateError observed; attribution unresolved"
+}

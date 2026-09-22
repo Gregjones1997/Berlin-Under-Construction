@@ -1,0 +1,88 @@
+- banner:
+  - link "Berlin, Under Construction home":
+    - /url: /
+    - text: BERLIN
+    - generic: UNDER CONSTRUCTION
+  - navigation "Main navigation":
+    - link "The atlas":
+      - /url: /
+    - link "Project index":
+      - /url: /records/
+    - link "How it works":
+      - /url: /method/
+- main:
+  - paragraph: BERLIN / PROJECT RECORDS
+  - heading "Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte" [level=1]
+  - paragraph: C-019 · source-backed project dossier
+  - region "Current source-stated position":
+    - heading "Current source-stated position" [level=2]
+    - paragraph: Dates describe source statements, not observed construction progress. Freshness has not been assessed.
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: Die Inbetriebnahme ist bis Ende 2028 geplant.
+      - paragraph: "Milestone type: commissioning"
+      - paragraph: "Milestone term: Inbetriebnahme"
+      - paragraph: "Date: bis Ende 2028 (year)"
+      - paragraph: "Qualifier: bis"
+      - paragraph: "Qualifier: geplant"
+      - paragraph: "As of: 2026-05-04"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - paragraph:
+      - link "Return to this project in the atlas":
+        - /url: /#C-019
+  - region "Project identity":
+    - heading "Project identity" [level=2]
+    - article:
+      - heading "Project name" [level=3]
+      - paragraph: Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte
+      - paragraph: "As of: not applicable"
+      - paragraph: "Freshness: not applicable"
+      - generic "▸ Evidence"
+  - region "Other verified facts":
+    - heading "Other verified facts" [level=2]
+    - article:
+      - heading "Financial measure" [level=3]
+      - paragraph: 50Hertz finanziert den Bau der PtH-Anlage mit bis zu 75 Millionen Euro.
+      - paragraph: "Financial measure: financing commitment"
+      - paragraph: "Amount: 75000000 EUR"
+      - paragraph: "Tax treatment: not stated"
+      - paragraph: "Price basis: not stated"
+      - paragraph: "Budget reference: not stated"
+      - paragraph: "Qualifier: bis zu"
+      - paragraph: "As of: not stated"
+      - paragraph: "Freshness: unassessed"
+      - paragraph:
+        - link "Correction concerning 50Hertz":
+          - /url: /corrections/organizations/50hertz/
+      - generic "▸ Evidence"
+  - region "Withheld facts":
+    - heading "Withheld facts" [level=2]
+    - article:
+      - heading "Project location" [level=3]
+      - paragraph: This fact is withheld until the source wording is verified by the project owner.
+    - article:
+      - heading "Organization role" [level=3]
+      - paragraph: This organization role is withheld because its role vocabulary remains unresolved.
+  - region "Language boundary":
+    - heading "Language boundary" [level=2]
+    - paragraph:
+      - strong: Translation unverified.
+      - text: German source wording is canonical. English is used for structural labels only; unresolved types are withheld rather than guessed.
+  - heading "Corrections" [level=2]
+  - paragraph:
+    - link "Request an evidence correction or make a formal request":
+      - /url: /corrections/projects/C-019/
+  - paragraph:
+    - link "Method":
+      - /url: /method/
+    - text: ·
+    - link "Corrections and formal requests":
+      - /url: /corrections/
+    - text: ·
+    - link "Impressum":
+      - /url: /impressum/
+    - text: ·
+    - link "Privacy":
+      - /url: /privacy/
+  - paragraph: This page was generated on 2026-09-22. Project data may have earlier source and retrieval dates; each fact links to its original source.

@@ -1,0 +1,194 @@
+- banner:
+  - link "Berlin, Under Construction home":
+    - /url: /
+    - text: BERLIN
+    - generic: UNDER CONSTRUCTION
+  - navigation "Main navigation":
+    - link "The atlas":
+      - /url: /
+    - link "Project index":
+      - /url: /records/
+    - link "How it works":
+      - /url: /method/
+- main:
+  - paragraph: BERLIN / PROJECT RECORDS
+  - heading "Europaplatz Süd — Umgestaltung" [level=1]
+  - paragraph: C-014 · source-backed project dossier
+  - region "Current source-stated position":
+    - heading "Current source-stated position" [level=2]
+    - paragraph: Dates describe source statements, not observed construction progress. Freshness has not been assessed.
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: "Fertigstellung: 2026"
+      - paragraph: "Milestone type: substantial completion"
+      - paragraph: "Milestone term: Fertigstellung"
+      - paragraph: "Date: 2026 (year)"
+      - paragraph: "As of: 2026-08-06"
+      - paragraph: "Freshness: unassessed"
+      - generic "▾ Evidence" [active]
+      - paragraph: "Evidence label: Verified — The displayed wording is faithfully supported by the cited source. It does not mean the value is current, the only official value, or that a conflicting value is resolved."
+      - blockquote: "Fertigstellung: 2026"
+      - paragraph: "Source publication date: not stated"
+      - paragraph:
+        - link "Original source":
+          - /url: https://www.berlin.de/sen/bauen/baukultur/berliner-plaetzeprogramm/europaplatz-sued-1567894.php
+    - article:
+      - heading "Project status" [level=3]
+      - paragraph: Laufende Maßnahme
+      - paragraph: "As of: 2026-08-06"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - paragraph:
+      - link "Return to this project in the atlas":
+        - /url: /#C-014
+  - region "Project identity":
+    - heading "Project identity" [level=2]
+    - article:
+      - heading "Project name" [level=3]
+      - paragraph: Europaplatz Süd — Umgestaltung
+      - paragraph: "As of: not applicable"
+      - paragraph: "Freshness: not applicable"
+      - generic "▸ Evidence"
+    - article:
+      - heading "Project location" [level=3]
+      - paragraph: Vorplatz des Hauptbahnhofs an der Invalidenstraße
+      - paragraph: "As of: not applicable"
+      - paragraph: "Freshness: not applicable"
+      - generic "▸ Evidence"
+  - region "Completion and construction history":
+    - heading "Completion and construction history" [level=2]
+    - paragraph: Earlier source-stated dates remain visible so changes are not erased.
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: Die Fertigstellung der anspruchsvollen Bauaufgabe ist bis Ende 2025 vorgesehen.
+      - paragraph: "Milestone type: substantial completion"
+      - paragraph: "Milestone term: Fertigstellung"
+      - paragraph: "Date: bis Ende 2025 (year)"
+      - paragraph: "Qualifier: bis"
+      - paragraph: "Qualifier: vorgesehen"
+      - paragraph: "As of: 2023-10-12"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: Die Umsetzung der Baumaßnahme wird nach zeitnaher Ausschreibung (2025) in 2026 durchgeführt (Fertigstellung geplant für Sommer 2026).
+      - paragraph: "Milestone type: substantial completion"
+      - paragraph: "Milestone term: Fertigstellung"
+      - paragraph: "Date: Sommer 2026 (season)"
+      - paragraph: "Qualifier: geplant"
+      - paragraph: "As of: 2025-10-06"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: Die Baumaßnahme wird im Sommer 2026 abgeschlossen werden.
+      - paragraph: "Milestone type: substantial completion"
+      - paragraph: "Milestone term: abgeschlossen"
+      - paragraph: "Date: Sommer 2026 (season)"
+      - paragraph: "As of: 2025-10-06"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: Die Fertigstellung der Baumaßnahme wird voraussichtlich in 2026 erfolgen.
+      - paragraph: "Milestone type: substantial completion"
+      - paragraph: "Milestone term: Fertigstellung"
+      - paragraph: "Date: in 2026 (year)"
+      - paragraph: "Qualifier: voraussichtlich"
+      - paragraph: "As of: 2025-10-06"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: Der Baubeginn wird erst im Januar 2026 erfolgen.
+      - paragraph: "Milestone type: construction start"
+      - paragraph: "Milestone term: Baubeginn"
+      - paragraph: "Date: erst im Januar 2026 (month)"
+      - paragraph: "As of: 2025-10-06"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+  - region "Other verified facts":
+    - heading "Other verified facts" [level=2]
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: Die Umgestaltung des südlichen Europaplatzes, dem Vorplatz des Hauptbahnhofs an der Invalidenstraße, beginnt am 2. Februar 2026.
+      - paragraph: "Milestone type: construction start"
+      - paragraph: "Milestone term: beginnt"
+      - paragraph: "Date: 2. Februar 2026 (exact day)"
+      - paragraph: "As of: 2026-01-26"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - article:
+      - heading "Financial measure" [level=3]
+      - paragraph: Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3.183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.
+      - paragraph: "Financial measure: approved budget"
+      - paragraph: "Amount: 3183000 EUR"
+      - paragraph: "Tax treatment: stated"
+      - paragraph: "Price basis: not stated"
+      - paragraph: "Budget reference: not stated"
+      - paragraph: "As of: 2025-01-31"
+      - paragraph: "Freshness: unassessed"
+      - paragraph:
+        - link "Correction concerning Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen":
+          - /url: /corrections/organizations/senatsverwaltung-stadtentwicklung-bauen-wohnen/
+      - generic "▸ Evidence"
+  - region "Conflicting source values":
+    - heading "Conflicting source values" [level=2]
+    - heading "Unresolved official-source conflict" [level=3]
+    - article:
+      - heading "Financial measure" [level=3]
+      - paragraph: "finanziert aus dem Plätzeprogramm: 1.900.000 €"
+      - paragraph: "Financial measure: financing commitment"
+      - paragraph: "Amount: 1900000 EUR"
+      - paragraph: "Tax treatment: not stated"
+      - paragraph: "Price basis: not stated"
+      - paragraph: "Budget reference: not stated"
+      - paragraph: "As of: not stated"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - article:
+      - heading "Financial measure" [level=3]
+      - paragraph: Das Berliner Plätzeprogramm steuert rund 1,7 Mio. Euro zur Maßnahme bei.
+      - paragraph: "Financial measure: financing commitment"
+      - paragraph: "Amount: 1700000 EUR"
+      - paragraph: "Tax treatment: not stated"
+      - paragraph: "Price basis: not stated"
+      - paragraph: "Budget reference: not stated"
+      - paragraph: "Qualifier: rund"
+      - paragraph: "As of: not stated"
+      - paragraph: "Freshness: unassessed"
+      - generic "▸ Evidence"
+    - paragraph: The two official sources disagree, and neither source retracts the other. Neither value is promoted.
+  - region "Withheld facts":
+    - heading "Withheld facts" [level=2]
+    - article:
+      - heading "Milestone" [level=3]
+      - paragraph: This milestone is withheld because its German term has not been resolved for display.
+    - article:
+      - heading "Project status" [level=3]
+      - paragraph: This conclusion is withheld because no single exact evidence span supports it.
+    - article:
+      - heading "Organization role" [level=3]
+      - paragraph: This organization role is withheld because its role vocabulary remains unresolved.
+  - region "Language boundary":
+    - heading "Language boundary" [level=2]
+    - paragraph:
+      - strong: Translation unverified.
+      - text: German source wording is canonical. English is used for structural labels only; unresolved types are withheld rather than guessed.
+  - heading "Corrections" [level=2]
+  - paragraph:
+    - link "Request an evidence correction or make a formal request":
+      - /url: /corrections/projects/C-014/
+  - paragraph:
+    - link "Method":
+      - /url: /method/
+    - text: ·
+    - link "Corrections and formal requests":
+      - /url: /corrections/
+    - text: ·
+    - link "Impressum":
+      - /url: /impressum/
+    - text: ·
+    - link "Privacy":
+      - /url: /privacy/
+  - paragraph: This page was generated on 2026-09-22. Project data may have earlier source and retrieval dates; each fact links to its original source.

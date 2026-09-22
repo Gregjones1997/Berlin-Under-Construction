@@ -1,0 +1,34 @@
+CURRENT SOURCE-STATED POSITION
+
+Dates describe source statements, not observed construction progress. Freshness has not been assessed.
+
+Milestone
+
+Die technische Übergabe des Neubaus an den Bezirk ist für den 31.08.2026 geplant.
+
+Milestone type: handover
+
+Milestone term: technische Übergabe
+
+Date: 31.08.2026 (exact day)
+
+Qualifier: geplant
+
+As of: 2026-06-19
+
+Freshness: unassessed
+
+The source planned this milestone for 31.08.2026 as of 2026-06-19. That date has passed, but no confirming source is recorded. Completion is not asserted.
+
+EVIDENCE
+Project status
+
+Die Umsetzung des Schulneubaus liegt im Zeitplan.
+
+As of: 2026-06-19
+
+Freshness: unassessed
+
+EVIDENCE
+
+Return to this project in the atlas

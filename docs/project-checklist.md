@@ -32,13 +32,16 @@ commit `57c1e68`, including six source-stated dates on five basic listings.
 The 21 September handoff recheck matched the published release; no redeploy was needed.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Review the [City Desk design handoff](../briefs/berlin-design/INDEX.md)
-and its three rendered proposals. The agent-selected direction is implemented and
-verified locally; production remains unchanged. If selected for release, use the existing
-production legal configuration, deploy and refresh the portfolio screenshots only after
-live verification. The earlier [portfolio package](portfolio/README.md) still describes the
-current public release and remains READY AS CASE STUDY. Shared portfolio untouched;
-no ten-dossier expansion in this design session.
+**Next action:** Owner review of the [local product-review candidate](product-review/2026-09-22-review.md)
+and the existing [City Desk design handoff](../briefs/berlin-design/INDEX.md).
+The resident journey was exercised and locally improved: milestone-first dossier,
+context-preserving atlas return and explicit mobile purpose. Evidence, 207 passing
+tests and final build are recorded in the review; production is unchanged.
+Arrange the three-resident need-validation experiment and recheck native view-transition
+warnings in a physical browser before release. A later authorized release requires the
+existing valid production legal configuration and fresh live verification. The earlier
+[portfolio package](portfolio/README.md) still describes the current public release;
+shared portfolio untouched.
 
 **Deferred product backlog (not today's handoff):**
 For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße

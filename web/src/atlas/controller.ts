@@ -256,9 +256,17 @@ dialog.addEventListener("click", (e) => {
   }
 });
 function fail(message: string) {
+  if (shell.classList.contains("atlas-failed")) return;
+  shell.classList.add("atlas-failed");
+  if (dialog.open) dialog.close();
+  showLabels(false);
   $("map-loading").hidden = true;
-  $("map-failure").hidden = false;
   $("failure-message").textContent = message;
+  const failure = $("map-failure");
+  failure.hidden = false;
+  city?.dispose();
+  city = undefined;
+  failure.focus({ preventScroll: true });
 }
 stage.addEventListener("atlas-error", (e: Event) =>
   fail((e as CustomEvent<string>).detail),
@@ -299,6 +307,7 @@ async function start() {
     const manifest = await city.load(
       (message) => ($("loading-message").textContent = message),
     );
+    if (shell.classList.contains("atlas-failed")) return;
     $("model-coverage").textContent =
       `${manifest.buildings.toLocaleString("en-GB")} building and building-part shapes across Berlin. Detail loads by area; the overview shows simplified footprints of shapes at least 500 m². Building shapes smaller than 50 m² are omitted; coordinates are rounded to 0.5 m. Source heights are used without vertical exaggeration; unknown heights are omitted. Roofs are simplified. The 2022 geometry is not a current survey.`;
     document

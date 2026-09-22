@@ -156,6 +156,46 @@ def test_every_project_has_a_stable_static_dossier_route(c014_export: str) -> No
         assert page.is_file(), slug
 
 
+def test_history_routes_and_atlas_actions_describe_their_actual_depth(
+    c014_export: str,
+) -> None:
+    assert 'href="#history-heading"' in c014_export
+    assert c014_export.index("Current source-stated position") < c014_export.index(
+        'href="#history-heading"'
+    ) < c014_export.index('id="history-heading"')
+
+    for slug in (
+        "heinrich-hertz-gymnasium-ostbahnhof",
+        "power-to-heat-heizkraftwerk-mitte",
+    ):
+        export = (DIST / "projects" / slug / "index.html").read_text(
+            encoding="utf-8"
+        )
+        assert 'href="#history-heading"' not in export
+        assert 'id="history-heading"' not in export
+
+    atlas = (DIST / "index.html").read_text(encoding="utf-8")
+    assert "Browse the project index — 3 full dossiers" in atlas
+    assert "150 basic listings" in atlas
+    assert "Full project overview" not in atlas
+    assert "Review source history &amp; evidence" in atlas
+    assert "Review published facts &amp; evidence" in atlas
+    assert "Open full dossier" in atlas
+
+
+def test_atlas_failure_is_an_announced_recoverable_static_state(
+    c014_export: str,
+) -> None:
+    atlas = (DIST / "index.html").read_text(encoding="utf-8")
+    assert 'id="map-failure"' in atlas
+    assert 'role="alert"' in atlas
+    assert 'aria-labelledby="failure-heading"' in atlas
+    assert 'aria-describedby="failure-message"' in atlas
+    assert 'tabindex="-1"' in atlas
+    assert 'href="/records/"' in atlas
+    assert 'id="retry-map"' in atlas
+
+
 def test_project_correction_routes_preserve_context_and_request_type(
     c014_export: str,
 ) -> None:

@@ -63,8 +63,16 @@ const records = projects.map((project) => ({
             Assembling the city
           </p><small>Real geometry. A closer look.</small>
         </div>
-        <div class="map-failure" id="map-failure" hidden>
-          <h2>The atlas could not load.</h2><p id="failure-message">
+        <div
+          class="map-failure"
+          id="map-failure"
+          role="alert"
+          aria-labelledby="failure-heading"
+          aria-describedby="failure-message"
+          tabindex="-1"
+          hidden
+        >
+          <h2 id="failure-heading">The atlas could not load.</h2><p id="failure-message">
             Your browser may not support this 3D view.
           </p><a href="/records/">Explore the accessible project index →</a
           ><button id="retry-map" type="button">Try again</button>
@@ -164,7 +172,7 @@ const records = projects.map((project) => ({
             }
           </div>
         </details>
-      <div class="atlas-coverage"><p class="coverage-purpose">Explore construction projects and their sources</p><a href="/records/">{records.length} full dossiers <span> / </span> {basicListings.records.length} basic listings <span aria-hidden="true">↗</span></a><small>Source records, not a live progress survey</small></div>
+      <div class="atlas-coverage"><p class="coverage-purpose">Explore construction projects and their sources</p><a href="/records/">Browse the project index — {records.length} full dossiers <span> / </span> {basicListings.records.length} basic listings <span aria-hidden="true">↗</span></a><small>Source records, not a live progress survey</small></div>
       </aside>
       <button class="city-return" id="back-to-city" hidden><Icon name="arrow" /> Back to previous view</button>
       <aside
@@ -222,7 +230,7 @@ const records = projects.map((project) => ({
                 </dl>
                 {((project.lead?.displayWarnings ?? []) as string[]).length > 0 && <p class="brief-warning">Target date passed; completion unconfirmed.</p>}
                 <p class="brief-source-key">Planned dates do not confirm actual progress. <span><Icon name="arrow" /> Original source</span></p>
-                <button class="brief-more brief-overview-link" data-expand-record><span><strong>Full project overview</strong><small>Details, cited history &amp; sources</small></span><Icon name="arrow" /></button>
+                <button class="brief-more brief-overview-link" data-expand-record><span><strong>{project.history.length ? "Review source history & evidence" : "Review published facts & evidence"}</strong><small>{project.history.length ? "Earlier statements and cited sources" : "Published facts and cited sources"}</small></span><Icon name="arrow" /></button>
                 <a href={project.correctionPath} class="correction-link">Suggest a correction</a>
               </div>
               <div data-record-section="history" hidden>

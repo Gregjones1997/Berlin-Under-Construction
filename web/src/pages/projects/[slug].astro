@@ -74,6 +74,9 @@ const WITHHELD_REASONS: Record<string, string> = {
     {currentFacts.map((fact) => (
       <RawFact fact={fact} lead={fact.factId === leadFact?.factId} />
     ))}
+    {historyFacts.length > 0 && (
+      <p><a href="#history-heading">Review earlier source statements →</a></p>
+    )}
     <p><a href={`/#${project.projectId}`}>Return to this project in the atlas</a></p>
   </section>
 

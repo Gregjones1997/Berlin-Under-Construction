@@ -3091,3 +3091,79 @@ freshness remain untested. Local legal configuration is explicitly non-public.
 [Product review](product-review/2026-09-22-review.md), its evidence folder and the
 three changed web source files. Owner acceptance and resident validation remain
 next actions; production and shared portfolio are unchanged.
+
+
+## 2026-09-22 — Gstack product-to-implementation review
+
+**Status:** In progress
+
+### Goal
+
+Carry the local public candidate through the installed gstack product workflow,
+preserve accepted owner revisions, close reproduced resident-journey gaps and verify
+the result without deployment or external messages.
+
+### Participants and scopes
+
+- Project owner: set the workflow, accepted prior revisions through the current
+  instruction, retained the resident/City Desk direction and prohibited deployment.
+- Main agent (Codex, GPT-6 Astra; `/office-hours`, `/autoplan`, `/qa`,
+  `/design-review` and `/review` skills): context recovery, synthesis, repository
+  edits, browser operation and final verification.
+- Subagent (Codex agent): independent read-only office-hours, CEO, design and
+  engineering review lanes; no repository writes.
+- Independent CLI reviewer (Codex, gpt-5.6-sol): second read-only CEO, design and
+  engineering voices required by `/autoplan`; no repository writes.
+
+### Multi-agent architecture
+
+Delegation was used only for bounded independent critique while the main agent
+remained the single writer. The review lanes challenged resident demand, map-first
+entry, buried change history, fatal-map semantics and the engineering failure race.
+The main agent accepted the structural-history, action-copy, failure-state and
+readability findings; narrowed the panel recommendation by preserving the existing
+nonmodal aside; and rejected a segment pivot, comparison algorithm, analytics and
+new architecture. The integrated changes are checked independently through export
+tests, typecheck, browser QA and final diff review. The optional artifact sync was
+not run so review artifacts remain local.
+
+### Work performed
+
+- Recovered current repository and shared review context and recorded every owner
+  revision with status and acceptance check.
+- Produced the Startup-mode design and CEO, design, engineering and DX-applicability
+  review artifacts under `docs/product-review/`.
+- Added a conditional route to already-published source history, clearer index and
+  depth actions, a terminal focusable atlas-failure state, and readable trust copy.
+- Added deterministic export coverage without changing source facts, schema,
+  golden values, privacy boundaries or visitor-time AI behavior.
+
+### Decisions
+
+- Kept the owner-approved resident and City Desk direction while marking demand and
+  repeat use as hypotheses.
+- Exposed existing history structurally; did not generate a before/after claim or
+  select a German authority value.
+- Kept the project panel nonmodal and used one terminal `atlas-failed` transition
+  with a post-load race guard rather than a new state framework.
+- Deferred civic-user segmentation, monitoring, physical VoiceOver confirmation and
+  deployment.
+
+### Verification
+
+TypeScript typecheck passed. The focused export/projection/static-output run passed
+51 tests. Browser QA, full pytest, design review and final diff review remain in
+progress.
+
+### Failures and limitations
+
+The first focused pytest invocation used the virtualenv executable directly and
+could not import the local package; the repository-standard
+`.venv/bin/python -m pytest` form passed. No product defect resulted. Demand,
+physical-device assistive technology, production configuration and deployment
+remain unverified.
+
+### Evidence
+
+`docs/product-review/`, the five-file application/test patch and the forthcoming QA
+evidence directory.

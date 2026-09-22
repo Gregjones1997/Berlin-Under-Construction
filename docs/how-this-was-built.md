@@ -3037,6 +3037,8 @@ Turn the product blueprint into an honest README and an operational build sequen
 
 **Status:** Complete locally; not deployed.
 
+**Commit:** `f3bfe04` — `fix(web): clarify resident evidence journey and atlas return`
+
 ### Goal
 
 Experience the resident's construction-question journey, fix bounded interaction

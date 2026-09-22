@@ -1493,7 +1493,9 @@ turning the observation into an accuracy claim.
 
 ## 2026-08-07 — Persist and reconstruct the first milestone slice
 
-**Status:** In progress
+**Status:** Paused at owner request after implementation and browser QA; not deployed.
+
+**Commit:** `e4a7466` — `feat(web): complete resident evidence journey`
 
 **Commits:**
 
@@ -3107,9 +3109,9 @@ the result without deployment or external messages.
 
 - Project owner: set the workflow, accepted prior revisions through the current
   instruction, retained the resident/City Desk direction and prohibited deployment.
-- Main agent (Codex, GPT-6 Astra; `/office-hours`, `/autoplan`, `/qa`,
-  `/design-review` and `/review` skills): context recovery, synthesis, repository
-  edits, browser operation and final verification.
+- Main agent (Codex, GPT-6 Astra; `/office-hours`, `/autoplan` and `/qa` skills):
+  context recovery, synthesis, repository edits and browser operation. The planned
+  `/design-review` and `/review` skills did not run before the owner requested wrap-up.
 - Subagent (Codex agent): independent read-only office-hours, CEO, design and
   engineering review lanes; no repository writes.
 - Independent CLI reviewer (Codex, gpt-5.6-sol): second read-only CEO, design and
@@ -3151,19 +3153,22 @@ not run so review artifacts remain local.
 
 ### Verification
 
-TypeScript typecheck passed. The focused export/projection/static-output run passed
-51 tests. Browser QA, full pytest, design review and final diff review remain in
-progress.
+TypeScript typecheck and the 14-page production build passed. The focused
+export/projection/static-output run passed 51 tests. Browser QA exercised desktop,
+390 px, 320 px, keyboard evidence, history navigation, correction handoff and fatal
+atlas recovery. The full pytest run, design review and final diff review remain undone.
 
 ### Failures and limitations
 
 The first focused pytest invocation used the virtualenv executable directly and
 could not import the local package; the repository-standard
-`.venv/bin/python -m pytest` form passed. No product defect resulted. Demand,
-physical-device assistive technology, production configuration and deployment
-remain unverified.
+`.venv/bin/python -m pytest` form passed. The QA browser could not create WebGL, so
+this run verified the fatal recovery path but not a fresh 3D success path. At a 195 px
+CSS viewport it also reproduced horizontal overflow that remains to fix. Demand,
+physical-device assistive technology, production configuration and deployment remain
+unverified.
 
 ### Evidence
 
-`docs/product-review/`, the five-file application/test patch and the forthcoming QA
-evidence directory.
+`docs/product-review/`, the five-file application/test patch and
+`docs/product-review/evidence/gstack-2026-09-22/`.

@@ -323,7 +323,6 @@ async function start() {
     else if (selection) choose(selection, false);
     else city.introduce();
   } catch (error) {
-    city?.dispose();
     fail(
       error instanceof Error ? error.message : "Unable to load the city model.",
     );

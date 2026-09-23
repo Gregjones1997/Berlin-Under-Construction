@@ -1325,6 +1325,48 @@ dialog dd a {
   .label-panel { left: 12px; right: 12px; bottom: 76px; width: auto; max-height: calc(100% - 96px); overflow-y: auto; }
 }
 
+/* Preserve a usable recovery page at high zoom and very narrow reflow widths. */
+@media (max-width: 260px) {
+  .atlas-page .site-header {
+    padding-inline: 8px;
+    gap: 8px;
+  }
+  .atlas-page .site-wordmark-sub,
+  .atlas-page .site-header nav a:first-child,
+  .atlas-page .site-header nav a:last-child {
+    display: none;
+  }
+  .atlas-page .site-header nav {
+    gap: 0;
+  }
+  .map-failure {
+    padding: 20px;
+    overflow-wrap: anywhere;
+  }
+  .map-failure h2 {
+    font-size: 28px;
+  }
+  .atlas-page > .atlas-footer {
+    flex: 0 0 auto;
+    height: auto;
+    min-height: 38px;
+    padding: 6px 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+  }
+  .atlas-footer > span,
+  .atlas-footer nav {
+    width: 100%;
+    max-width: none;
+    overflow-wrap: anywhere;
+  }
+  .atlas-footer nav {
+    flex-wrap: wrap;
+  }
+}
+
 /* Basic register references remain distinct from evidence-backed dossiers. */
 .project-pin.basic-pin { width: 44px; height: 44px; background: transparent; }
 .project-pin.basic-pin .pin-number { width: 22px; height: 22px; min-width: 22px; border: 2px solid #526e66; background: #f5f4ece6; color: #526e66; box-shadow: none; }

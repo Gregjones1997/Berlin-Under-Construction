@@ -3172,3 +3172,56 @@ unverified.
 
 `docs/product-review/`, the five-file application/test patch and
 `docs/product-review/evidence/gstack-2026-09-22/`.
+
+
+## 2026-09-23 — Complete the gstack product review
+
+**Status:** In progress; QA complete, design and code review underway.
+
+### Goal
+
+Resume the accepted workflow at its saved checkpoint, close the reproduced reflow
+defect, independently audit the resident journey and finish the installed gstack
+review sequence without reopening product discovery or deploying.
+
+### Participants and scopes
+
+- Project owner: directed continuation, preserved all prior decisions and requested
+  bounded delegation to GPT-6 Sol at High reasoning.
+- Main agent (Codex, GPT-6 Astra; `/qa`, `/design-review` and `/review` skills):
+  integration, all repository writes, browser operation and final verification.
+- Subagent (GPT-6 Sol, High): read-only audit of atlas lifecycle and the accepted
+  resident journey. It found the double-disposal path; the main agent reproduced,
+  fixed and verified it.
+- Subagent (GPT-6 Sol, High): read-only narrow-reflow diagnosis. Both attempts failed
+  because the selected model was at capacity, so it returned no useful output. The
+  main agent independently diagnosed and verified that lane.
+
+### Work performed
+
+- Fixed the 195 px atlas-failure reflow while retaining the project-index recovery
+  route, required attribution and legal links.
+- Centralized renderer disposal in the idempotent failure transition.
+- Replayed recovery, index, dossier, keyboard evidence, history, correction, return,
+  withheld-value, passed-date and AI-boundary paths in the gstack browser.
+- Recorded the QA report and before/after browser evidence.
+
+### Verification
+
+The full repository suite passed 209 tests in 26.68 seconds before the one-line
+lifecycle cleanup. Typecheck, the 14-page build and the affected browser failure path
+passed after it. At 195 px, document `scrollWidth` now equals `clientWidth`; keyboard
+Tab reaches both recovery actions. The 320 px and 390 px layouts remain overflow-free.
+
+### Failures and limitations
+
+The gstack browser host still cannot create a WebGL context, so this run verifies the
+fatal recovery route but cannot make a new 3D-success claim. Phone widths are simulated.
+The failed delegated reflow lane produced no recommendation and was not represented as
+completed work. No provider call, external message, deployment or publication occurred.
+
+### Evidence
+
+`.gstack/qa-reports/qa-report-localhost-2026-09-23.md` and
+`docs/product-review/evidence/gstack-2026-09-23/`. Commit hashes are recorded in the
+closing build-log commit for this session.

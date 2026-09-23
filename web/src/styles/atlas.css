@@ -600,8 +600,12 @@ svg {
 }
 .map-failure a,
 .map-failure button {
-  display: block;
-  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 4px 0;
   text-decoration: underline;
 }
 .atlas-failed .map-stage > canvas,

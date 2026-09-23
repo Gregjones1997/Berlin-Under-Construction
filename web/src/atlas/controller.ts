@@ -323,8 +323,14 @@ async function start() {
     else if (selection) choose(selection, false);
     else city.introduce();
   } catch (error) {
+    const message =
+      error instanceof Error && /WebGL|graphics context/i.test(error.message)
+        ? "Your browser could not start the 3D view. The project records are still available."
+        : error instanceof Error
+          ? error.message
+          : "Unable to load the city model.";
     fail(
-      error instanceof Error ? error.message : "Unable to load the city model.",
+      message,
     );
   }
 }

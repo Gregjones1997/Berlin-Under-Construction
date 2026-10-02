@@ -3229,6 +3229,8 @@ closing build-log commit for this session.
 
 ## 2026-09-26 — Local City Desk design finishing candidate
 
+**Commit:** `f0bf623` — integrated with the 2 October atlas release candidate.
+
 Participants: GPT-6 Astra direction/visual review; GPT-5.6 Luna Max bounded CSS and Astro guide implementation; coordinating agent integration and in-app browser verification; personal-design and browser skills. Delegation separated project implementation from portfolio integration. Accepted semantic roles, real style-guide route and wrapping refinements. The delegated documentation lane was interrupted before its writes applied; the coordinator completed the evidence records. No claim that the delegated documentation was completed is made.
 
 Verified at the handoff: implementation lane typecheck/diff check and 15-page build; coordinator's WebGL phone atlas, no overflow at 390/320, keyboard index→dossier→Evidence→history→atlas return; Astra desktop visual review. Original source dates and display boundaries remain intact. Exact 195px current-candidate failure fixture and reduced-motion runtime were not repeated. Existing 23 September evidence remains historical. Fresh capture manifest and limitations: [local handoff](design-refresh-2026-09-26/HANDOFF.md). The candidate remained uncommitted and unpublished at the 26 September handoff; it was integrated into the 2 October release work below.
@@ -3237,7 +3239,7 @@ Verified at the handoff: implementation lane typecheck/diff check and 15-page bu
 
 **Status:** Local release candidate; public verification pending.
 
-**Commit:** Pending session hash recording.
+**Commit:** `f0bf623` — `feat(site): prepare City Desk atlas refresh`.
 
 ### Goal and participants
 

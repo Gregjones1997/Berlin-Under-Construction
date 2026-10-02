@@ -3283,6 +3283,8 @@ Main agent (Codex; host model identifier not exposed; Chrome browser and Vercel 
 
 **Status:** Local implementation verified; independent translation review and bilingual publication pending.
 
+**Commit:** `564a4a8` — `feat(i18n): share German and English site presentation`.
+
 ### Goal and participants
 
 The owner requested every visitor-facing surface in German and English and chose

@@ -3343,6 +3343,8 @@ and independent review procedure: [bilingual-editing.md](bilingual-editing.md).
 
 **Status:** Local redesign verified; owner visual acceptance and bilingual publication pending.
 
+**Commit:** `219d219` — `feat(atlas): organize project cards into source folders`.
+
 ### Goal and participants
 
 The owner supplied two screenshots and requested dates immediately under the

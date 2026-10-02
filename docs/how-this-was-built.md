@@ -3273,6 +3273,6 @@ Main agent (Codex; host model identifier not exposed; Chrome browser skill) saw 
 
 **Status:** Complete for the checked release scope.
 
-**Commit:** Pending session hash recording.
+**Commit:** `3fb6802` — `docs(release): record October atlas verification`.
 
 Main agent (Codex; host model identifier not exposed; Chrome browser and Vercel deployment skills) pushed the checked branch and deployed the final package to production as `dpl_FstDATqbq6CkCGNC5r3RKFnnQiwj`. An anonymous 22-file comparison matched all HTML, CSS/JS and atlas metadata in scope; three private-path probes returned 404. Chrome on the live desktop atlas showed the Mitte filter at 25 pins/25 directory entries and a lower label above the toolbar. The 390 px panel correction was checked locally against the same packaged candidate. The exact scope, screenshot and limits are recorded in [public-deployment.md](public-deployment.md). The owner-requested Chrome tab was left open. No factual source refresh or type classification was performed.

@@ -1,3 +1,7 @@
+import { decodeViewState, encodeViewState } from "./view-state";
+import { forLocale, localeFromPath, formatNumber } from "../lib/i18n";
+const locale = localeFromPath(location.pathname);
+const t = forLocale(locale);
 document.documentElement.classList.add("has-js");
 import type { CityRenderer, MapView } from "./renderer";
 const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
@@ -10,39 +14,70 @@ const selects = [
 ];
 const pins = [...document.querySelectorAll<HTMLButtonElement>(".project-pin")];
 const basicPins = pins.filter((pin) => pin.dataset.depth === "basic");
-const basicDirectory = [...document.querySelectorAll<HTMLButtonElement>(".basic-directory .project-select")];
+const basicDirectory = [
+  ...document.querySelectorAll<HTMLButtonElement>(
+    ".basic-directory .project-select",
+  ),
+];
 const placeFilter = $<HTMLSelectElement>("basic-place-filter");
 const placeFilterStatus = $("place-filter-status");
 function distanceKm(lon1: number, lat1: number, lon2: number, lat2: number) {
   const radians = Math.PI / 180;
   const dLat = (lat2 - lat1) * radians;
   const dLon = (lon2 - lon1) * radians;
-  const a = Math.sin(dLat / 2) ** 2 +
-    Math.cos(lat1 * radians) * Math.cos(lat2 * radians) * Math.sin(dLon / 2) ** 2;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * radians) *
+      Math.cos(lat2 * radians) *
+      Math.sin(dLon / 2) ** 2;
   return 12742 * Math.asin(Math.min(1, Math.sqrt(a)));
 }
 placeFilter.addEventListener("change", () => {
-  const selected = placeFilter.value ? placeFilter.value.split(",").map(Number) : null;
+  const selected = placeFilter.value
+    ? placeFilter.value.split(",").map(Number)
+    : null;
   const visibleIds = new Set<string>();
   for (const pin of basicPins) {
-    const nearby = !selected || distanceKm(Number(pin.dataset.lon), Number(pin.dataset.lat), selected[0], selected[1]) <= 3;
+    const nearby =
+      !selected ||
+      distanceKm(
+        Number(pin.dataset.lon),
+        Number(pin.dataset.lat),
+        selected[0],
+        selected[1],
+      ) <= 3;
     pin.classList.toggle("filtered-out", !nearby);
     if (nearby) visibleIds.add(pin.dataset.project!);
   }
-  for (const button of basicDirectory) button.hidden = !visibleIds.has(button.dataset.project!);
+  for (const button of basicDirectory)
+    button.hidden = !visibleIds.has(button.dataset.project!);
   const count = visibleIds.size;
   placeFilterStatus.textContent = selected
-    ? `${count} basic listing${count === 1 ? "" : "s"} within 3 km of ${placeFilter.selectedOptions[0].textContent}.`
-    : `Showing all ${count} basic listings.`;
+    ? t(count === 1 ? "atlas.nearby.one" : "atlas.nearby.many", {
+        count,
+        place: placeFilter.selectedOptions[0].textContent ?? "",
+      })
+    : t("atlas.all", { count });
   $("selection-status").textContent = placeFilterStatus.textContent;
 });
 let city: CityRenderer | undefined;
 let selection: string | null = null;
-const viewHistory: { camera: MapView; label: string; area: string; plan: boolean; project: string | null }[] = [];
+const viewHistory: {
+  camera: MapView;
+  label: string;
+  area: string;
+  plan: boolean;
+  project: string | null;
+}[] = [];
 function rememberView() {
   if (!city) return;
-  viewHistory.push({ camera: city.captureView(), label: $("view-label").textContent ?? "BERLIN",
-    area: $("area-name").textContent ?? "Choose an area", plan, project: selection });
+  viewHistory.push({
+    camera: city.captureView(),
+    label: $("view-label").textContent ?? "BERLIN",
+    area: $("area-name").textContent ?? t("pages.index.124"),
+    plan,
+    project: selection,
+  });
   if (viewHistory.length > 20) viewHistory.shift();
 }
 function previousView() {
@@ -71,13 +106,20 @@ function choose(id: string, updateHash = true, remember = true) {
   const button = selects.find((b) => b.dataset.project === id);
   const record = $(`record-${id}`);
   if (!button || !record) return;
-  if (basicPins.some((pin) => pin.dataset.project === id && pin.classList.contains("filtered-out"))) {
+  if (
+    basicPins.some(
+      (pin) =>
+        pin.dataset.project === id && pin.classList.contains("filtered-out"),
+    )
+  ) {
     placeFilter.value = "";
     placeFilter.dispatchEvent(new Event("change"));
   }
-  record.querySelectorAll<HTMLElement>("[data-record-section]").forEach(section => {
-    section.hidden = section.dataset.recordSection !== "overview";
-  });
+  record
+    .querySelectorAll<HTMLElement>("[data-record-section]")
+    .forEach((section) => {
+      section.hidden = section.dataset.recordSection !== "overview";
+    });
   if (remember && selection !== id) rememberView();
   returnFocus = document.activeElement as HTMLElement;
   selection = id;
@@ -101,10 +143,17 @@ function choose(id: string, updateHash = true, remember = true) {
     pressed("plan-view", false);
     city?.select(Number(pin.dataset.lon), Number(pin.dataset.lat));
   } else city?.clearSelection();
-  $("view-label").textContent = id + " / PROJECT RECORD";
-  $("selection-status").textContent =
-    `Selected ${button.querySelector("strong")?.textContent}. ${pin ? "" : "Location withheld."}`;
-  if (updateHash) history.replaceState(null, "", `#${id}`);
+  $("view-label").textContent = t("atlas.record.label", { id });
+  $("selection-status").textContent = t("atlas.selected", {
+    name: button.querySelector("strong")?.textContent ?? id,
+    location: pin ? "" : t("pages.index.75"),
+  });
+  if (updateHash)
+    history.replaceState(
+      null,
+      "",
+      location.pathname + location.search + `#${id}`,
+    );
   if (innerWidth <= 700) $<HTMLDetailsElement>("project-picker").open = false;
   panel.focus({ preventScroll: true });
 }
@@ -115,8 +164,8 @@ function close() {
   selects.forEach((b) => b.setAttribute("aria-expanded", "false"));
   pins.forEach((p) => p.classList.remove("selected"));
   city?.clearSelection();
-  $("view-label").textContent = "CENTRAL BERLIN";
-  history.replaceState(null, "", location.pathname);
+  $("view-label").textContent = t("atlas.central");
+  history.replaceState(null, "", location.pathname + location.search);
   if (returnFocus?.isConnected) {
     const picker = returnFocus.closest("details");
     const target =
@@ -125,7 +174,9 @@ function close() {
   }
 }
 selects
-  .concat(pins, [...document.querySelectorAll<HTMLButtonElement>(".legend-project-link")])
+  .concat(pins, [
+    ...document.querySelectorAll<HTMLButtonElement>(".legend-project-link"),
+  ])
   .forEach((b) =>
     b.addEventListener("click", () => choose(b.dataset.project!)),
   );
@@ -144,54 +195,67 @@ function showFullRecord(expanded: boolean) {
   if (!selection) return;
   const record = $(`record-${selection}`);
   shell.classList.toggle("record-expanded", expanded);
-  record.querySelectorAll<HTMLElement>("[data-record-section]").forEach(section => {
-    section.hidden = section.dataset.recordSection !== (expanded ? "history" : "overview");
-  });
+  record
+    .querySelectorAll<HTMLElement>("[data-record-section]")
+    .forEach((section) => {
+      section.hidden =
+        section.dataset.recordSection !== (expanded ? "history" : "overview");
+    });
   panel.scrollTop = 0;
   if (expanded) panel.focus({ preventScroll: true });
-  else record.querySelector<HTMLButtonElement>("[data-expand-record]")?.focus({ preventScroll: true });
+  else
+    record
+      .querySelector<HTMLButtonElement>("[data-expand-record]")
+      ?.focus({ preventScroll: true });
 }
 function cityOverview() {
   viewHistory.length = 0;
   close();
   city?.introduce();
-  $("view-label").textContent = "BERLIN · CITY OVERVIEW";
-  $("area-name").textContent = "City overview";
+  $("view-label").textContent = t("atlas.overview.label");
+  $("area-name").textContent = t("pages.index.125");
   $("back-to-city").hidden = true;
   $<HTMLDetailsElement>("area-picker").open = false;
   plan = false;
   pressed("plan-view", false);
 }
-document.querySelectorAll<HTMLButtonElement>("[data-expand-record]").forEach(button => {
-  button.addEventListener("click", () => {
-    showFullRecord(true);
+document
+  .querySelectorAll<HTMLButtonElement>("[data-expand-record]")
+  .forEach((button) => {
+    button.addEventListener("click", () => {
+      showFullRecord(true);
+    });
   });
-});
 $("home-view").addEventListener("click", cityOverview);
 stage.addEventListener("atlas-detail", (event: Event) => {
   $("detail-status").textContent = (event as CustomEvent<string>).detail;
 });
-document.querySelectorAll<HTMLButtonElement>("[data-area]").forEach(button => {
-  button.addEventListener("click", () => {
-    if (button.dataset.area === "overview") { cityOverview(); return; }
-    rememberView();
-    const [lon, lat] = button.dataset.area!.split(",").map(Number);
-    close();
-    city?.explore(lon, lat);
-    plan = false;
-    pressed("plan-view", false);
-    $("area-name").textContent = button.textContent;
-    $("view-label").textContent = button.textContent;
-    $("back-to-city").hidden = false;
-    $<HTMLDetailsElement>("area-picker").open = false;
-    $("area-picker").querySelector("summary")!.focus();
+document
+  .querySelectorAll<HTMLButtonElement>("[data-area]")
+  .forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.area === "overview") {
+        cityOverview();
+        return;
+      }
+      rememberView();
+      const [lon, lat] = button.dataset.area!.split(",").map(Number);
+      close();
+      city?.explore(lon, lat);
+      plan = false;
+      pressed("plan-view", false);
+      $("area-name").textContent = button.textContent;
+      $("view-label").textContent = button.textContent;
+      $("back-to-city").hidden = false;
+      $<HTMLDetailsElement>("area-picker").open = false;
+      $("area-picker").querySelector("summary")!.focus();
+    });
   });
-});
-document.addEventListener("click", event => {
+document.addEventListener("click", (event) => {
   if (!$("area-picker").contains(event.target as Node))
     $<HTMLDetailsElement>("area-picker").open = false;
 });
-document.addEventListener("keydown", event => {
+document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && $<HTMLDetailsElement>("area-picker").open) {
     $<HTMLDetailsElement>("area-picker").open = false;
     $("area-picker").querySelector("summary")!.focus();
@@ -248,27 +312,27 @@ stage.addEventListener("atlas-orbit", (e: Event) => {
   orbit = (e as CustomEvent<boolean>).detail;
   pressed("orbit-view", orbit);
   $("orbit-view").querySelector("span")!.textContent = orbit
-    ? "Pause"
-    : "Orbit";
+    ? t("atlas.pause")
+    : t("pages.index.133");
 });
 if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
   $<HTMLButtonElement>("orbit-view").disabled = true;
-  $("orbit-view").title =
-    "Automatic motion is disabled by your reduced-motion preference.";
+  $("orbit-view").title = t("atlas.reduced");
 }
 $("fullscreen-view").addEventListener("click", async () => {
   try {
     if (document.fullscreenElement) await document.exitFullscreen();
     else await shell.requestFullscreen();
   } catch {
-    $("selection-status").textContent =
-      "Fullscreen is not available in this browser.";
+    $("selection-status").textContent = t("atlas.fullscreen.unavailable");
   }
 });
 document.addEventListener("fullscreenchange", () =>
   $("fullscreen-view").setAttribute(
     "aria-label",
-    document.fullscreenElement ? "Exit fullscreen" : "Enter fullscreen",
+    document.fullscreenElement
+      ? t("atlas.fullscreen.exit")
+      : t("pages.index.136"),
   ),
 );
 const dialog = $<HTMLDialogElement>("model-dialog");
@@ -339,8 +403,9 @@ async function start() {
       (message) => ($("loading-message").textContent = message),
     );
     if (shell.classList.contains("atlas-failed")) return;
-    $("model-coverage").textContent =
-      `${manifest.buildings.toLocaleString("en-GB")} building and building-part shapes across Berlin. Detail loads by area; the overview shows simplified footprints of shapes at least 500 m². Building shapes smaller than 50 m² are omitted; coordinates are rounded to 0.5 m. Source heights are used without vertical exaggeration; unknown heights are omitted. Roofs are simplified. The 2022 geometry is not a current survey.`;
+    $("model-coverage").textContent = t("atlas.model.coverage", {
+      count: formatNumber(manifest.buildings, locale),
+    });
     document
       .querySelectorAll<HTMLInputElement>("[data-label-kind]")
       .forEach((input) =>
@@ -350,22 +415,92 @@ async function start() {
         ),
       );
     $("map-loading").hidden = true;
+    const saved = decodeViewState(
+      new URL(location.href).searchParams.get("view"),
+    );
+    if (
+      saved &&
+      [...placeFilter.options].some((option) => option.value === saved.filter)
+    ) {
+      placeFilter.value = saved.filter;
+      placeFilter.dispatchEvent(new Event("change"));
+    }
     if (location.hash) choose(location.hash.slice(1), false);
     else if (selection) choose(selection, false);
-    else city.introduce();
+    else if (!saved) city.introduce();
+    if (saved) {
+      city.restoreView(saved.camera);
+      plan = saved.plan;
+      pressed("plan-view", plan);
+      document
+        .querySelectorAll<HTMLInputElement>("[data-label-kind]")
+        .forEach((input) => {
+          const kind = input.dataset.labelKind as keyof typeof saved.labels;
+          input.checked = saved.labels[kind];
+          city?.setLabelKind(kind, input.checked);
+        });
+      const area = document.querySelector<HTMLButtonElement>(
+        `[data-area="${CSS.escape(saved.area)}"]`,
+      );
+      if (area) {
+        $("area-name").textContent = area.textContent;
+        if (!selection) $("view-label").textContent = area.textContent;
+      }
+      if (selection && saved.expanded) showFullRecord(true);
+    }
+    // View data is carried on the language link, rather than accumulating stale state in this page's URL.
+    const clean = new URL(location.href);
+    clean.searchParams.delete("view");
+    history.replaceState(null, "", clean.pathname + clean.search + clean.hash);
   } catch (error) {
     const message =
       error instanceof Error && /WebGL|graphics context/i.test(error.message)
-        ? "Your browser could not start the 3D view. The project records are still available."
-        : error instanceof Error
-          ? error.message
-          : "Unable to load the city model.";
-    fail(
-      message,
-    );
+        ? t("pages.style.guide.314")
+        : t("atlas.model.unavailable");
+    fail(message);
   }
 }
 void start();
 window.addEventListener("pagehide", (event) => {
   if (!event.persisted) city?.dispose();
 });
+
+// Cross-language navigation is a full document navigation with public, bounded URL state.
+document
+  .querySelectorAll<HTMLAnchorElement>("a[data-language]")
+  .forEach((link) => {
+    link.addEventListener("click", () => {
+      const url = new URL(link.href);
+      url.hash = location.hash;
+      if (city) {
+        const labels = {
+          projects: true,
+          basic: true,
+          water: false,
+          parks: false,
+        };
+        document
+          .querySelectorAll<HTMLInputElement>("[data-label-kind]")
+          .forEach((input) => {
+            labels[input.dataset.labelKind as keyof typeof labels] =
+              input.checked;
+          });
+        const area =
+          [...document.querySelectorAll<HTMLButtonElement>("[data-area]")].find(
+            (button) => button.textContent === $("area-name").textContent,
+          )?.dataset.area ?? "overview";
+        url.searchParams.set(
+          "view",
+          encodeViewState({
+            camera: city.captureView(),
+            plan,
+            expanded: shell.classList.contains("record-expanded"),
+            filter: placeFilter.value,
+            area,
+            labels,
+          }),
+        );
+      }
+      link.href = url.href;
+    });
+  });

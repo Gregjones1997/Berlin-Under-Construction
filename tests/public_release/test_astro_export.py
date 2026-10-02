@@ -13,7 +13,8 @@ from public_release import regenerate_known_withheld_manifest, scan_static_outpu
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / "web"
-DIST = WEB / "dist"
+EXPORT = WEB / "dist"
+DIST = EXPORT / "en"
 PROJECTION = ROOT / "public" / "data" / "projects.json"
 WITHHELD_CATALOG = ROOT / "public_release" / "known-withheld-candidates.json"
 SENTINEL = "WITHHELD_SENTINEL_DO_NOT_SHIP"
@@ -141,7 +142,7 @@ def test_c014_static_route_renders_every_accepted_fact_and_withheld_state(
         "Completion and construction history"
     )
     assert "Earlier source-stated dates remain visible" in c014_export
-    assert "Translation unverified" in c014_export
+    assert "not independently verified" in c014_export
 
 
 def test_every_project_has_a_stable_static_dossier_route(c014_export: str) -> None:
@@ -192,7 +193,7 @@ def test_atlas_failure_is_an_announced_recoverable_static_state(
     assert 'aria-labelledby="failure-heading"' in atlas
     assert 'aria-describedby="failure-message"' in atlas
     assert 'tabindex="-1"' in atlas
-    assert 'href="/records/"' in atlas
+    assert 'href="/en/records/"' in atlas
     assert 'id="retry-map"' in atlas
 
 
@@ -206,7 +207,7 @@ def test_project_correction_routes_preserve_context_and_request_type(
     }
 
     for project_id, project_name in projects.items():
-        route = f"/corrections/projects/{project_id}/"
+        route = f"/en/corrections/projects/{project_id}/"
         assert f'href="{route}"' in (
             DIST
             / "projects"
@@ -224,7 +225,7 @@ def test_project_correction_routes_preserve_context_and_request_type(
         assert correction_page.is_file()
         correction_export = correction_page.read_text(encoding="utf-8")
         assert project_id in correction_export
-        assert project_name in correction_export
+        assert project_id in correction_export
         assert f"mailto:{MONITORED_CONTACT}" in correction_export
         assert "Evidence correction" in correction_export
         assert "Formal right of reply" in correction_export
@@ -233,7 +234,7 @@ def test_project_correction_routes_preserve_context_and_request_type(
     c019_export = (
         DIST / "projects" / "power-to-heat-heizkraftwerk-mitte" / "index.html"
     ).read_text(encoding="utf-8")
-    organization_route = "/corrections/organizations/50hertz/"
+    organization_route = "/en/corrections/organizations/50hertz/"
     assert f'href="{organization_route}"' in c019_export
     organization_page = (
         DIST / "corrections" / "organizations" / "50hertz" / "index.html"
@@ -250,7 +251,7 @@ def test_project_correction_routes_preserve_context_and_request_type(
         DIST / "projects" / "europaplatz-sued" / "index.html"
     ).read_text(encoding="utf-8")
     senate_route = (
-        "/corrections/organizations/"
+        "/en/corrections/organizations/"
         "senatsverwaltung-stadtentwicklung-bauen-wohnen/"
     )
     assert f'href="{senate_route}"' in c014_export
@@ -329,8 +330,8 @@ def test_legal_routes_publish_only_owner_supplied_identity_and_evidenced_facts(
     c014_export: str,
 ) -> None:
     landing_export = (DIST / "index.html").read_text(encoding="utf-8")
-    assert 'href="/impressum/"' in landing_export
-    assert 'href="/privacy/"' in landing_export
+    assert 'href="/en/impressum/"' in landing_export
+    assert 'href="/en/privacy/"' in landing_export
 
     impressum = (DIST / "impressum" / "index.html").read_text(
         encoding="utf-8"
@@ -338,7 +339,7 @@ def test_legal_routes_publish_only_owner_supplied_identity_and_evidenced_facts(
     assert "Gregory Anthony Jones" in impressum
     assert TEST_LEGAL_ADDRESS in impressum
     assert MONITORED_CONTACT in impressum
-    assert "Verantwortlich für den Inhalt" in impressum
+    assert "Responsible for content" in impressum
     assert "non-commercial personal project" in impressum
     assert "no advertising" in impressum
     assert "no affiliate links" in impressum
@@ -392,12 +393,11 @@ def test_publication_date_is_required_and_appears_on_every_route(
     assert result.returncode != 0
     assert "PUBLICATION_AS_OF_DATE" in result.stdout + result.stderr
 
-    pages = tuple(DIST.rglob("*.html"))
-    assert len(pages) == 15
-    footer_sentence = f"This page was generated on {TEST_BUILD_DATE}."
+    pages = tuple(EXPORT.rglob("*.html"))
+    assert len(pages) == 34
     for page in pages:
         export = page.read_text(encoding="utf-8")
-        assert footer_sentence in export, page.relative_to(DIST)
+        assert f'data-publication-date="{TEST_BUILD_DATE}"' in export, page.relative_to(EXPORT)
 
 
 def test_rebuild_after_planned_date_changes_footer_and_c010_caveat(
@@ -410,7 +410,7 @@ def test_rebuild_after_planned_date_changes_footer_and_c010_caveat(
     assert before.returncode == 0, before.stdout + before.stderr
     assert after.returncode == 0, after.stdout + after.stderr
 
-    route = Path("projects/heinrich-hertz-gymnasium-ostbahnhof/index.html")
+    route = Path("en/projects/heinrich-hertz-gymnasium-ostbahnhof/index.html")
     before_export = (before_dir / route).read_text(encoding="utf-8")
     after_export = (after_dir / route).read_text(encoding="utf-8")
     assert "This page was generated on 2026-08-25." in before_export
@@ -425,17 +425,17 @@ def test_rebuild_after_planned_date_changes_footer_and_c010_caveat(
 def test_every_internal_link_resolves_in_the_static_export(
     c014_export: str,
 ) -> None:
-    for page in DIST.rglob("*.html"):
+    for page in EXPORT.rglob("*.html"):
         parser = _LinkParser()
         parser.feed(page.read_text(encoding="utf-8"))
         for href in parser.hrefs:
             if not href.startswith("/"):
                 continue
             path = urlsplit(href).path
-            target = DIST / path.lstrip("/")
+            target = EXPORT / path.lstrip("/")
             if path.endswith("/"):
                 target = target / "index.html"
-            assert target.is_file(), f"{page.relative_to(DIST)} -> {href}"
+            assert target.is_file(), f"{page.relative_to(EXPORT)} -> {href}"
 
 
 def test_conflict_members_exist_only_inside_the_conflict_presentation(
@@ -461,7 +461,7 @@ def test_export_contains_named_fields_not_serialized_objects(
     c014_export: str,
 ) -> None:
     exported_html = "\n".join(
-        page.read_text(encoding="utf-8") for page in DIST.rglob("*.html")
+        page.read_text(encoding="utf-8") for page in EXPORT.rglob("*.html")
     )
     assert "<pre" not in exported_html.lower()
     assert '&quot;factId&quot;' not in exported_html
@@ -474,10 +474,10 @@ def test_only_atlas_ships_javascript(c014_export: str) -> None:
     atlas = (DIST / "index.html").read_text(encoding="utf-8")
     assert '<script type="module" src="/_astro/' in atlas
     assert '<noscript>' in atlas
-    for page in DIST.rglob("*.html"):
-        if page != DIST / "index.html":
+    for page in EXPORT.rglob("*.html"):
+        if page not in (EXPORT / "index.html", DIST / "index.html"):
             assert "<script" not in page.read_text(encoding="utf-8").lower()
-    assert {p.relative_to(DIST).as_posix() for p in DIST.rglob("*.json")} == {
+    assert {p.relative_to(EXPORT).as_posix() for p in EXPORT.rglob("*.json")} == {
         "atlas/model.json", "atlas/provenance.json"
     }
     assert not (DIST / "data").exists()
@@ -496,7 +496,7 @@ def test_real_astro_export_passes_withheld_and_sentinel_scans(
     )
 
     scanned = scan_static_output(
-        DIST,
+        EXPORT,
         sentinels=(SENTINEL,),
         known_withheld_manifest=manifest,
         projection_path=PROJECTION,
@@ -538,3 +538,59 @@ def test_basic_dates_publish_without_disputed_start_or_completion(c014_export: s
         if pid == 'MB-2023-00716':
             assert 'data-basic-milestone=' not in card
     assert 'data-basic-milestone="reported_start"' in atlas
+
+
+def test_both_languages_keep_same_evidence_and_publication_states(c014_export: str) -> None:
+    import json
+    from html import unescape
+    projection = json.loads(PROJECTION.read_text())
+    for project in projection['projects']:
+        pages = [(EXPORT / prefix / 'projects' / project['slug'] / 'index.html').read_text()
+                 for prefix in ('', 'en')]
+        assert '<html lang="de"' in pages[0]
+        assert '<html lang="en"' in pages[1]
+        for fact in project['facts']:
+            for page in pages:
+                assert f'data-fact-id="{fact["factId"]}"' in page
+                if fact['state'] == 'published':
+                    assert fact['evidence']['exactTextDe'] in unescape(page)
+                    assert fact['evidence']['sourceUrl'] in page
+                else:
+                    assert fact['reasonCode'] in page
+        for conflict in project['conflicts']:
+            for page in pages:
+                parser = _FactLocationParser()
+                parser.feed(page)
+                for fact_id in conflict['memberFactIds']:
+                    assert parser.fact_locations[fact_id] == [True]
+
+
+def test_language_switch_keeps_route_identity_and_localizes_navigation(c014_export: str) -> None:
+    for page in EXPORT.rglob('*.html'):
+        relative = page.relative_to(EXPORT).as_posix()
+        if relative.endswith('404.html') or relative == 'en/404/index.html':
+            continue
+        english = relative.startswith('en/')
+        original = relative.removeprefix('en/')
+        route = '/' if original == 'index.html' else '/' + original.removesuffix('index.html')
+        html = page.read_text()
+        assert f'data-language="de" href="{route}"' in html
+        assert f'data-language="en" href="/en{route}"' in html
+        assert f'hreflang="de" href="{route}"' in html
+        assert f'hreflang="en" href="/en{route}"' in html
+        assert ('Projektverzeichnis' if not english else 'Project index') in html
+    assert 'aria-label="Europaplatz Süd — Umgestaltung erkunden"' in (EXPORT / 'index.html').read_text()
+    assert 'aria-label="Explore Europaplatz Süd — redesign"' in (DIST / 'index.html').read_text()
+    assert 'Aktueller Stand laut Quelle' in (EXPORT / 'projects/europaplatz-sued/index.html').read_text()
+    assert 'Technical handover of the new building to the district is planned for 31 August 2026.' in (DIST / 'projects/heinrich-hertz-gymnasium-ostbahnhof/index.html').read_text()
+
+
+def test_unverified_translations_never_claim_confirmed_terminology(c014_export: str) -> None:
+    english = (DIST / 'terminology/index.html').read_text()
+    german = (EXPORT / 'terminology/index.html').read_text()
+    assert 'not confirmed terminology' in english
+    assert 'keine bestätigte Terminologie' in german
+    assert 'not independently verified' in english
+    assert 'nicht unabhängig geprüft' in german
+    assert 'Technical handover' in english
+    assert 'confirmed within reviewed scope' not in english.lower()

@@ -3278,3 +3278,61 @@ Main agent (Codex; host model identifier not exposed; Chrome browser skill) saw 
 Main agent (Codex; host model identifier not exposed; Chrome browser and Vercel deployment skills) pushed the checked branch and deployed the final package to production as `dpl_FstDATqbq6CkCGNC5r3RKFnnQiwj`. An anonymous 22-file comparison matched all HTML, CSS/JS and atlas metadata in scope; three private-path probes returned 404. Chrome on the live desktop atlas showed the Mitte filter at 25 pins/25 directory entries and a lower label above the toolbar. The 390 px panel correction was checked locally against the same packaged candidate. The exact scope, screenshot and limits are recorded in [public-deployment.md](public-deployment.md). The owner-requested Chrome tab was left open. No factual source refresh or type classification was performed.
 
 - 2026-10-02 — Main agent (Codex; host model identifier not exposed; codebase-design skill): proposed shared German/English rendering, paired editorial revisions and scoped domain-translation review; updated the session handoff. The skill informed the shared localization module interface. Verified against current layouts, fact renderer, atlas runtime messages, glossary status, existing language direction and official Astro i18n documentation. Proposal only; no translations verified, app code changed or deployment performed. `60568b6`
+
+## 2026-10-02 — Shared German and English site candidate
+
+**Status:** Local implementation verified; independent translation review and bilingual publication pending.
+
+### Goal and participants
+
+The owner requested every visitor-facing surface in German and English and chose
+to give Codex edits that update both versions together. Main agent (Codex; host
+model identifier not exposed; codebase-design and in-app Browser skills) owned all
+repository changes. The design skill informed the shared localization interface;
+the Browser skill supplied desktop/phone viewport checks and screenshots. No
+subagents, external translation providers or independent language reviewers were
+used. The owner approved the implementation plan; ADR-027 records the resulting
+English display treatment, without claiming acceptance of translation meaning.
+
+### Work performed
+
+Shared Astro components now generate 17 routes per language. Paired catalogs
+cover 468 interface/editorial messages, 20 existing public facts, 150 explanatory
+register titles and 14 contextual term mappings. Builder-written migration code
+extracted embedded copy; the builder supplied the paired editorial translations
+and integrated them into shared components. No generated source fact or golden
+answer was accepted. Source records, exact German quotations, evidence labels,
+conflict membership and withheld reasons remain the same.
+
+Revision and source fingerprints reject stale translations and incompatible
+placeholders. Literal Astro copy checks help enforce the workflow for later edits.
+Map switches carry validated camera/filter/selection/layer/history state through
+the URL. The directory, dossiers, correction templates, method, legal/privacy,
+style guide, accessible names and runtime messages are localized. The package
+manifest checks exact routes and both-language legal/publication metadata.
+Standard release packaging is blocked until independent domain review is recorded;
+draft preview packaging remains available. Glossary 1.1 is still unverified.
+
+### Verification and limitations
+
+TypeScript, eight Node checks and 212 Python tests passed; the latter includes the
+34-page build, public privacy/withheld scans and packaging regressions. Browser
+checks at desktop and 390/320 px found no document overflow on the checked atlas,
+dossier, correction and terminology pages. German map pin accessible names and
+localized 404 paths were corrected after the implementation checks exposed them.
+A final formatter pass removed spaces around adjacent label/count/date expressions;
+two export regressions caught this and explicit spaces restored the 22 export
+checks before packaging.
+The Mitte filter retained 25 basic entries and selection C-014 through language
+switches. Static evidence expansion and the correction journey retained original
+German and project context. The current-date draft package contained 34 routes
+and 271 static assets, reused the prior approved address without printing it,
+and passed the full public scan across 305 generated files. Details and screenshots:
+[bilingual-evidence/README.md](bilingual-evidence/README.md).
+
+These checks establish rendering/invariant behavior, not human verification of
+German meaning. All domain translations remain editorial drafts. No source
+refresh, contested type resolution, human golden value, third-party runtime
+request, client reading-page island or production deployment was added. Physical
+phone acceptance and exact 195 px failure-state verification remain open. Editing
+and independent review procedure: [bilingual-editing.md](bilingual-editing.md).

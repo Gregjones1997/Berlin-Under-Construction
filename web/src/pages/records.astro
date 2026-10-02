@@ -1,4 +1,16 @@
 ---
+import {
+  forLocale,
+  localeFromPath,
+  localizePath,
+  projectName,
+  listingName,
+  factText,
+  dateText,
+  enumLabel,
+} from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import basicListings from "../atlas/basic-listings.json";
@@ -103,119 +115,166 @@ if (
 
 <Base
   pageClass="records-page"
-  title="Project index — Berlin, Under Construction"
-  heading="The project index"
-  subtitle="A source-backed map of what is being built, what was promised and what changed."
+  title={t("pages.records.248")}
+  heading={t("pages.records.249")}
+  subtitle={t("pages.records.250")}
 >
   <div class="index-opening">
-  <section class="dossier-directory" aria-labelledby="dossiers-heading">
-    <div class="directory-heading"><p class="document-eyebrow">START WITH THE EVIDENCE</p><h2 id="dossiers-heading">Three projects.<br />A closer look.</h2></div>
-    <p>Full dossiers bring source statements, history and unresolved questions together. Choose a project to follow its evidence.</p>
-    <nav aria-label="All pilot projects"><ol class="dossier-cards">{projects.map((project, index) => <li><a href={`/projects/${project.slug}/`}><span class="dossier-number">0{index + 1} / {project.projectId}</span><strong lang="de">{project.projectNameDe}</strong><span class="dossier-card-action">Read the dossier <span aria-hidden="true">↗</span></span></a></li>)}</ol></nav>
-  </section>
-  <section aria-labelledby="map-heading">
-    <figure aria-labelledby="map-heading map-caption">
-      <h2 id="map-heading">Pilot projects within Berlin</h2>
-      <svg
-        viewBox={`0 0 ${width} ${height}`}
-        role="img"
-        aria-labelledby="map-title map-description"
-      >
-        <title id="map-title">
-          Berlin boundary with two placed pilot projects
-        </title>
-        <desc id="map-description"
-          >C-014 and C-010 are placed. C-019 is listed separately because its
-          location is withheld.</desc
+    <section class="dossier-directory" aria-labelledby="dossiers-heading">
+      <div class="directory-heading">
+        <p class="document-eyebrow">{t("pages.records.251")}</p><h2
+          id="dossiers-heading"
         >
-        {
-          boundaryPaths.map((path) => (
-            <path d={path} fill="none" stroke="currentColor" />
-          ))
-        }
-        {
-          placedProjects.map((project) => (
-            <a
-              href={`/projects/${project.slug}/`}
-              data-map-marker="placed"
-              data-project-id={project.projectId}
-              aria-label={`${project.projectId}: ${project.projectNameDe}`}
+          {t("pages.records.252")}<br />{t("pages.records.253")}
+        </h2>
+      </div>
+      <p>{t("pages.records.254")}</p>
+      <nav aria-label={t("pages.records.255")}>
+        <ol class="dossier-cards">
+          {
+            projects.map((project, index) => (
+              <li>
+                <a href={localizePath(`/projects/${project.slug}/`, locale)}>
+                  <>
+                    <span class="dossier-number">
+                      0{index + 1} / {project.projectId}
+                    </span>
+                    <strong lang={locale}>
+                      {projectName(project, locale)}
+                    </strong>
+                    <span class="dossier-card-action">
+                      {t("pages.records.256")} <span aria-hidden="true">↗</span>
+                    </span>
+                  </>
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </nav>
+    </section>
+    <section aria-labelledby="map-heading">
+      <figure aria-labelledby="map-heading map-caption">
+        <h2 id="map-heading">{t("pages.records.257")}</h2>
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          role="img"
+          aria-labelledby="map-title map-description"
+        >
+          <title id="map-title">
+            {t("pages.records.258")}
+          </title>
+          <desc id="map-description">{t("records.description")}</desc>
+          {
+            boundaryPaths.map((path) => (
+              <path d={path} fill="none" stroke="currentColor" />
+            ))
+          }
+          {
+            placedProjects.map((project) => (
+              <a
+                href={localizePath(`/projects/${project.slug}/`, locale)}
+                data-map-marker="placed"
+                data-project-id={project.projectId}
+                aria-label={`${project.projectId}: ${projectName(project, locale)}`}
+              >
+                <circle cx={project.x} cy={project.y} r="8" />
+                <text x={project.x + 12} y={project.y + 4}>
+                  {project.projectId}
+                </text>
+              </a>
+            ))
+          }
+        </svg>
+        <figcaption id="map-caption">
+          <p>
+            {t("pages.records.259")}
+          </p>
+          <p>
+            {t("pages.records.260")}
+            <a href="https://www.bkg.bund.de">BKG</a> 2026
+            <a href="https://www.govdata.de/dl-de/by-2-0"
+              >{t("pages.records.261")}</a
             >
-              <circle cx={project.x} cy={project.y} r="8" />
-              <text x={project.x + 12} y={project.y + 4}>
-                {project.projectId}
-              </text>
-            </a>
-          ))
-        }
-      </svg>
-      <figcaption id="map-caption">
-        <p>
-          Two of three pilot projects are placed. C-019 remains reachable below,
-          with its location withheld pending source verification.
-        </p>
-        <p>
-          Boundary: © <a href="https://www.bkg.bund.de">BKG</a> 2026
-          <a href="https://www.govdata.de/dl-de/by-2-0">dl-de/by-2-0</a>
-          (Daten verändert), Datenquellen:
-          <a
-            href="https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf"
-            >BKG source record</a
-          >.
-        </p>
-        <p>
-          Marker positions: © <a href="https://www.openstreetmap.org/copyright"
-            >OpenStreetMap contributors</a
-          >, ODbL 1.0.
-        </p>
-      </figcaption>
-    </figure>
-  </section>
-
+            (Daten verändert), Datenquellen:
+            <a
+              href="https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf"
+              >{t("pages.records.262")}</a
+            >.
+          </p>
+          <p>
+            {t("pages.records.263")}
+            <a href="https://www.openstreetmap.org/copyright"
+              >{t("osm.contributors")}</a
+            >{t("pages.records.264")}
+          </p>
+        </figcaption>
+      </figure>
+    </section>
   </div>
   <section aria-labelledby="unplaced-heading">
-    <h2 id="unplaced-heading">Project with location withheld</h2>
+    <h2 id="unplaced-heading">{t("pages.records.265")}</h2>
     <p data-reason-code={c019Location.reasonCode}>
-      <a href={`/projects/${c019.slug}/`}
-        >C-019 — <span lang="de">{c019.projectNameDe}</span></a
+      <a href={localizePath(`/projects/${c019.slug}/`, locale)}
+        >C-019 — <span lang={locale}>{projectName(c019, locale)}</span></a
       ><br />
-      Location withheld pending source verification.<br />
-      This fact is withheld until the source wording is verified by the project owner.
+      {t("pages.records.266")}<br />
+      {t("pages.records.267")}
     </p>
   </section>
 
-  <section class="register-directory" aria-labelledby="basic-heading"><h2 id="basic-heading">150 basic listings · research ongoing</h2><p>Official register reference points. These listings do not establish construction progress or exact site boundaries.</p><ul>{basicListings.records.map(project => <li><a href={`/#${project.id}`} lang="de">{project.nameDe}</a> · <a href={project.sourceUrl}>Original source</a> · <a href="/corrections/">Correction</a></li>)}</ul></section>
-  <details class="index-method"><summary>How these records are made</summary>  <section aria-labelledby="introduction-heading">
-    <h2 id="introduction-heading">About this project</h2>
-    <p>
-      Displayed project data is human-curated from primary sources. The retained
-      store currently contains one completed extraction run over one document;
-      the repository does not establish a total historical provider-call count.
-    </p>
+  <section class="register-directory" aria-labelledby="basic-heading">
+    <h2 id="basic-heading">{t("pages.records.268")}</h2><p>
+      {t("pages.records.269")}
+    </p><ul>
+      {
+        basicListings.records.map((project) => (
+          <li>
+            <a href={localizePath(`/#${project.id}`, locale)} lang={locale}>
+              {listingName(project, locale)}
+            </a>{" "}
+            · <a href={project.sourceUrl}>{t("components.RawFact.27")}</a> ·{" "}
+            <a href={localizePath("/corrections/", locale)}>
+              {t("pages.records.270")}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </section>
-  <section aria-labelledby="demonstrates-heading">
-    <h2 id="demonstrates-heading">What this demonstrates</h2>
-    <p>
-      A working vertical slice: a typed Python extraction pipeline, strict
-      evidence and withholding gates, a validated public-data projection, and an
-      Astro/TypeScript site with static evidence pages and a self-hosted 3D
-      atlas.
-    </p>
-    <p>
-      AI assists with bounded document extraction; deterministic checks and
-      human review decide what can be shown. See the
-      <a href="https://github.com/Gregjones1997/Berlin-Under-Construction"
-        >source code and build record</a
-      >.
-    </p>
-  </section>
-</details>
+  <details class="index-method">
+    <summary>{t("pages.records.271")}</summary>
+    <section aria-labelledby="introduction-heading">
+      <h2 id="introduction-heading">{t("pages.records.272")}</h2>
+      <p>
+        {t("pages.records.273")}
+      </p>
+    </section>
+    <section aria-labelledby="demonstrates-heading">
+      <h2 id="demonstrates-heading">{t("pages.records.274")}</h2>
+      <p>
+        {t("pages.records.275")}
+      </p>
+      <p>
+        {t("pages.records.276")}
+        <a href="https://github.com/Gregjones1997/Berlin-Under-Construction"
+          >{t("pages.records.277")}</a
+        >.
+      </p>
+    </section>
+  </details>
   <section>
-    <nav aria-label="Legal information">
-      <h2>Legal information</h2>
+    <nav aria-label={t("pages.index.163")}>
+      <h2>{t("pages.index.163")}</h2>
       <ul>
-        <li><a href="/impressum/">Impressum</a></li>
-        <li><a href="/privacy/">Privacy notice</a></li>
+        <li>
+          <a href={localizePath("/impressum/", locale)}
+            >{t("layouts.Base.37")}</a>
+        </li>
+        <li>
+          <a href={localizePath("/privacy/", locale)}
+            >{t("pages.privacy.211")}</a>
+        </li>
       </ul>
     </nav>
   </section>

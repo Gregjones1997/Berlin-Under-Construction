@@ -102,6 +102,21 @@ English label. Every glossary-derived display publishes the glossary version and
 its verification status. Human glossary verification and the golden truth set
 remain post-v0 work.
 
+### German and English presentation
+
+The 2 October local candidate generates 34 routes from shared Astro components:
+German at the existing URLs and English under `/en/`. The DE / EN switch preserves
+the page/project and the atlas selection, filter, camera and supported view options.
+Tell Codex the wording change; both catalog entries are updated in one diff.
+Missing, stale or incompatible counterparts fail the build. See
+[the editing workflow](docs/bilingual-editing.md).
+
+ADR-027 allows English display explanations with original German evidence retained.
+The new domain explanations and contextual terms are editorial drafts awaiting
+independent German-language review. The standard release command blocks them until
+that review is recorded. This candidate is not a deployed bilingual release and
+adds no verified glossary or golden values.
+
 ### Next milestone: German-language reliability and ten-project coverage
 
 The author does not speak German. Finding someone to verify the German has

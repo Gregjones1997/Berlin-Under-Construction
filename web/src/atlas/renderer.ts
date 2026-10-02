@@ -1,3 +1,6 @@
+import { forLocale, localeFromPath, formatNumber } from "../lib/i18n";
+const locale = localeFromPath(location.pathname);
+const t = forLocale(locale);
 import * as THREE from "three";
 import { MapControls } from "three/addons/controls/MapControls.js";
 import { cityPoint } from "./geo";
@@ -106,10 +109,7 @@ export class CityRenderer {
     this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.shadowMap.autoUpdate = false;
     this.renderer.setClearColor(PAPER.background);
-    this.renderer.domElement.setAttribute(
-      "aria-label",
-      "Berlin 3D map. Drag to pan, right-drag to rotate, scroll to zoom. Use the labelled map controls or project list for keyboard navigation.",
-    );
+    this.renderer.domElement.setAttribute("aria-label", t("atlas.canvas"));
     this.renderer.domElement.tabIndex = 0;
     this.host.prepend(this.renderer.domElement);
     this.camera = new THREE.OrthographicCamera(
@@ -234,8 +234,7 @@ export class CityRenderer {
         cancelAnimationFrame(this.raf);
         this.host.dispatchEvent(
           new CustomEvent("atlas-error", {
-            detail:
-              "The graphics context was interrupted. Reload the atlas or use the project index.",
+            detail: t("atlas.graphics.interrupted"),
           }),
         );
       },
@@ -247,15 +246,14 @@ export class CityRenderer {
   }
   private async decode(payload: Payload) {
     if (!/^\/atlas\/berlin-[a-f0-9]{12}\.bin\.gz$/.test(payload.geometry))
-      throw new Error("Invalid model asset path");
+      throw new Error(t("atlas.asset.invalid"));
     const res = await fetch(payload.geometry, { signal: this.abort.signal });
-    if (!res.ok || !res.body)
-      throw new Error("The city geometry could not be downloaded.");
+    if (!res.ok || !res.body) throw new Error(t("atlas.download.failed"));
     const buffer = await new Response(
       res.body.pipeThrough(new DecompressionStream("gzip")),
     ).arrayBuffer();
     if (buffer.byteLength !== (payload.surfaceFloats + payload.edgeFloats) * 2)
-      throw new Error("Incomplete model download. Please try again.");
+      throw new Error(t("atlas.download.incomplete"));
     return Float32Array.from(
       new Int16Array(buffer),
       (v) => v / payload.quantization,
@@ -290,10 +288,10 @@ export class CityRenderer {
     const response = await fetch("/atlas/model.json", {
       signal: this.abort.signal,
     });
-    if (!response.ok) throw new Error("The city model is unavailable.");
+    if (!response.ok) throw new Error(t("atlas.model.unavailable"));
     const manifest = (await response.json()) as Manifest;
-    if (manifest.version !== 2) throw new Error("Unsupported city model.");
-    onProgress("Unfolding the whole city");
+    if (manifest.version !== 2) throw new Error(t("atlas.model.unsupported"));
+    onProgress(t("atlas.unfolding"));
     const decoded = await this.decode(manifest);
     if (!this.running) return manifest;
     const surfaces = decoded.subarray(0, manifest.surfaceFloats);
@@ -403,9 +401,12 @@ export class CityRenderer {
     this.host.dispatchEvent(
       new CustomEvent("atlas-detail", {
         detail: failed
-          ? "Some detail is unavailable · move the map to retry"
+          ? t("atlas.detail.failed")
           : missing.length
-            ? `Adding building detail · ${this.wanted.length - missing.length}/${this.wanted.length}`
+            ? t("atlas.detail.progress", {
+                loaded: this.wanted.length - missing.length,
+                total: this.wanted.length,
+              })
             : "",
       }),
     );
@@ -431,7 +432,7 @@ export class CityRenderer {
           this.materials.edge,
         ),
       );
-      group.traverse(o => {
+      group.traverse((o) => {
         if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments) {
           const material = (o.material as THREE.Material).clone();
           material.userData.targetOpacity = material.opacity;
@@ -488,12 +489,15 @@ export class CityRenderer {
       const px = (v.x * 0.5 + 0.5) * r.width;
       const py = (-v.y * 0.5 + 0.5) * r.height;
       const visible =
-        this.labels.projects && !p.classList.contains("filtered-out") &&
+        this.labels.projects &&
+        !p.classList.contains("filtered-out") &&
         (p.dataset.depth !== "basic" || this.labels.basic) &&
         v.z >= -1 &&
         v.z <= 1 &&
-        px >= 14 && px <= r.width - 14 &&
-        py >= 14 && py <= r.height - 14;
+        px >= 14 &&
+        px <= r.width - 14 &&
+        py >= 14 &&
+        py <= r.height - 14;
       if (visible)
         occupied.push({
           x: px + (px > r.width / 2 ? -80 : 80),
@@ -502,7 +506,10 @@ export class CityRenderer {
       const labelLeft = px > r.width / 2;
       p.classList.toggle("label-left", labelLeft);
       p.classList.toggle("label-up", py > r.height - 180);
-      p.style.setProperty("--pin-label-max", `${Math.max(40, labelLeft ? px - 38 : r.width - px - 38)}px`);
+      p.style.setProperty(
+        "--pin-label-max",
+        `${Math.max(40, labelLeft ? px - 38 : r.width - px - 38)}px`,
+      );
       p.style.visibility = visible ? "visible" : "hidden";
       p.style.transform = `translate(${px - 14}px,${py - 14}px)`;
     }
@@ -563,7 +570,7 @@ export class CityRenderer {
     }
     for (const [group, start] of this.fading) {
       const amount = Math.min(1, (now - start) / 650);
-      group.traverse(o => {
+      group.traverse((o) => {
         if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments) {
           const material = o.material as THREE.Material;
           material.opacity = material.userData.targetOpacity * amount;
@@ -615,17 +622,27 @@ export class CityRenderer {
   }
   introduce() {
     // Frame approved project positions only; withheld sites never supply geometry.
-    const points = this.pins.filter(pin => pin.dataset.depth !== "basic").map((pin) => {
-      const [x, z] = cityPoint(Number(pin.dataset.lon), Number(pin.dataset.lat));
-      return new THREE.Vector3(x, 0, z);
-    });
+    const points = this.pins
+      .filter((pin) => pin.dataset.depth !== "basic")
+      .map((pin) => {
+        const [x, z] = cityPoint(
+          Number(pin.dataset.lon),
+          Number(pin.dataset.lat),
+        );
+        return new THREE.Vector3(x, 0, z);
+      });
     if (!points.length) return;
     const bounds = new THREE.Box3().setFromPoints(points);
     const center = bounds.getCenter(new THREE.Vector3());
-    const radius = Math.max(1200, bounds.getSize(new THREE.Vector3()).length() / 2);
+    const radius = Math.max(
+      1200,
+      bounds.getSize(new THREE.Vector3()).length() / 2,
+    );
     // Leave room for labels and the project card throughout the gentle orbit.
-    const span = Math.min(this.camera.right - this.camera.left,
-      this.camera.top - this.camera.bottom);
+    const span = Math.min(
+      this.camera.right - this.camera.left,
+      this.camera.top - this.camera.bottom,
+    );
     const zoom = Math.min(1.15, span / (radius * 2.9));
     this.controls.target.copy(center);
     this.camera.position.copy(center).add(new THREE.Vector3(1800, 4200, 3000));
@@ -636,15 +653,24 @@ export class CityRenderer {
     this.orbitAfterArrival = !this.reduced;
   }
   captureView(): MapView {
-    if (this.fly) return { target: this.fly.toTarget.toArray(),
-      offset: this.fly.toOffset.toArray(), zoom: this.fly.toZoom };
-    return { target: this.controls.target.toArray(),
+    if (this.fly)
+      return {
+        target: this.fly.toTarget.toArray(),
+        offset: this.fly.toOffset.toArray(),
+        zoom: this.fly.toZoom,
+      };
+    return {
+      target: this.controls.target.toArray(),
       offset: this.camera.position.clone().sub(this.controls.target).toArray(),
-      zoom: this.camera.zoom };
+      zoom: this.camera.zoom,
+    };
   }
   restoreView(view: MapView) {
-    this.move(new THREE.Vector3().fromArray(view.target), view.zoom,
-      new THREE.Vector3().fromArray(view.offset));
+    this.move(
+      new THREE.Vector3().fromArray(view.target),
+      view.zoom,
+      new THREE.Vector3().fromArray(view.offset),
+    );
   }
   select(lon: number, lat: number) {
     const [x, z] = cityPoint(lon, lat);
@@ -738,10 +764,12 @@ export class CityRenderer {
       if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments)
         o.geometry.dispose();
     });
-    this.loaded.forEach(group => group.traverse(o => {
-      if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments)
-        (o.material as THREE.Material).dispose();
-    }));
+    this.loaded.forEach((group) =>
+      group.traverse((o) => {
+        if (o instanceof THREE.Mesh || o instanceof THREE.LineSegments)
+          (o.material as THREE.Material).dispose();
+      }),
+    );
     this.fading.clear();
     Object.values(this.materials).forEach((m) => m.dispose());
     (this.ground.material as THREE.Material).dispose();

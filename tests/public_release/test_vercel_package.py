@@ -11,11 +11,13 @@ DATE = '2026-09-07'
 
 
 def fixture_export(tmp_path: Path) -> None:
-    paths = ['index.html', 'impressum/index.html', 'privacy/index.html', 'style-guide/index.html'] + [f'record-{i}/index.html' for i in range(11)]
+    result = subprocess.run(['node', '--input-type=module', '-e',
+        "import {publicPages} from '" + (SCRIPT.parent / 'public-routes.mjs').as_uri() + "'; console.log(JSON.stringify(publicPages))"], capture_output=True,text=True,check=True)
+    paths = json.loads(result.stdout)
     for name in paths:
         path = tmp_path / 'dist' / name
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(f'<p>{ADDRESS}</p><p>This page was generated on {DATE}.</p>')
+        path.write_text(f'<html data-publication-date="{DATE}"><p>{ADDRESS}</p><p>This page was generated on {DATE}.</p></html>')
     atlas = tmp_path / 'dist/atlas'
     atlas.mkdir()
     (atlas / 'model.json').write_text(json.dumps({'geometry': '/atlas/berlin-fixture.bin.gz'}))
@@ -40,6 +42,7 @@ def test_package_routes_only_the_checked_static_export(tmp_path: Path) -> None:
     assert {'src': '^/style-guide/?$', 'dest': '/style-guide/index.html'} in config['routes']
     assert not (output / 'static/private.pdf').exists()
     assert not (output / 'functions').exists()
+    assert {'src': '^/en(?:/.*)?$', 'dest': '/en/404/index.html', 'status': 404} in config['routes']
     assert "connect-src 'self'" in config['routes'][0]['headers']['Content-Security-Policy']
 
 

@@ -1,4 +1,13 @@
 ---
+import {
+  forLocale,
+  localeFromPath,
+  localizePath,
+  projectName,
+  enumLabel,
+} from "../../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import RawFact from "../../components/RawFact.astro";
 import Base from "../../layouts/Base.astro";
 import {
@@ -7,8 +16,10 @@ import {
 } from "../../lib/public-projects";
 
 export function getStaticPaths() {
-  return loadPublicProjectPages()
-    .map((project) => ({ params: { slug: project.slug }, props: { project } }));
+  return loadPublicProjectPages().map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
 }
 
 interface Props {
@@ -31,122 +42,126 @@ const historyFacts = project.publishedFacts.filter((fact) =>
   fact.factId.includes("history"),
 );
 const groupedFactIds = new Set(
-  [...identityFacts, ...currentFacts, ...historyFacts].map((fact) => fact.factId),
+  [...identityFacts, ...currentFacts, ...historyFacts].map(
+    (fact) => fact.factId,
+  ),
 );
 const otherFacts = project.publishedFacts.filter(
   (fact) => !groupedFactIds.has(fact.factId),
 );
-
-const FACT_LABELS: Record<string, string> = {
-  financial_measure: "Financial measure",
-  milestone: "Milestone",
-  organization_role: "Organization role",
-  project_location: "Project location",
-  project_name: "Project name",
-  status: "Project status",
-};
-
-const WITHHELD_REASONS: Record<string, string> = {
-  owner_review_required: "This fact is withheld pending an owner review.",
-  source_string_requires_owner_verification:
-    "This fact is withheld until the source wording is verified by the project owner.",
-  multi_source_synthesis_has_no_exact_span:
-    "This conclusion is withheld because no single exact evidence span supports it.",
-  milestone_vocabulary_unresolved:
-    "This milestone is withheld because its German term has not been resolved for display.",
-  role_vocabulary_unresolved:
-    "This organization role is withheld because its role vocabulary remains unresolved.",
-};
 ---
 
 <Base
-  title={`${project.projectNameDe} — Berlin, Under Construction`}
-  heading={project.projectNameDe}
-  headingLang="de"
-  subtitle={`${project.projectId} · source-backed project dossier`}
+  title={`${projectName(project, locale)} — Berlin, Under Construction`}
+  heading={projectName(project, locale)}
+  headingLang={locale}
+  subtitle={t("project.subtitle", { id: project.projectId })}
 >
   <section aria-labelledby="current-heading">
-    <h2 id="current-heading">Current source-stated position</h2>
+    <h2 id="current-heading">{t("pages.projects.slug..231")}</h2>
     <p class="section-intro">
-      Dates describe source statements, not observed construction progress.
-      Freshness has not been assessed.
+      {t("pages.projects.slug..232")}
     </p>
-    {currentFacts.map((fact) => (
-      <RawFact fact={fact} lead={fact.factId === leadFact?.factId} />
-    ))}
-    {historyFacts.length > 0 && (
-      <p><a href="#history-heading">Review earlier source statements →</a></p>
-    )}
-    <p><a href={`/#${project.projectId}`}>Return to this project in the atlas</a></p>
+    {
+      currentFacts.map((fact) => (
+        <RawFact fact={fact} lead={fact.factId === leadFact?.factId} />
+      ))
+    }
+    {
+      historyFacts.length > 0 && (
+        <p>
+          <a href="#history-heading">{t("pages.projects.slug..233")}</a>
+        </p>
+      )
+    }
+    <p>
+      <a href={localizePath(`/#${project.projectId}`, locale)}
+        >{t("pages.projects.slug..234")}</a>
+    </p>
   </section>
 
   <section aria-labelledby="identity-heading">
-    <h2 id="identity-heading">Project identity</h2>
+    <h2 id="identity-heading">{t("pages.projects.slug..235")}</h2>
     {identityFacts.map((fact) => <RawFact fact={fact} />)}
   </section>
 
-  {historyFacts.length > 0 && (
-    <section aria-labelledby="history-heading">
-      <h2 id="history-heading">Completion and construction history</h2>
-      <p class="section-intro">
-        Earlier source-stated dates remain visible so changes are not erased.
-      </p>
-      {historyFacts.map((fact) => <RawFact fact={fact} />)}
-    </section>
-  )}
+  {
+    historyFacts.length > 0 && (
+      <section aria-labelledby="history-heading">
+        <h2 id="history-heading">{t("pages.projects.slug..236")}</h2>
+        <p class="section-intro">{t("pages.projects.slug..237")}</p>
+        {historyFacts.map((fact) => (
+          <RawFact fact={fact} />
+        ))}
+      </section>
+    )
+  }
 
-  {otherFacts.length > 0 && (
-    <section aria-labelledby="other-facts-heading">
-      <h2 id="other-facts-heading">Other verified facts</h2>
-      {otherFacts.map((fact) => <RawFact fact={fact} />)}
-    </section>
-  )}
+  {
+    otherFacts.length > 0 && (
+      <section aria-labelledby="other-facts-heading">
+        <h2 id="other-facts-heading">{t("pages.projects.slug..238")}</h2>
+        {otherFacts.map((fact) => (
+          <RawFact fact={fact} />
+        ))}
+      </section>
+    )
+  }
 
-  {project.conflicts.length > 0 && (
-    <section aria-labelledby="conflicts-heading">
-      <h2 id="conflicts-heading">Conflicting source values</h2>
-      {project.conflicts.map((conflict) => (
-        <section class="conflict" data-conflict-id={conflict.conflictId}>
-          <h3>Unresolved official-source conflict</h3>
-          <div class="pair">
-            {conflict.facts.map((fact) => <RawFact fact={fact} />)}
-          </div>
-          <p class="note">
-            The two official sources disagree, and neither source retracts the
-            other. Neither value is promoted.
-          </p>
-        </section>
-      ))}
-    </section>
-  )}
+  {
+    project.conflicts.length > 0 && (
+      <section aria-labelledby="conflicts-heading">
+        <h2 id="conflicts-heading">{t("pages.projects.slug..239")}</h2>
+        {project.conflicts.map((conflict) => (
+          <section class="conflict" data-conflict-id={conflict.conflictId}>
+            <h3>{t("pages.projects.slug..240")}</h3>
+            <div class="pair">
+              {conflict.facts.map((fact) => (
+                <RawFact fact={fact} />
+              ))}
+            </div>
+            <p class="note">{t("pages.projects.slug..241")}</p>
+          </section>
+        ))}
+      </section>
+    )
+  }
 
-  {project.withheldFacts.length > 0 && (
-    <section aria-labelledby="withheld-heading">
-      <h2 id="withheld-heading">Withheld facts</h2>
-      {project.withheldFacts.map((fact) => (
-        <article
-          class="withheld"
-          data-fact-id={fact.factId}
-          data-reason-code={fact.reasonCode}
-        >
-          <h3>{FACT_LABELS[fact.factType] ?? "Project fact"}</h3>
-          <p>{WITHHELD_REASONS[fact.reasonCode ?? ""] ?? "This fact is withheld pending review."}</p>
-        </article>
-      ))}
-    </section>
-  )}
+  {
+    project.withheldFacts.length > 0 && (
+      <section aria-labelledby="withheld-heading">
+        <h2 id="withheld-heading">{t("pages.index.108")}</h2>
+        {project.withheldFacts.map((fact) => (
+          <article
+            class="withheld"
+            data-fact-id={fact.factId}
+            data-reason-code={fact.reasonCode}
+          >
+            <h3>{enumLabel(fact.factType, locale)}</h3>
+            <p>{t(`reason.${fact.reasonCode}`)}</p>
+          </article>
+        ))}
+      </section>
+    )
+  }
 
   <section aria-labelledby="language-heading">
-    <h2 id="language-heading">Language boundary</h2>
     <p>
-      <strong>Translation unverified.</strong> German source wording is
-      canonical. English is used for structural labels only; unresolved types
-      are withheld rather than guessed.
+      <a href={localizePath("/terminology/", locale)}
+        >{t("translation.terms")}</a>
+    </p>
+    <h2 id="language-heading">{t("pages.projects.slug..244")}</h2>
+    <p>
+      <strong>{t("pages.projects.slug..245")}</strong>
+      {t("pages.projects.slug..246")}
     </p>
   </section>
 
   <section>
-    <h2>Corrections</h2>
-    <p><a href={project.correctionPath}>Request an evidence correction or make a formal request</a></p>
+    <h2>{t("pages.index.164")}</h2>
+    <p>
+      <a href={localizePath(project.correctionPath, locale)}
+        >{t("pages.projects.slug..247")}</a>
+    </p>
   </section>
 </Base>

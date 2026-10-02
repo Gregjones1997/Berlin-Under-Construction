@@ -1,8 +1,9 @@
 # German and English public-site plan
 
 **Date:** 2 October 2026
-**Status:** Proposal following owner request; no implementation, translation
-verification or deployment is claimed.
+**Status:** Implementation approved by the owner and completed as a local
+bilingual candidate. Independent domain translation review and public deployment
+remain pending. Display decision: [ADR-027](decision-log.md#adr-027--shared-german-and-english-presentation-with-paired-editing).
 
 ## Outcome and current position
 
@@ -15,12 +16,13 @@ One shared implementation generates both versions. Layout, behavior and project
 data change once; wording changes update linked translation pairs. Build checks
 can detect missing or stale counterparts, but cannot prove semantic equivalence.
 
-Current implementation evidence: `Base.astro` declares English and embeds shared
-copy; pages and `RawFact.astro` embed English wording; `RawFact.astro` also exposes
-internal enums through underscore replacement. The atlas controller and renderer
-produce runtime status, loading and failure text. Glossary 1.1 and the app-linked
-review pack remain explicitly unverified. The checklist already records the
-9 September German-default language request.
+The initial inventory found embedded English labels, internal enum rendering and
+atlas runtime messages. These now use paired messages and explicit translated
+labels. The candidate contains 17 routes per locale, 468 interface/editorial
+message pairs, 20 fact explanations, 150 register-title explanations and 14
+contextual term mappings. Glossary 1.1 remains explicitly unverified. Maintenance
+and review instructions: [bilingual-editing.md](bilingual-editing.md). Verification
+evidence: [bilingual-evidence/README.md](bilingual-evidence/README.md).
 
 ## Shared content and editing
 
@@ -55,10 +57,8 @@ the previous confirmation. Proposed model mappings do not become confirmed terms
 or golden answers. Qualified German-speaking contextual review remains necessary
 for verified consequential meanings. Contested meanings remain unresolved.
 
-The standing display contract requires verbatim German values and limits English
-to labels/glosses. Leading with full English claim explanations requires a recorded
-owner decision about that display treatment before publication. This proposal does
-not amend the rule. Preserve original German evidence in both locales, explicitly
+ADR-027 records the owner-authorized English display explanation treatment.
+Canonical source records still contain verbatim German values. Preserve original German evidence in both locales, explicitly
 identified as original text. Proper names remain identifiable; explanatory English
 project titles must not imply an official English name. Planned/actual, bounds,
 approximation, milestone kind and phase scope must survive translation.

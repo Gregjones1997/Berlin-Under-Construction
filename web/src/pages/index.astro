@@ -1,4 +1,16 @@
 ---
+import {
+  forLocale,
+  localeFromPath,
+  localizePath,
+  projectName,
+  listingName,
+  factText,
+  dateText,
+  enumLabel,
+} from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import { readFileSync } from "node:fs";
 import { loadBasicMilestones } from "../lib/basic-milestones.mjs";
 import basicListings from "../atlas/basic-listings.json";
@@ -12,7 +24,9 @@ import SiteHeader from "../components/SiteHeader.astro";
 import contextLabels from "../atlas/context-labels.json";
 import "../styles/atlas.css";
 const projects = loadPublicProjectPages();
-const basicMilestones = loadBasicMilestones(basicListings.records.map(project => project.id));
+const basicMilestones = loadBasicMilestones(
+  basicListings.records.map((project) => project.id),
+);
 const positions = JSON.parse(
   readFileSync(
     resolve("../public/data/map/pilot-marker-positions.json"),
@@ -27,41 +41,55 @@ const records = projects.map((project) => ({
     project.publishedFacts.find(
       (f) => f.factType === "milestone" && f.factId.endsWith("current"),
     ) ?? project.publishedFacts.find((f) => f.factType === "milestone"),
-  start: project.publishedFacts.find(f => f.factId.endsWith("construction-start-current")),
-  status: project.publishedFacts.find(f => f.factType === "status"),
+  start: project.publishedFacts.find((f) =>
+    f.factId.endsWith("construction-start-current"),
+  ),
+  status: project.publishedFacts.find((f) => f.factType === "status"),
   history: project.publishedFacts.filter((f) => f.factId.includes("history")),
 }));
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale} data-publication-date={generatedOn}>
   <head
-    ><meta charset="utf-8" /><meta
+    ><meta charset="utf-8" />
+    <link
+      rel="alternate"
+      hreflang="de"
+      href={localizePath(Astro.url.pathname, "de")}
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={localizePath(Astro.url.pathname, "en")}
+    /><meta
       name="viewport"
       content="width=device-width, initial-scale=1"
-    /><meta
-      name="description"
-      content="Explore Berlin through an architectural city model and source-backed construction records. What is being built, what was promised, and what changed."
-    /><meta name="theme-color" content="#f3f1eb" /><title>
-      Berlin, Under Construction — The city, in progress.
+    /><meta name="description" content={t("pages.index.58")} /><meta
+      name="theme-color"
+      content="#f3f1eb"
+    /><title>
+      {t("pages.index.59")}
     </title></head
   >
   <body class="atlas-page">
-    <a class="skip-link" href="/records/">Skip to project records</a>
+    <a class="skip-link" href={localizePath("/records/", locale)}
+      >{t("pages.index.60")}</a
+    >
     <SiteHeader />
     <main id="atlas" class="atlas-shell">
       <div
         id="map-stage"
         class="map-stage"
         role="region"
-        aria-label="Interactive architectural map of Berlin"
+        aria-label={t("pages.index.61")}
       >
         <div class="map-loading" id="map-loading" role="status">
           <span class="loading-mark">B<span>.</span></span><p
             id="loading-message"
           >
-            Assembling the city
-          </p><small>Real geometry. A closer look.</small>
+            {t("pages.index.62")}
+          </p><small>{t("pages.index.63")}</small>
         </div>
         <div
           class="map-failure"
@@ -72,10 +100,14 @@ const records = projects.map((project) => ({
           tabindex="-1"
           hidden
         >
-          <h2 id="failure-heading">The atlas could not load.</h2><p id="failure-message">
-            Your browser may not support this 3D view.
-          </p><div class="failure-actions"><a href="/records/">Explore the accessible project index →</a
-          ><button id="retry-map" type="button">Try again</button></div>
+          <h2 id="failure-heading">{t("pages.index.64")}</h2><p
+            id="failure-message"
+          >
+            {t("pages.index.65")}
+          </p><div class="failure-actions">
+            <a href={localizePath("/records/", locale)}>{t("pages.index.66")}</a
+            ><button id="retry-map" type="button">{t("pages.index.67")}</button>
+          </div>
         </div>
         <div class="context-labels" aria-hidden="true">
           {
@@ -104,33 +136,65 @@ const records = projects.map((project) => ({
                   data-project={project.projectId}
                   data-lon={project.position!.longitude}
                   data-lat={project.position!.latitude}
-                  aria-label={`Explore ${project.projectNameDe}`}
+                  aria-label={t("atlas.explore", {
+                    name: projectName(project, locale),
+                  })}
                   hidden
                 >
                   <>
                     <span class="pin-number">
-                      <Icon name={project.projectId === "C-014" ? "publicspace" : "school"} />
+                      <Icon
+                        name={
+                          project.projectId === "C-014"
+                            ? "publicspace"
+                            : "school"
+                        }
+                      />
                     </span>
-                    <span class="pin-label" lang="de">
-                      {project.projectNameDe}
+                    <span class="pin-label" lang={locale}>
+                      {projectName(project, locale)}
                     </span>
                   </>
                 </button>
               ))
           }
-        {basicListings.records.map(project => <button class="project-pin basic-pin" data-depth="basic" data-project={project.id} data-lon={project.longitude} data-lat={project.latitude} aria-label={`Explore basic listing: ${project.nameDe}`} hidden><span class="pin-number"><Icon name="pin" /></span><span class="pin-label" lang="de">{project.nameDe}</span></button>)}
+          {
+            basicListings.records.map((project) => (
+              <button
+                class="project-pin basic-pin"
+                data-depth="basic"
+                data-project={project.id}
+                data-lon={project.longitude}
+                data-lat={project.latitude}
+                aria-label={t("atlas.explore.basic", {
+                  name: listingName(project, locale),
+                })}
+                hidden
+              >
+                <>
+                  <span class="pin-number">
+                    <Icon name="pin" />
+                  </span>
+                  <span class="pin-label" lang={locale}>
+                    {listingName(project, locale)}
+                  </span>
+                </>
+              </button>
+            ))
+          }
         </div>
       </div>
 
-      <aside class="atlas-left" aria-label="Explore project records">
+      <aside class="atlas-left" aria-label={t("pages.index.68")}>
         <div class="atlas-intro">
-          <p class="eyebrow">A SOURCE-BACKED VIEW OF BERLIN</p><h1>
-            A city in progress.<br />A record of change.
-          </h1><p>Explore Berlin’s construction projects and the public sources behind them.</p>
+          <p class="eyebrow">{t("pages.index.69")}</p><h1>
+            {t("pages.index.70")}<br />{t("pages.index.71")}
+          </h1><p>{t("pages.index.72")}</p>
         </div>
         <details class="project-picker" open id="project-picker">
           <summary id="project-list"
-            ><span>Full dossiers</span><span class="count">{String(records.length).padStart(2, "0")}</span
+            ><span>{t("pages.index.73")}</span><span class="count"
+              >{String(records.length).padStart(2, "0")}</span
             ></summary
           >
           <div class="project-list">
@@ -150,11 +214,13 @@ const records = projects.map((project) => ({
                         </span>
                         <span>
                           <>
-                            <strong lang="de">{project.projectNameDe}</strong>
+                            <strong lang={locale}>
+                              {projectName(project, locale)}
+                            </strong>
                             <small>
                               {project.position
-                                ? "Placed in the atlas"
-                                : "Location withheld"}
+                                ? t("pages.index.74")
+                                : t("pages.index.75")}
                             </small>
                           </>
                         </span>
@@ -163,8 +229,11 @@ const records = projects.map((project) => ({
                         </span>
                       </>
                     </button>
-                    <a class="entry-static" href={`/projects/${project.slug}/`}>
-                      Read dossier →
+                    <a
+                      class="entry-static"
+                      href={localizePath(`/projects/${project.slug}/`, locale)}
+                    >
+                      {t("pages.index.76")}
                     </a>
                   </>
                 </div>
@@ -172,20 +241,33 @@ const records = projects.map((project) => ({
             }
           </div>
         </details>
-      <div class="atlas-coverage"><p class="coverage-purpose">Explore construction projects and their sources</p><a href="/records/">Browse the project index — {records.length} full dossiers <span> / </span> {basicListings.records.length} basic listings <span aria-hidden="true">↗</span></a><small>Source records, not a live progress survey</small></div>
+        <div class="atlas-coverage">
+          <p class="coverage-purpose">{t("pages.index.77")}</p><a
+            href={localizePath("/records/", locale)}
+            >{t("pages.index.78")}{" "}
+            {records.length}{" "}
+            {t("pages.index.79")}
+            <span> / </span>
+            {basicListings.records.length}{" "}
+            {t("pages.index.80")}
+            <span aria-hidden="true">↗</span></a
+          ><small>{t("pages.index.81")}</small>
+        </div>
       </aside>
-      <button class="city-return" id="back-to-city" hidden><Icon name="arrow" /> Back to previous view</button>
+      <button class="city-return" id="back-to-city" hidden
+        ><Icon name="arrow" /> {t("pages.index.82")}</button
+      >
       <aside
         class="record-panel"
         id="record-panel"
-        aria-label="Selected project"
+        aria-label={t("pages.index.83")}
         hidden
         tabindex="-1"
       >
         <button
           class="panel-close icon-button"
           id="close-record"
-          aria-label="Close project record"><Icon name="close" /></button
+          aria-label={t("pages.index.84")}><Icon name="close" /></button
         >
         {
           records.map((project, index) => (
@@ -197,102 +279,366 @@ const records = projects.map((project) => ({
               <div class="record-heading">
                 <>
                   <p class="eyebrow">
-                    PROJECT RECORD / {String(index + 1).padStart(2, "0")}
+                    {t("pages.index.85")} {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h2 lang="de">{project.projectNameDe}</h2>
+                  <h2 lang={locale}>{projectName(project, locale)}</h2>
                   <p class="record-id">
-                    {project.projectId} · Source-backed dossier
+                    {project.projectId} {t("pages.index.86")}
                   </p>
                 </>
               </div>
               {!project.position && (
-                <p class="withheld-note">
-                  Location withheld pending source verification. This record
-                  remains available without a map marker.
-                </p>
+                <p class="withheld-note">{t("pages.index.87")}</p>
               )}
-              <div data-record-section="overview" class="project-brief status-brief">
-                {project.projectId === "C-014" && project.start && <p class="brief-description" lang="de">Vorplatz des Hauptbahnhofs an der Invalidenstraße <a class="fact-source" href={project.start.evidence?.sourceUrl} aria-label="Source for project description"><Icon name="arrow" /></a></p>}
-                {project.status && <div class="status-line" data-fact-id={project.status.factId}>
-                  <span class="source-status" lang="de">{project.status.valueDe}</span>
-                  <a class="fact-source" href={project.status.evidence?.sourceUrl} aria-label="Source for reported status"><Icon name="arrow" /></a>
-                  <small>Source status · {String((project.status.asOfDate as {value?: string})?.value ?? "date not stated")}</small>
-                </div>}
+              <div
+                data-record-section="overview"
+                class="project-brief status-brief"
+              >
+                {locale === "en" && (
+                  <p class="translation-note">{t("translation.note")}</p>
+                )}
+                {project.projectId === "C-014" && project.start && (
+                  <p class="brief-description" lang={locale}>
+                    {factText(
+                      project.publishedFacts.find(
+                        (f) => f.factId === "c014-project-location",
+                      )!,
+                      locale,
+                    )}{" "}
+                    <a
+                      class="fact-source"
+                      href={project.start.evidence?.sourceUrl}
+                      aria-label={t("pages.index.88")}
+                    >
+                      <Icon name="arrow" />
+                    </a>
+                  </p>
+                )}
+                {project.status && (
+                  <div class="status-line" data-fact-id={project.status.factId}>
+                    <span class="source-status" lang={locale}>
+                      {factText(project.status, locale)}
+                    </span>
+                    <a
+                      class="fact-source"
+                      href={project.status.evidence?.sourceUrl}
+                      aria-label={t("pages.index.89")}
+                    >
+                      <Icon name="arrow" />
+                    </a>
+                    <small>
+                      {t("pages.index.90")}{" "}
+                      {String(
+                        (project.status.asOfDate as { value?: string })
+                          ?.value ?? t("pages.index.91"),
+                      )}
+                    </small>
+                  </div>
+                )}
                 <dl class="brief-dates">
                   <div>
-                    <dt>Start</dt>
-                    <dd>{project.start ? <><span lang="de">{String((project.start.dateValue as {canonicalDe?: string})?.canonicalDe ?? project.start.valueDe)}</span><a class="fact-source" href={project.start.evidence?.sourceUrl} aria-label="Source for announced start"><Icon name="arrow" /></a></> : <span class="date-missing">Not recorded</span>}</dd>
+                    <dt>{t("pages.index.92")}</dt>
+                    <dd>
+                      {project.start ? (
+                        <>
+                          <span lang={locale}>
+                            {dateText(
+                              String(
+                                (
+                                  project.start.dateValue as {
+                                    canonicalDe?: string;
+                                  }
+                                )?.canonicalDe,
+                              ),
+                              locale,
+                            )}
+                          </span>
+                          <a
+                            class="fact-source"
+                            href={project.start.evidence?.sourceUrl}
+                            aria-label={t("pages.index.93")}
+                          >
+                            <Icon name="arrow" />
+                          </a>
+                        </>
+                      ) : (
+                        <span class="date-missing">{t("pages.index.94")}</span>
+                      )}
+                    </dd>
                   </div>
                   <div>
-                    <dt>Planned</dt>
-                    <dd>{project.lead ? <><span lang="de">{String((project.lead.dateValue as {canonicalDe?: string})?.canonicalDe ?? project.lead.valueDe)}</span><a class="fact-source" href={project.lead.evidence?.sourceUrl} aria-label={`Source for planned milestone: ${project.lead.milestoneTermDe ?? "milestone"}`} title={String(project.lead.milestoneTermDe ?? "Planned milestone")}><Icon name="arrow" /></a></> : <span class="date-missing">Not recorded</span>}</dd>
+                    <dt>{t("pages.index.95")}</dt>
+                    <dd>
+                      {project.lead ? (
+                        <>
+                          <span lang={locale}>
+                            {dateText(
+                              String(
+                                (
+                                  project.lead.dateValue as {
+                                    canonicalDe?: string;
+                                  }
+                                )?.canonicalDe,
+                              ),
+                              locale,
+                            )}
+                          </span>
+                          <a
+                            class="fact-source"
+                            href={project.lead.evidence?.sourceUrl}
+                            aria-label={t("atlas.source.planned", {
+                              term: enumLabel(
+                                project.lead.milestoneType,
+                                locale,
+                              ),
+                            })}
+                            title={t("atlas.milestone")}
+                          >
+                            <Icon name="arrow" />
+                          </a>
+                        </>
+                      ) : (
+                        <span class="date-missing">{t("pages.index.94")}</span>
+                      )}
+                    </dd>
                   </div>
                 </dl>
-                {((project.lead?.displayWarnings ?? []) as string[]).length > 0 && <p class="brief-warning">Target date passed; completion unconfirmed.</p>}
-                <p class="brief-source-key">Planned dates do not confirm actual progress. <span><Icon name="arrow" /> Original source</span></p>
-                <button class="brief-more brief-overview-link" data-expand-record><span><strong>{project.history.length ? "Review source history & evidence" : "Review published facts & evidence"}</strong><small>{project.history.length ? "Earlier statements and cited sources" : "Published facts and cited sources"}</small></span><Icon name="arrow" /></button>
-                <a href={project.correctionPath} class="correction-link">Suggest a correction</a>
+                {((project.lead?.displayWarnings ?? []) as string[]).length >
+                  0 && <p class="brief-warning">{t("pages.index.96")}</p>}
+                <p class="brief-source-key">
+                  {t("pages.index.97")}{" "}
+                  <span>
+                    <Icon name="arrow" /> {t("components.RawFact.27")}
+                  </span>
+                </p>
+                <button
+                  class="brief-more brief-overview-link"
+                  data-expand-record
+                >
+                  <>
+                    <span>
+                      <>
+                        <strong>
+                          {project.history.length
+                            ? t("pages.index.98")
+                            : t("pages.index.99")}
+                        </strong>
+                        <small>
+                          {project.history.length
+                            ? t("pages.index.100")
+                            : t("pages.index.101")}
+                        </small>
+                      </>
+                    </span>
+                    <Icon name="arrow" />
+                  </>
+                </button>
+                <a
+                  href={localizePath(project.correctionPath, locale)}
+                  class="correction-link"
+                >
+                  {t("pages.index.102")}
+                </a>
               </div>
               <div data-record-section="history" hidden>
-                <p class="history-note">
-                  Dates describe source statements, not observed construction
-                  progress.
-                </p>
-                <h3 class="history-title">Project overview</h3>
-                {project.publishedFacts.filter((f) => !project.history.includes(f)).map((fact) => <RawFact fact={fact} />)}
-                <h3 class="history-title">Source history</h3>
+                <p class="history-note">{t("pages.index.103")}</p>
+                <h3 class="history-title">{t("pages.index.104")}</h3>
+                {project.publishedFacts
+                  .filter((f) => !project.history.includes(f))
+                  .map((fact) => (
+                    <RawFact fact={fact} />
+                  ))}
+                <h3 class="history-title">{t("pages.index.105")}</h3>
                 {project.history.length ? (
                   project.history.map((f) => <RawFact fact={f} />)
                 ) : (
-                  <p>
-                    No separate milestone history is published for this project.
-                  </p>
+                  <p>{t("pages.index.106")}</p>
                 )}
-                {project.conflicts.map((conflict) => <section class="record-conflict" data-conflict-id={conflict.conflictId}><h3>Unresolved source conflict</h3>{conflict.facts.map((fact) => <RawFact fact={fact} />)}</section>)}
-                {project.withheldFacts.length > 0 && <section class="record-withheld"><h3>Withheld facts</h3>{project.withheldFacts.map((fact) => <p>{fact.factType.replaceAll("_", " ")} · {fact.reasonCode?.replaceAll("_", " ")}</p>)}</section>}
+                {project.conflicts.map((conflict) => (
+                  <section
+                    class="record-conflict"
+                    data-conflict-id={conflict.conflictId}
+                  >
+                    <h3>{t("pages.index.107")}</h3>
+                    {conflict.facts.map((fact) => (
+                      <RawFact fact={fact} />
+                    ))}
+                  </section>
+                ))}
+                {project.withheldFacts.length > 0 && (
+                  <section class="record-withheld">
+                    <h3>{t("pages.index.108")}</h3>
+                    {project.withheldFacts.map((fact) => (
+                      <p>
+                        {enumLabel(fact.factType, locale)} ·{" "}
+                        {t(`reason.${fact.reasonCode}`)}
+                      </p>
+                    ))}
+                  </section>
+                )}
               </div>
               <div class="record-actions full-record-actions">
                 <>
-                  <a class="primary-link" href={`/projects/${project.slug}/`}>
-                    Open full dossier <Icon name="arrow" />
+                  <a
+                    class="primary-link"
+                    href={localizePath(`/projects/${project.slug}/`, locale)}
+                  >
+                    {t("pages.index.109")} <Icon name="arrow" />
                   </a>
-                  <a href={project.correctionPath} class="correction-link">
-                    Suggest a correction
+                  <a
+                    href={localizePath(project.correctionPath, locale)}
+                    class="correction-link"
+                  >
+                    {t("pages.index.102")}
                   </a>
                 </>
               </div>
             </section>
           ))
         }
-        {basicListings.records.map(project => <section id={`record-${project.id}`} class="project-record basic-record" hidden>
-          <div class="record-heading"><p class="eyebrow">BASIC LISTING · RESEARCH ONGOING</p><h2 lang="de">{project.nameDe}</h2></div>
-          <div class="project-brief status-brief" data-record-section="overview">
-            <p lang="de">{project.locationDe}</p>
-            {basicMilestones.some(fact => fact.projectId === project.id) && <dl class="brief-dates basic-dates" aria-label="Source-reported milestones">{basicMilestones.filter(fact => fact.projectId === project.id).map(fact => <div data-basic-milestone={fact.kind}><dt>{fact.label}</dt><dd><span lang="de">{fact.valueDe}</span><a class="fact-source" href={fact.sourceUrl} aria-label={`Source for ${fact.label.toLowerCase()}`} title={fact.exactTextDe}><Icon name="arrow" /></a></dd></div>)}</dl>}
-            <p class="brief-source-key">Official register reference point. Site extent and construction progress have not been verified.</p>
-            <a class="brief-more brief-overview-link" href={project.sourceUrl}><span><strong>Official project page</strong></span><Icon name="arrow" /></a>
-            <details class="basic-evidence"><summary>Source details</summary><p>Title and location reproduced from the official meinBerlin register, checked {basicListings.reviewedOn}.</p>{basicMilestones.filter(fact => fact.projectId === project.id).map(fact => <div class="milestone-evidence"><p lang="de">{fact.exactTextDe}</p><p>Source edited <span lang="de">{fact.sourceModifiedDateDe}</span> · retrieved {fact.retrievedOn.slice(0,10)}</p><a href={fact.sourceUrl}>Original milestone source</a></div>)}<a href={project.evidence.inventory_url}>Register source</a><p>Location field: <code>{project.evidence.location_pointer}</code></p><p>Source fingerprint: <code>{project.evidence.artifact_hash}</code></p></details>
-            <a href="/corrections/" class="correction-link">Suggest a correction · {project.id}</a>
-          </div>
-        </section>)}
+        {
+          basicListings.records.map((project) => (
+            <section
+              id={`record-${project.id}`}
+              class="project-record basic-record"
+              hidden
+            >
+              <div class="record-heading">
+                <>
+                  <p class="eyebrow">{t("pages.index.110")}</p>
+                  <h2 lang={locale}>{listingName(project, locale)}</h2>
+                </>
+              </div>
+              <div
+                class="project-brief status-brief"
+                data-record-section="overview"
+              >
+                {locale === "en" && (
+                  <p class="translation-note">{t("translation.note")}</p>
+                )}
+                <p lang="de">{project.locationDe}</p>
+                {basicMilestones.some(
+                  (fact) => fact.projectId === project.id,
+                ) && (
+                  <dl
+                    class="brief-dates basic-dates"
+                    aria-label={t("pages.index.111")}
+                  >
+                    {basicMilestones
+                      .filter((fact) => fact.projectId === project.id)
+                      .map((fact) => (
+                        <div data-basic-milestone={fact.kind}>
+                          <dt>{t(`basic.${fact.kind}`)}</dt>
+                          <dd>
+                            <span lang={locale}>
+                              {dateText(fact.valueDe, locale)}
+                            </span>
+                            <a
+                              class="fact-source"
+                              href={fact.sourceUrl}
+                              aria-label={t("atlas.source.basic", {
+                                label: t(`basic.${fact.kind}`),
+                              })}
+                            >
+                              <Icon name="arrow" />
+                            </a>
+                          </dd>
+                        </div>
+                      ))}
+                  </dl>
+                )}
+                <p class="brief-source-key">{t("pages.index.112")}</p>
+                <a
+                  class="brief-more brief-overview-link"
+                  href={project.sourceUrl}
+                >
+                  <>
+                    <span>
+                      <strong>{t("pages.index.113")}</strong>
+                    </span>
+                    <Icon name="arrow" />
+                  </>
+                </a>
+                <details class="basic-evidence">
+                  <p lang="de">{project.nameDe}</p>
+                  {basicMilestones
+                    .filter((fact) => fact.projectId === project.id)
+                    .map((fact) => (
+                      <div class="milestone-evidence">
+                        <p lang="de">{fact.exactTextDe}</p>
+                        <p>
+                          {t("pages.index.116")}{" "}
+                          <span lang="de">{fact.sourceModifiedDateDe}</span>{" "}
+                          {t("pages.index.117")} {fact.retrievedOn.slice(0, 10)}
+                        </p>
+                        <a href={fact.sourceUrl}>{t("pages.index.118")}</a>
+                      </div>
+                    ))}
+                  <a href={project.evidence.inventory_url}>
+                    {t("pages.index.119")}
+                  </a>
+                  <>
+                    <p>
+                      {t("pages.index.120")}{" "}
+                      <code>{project.evidence.location_pointer}</code>
+                    </p>
+                    <p>
+                      {t("pages.index.121")}{" "}
+                      <code>{project.evidence.artifact_hash}</code>
+                    </p>
+                  </>
+                </details>
+                <a
+                  href={localizePath("/corrections/", locale)}
+                  class="correction-link"
+                >
+                  {t("pages.index.122")} {project.id}
+                </a>
+              </div>
+            </section>
+          ))
+        }
       </aside>
       <div class="city-explorer">
-        <span class="explorer-label">Explore Berlin</span>
+        <span class="explorer-label">{t("pages.index.123")}</span>
         <details id="area-picker">
-          <summary><span id="area-name">Choose an area</span><span aria-hidden="true">⌄</span></summary>
+          <summary
+            ><span id="area-name">{t("pages.index.124")}</span><span
+              aria-hidden="true">⌄</span
+            ></summary
+          >
           <div class="area-options">
-            <button type="button" data-area="overview">City overview</button>
-            {places.places.map((p) => <button type="button" data-area={`${p.longitude},${p.latitude}`}>{p.name}</button>)}
+            <button type="button" data-area="overview"
+              >{t("pages.index.125")}</button
+            >
+            {
+              places.places.map((p) => (
+                <button
+                  type="button"
+                  data-area={`${p.longitude},${p.latitude}`}
+                >
+                  {p.name}
+                </button>
+              ))
+            }
           </div>
         </details>
         <span id="detail-status" role="status"></span>
       </div>
-      <div class="map-right-controls" role="group" aria-label="Map navigation">
-        <button id="north" class="north-button" aria-label="Orient map north"
+      <div
+        class="map-right-controls"
+        role="group"
+        aria-label={t("pages.index.126")}
+      >
+        <button
+          id="north"
+          class="north-button"
+          aria-label={t("pages.index.127")}
           ><span id="north-arrow">↑</span><small>N</small></button
         ><div class="zoom-stack">
-          <button id="zoom-in" aria-label="Zoom in"><Icon name="plus" /></button
-          ><button id="zoom-out" aria-label="Zoom out"
+          <button id="zoom-in" aria-label={t("pages.index.128")}
+            ><Icon name="plus" /></button
+          ><button id="zoom-out" aria-label={t("pages.index.129")}
             ><Icon name="minus" /></button
           >
         </div>
@@ -301,70 +647,119 @@ const records = projects.map((project) => ({
         <div class="map-readout">
           <span class="eyebrow" id="view-label">BERLIN</span><span
             class="scale-rule"
-            id="scale-rule"></span><span id="scale-label">1 km</span>
+            id="scale-rule"></span><span id="scale-label"
+            >{t("pages.index.130")}</span
+          >
         </div>
-        <div class="map-toolbar" role="group" aria-label="Atlas controls">
+        <div class="map-toolbar" role="group" aria-label={t("pages.index.131")}>
           <button id="home-view"
-            ><Icon name="compass" /><span>Overview</span></button
+            ><Icon name="compass" /><span>{t("pages.index.132")}</span></button
           ><button id="orbit-view" aria-pressed="false"
-            ><Icon name="play" /><span>Orbit</span></button
+            ><Icon name="play" /><span>{t("pages.index.133")}</span></button
           ><span class="toolbar-divider"></span><button
             id="plan-view"
             aria-pressed="false"
-            ><Icon name="layers" /><span>Plan view</span></button
+            ><Icon name="layers" /><span>{t("pages.index.134")}</span></button
           ><button
             id="labels-view"
             aria-expanded="false"
             aria-controls="label-panel"
-            ><Icon name="map" /><span>Project key</span></button
+            ><Icon name="map" /><span>{t("pages.index.135")}</span></button
           ><span class="toolbar-divider"></span><button
             id="fullscreen-view"
-            aria-label="Enter fullscreen"><Icon name="expand" /></button
+            aria-label={t("pages.index.136")}><Icon name="expand" /></button
           >
         </div>
         <button id="about-map" class="about-map" aria-haspopup="dialog"
-          ><Icon name="info" /> About this model</button
+          ><Icon name="info" /> {t("pages.index.137")}</button
         >
       </div>
       <section
         class="label-panel"
         id="label-panel"
-        aria-label="Project map key"
+        aria-label={t("pages.index.138")}
         hidden
       >
         <div class="label-panel-heading">
-          <h2>Project map key</h2><button
+          <h2>{t("pages.index.138")}</h2><button
             id="close-labels"
             class="icon-button"
-            aria-label="Close label controls"><Icon name="close" /></button
+            aria-label={t("pages.index.139")}><Icon name="close" /></button
           >
         </div>
         <label
-          ><span class="legend-symbol legend-category"><Icon name="pin" /></span><span
-            >Project markers<small>2 dossier pins · 150 basic listings</small></span
+          ><span class="legend-symbol legend-category"><Icon name="pin" /></span
+          ><span
+            >{t("pages.index.140")}<small>{t("pages.index.141")}</small></span
           ><input type="checkbox" data-label-kind="projects" checked /></label
         >
-        <label><span class="legend-symbol"><Icon name="pin" /></span><span>Basic listings<small>Official register references · research ongoing</small></span><input type="checkbox" data-label-kind="basic" checked /></label>
+        <label
+          ><span class="legend-symbol"><Icon name="pin" /></span><span
+            >{t("pages.index.142")}<small>{t("pages.index.143")}</small></span
+          ><input type="checkbox" data-label-kind="basic" checked /></label
+        >
         <div class="place-filter">
-          <label for="basic-place-filter">Basic listings near a place</label>
+          <label for="basic-place-filter">{t("pages.index.144")}</label>
           <select id="basic-place-filter">
-            <option value="">All 150 listings</option>
-            {places.places.map((place) => <option value={`${place.longitude},${place.latitude}`}>{place.name}</option>)}
+            <option value="">{t("pages.index.145")}</option>
+            {
+              places.places.map((place) => (
+                <option value={`${place.longitude},${place.latitude}`}>
+                  {place.name}
+                </option>
+              ))
+            }
           </select>
-          <p id="place-filter-status" role="status">Showing all 150 basic listings.</p>
-          <small>Within 3 km of the selected place’s map point. This is a proximity filter, not a district boundary.</small>
+          <p id="place-filter-status" role="status">{t("pages.index.146")}</p>
+          <small>{t("pages.index.147")}</small>
         </div>
         <div class="project-category-key">
-          <button class="legend-project-link" data-project="C-014"><span class="legend-symbol legend-category"><Icon name="publicspace" /></span><span>Public space<small>Europaplatz Süd</small></span></button>
-          <button class="legend-project-link" data-project="C-010"><span class="legend-symbol legend-category"><Icon name="school" /></span><span>School<small>Heinrich-Hertz-Gymnasium</small></span></button>
-          <button class="legend-project-link" data-project="C-019"><span class="legend-symbol legend-category"><Icon name="energy" /></span><span>Energy<small>Power-to-Heat · location withheld</small></span></button>
+          <button class="legend-project-link" data-project="C-014"
+            ><span class="legend-symbol legend-category"
+              ><Icon name="publicspace" /></span
+            ><span
+              >{t("pages.index.148")}<small>{t("pages.index.149")}</small></span
+            ></button
+          >
+          <button class="legend-project-link" data-project="C-010"
+            ><span class="legend-symbol legend-category"
+              ><Icon name="school" /></span
+            ><span
+              >{t("pages.index.150")}<small>{t("pages.index.151")}</small></span
+            ></button
+          >
+          <button class="legend-project-link" data-project="C-019"
+            ><span class="legend-symbol legend-category"
+              ><Icon name="energy" /></span
+            ><span
+              >{t("pages.index.152")}<small>{t("pages.index.153")}</small></span
+            ></button
+          >
         </div>
-        <p>Solid pins: full dossiers. Smaller outlined pins: basic listings, research ongoing.</p>
-        <details class="basic-directory"><summary>Browse 150 basic listings</summary>{basicListings.records.map(project => <button class="project-select" data-project={project.id} aria-expanded="false"><strong lang="de">{project.nameDe}</strong><Icon name="arrow" /></button>)}</details>
+        <p>{t("pages.index.154")}</p>
+        <details class="basic-directory">
+          <summary>{t("pages.index.155")}</summary>{
+            basicListings.records.map((project) => (
+              <button
+                class="project-select"
+                data-project={project.id}
+                aria-expanded="false"
+              >
+                <>
+                  <strong lang={locale}>{listingName(project, locale)}</strong>
+                  <Icon name="arrow" />
+                </>
+              </button>
+            ))
+          }
+        </details>
       </section>
       <p class="interaction-hint" id="interaction-hint">
-        Drag to explore <span>·</span> Scroll to zoom <span>·</span> Right-drag to
-        rotate
+        {t("pages.index.156")}
+        <span>·</span>
+        {t("pages.index.157")}
+        <span>·</span>
+        {t("pages.index.158")}
       </p>
       <div
         class="selection-status sr-only"
@@ -375,17 +770,20 @@ const records = projects.map((project) => ({
     </main>
     <footer class="atlas-footer">
       <span
-        >Geometry: <a
+        >{t("pages.index.159")}
+        <a
           href="https://daten.berlin.de/datensaetze/gebaudehohen-umweltatlas-wfs-d918088d"
-          >Geoportal Berlin</a
+          >{t("pages.index.160")}</a
         > · <a href="https://www.openstreetmap.org/copyright"
-          >© OpenStreetMap contributors</a
+          >{t("pages.index.161")}</a
         ></span
-      ><span class="footer-center"
-        >A model of the city. An evidence trail for its future.</span
-      ><nav aria-label="Legal information">
-        <a href="/impressum/">Impressum</a><a href="/privacy/">Privacy</a><a
-          href="/corrections/">Corrections</a
+      ><span class="footer-center">{t("pages.index.162")}</span><nav
+        aria-label={t("pages.index.163")}
+      >
+        <a href={localizePath("/impressum/", locale)}>{t("layouts.Base.37")}</a
+        ><a href={localizePath("/privacy/", locale)}>{t("layouts.Base.38")}</a
+        ><a href={localizePath("/corrections/", locale)}
+          >{t("pages.index.164")}</a
         >
       </nav>
     </footer>
@@ -393,55 +791,45 @@ const records = projects.map((project) => ({
       <button
         class="dialog-close icon-button"
         id="close-model"
-        aria-label="Close model information"><Icon name="close" /></button
-      ><p class="eyebrow">THE MAP, EXPLAINED</p><h2>
-        A city model.<br /><em>Not a live survey.</em>
+        aria-label={t("pages.index.165")}><Icon name="close" /></button
+      ><p class="eyebrow">{t("pages.index.166")}</p><h2>
+        {t("pages.index.167")}<br /><em>{t("pages.index.168")}</em>
       </h2><p>
-        This architectural view uses real building footprints and
-        source-recorded heights. Buildings are simplified extrusions; roof
-        shapes and facades are not reconstructed. The model does not show
-        current construction progress.
+        {t("pages.index.169")}
       </p><dl>
         <div>
-          <dt>Building geometry</dt><dd>
-            Geoportal Berlin · Gebäudehöhen 2022 (Umweltatlas), derived from
-            ALKIS footprints and the LoD2 model. <a
-              href="https://www.govdata.de/dl-de/zero-2-0">dl-de/zero-2-0</a
+          <dt>{t("pages.index.170")}</dt><dd>
+            {t("pages.index.171")}
+            <a href="https://www.govdata.de/dl-de/zero-2-0"
+              >{t("pages.index.172")}</a
             >.
           </dd>
         </div><div>
-          <dt>Geographic context</dt><dd>
+          <dt>{t("pages.index.173")}</dt><dd>
             © <a href="https://www.openstreetmap.org/copyright"
-              >OpenStreetMap contributors</a
-            >, ODbL. Simplified water, green space and transport geometry. Road
-            widths and bridge elevations are illustrative.
+              >{t("osm.contributors")}</a
+            >{t("pages.index.174")}
           </dd>
         </div><div>
-          <dt>Coverage & precision</dt><dd id="model-coverage">
-            Citywide building coverage with detail loaded as you explore.
-            Building shapes smaller than 50 m² are omitted; coordinates are
-            rounded to 0.5 m. The overview uses simplified footprints of shapes
-            at least 500 m². Source gaps remain gaps. Geometry predates these
-            project records.
+          <dt>{t("pages.index.175")}</dt><dd id="model-coverage">
+            {t("pages.index.176")}
           </dd>
         </div><div>
-          <dt>Project evidence</dt><dd>
-            Two of three full dossiers have published positions. Another 150 basic listings use official register reference points, not verified site boundaries. Dates and
-            statements retain their individual sources; map geometry is not
-            project-status evidence.
+          <dt>{t("pages.index.177")}</dt><dd>
+            {t("pages.index.178")}
           </dd>
         </div><div>
-          <dt>Privacy & access</dt><dd>
-            Model assets are served with this site. No map provider, analytics,
-            location permission or account is required. The <a href="/records/"
-              >project index</a
-            > and dossiers work without JavaScript.
+          <dt>{t("pages.index.179")}</dt><dd>
+            {t("pages.index.180")}
+            <a href={localizePath("/records/", locale)}
+              >{t("pages.index.181")}</a
+            >
+            {t("pages.index.182")}
           </dd>
         </div>
       </dl><details class="label-sources">
-        <summary>Explore Berlin · navigation sources</summary><p>
-          Area names and navigation anchors from OpenStreetMap; these are not
-          project locations.
+        <summary>{t("pages.index.183")}</summary><p>
+          {t("pages.index.184")}
         </p><ul>
           {
             places.places.map((p) => (
@@ -452,12 +840,9 @@ const records = projects.map((project) => ({
           }
         </ul>
       </details><details class="label-sources">
-        <summary
-          >Geographic label sources · {contextLabels.labels.length}</summary
+        <summary>{t("pages.index.185")} {contextLabels.labels.length}</summary
         ><p>
-          German place names from OpenStreetMap, snapshot 7 September 2026.
-          Label anchors are approximate cartographic positions, not project
-          locations.
+          {t("pages.index.186")}
         </p><ul>
           {
             contextLabels.labels.map((label) => (
@@ -470,17 +855,21 @@ const records = projects.map((project) => ({
           }
         </ul>
       </details>
+      <p>
+        <a href={localizePath("/terminology/", locale)}
+          >{t("translation.terms")}</a>
+      </p>
       <p class="model-date">
-        This page was generated on {generatedOn}. Data dates vary by source.
-      </p><a href="/method/" class="primary-link"
-        >Read the method <Icon name="arrow" /></a
+        {t("layouts.Base.39")}{" "}
+        {generatedOn}{t("pages.index.187")}
+      </p><a href={localizePath("/method/", locale)} class="primary-link"
+        >{t("pages.index.188")} <Icon name="arrow" /></a
       >
     </dialog>
     <noscript
       ><div class="noscript-note">
-        The 3D atlas requires JavaScript. <a href="/records/"
-          >Open the accessible map and project index →</a
-        >
+        {t("pages.index.189")}
+        <a href={localizePath("/records/", locale)}>{t("pages.index.190")}</a>
       </div></noscript
     >
     <script>

@@ -1,0 +1,12 @@
+---
+import Page from "../../../corrections/projects/[projectId].astro";
+import { loadPublicProjectPages } from "../../../../lib/public-projects";
+export function getStaticPaths() {
+  return loadPublicProjectPages().map((project) => ({
+    params: { projectId: project.projectId },
+    props: { project },
+  }));
+}
+---
+
+<Page {...Astro.props} />

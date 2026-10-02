@@ -1,0 +1,128 @@
+{
+  "construction-start": {
+    "de": "Baubeginn",
+    "en": "Construction start",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.construction-start",
+    "review": null
+  },
+  "completion": {
+    "de": "Fertigstellung",
+    "en": "Completion",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.completion",
+    "review": null
+  },
+  "technical-handover": {
+    "de": "technische Übergabe",
+    "en": "Technical handover",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.technical-handover",
+    "review": null
+  },
+  "commissioning": {
+    "de": "Inbetriebnahme",
+    "en": "Entry into operation / commissioning",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.commissioning",
+    "review": null
+  },
+  "works": {
+    "de": "Baumaßnahme",
+    "en": "Construction works / measure",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.works",
+    "review": null
+  },
+  "planning-documents": {
+    "de": "Bauplanungsunterlage",
+    "en": "Construction planning documents",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.planning-documents",
+    "review": null
+  },
+  "financing": {
+    "de": "finanziert aus dem Plätzeprogramm",
+    "en": "Financed from the Plätzeprogramm",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.financing",
+    "review": null
+  },
+  "gross": {
+    "de": "brutto",
+    "en": "Gross",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.gross",
+    "review": null
+  },
+  "approximately": {
+    "de": "rund",
+    "en": "Approximately",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.approximately",
+    "review": null
+  },
+  "by": {
+    "de": "bis",
+    "en": "By / until",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.by",
+    "review": null
+  },
+  "up-to": {
+    "de": "bis zu",
+    "en": "Up to",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.up-to",
+    "review": null
+  },
+  "planned": {
+    "de": "geplant",
+    "en": "Planned",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.planned",
+    "review": null
+  },
+  "envisaged": {
+    "de": "vorgesehen",
+    "en": "Envisaged",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.envisaged",
+    "review": null
+  },
+  "expected": {
+    "de": "voraussichtlich",
+    "en": "Expected",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "glossaryRevision": "186f6c8b35f634a6005adc737b6275b1c57143c502094486f0f7b5d9c1a04316",
+    "contextMessage": "term.context.expected",
+    "review": null
+  }
+}

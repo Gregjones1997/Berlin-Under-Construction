@@ -1,17 +1,20 @@
 ---
+import { forLocale, localeFromPath, localizePath } from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import "../styles/site-shell.css";
-const pathname = Astro.url.pathname;
+const pathname = Astro.url.pathname.replace(/^\/en(?=\/|$)/, "") || "/";
 const links = [
-  { href: "/", label: "The atlas", active: pathname === "/" },
+  { href: "/", label: t("nav.atlas"), active: pathname === "/" },
   {
     href: "/records/",
-    label: "Project index",
+    label: t("nav.index"),
     active:
       pathname.startsWith("/records/") || pathname.startsWith("/projects/"),
   },
   {
     href: "/method/",
-    label: "How it works",
+    label: t("nav.method"),
     active: pathname.startsWith("/method/"),
   },
 ];
@@ -19,24 +22,51 @@ const links = [
 
 <header class="site-header">
   <a
-    href="/"
+    href={localizePath("/", locale)}
     class="site-wordmark"
-    aria-label="Berlin, Under Construction home"
+    aria-label={t("components.SiteHeader.28")}
   >
-    <span class="site-symbol" aria-hidden="true"><svg width="30" height="34" viewBox="0 0 30 34" fill="none"><path d="M1 33V1h18v10h10v22H1Z" stroke="currentColor" stroke-width="2"/><path d="M7 7v20M13 7v20M19 17v10M25 17v10" stroke="currentColor" stroke-width="2"/></svg></span>
+    <span class="site-symbol" aria-hidden="true"
+      ><svg width="30" height="34" viewBox="0 0 30 34" fill="none"
+        ><path d="M1 33V1h18v10h10v22H1Z" stroke="currentColor" stroke-width="2"
+        ></path><path
+          d="M7 7v20M13 7v20M19 17v10M25 17v10"
+          stroke="currentColor"
+          stroke-width="2"></path></svg
+      ></span
+    >
     <span>BERLIN<span class="site-wordmark-sub">UNDER CONSTRUCTION</span></span>
   </a>
-  <nav aria-label="Main navigation">
+  <nav aria-label={t("components.SiteHeader.29")}>
     {
       links.map((link) => (
-        <a href={link.href} aria-current={link.active ? "page" : undefined}>
+        <a
+          href={localizePath(link.href, locale)}
+          aria-current={link.active ? "page" : undefined}
+        >
           {link.label}
         </a>
       ))
     }
   </nav>
   <span class="site-edition"
-    ><i aria-hidden="true"></i> Independent city atlas <span>01 / BERLIN</span
-    ></span
+    ><i aria-hidden="true"></i>
+    {t("components.SiteHeader.30")}
+    <span>{t("components.SiteHeader.31")}</span></span
   >
+  <nav class="language-switch" aria-label={t("nav.language")}>
+    {
+      (["de", "en"] as const).map((language) => (
+        <a
+          data-language={language}
+          href={localizePath(Astro.url.pathname, language)}
+          lang={language}
+          hreflang={language}
+          aria-current={language === locale ? "page" : undefined}
+        >
+          {language.toUpperCase()}
+        </a>
+      ))
+    }
+  </nav>
 </header>

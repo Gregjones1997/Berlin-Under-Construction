@@ -1,4 +1,7 @@
 ---
+import { forLocale, localeFromPath, localizePath } from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 interface Props {
   context: string;
 }
@@ -8,36 +11,32 @@ const contact = "jonesg158@gmail.com";
 ---
 
 <section>
-  <h2>Contact</h2>
+  <h2>{t("components.CorrectionChannels.1")}</h2>
   <p>
-    Send requests to <a href={`mailto:${contact}`}>{contact}</a> and include
-    the context <strong>{context}</strong>. This monitored address handles the
-    three channels below; naming the request type keeps their procedures distinct.
+    {t("components.CorrectionChannels.2")}
+    <a href={localizePath(`mailto:${contact}`, locale)}>{contact}</a>
+    {t("components.CorrectionChannels.3")}
+    <strong>{context}</strong>{t("components.CorrectionChannels.4")}
   </p>
 </section>
 
 <section>
-  <h2>Evidence correction</h2>
+  <h2>{t("components.CorrectionChannels.5")}</h2>
   <p>
-    For an ordinary evidence correction, identify the displayed statement, the
-    proposed correction and the primary source supporting it.
+    {t("components.CorrectionChannels.6")}
   </p>
 </section>
 
 <section>
-  <h2>Formal right of reply</h2>
+  <h2>{t("components.CorrectionChannels.7")}</h2>
   <p>
-    State explicitly that the message is a formal right-of-reply request and
-    identify the passage concerned. It will not be treated as an ordinary
-    evidence correction.
+    {t("components.CorrectionChannels.8")}
   </p>
 </section>
 
 <section>
-  <h2>Data-protection request</h2>
+  <h2>{t("components.CorrectionChannels.9")}</h2>
   <p>
-    State explicitly that the message is a data-protection request and identify
-    the affected information or GDPR right. It will be handled separately from
-    editorial corrections and rights of reply.
+    {t("components.CorrectionChannels.10")}
   </p>
 </section>

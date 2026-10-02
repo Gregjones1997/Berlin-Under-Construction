@@ -1,12 +1,15 @@
 ---
+import { forLocale, localeFromPath, localizePath } from "../../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import CorrectionChannels from "../../components/CorrectionChannels.astro";
 import Base from "../../layouts/Base.astro";
 ---
 
 <Base
-  title="Corrections and formal requests — Berlin, Under Construction"
-  heading="Corrections and formal requests"
-  subtitle="Evidence corrections, rights of reply and data-protection requests follow distinct channels."
+  title={t("pages.corrections.index.41")}
+  heading={t("layouts.Base.36")}
+  subtitle={t("pages.corrections.index.42")}
 >
-  <CorrectionChannels context="the affected project or organization" />
+  <CorrectionChannels context={t("pages.corrections.index.43")} />
 </Base>

@@ -32,7 +32,7 @@ commit `57c1e68`, including six source-stated dates on five basic listings.
 The 21 September handoff recheck matched the published release; no redeploy was needed.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Prioritize the owner's 2 October request for complete German/English visitor-facing coverage and synchronized editing. Start with the public-copy inventory and shared localization module in [the bilingual-site proposal](bilingual-site-plan.md); resolve the English claim-explanation display treatment before publishing it. This is planning evidence, not completed localization or verified translations. Latest atlas release checks remain in [public-deployment.md](public-deployment.md); physical-phone validation and the exact 195px failure-state recheck remain open. Source-backed type review and resident need-validation remain separate.
+**Next action:** Independently review the bilingual candidate's consequential English explanations and contextual terminology, following [bilingual-editing.md](bilingual-editing.md), then package and verify the complete bilingual release. Shared German-default/English rendering and synchronized editing are implemented locally; evidence is in [bilingual-evidence/README.md](bilingual-evidence/README.md). The release gate correctly remains closed for 20 fact explanations, 150 listing titles and 14 term mappings; no human confirmation is claimed. Physical-phone acceptance and the exact 195px failure-state recheck remain open. Existing public-release evidence is in [public-deployment.md](public-deployment.md); source-backed type review and resident need-validation remain separate.
 
 **Deferred product backlog (not today's handoff):**
 For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße
@@ -46,9 +46,9 @@ location proposals. Prepare C-001/C-002 bridge and C-008 school publication revi
 resolve the exact C-009 building scope (only a coarse campus point is known), then
 route/station geometry for C-003/004/005. These remain proposals, not public records.
 The owner prioritized pipeline/map expansion while away on 9 September.
-The mobile layout is deployed and checked in a simulated mobile viewport; physical-phone validation remains. Then implement German-default pages with a top-right DE / EN selector,
-preserving the current project/view when switching languages and canonical evidence
-in both versions. The owner requested this language direction on 9 September.
+The mobile layout is deployed and checked in a simulated mobile viewport; physical-phone validation remains. The local bilingual candidate now implements German-default pages with a top-right
+DE / EN selector, preserving the current project/view and canonical evidence.
+Independent translation review and bilingual deployment remain pending. The owner requested this language direction on 9 September.
 Keep the accepted small-card layout. Improve which source-backed
 information leads (what changes, expected milestone, latest meaningful update),
 and review the header/footer; the owner clarified that the selection-layout study

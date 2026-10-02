@@ -331,3 +331,7 @@ summary { min-height:44px; padding-block:10px; }
 /* Evidence-state colours stay distinct from the rust action role. */
 .record-conflict { border-left-color: var(--state-conflict); }
 .record-withheld { border-left-color: var(--state-withheld); }
+.terms-table { overflow-x:auto; }
+.terms-table table { border-collapse:collapse; width:100%; font-size:.9rem; }
+.terms-table th,.terms-table td { padding:.8rem; border-bottom:1px solid var(--border-default); text-align:left; vertical-align:top; }
+.terms-table tbody th { min-width:9rem; }

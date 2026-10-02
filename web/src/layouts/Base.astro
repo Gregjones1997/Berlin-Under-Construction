@@ -1,4 +1,7 @@
 ---
+import { forLocale, localeFromPath, localizePath } from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import "../styles/global.css";
 import SiteHeader from "../components/SiteHeader.astro";
 import { publicationAsOfDate } from "../lib/milestone-freshness.mjs";
@@ -16,37 +19,51 @@ const generatedOn = publicationAsOfDate(process.env.PUBLICATION_AS_OF_DATE);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale} data-publication-date={generatedOn}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Source-backed records of major Berlin construction projects."
+    <link
+      rel="alternate"
+      hreflang="de"
+      href={localizePath(Astro.url.pathname, "de")}
     />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={localizePath(Astro.url.pathname, "en")}
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={t("layouts.Base.33")} />
     <title>{title}</title>
   </head>
   <body>
     <SiteHeader />
     <main id="page-content" class={pageClass}>
       <header class="mast">
-        <p class="document-eyebrow">BERLIN / PROJECT RECORDS</p>
+        <p class="document-eyebrow">{t("layouts.Base.34")}</p>
         <h1 lang={headingLang}>{heading}</h1>
         {subtitle && <p class="sub">{subtitle}</p>}
       </header>
       <slot />
       <footer>
         <p>
-          <a href="/method/">Method</a> · <a href="/corrections/"
-            >Corrections and formal requests</a
+          <a href={localizePath("/terminology/", locale)}
+            >{t("translation.terms")}</a>
+        </p>
+        <p>
+          <a href={localizePath("/method/", locale)}>{t("layouts.Base.35")}</a> ·
+          <a href={localizePath("/corrections/", locale)}
+            >{t("layouts.Base.36")}</a
           >
-          · <a href="/impressum/">Impressum</a> · <a href="/privacy/">Privacy</a
+          · <a href={localizePath("/impressum/", locale)}
+            >{t("layouts.Base.37")}</a
+          > · <a href={localizePath("/privacy/", locale)}
+            >{t("layouts.Base.38")}</a
           >
         </p>
         <p>
-          This page was generated on {generatedOn}. Project data may have
-          earlier source and retrieval dates; each fact links to its original
-          source.
+          {t("layouts.Base.39")}{" "}
+          {generatedOn}{t("layouts.Base.40")}
         </p>
       </footer>
     </main>

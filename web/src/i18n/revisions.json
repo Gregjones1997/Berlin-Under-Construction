@@ -1,0 +1,3262 @@
+{
+  "messages:components.CorrectionChannels.1": {
+    "en": "2b5c3d26721ae9c350cf3009318b626f0fc8a90b4a2ac0ca8099c05aa849282e",
+    "de": "325eecf9d30156c2e6f261e611c40f571de28ad8924b6b2167b2aa78a3d9dadb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.2": {
+    "en": "9f5b0babbb0f0c66f7471e3ac6de0c11a7b76beb03c3088050d28d929acdfed0",
+    "de": "f01f2570d51f5d70d6465e6ed4ade98f005ad4b4e2bbdd872bb96c3214812a81",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.3": {
+    "en": "01897476dfd6754b3c70553f40868ce832058b808a3f5cd11b25051ca317ee3c",
+    "de": "6eb4cee633a93c13b7ec3deb2f67331a55918cc24664869782d49f0489319fd4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.4": {
+    "en": "2e97573e8a510ca63c009085b8c9069aa460a4cc956b6f3f9fcb8104f2b81e08",
+    "de": "02337c2e52c98860a23955afe3b0acc9ac7500d8aa18f820c3aaf54b709a97d0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.5": {
+    "en": "84ba0700f039af25ce732f45d476f3aa2fe359660421522b8bcd8c06b528d298",
+    "de": "3acc992ce35f49d0af8bd17429eb46ed80a17a91abea3aaed3437636267609e7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.6": {
+    "en": "bd41577344627f4df01a2dc9fa7de1c907122b6262a3eed3d12d5a3afe8414e9",
+    "de": "816ae69179c16691ae5a342330f160e4b621928bbd65fbb531d929fd3277cdb2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.7": {
+    "en": "7adc2e872ca0547dbdb8fe43d1567eba1a8ce0bb591b465f28249443206ad85d",
+    "de": "f1928b2edb702dce671979ee0f541b9672f77d4d0c48bbdef0fae55d5df2aa56",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.8": {
+    "en": "198a591a8701b82e709eaf382fac5ed4cd26658fc4df29e6ca50f6bea702e5c7",
+    "de": "a5929c461aec91ff527a7f3d3fbe744f6a7d3237837d6795e400f29f395166d3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.9": {
+    "en": "c52967a51cff7f9782248e9aefe755624ccc5bb01430efa2e22b8f6c234e42a8",
+    "de": "a027b3b7fc2a591ec806ab336603c5d8d94da15185bd355e7d58e71158266593",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.CorrectionChannels.10": {
+    "en": "e81678578955fe9be1b383016db891acb8e131b58bf7e40b6795bde3250a9ad7",
+    "de": "64437b473fb3a8933079772ed09b87153c664889370c47101efabafe778267f7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.11": {
+    "en": "5153b476a660eedcba165e15c1bedee61cec317777df15341f68a0dac6916ba4",
+    "de": "ec44c7613edfe013610f3f6d55e8cc7c8fca3ee0079c259dcb80b66b356c3168",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.12": {
+    "en": "8ba074fe0afecc845557ff349e3da7eb6cbfd4e750040f41ed30aad9d291b9cd",
+    "de": "6dc37ae235853458409fc7b00d6dc41e46ad96217cbdee2911e2f80a33a1cf67",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.13": {
+    "en": "70770d7c4a898e200f828bf45578ba78bc42376541e221f7ae6d41baa7457737",
+    "de": "f03e95ca845ba8ea85b500d50e785fefb1a487b9083ddf4caa5361b9bdb0ede1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.14": {
+    "en": "b51489bde8d895135531d774a017a1213584cee230b5581347527b285b88f652",
+    "de": "279cd2d4d91b66b185cc66778ba7f3bc57caebf6d5ba430775d8f4642f298b43",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.15": {
+    "en": "9257b7edf7a50a3b7ddf180fcfc7cf2d26146a6730f1682b5bd24c349af7c64c",
+    "de": "ca11eddd00ebd18fd6fa420320fec1c043d68436fd4c27ece4d99cea19440f5b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.16": {
+    "en": "cdf456324d79339fb65d70e478ff69a4562157f0ab9a65b2de190c4ad29678dc",
+    "de": "d7e27583b1db49f6f1396439fa58f83a22b52c3a80f4517da6b407ffe84b9e3a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.17": {
+    "en": "1eb831d7664624a2b6450d2dd0c9e266136460cd9f0f12da593db75f4c187d7f",
+    "de": "46bb4360a0b68f3f0b1b0a6f6f0a2fcb227ad175afcccdcaa060289c62e34aa6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.18": {
+    "en": "7dc3c20c82b537fbac2dc260517131854971269a7c69631553fff13e9eec6343",
+    "de": "411b54fd7a19b63ade10c3d6791e62e4eec1ccf325d812b1e74ec4fa345410d4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.19": {
+    "en": "e5b873cbda1dfe501a59f099e7e6be52aee3c5a24f54916e7d536cf74745f4c8",
+    "de": "99177f834adf005e2966c40620750769205f6c9beade8ced6e794593a5bb2ad7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.20": {
+    "en": "cecf39ff5873276e5a098d8130ac210909a437b94b1872c03d89fee9261daaae",
+    "de": "585c9fa41730d2b10654f37f181bb374329a10cfce62668c5a7e95b37130b3a3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.21": {
+    "en": "1711fe9034c315ca3d2129448d93d5fc2881d6450c7922fbb5ff95996542bbf5",
+    "de": "1b839c2a2e527aad3c68b2e458d37113bb71a3bc5f3b7d3275d52ebb3ccf9ab9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.22": {
+    "en": "fcf92b58638b39fce72fec15812a866c302b28fdc5c431b2b374264f541869d2",
+    "de": "7379230db047e16af157e6a9041b1ab4d51ed839584cc567ac51d43617ecf1fa",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.23": {
+    "en": "e66b666880c9e12d7e53f4f4eb17a1836c87e594640ce80fc35daeca50e33c66",
+    "de": "a6ca5bb3c42d8fec075ca826601764254391be3edc011ae33e29d4cbb0936214",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.24": {
+    "en": "03867aea70acaf4c5dce37a76cf5a04dab1716d6ff70bf03761c439daa8be984",
+    "de": "52947d0640c2ccbb34ebc4f0a6b0661db3c77545ca6f41f2f92545e32951c44b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.25": {
+    "en": "fe0c1d9969c9b33534cd25ab41822626251fcbcba9154c95a11baabe4abc25de",
+    "de": "19d5b7aa8bb45a0635c68f118664788c650d18a28e3f09a872fbdb78deeb8b90",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.26": {
+    "en": "aace556028ba141db8ee2201640beb4cc0be9708ef8794de730df0227718bb89",
+    "de": "d3dccf796f69c291a3cac52806c80b6ba39bf60d9df614eb0d795fefd409d115",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.RawFact.27": {
+    "en": "fdf375c74f9afaf2107a27e72126e02490a3876b1f741be9e086af1d6e6efa15",
+    "de": "bbfd117725cf9cbaab8f1888cea2cfda5cb0b07e92d6bc19216fa8dcf9c68944",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.SiteHeader.28": {
+    "en": "1826c61eceb85d119af6673ab93e2b781a0708dca7c2c4766a26e305ec6addd4",
+    "de": "4ec64295b2ec844c1d85686325874198c5e1f22e85e0996d1b4043e224702c4f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.SiteHeader.29": {
+    "en": "eb355944b92d10582856f8aea34b3e319ba465b8aa4c294973cf53f665399a2c",
+    "de": "e8fc666068c9a96611c388d40a4769d4cbf5eee4cbabfdea977e99978de99a61",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.SiteHeader.30": {
+    "en": "f5106bd31a1fd68439ca1f68667d6cf6aad6bd3fd035ee6397084b912f5636ed",
+    "de": "4b7e52f93ab9d8c318684c99cf44bb4e4bce4134d4d47d66167bd659f553e596",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:components.SiteHeader.31": {
+    "en": "7c05faf6515a1442839c67c9b888acbe3aa642013a24e6770edb2feb70957cb5",
+    "de": "7c05faf6515a1442839c67c9b888acbe3aa642013a24e6770edb2feb70957cb5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.33": {
+    "en": "2cbdd83c17137ef08ce5ea5ee562bd27b4ac7dcab2be7f1b7c9e68f928412524",
+    "de": "5e6ec410538524e30d4efe5c9f292797f7af17496c047ab03cf4aa23cf0c7e6b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.34": {
+    "en": "85b9a5369644bf0484ecfc152d6792fed6275cfc930e90539c635a7f9a95bcff",
+    "de": "db84ca3503a889ba9d37c01e6ac8884c6bb1fea3a3b0baefb30133ac06ef5078",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.35": {
+    "en": "52a0f9b65b278850b53aad23136b5d574299e8fb92311304346d19736b7e9cce",
+    "de": "04d93180bc56875c365ce9645979c03bbaf8e470dc66f0b8226d9456e174ebc9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.36": {
+    "en": "cd7512608f5035e12cda1fc58450ba757b6666f61d355aff8c99f9a0177f0766",
+    "de": "d924a4407421970053900e33924170a5f778d3cd19ce44136e29a2f06cc64bf0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.37": {
+    "en": "b8a6051923e6a6494006784ea7e367dd4cefe964281e8d32a5464f56798a76d2",
+    "de": "b8a6051923e6a6494006784ea7e367dd4cefe964281e8d32a5464f56798a76d2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.38": {
+    "en": "54a57c3147c49f33de5898b87084ad2b14c4ab308f762454bf92aca907478ad5",
+    "de": "f624fcf0dcbb39c0a05062577622a8530ae2b04c335ae657cb19bbda57e90d6b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.39": {
+    "en": "809c50ce479817c134bda1860aa680ebf763fe28ef128fac7c12286239f28669",
+    "de": "87cd183d4c0d8d8464e140893d2120f4ecb00ff96e5044eb2b6567b5ac34308a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:layouts.Base.40": {
+    "en": "a0e63a4c0866d08ff680e0ca0a52f0511e999c08a1afc037156045ec1709a854",
+    "de": "99c999885106842b662b74fdcc6817d71e5a011d0dc4b11f2cfa756e338fceb3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.corrections.index.41": {
+    "en": "139fa4ca4d760e9f9babb24da4a7cf9c07ab3e49e4237c630dfcd12dacd235c2",
+    "de": "566572ce7d14afa4069e7565499e8c367101e58ad05a4be76beb37c407a8a778",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.corrections.index.42": {
+    "en": "ad6c3166d4312a9e5734fb009dec20d05b7f932033dbda44cf7eab39b1af66f9",
+    "de": "a9958dff5d95fa09f608794a001b1199627cf234088f01b96c1a9b5d01fc7cee",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.corrections.index.43": {
+    "en": "c5b666771ef8071b6f61fd85653144cdf4f92cff1669a6e017123f2961552382",
+    "de": "e4a2619dea18a3b5b47a72ab7ffb2da5fbc63f84f0c26e9d54caf6d2c1bd838b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.corrections.organizations.50hertz.44": {
+    "en": "27b0b9fdfaebdd81776f5ad93f66637a82b0a49858bacce467adfb8039df3998",
+    "de": "3642d214a8645187fbb3f3eab211182fe87703e3da0b6ac9576e19dba03774de",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.corrections.organizations.50hertz.45": {
+    "en": "9407a9cbda3e26faf9426f4bae35450a06348d871cbd2d3ec4d2cbd56508a014",
+    "de": "e6e2ade60902e1dfdd44aaf083f09402eb801c59149769cebc68cf1c40fe95d9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.corrections.organizations.50hertz.46": {
+    "en": "7c6d7914011ebfdac0f83aba25ee02cb96b4301d9687541755e17c54d4bfa505",
+    "de": "dd8e463941bef98a918b16d070ea9efbf3f6cb8c6ff55782feaba8c17fefb83c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.corrections.organizations.50hertz.47": {
+    "en": "1a2f645e07d37c3a58190fe4a5588a61ac2305627e9be73beda1c7376b43e893",
+    "de": "2657a7ceb51bdef19e63675909bca9d91deba868ffd6927386cfef27a6b59717",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.48": {
+    "en": "2841805664c0d11c5a51d39bd6a87ed768ba25ccf1f365aaf8daae78ca7de67b",
+    "de": "2841805664c0d11c5a51d39bd6a87ed768ba25ccf1f365aaf8daae78ca7de67b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.49": {
+    "en": "7ed9dadc3435c2ad7b3ef1370f34e3a9c73e0f8ac2d35e11b8affe2048c44c3d",
+    "de": "71b1ce07420abf863b9cbf50d375e8aa72166c7f486ec1e77be60cc142c20c24",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.50": {
+    "en": "80db4ccdca106d37b920206331fcfe3e9e50a9e763d89b54ce3ad5ac8cf30f03",
+    "de": "af6e56aacd8097c3fb7597b08ecb3d87a040f6ab58067a4b8ff9f5b747adb9be",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.51": {
+    "en": "17507dcf845793fab0da66594804a4ca956ba284bcf36f4cef09e0a0a50c421a",
+    "de": "ef34d93f31a76f7a4f4f7025a73b00a4b544a2b488972ff3ccd3a004e3e3c833",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.52": {
+    "en": "c91217be093ab3d9bc1ce3917ed89c8c74d60bada735eea6ca2fa9fb9c3931a3",
+    "de": "66529b7757a102fec987e3e912bc2a1116442a5b40c92aa4725c34c170f56dcf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.53": {
+    "en": "9efc2bc72a4ab95d7a35f244c52989409b91571b01158210482345bccda9a38c",
+    "de": "e0d802cfa96779c9dfab8f8e9ff38e820f922b751f9ee4d418bc1a1896eab155",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.54": {
+    "en": "8526e2293bc1e3af919c2f91a0771dd93d0dbd2d87ad4e5bb99f574086c1e549",
+    "de": "3e84a6854ca0a50173e93ce9c2779c1a5186b7b9605c703ed262c659735c1994",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.55": {
+    "en": "67bd677fc084a59f906f02c7b69e5a2f4bc48fd74bcfd138b7483bdb951d0dcf",
+    "de": "0b12d9e29266dbfc74ff82e3a6e58516abb7925dc98bebd2a095d181f473b8d6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.impressum.56": {
+    "en": "1b82b0eeac5656b10069379a1e7e84f2319555e2911c734329617975f92e8698",
+    "de": "b076d931f5436161ebc966f7dab68d92e17e7f3adc15dca2c9e87cc0129bd69a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.58": {
+    "en": "29b2fcc51176c082db26529be9330a9471b362547bfe6083e2287d9025a1eacc",
+    "de": "c7c1b13df6617e0544fcd109a0cbafbd1d1f0b611edc20bcba34cbd9f0a0308e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.59": {
+    "en": "2e0a99b0063f67a8ccd044d4369e4abe3ca4e06440db077138bcdc449876e18b",
+    "de": "28a51f5b8d5a4ff077edb223745cb35aae415879f4030a36c4cf53099fca8560",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.60": {
+    "en": "59ca6e50b070637470b95dde934ecbe89c2b1997b0d8c0de65b7b8636dc452d8",
+    "de": "6f35c0c5170b03a78348d289c6a006d62177c2dabb5fadee0eb56083539931b4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.61": {
+    "en": "10f4ca65dee1602027bf9259644ed417ff167fce3d80df06546333efb09b8251",
+    "de": "4488dc19cdec0445fe52231729d4a2a2f7136b8a22814ef8b0f2deaf3ebbfb85",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.62": {
+    "en": "e9f3c426726a3d74f1f1536ed1d57d508f831598bd857b613686c975f82355fa",
+    "de": "0ac805a26b0aef9731c72ec15095b2b2320845ab4e2869b257c073d9e6213cf3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.63": {
+    "en": "fe1a3cddb94ee18e599a6a965c84f7ac0ef6d4500c63b862f274cab7dbdc986a",
+    "de": "704643091f56c95232482acd5060b14b244160836a77db75734ee61bfb17d431",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.64": {
+    "en": "b5780c873756e704436626b86647f4c7ef9c918a5532b7fb53a33ecc2627f390",
+    "de": "9848a33f85305893147e04b103662580088581ea10988f293d81de8493ea4c5b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.65": {
+    "en": "0b9dc93f3ef6b5958fdd740898d57675c466a27ca7fe2977f5d9fefc1b665323",
+    "de": "99df7d60c6d6012fd987b303bc03ec59ae92f9f0adf8da8c527478854b7bd9f6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.66": {
+    "en": "c4fb3af8d24885b8c6310c3ff0cb5a8c1638c7b37a52b8b56afc95766fcfd888",
+    "de": "17cd905e3172ed34f39d2e46a04927c225b86f2a7323b504349e8876dd9d4a24",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.67": {
+    "en": "d8b8392e2c542950ca64867168e4ef87d4ad606882d5898f826b51c6d553988f",
+    "de": "948643cb59e8274f40500593ac6029afcf419fc434c870fb8177b5185e0a2e9b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.68": {
+    "en": "e85efef60ba4f852327a9fd5221f4062bddab986f25ceddeb2b78f3c1229bc9c",
+    "de": "1a8b9684cda757c0a965120eed21038f3a053c409110699f6954d0287e8ddbab",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.69": {
+    "en": "54df5ab43ffa7cc14ed5069d68bd1a1be0841d54233a2ddfbf530c16d97cccf5",
+    "de": "28a7f4222b0d0390b9888e57bc1880dbf600483cd9413350f45b86fe22862567",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.70": {
+    "en": "4c8f782f8a256953943d20b6e979a5c694bdf52ce885759f209172fa65ad8eef",
+    "de": "dcc6875e28c5c2042e03998b9fa2e12c40c5a4923432f84251b2c89b6a09bf10",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.71": {
+    "en": "658ebee695808ea412bc86763c96253bba02658bdd810c1115e865cf5ee5ecd5",
+    "de": "4674139c1f9a6c3403b598e6148b3785d02bf0f0261bf54156e48ffa1491a639",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.72": {
+    "en": "2b84207b7eeede5059cfaee8e4b90a4f89c971c5161319eec05313532d54c5f8",
+    "de": "0020d226507fdaebb769b59d96845f0de502263b6fa81e7b00d8723fea573deb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.73": {
+    "en": "b33dd1be66341eddd857c0c4258fe9193f4727f4700c5d3f0a97130fbdfb42c5",
+    "de": "58ee7d80b6c27f255576a518ce5e3c893b1d0cda27b9a9ef178a6a5fbc424773",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.74": {
+    "en": "23f967a9db06d4c52bf79768cafd468cb349930cbc3744b947a5e0b704792aa4",
+    "de": "6e12885c51586bcc740077d0eaa64e64df2f465dcd0cbc5a9a5a4b1fb6c153f6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.75": {
+    "en": "00ac9fffc1e6a2ead026e0725d71d1d35ebdf1f2c8e9ede70af0c2ec0612638f",
+    "de": "283fc7c3f5bd29c5ca16c18e72057a707121d318a4785d657fa4214c4eefbd82",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.76": {
+    "en": "822c65d9e458c3fd0bd4e6ae3de6ecf2c3d36cfad612550f87411e98e3603a80",
+    "de": "73d5d35a0b3267a07fafcf15cfb4563e1b4ff18f6719c7e882e5c4cd3599aeed",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.77": {
+    "en": "b09445939688dbfaad2805c2fa927e27c7d45322434f1c2075002ac1b1802a9b",
+    "de": "90232d4e175ad186ef6d1ecd75f8142a2a133dcbcdd10dda993321147c601454",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.78": {
+    "en": "e17ca8828c75be5b167dbc23eaa5ddfd5073bfc60688ff6b05feb0ca6b6f262e",
+    "de": "d1d7568f6a7fb5679a1be6237babaf8a8cd821094a5d3d95c486e6cd842230b0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.79": {
+    "en": "3067c68133f342eb2840cc2cb8010f23d0722bd037bcfe210b86ef79dd767762",
+    "de": "ac673f16bf094c1fde104aa247b7615ff42bb9be4f5cf080cb40af7c045de997",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.80": {
+    "en": "b6257489ebd7e7cceb62651396e8119f016ed3d29281adb01e5fdcea2426dd0a",
+    "de": "d3398b366cc9cef304d9370260e740009c275118bd5aeccd7627af65bbb269da",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.81": {
+    "en": "6c736f30da5f50baf4a34bc1a55eed16cfc3aeefa988fba92757b0965e2dc862",
+    "de": "7b99a10c487da5b51c65c6bad3850586ce92325e9081a5cc689f86f468cd7291",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.82": {
+    "en": "3fe810ada430ef7eae643e2613c664d734c7eb5e5a445e226fa199c64787861f",
+    "de": "36a11202f8a71ee392199c4d35e9e627e88e3df9a86e0621e3fe26a7ada346bd",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.83": {
+    "en": "dcdc01256306be8291ab75256134a96d398ff6d48ceb8d82faf11d6e6dbfa3f7",
+    "de": "01eb3d7f140cdfe913fee0a42f8b558a1a0bae58cbdbc3f5c1a16872579f6fc9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.84": {
+    "en": "2aa3d6ae754885561eea183aa06cbae7336423fd2500843f07260043b20429a7",
+    "de": "645faf781fd0c6c45b847addaa84bd3899ce43c4cc5820b8578d238f5da3f4a5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.85": {
+    "en": "670481e0ba8ab138dffb715a06017239eda44789581df1a7afa24476f35cd185",
+    "de": "4c3c3cea27233e43f6fc8374592d1276e6694eb5e4a43a62a4d5a1ed092df5d0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.86": {
+    "en": "b91193c94cacbbacde4397b80a1b92d923e82dc9c7b98057085061ca9a298b0c",
+    "de": "11e80ad601d845b2470e1caf7e5968aed6c63cfd5511950f510c34614b06bec1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.87": {
+    "en": "7090b518faddd1cba739e08c937019b08aabdf8ac8a1d5b099407f5c407aa352",
+    "de": "c6423af0b6d96eabdc6f48d926748c8f8739b8ab722f59c7b66dd46c53663059",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.88": {
+    "en": "39a5aa3f4ce2c90f9417f36cd6c302276400a0b578748d86237e904668ed029f",
+    "de": "60de9b0e0658d1cc4fb89cbd96ead0ca971e5781b3c5dc720320166ff8d9dae3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.89": {
+    "en": "419a21e05350f06ae6031e6f8b0faac42f39438018c807114376083fc942afaa",
+    "de": "2d90643a89caf27b1aaba6674fa05cdf084f37b0cbdec9adbe67138c1b3845b6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.90": {
+    "en": "3e1babbdede181926be1ff062cc5d637b344c42a030dd96e77ff523c17a2bfa1",
+    "de": "9d5bd68575e0620041519de264d679063b86e5babdf056a99c3f9be4688cb039",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.91": {
+    "en": "41008d067600e5b9856049c0a96da490b35c3fc145a29fb27408f3e16cf244cb",
+    "de": "93f6b5abcb43cf111af0cdb8b2b9def4cef1b78bb9d3cf86789e027eca25ccff",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.92": {
+    "en": "e4bb9f1ece9af9264a3b9e3913bbdb2cf497457167b14ced5f85688bfde74644",
+    "de": "0d95fd6a769f3f6800c778a6577f21cec5b1b9d5025daf0096ee3dc30f3a7f14",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.93": {
+    "en": "c275c9d217bcc613853a8454b94b8008665d4e8b0def03823d131416e8f79dae",
+    "de": "189a8ad66e3ee2cedc8cdbd0fa5b0231888256436d6925b3cba3f85f86deaad5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.94": {
+    "en": "b37c7879f6c359f633ed1c478dc9ffac47ad7aac648653bb4a4d509a25fdb3b0",
+    "de": "659dbb79e501761f5a54be87206a06cefc0997815dc3542b8200549ebc64911b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.95": {
+    "en": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225",
+    "de": "dbbae30b567c7f783910729c411e2be399074c1320190688b9435d0047b35e2f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.96": {
+    "en": "5eedfa5bf563471449df5790df9ca6e4a3689d7d43dcef8bbca55ee6b4929a31",
+    "de": "756be3c11c6f3f0b81f7bf144f0d3a5c25a83794eefe3536a39069476dbf3acb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.97": {
+    "en": "79b7ca310971fee70f4bda4634835e74fb9c4e47f3257ae48ab075c96d57214f",
+    "de": "6c0ac9bec1c67fb12c7a5f497b3f769517d7c25e6db70f924e8261f4207a92c1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.98": {
+    "en": "c8e0ebbfaea8a1b5dcdace5ba582e1eba1e6fca03c8b43fb05cc44c2351426cb",
+    "de": "a1b184ccf9af5cbb8edfb08db54197af720c820adfc47cdb7e49cf4100a96030",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.99": {
+    "en": "d8ea7816024a2536e2972ebbee1c1848b5a15ab988bf5d7b601494799c483b02",
+    "de": "99acbc0220d828551766ce2cb99fb9758e2697c729606c0b8d8f362a8f5e8cf1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.100": {
+    "en": "c80a43975a4ab57cd09cddcd154b04f70e76bc0be44ae15bf5c2944565e5ee02",
+    "de": "abeda6746526ec375a794917911f25312550aa1692df83b24b9c201b3d7b2f93",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.101": {
+    "en": "bea53f7f8144edb9da4e7094f30e92020e725dc48e392616088b91a329f7c404",
+    "de": "2418b027895f59f44d10e552062774c6887f751670b059f36babcf0ffc9a99a7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.102": {
+    "en": "0d2b244bede02983ee3faf01f9949ca3b627e7fe1a38c03a62e2eb0cbb269649",
+    "de": "8b5fdd67b11f5c670fffcddc033cc506439c1a9cb90887024388bdcbd4ce70a0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.103": {
+    "en": "578f723d2639a08170bf2acc17d62194fa7328b1ab98908cc9e8c62ab36c6e25",
+    "de": "8235c1864eff1f98b1916dbda0dc38a48a72ff446830e03931bac586ef04fba1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.104": {
+    "en": "89e313e15d5a2569b27aa2fe2cd439f7ead4b60d127899b7d9fb344c26914452",
+    "de": "206eccc86f2401d5bd848f9c2221c20cc4b3d5974df6f3cc58b7ae06d2ac1d2c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.105": {
+    "en": "6ab00906ce510d2de8f399f0776eb75cee5ebf9ee63f0c0a233f0390713ee526",
+    "de": "587e78eaf5a28f1ed4135b113c50c6f76bf11a92de12f772e894cf7e94c5f3b0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.106": {
+    "en": "c0cf555ca0f9a492846227936e8aabfe40e03785dda95bef6ccae5bb67f14209",
+    "de": "10d48e5142ba3ebf12738c3645f23cd6bdad2c47f0a087105508ddc91203f1be",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.107": {
+    "en": "2c038fba631a3fb7216a1027b80b7602deffd4ec5c6ca4756bfa52226bb2c857",
+    "de": "815b3341c07b4b9c2132bc2b86639f7e5edaef49c56ebfae89f41f2b47397905",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.108": {
+    "en": "c28a8005c50d49811ef24b9049f14911da8593503dba3b27d49ef281dab5c5cc",
+    "de": "4c18f104ce93468a958199d80838ac84bd670c39fad8874f1ccf4b47ce6617ea",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.109": {
+    "en": "b48be581563b039378a7deb7b3070d21ebacf8c61768022323ce4254c37a1f3e",
+    "de": "6ce838812f817d09312692023cbf35f9054c4a2a0656585101acf06fe9045be6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.110": {
+    "en": "3bc3d5ab04605a862555cec5129c2e76a482d87eb0dd30570503ab3aad41add5",
+    "de": "9c714c93f8f2d875dd48e1789ec43d5581517e91843417c6a1371946918619a5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.111": {
+    "en": "8853250c851ddc8c4a4a3456d7b85049b3115a12979b34f9cf95a37dce509727",
+    "de": "2216a75f03fc71dc82f6041d8fdb66b480586afe6b42ccd1220c141b53c643ea",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.112": {
+    "en": "cc3046e5cd2fb40b81340ef254217ab820086e0df4f5ca5f8d4a4801b8c9439a",
+    "de": "4534d84e48f576e167e953790e72431424d399bcc700c18902b46a93c7ffebd3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.113": {
+    "en": "18708197d4a22d77ad52f2daef821faa7fd1a17ab316508fcfc47f0fac01dbcf",
+    "de": "104198999edf1e4a03564ef2a1d7d4b9c39517b42a89ad71928b58ed6f06b3fb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.114": {
+    "en": "95de492834d708ef512ff7548a7f57f892212ec512e3982cc41bc77eac15d13d",
+    "de": "40e5ddcb89fe160ae92cb9e8bc5bdd0c004baa0a5e37912b5683c36d3f335f88",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.115": {
+    "en": "6f8cb9cdfe2fe96ac3c058d23c6045032937a996f10ce50b9772090dc743ee70",
+    "de": "23817999e746bd3472421582b1ef120eb47b4625a357fa258d0f0c4fbecef7bf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.116": {
+    "en": "b86674c183d0aa706625a2d5e461439f2f45e346f61ebcc40989f4158abe22b0",
+    "de": "df446693116f58f767f5879a74a837ea05f176766714d896a3841bed43a9aa3c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.117": {
+    "en": "ec55ca38fc51c4e277593353bb1e23c49c9f42a68299db415ad3b88901b998ae",
+    "de": "ae67ac5d226c7e278f4d44e84841d8aee0e5119e3dbd2397afc8fde0b370efad",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.118": {
+    "en": "2acec9b0c9eb496150e8928c203f73fb8e5bc5548eec4dbbb02e58692b95d3b9",
+    "de": "d005e43a692388ad5cf9bfa72b4f7a925074e8b2c7031c7f767995e92f025689",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.119": {
+    "en": "d8e37036ae1ab7a4a471456e599789f3e7630da5ce48d416c92517b4f945605c",
+    "de": "e2998b76500ad4f85c94b0df57fee83d58804989614645884c4716c53ba60df3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.120": {
+    "en": "85f35efb316e05f401bbe89c341a728b90a19a6d5acde9ff3e0e1b2dba558bea",
+    "de": "bc137ae4bd5eec7f40dceded12c029dfd43e98392342cd19adf3325c12a2ac9e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.121": {
+    "en": "3bb2918cce6dace15041330947b71580783bfa5c5765f895f6f39a551a557611",
+    "de": "6fd78bd8361ace75134104fe051ec28f5eeab967a9e1681117dad2a795d7d6ca",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.122": {
+    "en": "8faf2edde39a2eee0fa775aaaae154439688c12340b76b8f5cd3b2bbd043c6f8",
+    "de": "bc399f158fcba3f92a660d133034c7eb8d5a4fe244c55adf5ef575d360eb762b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.123": {
+    "en": "a8edcf3bb944d058974f2f6ba4c7de802595c8aeed1ebde976d12bd914d0b5d9",
+    "de": "e858ec91501e239df146e4d9915148f45dbc849956e96c5a280e6c9b4d99d631",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.124": {
+    "en": "7c72052f7261f3d90ab1b030abf621957633e9e142078f20a692c8d128cd25a3",
+    "de": "ddbe804e76ce2a70f794eb77ab5d9d136d02ab02d038aad5ec8be244b58b4f54",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.125": {
+    "en": "d43a56aa472c82fde1bf523c3951c2f8241451c6c46eb2247880774707c7a721",
+    "de": "fdb693a710f8cd3c1fd8acdd96434c844fc8e07ae147a70691f49ad1be997c4f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.126": {
+    "en": "90db16178204204cebd05c147c5bc8142e1721d23c8d968f350cbc9b5503b40a",
+    "de": "79297b1bd2d297d6fafe123531df1c2100f140db7a30eb81f10fbff6da07259e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.127": {
+    "en": "ab663d184a0f315c8fe6a71b3ad7cd48fa1f7bb91b32d4b9217870fb44bb7ab4",
+    "de": "ac3791e0dae2136d210b00b777af424ec00d7d3569b0fba2b6d2945f37619940",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.128": {
+    "en": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "de": "9d7e5880854d4f15bada0c2dc621d6069a30128aeb0e67967aba6a892293d64d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.129": {
+    "en": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "de": "34283cf0f2dfde44aaaaa1612b119408ccbdacfef819755958539adc7bd63e18",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.130": {
+    "en": "2e4ca9c4a225714ba82252be0afff646fe2f1593c0ac9326a2d2907685347e04",
+    "de": "2e4ca9c4a225714ba82252be0afff646fe2f1593c0ac9326a2d2907685347e04",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.131": {
+    "en": "5023f51cce71d861ad9eb35429f6c105805dac1b97a0626ec1afde05e2d40dc9",
+    "de": "649277fa0eb02951bd55d750af7bedb923e989ca49150588eaa19d7351f50b42",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.132": {
+    "en": "d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100",
+    "de": "2d2baea43a0e9429720824524a0e3601ec5dd0590f9474e5d2c602049aae7830",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.133": {
+    "en": "29ac7e56b3b4654f52463cbf0f7b5fc7f299dd24ba9583c0c9f3a51832a9f073",
+    "de": "fe3caf7601c61832557c00a85e21285d558bb718a9d6313360f95fcf16cd200d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.134": {
+    "en": "3523a6beb7bd63797f5fac1f4a6c8b26f48ba7d74aa76f7b96ee94850c679c93",
+    "de": "b8d015e008d326402b4a704413866fcd35c788c4f05ba67bc3b2b3c2c7754fee",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.135": {
+    "en": "d37b096aaf1539fae7366e6ed904522e1448f51b1e273960985717fecdc9a12b",
+    "de": "0f3ad3eb540d34a7e01f528363cadec7c5495cef95c27c34be4b6e5c9982faf3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.136": {
+    "en": "4a56b3cb600893846daac2e782128fa8e547c1da9f9d03887442304208b8ae7d",
+    "de": "7a43bce54d52e5e176ce4f5c5239f5df03d1dd4afe05a4cd37e2464e64cfb11d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.137": {
+    "en": "f4b90b69cb5a3c566f3a943ca4c66598daab32ab4ff1ec111314b6dd9cf80983",
+    "de": "2268b4ee4cd6c5cd439f9328663c4342ca7920d790293aa64b8877ae45888a6d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.138": {
+    "en": "45112b6db8095c8eb0c616f1325235d78cb1d8fffa728780cd29623dd7f845a0",
+    "de": "0f3ad3eb540d34a7e01f528363cadec7c5495cef95c27c34be4b6e5c9982faf3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.139": {
+    "en": "4c86ef8eec78de9923c7cbbe9d8b1f153279dabad71a13b56efac5f2afc29536",
+    "de": "93d66d6dfa31861167fe2f587e1121934a782d41ae1b89e4b3b5d193d4049f22",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.140": {
+    "en": "c4435536bf27e54ab4f312736f5cefa13121b45992420d50724c86c01e3f998a",
+    "de": "e838193b71c235d9bd4ca9f02a2538adedc1b8f15a9a0522c5ec5feb7539809b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.141": {
+    "en": "b2e28a2909afa4bd226c3bd5b10d34cf7eef8fff8f72f92459b2240dae45332d",
+    "de": "11755778543b1fd0941a358e73b686dfca008420b136d5d9ea2dbe6edceec95f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.142": {
+    "en": "ff67d90c657c15af0f769e1bf2e749b2e425bf04e96020723b42cdc719012195",
+    "de": "d3398b366cc9cef304d9370260e740009c275118bd5aeccd7627af65bbb269da",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.143": {
+    "en": "b20a8254039d4059a6ba816cf62403358385e686f8020c0bc2dd650836c0cf89",
+    "de": "bac1daec881ca57f1faa21dfb66ebe5f63fad52d139507cab0d11dfd5752460c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.144": {
+    "en": "e70f8dcf2aba9a14b629f4dc1171d56875d06d67110ac261d0495a19a141166d",
+    "de": "b18333b5728fef2e49bae361039ea80b6fc92a8851ec6a998f97697e231553fd",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.145": {
+    "en": "1579f65b58b9f25acac7932449884c07baed3954fcf55a02920e7548e08b00a8",
+    "de": "5df1c465507ded029d554a3c57c4af118e34e63d14e378430350c81e1b1e25f9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.146": {
+    "en": "57da86b4aeea354634b87cbfafd1150ce016941848466f08844b0b1bd4a4d50c",
+    "de": "779b7641c56cdc995529fcf03d2fe4c83cba9ad3cecd07f87fcada5526100876",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.147": {
+    "en": "fa083f413e64ddc5f3af70b33806b7a14acec8a53115ee529b385cd97c35531b",
+    "de": "e881d7c7c471ff00cef0170c6aca4c7f26e8a73284c7b31358083e10a09c14f3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.148": {
+    "en": "4b158a3dd754b5a12759772bb30bd91cfc548a071f6f71781d3769be8ae7055d",
+    "de": "400679043550f611dc1938d31ce6c282ab741391e24338c780766db23e35ade8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.149": {
+    "en": "dc5949ceaa613dacec20c2a088513914235b039ed9aa867e5d2bbbec014e6ef5",
+    "de": "dc5949ceaa613dacec20c2a088513914235b039ed9aa867e5d2bbbec014e6ef5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.150": {
+    "en": "6cd2e331855da821ec18452ef337985a5dc2f2ee6eb0bc2b0c894768d5a95c32",
+    "de": "5050f41029c87e2436a43b5d82675241b6e1f57ad00749f7c03eddeeb97946eb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.151": {
+    "en": "ffe624fef3cc715616e592f325a5f114bced91230d3f76a7e6e5562c5d3d3f7d",
+    "de": "ffe624fef3cc715616e592f325a5f114bced91230d3f76a7e6e5562c5d3d3f7d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.152": {
+    "en": "f2fcd3f7dccadd194c4c5a54a5102c9559487743ac236a6236301e4418d0dd7c",
+    "de": "39a31692360de02a01c635a8d8b67ebdd8a2f57a8fae4b4fd1d1cbaea76cdd43",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.153": {
+    "en": "25042eef59ab782ae55523b139accd533a7f4ea72d13f8641fe4bf19c1b205e6",
+    "de": "d81de66eb90ae4d98e05c06cb2a547e79d319b64d5094360db8a7637b6214693",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.154": {
+    "en": "e8ae7eda6d99013448af299a910afbcb24752be056dd8a7e4f8ca5eb8def2867",
+    "de": "fd09a10d4b984682a92db767f3e7b7ead20e66b94ae2223f7c4c59094a1b234a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.155": {
+    "en": "d7e53df901177501ff676c0bea7cd157cfcb5d4adfc4e8de9c662682fc95fe86",
+    "de": "af185272e17ee14b6dbcedf4ef9167dc721482c52c1783fa9a8a7cf318e74781",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.156": {
+    "en": "4ef923251eac3ae20dfa509e40ab7b5553667ad3cedfe1470c41948a42fff096",
+    "de": "9dbb1af3eb928429b4cd2033c3d50eb9b81951a9afd2e2b9d38488633fb98591",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.157": {
+    "en": "8c41a24f7b8e3e5e66ad65af19bdaf5530b49f1ee2e57ca1c067785384e88a66",
+    "de": "8cbf9b76d38382b90d071e5e55e3b9752391656c395996e4fc838616ad918bdc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.158": {
+    "en": "e7ad2f716db6571a2117b80b3dc4fbcb391ec45fdaaf02b99e051af8f51ab2e0",
+    "de": "67aa6470bed7d421412b109e3b9f8da73d411b56be6b4af4eaf289ccf02d9424",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.159": {
+    "en": "b1adb9e7b0e6b7914a958b455242c4450e27eeb2efe4d5cb8e80d7a34b15c6ea",
+    "de": "e2d8ae370da9b94b4e36bb06b281ae52fe42c31da50667be2eea72c698314266",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.160": {
+    "en": "398fc2c59837f137e0d17d79e65489c9261cead6356808319f1bf9c012b1ac8c",
+    "de": "398fc2c59837f137e0d17d79e65489c9261cead6356808319f1bf9c012b1ac8c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.161": {
+    "en": "d2ad7dc1514438f07ceb2e3dd0dbc4373967a9c0e9136081ad495d6e7ffed220",
+    "de": "f834e3bb911e0ab950d9d8ca96760bc47bc8a9caea4a0fea16993c649b952abf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.162": {
+    "en": "3db355f78dc1b4b2167b3e878b6a44fa092a548550357ab0726c41147dee746c",
+    "de": "11aa6b93223efb16a69ed58559b70cddb3d7b2d7753224e7a3eccbb078718f14",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.163": {
+    "en": "8c14d709f2771423f4415bd0b096d155d930e413810dc7537fe73a7d138fff00",
+    "de": "346bad1b9f0ad9a96da49ae0421a0eac800b7f048af007ec39b303df9cb9f01d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.164": {
+    "en": "443b744e50f5454b1dfdc24d8d51ac1686b53a60cf01f571f33292c145ef2bc5",
+    "de": "694c97010e14c9f7b30fafdb914e8ee18f0708f50a7adaacf2b4932cecce50ab",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.165": {
+    "en": "07d3094ac71226610b339709734956b3c06f0fcc85ae819a1fb0c253003e7547",
+    "de": "f13b68aa360c8dafb39163618953b2d54d4d60a8a00c8471840e2bafc81074e0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.166": {
+    "en": "bc675f30093300b70c6eb0e8963fae23943e6eb277b2a68813d0a6ebf38ad000",
+    "de": "b3106122444e36af80e1a277c4707f218697454f3e4fb199a50a92be2ca881f0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.167": {
+    "en": "7186e544a85a0a2d1de558c90feeff9955fbed4ba125c3d7e37b046e0cf0d621",
+    "de": "0c6cc35b1f174145a1a9afc49f7cabbd61f0190f17214efe292a6b7291c6237a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.168": {
+    "en": "ba7e0c94bbc9e9d43f3e652bb43f297e5fb32be599f562cb4cdf0eceb44eb09e",
+    "de": "c8e40fa36ce39f752e95a534ea8350e12d390df290b6201e5c1db7dce4424bf8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.169": {
+    "en": "da96305ebf05fc4193f6a2090d9060ba565639f4a978b5fd323c248a053c019b",
+    "de": "67881f206f6409d74916027898e5e8a8bc06fc78abf29baedf4b957b2cee2f91",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.170": {
+    "en": "ca0886c4f4a04ffb19755cfb9a18bf8265ddaf467113f8196aca1e981deb988e",
+    "de": "c44b129432cb61d225c08ac9c8ffa2d9fd19335cd20520a217b32d0e542cc88d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.171": {
+    "en": "547407d880b79ce7e165757400ae5e6c6338f7832a7f496f6c1821c22172a89c",
+    "de": "e05b469d5d76fbac4068141c0c7240a4c9ec85ef527d311a849081171e04f376",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.172": {
+    "en": "45dbc9f4e3e51fa3feeeaf2318f3c5695404b9a3edbd386f53e4913d80bce171",
+    "de": "45dbc9f4e3e51fa3feeeaf2318f3c5695404b9a3edbd386f53e4913d80bce171",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.173": {
+    "en": "9d618afdb5853400524dc7ad02eac88dbedbe3c7b673a8dd50e7d09c001b40b0",
+    "de": "af966ea038d825e658451ed65626305dfca4315ef93103b4c653109dbc314157",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.174": {
+    "en": "0fb864b4ab892e3cba31410a41081bc17b920c418c614f58e15440158432f86e",
+    "de": "8b6f7336ba4b989ca748f75b74138f08ddb50240b718c10d4af8dbbe14629181",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.175": {
+    "en": "4af876e048c4e7764ad61231e2d1a4c67f9e444e3d07e8f898cdeed1428c4c80",
+    "de": "0b11fa823f065098c597b9d65331cc5b80866b35101d3200903bae07f32b588a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.176": {
+    "en": "859372daa94f367fddb84396237e401e9f5e5cc416a2e306ef56af1dfb43f3b1",
+    "de": "a4e851925df988426b5c186e172b9906b0a82a12445cb7dc25a5125b5ccee578",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.177": {
+    "en": "c62e4989bec0f5b922bcdc2e1f60aef54cb4808fdd60d56509a1f8e9af389d02",
+    "de": "776061b74413a1d9ef2862904e37796684507b254011be3c62f479aae5ff4374",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.178": {
+    "en": "6c014c0a2401ae2006609279d09db92f76d13fce277106c36769213c3751520d",
+    "de": "f94d375553e30c19f7cc12f51161791f9f78efa4ecd95d45e182ada1ec3f48d0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.179": {
+    "en": "08a807b18110e2bc2900ba0d6ff393bc1eebd7d98bcc27fa63f00e838882c68c",
+    "de": "0eca5780dd492859f441f9e2d615efd4bdcaccd5d943e2b82a0b15f5ffa61175",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.180": {
+    "en": "7584ef665eb3f74353c70eea7c10e0a35bff1d61eb8bce2ce15e25d9eeefddb3",
+    "de": "e1cb077840337c9f8981a63774f5b14f86468523cc08fcca5f892b12bd03e829",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.181": {
+    "en": "a294d7f1007e30a314a40282d5a785a2c35c7d0980d5d884426c88fb3345e428",
+    "de": "a9186966d14f96d88f2ab8ee4990406f591a040976f56ac8fdcf651b626208ff",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.182": {
+    "en": "e67ed1cd6218b7f50ffb950b484ac6825f2687d3848b763668f3d6858c0dcf6c",
+    "de": "fad6b6ba0f38b95e06dc7c4062f1db71a2f5bfaec43f99f961a34c4fc5e790b6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.183": {
+    "en": "286514bdbf163a509fc87cd121191de438489ae7483fae127f5171be2ee46f15",
+    "de": "4eecd511015cb9bb2e3bb68c7cbc399eb16c914519f0e04042c11a5268a78d81",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.184": {
+    "en": "aa7e61a160a84d8b62926baeaca7cf5183e66940b8553dfbcd18b4c758634aa5",
+    "de": "aae8f8074b219bbd3694b18632d577a10a251276519566899f5da28b59a18a98",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.185": {
+    "en": "b9122e5d1aee8f95a50792331b40e5d360f2db99f3df2376489d7a3c52472378",
+    "de": "b411c79ad2a0b9cb86dab3baf5cce273ba526d0ba457481c785a872548204fd2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.186": {
+    "en": "ecfd65d1d2052a4d03f2474d8acbaf2b31d39e49154fa1e528c913f261866def",
+    "de": "08e59b221e49b5e1476cd47a0cab0859fa2ddb74d64acb7795726be578359742",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.187": {
+    "en": "7fdedc6d14bd6f3f194e4ce8c32561873fe8ce14b26704b58f1e758ab0f9e5a3",
+    "de": "5dfa4caa5904ea3a273633adf49d679b875fd50de652dc1f6d7243694a2739c1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.188": {
+    "en": "70c2b2c412c6a2270d04e3d67cb5bd626312ea55096b94ff406be72b60fad15c",
+    "de": "6a21cf33b3576d5ad3fb0cc74c8d8bddec136706bb6dd85b144008a3615a5c47",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.189": {
+    "en": "61bf48778e8d45df8b2c6fc61efc14059125f8662170fb30e8849432d73fe94b",
+    "de": "7874076917ce4db4216e78495251ffff0ff53b11ea45aba9bde7a9a82801b3f2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.index.190": {
+    "en": "7f3e8352549b0c8adc90779aee007f0f73c6487b0111b9201a754789af6ee99b",
+    "de": "50b8f1a5ec7ab77d32e9a75060350485c94dc01210621e5b92826e869ffbb18d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.191": {
+    "en": "73077ab6fb733a018e621f823cdf4d0263f1a114218cc5315a9f0728c46b190b",
+    "de": "cf795f04fec6f8f1e646a25684817912539431cfa936bdda9ae6a8dc24b37ceb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.192": {
+    "en": "74dfd7fe04770939da5991014052080b488ceee803d60584b2cd56e913fd908e",
+    "de": "72e29b73309ebee673f7d3bf38efd2b473b3cbebc8cc21569314af99c5738a09",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.193": {
+    "en": "f0dbb5e62ae3292f17b380f70d1ba19423bf994d85c12309e40b5ca98fb6bbd7",
+    "de": "08e9a4eabe187dd7be7a4edfe8fb4db979fcc6b6787d02f1dbcc04c0a0c202eb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.194": {
+    "en": "9c87eb4ab704778bce33470ed3d0e616fd35e5064b08e1ee6fa51d7bf8cc8271",
+    "de": "4a4f2787eb5c4f2d83dd517d2469501cb48701e82145b095813cb6f5667a3264",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.195": {
+    "en": "fabb395358a4314c67a81cc9d881c1e9ded8d3f36aaad52cc993dce0d5962614",
+    "de": "dd379a4007f43d2ea91eb60c01d5def3df74e06e9a2582cffbb39de60fbf86fa",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.196": {
+    "en": "5fd30a4f03c324bc9cc3d6f3f7abf4d757ef1430646112c1d2fcf358a44f23d4",
+    "de": "7269988aaa5b6711986ed4f3cb839f34696902e276ac697dc31240218828c81d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.197": {
+    "en": "a9b50ea0c4a7e3469e7ac21e5497c3b11159a5968330807180eba6b5f0f36bfa",
+    "de": "8ec6c548f4c7ad4f18bceedcaff6f2ba9052b31ad632be68f9cd8a0a27d23378",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.198": {
+    "en": "2486d1ea3eef3e08ade5f6681b9f4e8a948bc6af127e28ef3be99a8d672d6ef4",
+    "de": "e3ec5361fe648ae19e8b8fe041e5ee95c1c742726c830f0d0c7d736d5ba21416",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.199": {
+    "en": "6e8f1e075f6a976f3464fd90d2f89f6d20b1561bedad1941fe8f407df230fe0e",
+    "de": "aee1ae8faeb51f5a9091e96d3d86609404e95e0a051502f71793a6989115cd7b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.200": {
+    "en": "78c6b99bea36300980db422081472551a1a704789576f06848e147f4ce103228",
+    "de": "4772e151b2541c34c0080a7a6c066476a64f57277ac052079ccf0dd03aef9cbf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.201": {
+    "en": "4b0c126b726ece9e54ec23be40a163b9347382e05b2423dacd6f1fdbe4214f07",
+    "de": "404cbc7a5bfc004fb464903ad8f74f8f3ad8ecab4fe9af25e45eb947f0174cd1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.202": {
+    "en": "12e72148e927b4e14297c284f8a8df1035f2ea8425b5538ca92c5991cdcc8c9c",
+    "de": "3db310be94b4d8415846c962a91b3bd9d4770f93b9faaba8c1a69a73a88ae556",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.203": {
+    "en": "e1e95c4f08e73813b2053dfcf74a7d371e88f1cc17979371fb444098c54c2be7",
+    "de": "34ada4dc3a822dcf94de2fc0bb98db3b0d459607472925a0c9fb230f9b1a02ca",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.204": {
+    "en": "ca166b1e17e4f4fe2f20b7668c26723723d0df68d2f2f220a07f199e3f4dd11f",
+    "de": "a802e8055cb7b550cb9cb67254357eb174b2f7f5e1ae5f68ea81cf55a2dfaadd",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.205": {
+    "en": "cb57cc444187fcda46877c54df11ef002f17419ed2d76daadae1a0721337caff",
+    "de": "04f21899045363d205eacd10d2006774af6b53e1342b13068def821d0f61fa13",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.206": {
+    "en": "2fde173e7b4b330f54c8ce48cf224bb2ac2612450a3b27d846b291a760552241",
+    "de": "3b031e43044348c38fdcb1b9dbdb64c90cf65bf84ac16640ea7eaf96592136ba",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.207": {
+    "en": "c741de52b49f4d99f68877dbaab19fa9b75cf3988223ddb4e80367c9c099e0b2",
+    "de": "7f4969f521c44eb9bcf2edab726612a21bd85a2ad8b8374bdbbacc5a1a9b63f7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.208": {
+    "en": "25396141179d3cc63b3b0b6269e71b110866db4ba801fc5cb14bc442001a353d",
+    "de": "e3f7355ea46e12ea78663fc3c8d4b9d48e1d23a7ed0b85c32ed881dd51453288",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.method.209": {
+    "en": "fecdb4584897f841c1e546f759ff33c3ed4adc451e199959e6e5e72661e9b9c9",
+    "de": "7cddf2dd011a0dc150b51f2b9b0e1f0acc2e6ee300548486de7097fa51276d4b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.210": {
+    "en": "7e0e26fb9e4b01f4987ca065597e50085a07738b4ae0c6d2128be1bbfba84eac",
+    "de": "e25ba011f235bbd201bbb9606a2c287abeb4faf5aff7588cc22cfe860e98e4f4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.211": {
+    "en": "c385c344080699844442bf2dd893618a4702d5d3a3e11ed632dfad839fa2b8c4",
+    "de": "816bf1582023c4f552f20edf3f69b8ede29b2e438462f0c6c5dda19902f97699",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.212": {
+    "en": "7d78e067b4277e33c3b3bc34bef76d7269a4ccb2d54ee266b73c34e1da57746a",
+    "de": "95ce6c7f7b0d14ffe32a6141a1642fef984c26a80bc2ded728fdf73654ee5dc7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.213": {
+    "en": "31df66dc9f060166a41ac9f707a822d9684835ddebf052c0c102293e7ff07c4f",
+    "de": "11cf50c9ecc6626199b29046f84424bfa3c9c1e869cdc8376815db1f4e8a0c08",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.214": {
+    "en": "1adcebd5553cb68c5359dd3714ad6250d3bc3f9e16095f12b7308c104824eb78",
+    "de": "4f370b4def17a54ce8a7f6601e709e2686f8bee823e7e893c6d96152bdcf5a44",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.215": {
+    "en": "570e90aebbc84bb74e7fc1e864027a893116367bbef22cee348602332a75d43d",
+    "de": "6ead32b974ac7483a3eeb9c7a08836aa12c8b8ae5a35a04ea73f162d37796a44",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.216": {
+    "en": "92d45abb606282301875aa723c8028d01e9f8c7f467143a100031b241bac26b7",
+    "de": "a55ae90ec9a4d2271af7f9787843b1f9f9c351aab1a8614b64da257a47779302",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.217": {
+    "en": "90158ba87f86bed5af6901b130f86a9c8d6d4ac1946f8eb65a979d87f89f6a59",
+    "de": "a746e2e9071300d396178115fbe60e23210c3342fa688cb1c225f151a19e48c4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.218": {
+    "en": "263b920b7f65bf014fe268505feae0428964b384e843a64f0205d5919978d4f2",
+    "de": "ba6b59c813c16559e2c6a8533c6fa3996dad7b7ee084daaa14854177131cb47b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.219": {
+    "en": "840b0e9da5da5f14cf42eeea78c05f0af49d0112cf77e6f398e4d60177ceb484",
+    "de": "838fc26d50feecce733032d989d26d2c3707c8364140e8ddd75d1e7e3c9ba19d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.220": {
+    "en": "b3540886cd8e228186a7f3a11608564a5c0cdded7e8e6253ad5772296f1bc2d7",
+    "de": "f0b3f268a048398c1965cecfbc9d0445b284b09b3afa4c1682c0b831d9f06bc9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.221": {
+    "en": "0c2e6c7c4cb7b24a1a413d2bae9f8dadeceecb1e649e6cc737651ad26050c53a",
+    "de": "050ee4467d4e1d63cb573d762ea155ec059a045d232140ff81a1ac112b984c7b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.222": {
+    "en": "ba0d6a897ca4033364f7d723326df4b0c2e5d1ec0f0450f823bd7b4a043ffee5",
+    "de": "915d09b9cb58502867b0b6ef3fac9bc723fb19c897723bbb9763de4ba502e44e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.223": {
+    "en": "aea2cfb3587fb451df2f80c9e25f76b2a7c0f0e8a55d23aa7d85b90538440c84",
+    "de": "4fb96c8bf626225ab5ba196bb88fb540a92bcc9e055756a2d054cbd7b65bded5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.224": {
+    "en": "bbde75ed608785f5cacd2fb061e23094d9d8a4cb3ef482c82dc1dae6e3ec7ec9",
+    "de": "736b5eaafdee5b4b4e42d8625eb300da0d8c48d31f923e4dd37de97ca3a1aac2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.225": {
+    "en": "3b1f58d94eacf04f8a8e3b342967f79889eb28ad2472bcd3692a09dd6a9e9062",
+    "de": "a4851a01d29f397d009126e9fc4ee78c9927f4ab0634a82e7b31b86514c26e82",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.226": {
+    "en": "4d4924ae6941fd29faf4f3560dd41974ae772573b489b4fbb2d96ec426f7c5fd",
+    "de": "3059e21762f1eb3a3fabcffed1363b073d2e21af383e7319b69e042c6eeb8aa9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.227": {
+    "en": "08440e966836527e8f38135621ce658a5a9dd031396b6d1af5d72fe6dccd9f15",
+    "de": "7ab560f9e7733fc76a874689e125b6a4ff409a43b5e7d088b66809f8e8144830",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.228": {
+    "en": "a1255d2061c9141ca886fe8b56628118f0744e2b32a2e6fcd9573d9dd77429cb",
+    "de": "c68bd5b7525d4f567b3296924fb9283bb2e4a21bfcc529d3c8528ba613ef869d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.229": {
+    "en": "2aa48a5719ec44fc7c1cfec7bd63741cabff1f4690a21f77e55f195a226474d4",
+    "de": "1b5278d62c2928dfd1d4016479a5e13af26f4a0a1e8622a4fee4785750c632fb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.privacy.230": {
+    "en": "eaae8cc8648f2fc1325e4bbb1f9786efa04f17f7037eaeca5d818fb9a58548c2",
+    "de": "eaae8cc8648f2fc1325e4bbb1f9786efa04f17f7037eaeca5d818fb9a58548c2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..231": {
+    "en": "1d7124ff047a177b11eaabbc673cdd38e0fa173a67cee2cc3656a282e4e4940d",
+    "de": "c6d534ca67eeb5c73f2220699c4bbafe91bb4442fb932407fadf97cdf526338f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..232": {
+    "en": "bca0675fd130f52ee1a57cea31bf50d71ce02c1b4d31be4757079409cbb4c648",
+    "de": "bd0deee53c2e3faa582d9fe1c9f66f6ec35095fb4a7a4014d30835331bd48e03",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..233": {
+    "en": "d22a6b56385fcfb155ab22b73df95d515708daf4cf325de2f02b9dfd14c21a7d",
+    "de": "f481a8edbdb078a8e3df726f0c71198430f6153f56ead93e312a38403cae8116",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..234": {
+    "en": "75267cb8c3306a01ff727ab8724c003575305634ad4372e1ea9024407bcff640",
+    "de": "105daab8cce10c1e8f699628a30eb1be1d8440d647545cfaa19cc5b0198c7fa8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..235": {
+    "en": "8fb190f6d161cbafa8c4c595e8ced5b52db41fc9167ffcdb2dc55b5b908969a5",
+    "de": "185142a280d56597b29b789dc622f67d18de02b981902a3b72b6d92219cc0df8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..236": {
+    "en": "a4ace9aeee06a5260db4cc1c4c4e28ec7072938b08b80d39794883da19e2389c",
+    "de": "0e5bb56c3eb986339ff62822c2439a2ee862956389a6b10040787f6910ded830",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..237": {
+    "en": "eda32b99d440b32daef9be7f9fa99e25a2349c937271e826bcf68bd5e14ed851",
+    "de": "718267fa381b652a8cd6cd48454d6610e87d34766aea8e3390a8b3798ad19bc9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..238": {
+    "en": "ecd0e7fc42c283615e0e4cb3037fc7b033580dd1b481db1f2a4ff61533c529ef",
+    "de": "ecff5fef0650ff21bb2f71bda66b086dc67effb1ca1f92a3695b6c07c3f5b573",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..239": {
+    "en": "6ccb84c22d4f18084eee11f0487e8292ff223257f2cd3aedf69f9606c8b3ac99",
+    "de": "afc0681fa293983ebd83ec9733110c6e213eb06bc04512218749fe0ebea2d895",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..240": {
+    "en": "7811b4f291fbb04fcb5cf1972f41dfd84fe895a9ed38ae10c7091b65e44b5200",
+    "de": "d83d10d6c820f94c4ce62678829e2a0b040af70de44ed9b9cde90a7858285bb9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..241": {
+    "en": "60cf70c8bd086cad0d329b07cf31d1605a45e08b0e4b999b2ba400916cbee67a",
+    "de": "6c07b71700cb801275ba968078a780340c7276122e28fba6bb3d9337bcdec823",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..242": {
+    "en": "447bd7e05f39adb7c80e7991aea8018c04c3fed4358157771228cbeb2161a1dc",
+    "de": "1014a596f344ca8dec3ce55f31f605f9f6093cf945476464bbec1f489fba5700",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..243": {
+    "en": "e2a2fca2a96c1c2f86b12d7d5f64a36f1a5a1f60889a53213fa8a8d12da7def4",
+    "de": "a8ec2ca47c93fe7449a74086b95111a89bf342428f582adaac0c666edf08ad93",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..244": {
+    "en": "d93e6d63f992090b565fe1bf7d2a2adb7728a4d491f1f75f827e43e914899bd8",
+    "de": "716930e2f492085e5373a1528b9a1989cdf379e62e1592030f803770ff1a0904",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..245": {
+    "en": "be377f1b74546583f6b009d950b7335ffe742ebe689d9a8ab785a110890e7c07",
+    "de": "e9e04a60f062cb6e509d0a199474a7fb9216b68e19204c6531c3c30b33afd3ad",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..246": {
+    "en": "b5b97cb156c18922027f3afa230d4b88181bdb4d9f4be82f8da51c02a474ff7e",
+    "de": "a45d270d5b4df5b91379c5cfd5e04ea7477ad62c71ea352a254aaeb898455cd1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.projects.slug..247": {
+    "en": "00a4b768c49148655d19795b5c5f73228499c19ecf111c30648041157ac1ba35",
+    "de": "264eee6004444c56cef9985f985412d803ee3975a7e72037d826964f2ce18d44",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.248": {
+    "en": "73d727aed9fb620dc518be6f264a0302c52fb9b62d4b429093bf2c257be76fd3",
+    "de": "9afad54ce2ab67c47aa201147cd136980d6f859e163ed93d93779f24665d232d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.249": {
+    "en": "f724cca13155b853df9ce43c4af4acdfa2666a380e1097795748122d5a1b9d19",
+    "de": "3bd6052b2431f80a0f2ac09c2ee90188a0b0e34674f3330a2680c1a777307b45",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.250": {
+    "en": "f848aa51728ad3802eb430d2d16b2d27562008d527f15f9f520325da88776a9a",
+    "de": "c92d6afcb94f30b79fa0a477a5e9f284306b6b5e72577bd1d3133efbf49d1d8d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.251": {
+    "en": "b09e8c2283b4439924ab6d3053bde31b3abd3a9908b8715173ad2304928cebd9",
+    "de": "1add947639dcd1fecc90cb5cc2496e71773f0b12ab508746ab891c872e1fab7c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.252": {
+    "en": "4e98ec308a72ed63324ce063a15755fa8a7d7f7d57d17a978c134131ba32288b",
+    "de": "5465e0a1687e08984b1c9de67163ad07a80881f93614104ac8e5d9c7ef6f9f03",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.253": {
+    "en": "0219fdf7e43be597f2d574d67a281fbf5eff7ec77aedecce1456ff58f6bbd9dd",
+    "de": "71849fce7fcccb2c87801e766d2002c8a813209f9699e088a6c1041669e65f6d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.254": {
+    "en": "c66992cda235c125dffe65e008439d6de2309b91e195d1286596c04cc5e94fb9",
+    "de": "557babfd3f638f72335ed490364dfca363e693380a2a78ec054d48a9d86f2f83",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.255": {
+    "en": "e983d7e4b5b8a3e85870abe66a85219e8d5321bcde7024372e25246690f00ebf",
+    "de": "f8a21e51fb78a017136eaa71fba0cdd9a3d38cb9614f79c03449fc9257676402",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.256": {
+    "en": "5383b5c4cdc1750baf1625f9eb27302f40dfb1077bcef585814b186afce94de9",
+    "de": "abc1fb416d44d234bf42fbd1e5b509d737ca4bc184b15a2e170210c11a4fb838",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.257": {
+    "en": "9e7e948f34265590b39992804df922c68ff264032baddb12864f7ed3fb8fb36c",
+    "de": "c2a11459f7211a0247eb787749a3cf8cafb858760db91bf251495f10b2c9e603",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.258": {
+    "en": "50e65d61ef3b25cf213ee9a650cd96d79ff608586a8c172daf38a367d4815eea",
+    "de": "bcc3f3c6c1fe97045582d8d467b16d24b96dc5c66befa97618726c015d422772",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.259": {
+    "en": "a97ee3eec101c637d146de73f7ce30edce76f73a2feb7eea3ff6b03f92de583d",
+    "de": "9f5b00ac34e030274cdf01117d4c025647499fb50df4d38bdc2f09eb1978b203",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.260": {
+    "en": "bf27137ac74f64766611d80868dfda513a1658c1a0f4ecd3e9f654027c770bf6",
+    "de": "da997aac4df649ee008b400b7feb0f426fc53e93834f368f5c730c9a2d2b5614",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.261": {
+    "en": "485807aa476cef44160cc3c4df6cee18c142824ef1698852acf3d75d9bc5b4d8",
+    "de": "485807aa476cef44160cc3c4df6cee18c142824ef1698852acf3d75d9bc5b4d8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.262": {
+    "en": "b51889d0584e217a023e5c5bc8b681f3aa800bcb70d3291e9b0c42cdd4dae0fc",
+    "de": "3f95a515d75ed62a4cd49dc2b53234e69b87ae7532c04d620cf08b64fae30221",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.263": {
+    "en": "2d50e6d0a63d1328d8db5aa7617bddc4faac27649d7b6d075abd43a624805053",
+    "de": "b450ec117f831fbb3b05c7d8ab739707e0e0b699d6c8d6ac5c54805da56c7666",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.264": {
+    "en": "7c8d90035f25972c5ef9e466acc9d943215e625ea764196fe97317aeb272b4bd",
+    "de": "7c8d90035f25972c5ef9e466acc9d943215e625ea764196fe97317aeb272b4bd",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.265": {
+    "en": "25cc20c80d2afaacb841f171bebf8cbc6ceed62ad815b7d39c5c5700d4d4e76a",
+    "de": "e1120724fe167e3b2caf48c150c53da90a50915cdff19fd80c7c1047446a41cd",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.266": {
+    "en": "4edeeeaccbb66b24156091b65f1223c01099e9e2a2d3d4e8f42429c3bba0e4f3",
+    "de": "827b061aa7cb5c4d338846f8c6853063da93f1032fb81b10859699e4ebe7e8c6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.267": {
+    "en": "69995d4867f7384bdf9c659f645b02907c4b465a8f62d07cf81223e3bfc010a4",
+    "de": "e347275a03f8b004841acf0ca118ead5c750d1b0e0c297be55d5a854b04ddf0e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.268": {
+    "en": "bd53040c46e2c9ca9174a34731fbd865cb1333f8534769f5c1ce00424424516c",
+    "de": "2c364ff458d0660b7d6f24dc47a1861ad9001795f872ea7487374f9630ca8178",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.269": {
+    "en": "d6df232917a91e4fcbe27c13ecd0175687fb2b17de686513aa96eb47eaea8076",
+    "de": "0277964c21fbb92c2b5dc5cc05ae6dd36843c4ea7a8faef1012bc04f2d4b1618",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.270": {
+    "en": "ca2f55c8e8509ec0145927194c31ca35f746ecd234050099cbcb8cca3e5c1c63",
+    "de": "62bc7c7f92fed68b73537e918fe9ec756aea338aa077f85b66365235725d06f8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.271": {
+    "en": "eb60045cb1c14b0294715d894706d4ec679b4de06dd0ad8c4a611a7401c461cb",
+    "de": "33f1406020729cbf1830f62d0d8ad2753a10bdec21da9f0104823b5535ffacef",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.272": {
+    "en": "e59ae91b527e656ce1f466ab18ac235ebb7236411315a0d2a81b0ca1330e0967",
+    "de": "8538f60ffd846ba49aa329da47aef1103d69192210b33ec83e8051a02300d88e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.273": {
+    "en": "82d36dcbfcc3ef7d94b01e01751f9d18da2f047f61421151f893415235999076",
+    "de": "31f1153e4897c59dd2457dbf568bb02a753889c06a826a696644f6c8b2a99bf6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.274": {
+    "en": "24e25af73eddcfd6361a55c792d58f3d46dbfdc7c4b7cf835b836913e21230b9",
+    "de": "fc391d08538e2215a0fd3daba2c5901806afbc4aae930b6887464d5bcc2ec713",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.275": {
+    "en": "30479f74ab45c40a8f131744e695cd30e25804fd3be6cf2f5020c6588f3a47e6",
+    "de": "77bd01ffc2041bd4b8831b8e71168dbc0193c305ab36f4d68f002dbe8e47c3be",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.276": {
+    "en": "4d35badc1dfe203096a17080627227da8b634067039708b777b4795171e283bb",
+    "de": "8a6d14ef3035359b89207e1d436da9a6a5620caeb2e26c457cafda44ed73f6a1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.records.277": {
+    "en": "4640eb85b61e8b0882932c532fab6157984203803fed809ebe5b9a90360831fb",
+    "de": "2307efcbc7054c1cfadcd3fe7111b8b7c729d85509f75cd2bc6722417d89b12a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.278": {
+    "en": "58cd4d449bf7bf0121c7588bd1bbccee1d6a55791564bc99372af37cdb6fe81c",
+    "de": "105404a5032a0bd545e97eec62cb62efd4c640866dfff777da9a737fa43f3c7d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.279": {
+    "en": "04694d7035a385a9c9663df902f86725806e59353c6c7ef26399eb423d684fd3",
+    "de": "105404a5032a0bd545e97eec62cb62efd4c640866dfff777da9a737fa43f3c7d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.280": {
+    "en": "1434e4dcd83991fabd3ced8fca96592af4108250410cc2b94dbd65a6eeba3650",
+    "de": "5658bf372de72a06dbbb4843f35fb5866f5c91c59c54b026821cc401ba8fb760",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.281": {
+    "en": "3ace8621e5ce0374608942efdbb7d6b28fba9dd6266c8d350879301820cfff66",
+    "de": "c74585a93faaa825e12e9d6af6069ce32b28d4f60b99138383da4ce01c74f965",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.282": {
+    "en": "ba1a16a0edf9179f5b604e9cb46c072f863c8d7311f62a6f47c17786e816f8e5",
+    "de": "77b042d75f7fd49d2b563196226037e269bf1dcebaa4fdfbca46585b5ec63d29",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.283": {
+    "en": "829e1e14928281a993ecba8ceab58c4d5ee19c319397e653e56b4354cb3a68a9",
+    "de": "95265b53a36f8dfd4f4d2affca939f278d3c1da71731efecb038af879d05386e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.284": {
+    "en": "04180e81b0750fbcfa403357377452f8d4f9e10fc01dca8dbaf20011bfc0599a",
+    "de": "9df1364d801339ca49db1e8ce01f8b56f928931914806abef6111f1d269391db",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.285": {
+    "en": "adf2e728f8dfa208731acfad336cf803ce6e77047bdf0e214732fa4c8586a9df",
+    "de": "8a5c19e6ee17ba996324849aca4363fc0cb9932c54ca2ef946d928e97b118621",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.286": {
+    "en": "1fac19502a55273beee11c8cea882bf1f10a77c5678652eb1051d408316c78dc",
+    "de": "6d531f4e2997ebe1cd5951db56801f7380e7420d1b5ccb57dc231a9e68000e02",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.287": {
+    "en": "2fa2d3d94931db9962f08bec18e322235fa38f3b1a9f0a48afa4cfc6d5062d57",
+    "de": "a63ab03acb9e23d002d40a7d24c244705ea54ce457b71c4883a40ac6e711d14e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.288": {
+    "en": "65cc10cd921a9b029e21178ff14e48d17531b3914368dc705acb8b4de2ab6803",
+    "de": "864bce1055637a8a1a96fd919662be9be84437fe5f32d3986d8e5522b043331e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.290": {
+    "en": "2e3f7394d704d633357fa91dacd890cbe02c33f0d8431db81611d0e28e09263e",
+    "de": "81ca7d8c79fc15cdb9a736471d5ffacb3cb2f98b0cbd8a11d13dde50fd753adf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.291": {
+    "en": "6b36110d822d01ae57785e8f209491ddeb6e3712d1717a6a1f2075ceaae5a3ac",
+    "de": "a7f7a3989757d07ed39473d990dc7b2a1cba7313bbc0feb100a3de2cd1c56be3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.292": {
+    "en": "e78c9fa1cd20944df359f62e25ddc1363d2aea309b7e5df3ed4f35de336de72e",
+    "de": "dd4fa1c30ec494730a4874512b3e4387e7c05968bc72c74722f65dab495944ac",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.293": {
+    "en": "1907fddb5451446fd0c5ff3338acd4b13f35eaef9a7b2419eaedb62bca6705d6",
+    "de": "a50355666983b8f0da232fba72fc29fafc2a3e9c56947ffe6aac1764e1ae2be2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.294": {
+    "en": "de1a681bc47cb3acce2f357c86d2d5e1397f26a175cf5d722c4fb024260b9263",
+    "de": "7b36b9e499f3621ee56b1bca173bec8b05237e10b564720b58c31f257f751f1a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.295": {
+    "en": "ab773200f4539f72bb73ed62687f1c242fd79996e0c6f2021bc319b1bfe6122f",
+    "de": "e01c16e7fcf69084859610d92efa12fca1e049daf5d4073f0436687244ad6c13",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.296": {
+    "en": "510e202bb82577e6b706ae62dd5d5004cb58812cbb5be280bd11bf07a87f2bcd",
+    "de": "f58c3ef71eee445f8985d5e7ae2dd8fa74cbe167fbeb4228624731178e535b84",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.297": {
+    "en": "d50ff5c0a026e26c5f53de658daf1ab90803ae6f45a6f7e6ef2388f0d1f4eb69",
+    "de": "db8473aac5d69b1203e5ff32816ff46b3dc320d66ab4b8c999926bdc220a6476",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.298": {
+    "en": "28f879177d9569ada8a70e04e620a630199726b6597866c90c8887b66031bc1b",
+    "de": "bb87ca2a959d751c2063d8db31a2ec5b14c60787a0574db1554dc27d91ebefa5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.299": {
+    "en": "3e6c07baeef05c624fd91312e283d457632e4c831e72164cfade3dd0dabcea13",
+    "de": "d226edad93e0f1abbff27dcfbf96d56dc6abae4fda0c5a1ebf07d1ea9953c87b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.300": {
+    "en": "604ae5911be3a8b80e32173457db25f57645abe8a992a62e6eeb86d011a21430",
+    "de": "7302b4d0a3c13ca897e6809876b5a1b5a55d22ebfdd02cfc983f973b7dffff55",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.301": {
+    "en": "0b54d623630a8adbad14bbe63b86844b25f7ad07d89d324f67f58e43b2c502ab",
+    "de": "6da3e4ab2cf3cf1e66e64986bc5271d55361bcebf07eaa02c5acbac1a5cc8c97",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.302": {
+    "en": "c8b81af75b5be2ae1afbb1b1687d2fabe5455ae9265eb950c83df2eb116aa8bc",
+    "de": "12dc3ee4fff5f6e2ac7a80d2a5edbe353dc163f4e4f5f0b74d68eda252205372",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.303": {
+    "en": "d296a9adf20e75da1d70f722c1395d3d3322343e12db4b3e6c5f135564942564",
+    "de": "db3448013508bdb67f2c6749d22bd00b9651edc2b4a8cc3813b4eea3c9f8a404",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.304": {
+    "en": "4fa97b69f1ddbc7efb51475d6d26639eee86130fd2ea6d42189a3b46e331cb54",
+    "de": "e05b92f63f54d0e62e0ac441ec2eaeafc83718891968d3f829655d2c2ae0c666",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.305": {
+    "en": "0c9329f93e4dedddc107447293b75e5fce3b31c7f1097c81ebde61e11259ad0e",
+    "de": "3e3709582c9c031af6649572ab597bb1697c56b1d8092f6b1c95356f2c265a6b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.306": {
+    "en": "751c1a6ef91be6d18f31ba79a9fc8fd6a1c05f537484b040d55705c4effcf943",
+    "de": "a9ae205601866d33a3461616bf040da7318f243bd8e16b26707619c857801614",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.307": {
+    "en": "79335e7582aefd2097154698f5a20b2176ef87cec83e5daa6138ee802173fc53",
+    "de": "17bbe1e6d6ec2fe991fa76314c06a6a666c3960346f9997b6638ba463ef42717",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.308": {
+    "en": "7ffcaf877b099e7bed6182ee7b71f358379dab87c51d46cc5f2dcb1bbe608316",
+    "de": "1912dfdca56f787b43ff26ee18be352f0d02c6feedab7761f67d02fb301d6084",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.309": {
+    "en": "c410d7e4d5a1c534c0810af36e8da48480a164cf66f02e1f6efa61cb855f0a28",
+    "de": "add76d9ed5e0623c1006a179c0e090a7fa0c755cfe2928be49039932462317ae",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.310": {
+    "en": "9e96761f09d3b0e5b5561775f30a22c13ab948b2b712fe96f85808534d41e734",
+    "de": "496637912b63c0c6feebc7c9c099c667d177fc84d4e88270d89de729a7bd63d8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.311": {
+    "en": "170ee0b737d5e4c721a81e630caa0cfb506433c74893bba14e82a1b6f6efc1f0",
+    "de": "7227c2aac63695819b646d68f31a35da16f9784753929298fcbfd7621b51e4d2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.312": {
+    "en": "f0f85244d3102689ae3820ba546c80beab0eee2af62c4d2721797b7458d04bc3",
+    "de": "dd2516b7eefb2853ab7ce0e02124ff9aba0798e0e393d89c6d3719715b317901",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.313": {
+    "en": "8bea4d6952f1d443d1b3a5474f1386131860b550b3ddded067c8e88e89df0556",
+    "de": "cb65bfe7ccc825a442b044aef97150c395f0073fbd38a0cae175e2e9ec0ad761",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.314": {
+    "en": "0ccb9692cc697561a7fe31dbfa2e6048a2ab8c0efb4dddd65eb4af81010f93c1",
+    "de": "16a76ff28961ad82473461158edefdbda401203dea5b1c515d7661e357e07c4e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.315": {
+    "en": "4287ed9f11ed72e1d8b5f7805912374fc5c6bdde4f438a83988386ba0c08413b",
+    "de": "6ba4623483a514702b074c12ddc653789c4f6e85c73f2857d39eaec78198ccf5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.316": {
+    "en": "0939a367dc9871b67648cc0fd3927e93da27d6b1b3eb398eb07e6582237a5d60",
+    "de": "b832a7eaf684f2f3d75cab54daaefdfd71b8770c5d6f20c90e38c4382a4a6f2e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.317": {
+    "en": "fa2a6a476ba1b2e20ea02340b2f6823305264c41159492f6aac1416edd13ba15",
+    "de": "95c92e812de048d34f05cb19f6df63fdf42233c8af1274ae6151c35820f935c1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.318": {
+    "en": "ff7b460203a49c47fc84534a5a75f59387240ba93a140d6b1dde7281cceebfcf",
+    "de": "7164b446489c4c972958940b34f84cf3df3f8c462eebe43b1acebc767112e342",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.319": {
+    "en": "d91dcb859ce9e7f1bfcdd5ef9e60de9abbb019ae02b09229a512bc6d163f20ec",
+    "de": "24e59628da8a8735488d33bd24ba960f7f3fe97a6d9ea0dceb90177023e0bd74",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.320": {
+    "en": "3413077bebfe383277f6e853c53cbaced0028fe7dbe42049b4d8a7d8afa4748f",
+    "de": "645f0911db2e375bc55675c001c57d6dc40eff2a1eae41c2604c6593ebc0d825",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.321": {
+    "en": "bd640a34fb0758e154cae38902c4badb031f1afd8542cffd17693ce4d2338dbd",
+    "de": "7232c44e69a169aca403639370e6e007a2cbf0f36dbf174754754818f150998e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.322": {
+    "en": "d0d2cec81484b3540811d6b9cd91a20025eae239d9366b8601f32114a1a6bb00",
+    "de": "d0d2cec81484b3540811d6b9cd91a20025eae239d9366b8601f32114a1a6bb00",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.323": {
+    "en": "5e068aeb73ef518931829eb3106cdee7dc1e6395a9a898f9b0d6384b29eae854",
+    "de": "d7408f2249a6b7b08535f332042efb77b40510bfdf4eecf5eb9651efd8ec8969",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.324": {
+    "en": "4092843c4767371a922d53d2daa60fa2f20de37367bf9b293f9857476c815112",
+    "de": "d030416f34716adc960d5f07b093b08f0032c0cd2fcd3e8e0b0f509265b8c6a6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.325": {
+    "en": "1873467cadc5340d7730419a84ae92d64aba89d5ffbdcf7551741be1041cbd95",
+    "de": "d4bc42b050ec6c09fa4aa3def16637ae14e2850d4972cfe61336d1023ae0ceba",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.326": {
+    "en": "2c7bfe8161c6cc87b641a2289f7bc1af80b2794cb86aedfb74337e4deb4c7e80",
+    "de": "fe4823aa46ba9ecab6090646787a14f969232c13a4ed3b3e0f8bcb37a70fd399",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.327": {
+    "en": "9de8aa35902c3f29cd1b5bdd5ef0fa7b638402ef99568a556c0824b1ed8b852e",
+    "de": "647c7452f208eb4716e106ff3320f887e2f168925d36a6f7a728b50edcf5977a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.328": {
+    "en": "84593d3cece12d59c3346f4c7cf509cc37b078ade8f28d41ffb288b856e84a3e",
+    "de": "3bb0f4e344cc925513f7e823aa5c503550ca5b83b346a478697cda69b86a5a0f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.329": {
+    "en": "46cb0486e6374180cc19aba439cc7df106ebe51ad3063df0fac06be6edd6e458",
+    "de": "63468b13ca69e989ad4900700cde939094901aebb16d3c2d591783981d1a9e25",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.330": {
+    "en": "ae5759f5a4a76dfce005280be430b27bc7159cf867dd3086ee6b82eb259efdec",
+    "de": "b410fb70fbb3178af6741988b3df9cf4a29dc93fbdbba4afe8920ba09eadf71f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.331": {
+    "en": "df42a4d5d3537666f9ed0012c3a44999878842f8d92f2ac056e6df0ca4ac44d1",
+    "de": "1c1223542eb376d116fb66a9927042a10c182cc6d51162e43b554c96bc231ba8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.332": {
+    "en": "e7384d2fbac7e5375408198f5c850b6266fc8fdd8856b7ed089d0a5c9dafd33e",
+    "de": "bdab1cfe0d3d380c527428cf3ee92534030bdbbfcaedbcb99f9a0d1ea7ceb413",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.333": {
+    "en": "67bb4fb0258d74477e9f2b6ab8efafb5738c587c644f9a09e29cfd341ab5b3fd",
+    "de": "85ccaa466078efec49e3a55b39176d0d2e2e341b8f68d94cb7a9cc123ee733ce",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.334": {
+    "en": "cab94aba84f97f7f8d3f46516a5f92c25363f39f9492415c4d76be84b2873883",
+    "de": "24bd75c0cb6a8b23a69e524a3a805ba9b7ec8316a11a62b39aeed6d9b1853dc1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.335": {
+    "en": "3f5fb286ead0a7941854fa187904534c0b9a3f7f0c101ed31de3867ebeb3b4ef",
+    "de": "4a5aa8299e4e8fdf10aeaa2a1e018d361e44c5971777ccd5dc0fce4760e2d120",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.336": {
+    "en": "43ae3265b99f2f34e9079ca3e2241ca8729718d749b3eaa2a616628dc2d2f751",
+    "de": "6de8f48e6da390dc487d5807e2514ba699314c2ccce985c7b91df26b47084840",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.337": {
+    "en": "4633c691b8b3acae033e11f8069ff07a3b5fc091be71bb6e3205e5da25a7dcfb",
+    "de": "f348070d5f306851ff953e95c6e15852e6367ef7ac9747899762c87906a6b423",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.338": {
+    "en": "e4d7835f9881432f2d4388b48346642988ef604d6a9148fc2b51367c251f35b3",
+    "de": "ae59155a7170a00a46e7202253bb026151b20b75c59e26b95fa22305c52c704a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.339": {
+    "en": "8790552fffc270f57e0b24e497ba9b563ff7e0e5f7c7dccc5bf4a1c50d8ed184",
+    "de": "3f1e70331271d7aaaa47194a5cc378dacae22eabdb36cb3b5d5dad23ba83b5b7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.340": {
+    "en": "526c7c69999f8e1bc29e6ff30ae7dbc300e8ed94735003b4b04964b08336d067",
+    "de": "940b2be33c5d44fbfb701177e2abbcbb8e9522d05348be94719f8021abe21e78",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.341": {
+    "en": "0e6a79002186d3896181827aec3489fa74bbea391c17dbb5d31e31cdf1e6977e",
+    "de": "7cf00ff9773cc2bad2d37c6bdfdee9e686123430e6e12f271f8eb6cc1e29ab76",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:pages.style.guide.342": {
+    "en": "69ddbeb0533f41ec23cee9c83330d1bacc76fea800b470c17475b99f29585233",
+    "de": "22c9771e713701dd5b403094c2ed506b0c4052b54f46011e03fcf3e252a21893",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:nav.atlas": {
+    "en": "ab3a1627419095b59d7dbcdc187bc91b664cb5fa4806fac807dbaa599554bd1f",
+    "de": "7d0abc297a60f2610161e99ea26bf9e51c77f98f92400cfcae7ff407d2a11c0b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:nav.index": {
+    "en": "4d971893156abb5a6405a9896da33a435331a462629855129f53495ac42f9e4b",
+    "de": "a9186966d14f96d88f2ab8ee4990406f591a040976f56ac8fdcf651b626208ff",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:nav.method": {
+    "en": "9c870aa6e5e93270170d5a81277ad3e623afe8d4efd186d3e28f3d2b646d52e6",
+    "de": "69ced07e16bc857e34e0fba537432752f7278fcfce8605b638b81285249c59a8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:nav.language": {
+    "en": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+    "de": "f2a1cc71fa59a04b38c226ecc20d57747090ba3b6d6c11d349f5e052cd87aa5a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:translation.note": {
+    "en": "31a1fa951ab79f7d78c9030039095877a00664ac2d0d8be88f3e989711529957",
+    "de": "3bc26ecd13e1c56e6a7a410874376c454ded92932e415ba95829cad24b8b9f1a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:translation.original": {
+    "en": "10b4c0f236716bcef196bb2759e81b922f5a742824d0927b990e8b8953b6a899",
+    "de": "022d975929ffe725b74be91747e3ff2939f438381bc438ce72fd531e5ce9de04",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:translation.title": {
+    "en": "e069e4a90f73aa70fb8882ad31fad73b0b03ca9ebd1f54a2bf8af973e155619c",
+    "de": "d992a139eb1126d88cb8eb8a9c58893af8eaa2c2f4647050f19033b98d570be9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:translation.terms": {
+    "en": "1572213248fa322823c7836e6469e8288c2e8cc270003f684a42ca925fede80d",
+    "de": "4166929757b262552e2b4e3be6d48ab2430227ab96d496011aa2779ebfb271af",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:translation.pending": {
+    "en": "e8ada429649dd07b61f064bb23e2669d2695bb94100b8390e38adfc1610c7c9c",
+    "de": "1e93c4f35b3d064f495b65146ef6991540fe8aefd3ee2f49a4c7b0ccc644e01f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:correction.project.title": {
+    "en": "b5a35671c88e520e7f54129cbfff80ee28293b6716f87bfca1a7e5b39e02b71d",
+    "de": "377910049953af722f8c67a46825c016a264b7d8e87278ac1d560acd93d98fcc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:correction.organization.title": {
+    "en": "0d6f1f40020eb72b8881d4812bdccc2063c2bcbcdbdc2b2320e02157fdd45125",
+    "de": "9dbb299df2c0aade8fbe30db03a5f7d542fd43d3e0e05e0e0cffc062e8e293f6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:correction.organization.context": {
+    "en": "7b6d9f4fe471be4b53d6f86377b4302b3c3749acdbfff8bf9283d45c3112b9d4",
+    "de": "21bdee7a00a3f6e714f0b0ca7c04b20bb8a7f757e0c5482a40bcc872be4a1dbf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:project.subtitle": {
+    "en": "2237bb873e7a7359473eeb959b35169800a2d1b264fc14108ec4f9e7e3242df7",
+    "de": "e7ffa43d48c54f8e8bc2e078f0cf590c88ba38a6fa181ae04167e28785f8d1f0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.explore": {
+    "en": "b8c5aef832bd7f6395fabcd5b31dfc6d6b4f45250cbdf3d01574a22d62ce580e",
+    "de": "54e19811546afd1b08657316af8e51bbfe4685031dbfa3d26dde4fd96df3dc5f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.explore.basic": {
+    "en": "451008761054c8816db295724205775c9dad2a3d4c3bc7444a87305b7f1ef932",
+    "de": "f3aeb491edd33bba5c1cd9e6b2b823f94866268fc0f8dbe85626f1aaa1fbc3b2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.source.planned": {
+    "en": "40bc126ead98332809db1c471c5cb2a7e17fe048d5944ffa5b0b3b8171f7520c",
+    "de": "4f638d5dc5458e8dabd8ee39dffdb88b53664faf836ce0dd4fefdc9240db39ab",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.milestone": {
+    "en": "8aa08077b3625631bf646656dddf65c8d10ee378806d45c04f11939c3c5e3e73",
+    "de": "c41c95e15d5f248a117ae5799970beb4f4d38b92b062c48fddbb8e904f1356a6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.source.basic": {
+    "en": "a692e70fbe78716f05557d751ba1ae679cccc8728548caf1e148345d5d1cdf2e",
+    "de": "c2dc0cdf5e3275915e2302421c2bbc91351158b70720b33a0115af5a1fb530c5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:basic.reported_start": {
+    "en": "2c54e1ebc447e3c9f6daa3774cbf11a560c2183abe4ab7d4cb07b3ec64c45527",
+    "de": "6c0f83f392dabb6a10712a6f85bab74cb6ab7dbd3688c7486cf465be39f36fd9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:basic.planned_completion": {
+    "en": "540357e53da8e7334ce0b0451fa4dba91eeaf195dc2b816f916ab9c1c5abfcf7",
+    "de": "27be5abc55684884c82d350cb63d31c60c00b67cdbde9a42af09217fe7c77ce2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:basic.planned_end": {
+    "en": "0a38a092bd5764f396de124bd5091f46a5c81a1ecc8ce238399b785324e19dcb",
+    "de": "fc52ffa57d09f2010df1f0041c007f82675550e98fc3e39fd3c5cde9a1c5df36",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.selected": {
+    "en": "a4ac9a0e76f272a63c5161248e18d9ba1d12b609abd05fa6c9bb5f77def3d027",
+    "de": "0eff3f7e2f0d7b2b7b2fb59406fa70c759de83128184b736fc7b2e17e4e045be",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.record.label": {
+    "en": "1fd171c4b3535dd6fd80dfce4a9d58f07e1b82bf3e0ebe8f7ab68eaa433a5788",
+    "de": "c0ef01d6863e2c2983af4bc5bb12caa4275ade017ca384ad1506dcdca006d5e4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.central": {
+    "en": "3af744d7b640a2978b15d349aa2e480388b7864d1a5f3fea13d88ae536b74dcc",
+    "de": "dc50322a63517630539b47a59c9ceac72cecac21611769c6b87944aebcb56195",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.overview.label": {
+    "en": "f9144caf08efb9402ec4aa2ddb95d73127a4a43574f3afa66c57a44e4beb14cf",
+    "de": "71804cc826bd90f4962e78aa4c4e6b0da659a1171727478a33c60ae83bc179c1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.nearby.one": {
+    "en": "09f3d19c46a725cbb6a5ba22220db6821744d1e9f6ef4d417d385744be5bcc66",
+    "de": "14d251dd7ffb0c4e64d3091b1263909629a6f3b079454a5a7e823bc38b403b5b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.nearby.many": {
+    "en": "5614113b4668377252ee75ec49c3a47614fd85723d50aeab2c7e24f55b602052",
+    "de": "609692fb7826e6ae58583f5340461dbf3c762833d69a120d18cff6d3ddcc1d5b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.all": {
+    "en": "2e62a9f564ae6d7f0e72b3fab3ee2695bb492490cf045daefe83d8cd5ebf98c3",
+    "de": "f531ae99675093d3af74378af018bb39d9fc99cd4d759c857856b24b3443085f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.pause": {
+    "en": "858e4ba7a29fd38b630ed73a79e2738333b3fc6778fafa90252f5556c1262fdc",
+    "de": "858e4ba7a29fd38b630ed73a79e2738333b3fc6778fafa90252f5556c1262fdc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.reduced": {
+    "en": "53fc2ddf3f14ef8ccc9382b1fd10f21c216c5161c77a5dd433be60ac6535e863",
+    "de": "013f76533729ea5aa6866c0a6c1de62e8f5a539481ab04dfd3a4c354d13e21e9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.fullscreen.unavailable": {
+    "en": "ee06dd885c123b1d9595230e3c78065c3a93edf12acafd979a68d0d5a2b9c165",
+    "de": "0ae22ab0c20d19855e2ad760e80e985f23681e36e07b954a3f8dac8fa25514e0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.fullscreen.exit": {
+    "en": "37fd4e355ba33fd221d96b521f19c383896d2deb4e2c85fb9bc9a889c1f5caa5",
+    "de": "6d9f99ab5808f2b2743b15ff80cf207743ad3ac8d153f94053dada8543c93f91",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.canvas": {
+    "en": "624dbcf17ad5011438c8b44cfa3564efa2181491215a581c4d277fdedaaf8f81",
+    "de": "18b1c3383cb7165c628c2306fa8695871d38de8a3650786f63610e6991b457bb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.graphics.interrupted": {
+    "en": "a37c4ff5e59e3702c08d2088bd54b91d7504a9e60e7534c6449ff9ecc7316b61",
+    "de": "d2192c854c3848b83684f8e1645c41622e4feb9ff4f9c2dfb17ee9d8b8e89678",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.asset.invalid": {
+    "en": "41113b7ebe996f2bc60d64f104452e1da3d1754710f5753c04ce192ad94a678e",
+    "de": "fe9b76c2e2cc185f6f8477015da0be269a9dbe17febefabb0f04cec0bc6bd8e7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.download.failed": {
+    "en": "91f4fd21d5bf05bb78ac02986b4f2fa7b865e47701b26e016b3e52b514211d44",
+    "de": "438b99a2561a6b09cd1f158563089f7c9ba5ebe68d0ee5be065baa16e074a7bd",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.download.incomplete": {
+    "en": "d80760be81a34a4780fa94c711633a089c9ca50627c86d7c68957f5ac96ffb33",
+    "de": "4c180480ab1d568938b1782aedeb6e150822b5606f2881d5c1bffab9c1263972",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.model.unavailable": {
+    "en": "a503282ba59791b2c19b6b19ce539dc63f8473ed3646d5d396d22fd8d309586c",
+    "de": "503048b2c1403eb0dbbc23cad2a6559f000561ff769f58e574e9d4f761d1aff6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.model.unsupported": {
+    "en": "b038c31ba29b1e9bd8cafa2ed965cc7cd7f92800ddc74db63889137ed123a953",
+    "de": "3c8376eae09a671818b392300a86f6b26f75f0672a39435d213387a0c5669550",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.unfolding": {
+    "en": "a3061b45ec46d514d6d49e41be99d2f0093d45d3996d1bf7509e3ef039f51b76",
+    "de": "c8b1df948df22a72d3ba3ab40adafb22116bde63fd329e7c42372b0751a719ae",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.detail.failed": {
+    "en": "7ba3c142ed084801e79fdc4f913ced3a7dfe3f78aede6d8522edd7fa720f867d",
+    "de": "ad6d9b8803c79257618a79a3a510632e54fe2caea43383e9033d5db16212d812",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.detail.progress": {
+    "en": "0adaaaa00da72b7a4dd3b1423f080af4aae03b581f02162121a896ac6277bce0",
+    "de": "3e4c2d4b8374ed7f49fa817465fd5028b9ec0822a701d78ff76618ae6d406780",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:atlas.model.coverage": {
+    "en": "30600214f87b13bbe1ca028060ca23f669fe33641ec9d04f95ec05ac1f36dd06",
+    "de": "93849692942b7b018a8fa4440fac54923fcc6a45c97a813bb16f9a90b366958f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:warning.passed": {
+    "en": "d4aea4bebc71376437b87a6560ac088af29b41bd233a5247d04bca152912f715",
+    "de": "4fc364847a0115c5daef9fc8457ea90d9795d52ebb1b8694e5c9fdc4916e1b70",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:warning.planned": {
+    "en": "c1db3da605caa04a589a0cb025bfc495874bbe1b66d800bbf61d303292f1fe73",
+    "de": "fef27c0dc6e46d8f64b687cd2665f676c4f010156b6bed40227023703f62ebe8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.financial_measure": {
+    "en": "d517c88333271ba9bc4141ab86b26f3f0b17f6b0cb52a2ae88352e55a8f0394b",
+    "de": "d3bee7d84094b49a601d3e103e821289a4faa54400ba901bab9c37780c46d79b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.milestone": {
+    "en": "9e86248cf2351e388065b80307b7ac00a2fe5ed922d93d1316c241cdd9c61146",
+    "de": "a8cfe6a319d9460cbb4ed99b5064332a952c44dee24f5194d38d64a1bcf889f7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.organization_role": {
+    "en": "a90b2f79c4eb59761aa6a9e3fb47848cbdde3cfeb336e7a0d1285f0bed3fbb90",
+    "de": "8a866cbe68a77083789c414726970f0befc18326afca2af16ad59987543fb9f9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.project_location": {
+    "en": "593fc0414b8447bb130447b003e1efe3e87fa8afab1e362bfdb327ede4ddb0f6",
+    "de": "0f75c4ca4b88fd149d4200359e448b1795fd169c29c08a7d0222d106655f72b9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.project_name": {
+    "en": "25498193b898195dca035317a941c506276da563d690c4cccf94af50643dbb44",
+    "de": "29ff0bdf52180e0db57b72430c210ace71aad5c8d206ab049d5591549896cf0a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.status": {
+    "en": "8526e2293bc1e3af919c2f91a0771dd93d0dbd2d87ad4e5bb99f574086c1e549",
+    "de": "3e84a6854ca0a50173e93ce9c2779c1a5186b7b9605c703ed262c659735c1994",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.not_applicable": {
+    "en": "5237c96ac1a23b98eb13770503afe986b088acd6627fa7649a5afdcbc4bb8e99",
+    "de": "af89696e79bed8144e85dab71002a7fa5c0ff52a945020d02615a32ce6764482",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.not_stated": {
+    "en": "068109fd3f73fbbbb2d2cb3098fff4a0c65f549e103864b31f1987522d3c1fd5",
+    "de": "080f77b223daadf0190fcc72fa2a9a984844e9ddf2998bef28f50ded1c2cbfe8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.unknown": {
+    "en": "b764cdc0eab7137467211272fa539f1260d1bf2e71bcf6ff3bdc960f5c16aa14",
+    "de": "276ffa1fb4f970104fc7873c371e0af2c6b10b8375e7104b6ca3708c487163f0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.unassessed": {
+    "en": "025761aaebade314d4399b5627d2b0b74bc38a2b0e8aeb79fde9cbde3a8a67c5",
+    "de": "26e2f383b938188dc80e1a48d4c4a5bd50e1304712b634bf24351ff10fda7f38",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.verified": {
+    "en": "f9e0bd9d6c0ed7382fcd1623cd3989c652baf35cd08ba5183523ce5237b16f24",
+    "de": "b33f46fbc82b861683b09259481478dd4c3c29ee0231f0636fc7d179035a6485",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.stated": {
+    "en": "61fc313074b28d97d733b77ac4c0d4ff8be5d05c0bb0d4d029a3141880bf3eed",
+    "de": "e90f5a66849204c6ce86d943263547e34dda3b3c3b51d24f51f57e89c08bcd37",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.exact_day": {
+    "en": "0bbaffa5aa37c096e9b5b9decdc8b2a60cdb0d5ce8e39ab8c8e8e228ac9f39ad",
+    "de": "c7d885bd6c8045a34ffb42b4a56fe6a150529438bc6e57e9dec2ea7fdc8eac31",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.month": {
+    "en": "310ca503ef36f177ddbc760463fcaec1edc6eca12bfd590ad7bb244b31e59543",
+    "de": "2933070469a218e33406a48e440a83cb4968e7db19d96e4862da4f94ad09efe9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.year": {
+    "en": "89f6832560dec0b7f8721d1fe3ba0b5036a5d1464ce4339bb16c3e1485bfec34",
+    "de": "ed1ad93b89670bc93a004e33ba0470b75aed67c479e2b7884e4bf0ffa746381e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.season": {
+    "en": "bad2b893e5a466919e6513c50ff6623b1d3a115ee0d2db5f0baa650357dac2d7",
+    "de": "ec2e7ff8acc9321d8b7954a001e254bbeca922d5a3c846c233a14289d898f797",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.range": {
+    "en": "5de74a81b192304c10bf7b8cf50e863a19e8ae4c38a4d5c5116359db0deed29f",
+    "de": "ab0f2fd5b2501811b71ebedfaaf00cf0a97935bb2f1b8aa41447b0b62677c22d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.construction_start": {
+    "en": "4f57b0e40c76abddb06bbcff684a7a2fc83c924fd5e8fd181bb4daaf2b8d949e",
+    "de": "43e5f0c13e353bc120f00a38d496f32e8c0df4c274c1eada408c215112030d7b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.substantial_completion": {
+    "en": "45b51429929110dc371a7f89bd16ce0faf0ef828e04946c35e4b909a19a9f042",
+    "de": "0666326da4509981942bd927ff87612047beb0e9ddd191656e6d24b96f07fb8a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.handover": {
+    "en": "c012b4725211c93bf9c751393eaad20c1681a4338b202b628a891d4c854e25cb",
+    "de": "4ccfa49f114bef40d8327d4ce280bf1b381e59d929c2ab25820f0a13f606e086",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.commissioning": {
+    "en": "166e4688ca9926778946a3cb298d60241186cc91066a616b829f9d465841aaec",
+    "de": "f3a02bce2d6d6cc4efac43e6d4f5a865e4e07e84dd12d5501522ff1b67ab1dd1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.approved_budget": {
+    "en": "263ec323efd3b363bd6db5cf8cbb506dea997934fa22ff69245c473127ec558b",
+    "de": "afb53a6735ea9fe5203e522f45649c0064ff57c233e678e391bdc24d7bdf9973",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.financing_commitment": {
+    "en": "4e0dcde2c73df07d95d4f34c31ff32f23be352cc2004ad3e2468ee4ee8679708",
+    "de": "0259ca547186993486770c4a686daa4cf66c4463e5c5d1ac77658718894ebcd5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.gross": {
+    "en": "0589b626717ccca8914a41a144ce292bf279c52ac7135af131cece4e747e89aa",
+    "de": "6cd01d543ed96c463a357ba6b69e4183d6480a21768633ae64bc91e486b6b7aa",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:state.net": {
+    "en": "660fb2c41d028988b2093656a80d3ae99bc67cd0d5acca5c6063793819b15881",
+    "de": "c821d25643d9a2cf621abdc0d204614792ef88f0e81e84fb5e38fccd71c038cc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:reason.owner_review_required": {
+    "en": "5eb3082b750e8d55b2f385a5c15352a800d7d3697f9efd0ad6003689833105c5",
+    "de": "3e336c693b9eb48683abb8c5cf450cbff7ead8bc0a2a3f9712796fcce0b4bd16",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:reason.source_string_requires_owner_verification": {
+    "en": "69995d4867f7384bdf9c659f645b02907c4b465a8f62d07cf81223e3bfc010a4",
+    "de": "e347275a03f8b004841acf0ca118ead5c750d1b0e0c297be55d5a854b04ddf0e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:reason.multi_source_synthesis_has_no_exact_span": {
+    "en": "ffb79591a5dac761273f175ae59040e85d69e0442b569291f7c8adedf53e754c",
+    "de": "49750409de728a0f41338b906a86a624aeb9bd4898f804b2c413f3d2e1d8f9ea",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:reason.milestone_vocabulary_unresolved": {
+    "en": "a4e801b0062923194fbb08e88212cd449aa9e4e3d771a344c27dd50b08f5bee9",
+    "de": "9b07da8f4a6861661a9ba2704bc8738b560bf0b6c9581c2597833584a3534ef6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:reason.role_vocabulary_unresolved": {
+    "en": "3f90c256817f4df41e662c4c9ca5df675913c4ea3dd1f9ea60bf44ae7ca9eaa8",
+    "de": "257962a8eae2114a047f881a00c6df30bbc0d1461354a0226edcabb2228e15f3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Verified": {
+    "en": "96e9ab70b9c531c14058175c8cd80ec8392b1618ed14cd4659acb76cb9f4f19a",
+    "de": "d64ea732c7539c6769e87b2aeccc52aab0c3891edcbf9b416481d04b361f3869",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Corroborated": {
+    "en": "ac2b4981e6553d67ae79fa17dc47edbdd31410b66b341a6e5d845ce7eca0ca2b",
+    "de": "14d08bde6951e7dc17026dad8babb3fbd410eb95468841d378e7cd858309c707",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Reported": {
+    "en": "34540bb7b0899b49687569aeff3ac9232eaccd40dc0e57235eb05db4ecff553c",
+    "de": "25b24ed7534fe1a1d7e0e05b324273a20286e0c66cac4de23771801508c7aba5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Observed": {
+    "en": "64fa8a14a90feef5d86951352195391dfead1194f932aaed0755021c504e2a15",
+    "de": "e30aec34ad484ddb75481d50720999016b0ab61837c4eb65f007a83ed3533cf1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Disputed": {
+    "en": "b3b310ca1276b3bb29b580edbcb62728ddb7b6dc5e6dd4365aeb4882e0a07553",
+    "de": "0ed29557051db9a297f64a284492a4294263f7978cd8da3ef8103f0a6a694145",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Verified.description": {
+    "en": "33a99b159a02770b7f6f604ebbad25435afaf7729a389fd2d09064d01b6d6442",
+    "de": "5bb81524d8a018309cf54ea2bd8debe8c6467f26e6033f5fb87bfae322c9b0f5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Corroborated.description": {
+    "en": "8a2a44c3b3298bb186ec1c92e839effaf820b2254373f2e53602a7d40d2b7760",
+    "de": "7e6ea12e6523e893ceb7fb316b46c16c7b1583f2388a7668885402281f9a3c65",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Reported.description": {
+    "en": "95fb1d77042db9dfd3e8fc20edc7ad07f53be941e77b262bd08176ca6247f6fa",
+    "de": "885159d5ee39456032dae3c96b53a660726151089c8f65aae149fdd23a220829",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Observed.description": {
+    "en": "558dd197086c6d05dccbb7a95fb0f32c53ab62a8c0dd8fa8dd5f6cc20a768452",
+    "de": "ac4553820d28b28b05c3553c88a705fed1494f4d9f2b3619e0d21f0e9c03c921",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:evidence.Disputed.description": {
+    "en": "860978bc55ccaa2095e8ee1e5e38a676b8749c8b1b616253dc4add8495b9f255",
+    "de": "dca7d8325d29d70d216505ac1e7c8e649d22ec3382e08a405ca2d4d73fda8a59",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:404.title": {
+    "en": "7cab79a382d1a0ffe816be0ec7a1ca18d3b159cf36c94501b6702ef76118d7ca",
+    "de": "7d6c71f378b62dc2ea5b06cd80c13934a4add893ee4812da7d04893b9593febb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:404.heading": {
+    "en": "a469ab4ca4e55bf547566e9ebfa1b809c933207e9d558156bc0c4252b17533fe",
+    "de": "106d2f8924d13eafa7bb11df75c2f32376d1a51ea19fe9992f7921e011a5a1bb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:404.body": {
+    "en": "bff70690bee33a1edcf523f1272506a12b89374a7b6bf4d411f98cb7a1405cdc",
+    "de": "a8f1e618113dd58a863093d404a37d8a881129a897561fe6508fce81a8b76825",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:records.description": {
+    "en": "f94e0fd09ac190d36a257f406e85d4f4515cad27ad09c6f507782bae82f93c45",
+    "de": "af6644d39edaa6229672d158960d33bdb305370609e6cfa46e72507d4467b5a0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:osm.contributors": {
+    "en": "980ca2cea8a800cdea7bb7b374103e10b981d96a0235d74623e1c853934cfb7d",
+    "de": "1a4e605ec2f090343844b9e8f728248da28791fd6aa03974d1f8218c20e26fc9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.1": {
+    "en": "c78f4ce9e53233442849784cf742947c53bf353a688c665c40fdfa8abaa0fc04",
+    "de": "bdd7e5b2c426d1dbb7e8fdee724f6aa009c3f4c21a54f754a530a00cc005ce0c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.2": {
+    "en": "41e666acc661c5bf514b980dff3b4788efe2b0424dfed1d9e096b528328b84b7",
+    "de": "29f6fc19139fc0b1cbb2261c55f39af35a8d922ff13c8157792d2b4ae096b923",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.3": {
+    "en": "5dc0870c281bf1322e49f1b84bed1f56fc7ddc5dbe8c844a306d87bbd82a6c99",
+    "de": "5dc0870c281bf1322e49f1b84bed1f56fc7ddc5dbe8c844a306d87bbd82a6c99",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.4": {
+    "en": "73d5eb9f29a84b7fd814d9fa25ee3e031860e9dcaebe069427f36281f2dfb9dd",
+    "de": "872d8dc8f14e658ecd4b51b0e22b3ea061c240ce7f26ba6a8e0c9a9a9f95b56d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.5": {
+    "en": "4f6150018ea0efe527432491df502fc934d01e73b2b36a98e925e6221be8b7a7",
+    "de": "fd20578fb0320a5fbcfb1203524ef06afa73fc82934925d497e84d1198a43f89",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.6": {
+    "en": "5be8564ea81819eb96fa76405dac8c2c112a8b6507d90b07afdfb50a93cb2e9b",
+    "de": "7fbb31095db5e52201a67fc654de1acdac489f3c17571074afddc4918526225a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.7": {
+    "en": "27cb0a95995abdc3b8aec9453905c1f871d941caf0b697745381bfc7fb3a4acd",
+    "de": "e629ab596d1bc828cc9c67624589f78e90794f3b3f1c32026536158f7715990d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.8": {
+    "en": "28118fa82c75613ef865460ffb8ae95675975741c6d72999a9b8169c6f48b986",
+    "de": "6161fdbe0aca21d6085e0a4bce3b99c208a35c541dcbfafc56f8e9ccff80ce9e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.9": {
+    "en": "210429fbf2795e0c2c799686f001beb66884f8bd70ea2a22388e4c6f63788ef3",
+    "de": "4234b7df17616a0b4be2dcbec64e475accde2e8d33be42d175cb81dc41c6a95e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.10": {
+    "en": "bd67c6c636cc1cd59206c1a5b6311955105b6fb53cab80dac9450cfe0ee5a29a",
+    "de": "e8f1778399f26b7ae90dcb7e7639b070d82b8c760062327b75092f559b1c339f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.11": {
+    "en": "eedcd178b1d7331e6802e148a7e0a17b1c934f4f19f9625639939968a194b743",
+    "de": "1679a5e74be1061bd9ed27092e7f6767d057773fd74872f8ead1c700b717ce95",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:date.12": {
+    "en": "2c1566dbd64814f19991ea9246edaa784c36d75af04988106d6e8bf70d9d34fa",
+    "de": "3211191a3b63775703f2870dba0905704f4ac1070d4d8dd46eab4262c10c0da4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:qualifier.rund": {
+    "en": "5f79c870f2acef18067bf94da6f1f545c54981ce5e3e8f00fd1aabe17524783a",
+    "de": "f4d1352f8a0fcd11f282cfb1374a4e90e849e433cf14b4cc0dd80d4910523082",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:qualifier.bis": {
+    "en": "a7e2d26e8d15814dd9c6a1bdc90585c8d0a3170dfffeb21fc42986683113041b",
+    "de": "96147cdbfd6955d797f628fb510283afaecc1aa5a8735f3fe209ff22746b6258",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:qualifier.vorgesehen": {
+    "en": "8cbbe6f92f7d6db4f1bc3b945856d13dda9fc55c3af151bef6d55a2f4beaa557",
+    "de": "2be50fc09d87184ad1decc0a6138c34647d5e5d7a4a41c910f90d1fe1dc1771e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:qualifier.geplant": {
+    "en": "9b0f1b10aff55228716a1fbbc59bda8fe735ed14ccd5e2c5226a9ab72a48d47e",
+    "de": "710a4c49f2c1c2931f8a86fb235531b31c934688f7976297a0a0081275b3dc2d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:qualifier.voraussichtlich": {
+    "en": "cea23dd4b87e8b00d19fb9ccaaef93e97353c7353e2070f3baf05aeb3995dff4",
+    "de": "1991cec2f669f9e686946fc2261f8b113c623e27242c59e221ca9a37589f5df5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:qualifier.bis_zu": {
+    "en": "9c8dade5f4ebdb69139db3488d344f4446404642e2881e5abf793973eba10e35",
+    "de": "08aab74e90e3a2bae28df113479eac97b40e98185fac4874761ebad99bf30d48",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.construction-start": {
+    "en": "e15c8b479d938223e7c1f36316bf7332281c37f3b113ba4ccf7f2878bd1872aa",
+    "de": "df5ef7594fcaeb1d0a8431054e4c51ddb9bfb25cc3149211f5cc2307e608c9ca",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.completion": {
+    "en": "73db912e1c6da98681bba3efdb5987277188a4c277fa26818d6cf88234d8b218",
+    "de": "05a8ef2bccd9c5807547fbfe84489fa1558723638fd68fd23e06db9c47608a9b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.technical-handover": {
+    "en": "316c17dec6b6f66d56288b211665632d1b95b0e4ac42aced29c3788af4b6228e",
+    "de": "5d70c3f38b31c5977740af48828c9f42c81599399493f31237d0357f23b2a81e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.commissioning": {
+    "en": "32025f21d9dc486d0b71bc34444df7ac9b94fabc2cd0322e410280bbd48295ee",
+    "de": "349c8067081124e3ea0f8880e11dc623d7a3377a7a9ec09c3ea9dea928dd9b79",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.works": {
+    "en": "a0acf01a7f108a548e259e86c9174a4146170c8fc47315cf9403477482228dda",
+    "de": "5df6c4575191c86502afc57361bced1612b16de61bf0d5325f4c14836ef40fcd",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.planning-documents": {
+    "en": "02768a05e58687d3a863e81e2cccde0c53be8d3de03e623a8b7fb5280a6f437d",
+    "de": "184aaccd72124ffce440c1239272b23016f3e2e1880a74487db7aa0da58101e9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.financing": {
+    "en": "457cad6c9e3a6da15ba55844e11cce11ece24a93984d088c051630b9ec3d636d",
+    "de": "ac38a7f5f916964349b12501688808b56a6b20dc3b5ee417b6c5e2f91e74d365",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.gross": {
+    "en": "0a624a43088b0764cce5c45c4989e3a80aec63b4fa86739317aa107a267f159b",
+    "de": "658b4cffc0e65644bab844726324416b89d1287d56a865cb7f50db7817d29898",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.approximately": {
+    "en": "56347d5e8fe4011d5b39c7deb7edc6621852b3b816b9456747ccd3714d3035e6",
+    "de": "7aee74de9fc86d1be17c16abf78e5e030f2f6ea2dd74913721e68be661bfcb4b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.by": {
+    "en": "bbad5b24f3c953fd427d1690c8056210dab4c86dfb1b1855d52f3a118dda6309",
+    "de": "3ba618ecfe97dce238afb94805d787e5635aabcbb78bdb01c64b0e9eea9751cc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.up-to": {
+    "en": "9712271a397903f5b20fe88433bbf322da3487f84eaa620ad29e59f25c001015",
+    "de": "c62766c9275ab1a877ad00f39f12e8b900b13538f4a56e8edbeff98e2a7e549a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.planned": {
+    "en": "4661fb8f5603f43e1064eca6a34feac0a85535dc589624c4f6123213f072d407",
+    "de": "fb56c4d4c935a5af37ffc0f2591e218f539b6f51131d519d8f57c94af5e4ef91",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.envisaged": {
+    "en": "92d30ce07966afdcef96f6a94a471d523dc08be45fb26d443f9d967ca408b607",
+    "de": "034ba545601c5fb406fbf8f4ab2288bee510f34dbf8cde63f4351ac21e982755",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:term.context.expected": {
+    "en": "23ee2b91a7881def6cdeb6dbf96056dd6e83d2cdac4662803dab33383dc5a1bd",
+    "de": "0a8b6c106d5a7b2af638bb875b3a94789a9fd3a42295d6b5cf50439ccb668903",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:terms.title": {
+    "en": "565f379226ae9d35ec29c9d703cf89d0e71a5b7f213210e89307b8904c3f9559",
+    "de": "5f244f69763aef8f2020c2077a8c19747260e07de4bf3833cfdf48e0e764b64f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:terms.heading": {
+    "en": "2a259797871e64be7e73f2c4f3d274c4f66587007c972ec615251720f4dafb0f",
+    "de": "88b0e88b01a7c889bc2466e9fd8c0643f027bdd90d9f333f01f126d59851c169",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:terms.term": {
+    "en": "9136634c8a4db571bb07a914f2a5599757c699e4a47fae62d30b80672c91fdb5",
+    "de": "61efc724b681d9be86f1828f0ec6c97e79e34a90a93e1d72b0468e6f6f7db4f6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:terms.english": {
+    "en": "57623f308e2c8d51f3d8e4967d2a6978cbc2ded26193d2cff2d6b6cdc6cbf186",
+    "de": "5dd83048daea99ad7778b511cc80f24db0c86d6544b745e838f0c0f5f7cffbab",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:terms.context": {
+    "en": "efcda6f81bbde9333cf8580171537df767761dd3b143e22685f5b70dd4c54410",
+    "de": "70fe3e6c1e03e3820e5bd1e55baa24a6a141dd2fec872920c53ad8316f2682b0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:terms.status": {
+    "en": "a410d70156a3a04c15d019bc6f6a520f24c561c89c05e23fe3cb5b70077aeb0a",
+    "de": "663c7285639ec86cb84826f8a67ab611fa3f4a0ea7d88552197a9114b35ce281",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:terms.confirmed": {
+    "en": "52baaca3074f13d9b79dba979498f678ebdd46e4d7f4a3f60a448b1040ed7522",
+    "de": "945f668ce44197f184d54d5d9343c5587602cf7dd5f0699f9111471b42092c2d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-project-name": {
+    "en": "b5a34e5713c82a1b54ea705f0c4f4f05d8ec55d70538a491f321a290f6af2ff2",
+    "de": "99ca8d7adc9fcba0b92d68c2a9e37734259a881fcf8758dc2800b7204da50658",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-project-location": {
+    "en": "c6934976932779fbd4130745da18368a840117d200510b4e33a6bbb499f9e4c0",
+    "de": "9376855f3872f4f38146936d2bfd233246e1cd3f2fd8c53b19b22fa049d5682a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-places-programme-page-figure": {
+    "en": "efa97d648b1fc94d2de445a96be1f4ab7baeb4945c2ee86b7d762a4812ce4eb2",
+    "de": "12571f547f71c5ac23f8fc422aff783bb1e50330ca2ae7a97e80fbcbb3769b07",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-places-programme-index-figure": {
+    "en": "14353eddfb495cb842c1189d5fb45add61226a5e990d99863426e9e10c381d14",
+    "de": "ffe141d6a26506e4779bb8817fabf83e3c22becba101f63c99cc94dbb15163cf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-current-status": {
+    "en": "095d30a38c036ce7b963825d5906c65250d0dac7104e876636484ece756af0ea",
+    "de": "bd5eba958683a265df9f5dfdf0859440dee35ca98c02f354157a64d9b3be558c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-expected-completion-current": {
+    "en": "79f6263e5b95a7c03fb5b9bc60cf8a4ddd9bf442eb6d9129767934fdf43fb970",
+    "de": "ddd97772c0de6b23ff6267aa7578956d915e6d60f71aafb043d14a5fcd09800b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-completion-history-2023": {
+    "en": "44cde7b98ead59dc38dffeb7ee1053690a2006fddc3f9984cba657b3ef20db8a",
+    "de": "759e2acbf67e7d8ac7ff75b34beae08b1d027d9fc7872c185d56c508dd137809",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-completion-history-2025-a": {
+    "en": "a33ac131b47832cb97edd661ea895df28305671f7262c7df1d5a525bd379ba93",
+    "de": "3d979a8f93e43eb0da8a47ce1f7c0f01fa63628ed93e7db87c0cd1af6cde6129",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-completion-history-2025-b": {
+    "en": "3180499df82b5b3cde4f952602b7901e0ef715032ec433c71facd57628bca190",
+    "de": "d80984982153098b404feba194b01db4196b7a76354c4105c1dfdf4f5182dee6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-completion-history-2025-c": {
+    "en": "fdc453451399a889db46bb8c74569a7d8efc0ca03bc6e126ca6e5504e3f4442b",
+    "de": "9fab66433282d322d308ff8b6fe4f3e865c4cdf48694162e772969ec9e994941",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-construction-start-history": {
+    "en": "55c66c6484015b45079f3bb84ce176c41d334e101aa465898a668f75f1011afd",
+    "de": "ec647089265d04ec1c757b4e05b30f377967b301097c2d1238aeab3c4c78b331",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-construction-start-current": {
+    "en": "c28b8b2e821ad9cddbec018ddbb261ecfa21a505141724a266ac87efcbfd15ae",
+    "de": "1961ec7a7943d73bd2ca459aa00e96c0ec1616724eeb9f81123a00586aafb75d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c014-approved-total-cost": {
+    "en": "f1dffa73b98afbde1e4fc62a1f19099610df8b61806a8451d27ace9c188d6ce8",
+    "de": "7971635475e750f15dacc36f38ebcd0a1cc3653f33d36d7035f0f86f39476549",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c010-project-name": {
+    "en": "e39abdbfd851d2267e520b5ccdbc1e29e4c36f9cb3033f766d8d407c66351490",
+    "de": "d9ac43d22c3c555dab38e5d229d9482d5b772b0c51f19923b46ec4c61ea121d5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c010-project-location": {
+    "en": "e798388e5dd37dc3b55bef89fa293e98953e6cfc15d67f1755e853dac5f95c6e",
+    "de": "93236e2edb63f3d6423e68b96af501d270bcea3cbc9aeaf894d6cf098d38a660",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c010-current-status": {
+    "en": "7b75a513048e0182c8bcb2e671e9ac6445a789166368fbde2876e4a4ab071582",
+    "de": "a2a64d34a7f6f84d68865f5851683640181a9a01c7b2413a7cc1e93d54feabca",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c010-technical-handover-current": {
+    "en": "db631d6c9e843f648c25fcd68a4ab7a6aebd2de603638d7a7b496104d19acf1e",
+    "de": "545b293bb91353a4011fe8dfa20429dce1901f67d6877e9fb85c04a5af8ddce9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c019-project-name": {
+    "en": "8d7084b8ac93a00ea2914fb4ed83cc67b36c3bd2f945be52189083d0049aa806",
+    "de": "f28bd24d71e8f8bca730d72649721cb4947be1a1c63f8a5c3ad3c3bcc3a44993",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c019-commissioning-current": {
+    "en": "9016e7a0821bf47140e9b640f7e7d31580c371337b7aef582ed3565b27201cd9",
+    "de": "90dbb871b7eb15b6a939f8674a9d21c7f714cc78f301d10e55043b82dabd5062",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "facts:c019-financing-commitment": {
+    "en": "a7a84936db886c5b8855c981d6b7ea29cd5d0e32882923e9512e0503e8fe442c",
+    "de": "95a8b9fd38d2898fe00e6ab7770e3afe9a50e4c31f623d8880d3e52e0ba0afc6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01482": {
+    "en": "0d1ef5a84383a063c5f7a863460eda0378ae26735b11cb3a8aee5f30fed6e5ad",
+    "de": "4af2dac9c04b46724bfd80394b116b8d9103bf76ec0c77a7fc6cd8de970b8e22",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01465": {
+    "en": "e329505b512642946d4d99ca60f1cfc13eb5ffcc59b0f3fe581a9fd60180a543",
+    "de": "3aa82598540d6a9368b98c88b5b92b89b82d21ebe5925d08ada2ac8ea9552d82",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01446": {
+    "en": "2e8951beed523ba1737d12d2dfea180cf0ba5ebe9cba5624256df43be8157ad1",
+    "de": "385ffe8c38c2cd7e7829181b17cd5da2ccbc8561d7291087ff0bdf1404461cc7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01444": {
+    "en": "222c33f2b91c4d16ad56d23a184cb6e9c6ce9fdf53e3f4055cbdcd47f00053bc",
+    "de": "71c742f4dd57917dbffed35ba3da26bac5ea74f6e46a2364d51df9c0e49c2304",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01443": {
+    "en": "98958b726e30cefad85bd5fca61f88b049ef7c14a881f5eaaf4e1158ecf76b9f",
+    "de": "ffedceef292bcec05c95c20731e97a35acf6ac533069073e872ab306994c8d9e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01441": {
+    "en": "41224e900e65d0185d181429e0d58182c3b69d59ad8615e3d91930221a0f048b",
+    "de": "8790634c3353f33f87a81dfe9c1204da29697c59bcc41aae5b03a05fe2343fce",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01440": {
+    "en": "f5284ad968c576ec8b8a30dea4e5dd04898e8b10662f5562a2157f040967fa01",
+    "de": "f08ce9e2670d7b4cdb731501a411cf663197f703470c5897f50146b9f69a05c8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01438": {
+    "en": "76288ce7f72975924fc7f5ca44f1f274ad68544a2ba2b02092e3702a0dbc33a0",
+    "de": "e0e407d6b4733be0b5ebea220cfa0ab95200e021722bb4d16eec19ebc950ecd2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01435": {
+    "en": "ac09d2823fd112ed82fd32cec36cdbd059e74178439758c3109bd5e8a5f54202",
+    "de": "eea9f8863f5507284de5cca7d1d22bee7307edc99776f07eaec8f9d60b02b521",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01432": {
+    "en": "63daf5f5cda1de66f76b637348cd61d0e6964256b4811045233c14b97cc8b7f8",
+    "de": "2838d1dd32474b9eb65b52e90f9dd6b2a3a28488638defbf832ef8109604febb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01431": {
+    "en": "ffccb4c8a9a7e6594812ea72483165f823e6132381b32fe629a6df27b515b1c5",
+    "de": "c72f4b7d597c04ef9199f256c1f3b6eddd3b86c393ac2be8d29af5b3f0af202a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01430": {
+    "en": "905b6e959d65b3df0f7cb535468158954d33e6676a20ba5c9bbe8c56b28ed566",
+    "de": "5df9e90022d983dae18aa918954ce2da85c5f6e2a92fa576ac5af008a969c349",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01429": {
+    "en": "9d310f88dcf55a5d5135e7f1f41f5a89df9285ef7c8363eaf7d30a782938fd86",
+    "de": "f8dc53d9a7f7f4505b3288e9983e9e88ac65d524e8bf2abeaf248007baf3749c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01428": {
+    "en": "925ad7a994893dad2829396cdc1589d65b4346f022d1e1bd1cccf0136a9452bf",
+    "de": "34c5d2a573994af5a020d92e7b1f8b0c6a3b380f00cee4160bc9f1de7ce68c42",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01425": {
+    "en": "7dead145c69195b5b0fbf5f63584bfc9a45af37ccdb49cd207808d6f3b2bd21d",
+    "de": "40aa8df32e1977672472953cb32b0de7a605c2abab1f939ee59d633aafd51358",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01421": {
+    "en": "e935599dcb3cc0f3f47e142993d656933debde662269048d3b74e2eaf55cd734",
+    "de": "39f859df088de7d1c2b0c1954bf8c5378ce5ef42a8b9d4289fb60de794a769ab",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01417": {
+    "en": "be086091085ae65d5fd4f1bad79e1966675824949153394973e088a213e3b207",
+    "de": "32e4a5b4facd4325a4adbc46e06c7152e8e4c0dc622473885f61fd1bb7b56c5d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01412": {
+    "en": "6c6f86acdc84655af19ccea615ae6b23bf8b2dc1123ccad28d4f768fd394acdb",
+    "de": "379d51cf626f8503780429fe8527388dcc18ba7fb303b9b3cedae13f4c48b625",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01409": {
+    "en": "b9f255d0160b261ebfe3f26218c8c847be30d3e795cb0ae18217ca01143351d6",
+    "de": "69f91899e6d4af9ea5c63d8f197e2057ea0feaefa36e3a2501800f2664d4a813",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01383": {
+    "en": "6bf05e83cdd1f44e011b487c223e4a64bd142276097dfbf16a02a9918609183b",
+    "de": "2bfbd99cac0650abfba2407e27dbbb09782cba68a1625fef3adfeef49dd27434",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01382": {
+    "en": "113a62b68fdbd1487787ab6adc35879f812db0d1d5abc167a986c62feebcc73f",
+    "de": "88cc3f668b034a7f512c1b3ff9b6338f3c05c7b39fda88719daab9a1e3fcc112",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01373": {
+    "en": "3ff692e35ed9a428f4a09f81e3ace6706bc084eade685361b447d8b218c61158",
+    "de": "83dd37c133995ee81b724e224b8fada7c195dea7704a32706ee0df2679767a5a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01371": {
+    "en": "dc2b963ea97575a41944306da2c3c276391e6c4c39cb095b696fcd3e822fe040",
+    "de": "44092cfe00e692adc3071ad7dd7f3048c269fa7785dd7c026d2531db923e689c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01364": {
+    "en": "2234e2d21b7cb3ed5c34f23c31719c91d7ff28764d36e5fd4005a3c789f94e7f",
+    "de": "2e9217faac6238db0351843336808d0521dc79f05999d4f5ec7bbdb57350303f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01362": {
+    "en": "56ee1d89990b88d5e91eaf07520d9572b9468835d543107c235c68f1ff0354ae",
+    "de": "f5787a6783fa82ffec85f2922c634c622e47cf46d3cc314c684dd3b8b00e414a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01359": {
+    "en": "2ac602010037b05c210a7dab401aabbcbf39cf523526c3c2106cde10f580453c",
+    "de": "3a983a6255bb2f6831f9f87118af7b1d3036c96da7a13c3314cd734b3b30979b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01357": {
+    "en": "7e3e9edbd8367361ec21f8addd4aa72d9774b221caae8eb9c807bcad14b0ab05",
+    "de": "07ce993e442a01139181be222e1b1f3247f6bd81ccf329336c60e891210c0194",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01350": {
+    "en": "fc30d39da5c5256475769069f10a60fef773c27ff55a13d751f5681f59dfc4c0",
+    "de": "3ea1f89e73d5c77271d80edf78ebf6f859f9649b3a0e675d4e4ad1ca44b300f5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01349": {
+    "en": "1e57162c3c83806a4866955b6ec2a51c9f766ef13da69c90abf09ea7c4af2235",
+    "de": "43bba21f82bede3f595f996fd5ff6256e5c4f832a1cca00b6ac119888a9d25ac",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01347": {
+    "en": "4ce6f6849e4dafaff4c37af9fb715c1da1be8a18ca0b3d09fe86fb9d8ea1f633",
+    "de": "c01b562a6fd51ddb394e66c5dbad63c58b424a91a1c839d9dddc40ac8e46aaa3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01338": {
+    "en": "84f6fc18f33bb69b29093a9a626788326b949cc676ee2e4e53310d9e9d0392c7",
+    "de": "23cc546b38d00fceb20b91201240f34d208e6df2ef1e176c1d9e5905a15b74dc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01337": {
+    "en": "087296b93c1edba014b9f1c519a363a2840254a277854c9bb983b02bb6d7f0d2",
+    "de": "e72c3002149dab810f56773526a07386504240c21b78307352a9d7580c7fed73",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01336": {
+    "en": "d87879f21eaf3ac1e2e86b72f6a22e8e01af8035c621212f710a638338105ec1",
+    "de": "767cbce1d15dbfda4a1b3b3c650ff25df9878eebc468d9be8f98c88fb6e71811",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2026-01334": {
+    "en": "a74ef85bb293d68523324eb7326653878528ed4d7064b729d7a5109056ec5e1c",
+    "de": "880f05399986cef1afbd36ea3a0189526b33bc6eaa1ae9365e6e2287ada53c0c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01330": {
+    "en": "3b8b3070be5461e55bc1217a822677688ea87b330bcc7c2797871b5ed4568bb9",
+    "de": "05eb800dea09701ba88240099b83b13c6a1716d767984ffd4a01d7aba5fe3e56",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01328": {
+    "en": "10a9d813e99dcb6bf42d0fae72661c54f52b9f70d860af59ce3d357c3e96ac3a",
+    "de": "c7780a2fe15f0e1c702262290257b9253dab94d568f39b2fa49c2f7d0c05077a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01316": {
+    "en": "6c81810b9f597c522869cec963987146f3229b260a5bc7b3c23869a240395f48",
+    "de": "6746e0b4fff2bd8af40475c6058c4bf03032f77cd9e91d3e51490484b4e6be40",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01304": {
+    "en": "a81c4b1d3d2007fa44c8d10fae8a16c6dbd9067ab5c25fc192f5d1cd7f4c3af4",
+    "de": "dd6b7b98bbd2b069afd7205ba55191c2191179d3102dd49f05f3a9442b5250fc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01295": {
+    "en": "0d29ca57c717a4000934aa7799bfe7cb92d2b6c04944e480cb5bd18bdc2496d7",
+    "de": "f9654f7fb8637e3ab96876853393778166f6586a2689162c1b7bf03f143c573e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01294": {
+    "en": "7c9a693a1ed9300c13c01f36343832617453a7d78117331d9962df2705a9a5bb",
+    "de": "4e591ffc42c77c381ebada0251ea741fa40c2d0b8bcddd6b5ee584b0ae95cdb4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01292": {
+    "en": "cae36aa2926a7a5be79e769684be97c5e24f05305587da81e9b76dffd2b74bbd",
+    "de": "088720c745cdf10ba16b20819f764f06be2f85789247ef418c4e650a801ddac5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01290": {
+    "en": "c9a08ec26786f7bd92ba33730d1042abbbb7b449620054373ce5827e2b7003f4",
+    "de": "b2a1d1f0a7acbf4a3ef7409a34a82f7ed770da01df46d5656a3b66dba490b42e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01265": {
+    "en": "4477cd7a11a890981fa01f8e013297ea550b733e7c36b35c490acfd64b6b1047",
+    "de": "8842e476467145b3b1c12215083ec6b67309bf1062a2b9d46bc218e3bf007569",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01255": {
+    "en": "b4bb651ccd6ea79053df27e1e81be6eb8166f17c331d51e87cdfc97d0aae3877",
+    "de": "a4c0367e1ad67243231f5434e2f3266b328fe14481e72d9678b68ce2195da224",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01251": {
+    "en": "332eb9a892b02d30d1084172f194c8394f257d58d6d100000f8d7b31efa97084",
+    "de": "8843f7f177549abdb3499687825ec2cedc244d134e5f603132a8546bb71fc0d6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01246": {
+    "en": "712611ddfccbd88e6971650cd925ee58eeb54d0e457d4fcbcc2b55763510eb7a",
+    "de": "1ee3ea10f1ed4df595d1d6cd31bce80664fbf589526885df5f721380ffe85fa4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01241": {
+    "en": "2d3abf4739e13fa0dff5175cbf7234c7d5f7edfd134fa0acc4f940aff8586bbd",
+    "de": "90e387b740254fb3052d64b8bcfd093902691a64fdf20f3f4718a896a65e948d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01233": {
+    "en": "1411b08950291eb7739d60b63eea48ab5261843ca695c97768c4bdb3a8aa003e",
+    "de": "568fe828aa51a25ca337a7656368418d3ba71f7d56bc85a8a697b5189e58f086",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01230": {
+    "en": "177388c1f4f9af121d4b1a07efd8ac9dfacd8a07ab2229ffeb159471e9f59fad",
+    "de": "1842e4d941706043e07a3f1400590afa90b992629f2910bdef5d396b5b373dc0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01228": {
+    "en": "32f68aba73c80306de59a1801553648efcd5627ea1f6de5040d1d67c9562213c",
+    "de": "0e54d930a17e9a2430878c9fd4f44b28922af22747e34d63db56b883f07dd628",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01224": {
+    "en": "1826bd2ed805d612f0bf4ea1f7c2bee83b32e9289bf4a632726afa85da01c3a9",
+    "de": "d382beb4c3fb54ace5d89c95ec9cfebdd319e525a898969f9f2a0062b700b171",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01200": {
+    "en": "d994a01778e68326606017ccc6aff3d50ef2794cc4cb32def24f6820030cdaad",
+    "de": "2108a96748fbbc5e98d85ac7779964cb54bbc4879bf9ff24fffda4d1eebaac07",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01199": {
+    "en": "2625aee60734fac9e6267d1d2754473e1b30f942101cbe900b27018866ac4bad",
+    "de": "c516cb07fecd550715d0f2ca11aed39f58be29359abe6eaded2e7907be012e4b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01195": {
+    "en": "3cdeeba8f186e1d30e46e19da814ea83da4c5e12ea5533c874dd75a37b15bc27",
+    "de": "1b8b4bb183dd2a7e2be68e1c50a787ac33fbafd6c23b0668257f0cac475dbd1e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01194": {
+    "en": "53e44b69d8680a2d15406a99bfed72f884f661ea10472953ec42fa2d78c58a53",
+    "de": "e151110c115000f63130ae5ed6b47da7abb36fabe27352a314bff2046dc7d7ce",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01168": {
+    "en": "c42d3bc2a76ced518c151fd6ccc5cebc1b0ede3c7edc53829f7ffaf4c9cdfa58",
+    "de": "ddf0079684cdd6bfadfd44671a721262950855ce1b2fb3ddbee7901f5d4f1a00",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01155": {
+    "en": "260236e1e5f78f94944409221ff410fa8fbb076cb60ca0e9467d2f2f8e4d3d38",
+    "de": "b6d2c9c510f35a2665354d3278d17c362b04ea49c64217c1c2d4cdada3e2e41e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01152": {
+    "en": "695fb0153e53f5eaed73869dbed6b7351f13308aafd13109ed3e2685621eeba8",
+    "de": "50c11c80e0e8dad9fb17dee662b2eaa8311d121272d12d1941b4a408ca7ef427",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01151": {
+    "en": "32c251d1bfd76f9f9618f257c5226de4801f9d6fcc80b62827d437b0aa1d0f43",
+    "de": "8798c84f71d4757dbbf672583eebc0277672a33d2737c186eb4eaa1d57461fd4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01148": {
+    "en": "f7332d3731e920aaef6af677d25078e1fd63f68e6c0be1ad8822817cca5a6f26",
+    "de": "c604836bdfce15ac6da4d95e3ef9ce865ae97022697e4ab287abada260e433eb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01145": {
+    "en": "67d1de0802094d47306427936a55119121c10b362402b09b66ef04fcbd01fe8b",
+    "de": "9d04e1cbddfcb3a159e19cf355719f94bf095ae4de3c2a1a5910119eb5d024e6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01135": {
+    "en": "4ea2187ff22ec6bb760ff5781f70a8ecc5497dd2b6d22e41ce884c42f6926ebd",
+    "de": "85470add2c632534b2dfcc970b3108f55953b379c48f5b177a9d2a62a0980ab8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01131": {
+    "en": "fbe084b3c3d4e0a3b58ab3bd1be65e65f10c83b1b3568562df761eb529692f72",
+    "de": "8e227bcf2ce86ad9d2cb4c2f38dd4e8feec2ea82d1e0020f325498590da64cd6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01129": {
+    "en": "4101dd153bae5287ba0b1971999b9522480bc24a82c6fc5df303c2fc1733017f",
+    "de": "2cb1aceb8b8c27b6595b2123bfddf9d0c02b2b822b73a5a6459d990b381bc57e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01125": {
+    "en": "4a6c935d03ba2b39257a7e24d226d1e13e54e0d75605e5ca0f2d14e4769e0d04",
+    "de": "f7e37751f3310d459ab08d051229a58c35b5e5157d75f7d969d746880ff477d3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01122": {
+    "en": "c97500e59f1ba422c27f1480ffb2beadb13916004a19147ac22f8c0eef851bc2",
+    "de": "c789ce586f9525795ba8b771284ca17b82085b4eb4511ded7d00fcb43e8f4694",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01119": {
+    "en": "e046452f8e04d4a2d456c434d4544adff7cf8db7bb95ecd2e2cfe1771dae5e3c",
+    "de": "8eb7b3732478114d27faad54393f70e973c133496bcd45f6b16ad1c62b640132",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01115": {
+    "en": "bd30de3eeeb64e9785d9dbaac95bed00a9145fa713b0ebdd36b6602b1c44c933",
+    "de": "8369f3e22648e9895ea41683dcf06f553b0954618cabc0b12a4f297625f35f71",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01112": {
+    "en": "e31e4e15480fe6d75bc7220c8640855500b53dcb198fa217d0d9a505b3a2f44d",
+    "de": "1a1ff1205fc18a0a0ae6df23db36dfbb1323a891a330b83242a8992130944a4b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01110": {
+    "en": "b2ae6c47574ed79a5b0d6d1bccdb1f8f1c530bc45abd4f991ab0bec35e045499",
+    "de": "a370a6836e8805b8f6db4f43d2bd8f6fbc77959f343ec587964a0d4384943480",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01107": {
+    "en": "3d2aff09535ec55bb974ec82a42a92163d89e928e01d909ae09e754f7b6c3e63",
+    "de": "5b49fff5e3ba8f926137b1dcfaf31ed3c33d616885ae41048d130f696b6fe3bf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01096": {
+    "en": "f815b90ab7daeb41e5db2dab9e2c1b784cef1bf90e371cd34ba72f28734a349b",
+    "de": "778f84722682ee9cf50c83f3c4e41a986adb5ec7828d56ee0f052aad1a7e410d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2025-01095": {
+    "en": "647f43be8bd84229922cca6ca28e3251a56334e94a8886da27e8b24c40494a99",
+    "de": "43a4b4522871b1ac9ea74a326751da1baaed1ff8dcf11f10a5442add8cc9791e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01081": {
+    "en": "08427b19b9a62cd941a479ab5782f83a38f7713c6b51f413d55c9bfc03ec4a69",
+    "de": "9bd5d8c2f864719f2d4516f0136a29921d1a21d53f19b9ee6699b20ba9b43832",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01080": {
+    "en": "68a5136ee0223dc5e3c0ffaeb60ccf511e324bf8befe8bf8010faf535339b740",
+    "de": "adc97f4c418e22324238adf39ee50b6ae8f07d726438f7bad5f329a0d8097294",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01075": {
+    "en": "05727ba7cc28fd45543596d0dfc361addc8a56eb8a6d4e00411e1979b0f4da98",
+    "de": "a1e6c1fd564b0ad18f293a6aecb9b807a6a0d4c33b3a0ed2480a81dc70d06d92",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01063": {
+    "en": "2a7486b5a05746b35a7bca0cba284ec5588d74e175a8453f9de4be96f4764e62",
+    "de": "6df7af0dbc4aa3be50265d5631c2140c96dac10793435654e792e0cba20907f2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01045": {
+    "en": "a62d68d077229ead3c2338fed816952d082c3fd1bf62644308f5e177375a4854",
+    "de": "fcb1485bd191c5f2f9cd7b4fe3bc7a508b8499caa6a6394336630e9088b5646a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01043": {
+    "en": "d42bf0c6e30d8b3d992de9aec043b26fd2765e90e215cc34618fbfd2e0d1a991",
+    "de": "603bef2abcd60c4bae23ebb76694a32afb7bd6271721c2e61603454378778bb8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01042": {
+    "en": "cc9ff9ff1a2856cbbea263119d8d785ab2f87512064d8bda795919c88d7046ae",
+    "de": "e5ecd656e1bc75e85659df7f7fe5a9a0555aa8ca810cddb9c8772df0a94a4b5c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01041": {
+    "en": "273c40830719c34cb225dd76e0fa6b3885e445363360696d36c40fa2752813c8",
+    "de": "3344b3c1f348553922b0eec5467bb99f1f9f0a76ccb0d607cf4f15ed3047f7c0",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01039": {
+    "en": "4a528997621d234bb51e7336e8bbf0cce1efcb82358bcc77e10e6672099945b4",
+    "de": "93ad879c8834bf79724ecef9bf208f2c8c87fcfde5804c253253a77f944cdf8d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01038": {
+    "en": "6c7e747b292b74dbb0c4866af6290b6583b3ec21f8313114ee58527c4b88963d",
+    "de": "c983925a5d26c85e649e0f88961cd2485dbfd76d70fffa1984b26de3b5d2c516",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01028": {
+    "en": "08ffc46b633f2196a5077466a28f4ac829652033e68f2d906de3e613b5129290",
+    "de": "7a322de7ef724ccf4c928ffc9c5583dff61d3446d14ffe8539a5f56d6ce883d6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01023": {
+    "en": "bd56d5181a47c1ef6af08339f771b05ad140088324d99473d20716401d4a0153",
+    "de": "d0858106268e6586252381c5e87e681e2f23bcf6b1e9971f6fbd73c663ce0fc8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01020": {
+    "en": "61a738447ae4286483849f5383e7fcc93793bbbec7ec3d37a4995f76f4373f50",
+    "de": "5440325d2562c500cada5f31fc9173cc946b70fb247b3aa17c77e62ad5c133fb",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01014": {
+    "en": "4fbfcf5c49ce5fed10d99a1d2474a098e5838fea9b12b9ae2150321a1813c7e6",
+    "de": "5f5d7c16fee3d441231041c55303187a744f68ddf3cec74182dd1b46108e6ca1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-01002": {
+    "en": "39b03b89686aac1fc23cd786ffdf51b7748bcecf084fe6c29195fffc700cdaf7",
+    "de": "3f65fb973bd4cb30cffcdb36e08edc384d41a27b0641d5ff86dc9a87fadb9a34",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00999": {
+    "en": "46db683e0d3d20e2a55fa66bac895cbc75efe5f126b48d2a78f344a2fe7f28a3",
+    "de": "4c13d210908860523d99eed08fbe31d39dbe9b41027999d65a068b62a2702591",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00994": {
+    "en": "dc2dc342bf12007075e4ddc25da3afd1651a28fdced7354bbbc5a67d63f2a6b6",
+    "de": "0208d38b9b77afad6de9746e62b88600547e0bce93aa731f21101d102fe6eb8e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00987": {
+    "en": "4af6265b09c69b83faa8c3f01d5386e6a9059ff4e31d50753bb1a7eade7be79e",
+    "de": "cb0a0ec05bc1367fc63cbca4e13770f37322aade54f81c3c75fa016f5625d7f1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00983": {
+    "en": "e6deb3cc25b68665188bf63a8e79746d4010c7ef093205fd520c44ffe2e271ad",
+    "de": "1a16ad807abdc3be6251889d30cee660ada0c8926e9445783e0116669ab1da6a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00981": {
+    "en": "5b59726228822810f81ebb04adacc739d115a3285364c77dcd3d805ff5667e74",
+    "de": "4b1fc13b155ff8294d31fd2ebe2aec64daa335505cd8e356e3a66f1087128519",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00979": {
+    "en": "ec5dfc39068f249d01003b4699ee11aac83b1800a34965a6c668e6b7424bbdfa",
+    "de": "0058359de7e5d4db20df5a3fc58b9464b803c3dd510fd342c992239e6ebd7652",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00978": {
+    "en": "04f61090930cdeeb9e80256e02e70cd87c2343fbef32123e8e0bc6ea26ebb8c8",
+    "de": "2bd8d0a6f15efd94c8997845c73709ebfec8b7460a710dd9d6a2420bd8d6d7a3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00973": {
+    "en": "a08da882f3a116eb6d152d59226934fe80089b5fe50aebbd74d0ed37ef15047c",
+    "de": "3e3a76aa4d252bac8041b8c6252e3a3e8a43d7aa37ba51ad89174d3a2949f424",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00958": {
+    "en": "8df6c093ea67e85dabc431edbbab56360f306b4e6ae5f201081b1fcfe114e2d3",
+    "de": "46e014e34afbca8e1f18f899d90772a711c7d244ecec0980aae74fd991ee6317",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00955": {
+    "en": "8c4d3c0474862c7d7d15eded38a92cf0d3119ffebcc7202d25742b0257875384",
+    "de": "71287b00f05fab66312013e10b9d47816dbd9291e71e09b2b0a66b3eebd455d8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00951": {
+    "en": "e07c6d676f06c613855f34a7da02e334ee6e083eface1cffe69e19d75ebb2dd6",
+    "de": "6d6ffdc163fa6ea786b3816f3d4b654788ce9c806d0539f7ec3d849fc890cd51",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00949": {
+    "en": "7b1f004b84e4b224567db6df4883c401ac2e8aab55cdf7ef4bbf7d125f090b42",
+    "de": "4f8cb37032ea7f2845d5e2b0f8e8ea6358b2d1cf58ae59930cf93a243b9db8b9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00917": {
+    "en": "ac13ab1dbd3e52872aa9631815ec1d44a97cc4c3839e826b2de38e997dd73bc7",
+    "de": "6a3cfc57493aa1e95aa7b81345cbfa45d4081665e68f4881f0e0b4cd551e57a9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00914": {
+    "en": "fac6d9d584642ca2febd0bb7ff8e412927be708b76c4664817d09340fb88d3d6",
+    "de": "74c29a47eff2d3ea2abef2fc084894512d615436cd3fba0e4ca184f548dba6f6",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00910": {
+    "en": "d5515b2941822d76ca590ced4998d05efe00a2364776ff99387bd8c45e6f86ab",
+    "de": "3ecf0f6e38e06087d185ecb076a3889d64465b2f442ba29adeb1bb8b747edd67",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00906": {
+    "en": "ffb7d93691be2c23b15c82076fdf65c842b5679780f60c60b463b3bc9fdf185a",
+    "de": "407869428ea9b0837f151f062065be49132c145ffc301f0b676bb3b309f5eff9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00901": {
+    "en": "30ce41390286ea8e031e2ab969981688409d216eb56fd8b97063be144d4cf755",
+    "de": "0a13ce7caa7fc970af1f9cba9c5beac312f066a562d4c62db4052aca941a95ae",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00882": {
+    "en": "b5ba3b56f86f1721f6d691c0e17447270f42d48e6da095c12f5dfc532aed8bd4",
+    "de": "978aec8a00f443be370506d6c586e50607b9d8ff031210102234752022e3864e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00867": {
+    "en": "556d5ed5ca309e3206cb038131cc652665593b6eb21a3da1a24d8fce3813bf43",
+    "de": "15d7d04829587840004e1a5241831e81ca6e95f4c8b11e4f86f5d92128ff703e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00866": {
+    "en": "25e5a62cd1849a0927c2b20b3e04f4f7ef60ca13a05878640ce99f066e25758e",
+    "de": "340e58f828b32378cf6ff6b1a6d76633f0c8265a11f25ad113ad68af0a4aa672",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00858": {
+    "en": "659f0079c71b25e5c6495f50ff3cb9496e2951c22ff5d1ea60f409e1548f0551",
+    "de": "6d07c101a952bae26fcaccdf6b576aa322f3b6892dc639976627ae0a4dbc8643",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00854": {
+    "en": "f6d367b698a74d641f45f209059b0bb905883a60f60471b2a11ff35b540b8255",
+    "de": "2e50bccd7d69f4b63a1dd863bcd945cf31faceb02fc893f6c36b9b0809a7fa3c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00853": {
+    "en": "1348f81553d1d613c674556bfc62f0468dc4341ca2b71a9d708a3eb85cbdefc4",
+    "de": "d3aa44765ee8f12c060e884a6e3826dcd166683502437b4ef91bb2806af8a6e5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2024-00852": {
+    "en": "0e627515627a76385a393bee5316e95d98d43654240b50b6a92c638293c40a13",
+    "de": "1ba9ca48957bab3028644596eedca193f1f7c4dbad9d5c37d2b08cc5823dbed3",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00846": {
+    "en": "ec9b4f6e5f110cae8f8d3693e811960bce767377dbf3fe347657bfd234254ac9",
+    "de": "dd88b31d6b19f4f3e40475f93a98a19491d7b883aef6b92987ba5b76c3d04bb7",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00844": {
+    "en": "bcc16d2e8af559e35278b6332840f6d4a7ddea77d6272399f0b9eea208a084b0",
+    "de": "f5b39e3f82016493240eed342e86fabc1a0465cad6d149cb91647cb1a47d9007",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00837": {
+    "en": "df8cd885bfd11b871e3688b3b6ccba1a9d5bb1027cc19574acc54a7af4cfbb8b",
+    "de": "da29dd7f38a26104ece233fd7863a5720c9ade5b8c027f3a1b8a1670d35741f2",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00831": {
+    "en": "2318786bfc39813e22dbd6d2d425c472b0a90d6729dfb2ec3f431a5a3999543f",
+    "de": "24152c5c24df495a63450ec7759bcf493842742956fda7ed79132129b3dce399",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00826": {
+    "en": "b488f1cc8cc7c7c1382740c444892858a15994ffcb3f3683de1f3d9a58d1e73a",
+    "de": "59cc79ee8b8631bdabedef232e36a7a14b897c16e0960c8ea76df790ed7a0418",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00824": {
+    "en": "947ce9cea1e9afe850eef824a723212bd92e34c09845d4dac3f73b25dabb710a",
+    "de": "92f6871606ea0c68934c28fe278e8de7176e52c8e809710737cefc4ab3c4560d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00823": {
+    "en": "f96f3a424ff49c9e956e40806b1cf4ee627158ebc4e6225e1dbede11fc8c5c62",
+    "de": "08bb6add2066dccd778476c47820e52719447aa2e1e1ca7870d06788b5e7e007",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00817": {
+    "en": "44e46dabc6b113d8d8171db2e65f44b3b4de605501ee0f9fae718cc5421f1172",
+    "de": "9dd3624bdf4a9aa5f85d73d774ae31250814d63e7d330b3f32997ea7c9464f08",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00810": {
+    "en": "c9f4e45ed1235a618933f5d0ceb8ae2dbd611ddecbfe456d09b7531e9910ed46",
+    "de": "b9af651a77e42eb577d444c4ee70346b5e9d8c0b6dd6f104c176633cc9453ba8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00798": {
+    "en": "3536b0fa6b539d36695a07ab0baa3ce714b1604100c1b913f0b9101e962c8575",
+    "de": "96b5dccd769503c1c45e451712b1757a587187f22a6ba9a6b41f80fc764f2d65",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00794": {
+    "en": "3e6421bcb285deb0f2017675f772fff3e82ff39cc4f4bb9bffe5d90808cf2962",
+    "de": "ea3b585543e7b2e76c8024f4cdc03b4acbbc182e56f98b2abc3244df88273523",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00792": {
+    "en": "bf08a7812c55fd3e3f6c14de861d1a589e6528d50c91f9d825e13745cfd0335a",
+    "de": "da75972986e83a1c3aa5d496fea6db748ead85e159c50fc442582b21091488af",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00791": {
+    "en": "af6b0a933115d1a64a7c700c829f0268245521fb612dfc6e36c24fb89c17daaf",
+    "de": "c4aed48bde25003f670aad066f0b4626977bb4569e83f9f5e1df6408d1f6e5b1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00790": {
+    "en": "a17698a4ae1447463424a7e2516d1ece144a96e5b01533dc82dfe4697481f526",
+    "de": "6a78f7608b172e98950eea115d5a9dcde6825419c1bbd9cd5996d98a6c01258f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00789": {
+    "en": "6ef888f1ea911569186c64a03e6b560218684e47d2d13696489ff4cf527f4094",
+    "de": "26daad5d3869b3c7835fb93710a1030b356277efc7666b39c654811160e269e8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00781": {
+    "en": "1508b6ed562e555e9066c55b7fe3e42036f2e9a646243660263c2425d77c3b6f",
+    "de": "e471569de962ee188cafcae09198822aa8d6afaa2af1dacfad3e9ac816b4493f",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00777": {
+    "en": "3e321197fe8b8e3045d427fcf28b4814d2c944fb368f25e49b0180ecd0ea8233",
+    "de": "2c340b82264cf2bd8a56f9135559d6b205523eb2f2fa42234d0dfc5a3487bdc9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00775": {
+    "en": "b9fbaba9d9d13e013b66d75d49aa12ac67a35f0c58e942b2a0df7d9533782bc3",
+    "de": "31ea9b19216e95b288ec031f03ddbd810ebb8938885db464ab8eaeb10eb2436b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00766": {
+    "en": "0d98a7a32c8a39f85b8418d11003e308b73e6aa760ed4a0e91d53d01d2e10498",
+    "de": "b85fc05af2a192642031a005436ac07a1d9fe8a6be6d43522956cdb14829f4d9",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00756": {
+    "en": "9e9865233496704d3b5e66e6ebd0e22819cc82219b9f2a06375eb8217fa7810f",
+    "de": "56aaa85054a5a83a83fade5bde9f2fca52d2c99c4d754e9d1d5f91e5b8d063dc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00735": {
+    "en": "f3667edca95b629fd8842cbac9143acf7ccd60fb9c6208aafe318cdde608d24a",
+    "de": "8628a368584f1c60691de70f59572b7a083d3dad7e9ab5ae414a45542160e45d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00733": {
+    "en": "bba59b75fbfbf8d9d226c9d5d2ed2bd18b3e9e797edb2e9c20059ddb4eb1fa0d",
+    "de": "275a89e9fa0c3d126edc10284582f29161197db7c4d1ec082d3fcf75c0502f0d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00731": {
+    "en": "bfc1001190217f4c623b13441d9756fbdda4d856b7af90d248ea058a22101687",
+    "de": "a5493030107d97f16039118615b3947565132c0813fdbf0f46f1ef9b18d5d7bc",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00716": {
+    "en": "6ebb9587d551ee3a58df1e72a558b6409c647c1eba99169f153c4aa1a68c7e71",
+    "de": "1ccd28007a4a368af9e4d5b0373a070618f41de1191537e3a8092a6638b0033a",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00707": {
+    "en": "a39684f8ee65f8102d3532b0f28a11e3887e1a3cf837ea7a289375df8b66447d",
+    "de": "bfc3e5c27defe6b6fd65c1706603b6a3fee7abe1ac25715e5d6f9afc9a8c28bf",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00706": {
+    "en": "95d72a66340d2a0884e427a5c133e0112765bad22d9ce6d993718360177c7f38",
+    "de": "eab8da86a57f05a2db3ccace8c63ff5b10d8b7c37843c8b0f48599ee01d92f45",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00705": {
+    "en": "9a73c7454edc99520eb7923b47a3416db9061f264210add3b39f16494e1a1e72",
+    "de": "93969762533cf9314f169d041d30b1a1c5055a95b26881f38e233b6fe20feef8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00704": {
+    "en": "5c5dfdd5a4cbd1a3e3264babc03e78421379baf489c4e5462ba133d4f4e018c7",
+    "de": "05194ce1f7e59e5a3e96e378620ccefce35d108930192c1b7bd734fda935c798",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00691": {
+    "en": "2a46c84e789085f38056f537dc285cc8db69ecfe8724495591c6df93e158567d",
+    "de": "baf53d957272a0fee909add091c12a031fef2610db9c794d80b8a98855d3618d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00683": {
+    "en": "51784d8f66154077b4a68cdbc3c22721c7e34709f3715493f66b80fa4dd64de8",
+    "de": "43f27ab8cbc50532aae842c429b180b69fb9955b86c0ddb4c0c76ba0a5edd6f4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2023-00661": {
+    "en": "c30406eb404b0e5b92c927750e22daefaad816aa7e33f1eed656eb41a7ee73e0",
+    "de": "b64e6386666ccf4783d54793e6db85e45d74aa7807a5003c5b248b73f0a5dcf8",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2022-00547": {
+    "en": "2c1d1721daed9d97171c85fea0e5b05e4a3d41aa87ac838da6b3d555e9054d71",
+    "de": "baf415385afd707c98bc595d489d5d4feeebb1c8b969fe7d19f581117d403a85",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2022-00543": {
+    "en": "d30da9deca7a2a2b0e93608dda69f7c002d2fef4cbfa6c827cfd28d8b1174919",
+    "de": "180b57df2daf3685c611f63903561cbbf0c8f8bd36acca7c1404f0ae668d1b1c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2022-00520": {
+    "en": "bfeb94d4dee691dc4e592122359ebcab530e19c796096104f8544bccbc6d4e06",
+    "de": "0fc5c5c5ea2d892bc2996b57ecb37d68bd70eeb883ee70133bd6fcf3f4794488",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2022-00516": {
+    "en": "f9b1044781298f7f485ec968cc80fbf0b6bb19ea89cc1633566ad7684818bba4",
+    "de": "59e492f092e41af83fa1e6f5b7f3d0a430b20a6ba2c55f27f3be879e9948d847",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2021-00469": {
+    "en": "d2d3ae15b6a44ac11716c5928b8900c4756b07412f05e5a284304b939331479f",
+    "de": "3cbc062846dbf78abaff224a805448e3f35c0cc4e5779ffa159992b42d0e8078",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2021-00464": {
+    "en": "07f2656ef1a044cdaf0e11395e0668d8174ec6c0d2a169f1a58f5b0947e9b613",
+    "de": "55cb2acbcf57bd0b8b53899af052fce487c8ea050c30115c56acad5f93a7b7f4",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "listings:MB-2021-00462": {
+    "en": "1fa869bb05fad5e67ffb006df0af49c851d7c5ca6180c6f5ccdde485033d5fba",
+    "de": "6b64ce0a08a4f0b89438ea16cb54766b8ab1ffe541531695b36649cbf76c0f9b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:construction-start": {
+    "en": "4f57b0e40c76abddb06bbcff684a7a2fc83c924fd5e8fd181bb4daaf2b8d949e",
+    "de": "43e5f0c13e353bc120f00a38d496f32e8c0df4c274c1eada408c215112030d7b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:completion": {
+    "en": "557fe004f344e1cc2d23784ca295f15f33012e0c5876c1fe0627c13b444deedf",
+    "de": "7d410a01cc8984eaeb78cba15154e4d3c35459d4406226120aa33b266d44eb8b",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:technical-handover": {
+    "en": "f2495edda8cfab9dbf087b862b52fcd8442dbdb316d42b9d19273fe553f29e2f",
+    "de": "7e5880c65e0b3021cd2e147f5d167e588170b7cf5a493d754c0e63c2b71aed27",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:commissioning": {
+    "en": "685aa564999b51ee9dd501117c56bfbd9e4c0fd74b4a436ef52cc74af34de68c",
+    "de": "f3a02bce2d6d6cc4efac43e6d4f5a865e4e07e84dd12d5501522ff1b67ab1dd1",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:works": {
+    "en": "61ad1220456ea70423dcf74cd4bd0907880abadc5cc9a5d9be5ea7b49e6f21a1",
+    "de": "a9fb5590c59666709cbb9c8904ba01ba74443123d6582a0f9c8e9146e9511446",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:planning-documents": {
+    "en": "7ddac0084b1a94d9633152ef58ae8cfe162de690762904468b899c1067c0b75b",
+    "de": "a06cdbd0bb94f0f3d3c2dde3f56158e319853f7cb6afcf77809c010dff65615c",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:financing": {
+    "en": "abdb91f09cb2b6dbb80a1ecc499ce7ea418de9262e7a3d4fa060468a677916ec",
+    "de": "2bcd16ea517e5e428a0273125dd656394b6ae0f97facbdad1845eed4cca8231e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:gross": {
+    "en": "0589b626717ccca8914a41a144ce292bf279c52ac7135af131cece4e747e89aa",
+    "de": "37015b5c981b8db672774a1ee7de18f74b46f7f25fd5d8140c1a9ec27da1da00",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:approximately": {
+    "en": "0afdfd8665839c6a8f5c9ae8d92fed358725f280cf2af548e25f9a6167b9fb70",
+    "de": "f4d1352f8a0fcd11f282cfb1374a4e90e849e433cf14b4cc0dd80d4910523082",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:by": {
+    "en": "17deea7f1d4105e9c15085a6c3c2226bc32f7c25694a8a294523275830c0d82f",
+    "de": "96147cdbfd6955d797f628fb510283afaecc1aa5a8735f3fe209ff22746b6258",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:up-to": {
+    "en": "3e2884632c01454fba221caccb1959015f5a5487f1375adf9cdc8a56bdd12bce",
+    "de": "08aab74e90e3a2bae28df113479eac97b40e98185fac4874761ebad99bf30d48",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:planned": {
+    "en": "fb6f7c93e6bf3dfac450d268bf57844ae92b9c93f7d027b07f715bfbc467d225",
+    "de": "710a4c49f2c1c2931f8a86fb235531b31c934688f7976297a0a0081275b3dc2d",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:envisaged": {
+    "en": "34e52e206e8ad1e241501a9b1d576886f843caa9959641f01afe1e7e1213f308",
+    "de": "2be50fc09d87184ad1decc0a6138c34647d5e5d7a4a41c910f90d1fe1dc1771e",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "terms:expected": {
+    "en": "ca99b7f1b14ee2c04f7aaefde89858fc947fa88de518c2e6d4b6132892175218",
+    "de": "1991cec2f669f9e686946fc2261f8b113c623e27242c59e221ca9a37589f5df5",
+    "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  }
+}

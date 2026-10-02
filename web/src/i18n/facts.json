@@ -1,0 +1,142 @@
+{
+  "c014-project-name": {
+    "de": "Europaplatz Süd — Umgestaltung",
+    "en": "Europaplatz Süd — redesign",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "7148def0490ba8a1513e166070dd3649e69a37111609ec4a6d32ec4d5982bdbf"
+  },
+  "c014-project-location": {
+    "de": "Vorplatz des Hauptbahnhofs an der Invalidenstraße",
+    "en": "Forecourt of Berlin Hauptbahnhof on Invalidenstraße",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "a9aaaa5929b4820194a88b5f6fa2631ad26537e7dafe12d6a024e341d7591dc9"
+  },
+  "c014-places-programme-page-figure": {
+    "de": "finanziert aus dem Plätzeprogramm: 1.900.000 €",
+    "en": "Financed from the Plätzeprogramm: €1,900,000",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "41eecb18e2397bcea2a3aabcc7abf3deee6088533210c268ef9ad0f57bc51d3b"
+  },
+  "c014-places-programme-index-figure": {
+    "de": "Das Berliner Plätzeprogramm steuert rund 1,7 Mio. Euro zur Maßnahme bei.",
+    "en": "The Berliner Plätzeprogramm contributes approximately €1.7 million to the works.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "902eddc4903d6fef4849dda3d9c392ec85c6e0c279a00931ad3acf9b8b3cc3da"
+  },
+  "c014-current-status": {
+    "de": "Laufende Maßnahme",
+    "en": "Ongoing works",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "42b01adcf34022200df7d29cad343827737a17a784bdc14a49096facf379182c"
+  },
+  "c014-expected-completion-current": {
+    "de": "Fertigstellung: 2026",
+    "en": "Completion: 2026",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "f2f19545505285cc975a415d2daa6be932d40eb17e023e67cba981d1a652ada9"
+  },
+  "c014-completion-history-2023": {
+    "de": "Die Fertigstellung der anspruchsvollen Bauaufgabe ist bis Ende 2025 vorgesehen.",
+    "en": "Completion of the challenging construction works is envisaged by the end of 2025.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "5596a974ebf9ff308694078cad3ccb3055ec84e57125000ad70ae9458555b94d"
+  },
+  "c014-completion-history-2025-a": {
+    "de": "Die Umsetzung der Baumaßnahme wird nach zeitnaher Ausschreibung (2025) in 2026 durchgeführt (Fertigstellung geplant für Sommer 2026).",
+    "en": "The construction works will be carried out in 2026 following a tender to be issued shortly (2025), with completion planned for summer 2026.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "252b7f4b1df02f4bbe3f40eb14a34e6c8396ddfbbf0a2a93acfe56eeb08d5d06"
+  },
+  "c014-completion-history-2025-b": {
+    "de": "Die Baumaßnahme wird im Sommer 2026 abgeschlossen werden.",
+    "en": "The construction works will be completed in summer 2026.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "1bea9e4d62dcf8e988b91941892ca7ef09f3e16249baab8c0118c6ec317b5539"
+  },
+  "c014-completion-history-2025-c": {
+    "de": "Die Fertigstellung der Baumaßnahme wird voraussichtlich in 2026 erfolgen.",
+    "en": "Completion of the construction works is expected in 2026.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "cdd49578daa9d23563fd466f45095dd84f84234f61fff49987789c10ca8c4ed3"
+  },
+  "c014-construction-start-history": {
+    "de": "Der Baubeginn wird erst im Januar 2026 erfolgen.",
+    "en": "Construction will not start until January 2026.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "18ec69af7fb5857e4600beabc5919d8ccfd52d80ef1d0549ded81bbfefa23c98"
+  },
+  "c014-construction-start-current": {
+    "de": "Die Umgestaltung des südlichen Europaplatzes, dem Vorplatz des Hauptbahnhofs an der Invalidenstraße, beginnt am 2. Februar 2026.",
+    "en": "The redesign of southern Europaplatz, the forecourt of Berlin Hauptbahnhof on Invalidenstraße, begins on 2 February 2026.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "40ed01f59c65bb0e104b2ed3535e65bda52131b17a3097c6a64270d0c2fbe854"
+  },
+  "c014-approved-total-cost": {
+    "de": "Die Prüfung und Genehmigung der Bauplanungsunterlage mit Gesamtkosten in Höhe von 3.183.000 € brutto erfolgte mit Datum vom 31.01.2025 durch die zuständige Stelle der Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen.",
+    "en": "The responsible unit of Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen reviewed and approved the construction planning documents, with total costs of €3,183,000 gross, on 31 January 2025.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "291b96cea84afacf0f9a89897ca7c8d018001075a1f202e71e1a3a3046685dc7"
+  },
+  "c010-project-name": {
+    "de": "Schulneubau Heinrich-Hertz-Gymnasium am Ostbahnhof",
+    "en": "New Heinrich-Hertz-Gymnasium school building at Ostbahnhof",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "9e7a6d23b5df9b489c2b573fc9b56ac5cefa70f80f8acc7406e439f51af2f820"
+  },
+  "c010-project-location": {
+    "de": "Lange Straße/Straße der Pariser Kommune, 10243 Berlin – Friedrichshain-Kreuzberg",
+    "en": "Lange Straße / Straße der Pariser Kommune, 10243 Berlin – Friedrichshain-Kreuzberg",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "4cd00457e09cedf5bcd1d297e24d752a02022fa62e6cfc1180147083cb1647f2"
+  },
+  "c010-current-status": {
+    "de": "Die Umsetzung des Schulneubaus liegt im Zeitplan.",
+    "en": "Implementation of the new school building is on schedule, according to the source.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "03933c3b6587168cd3ef0697c3776b96c5df59b66d1cbf288f30f98ad6b57732"
+  },
+  "c010-technical-handover-current": {
+    "de": "Die technische Übergabe des Neubaus an den Bezirk ist für den 31.08.2026 geplant.",
+    "en": "Technical handover of the new building to the district is planned for 31 August 2026.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "bba344b73cfdc50a71894bfcf2738d6393d2137ad73a68515a73500151ca5c69"
+  },
+  "c019-project-name": {
+    "de": "Power-to-Heat-Anlage am Heizkraftwerk Berlin-Mitte",
+    "en": "Power-to-heat plant at Heizkraftwerk Berlin-Mitte",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "6532eab1bac95e18184fec6a84859bf5efa9c774e37bbbd97e0a759707f915cb"
+  },
+  "c019-commissioning-current": {
+    "de": "Die Inbetriebnahme ist bis Ende 2028 geplant.",
+    "en": "Entry into operation is planned by the end of 2028.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "31b8f39cd378bca493bfee9d06b401336a5f65a938a4c3badf5466f4f54e60b8"
+  },
+  "c019-financing-commitment": {
+    "de": "50Hertz finanziert den Bau der PtH-Anlage mit bis zu 75 Millionen Euro.",
+    "en": "50Hertz is financing construction of the power-to-heat plant with up to €75 million.",
+    "verification": "editorial_unverified",
+    "glossaryVersion": "1.1",
+    "sourceRevision": "943ab51ee95a7af0d1e100e2340bbcc1a32062821213a94b56f4fdc66f54cc24"
+  }
+}

@@ -4,9 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "node scripts/check-i18n.mjs && node scripts/check-public-copy.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "typecheck": "tsc --noEmit",
-    "package:vercel": "node scripts/package-vercel.mjs"
+    "package:vercel": "npm run i18n:release-check && node scripts/package-vercel.mjs",
+    "i18n:check": "node scripts/check-i18n.mjs",
+    "i18n:sync": "node scripts/sync-i18n.mjs",
+    "i18n:release-check": "node scripts/check-i18n.mjs --release",
+    "package:preview": "node scripts/check-i18n.mjs && node scripts/package-vercel.mjs"
   },
   "dependencies": {
     "@types/three": "^0.185.4",

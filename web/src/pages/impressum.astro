@@ -1,39 +1,45 @@
 ---
+import { forLocale, localeFromPath, localizePath } from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import Base from "../layouts/Base.astro";
 import { requireLegalAddress } from "../lib/legal-contact";
 
-const address = requireLegalAddress(process.env.LEGAL_ADDRESS ?? "[[ANSCHRIFT]]");
+const address = requireLegalAddress(
+  process.env.LEGAL_ADDRESS ?? "[[ANSCHRIFT]]",
+);
 ---
 
-<Base title="Impressum — Berlin, Under Construction" heading="Impressum">
+<Base title={t("pages.impressum.48")} heading={t("layouts.Base.37")}>
   <section>
-    <h2>Information under § 5 DDG</h2>
+    <h2>{t("pages.impressum.49")}</h2>
     <p>
       Gregory Anthony Jones<br />
       {address}<br />
-      Germany
+      {t("pages.impressum.50")}
     </p>
   </section>
 
   <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:jonesg158@gmail.com">jonesg158@gmail.com</a></p>
-  </section>
-
-  <section>
-    <h2>Responsibility</h2>
-    <p>Verantwortlich für den Inhalt: Gregory Anthony Jones, address as above.</p>
-  </section>
-
-  <section>
-    <h2>Project status</h2>
+    <h2>{t("components.CorrectionChannels.1")}</h2>
     <p>
-      Berlin, Under Construction is a non-commercial personal project. It has
-      no advertising, no affiliate links and no monetisation.
+      {t("pages.impressum.51")}
+      <a href="mailto:jonesg158@gmail.com">jonesg158@gmail.com</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>{t("pages.impressum.52")}</h2>
+    <p>{t("pages.impressum.53")}</p>
+  </section>
+
+  <section>
+    <h2>{t("pages.impressum.54")}</h2>
+    <p>
+      {t("pages.impressum.55")}
     </p>
     <p>
-      The project is independent and does not imply endorsement by the State of
-      Berlin, a public authority, contractor or other source organization.
+      {t("pages.impressum.56")}
     </p>
   </section>
 </Base>

@@ -1,4 +1,12 @@
 ---
+import {
+  forLocale,
+  localeFromPath,
+  localizePath,
+  projectName,
+} from "../../../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import CorrectionChannels from "../../../components/CorrectionChannels.astro";
 import Base from "../../../layouts/Base.astro";
 import {
@@ -21,12 +29,17 @@ const { project } = Astro.props;
 ---
 
 <Base
-  title={`Correction for ${project.projectId} — Berlin, Under Construction`}
-  heading="Correction or formal request"
-  subtitle={`${project.projectId} · ${project.projectNameDe}`}
+  title={t("correction.project.title", { id: project.projectId })}
+  heading={t("pages.corrections.organizations.50hertz.45")}
+  subtitle={`${project.projectId} · ${projectName(project, locale)}`}
 >
-  <CorrectionChannels context={`${project.projectId} — ${project.projectNameDe}`} />
+  <CorrectionChannels
+    context={`${project.projectId} — ${projectName(project, locale)}`}
+  />
   <section>
-    <p><a href={`/projects/${project.slug}/`}>Return to project</a></p>
+    <p>
+      <a href={localizePath(`/projects/${project.slug}/`, locale)}
+        >{t("pages.corrections.organizations.50hertz.47")}</a>
+    </p>
   </section>
 </Base>

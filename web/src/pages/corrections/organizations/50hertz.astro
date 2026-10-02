@@ -1,15 +1,24 @@
 ---
+import { forLocale, localeFromPath, localizePath } from "../../../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
 import CorrectionChannels from "../../../components/CorrectionChannels.astro";
 import Base from "../../../layouts/Base.astro";
 ---
 
 <Base
-  title="Correction concerning 50Hertz — Berlin, Under Construction"
-  heading="Correction or formal request"
-  subtitle="Organization context: 50Hertz"
+  title={t("pages.corrections.organizations.50hertz.44")}
+  heading={t("pages.corrections.organizations.50hertz.45")}
+  subtitle={t("pages.corrections.organizations.50hertz.46")}
 >
   <CorrectionChannels context="50Hertz" />
   <section>
-    <p><a href="/projects/power-to-heat-heizkraftwerk-mitte/">Return to project</a></p>
+    <p>
+      <a
+        href={localizePath(
+          "/projects/power-to-heat-heizkraftwerk-mitte/",
+          locale,
+        )}>{t("pages.corrections.organizations.50hertz.47")}</a>
+    </p>
   </section>
 </Base>

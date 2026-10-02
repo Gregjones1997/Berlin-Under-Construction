@@ -1,3 +1,4 @@
+import { publicPages } from "./public-routes.mjs";
 /** Package the checked static export only. Never upload the repository or retained artifacts. */
 import {
   cpSync,
@@ -23,18 +24,24 @@ if (!address || !date)
   throw new Error(
     "LEGAL_ADDRESS and PUBLICATION_AS_OF_DATE are required when packaging",
   );
-for (const route of ["impressum", "privacy"])
+for (const route of ["impressum", "privacy", "en/impressum", "en/privacy"])
   if (!readFileSync(join(root, route, "index.html"), "utf8").includes(address))
     throw new Error("The export does not match the supplied legal address");
 const files = walk(root);
 const pages = files.filter((p) => p.endsWith(".html"));
-if (pages.length !== 15) throw new Error("Unexpected route count");
+if (
+  pages
+    .map((p) => relative(root, p))
+    .sort()
+    .join("\n") !== [...publicPages].sort().join("\n")
+)
+  throw new Error("Unexpected public route set");
 for (const file of files) {
   if (/\.(?:pdf|sqlite3?|py|env)$/i.test(file))
     throw new Error(`Private artifact in static output: ${file}`);
   if (
     file.endsWith(".html") &&
-    !readFileSync(file, "utf8").includes(`This page was generated on ${date}.`)
+    !readFileSync(file, "utf8").includes(`data-publication-date="${date}"`)
   )
     throw new Error("The export does not match the publication date");
   if (
@@ -68,10 +75,18 @@ const routes = [
   ...pages.map((p) => {
     const file = relative(root, p);
     if (file === "index.html") return { src: "^/$", dest: "/index.html" };
+    if (file.endsWith("404.html") || file === "en/404/index.html")
+      return {
+        src: file.startsWith("en/") ? "^/en/404/?$" : "^/404/?$",
+        dest: "/" + file,
+        status: 404,
+      };
     const path = "/" + file.slice(0, -11);
     return { src: "^" + path + "/?$", dest: "/" + file };
   }),
   { handle: "filesystem" },
+  { src: "^/en(?:/.*)?$", dest: "/en/404/index.html", status: 404 },
+  { src: "/(.*)", dest: "/404.html", status: 404 },
 ];
 const model = JSON.parse(readFileSync(join(root, "atlas/model.json"), "utf8"));
 const config = {

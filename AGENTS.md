@@ -54,8 +54,10 @@ Every design proposal is bound by the same constraints as the implementation:
 - **The display contract governs.** Conflict members render only inside the
   conflict presentation. Withheld facts show a reason, never a value. No
   serialized object is rendered.
-- **German is canonical.** Source values appear verbatim in German. English is
-  used for structural labels and glosses only, never to translate a value.
+- **German is canonical.** Extracted source values and quotations remain verbatim
+  German. ADR-027 authorizes English display explanations referencing the same
+  facts, with original German available and honest translation-review status.
+  Editorial translations never overwrite source records or resolve contested types.
 - **BKG attribution** appears as a visible linked line with the boundary
   presentation.
 

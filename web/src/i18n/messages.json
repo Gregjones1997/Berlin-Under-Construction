@@ -1,0 +1,1874 @@
+{
+  "components.CorrectionChannels.1": {
+    "en": "Contact",
+    "de": "Kontakt"
+  },
+  "components.CorrectionChannels.2": {
+    "en": "Send requests to",
+    "de": "Senden Sie Anfragen an"
+  },
+  "components.CorrectionChannels.3": {
+    "en": "and include the context",
+    "de": "und nennen Sie den Bezug"
+  },
+  "components.CorrectionChannels.4": {
+    "en": ". This monitored address handles the three channels below; naming the request type keeps their procedures distinct.",
+    "de": ". Diese betreute Adresse bearbeitet die drei folgenden Anfragearten; geben Sie die Art der Anfrage an, damit die Verfahren getrennt bleiben."
+  },
+  "components.CorrectionChannels.5": {
+    "en": "Evidence correction",
+    "de": "Quellenkorrektur"
+  },
+  "components.CorrectionChannels.6": {
+    "en": "For an ordinary evidence correction, identify the displayed statement, the proposed correction and the primary source supporting it.",
+    "de": "Nennen Sie für eine Quellenkorrektur die angezeigte Aussage, die vorgeschlagene Korrektur und die stützende Primärquelle."
+  },
+  "components.CorrectionChannels.7": {
+    "en": "Formal right of reply",
+    "de": "Formelle Gegendarstellung"
+  },
+  "components.CorrectionChannels.8": {
+    "en": "State explicitly that the message is a formal right-of-reply request and identify the passage concerned. It will not be treated as an ordinary evidence correction.",
+    "de": "Kennzeichnen Sie Ihre Nachricht ausdrücklich als Antrag auf Gegendarstellung und nennen Sie die betreffende Passage. Sie wird nicht als gewöhnliche Quellenkorrektur behandelt."
+  },
+  "components.CorrectionChannels.9": {
+    "en": "Data-protection request",
+    "de": "Datenschutzanfrage"
+  },
+  "components.CorrectionChannels.10": {
+    "en": "State explicitly that the message is a data-protection request and identify the affected information or GDPR right. It will be handled separately from editorial corrections and rights of reply.",
+    "de": "Kennzeichnen Sie Ihre Nachricht ausdrücklich als Datenschutzanfrage und nennen Sie die betroffenen Informationen oder das geltend gemachte DSGVO-Recht. Die Bearbeitung erfolgt getrennt von redaktionellen Korrekturen und Gegendarstellungen."
+  },
+  "components.RawFact.11": {
+    "en": "Terminology & details",
+    "de": "Begriffe und Details"
+  },
+  "components.RawFact.12": {
+    "en": "Milestone type:",
+    "de": "Art des Meilensteins:"
+  },
+  "components.RawFact.13": {
+    "en": "Milestone term:",
+    "de": "Originalbegriff:"
+  },
+  "components.RawFact.14": {
+    "en": "Date:",
+    "de": "Datum:"
+  },
+  "components.RawFact.15": {
+    "en": "Financial measure:",
+    "de": "Finanzielle Kennzahl:"
+  },
+  "components.RawFact.16": {
+    "en": "Amount:",
+    "de": "Betrag:"
+  },
+  "components.RawFact.17": {
+    "en": "Tax treatment:",
+    "de": "Umsatzsteuer:"
+  },
+  "components.RawFact.18": {
+    "en": "Price basis:",
+    "de": "Preisbasis:"
+  },
+  "components.RawFact.19": {
+    "en": "Budget reference:",
+    "de": "Haushaltsbezug:"
+  },
+  "components.RawFact.20": {
+    "en": "Qualifier:",
+    "de": "Einschränkung:"
+  },
+  "components.RawFact.21": {
+    "en": "As of:",
+    "de": "Stand:"
+  },
+  "components.RawFact.22": {
+    "en": "Freshness:",
+    "de": "Aktualität:"
+  },
+  "components.RawFact.23": {
+    "en": "Correction concerning",
+    "de": "Korrektur zu"
+  },
+  "components.RawFact.24": {
+    "en": "Evidence",
+    "de": "Beleg"
+  },
+  "components.RawFact.25": {
+    "en": "Evidence label:",
+    "de": "Belegstatus:"
+  },
+  "components.RawFact.26": {
+    "en": "Source publication date:",
+    "de": "Veröffentlichungsdatum der Quelle:"
+  },
+  "components.RawFact.27": {
+    "en": "Original source",
+    "de": "Originalquelle"
+  },
+  "components.SiteHeader.28": {
+    "en": "Berlin, Under Construction home",
+    "de": "Berlin, Under Construction – Startseite"
+  },
+  "components.SiteHeader.29": {
+    "en": "Main navigation",
+    "de": "Hauptnavigation"
+  },
+  "components.SiteHeader.30": {
+    "en": "Independent city atlas",
+    "de": "Unabhängiger Stadtatlas"
+  },
+  "components.SiteHeader.31": {
+    "en": "01 / BERLIN",
+    "de": "01 / BERLIN"
+  },
+  "layouts.Base.33": {
+    "en": "Source-backed records of major Berlin construction projects.",
+    "de": "Quellenbasierte Informationen zu großen Berliner Bauprojekten."
+  },
+  "layouts.Base.34": {
+    "en": "BERLIN / PROJECT RECORDS",
+    "de": "BERLIN / PROJEKTDOKUMENTATION"
+  },
+  "layouts.Base.35": {
+    "en": "Method",
+    "de": "Methode"
+  },
+  "layouts.Base.36": {
+    "en": "Corrections and formal requests",
+    "de": "Korrekturen und formelle Anfragen"
+  },
+  "layouts.Base.37": {
+    "en": "Impressum",
+    "de": "Impressum"
+  },
+  "layouts.Base.38": {
+    "en": "Privacy",
+    "de": "Datenschutz"
+  },
+  "layouts.Base.39": {
+    "en": "This page was generated on",
+    "de": "Diese Seite wurde erstellt am"
+  },
+  "layouts.Base.40": {
+    "en": ". Project data may have earlier source and retrieval dates; each fact links to its original source.",
+    "de": ". Projektdaten können frühere Veröffentlichungs- und Abrufdaten haben; jede Aussage verweist auf ihre Originalquelle."
+  },
+  "pages.corrections.index.41": {
+    "en": "Corrections and formal requests — Berlin, Under Construction",
+    "de": "Korrekturen und formelle Anfragen — Berlin, Under Construction"
+  },
+  "pages.corrections.index.42": {
+    "en": "Evidence corrections, rights of reply and data-protection requests follow distinct channels.",
+    "de": "Quellenkorrekturen, Gegendarstellungen und Datenschutzanfragen werden getrennt bearbeitet."
+  },
+  "pages.corrections.index.43": {
+    "en": "the affected project or organization",
+    "de": "das betroffene Projekt oder die betroffene Organisation"
+  },
+  "pages.corrections.organizations.50hertz.44": {
+    "en": "Correction concerning 50Hertz — Berlin, Under Construction",
+    "de": "Korrektur zu 50Hertz — Berlin, Under Construction"
+  },
+  "pages.corrections.organizations.50hertz.45": {
+    "en": "Correction or formal request",
+    "de": "Korrektur oder formelle Anfrage"
+  },
+  "pages.corrections.organizations.50hertz.46": {
+    "en": "Organization context: 50Hertz",
+    "de": "Bezug zur Organisation: 50Hertz"
+  },
+  "pages.corrections.organizations.50hertz.47": {
+    "en": "Return to project",
+    "de": "Zurück zum Projekt"
+  },
+  "pages.impressum.48": {
+    "en": "Impressum — Berlin, Under Construction",
+    "de": "Impressum — Berlin, Under Construction"
+  },
+  "pages.impressum.49": {
+    "en": "Information under § 5 DDG",
+    "de": "Angaben gemäß § 5 DDG"
+  },
+  "pages.impressum.50": {
+    "en": "Germany",
+    "de": "Deutschland"
+  },
+  "pages.impressum.51": {
+    "en": "Email:",
+    "de": "E-Mail:"
+  },
+  "pages.impressum.52": {
+    "en": "Responsibility",
+    "de": "Verantwortlichkeit"
+  },
+  "pages.impressum.53": {
+    "en": "Responsible for content: Gregory Anthony Jones, address as above.",
+    "de": "Verantwortlich für den Inhalt: Gregory Anthony Jones, Anschrift wie oben."
+  },
+  "pages.impressum.54": {
+    "en": "Project status",
+    "de": "Projektstatus"
+  },
+  "pages.impressum.55": {
+    "en": "Berlin, Under Construction is a non-commercial personal project. It has no advertising, no affiliate links and no monetisation.",
+    "de": "Berlin, Under Construction ist ein nicht kommerzielles persönliches Projekt. Es enthält keine Werbung, keine Affiliate-Links und keine Monetarisierung."
+  },
+  "pages.impressum.56": {
+    "en": "The project is independent and does not imply endorsement by the State of Berlin, a public authority, contractor or other source organization.",
+    "de": "Das Projekt ist unabhängig. Es vermittelt keine Unterstützung durch das Land Berlin, eine Behörde, ein Bauunternehmen oder eine andere als Quelle genannte Organisation."
+  },
+  "pages.index.58": {
+    "en": "Explore Berlin through an architectural city model and source-backed construction records. What is being built, what was promised, and what changed.",
+    "de": "Erkunden Sie Berlin anhand eines Architekturmodells und quellenbasierter Bauprojektdokumentationen. Was wird gebaut, was wurde versprochen und was hat sich geändert?"
+  },
+  "pages.index.59": {
+    "en": "Berlin, Under Construction — The city, in progress.",
+    "de": "Berlin, Under Construction — Eine Stadt im Wandel."
+  },
+  "pages.index.60": {
+    "en": "Skip to project records",
+    "de": "Zur Projektdokumentation springen"
+  },
+  "pages.index.61": {
+    "en": "Interactive architectural map of Berlin",
+    "de": "Interaktive Architekturkarte von Berlin"
+  },
+  "pages.index.62": {
+    "en": "Assembling the city",
+    "de": "Die Stadt wird aufgebaut"
+  },
+  "pages.index.63": {
+    "en": "Real geometry. A closer look.",
+    "de": "Echte Geometrie. Ein genauerer Blick."
+  },
+  "pages.index.64": {
+    "en": "The atlas could not load.",
+    "de": "Der Atlas konnte nicht geladen werden."
+  },
+  "pages.index.65": {
+    "en": "Your browser may not support this 3D view.",
+    "de": "Ihr Browser unterstützt diese 3D-Ansicht möglicherweise nicht."
+  },
+  "pages.index.66": {
+    "en": "Explore the accessible project index →",
+    "de": "Zum zugänglichen Projektverzeichnis →"
+  },
+  "pages.index.67": {
+    "en": "Try again",
+    "de": "Erneut versuchen"
+  },
+  "pages.index.68": {
+    "en": "Explore project records",
+    "de": "Projektdokumentationen erkunden"
+  },
+  "pages.index.69": {
+    "en": "A SOURCE-BACKED VIEW OF BERLIN",
+    "de": "EIN QUELLENBASIERTER BLICK AUF BERLIN"
+  },
+  "pages.index.70": {
+    "en": "A city in progress.",
+    "de": "Eine Stadt im Wandel."
+  },
+  "pages.index.71": {
+    "en": "A record of change.",
+    "de": "Veränderungen dokumentiert."
+  },
+  "pages.index.72": {
+    "en": "Explore Berlin’s construction projects and the public sources behind them.",
+    "de": "Erkunden Sie Berlins Bauprojekte und die öffentlichen Quellen dahinter."
+  },
+  "pages.index.73": {
+    "en": "Full dossiers",
+    "de": "Vollständige Dossiers"
+  },
+  "pages.index.74": {
+    "en": "Placed in the atlas",
+    "de": "Im Atlas verortet"
+  },
+  "pages.index.75": {
+    "en": "Location withheld",
+    "de": "Standort zurückgehalten"
+  },
+  "pages.index.76": {
+    "en": "Read dossier →",
+    "de": "Dossier lesen →"
+  },
+  "pages.index.77": {
+    "en": "Explore construction projects and their sources",
+    "de": "Bauprojekte und ihre Quellen erkunden"
+  },
+  "pages.index.78": {
+    "en": "Browse the project index —",
+    "de": "Zum Projektverzeichnis —"
+  },
+  "pages.index.79": {
+    "en": "full dossiers",
+    "de": "vollständige Dossiers"
+  },
+  "pages.index.80": {
+    "en": "basic listings",
+    "de": "Basiseinträge"
+  },
+  "pages.index.81": {
+    "en": "Source records, not a live progress survey",
+    "de": "Quellenangaben, keine aktuelle Erhebung des Baufortschritts"
+  },
+  "pages.index.82": {
+    "en": "Back to previous view",
+    "de": "Zur vorherigen Ansicht"
+  },
+  "pages.index.83": {
+    "en": "Selected project",
+    "de": "Ausgewähltes Projekt"
+  },
+  "pages.index.84": {
+    "en": "Close project record",
+    "de": "Projektdokumentation schließen"
+  },
+  "pages.index.85": {
+    "en": "PROJECT RECORD /",
+    "de": "PROJEKTDOKUMENTATION /"
+  },
+  "pages.index.86": {
+    "en": "· Source-backed dossier",
+    "de": "· Quellenbasiertes Dossier"
+  },
+  "pages.index.87": {
+    "en": "Location withheld pending source verification. This record remains available without a map marker.",
+    "de": "Standort bis zur Quellenprüfung zurückgehalten. Die Dokumentation bleibt ohne Kartenmarkierung verfügbar."
+  },
+  "pages.index.88": {
+    "en": "Source for project description",
+    "de": "Quelle zur Projektbeschreibung"
+  },
+  "pages.index.89": {
+    "en": "Source for reported status",
+    "de": "Quelle zum gemeldeten Status"
+  },
+  "pages.index.90": {
+    "en": "Source status ·",
+    "de": "Quellenstatus ·"
+  },
+  "pages.index.91": {
+    "en": "date not stated",
+    "de": "Datum nicht angegeben"
+  },
+  "pages.index.92": {
+    "en": "Start",
+    "de": "Beginn"
+  },
+  "pages.index.93": {
+    "en": "Source for announced start",
+    "de": "Quelle zum angekündigten Beginn"
+  },
+  "pages.index.94": {
+    "en": "Not recorded",
+    "de": "Nicht dokumentiert"
+  },
+  "pages.index.95": {
+    "en": "Planned",
+    "de": "Geplant"
+  },
+  "pages.index.96": {
+    "en": "Target date passed; completion unconfirmed.",
+    "de": "Zieltermin verstrichen; Fertigstellung nicht bestätigt."
+  },
+  "pages.index.97": {
+    "en": "Planned dates do not confirm actual progress.",
+    "de": "Geplante Termine bestätigen keinen tatsächlichen Baufortschritt."
+  },
+  "pages.index.98": {
+    "en": "Review source history & evidence",
+    "de": "Quellenverlauf und Belege ansehen"
+  },
+  "pages.index.99": {
+    "en": "Review published facts & evidence",
+    "de": "Veröffentlichte Aussagen und Belege ansehen"
+  },
+  "pages.index.100": {
+    "en": "Earlier statements and cited sources",
+    "de": "Frühere Angaben und zitierte Quellen"
+  },
+  "pages.index.101": {
+    "en": "Published facts and cited sources",
+    "de": "Veröffentlichte Aussagen und zitierte Quellen"
+  },
+  "pages.index.102": {
+    "en": "Suggest a correction",
+    "de": "Korrektur vorschlagen"
+  },
+  "pages.index.103": {
+    "en": "Dates describe source statements, not observed construction progress.",
+    "de": "Termine geben Quellenangaben wieder, keinen beobachteten Baufortschritt."
+  },
+  "pages.index.104": {
+    "en": "Project overview",
+    "de": "Projektüberblick"
+  },
+  "pages.index.105": {
+    "en": "Source history",
+    "de": "Quellenverlauf"
+  },
+  "pages.index.106": {
+    "en": "No separate milestone history is published for this project.",
+    "de": "Für dieses Projekt ist kein gesonderter Meilensteinverlauf veröffentlicht."
+  },
+  "pages.index.107": {
+    "en": "Unresolved source conflict",
+    "de": "Ungeklärter Quellenwiderspruch"
+  },
+  "pages.index.108": {
+    "en": "Withheld facts",
+    "de": "Zurückgehaltene Angaben"
+  },
+  "pages.index.109": {
+    "en": "Open full dossier",
+    "de": "Vollständiges Dossier öffnen"
+  },
+  "pages.index.110": {
+    "en": "BASIC LISTING · RESEARCH ONGOING",
+    "de": "BASISEINTRAG · RECHERCHE LÄUFT"
+  },
+  "pages.index.111": {
+    "en": "Source-reported milestones",
+    "de": "Von Quellen genannte Meilensteine"
+  },
+  "pages.index.112": {
+    "en": "Official register reference point. Site extent and construction progress have not been verified.",
+    "de": "Bezugspunkt aus dem offiziellen Register. Baustellenausdehnung und Baufortschritt wurden nicht verifiziert."
+  },
+  "pages.index.113": {
+    "en": "Official project page",
+    "de": "Offizielle Projektseite"
+  },
+  "pages.index.114": {
+    "en": "Source details",
+    "de": "Quelldetails"
+  },
+  "pages.index.115": {
+    "en": "Title and location reproduced from the official meinBerlin register, checked",
+    "de": "Titel und Standort aus dem offiziellen meinBerlin-Register, geprüft am"
+  },
+  "pages.index.116": {
+    "en": "Source edited",
+    "de": "Quelle bearbeitet am"
+  },
+  "pages.index.117": {
+    "en": "· retrieved",
+    "de": "· abgerufen am"
+  },
+  "pages.index.118": {
+    "en": "Original milestone source",
+    "de": "Originalquelle zum Meilenstein"
+  },
+  "pages.index.119": {
+    "en": "Register source",
+    "de": "Registerquelle"
+  },
+  "pages.index.120": {
+    "en": "Location field:",
+    "de": "Standortfeld:"
+  },
+  "pages.index.121": {
+    "en": "Source fingerprint:",
+    "de": "Quellenprüfsumme:"
+  },
+  "pages.index.122": {
+    "en": "Suggest a correction ·",
+    "de": "Korrektur vorschlagen ·"
+  },
+  "pages.index.123": {
+    "en": "Explore Berlin",
+    "de": "Berlin erkunden"
+  },
+  "pages.index.124": {
+    "en": "Choose an area",
+    "de": "Gebiet auswählen"
+  },
+  "pages.index.125": {
+    "en": "City overview",
+    "de": "Stadtüberblick"
+  },
+  "pages.index.126": {
+    "en": "Map navigation",
+    "de": "Kartennavigation"
+  },
+  "pages.index.127": {
+    "en": "Orient map north",
+    "de": "Karte nach Norden ausrichten"
+  },
+  "pages.index.128": {
+    "en": "Zoom in",
+    "de": "Vergrößern"
+  },
+  "pages.index.129": {
+    "en": "Zoom out",
+    "de": "Verkleinern"
+  },
+  "pages.index.130": {
+    "en": "1 km",
+    "de": "1 km"
+  },
+  "pages.index.131": {
+    "en": "Atlas controls",
+    "de": "Atlassteuerung"
+  },
+  "pages.index.132": {
+    "en": "Overview",
+    "de": "Überblick"
+  },
+  "pages.index.133": {
+    "en": "Orbit",
+    "de": "Rundflug"
+  },
+  "pages.index.134": {
+    "en": "Plan view",
+    "de": "Draufsicht"
+  },
+  "pages.index.135": {
+    "en": "Project key",
+    "de": "Projektlegende"
+  },
+  "pages.index.136": {
+    "en": "Enter fullscreen",
+    "de": "Vollbild öffnen"
+  },
+  "pages.index.137": {
+    "en": "About this model",
+    "de": "Über dieses Modell"
+  },
+  "pages.index.138": {
+    "en": "Project map key",
+    "de": "Projektlegende"
+  },
+  "pages.index.139": {
+    "en": "Close label controls",
+    "de": "Legendensteuerung schließen"
+  },
+  "pages.index.140": {
+    "en": "Project markers",
+    "de": "Projektmarkierungen"
+  },
+  "pages.index.141": {
+    "en": "2 dossier pins · 150 basic listings",
+    "de": "2 Dossiermarkierungen · 150 Basiseinträge"
+  },
+  "pages.index.142": {
+    "en": "Basic listings",
+    "de": "Basiseinträge"
+  },
+  "pages.index.143": {
+    "en": "Official register references · research ongoing",
+    "de": "Offizielle Registerangaben · Recherche läuft"
+  },
+  "pages.index.144": {
+    "en": "Basic listings near a place",
+    "de": "Basiseinträge in der Nähe eines Ortes"
+  },
+  "pages.index.145": {
+    "en": "All 150 listings",
+    "de": "Alle 150 Einträge"
+  },
+  "pages.index.146": {
+    "en": "Showing all 150 basic listings.",
+    "de": "Alle 150 Basiseinträge werden angezeigt."
+  },
+  "pages.index.147": {
+    "en": "Within 3 km of the selected place’s map point. This is a proximity filter, not a district boundary.",
+    "de": "Im Umkreis von 3 km um den Kartenpunkt des ausgewählten Ortes. Dies ist ein Umkreisfilter, keine Bezirksgrenze."
+  },
+  "pages.index.148": {
+    "en": "Public space",
+    "de": "Öffentlicher Raum"
+  },
+  "pages.index.149": {
+    "en": "Europaplatz Süd",
+    "de": "Europaplatz Süd"
+  },
+  "pages.index.150": {
+    "en": "School",
+    "de": "Schule"
+  },
+  "pages.index.151": {
+    "en": "Heinrich-Hertz-Gymnasium",
+    "de": "Heinrich-Hertz-Gymnasium"
+  },
+  "pages.index.152": {
+    "en": "Energy",
+    "de": "Energie"
+  },
+  "pages.index.153": {
+    "en": "Power-to-Heat · location withheld",
+    "de": "Power-to-Heat · Standort zurückgehalten"
+  },
+  "pages.index.154": {
+    "en": "Solid pins: full dossiers. Smaller outlined pins: basic listings, research ongoing.",
+    "de": "Gefüllte Markierungen: vollständige Dossiers. Kleinere umrandete Markierungen: Basiseinträge, Recherche läuft."
+  },
+  "pages.index.155": {
+    "en": "Browse 150 basic listings",
+    "de": "150 Basiseinträge durchsuchen"
+  },
+  "pages.index.156": {
+    "en": "Drag to explore",
+    "de": "Zum Erkunden ziehen"
+  },
+  "pages.index.157": {
+    "en": "Scroll to zoom",
+    "de": "Zum Zoomen scrollen"
+  },
+  "pages.index.158": {
+    "en": "Right-drag to rotate",
+    "de": "Zum Drehen mit rechter Maustaste ziehen"
+  },
+  "pages.index.159": {
+    "en": "Geometry:",
+    "de": "Geometrie:"
+  },
+  "pages.index.160": {
+    "en": "Geoportal Berlin",
+    "de": "Geoportal Berlin"
+  },
+  "pages.index.161": {
+    "en": "© OpenStreetMap contributors",
+    "de": "© OpenStreetMap-Mitwirkende"
+  },
+  "pages.index.162": {
+    "en": "A model of the city. An evidence trail for its future.",
+    "de": "Ein Modell der Stadt. Eine Belegspur für ihre Zukunft."
+  },
+  "pages.index.163": {
+    "en": "Legal information",
+    "de": "Rechtliche Informationen"
+  },
+  "pages.index.164": {
+    "en": "Corrections",
+    "de": "Korrekturen"
+  },
+  "pages.index.165": {
+    "en": "Close model information",
+    "de": "Modellinformationen schließen"
+  },
+  "pages.index.166": {
+    "en": "THE MAP, EXPLAINED",
+    "de": "DIE KARTE ERKLÄRT"
+  },
+  "pages.index.167": {
+    "en": "A city model.",
+    "de": "Ein Stadtmodell."
+  },
+  "pages.index.168": {
+    "en": "Not a live survey.",
+    "de": "Keine aktuelle Erhebung."
+  },
+  "pages.index.169": {
+    "en": "This architectural view uses real building footprints and source-recorded heights. Buildings are simplified extrusions; roof shapes and facades are not reconstructed. The model does not show current construction progress.",
+    "de": "Diese Architekturansicht verwendet echte Gebäudegrundrisse und quellenbasierte Höhen. Gebäude sind vereinfachte Extrusionen; Dachformen und Fassaden werden nicht rekonstruiert. Das Modell zeigt keinen aktuellen Baufortschritt."
+  },
+  "pages.index.170": {
+    "en": "Building geometry",
+    "de": "Gebäudegeometrie"
+  },
+  "pages.index.171": {
+    "en": "Geoportal Berlin · Gebäudehöhen 2022 (Umweltatlas), derived from ALKIS footprints and the LoD2 model.",
+    "de": "Geoportal Berlin · Gebäudehöhen 2022 (Umweltatlas), abgeleitet aus ALKIS-Grundrissen und dem LoD2-Modell."
+  },
+  "pages.index.172": {
+    "en": "dl-de/zero-2-0",
+    "de": "dl-de/zero-2-0"
+  },
+  "pages.index.173": {
+    "en": "Geographic context",
+    "de": "Geografischer Kontext"
+  },
+  "pages.index.174": {
+    "en": ", ODbL. Simplified water, green space and transport geometry. Road widths and bridge elevations are illustrative.",
+    "de": ", ODbL. Vereinfachte Gewässer-, Grünflächen- und Verkehrsgeometrie. Straßenbreiten und Brückenhöhen sind illustrativ."
+  },
+  "pages.index.175": {
+    "en": "Coverage & precision",
+    "de": "Abdeckung und Genauigkeit"
+  },
+  "pages.index.176": {
+    "en": "Citywide building coverage with detail loaded as you explore. Building shapes smaller than 50 m² are omitted; coordinates are rounded to 0.5 m. The overview uses simplified footprints of shapes at least 500 m². Source gaps remain gaps. Geometry predates these project records.",
+    "de": "Gebäudeabdeckung im gesamten Stadtgebiet mit beim Erkunden nachgeladenen Details. Gebäudeformen unter 50 m² werden ausgelassen; Koordinaten sind auf 0,5 m gerundet. Der Überblick verwendet vereinfachte Grundrisse von Formen ab 500 m². Quellenlücken bleiben bestehen. Die Geometrie ist älter als diese Projektdokumentationen."
+  },
+  "pages.index.177": {
+    "en": "Project evidence",
+    "de": "Projektbelege"
+  },
+  "pages.index.178": {
+    "en": "Two of three full dossiers have published positions. Another 150 basic listings use official register reference points, not verified site boundaries. Dates and statements retain their individual sources; map geometry is not project-status evidence.",
+    "de": "Zwei von drei vollständigen Dossiers haben veröffentlichte Standorte. Weitere 150 Basiseinträge verwenden Bezugspunkte aus dem offiziellen Register, keine verifizierten Baustellengrenzen. Termine und Aussagen behalten ihre jeweiligen Quellen; die Kartengeometrie ist kein Beleg für den Projektstatus."
+  },
+  "pages.index.179": {
+    "en": "Privacy & access",
+    "de": "Datenschutz und Zugang"
+  },
+  "pages.index.180": {
+    "en": "Model assets are served with this site. No map provider, analytics, location permission or account is required. The",
+    "de": "Modelldaten werden mit dieser Website bereitgestellt. Kartenanbieter, Analysewerkzeuge, Standortfreigabe oder Konto sind nicht erforderlich. Das"
+  },
+  "pages.index.181": {
+    "en": "project index",
+    "de": "Projektverzeichnis"
+  },
+  "pages.index.182": {
+    "en": "and dossiers work without JavaScript.",
+    "de": "und die Dossiers funktionieren ohne JavaScript."
+  },
+  "pages.index.183": {
+    "en": "Explore Berlin · navigation sources",
+    "de": "Berlin erkunden · Navigationsquellen"
+  },
+  "pages.index.184": {
+    "en": "Area names and navigation anchors from OpenStreetMap; these are not project locations.",
+    "de": "Gebietsnamen und Navigationspunkte aus OpenStreetMap; sie sind keine Projektstandorte."
+  },
+  "pages.index.185": {
+    "en": "Geographic label sources ·",
+    "de": "Quellen der geografischen Beschriftungen ·"
+  },
+  "pages.index.186": {
+    "en": "German place names from OpenStreetMap, snapshot 7 September 2026. Label anchors are approximate cartographic positions, not project locations.",
+    "de": "Deutsche Ortsnamen aus OpenStreetMap, Datenstand 7. September 2026. Beschriftungspunkte sind ungefähre kartografische Positionen, keine Projektstandorte."
+  },
+  "pages.index.187": {
+    "en": ". Data dates vary by source.",
+    "de": ". Die Datenstände unterscheiden sich je nach Quelle."
+  },
+  "pages.index.188": {
+    "en": "Read the method",
+    "de": "Methode lesen"
+  },
+  "pages.index.189": {
+    "en": "The 3D atlas requires JavaScript.",
+    "de": "Der 3D-Atlas benötigt JavaScript."
+  },
+  "pages.index.190": {
+    "en": "Open the accessible map and project index →",
+    "de": "Zugängliche Karte und Projektverzeichnis öffnen →"
+  },
+  "pages.method.191": {
+    "en": "AI method — recorded evidence and limits",
+    "de": "KI-Methode — dokumentierte Belege und Grenzen"
+  },
+  "pages.method.192": {
+    "en": "AI method: recorded run, failed attempt and limits",
+    "de": "KI-Methode: dokumentierter Lauf, fehlgeschlagener Versuch und Grenzen"
+  },
+  "pages.method.193": {
+    "en": "The retained private store contains one completed extraction run for one C-014 source document. It is not evidence of an absolute historical provider-request figure, so none is published.",
+    "de": "Der private Datenspeicher enthält einen abgeschlossenen Extraktionslauf für ein C-014-Quelldokument. Daraus lässt sich keine absolute historische Anzahl von Anbieteranfragen ableiten; deshalb wird keine veröffentlicht."
+  },
+  "pages.method.194": {
+    "en": "Completed run",
+    "de": "Abgeschlossener Lauf"
+  },
+  "pages.method.195": {
+    "en": "Uncached input tokens",
+    "de": "Nicht zwischengespeicherte Eingabetokens"
+  },
+  "pages.method.196": {
+    "en": "Cached input tokens",
+    "de": "Zwischengespeicherte Eingabetokens"
+  },
+  "pages.method.197": {
+    "en": "Output tokens",
+    "de": "Ausgabetokens"
+  },
+  "pages.method.198": {
+    "en": "Recorded cost",
+    "de": "Dokumentierte Kosten"
+  },
+  "pages.method.199": {
+    "en": "USD 0.00161784",
+    "de": "0,00161784 USD"
+  },
+  "pages.method.200": {
+    "en": "Recorded latency",
+    "de": "Dokumentierte Laufzeit"
+  },
+  "pages.method.201": {
+    "en": "10,017 ms",
+    "de": "10.017 ms"
+  },
+  "pages.method.202": {
+    "en": "The cache read shows that a prefix was reused. The request which primed the cache is unestablished; no origin or historical request total is inferred.",
+    "de": "Der Cache-Zugriff zeigt die Wiederverwendung eines Präfixes. Welche Anfrage den Cache befüllte, ist nicht belegt; weder Ursprung noch historische Gesamtzahl der Anfragen werden daraus abgeleitet."
+  },
+  "pages.method.203": {
+    "en": "Failed attempt on 13 August 2026",
+    "de": "Fehlgeschlagener Versuch am 13. August 2026"
+  },
+  "pages.method.204": {
+    "en": "A later authorized request returned an incomplete response. The adapter rejected it as",
+    "de": "Eine spätere autorisierte Anfrage lieferte eine unvollständige Antwort. Der Adapter wies sie zurück als"
+  },
+  "pages.method.205": {
+    "en": ". It produced no stored extraction run and no stored claim.",
+    "de": ". Es wurden weder ein Extraktionslauf noch eine Aussage gespeichert."
+  },
+  "pages.method.206": {
+    "en": "The adapter was subsequently corrected so a future authorized call can preserve content-free usage, cost, latency, incomplete reason and rejection details while still failing closed. That correction does not reconstruct the missing accounting or establish the cause of the failed attempt.",
+    "de": "Der Adapter wurde anschließend korrigiert, damit eine künftig autorisierte Anfrage inhaltsfreie Angaben zu Nutzung, Kosten, Laufzeit, Unvollständigkeitsgrund und Zurückweisung speichern kann, während sie weiterhin geschlossen fehlschlägt. Diese Korrektur rekonstruiert weder die fehlenden Abrechnungsdaten noch die Ursache des fehlgeschlagenen Versuchs."
+  },
+  "pages.method.207": {
+    "en": "What has and has not been demonstrated",
+    "de": "Was nachgewiesen wurde und was nicht"
+  },
+  "pages.method.208": {
+    "en": "The current recorded repository suite passes 178 tests covering schemas, storage, evidence and publication gates, adapter behavior, static export and leak scans. Engineering tests do not measure model extraction quality.",
+    "de": "Die derzeit dokumentierte Testsuite umfasst 178 bestandene Tests für Schemata, Speicherung, Beleg- und Veröffentlichungsschranken, Adapterverhalten, statischen Export und Leckprüfungen. Technische Tests messen nicht die Qualität der Modellextraktion."
+  },
+  "pages.method.209": {
+    "en": "No accuracy, precision or recall result exists. The scored golden set is empty, so there is no basis for an extraction-quality percentage or a comparative model claim.",
+    "de": "Es gibt kein Ergebnis zu Genauigkeit, Präzision oder Trefferquote. Der bewertete Referenzdatensatz ist leer; daher gibt es keine Grundlage für einen prozentualen Extraktionsqualitätswert oder einen Modellvergleich."
+  },
+  "pages.privacy.210": {
+    "en": "Privacy notice — Berlin, Under Construction",
+    "de": "Datenschutzhinweise — Berlin, Under Construction"
+  },
+  "pages.privacy.211": {
+    "en": "Privacy notice",
+    "de": "Datenschutzhinweise"
+  },
+  "pages.privacy.212": {
+    "en": "Information under Article 13 GDPR",
+    "de": "Informationen gemäß Artikel 13 DSGVO"
+  },
+  "pages.privacy.213": {
+    "en": "Controller",
+    "de": "Verantwortlicher"
+  },
+  "pages.privacy.214": {
+    "en": "Application behavior",
+    "de": "Verhalten der Anwendung"
+  },
+  "pages.privacy.215": {
+    "en": "This site is a static Astro export. The application uses no cookies, no analytics, no tracking, no third-party requests, no user accounts and no forms. The atlas uses self-hosted JavaScript and geographic model files for its interactive 3D view. Project dossiers and the static project index work without JavaScript. It contains no code that reads or writes local storage, session storage, IndexedDB or service-worker storage. A visitor who follows an original-source link initiates a navigation to that source; the source is not embedded by this site.",
+    "de": "Diese Website ist ein statischer Astro-Export. Die Anwendung verwendet keine Cookies, Analysewerkzeuge, Tracking, Drittanbieteranfragen, Benutzerkonten oder Formulare. Der Atlas verwendet selbst gehostetes JavaScript und geografische Modelldateien für die interaktive 3D-Ansicht. Projektdossiers und das statische Projektverzeichnis funktionieren ohne JavaScript. Die Anwendung enthält keinen Code zum Lesen oder Schreiben von Local Storage, Session Storage, IndexedDB oder Service-Worker-Speicher. Wer einem Originalquellenlink folgt, ruft diese Quelle selbst auf; sie wird nicht in diese Website eingebettet."
+  },
+  "pages.privacy.216": {
+    "en": "Hosting and request data",
+    "de": "Hosting und Anfragedaten"
+  },
+  "pages.privacy.217": {
+    "en": "This site is hosted by Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States. When a visitor requests a page, Vercel states that it receives website traffic information including the IP address, location derived from the IP address and system configuration information. Its service-generated information can also include log files, proxy-server, diagnostic, capacity, usage, performance, data-setting and system-configuration information.",
+    "de": "Diese Website wird von Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA, gehostet. Vercel erklärt, beim Seitenaufruf Informationen zum Websiteverkehr zu erhalten, darunter die IP-Adresse, den daraus abgeleiteten Standort und Informationen zur Systemkonfiguration. Dienstgenerierte Informationen können auch Protokolldateien sowie Angaben zu Proxyservern, Diagnose, Kapazität, Nutzung, Leistung, Dateneinstellungen und Systemkonfiguration umfassen."
+  },
+  "pages.privacy.218": {
+    "en": "The controller processes the request data necessary to deliver, operate and secure this site on the basis of Art. 6(1)(f) GDPR. The legitimate interests are reliable delivery, abuse prevention, troubleshooting and security. Vercel also describes some service-generated data processing under its own responsibility in its",
+    "de": "Der Verantwortliche verarbeitet die für Bereitstellung, Betrieb und Absicherung dieser Website erforderlichen Anfragedaten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Die berechtigten Interessen sind zuverlässige Bereitstellung, Missbrauchsprävention, Fehlerbehebung und Sicherheit. Vercel beschreibt außerdem bestimmte Verarbeitungen dienstgenerierter Daten in eigener Verantwortung in seinen"
+  },
+  "pages.privacy.219": {
+    "en": "Privacy Notice",
+    "de": "Datenschutzhinweisen"
+  },
+  "pages.privacy.220": {
+    "en": "Recipient, processor status and transfers",
+    "de": "Empfänger, Auftragsverarbeitung und Übermittlungen"
+  },
+  "pages.privacy.221": {
+    "en": "Vercel Inc. is the hosting recipient. Vercel's Terms of Service say that personal information is processed as controller or processor as applicable and link a data-processing addendum. However, Vercel's current canonical",
+    "de": "Vercel Inc. ist der Hosting-Empfänger. Nach Vercels Nutzungsbedingungen werden personenbezogene Informationen je nach Fall als Verantwortlicher oder Auftragsverarbeiter verarbeitet; die Bedingungen verlinken einen Auftragsverarbeitungszusatz. Vercels derzeitiger maßgeblicher"
+  },
+  "pages.privacy.222": {
+    "en": "Data Processing Addendum",
+    "de": "Auftragsverarbeitungszusatz"
+  },
+  "pages.privacy.223": {
+    "en": "expressly limits its processor terms to Pro and Enterprise customers. This deployment uses the Hobby plan. The public official documents therefore do not establish that the current DPA applies to this deployment, and this notice does not claim that it does.",
+    "de": "beschränkt seine Bedingungen zur Auftragsverarbeitung jedoch ausdrücklich auf Pro- und Enterprise-Kunden. Diese Bereitstellung verwendet den Hobby-Tarif. Die offiziellen öffentlichen Dokumente belegen daher nicht, dass der aktuelle Zusatz für diese Bereitstellung gilt; diese Hinweise behaupten dies nicht."
+  },
+  "pages.privacy.224": {
+    "en": "Vercel states that information may be processed in the United States and other jurisdictions and that, where required, it uses Standard Contractual Clauses or other appropriate mechanisms. Its Privacy Notice also states participation in the EU–U.S. Data Privacy Framework. The exact subprocessors and transfer mechanism applicable to this Hobby deployment remain unverified; a service-wide provider list is not treated as proof that a named company processes requests for this site.",
+    "de": "Vercel erklärt, Informationen möglicherweise in den USA und anderen Rechtsordnungen zu verarbeiten und bei Bedarf Standardvertragsklauseln oder andere geeignete Mechanismen zu verwenden. Die Datenschutzhinweise nennen auch die Teilnahme am EU–U.S. Data Privacy Framework. Die für diese Hobby-Bereitstellung geltenden Unterauftragsverarbeiter und Übermittlungsmechanismen bleiben unbestätigt; eine dienstweite Anbieterliste gilt nicht als Nachweis, dass ein genanntes Unternehmen Anfragen für diese Website verarbeitet."
+  },
+  "pages.privacy.225": {
+    "en": "Retention",
+    "de": "Speicherung"
+  },
+  "pages.privacy.226": {
+    "en": "Vercel documents a 12-hour customer-visible retention window for base Observability events on Hobby and a one-hour window for runtime logs. This static site has no serverless function runtime. Those dashboard windows do not establish deletion from every Vercel system. Vercel's Privacy Notice gives no fixed period for its internal operational data; it states that information is kept for the minimum period necessary for legal, contractual and legitimate purposes and is deleted or anonymized when there is no ongoing legitimate business need, with secure retention where deletion is not possible, such as backups.",
+    "de": "Vercel dokumentiert für grundlegende Observability-Ereignisse im Hobby-Tarif ein kundenseitig sichtbares Speicherfenster von zwölf Stunden und für Laufzeitprotokolle ein Fenster von einer Stunde. Diese statische Website hat keine serverlose Funktionslaufzeit. Diese Dashboard-Zeiträume belegen keine Löschung aus allen Vercel-Systemen. Vercels Datenschutzhinweise nennen keine feste Frist für interne Betriebsdaten; Informationen werden für die rechtlichen, vertraglichen und berechtigten Zwecke erforderliche Mindestdauer gespeichert und bei Wegfall des fortbestehenden berechtigten Bedarfs gelöscht oder anonymisiert. Ist eine Löschung etwa bei Sicherungskopien nicht möglich, werden sie sicher aufbewahrt."
+  },
+  "pages.privacy.227": {
+    "en": "Your rights",
+    "de": "Ihre Rechte"
+  },
+  "pages.privacy.228": {
+    "en": "Subject to the statutory conditions, you have the right of access under Art. 15 GDPR, rectification under Art. 16, erasure under Art. 17, restriction under Art. 18, data portability under Art. 20 and objection under Art. 21. Because this site's request processing relies on legitimate interests, you may object on grounds relating to your particular situation. Contact the controller at the email address above.",
+    "de": "Unter den gesetzlichen Voraussetzungen haben Sie Rechte auf Auskunft nach Art. 15 DSGVO, Berichtigung nach Art. 16, Löschung nach Art. 17, Einschränkung nach Art. 18, Datenübertragbarkeit nach Art. 20 und Widerspruch nach Art. 21. Da die Verarbeitung von Anfragedaten auf berechtigten Interessen beruht, können Sie aus Gründen Ihrer besonderen Situation widersprechen. Kontaktieren Sie den Verantwortlichen über die oben genannte E-Mail-Adresse."
+  },
+  "pages.privacy.229": {
+    "en": "You also have the right to complain to a supervisory authority. The local authority is the",
+    "de": "Sie können sich außerdem bei einer Aufsichtsbehörde beschweren. Die örtliche Behörde ist die"
+  },
+  "pages.privacy.230": {
+    "en": "Berliner Beauftragte für Datenschutz und Informationsfreiheit",
+    "de": "Berliner Beauftragte für Datenschutz und Informationsfreiheit"
+  },
+  "pages.projects.slug..231": {
+    "en": "Current source-stated position",
+    "de": "Aktueller Stand laut Quelle"
+  },
+  "pages.projects.slug..232": {
+    "en": "Dates describe source statements, not observed construction progress. Freshness has not been assessed.",
+    "de": "Termine geben Quellenangaben wieder, keinen beobachteten Baufortschritt. Die Aktualität wurde nicht bewertet."
+  },
+  "pages.projects.slug..233": {
+    "en": "Review earlier source statements →",
+    "de": "Frühere Quellenangaben ansehen →"
+  },
+  "pages.projects.slug..234": {
+    "en": "Return to this project in the atlas",
+    "de": "Zu diesem Projekt im Atlas zurückkehren"
+  },
+  "pages.projects.slug..235": {
+    "en": "Project identity",
+    "de": "Projektidentität"
+  },
+  "pages.projects.slug..236": {
+    "en": "Completion and construction history",
+    "de": "Fertigstellungs- und Bauverlauf"
+  },
+  "pages.projects.slug..237": {
+    "en": "Earlier source-stated dates remain visible so changes are not erased.",
+    "de": "Frühere quellenbasierte Termine bleiben sichtbar, damit Änderungen nicht verschwinden."
+  },
+  "pages.projects.slug..238": {
+    "en": "Other verified facts",
+    "de": "Weitere belegte Angaben"
+  },
+  "pages.projects.slug..239": {
+    "en": "Conflicting source values",
+    "de": "Widersprüchliche Quellenwerte"
+  },
+  "pages.projects.slug..240": {
+    "en": "Unresolved official-source conflict",
+    "de": "Ungeklärter Widerspruch offizieller Quellen"
+  },
+  "pages.projects.slug..241": {
+    "en": "The two official sources disagree, and neither source retracts the other. Neither value is promoted.",
+    "de": "Die beiden offiziellen Quellen widersprechen sich; keine nimmt die andere zurück. Keiner der Werte wird bevorzugt."
+  },
+  "pages.projects.slug..242": {
+    "en": "Project fact",
+    "de": "Projektangabe"
+  },
+  "pages.projects.slug..243": {
+    "en": "This fact is withheld pending review.",
+    "de": "Diese Angabe wird bis zur Prüfung zurückgehalten."
+  },
+  "pages.projects.slug..244": {
+    "en": "Language boundary",
+    "de": "Sprache und Übersetzung"
+  },
+  "pages.projects.slug..245": {
+    "en": "Translation unverified.",
+    "de": "Übersetzung nicht unabhängig geprüft."
+  },
+  "pages.projects.slug..246": {
+    "en": "German source wording is canonical. English explanations are editorial translations; unresolved meanings are withheld rather than guessed.",
+    "de": "Deutsche Quellenformulierungen bleiben maßgeblich. Englische Erläuterungen sind redaktionelle Übersetzungen; ungeklärte Bedeutungen werden zurückgehalten statt geraten."
+  },
+  "pages.projects.slug..247": {
+    "en": "Request an evidence correction or make a formal request",
+    "de": "Quellenkorrektur anfragen oder formelle Anfrage stellen"
+  },
+  "pages.records.248": {
+    "en": "Project index — Berlin, Under Construction",
+    "de": "Projektverzeichnis — Berlin, Under Construction"
+  },
+  "pages.records.249": {
+    "en": "The project index",
+    "de": "Das Projektverzeichnis"
+  },
+  "pages.records.250": {
+    "en": "A source-backed map of what is being built, what was promised and what changed.",
+    "de": "Eine quellenbasierte Karte dessen, was gebaut wurde oder wird, was versprochen wurde und was sich geändert hat."
+  },
+  "pages.records.251": {
+    "en": "START WITH THE EVIDENCE",
+    "de": "MIT DEN BELEGEN BEGINNEN"
+  },
+  "pages.records.252": {
+    "en": "Three projects.",
+    "de": "Drei Projekte."
+  },
+  "pages.records.253": {
+    "en": "A closer look.",
+    "de": "Ein genauerer Blick."
+  },
+  "pages.records.254": {
+    "en": "Full dossiers bring source statements, history and unresolved questions together. Choose a project to follow its evidence.",
+    "de": "Vollständige Dossiers bündeln Quellenangaben, Verlauf und offene Fragen. Wählen Sie ein Projekt und folgen Sie seinen Belegen."
+  },
+  "pages.records.255": {
+    "en": "All pilot projects",
+    "de": "Alle Pilotprojekte"
+  },
+  "pages.records.256": {
+    "en": "Read the dossier",
+    "de": "Dossier lesen"
+  },
+  "pages.records.257": {
+    "en": "Pilot projects within Berlin",
+    "de": "Pilotprojekte in Berlin"
+  },
+  "pages.records.258": {
+    "en": "Berlin boundary with two placed pilot projects",
+    "de": "Berliner Grenze mit zwei verorteten Pilotprojekten"
+  },
+  "pages.records.259": {
+    "en": "Two of three pilot projects are placed. C-019 remains reachable below, with its location withheld pending source verification.",
+    "de": "Zwei von drei Pilotprojekten sind verortet. C-019 bleibt unten erreichbar; sein Standort wird bis zur Quellenprüfung zurückgehalten."
+  },
+  "pages.records.260": {
+    "en": "Boundary: ©",
+    "de": "Grenze: ©"
+  },
+  "pages.records.261": {
+    "en": "dl-de/by-2-0",
+    "de": "dl-de/by-2-0"
+  },
+  "pages.records.262": {
+    "en": "BKG source record",
+    "de": "BKG-Quellennachweis"
+  },
+  "pages.records.263": {
+    "en": "Marker positions: ©",
+    "de": "Markierungspositionen: ©"
+  },
+  "pages.records.264": {
+    "en": ", ODbL 1.0.",
+    "de": ", ODbL 1.0."
+  },
+  "pages.records.265": {
+    "en": "Project with location withheld",
+    "de": "Projekt mit zurückgehaltenem Standort"
+  },
+  "pages.records.266": {
+    "en": "Location withheld pending source verification.",
+    "de": "Standort bis zur Quellenprüfung zurückgehalten."
+  },
+  "pages.records.267": {
+    "en": "This fact is withheld until the source wording is verified by the project owner.",
+    "de": "Diese Angabe wird zurückgehalten, bis der Projekteigentümer die Quellenformulierung verifiziert hat."
+  },
+  "pages.records.268": {
+    "en": "150 basic listings · research ongoing",
+    "de": "150 Basiseinträge · Recherche läuft"
+  },
+  "pages.records.269": {
+    "en": "Official register reference points. These listings do not establish construction progress or exact site boundaries.",
+    "de": "Bezugspunkte aus dem offiziellen Register. Diese Einträge belegen weder Baufortschritt noch genaue Baustellengrenzen."
+  },
+  "pages.records.270": {
+    "en": "Correction",
+    "de": "Korrektur"
+  },
+  "pages.records.271": {
+    "en": "How these records are made",
+    "de": "Wie diese Dokumentationen entstehen"
+  },
+  "pages.records.272": {
+    "en": "About this project",
+    "de": "Über dieses Projekt"
+  },
+  "pages.records.273": {
+    "en": "Displayed project data is human-curated from primary sources. The retained store currently contains one completed extraction run over one document; the repository does not establish a total historical provider-call count.",
+    "de": "Angezeigte Projektdaten werden von Menschen aus Primärquellen zusammengestellt. Der Datenspeicher enthält derzeit einen abgeschlossenen Extraktionslauf für ein Dokument; das Repository belegt keine historische Gesamtzahl von Anbieteranfragen."
+  },
+  "pages.records.274": {
+    "en": "What this demonstrates",
+    "de": "Was dies zeigt"
+  },
+  "pages.records.275": {
+    "en": "A working vertical slice: a typed Python extraction pipeline, strict evidence and withholding gates, a validated public-data projection, and an Astro/TypeScript site with static evidence pages and a self-hosted 3D atlas.",
+    "de": "Ein funktionierender Ausschnitt: eine typisierte Python-Extraktionspipeline, strenge Beleg- und Zurückhaltungsschranken, eine validierte öffentliche Datenprojektion und eine Astro/TypeScript-Website mit statischen Belegseiten und einem selbst gehosteten 3D-Atlas."
+  },
+  "pages.records.276": {
+    "en": "AI assists with bounded document extraction; deterministic checks and human review decide what can be shown. See the",
+    "de": "KI unterstützt die begrenzte Dokumentextraktion; deterministische Prüfungen und menschliche Prüfung entscheiden, was angezeigt werden kann. Siehe"
+  },
+  "pages.records.277": {
+    "en": "source code and build record",
+    "de": "Quellcode und Entwicklungsprotokoll"
+  },
+  "pages.style.guide.278": {
+    "en": "City Desk / Style guide",
+    "de": "City Desk / Gestaltungsleitfaden"
+  },
+  "pages.style.guide.279": {
+    "en": "City Desk / style guide",
+    "de": "City Desk / Gestaltungsleitfaden"
+  },
+  "pages.style.guide.280": {
+    "en": "A rendered inventory of the native Lumos adaptation used by the atlas, index and source dossiers.",
+    "de": "Eine gerenderte Übersicht der nativen Lumos-Anpassung für Atlas, Verzeichnis und Quelldossiers."
+  },
+  "pages.style.guide.281": {
+    "en": "Actual Astro route / production specimens",
+    "de": "Echte Astro-Seite / Produktionsbeispiele"
+  },
+  "pages.style.guide.282": {
+    "en": "This page is generated by the same Astro build as the working atlas. It consumes the live token file, SiteHeader, RawFact and atlas action styles; the examples below keep the source-backed product boundary visible.",
+    "de": "Diese Seite wird mit demselben Astro-Build wie der Atlas erzeugt. Sie verwendet die aktive Token-Datei, SiteHeader, RawFact und die Atlas-Aktionsstile; die folgenden Beispiele zeigen die Grenzen des quellenbasierten Produkts."
+  },
+  "pages.style.guide.283": {
+    "en": "German source values remain canonical. Rust is an ordinary action role; conflict and withheld states retain their own semantic colours.",
+    "de": "Deutsche Quellenwerte bleiben maßgeblich. Rostrot steht für gewöhnliche Aktionen; Widersprüche und zurückgehaltene Angaben behalten ihre eigenen semantischen Farben."
+  },
+  "pages.style.guide.284": {
+    "en": "Typography / real project copy",
+    "de": "Typografie / echte Projekttexte"
+  },
+  "pages.style.guide.285": {
+    "en": "Raw family, weight, size, leading and tracking metrics are named separately from the roles used by the actual pages. System fonts remain local and predictable; no external font request is required.",
+    "de": "Schriftfamilie, Gewicht, Größe, Zeilenhöhe und Laufweite sind getrennt von den Rollen der tatsächlichen Seiten benannt. Systemschriften bleiben lokal und vorhersehbar; externe Schriftanfragen sind nicht nötig."
+  },
+  "pages.style.guide.286": {
+    "en": "Display / interface",
+    "de": "Anzeige / Benutzeroberfläche"
+  },
+  "pages.style.guide.287": {
+    "en": "A city in progress. A record of change.",
+    "de": "Eine Stadt im Wandel. Veränderungen dokumentiert."
+  },
+  "pages.style.guide.288": {
+    "en": "Context / source voice",
+    "de": "Kontext / Quellenstimme"
+  },
+  "pages.style.guide.290": {
+    "en": "The source wording is shown verbatim inside its evidence context.",
+    "de": "Die Quellenformulierung wird im Belegkontext wortgetreu angezeigt."
+  },
+  "pages.style.guide.291": {
+    "en": "Label / provenance",
+    "de": "Beschriftung / Herkunft"
+  },
+  "pages.style.guide.292": {
+    "en": "Published milestone · as of 2026-08-06 · exact source span available",
+    "de": "Veröffentlichter Meilenstein · Stand 2026-08-06 · exakter Quellenbeleg verfügbar"
+  },
+  "pages.style.guide.293": {
+    "en": "Semantic colour roles / paired surfaces",
+    "de": "Semantische Farbrollen / Flächenpaare"
+  },
+  "pages.style.guide.294": {
+    "en": "Swatches feed semantic surfaces and text roles. The map's categorical geometry colours stay outside this action/state set.",
+    "de": "Farbwerte bestimmen semantische Flächen und Textrollen. Die kategorialen Geometriefarben der Karte gehören nicht zu diesen Aktions- und Zustandsrollen."
+  },
+  "pages.style.guide.295": {
+    "en": "Canvas / paper",
+    "de": "Grundfläche / Papier"
+  },
+  "pages.style.guide.296": {
+    "en": "Panel / ink",
+    "de": "Tafel / Druckfarbe"
+  },
+  "pages.style.guide.297": {
+    "en": "Action / inverse",
+    "de": "Aktion / invertiert"
+  },
+  "pages.style.guide.298": {
+    "en": "Conflict / reason",
+    "de": "Widerspruch / Begründung"
+  },
+  "pages.style.guide.299": {
+    "en": "Controls / action, selected, disabled, focus",
+    "de": "Bedienelemente / Aktion, Auswahl, deaktiviert, Fokus"
+  },
+  "pages.style.guide.300": {
+    "en": "Actions retain comfortable 44px targets on ordinary phone layouts. The selected state is reserved for a current view; disabled controls explain a capability boundary through their surrounding copy.",
+    "de": "Aktionen bieten auf gewöhnlichen Mobilansichten komfortable 44-Pixel-Ziele. Der Auswahlzustand ist für die aktuelle Ansicht reserviert; deaktivierte Bedienelemente erklären ihre Einschränkung im umgebenden Text."
+  },
+  "pages.style.guide.301": {
+    "en": "Browse the project index",
+    "de": "Projektverzeichnis durchsuchen"
+  },
+  "pages.style.guide.302": {
+    "en": "Selected record",
+    "de": "Ausgewählter Eintrag"
+  },
+  "pages.style.guide.303": {
+    "en": "Unavailable while loading",
+    "de": "Während des Ladens nicht verfügbar"
+  },
+  "pages.style.guide.304": {
+    "en": "Keyboard focus ring",
+    "de": "Tastatur-Fokusring"
+  },
+  "pages.style.guide.305": {
+    "en": "Evidence disclosure / native details",
+    "de": "Belegaufklappung / natives Details-Element"
+  },
+  "pages.style.guide.306": {
+    "en": "Exact source wording stays behind the native disclosure on static dossier pages. It remains reachable by keyboard and does not require client JavaScript.",
+    "de": "Exakte Quellenformulierungen bleiben auf statischen Dossierseiten im nativen Aufklappelement. Sie sind per Tastatur erreichbar und benötigen kein JavaScript."
+  },
+  "pages.style.guide.307": {
+    "en": "Evidence states / actual component specimens",
+    "de": "Belegzustände / echte Modulbeispiele"
+  },
+  "pages.style.guide.308": {
+    "en": "These specimens use the current pilot projection. Success shows a sourced fact, conflict keeps competing values inside its conflict presentation, and withheld shows a reason without rendering a value.",
+    "de": "Diese Beispiele verwenden die aktuelle Pilotprojektion. Erfolg zeigt eine belegte Angabe, Widerspruch hält konkurrierende Werte innerhalb seiner Darstellung und Zurückhaltung zeigt eine Begründung ohne Wert."
+  },
+  "pages.style.guide.309": {
+    "en": "Conflict / values remain paired",
+    "de": "Widerspruch / Werte bleiben gepaart"
+  },
+  "pages.style.guide.310": {
+    "en": "Neither official value is promoted while the sources remain unreconciled.",
+    "de": "Keiner der offiziellen Werte wird bevorzugt, solange die Quellen nicht abgeglichen sind."
+  },
+  "pages.style.guide.311": {
+    "en": "Empty / unplaced",
+    "de": "Leer / nicht verortet"
+  },
+  "pages.style.guide.312": {
+    "en": "The record remains available while the location field is withheld pending source verification.",
+    "de": "Der Eintrag bleibt verfügbar, während sein Standort bis zur Quellenprüfung zurückgehalten wird."
+  },
+  "pages.style.guide.313": {
+    "en": "Error / recoverable",
+    "de": "Fehler / behebbar"
+  },
+  "pages.style.guide.314": {
+    "en": "Your browser could not start the 3D view. The project records are still available.",
+    "de": "Ihr Browser konnte die 3D-Ansicht nicht starten. Die Projektdokumentationen bleiben verfügbar."
+  },
+  "pages.style.guide.315": {
+    "en": "Explore the accessible project index",
+    "de": "Zugängliches Projektverzeichnis erkunden"
+  },
+  "pages.style.guide.316": {
+    "en": "Success / evidence available",
+    "de": "Erfolg / Belege verfügbar"
+  },
+  "pages.style.guide.317": {
+    "en": "Current source-stated position is visible with an exact German evidence span and original-source link.",
+    "de": "Der aktuelle Quellenstand ist mit einem exakten deutschen Beleg und einem Link zur Originalquelle sichtbar."
+  },
+  "pages.style.guide.318": {
+    "en": "Withheld reason code retained in the production component:",
+    "de": "In der Produktionsdarstellung beibehaltener Zurückhaltungsgrund:"
+  },
+  "pages.style.guide.319": {
+    "en": ". No withheld value is displayed.",
+    "de": ". Es wird kein zurückgehaltener Wert angezeigt."
+  },
+  "pages.style.guide.320": {
+    "en": "Phone layouts / compact evidence desk",
+    "de": "Mobilansichten / kompakte Belegübersicht"
+  },
+  "pages.style.guide.321": {
+    "en": "The same real project copy reflows into narrow reading surfaces. The 390px and 320px specimens keep the action readable and allow evidence to expand without clipping.",
+    "de": "Dieselben echten Projekttexte passen sich schmalen Leseflächen an. Die Beispiele mit 390 und 320 Pixeln halten Aktionen lesbar und erlauben das Öffnen von Belegen ohne Abschneiden."
+  },
+  "pages.style.guide.322": {
+    "en": "BERLIN / UNDER CONSTRUCTION",
+    "de": "BERLIN / UNDER CONSTRUCTION"
+  },
+  "pages.style.guide.323": {
+    "en": "Review evidence",
+    "de": "Belege ansehen"
+  },
+  "pages.style.guide.324": {
+    "en": "390px / dossier opening",
+    "de": "390 Pixel / Dossiereinstieg"
+  },
+  "pages.style.guide.325": {
+    "en": "ATLAS / RECOVERY",
+    "de": "ATLAS / FEHLERBEHEBUNG"
+  },
+  "pages.style.guide.326": {
+    "en": "3D VIEW UNAVAILABLE",
+    "de": "3D-ANSICHT NICHT VERFÜGBAR"
+  },
+  "pages.style.guide.327": {
+    "en": "Your project records remain available in the accessible index.",
+    "de": "Ihre Projektdokumentationen bleiben im zugänglichen Verzeichnis verfügbar."
+  },
+  "pages.style.guide.328": {
+    "en": "Open project index",
+    "de": "Projektverzeichnis öffnen"
+  },
+  "pages.style.guide.329": {
+    "en": "320px / terminal recovery",
+    "de": "320 Pixel / Fehlerbehebung"
+  },
+  "pages.style.guide.330": {
+    "en": "Lumos mapping / native implementation",
+    "de": "Lumos-Zuordnung / native Implementierung"
+  },
+  "pages.style.guide.331": {
+    "en": "Foundation",
+    "de": "Grundlage"
+  },
+  "pages.style.guide.332": {
+    "en": "Live role",
+    "de": "Aktive Rolle"
+  },
+  "pages.style.guide.333": {
+    "en": "Production use",
+    "de": "Einsatz in der Produktion"
+  },
+  "pages.style.guide.334": {
+    "en": "Typography",
+    "de": "Typografie"
+  },
+  "pages.style.guide.335": {
+    "en": "Atlas introduction, dossier headings, German source excerpts, IDs and metadata.",
+    "de": "Atlaseinstieg, Dossierüberschriften, deutsche Quellenauszüge, Kennungen und Metadaten."
+  },
+  "pages.style.guide.336": {
+    "en": "Themes",
+    "de": "Themen"
+  },
+  "pages.style.guide.337": {
+    "en": "SiteHeader, atlas controls, dossier links, index cards and native disclosures.",
+    "de": "SiteHeader, Atlassteuerung, Dossierlinks, Verzeichniskarten und native Aufklappelemente."
+  },
+  "pages.style.guide.338": {
+    "en": "Evidence states",
+    "de": "Belegzustände"
+  },
+  "pages.style.guide.339": {
+    "en": "Conflict pairs, withheld reasons and passed-date warnings remain distinct from rust actions.",
+    "de": "Widerspruchspaare, Zurückhaltungsgründe und Warnungen bei verstrichenen Terminen bleiben von rostroten Aktionen getrennt."
+  },
+  "pages.style.guide.340": {
+    "en": "Size / layout",
+    "de": "Größe / Layout"
+  },
+  "pages.style.guide.341": {
+    "en": "Fluid atlas rail, reading pages, style-guide specimens and 44px ordinary phone controls.",
+    "de": "Flexibler Atlasbereich, Leseseiten, Gestaltungsbeispiele und gewöhnliche 44-Pixel-Mobilbedienelemente."
+  },
+  "pages.style.guide.342": {
+    "en": "This is a production Lumos adaptation for Astro. Font trim and Webflow starter conventions are not claimed; calibrated line heights and browser-native alignment are documented instead.",
+    "de": "Dies ist eine Lumos-Anpassung für Astro in der Produktion. Schriftbeschnitt und Webflow-Starterkonventionen werden nicht behauptet; dokumentiert sind kalibrierte Zeilenhöhen und native Browserausrichtung."
+  },
+  "nav.atlas": {
+    "en": "The atlas",
+    "de": "Der Atlas"
+  },
+  "nav.index": {
+    "en": "Project index",
+    "de": "Projektverzeichnis"
+  },
+  "nav.method": {
+    "en": "How it works",
+    "de": "So funktioniert es"
+  },
+  "nav.language": {
+    "en": "Language",
+    "de": "Sprache"
+  },
+  "translation.note": {
+    "en": "Editorial translation · not independently verified",
+    "de": "Redaktionelle Übersetzung · nicht unabhängig geprüft"
+  },
+  "translation.original": {
+    "en": "Original German wording",
+    "de": "Deutsche Originalformulierung"
+  },
+  "translation.title": {
+    "en": "English explanation of the register title",
+    "de": "Englische Erläuterung des Registertitels"
+  },
+  "translation.terms": {
+    "en": "Terminology and translation status",
+    "de": "Begriffe und Übersetzungsstatus"
+  },
+  "translation.pending": {
+    "en": "These English term mappings are proposed editorial wording, not confirmed terminology. The domain glossary (version {version}) remains independently unverified. Exact German wording and original sources remain available.",
+    "de": "Diese englischen Begriffszuordnungen sind redaktionelle Vorschläge, keine bestätigte Terminologie. Das Fachglossar (Version {version}) ist weiterhin nicht unabhängig verifiziert. Exakte deutsche Formulierungen und Originalquellen bleiben verfügbar."
+  },
+  "correction.project.title": {
+    "en": "Correction for {id} — Berlin, Under Construction",
+    "de": "Korrektur zu {id} — Berlin, Under Construction"
+  },
+  "correction.organization.title": {
+    "en": "Correction concerning {name} — Berlin, Under Construction",
+    "de": "Korrektur zu {name} — Berlin, Under Construction"
+  },
+  "correction.organization.context": {
+    "en": "Organization context: {name}",
+    "de": "Bezug zur Organisation: {name}"
+  },
+  "project.subtitle": {
+    "en": "{id} · source-backed project dossier",
+    "de": "{id} · quellenbasiertes Projektdossier"
+  },
+  "atlas.explore": {
+    "en": "Explore {name}",
+    "de": "{name} erkunden"
+  },
+  "atlas.explore.basic": {
+    "en": "Explore basic listing: {name}",
+    "de": "Basiseintrag erkunden: {name}"
+  },
+  "atlas.source.planned": {
+    "en": "Source for planned milestone: {term}",
+    "de": "Quelle zum geplanten Meilenstein: {term}"
+  },
+  "atlas.milestone": {
+    "en": "Planned milestone",
+    "de": "Geplanter Meilenstein"
+  },
+  "atlas.source.basic": {
+    "en": "Source for {label}",
+    "de": "Quelle zu {label}"
+  },
+  "basic.reported_start": {
+    "en": "Start (reported)",
+    "de": "Beginn (laut Quelle)"
+  },
+  "basic.planned_completion": {
+    "en": "Planned completion",
+    "de": "Geplante Fertigstellung"
+  },
+  "basic.planned_end": {
+    "en": "Planned end",
+    "de": "Geplantes Ende"
+  },
+  "atlas.selected": {
+    "en": "Selected {name}. {location}",
+    "de": "{name} ausgewählt. {location}"
+  },
+  "atlas.record.label": {
+    "en": "{id} / PROJECT RECORD",
+    "de": "{id} / PROJEKTDOKUMENTATION"
+  },
+  "atlas.central": {
+    "en": "CENTRAL BERLIN",
+    "de": "BERLINER ZENTRUM"
+  },
+  "atlas.overview.label": {
+    "en": "BERLIN · CITY OVERVIEW",
+    "de": "BERLIN · STADTÜBERBLICK"
+  },
+  "atlas.nearby.one": {
+    "en": "{count} basic listing within 3 km of {place}.",
+    "de": "{count} Basiseintrag im Umkreis von 3 km um {place}."
+  },
+  "atlas.nearby.many": {
+    "en": "{count} basic listings within 3 km of {place}.",
+    "de": "{count} Basiseinträge im Umkreis von 3 km um {place}."
+  },
+  "atlas.all": {
+    "en": "Showing all {count} basic listings.",
+    "de": "Alle {count} Basiseinträge werden angezeigt."
+  },
+  "atlas.pause": {
+    "en": "Pause",
+    "de": "Pause"
+  },
+  "atlas.reduced": {
+    "en": "Automatic motion is disabled by your reduced-motion preference.",
+    "de": "Automatische Bewegung ist aufgrund Ihrer Einstellung für reduzierte Bewegung deaktiviert."
+  },
+  "atlas.fullscreen.unavailable": {
+    "en": "Fullscreen is not available in this browser.",
+    "de": "Vollbild ist in diesem Browser nicht verfügbar."
+  },
+  "atlas.fullscreen.exit": {
+    "en": "Exit fullscreen",
+    "de": "Vollbild verlassen"
+  },
+  "atlas.canvas": {
+    "en": "Berlin 3D map. Drag to pan, right-drag to rotate, scroll to zoom. Use the labelled map controls or project list for keyboard navigation.",
+    "de": "Berlin in 3D. Ziehen zum Verschieben, Ziehen mit rechter Maustaste zum Drehen, Scrollen zum Zoomen. Nutzen Sie die beschriftete Kartensteuerung oder Projektliste zur Tastaturnavigation."
+  },
+  "atlas.graphics.interrupted": {
+    "en": "The graphics context was interrupted. Reload the atlas or use the project index.",
+    "de": "Die Grafikanzeige wurde unterbrochen. Laden Sie den Atlas erneut oder nutzen Sie das Projektverzeichnis."
+  },
+  "atlas.asset.invalid": {
+    "en": "Invalid model asset path",
+    "de": "Ungültiger Modelldateipfad"
+  },
+  "atlas.download.failed": {
+    "en": "The city geometry could not be downloaded.",
+    "de": "Die Stadtgeometrie konnte nicht heruntergeladen werden."
+  },
+  "atlas.download.incomplete": {
+    "en": "Incomplete model download. Please try again.",
+    "de": "Unvollständiger Modelldownload. Bitte versuchen Sie es erneut."
+  },
+  "atlas.model.unavailable": {
+    "en": "The city model is unavailable.",
+    "de": "Das Stadtmodell ist nicht verfügbar."
+  },
+  "atlas.model.unsupported": {
+    "en": "Unsupported city model.",
+    "de": "Dieses Stadtmodell wird nicht unterstützt."
+  },
+  "atlas.unfolding": {
+    "en": "Unfolding the whole city",
+    "de": "Die gesamte Stadt wird aufgebaut"
+  },
+  "atlas.detail.failed": {
+    "en": "Some detail is unavailable · move the map to retry",
+    "de": "Einige Details sind nicht verfügbar · Karte zum erneuten Versuch bewegen"
+  },
+  "atlas.detail.progress": {
+    "en": "Adding building detail · {loaded}/{total}",
+    "de": "Gebäudedetails werden ergänzt · {loaded}/{total}"
+  },
+  "atlas.model.coverage": {
+    "en": "{count} building and building-part shapes across Berlin. Detail loads by area; the overview shows simplified footprints of shapes at least 500 m². Building shapes smaller than 50 m² are omitted; coordinates are rounded to 0.5 m. Source heights are used without vertical exaggeration; unknown heights are omitted. Roofs are simplified. The 2022 geometry is not a current survey.",
+    "de": "{count} Gebäude- und Gebäudeteilformen in Berlin. Details werden gebietsweise geladen; der Überblick zeigt vereinfachte Grundrisse von Formen ab 500 m². Formen unter 50 m² werden ausgelassen; Koordinaten sind auf 0,5 m gerundet. Quellenhöhen werden ohne Überhöhung verwendet; unbekannte Höhen bleiben ausgelassen. Dächer sind vereinfacht. Die Geometrie von 2022 ist keine aktuelle Erhebung."
+  },
+  "warning.passed": {
+    "en": "The source planned this milestone for {date} as of {sourceDate}. That date has passed, but no confirming source is recorded. Completion is not asserted.",
+    "de": "Laut Quelle mit Stand {sourceDate} war dieser Meilenstein für {date} geplant. Der Termin ist verstrichen; eine bestätigende Quelle ist nicht dokumentiert. Eine Fertigstellung wird nicht behauptet."
+  },
+  "warning.planned": {
+    "en": "The source planned this milestone for {date} as of {sourceDate}. This is not evidence that the milestone has happened.",
+    "de": "Laut Quelle mit Stand {sourceDate} war dieser Meilenstein für {date} geplant. Dies belegt nicht, dass er erreicht wurde."
+  },
+  "state.financial_measure": {
+    "en": "Financial measure",
+    "de": "Finanzielle Kennzahl"
+  },
+  "state.milestone": {
+    "en": "Milestone",
+    "de": "Meilenstein"
+  },
+  "state.organization_role": {
+    "en": "Organization role",
+    "de": "Rolle der Organisation"
+  },
+  "state.project_location": {
+    "en": "Project location",
+    "de": "Projektstandort"
+  },
+  "state.project_name": {
+    "en": "Project name",
+    "de": "Projektname"
+  },
+  "state.status": {
+    "en": "Project status",
+    "de": "Projektstatus"
+  },
+  "state.not_applicable": {
+    "en": "Not applicable",
+    "de": "Nicht anwendbar"
+  },
+  "state.not_stated": {
+    "en": "Not stated",
+    "de": "Nicht angegeben"
+  },
+  "state.unknown": {
+    "en": "Unknown",
+    "de": "Unbekannt"
+  },
+  "state.unassessed": {
+    "en": "Not assessed",
+    "de": "Nicht bewertet"
+  },
+  "state.verified": {
+    "en": "Source wording checked",
+    "de": "Quellenformulierung geprüft"
+  },
+  "state.stated": {
+    "en": "Stated",
+    "de": "Angegeben"
+  },
+  "state.exact_day": {
+    "en": "Exact day",
+    "de": "Taggenau"
+  },
+  "state.month": {
+    "en": "Month",
+    "de": "Monat"
+  },
+  "state.year": {
+    "en": "Year",
+    "de": "Jahr"
+  },
+  "state.season": {
+    "en": "Season",
+    "de": "Jahreszeit"
+  },
+  "state.range": {
+    "en": "Range",
+    "de": "Zeitraum"
+  },
+  "state.construction_start": {
+    "en": "Construction start",
+    "de": "Baubeginn"
+  },
+  "state.substantial_completion": {
+    "en": "Substantial completion (stored type; translation unverified)",
+    "de": "Wesentliche Fertigstellung (gespeicherter Typ; Übersetzung ungeprüft)"
+  },
+  "state.handover": {
+    "en": "Handover",
+    "de": "Übergabe"
+  },
+  "state.commissioning": {
+    "en": "Commissioning",
+    "de": "Inbetriebnahme"
+  },
+  "state.approved_budget": {
+    "en": "Approved budget",
+    "de": "Genehmigtes Budget"
+  },
+  "state.financing_commitment": {
+    "en": "Financing commitment",
+    "de": "Finanzierungszusage"
+  },
+  "state.gross": {
+    "en": "Gross",
+    "de": "Brutto"
+  },
+  "state.net": {
+    "en": "Net",
+    "de": "Netto"
+  },
+  "reason.owner_review_required": {
+    "en": "This fact is withheld pending an owner review.",
+    "de": "Diese Angabe wird bis zur Prüfung durch den Projekteigentümer zurückgehalten."
+  },
+  "reason.source_string_requires_owner_verification": {
+    "en": "This fact is withheld until the source wording is verified by the project owner.",
+    "de": "Diese Angabe wird zurückgehalten, bis der Projekteigentümer die Quellenformulierung verifiziert hat."
+  },
+  "reason.multi_source_synthesis_has_no_exact_span": {
+    "en": "This conclusion is withheld because no single exact evidence span supports it.",
+    "de": "Diese Schlussfolgerung wird zurückgehalten, weil kein einzelner exakter Quellenbeleg sie stützt."
+  },
+  "reason.milestone_vocabulary_unresolved": {
+    "en": "This milestone is withheld because its German term has not been resolved for display.",
+    "de": "Dieser Meilenstein wird zurückgehalten, weil sein deutscher Begriff für die Darstellung nicht geklärt ist."
+  },
+  "reason.role_vocabulary_unresolved": {
+    "en": "This organization role is withheld because its role vocabulary remains unresolved.",
+    "de": "Diese Organisationsrolle wird zurückgehalten, weil ihre Rollenbegriffe ungeklärt sind."
+  },
+  "evidence.Verified": {
+    "en": "Source-verified",
+    "de": "Quellenbelegt"
+  },
+  "evidence.Corroborated": {
+    "en": "Corroborated",
+    "de": "Durch mehrere Quellen gestützt"
+  },
+  "evidence.Reported": {
+    "en": "Reported",
+    "de": "Berichtet"
+  },
+  "evidence.Observed": {
+    "en": "Observed",
+    "de": "Beobachtet"
+  },
+  "evidence.Disputed": {
+    "en": "Disputed",
+    "de": "Umstritten"
+  },
+  "evidence.Verified.description": {
+    "en": "The displayed wording is faithfully supported by the cited source. It does not mean the value is current, the only official value, or that a conflicting value is resolved.",
+    "de": "Die zitierte Quelle stützt die angezeigte Formulierung wortgetreu. Das bedeutet nicht, dass der Wert aktuell oder der einzige offizielle Wert ist oder dass ein Widerspruch geklärt wurde."
+  },
+  "evidence.Corroborated.description": {
+    "en": "More than one reliable source supports the displayed claim.",
+    "de": "Mehrere zuverlässige Quellen stützen die angezeigte Aussage."
+  },
+  "evidence.Reported.description": {
+    "en": "A reputable secondary source reports the displayed claim.",
+    "de": "Eine seriöse Sekundärquelle berichtet die angezeigte Aussage."
+  },
+  "evidence.Observed.description": {
+    "en": "A dated observation supports visible conditions, not cause.",
+    "de": "Eine datierte Beobachtung belegt sichtbare Zustände, keine Ursache."
+  },
+  "evidence.Disputed.description": {
+    "en": "Relevant counterevidence exists and review remains open.",
+    "de": "Relevante Gegenbelege liegen vor; die Prüfung ist offen."
+  },
+  "404.title": {
+    "en": "Page not found — Berlin, Under Construction",
+    "de": "Seite nicht gefunden — Berlin, Under Construction"
+  },
+  "404.heading": {
+    "en": "Page not found",
+    "de": "Seite nicht gefunden"
+  },
+  "404.body": {
+    "en": "This address does not lead to a published page. Browse the project index or return to the atlas.",
+    "de": "Unter dieser Adresse ist keine Seite veröffentlicht. Nutzen Sie das Projektverzeichnis oder kehren Sie zum Atlas zurück."
+  },
+  "records.description": {
+    "en": "C-014 and C-010 are placed. C-019 is listed separately because its location is withheld.",
+    "de": "C-014 und C-010 sind verortet. C-019 wird getrennt aufgeführt, weil sein Standort zurückgehalten wird."
+  },
+  "osm.contributors": {
+    "en": "OpenStreetMap contributors",
+    "de": "OpenStreetMap-Mitwirkende"
+  },
+  "date.1": {
+    "de": "bis Ende 2025",
+    "en": "by the end of 2025"
+  },
+  "date.2": {
+    "de": "Sommer 2026",
+    "en": "summer 2026"
+  },
+  "date.3": {
+    "de": "in 2026",
+    "en": "in 2026"
+  },
+  "date.4": {
+    "de": "erst im Januar 2026",
+    "en": "not until January 2026"
+  },
+  "date.5": {
+    "de": "2. Februar 2026",
+    "en": "2 February 2026"
+  },
+  "date.6": {
+    "de": "31.08.2026",
+    "en": "31 August 2026"
+  },
+  "date.7": {
+    "de": "bis Ende 2028",
+    "en": "by the end of 2028"
+  },
+  "date.8": {
+    "de": "Ende 2028",
+    "en": "end of 2028"
+  },
+  "date.9": {
+    "de": "Frühjahr 2027",
+    "en": "spring 2027"
+  },
+  "date.10": {
+    "de": "Mitte 2027",
+    "en": "mid-2027"
+  },
+  "date.11": {
+    "de": "Ende Januar 2025",
+    "en": "end of January 2025"
+  },
+  "date.12": {
+    "de": "Herbst 2026",
+    "en": "autumn 2026"
+  },
+  "qualifier.rund": {
+    "de": "rund",
+    "en": "approximately"
+  },
+  "qualifier.bis": {
+    "de": "bis",
+    "en": "by"
+  },
+  "qualifier.vorgesehen": {
+    "de": "vorgesehen",
+    "en": "envisaged"
+  },
+  "qualifier.geplant": {
+    "de": "geplant",
+    "en": "planned"
+  },
+  "qualifier.voraussichtlich": {
+    "de": "voraussichtlich",
+    "en": "expected"
+  },
+  "qualifier.bis_zu": {
+    "de": "bis zu",
+    "en": "up to"
+  },
+  "term.context.construction-start": {
+    "en": "Start of construction, distinct from planning, site preparation and opening.",
+    "de": "Baubeginn, unterschieden von Planung, Baustellenvorbereitung und Eröffnung."
+  },
+  "term.context.completion": {
+    "en": "Retain what is completed and the source's date precision; this does not automatically mean opening or handover.",
+    "de": "Gegenstand der Fertigstellung und Datumsgenauigkeit der Quelle beibehalten; dies bedeutet nicht automatisch Eröffnung oder Übergabe."
+  },
+  "term.context.technical-handover": {
+    "en": "Retain the source's technical-handover wording. Its relation to construction completion, occupancy and operation remains unresolved for C-010.",
+    "de": "Die Formulierung zur technischen Übergabe beibehalten. Ihr Verhältnis zu baulicher Fertigstellung, Nutzung und Betrieb bleibt für C-010 ungeklärt."
+  },
+  "term.context.commissioning": {
+    "en": "Distinct from physical completion and public opening; the exact permitted contextual mapping remains unverified.",
+    "de": "Von baulicher Fertigstellung und öffentlicher Eröffnung unterscheiden; die genau zulässige kontextuelle Zuordnung ist ungeprüft."
+  },
+  "term.context.works": {
+    "en": "Retain the named measure's scope; it is not automatically the whole project.",
+    "de": "Umfang der genannten Maßnahme beibehalten; sie ist nicht automatisch das gesamte Projekt."
+  },
+  "term.context.planning-documents": {
+    "en": "Approval is a planning milestone with its own approved cost, not construction start.",
+    "de": "Die Genehmigung ist ein Planungsmeilenstein mit eigenen genehmigten Kosten, kein Baubeginn."
+  },
+  "term.context.financing": {
+    "en": "A programme contribution, distinct from the total approved project budget; conflicting contributions remain paired.",
+    "de": "Ein Programmbeitrag, getrennt vom gesamten genehmigten Projektbudget; widersprüchliche Beiträge bleiben gepaart."
+  },
+  "term.context.gross": {
+    "en": "Preserve tax treatment; do not equate gross and net amounts.",
+    "de": "Steuerbehandlung beibehalten; Brutto- und Nettobeträge nicht gleichsetzen."
+  },
+  "term.context.approximately": {
+    "en": "Retain approximation; do not turn the number into an exact amount.",
+    "de": "Näherungsangabe beibehalten; den Betrag nicht als exakt darstellen."
+  },
+  "term.context.by": {
+    "en": "Preserve the upper bound and its object; the contextual sense must not be guessed for new uses.",
+    "de": "Obergrenze und ihren Gegenstand beibehalten; die kontextuelle Bedeutung neuer Verwendungen nicht erraten."
+  },
+  "term.context.up-to": {
+    "en": "An upper bound on the amount, not a confirmed final expenditure.",
+    "de": "Eine Betragsobergrenze, keine bestätigte endgültige Ausgabe."
+  },
+  "term.context.planned": {
+    "en": "An intention in the source; not evidence that the milestone has occurred.",
+    "de": "Eine Absicht laut Quelle; kein Beleg, dass der Meilenstein erreicht wurde."
+  },
+  "term.context.envisaged": {
+    "en": "Retain the original wording rather than silently treating every planning expression as the same.",
+    "de": "Die Originalformulierung beibehalten, statt alle Planungsausdrücke stillschweigend gleichzusetzen."
+  },
+  "term.context.expected": {
+    "en": "Retain uncertainty rather than presenting a forecast as certainty.",
+    "de": "Unsicherheit beibehalten, statt eine Prognose als Gewissheit darzustellen."
+  },
+  "terms.title": {
+    "en": "Terminology — Berlin, Under Construction",
+    "de": "Begriffe — Berlin, Under Construction"
+  },
+  "terms.heading": {
+    "en": "Terms, meanings and review status",
+    "de": "Begriffe, Bedeutungen und Prüfstatus"
+  },
+  "terms.term": {
+    "en": "German source term",
+    "de": "Deutscher Quellenbegriff"
+  },
+  "terms.english": {
+    "en": "English explanation",
+    "de": "Englische Erläuterung"
+  },
+  "terms.context": {
+    "en": "Scope and distinction",
+    "de": "Umfang und Unterscheidung"
+  },
+  "terms.status": {
+    "en": "Review status",
+    "de": "Prüfstatus"
+  },
+  "terms.confirmed": {
+    "en": "Confirmed within reviewed scope",
+    "de": "Im geprüften Umfang bestätigt"
+  }
+}

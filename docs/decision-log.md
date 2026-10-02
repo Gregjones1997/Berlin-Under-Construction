@@ -1227,3 +1227,29 @@ Basic pins remain basic pins. The frozen release excludes disputed start claims
 and Karl-Marx-Straße schedule supersession; a missing or changed evidence mapping
 fails the build. Future additions require another scoped review, not automatic
 promotion of the research queue.
+
+
+## ADR-027 — Shared German and English presentation with paired editing
+
+**Accepted:** 2 October 2026. The owner approved implementation of
+[bilingual-site-plan.md](bilingual-site-plan.md), after choosing instructions to
+Codex as the workflow for updating both languages together.
+
+German remains the default locale and the canonical extraction language. English
+may lead with editorial explanations of the same published facts and register
+titles. The original German remains available, explicitly labelled. An explanation
+references its fact/listing and source revision; it does not become a separate
+claim, official English project name, verified type or golden value.
+
+One shared Astro implementation produces both locales. Translation pairs and
+placeholders are checked at build time; changed sources invalidate dependent
+explanations. Consequential vocabulary and passages retain independent contextual
+review requirements. The current draft explanations and terminology are explicitly
+unverified. The standard bilingual release command blocks packaging until scoped
+review is recorded. Local preview builds permit inspection of these drafts.
+
+This changes the prior labels/glosses-only English display restriction. It changes
+neither evidence publication, source privacy, naming, conflict/withheld treatment,
+glossary verification nor golden-set authority. No translation provider, new client
+island or third-party runtime request is authorized. Physical-phone acceptance and
+production deployment are separate checks.

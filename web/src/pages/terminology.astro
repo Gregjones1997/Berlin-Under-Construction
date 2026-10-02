@@ -1,0 +1,42 @@
+---
+import Base from "../layouts/Base.astro";
+import terms from "../i18n/terms.json";
+import { forLocale, localeFromPath } from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
+---
+
+<Base title={t("terms.title")} heading={t("terms.heading")}>
+  <p>{t("translation.pending", { version: "1.1" })}</p>
+  <div class="terms-table">
+    <table>
+      <thead
+        ><tr
+          ><th>{t("terms.term")}</th><th>{t("terms.english")}</th><th
+            >{t("terms.context")}</th
+          ><th>{t("terms.status")}</th></tr
+        ></thead
+      >
+      <tbody
+        >{
+          Object.entries(terms).map(([id, term]) => (
+            <tr id={id}>
+              <>
+                <th lang="de">{term.de}</th>
+                <td lang="en">{term.en}</td>
+                <td>{t(term.contextMessage)}</td>
+                <td>
+                  {t(
+                    term.verification === "confirmed"
+                      ? "terms.confirmed"
+                      : "translation.note",
+                  )}
+                </td>
+              </>
+            </tr>
+          ))
+        }</tbody
+      >
+    </table>
+  </div>
+</Base>

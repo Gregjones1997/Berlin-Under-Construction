@@ -1,0 +1,12 @@
+---
+import Page from "../../projects/[slug].astro";
+import { loadPublicProjectPages } from "../../../lib/public-projects";
+export function getStaticPaths() {
+  return loadPublicProjectPages().map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+---
+
+<Page {...Astro.props} />

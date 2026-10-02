@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import { forLocale, localeFromPath, localizePath } from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
+---
+
+<Base title={t("404.title")} heading={t("404.heading")}>
+  <p>{t("404.body")}</p>
+  <p>
+    <a href={localizePath("/records/", locale)}>{t("nav.index")}</a> · <a
+      href={localizePath("/", locale)}>{t("nav.atlas")}</a>
+  </p>
+</Base>

@@ -1,0 +1,902 @@
+{
+  "MB-2026-01482": {
+    "de": "Sanierung des Kunstrasen Großspielfeldes - Schönfließer Strasse",
+    "en": "Refurbishment of the large artificial-turf sports pitch — Schönfließer Strasse",
+    "verification": "editorial_unverified",
+    "sourceRevision": "b069dff1de0a350f40f5803dadc12615141146a3ca7ea7e41276d66f7daaa44d"
+  },
+  "MB-2026-01465": {
+    "de": "Neubau einer Kindertageseinrichtung",
+    "en": "Construction of a childcare facility",
+    "verification": "editorial_unverified",
+    "sourceRevision": "7f083b23c98d70a3c9435a96f3efed62e50591cbf08449559c2980e51181e9cf"
+  },
+  "MB-2026-01446": {
+    "de": "Neugestaltung der Außenanlagen Schule am Zwickauer Damm",
+    "en": "Redesign of the outdoor grounds at Schule am Zwickauer Damm",
+    "verification": "editorial_unverified",
+    "sourceRevision": "5f1a3509ae08234d27cee4f27600a6074caa296c0a6fafce6f2d12654756a490"
+  },
+  "MB-2026-01444": {
+    "de": "Paul-Klee-Grundschule: Umbau, Sanierung und Erweiterung",
+    "en": "Paul-Klee-Grundschule: conversion, refurbishment and extension",
+    "verification": "editorial_unverified",
+    "sourceRevision": "ae806ce218b73d6a0bc2386d2339fe7a40687cee4897188cba37c0a9e1fd8e3b"
+  },
+  "MB-2026-01443": {
+    "de": "Marianne-Cohn-Schule: Sanierung/Neubau des Schulhofes und der Sportanlage",
+    "en": "Marianne-Cohn-Schule: refurbishment/new construction of the schoolyard and sports facility",
+    "verification": "editorial_unverified",
+    "sourceRevision": "95633c83af49833ec9c7e863f16cf2e90beff269082d0314fc77ad1925225bbd"
+  },
+  "MB-2026-01441": {
+    "de": "Friedrich-Bergius-Schule: Neubau einer Typen-Sporthalle am Standort Perelsplatz 6-9",
+    "en": "Friedrich-Bergius-Schule: construction of a standard-design sports hall at Perelsplatz 6–9",
+    "verification": "editorial_unverified",
+    "sourceRevision": "eef8aa0d8dcc70a79f13f540db0c2ebcc595ef8548e1caaf0bce6edf57c1d3a4"
+  },
+  "MB-2026-01440": {
+    "de": "Ruppin-Grundschule: Sanierung, Umbau und Erweiterung",
+    "en": "Ruppin-Grundschule: refurbishment, conversion and extension",
+    "verification": "editorial_unverified",
+    "sourceRevision": "2a0d235092ac999d351511a0e29af6c1ff445d672a601ca11eb28afb7a2f0e71"
+  },
+  "MB-2026-01438": {
+    "de": "Rückert-Gymnasium: Großsanierung von Schulgebäuden (BSO VI), Gesamtsanierung",
+    "en": "Rückert-Gymnasium: major refurbishment of school buildings (BSO VI), complete refurbishment",
+    "verification": "editorial_unverified",
+    "sourceRevision": "a9845642ed8d2be6f7097417c35cac92f5fb87258c9ad8fe204ed4204939faf4"
+  },
+  "MB-2026-01435": {
+    "de": "Georg-Büchner-Gymnasium: Ersatzneubau mit Sporthalle",
+    "en": "Georg-Büchner-Gymnasium: replacement building with sports hall",
+    "verification": "editorial_unverified",
+    "sourceRevision": "09b5caa3259f5354bf2b67694b7a06c9de24adcc4d44749d8faf245ae47e4d75"
+  },
+  "MB-2026-01432": {
+    "de": "Solling-Schule: Ersatzneubau",
+    "en": "Solling-Schule: replacement building",
+    "verification": "editorial_unverified",
+    "sourceRevision": "2b7e83c34550062984a333450a4a3f2a8d40edf2413298b654fd7d86f8533b34"
+  },
+  "MB-2026-01431": {
+    "de": "Marienfelder Schule (Grundschule): Erweiterungsneubau",
+    "en": "Marienfelder Schule (primary school): new extension",
+    "verification": "editorial_unverified",
+    "sourceRevision": "b81e2e398381707f4a1de202f8e1e08d26cd72a8aba3861a88eced8b9f0459d6"
+  },
+  "MB-2026-01430": {
+    "de": "07Kn01 ISS am Tirschenreuther Ring: Neubau ISS mit Sporthalle",
+    "en": "07Kn01 ISS at Tirschenreuther Ring: new ISS school building with sports hall",
+    "verification": "editorial_unverified",
+    "sourceRevision": "add7ec096e7cd40ef2fd0d492bd64d592f1c20d84a0f2c4730566348482aa768"
+  },
+  "MB-2026-01429": {
+    "de": "Grundschule Marienfelder Allee: Neubau Grundschule mit Sporthalle",
+    "en": "Primary school at Marienfelder Allee: new school building with sports hall",
+    "verification": "editorial_unverified",
+    "sourceRevision": "f45c1c5d4e3ddc24e2c1725ec7071862dd9635a4d3e8978a7d594dfbb58886d2"
+  },
+  "MB-2026-01428": {
+    "de": "Schätzelberg-Grundschule: Errichtung eines modularen Ergänzungsbaus in Holzmodulbauweise (HoMEB)",
+    "en": "Schätzelberg-Grundschule: modular extension using timber modules (HoMEB)",
+    "verification": "editorial_unverified",
+    "sourceRevision": "d383c6d21e53bd603d0c8a0da87a3d52f95f252070949276e42ef6ac64417ddd"
+  },
+  "MB-2026-01425": {
+    "de": "Prignitz-Schule: Umzug an den Standort Alt-Tempelhof 53-57, Errichtung eines MEB Flex G",
+    "en": "Prignitz-Schule: relocation to Alt-Tempelhof 53–57 and construction of an MEB Flex G",
+    "verification": "editorial_unverified",
+    "sourceRevision": "ded5e8be07d637465a8430f4c40631496afe35ed5fd20d11c0733cf21fc733ce"
+  },
+  "MB-2026-01421": {
+    "de": "40. Schule (Grundschule): Reaktivierung und Erweiterung des Bestandsgebäudes mit Einbindung von außerschulischen Bedarfe",
+    "en": "40. Schule (primary school): reactivation and extension of the existing building, including provision for non-school needs",
+    "verification": "editorial_unverified",
+    "sourceRevision": "4f09ea52921c3405a24916f2b8923d4ea61ec1fe8480d2224ff005e3f7ad8b43"
+  },
+  "MB-2026-01417": {
+    "de": "Reaktivierung und Neugestaltung des Spielplatzes Britzer Wiesen",
+    "en": "Reactivation and redesign of the Britzer Wiesen playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "3e8c7ccb4a781b01a9e5fa857b7fffd70d5469dd9ae7cc27c52af3638dd05864"
+  },
+  "MB-2026-01412": {
+    "de": "Sanierung des Spielplatzes \"Platz S\" mit Schwerpunkt auf der Etablierung eines Jugendstandorts",
+    "en": "Refurbishment of the “Platz S” playground, focusing on establishing a place for young people",
+    "verification": "editorial_unverified",
+    "sourceRevision": "60c1778c760cb9e790faa7d7dbbd32ceaabdd9414354e867f6f7de56bac7a595"
+  },
+  "MB-2026-01409": {
+    "de": "Neubau Straße „Alt-Lübars“",
+    "en": "Construction of the Alt-Lübars road",
+    "verification": "editorial_unverified",
+    "sourceRevision": "cdfd865ac308eb2a11f40ad51993b0f4812fb29091717ed9b2b9f0bf364b9982"
+  },
+  "MB-2026-01383": {
+    "de": "Umbau Müncheberger Straße",
+    "en": "Reconstruction of Müncheberger Straße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "884b78bf51076a2362f47fb0c93c05ddea5bae44dc73160110299f2ac64f8f14"
+  },
+  "MB-2026-01382": {
+    "de": "Umbau Enckestraße",
+    "en": "Reconstruction of Enckestraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "cbfe81559182f563e0e318163951ae73b0f0dd46a3801088d284dc5dc9f20062"
+  },
+  "MB-2026-01373": {
+    "de": "Neubau Freilufthalle Sportkomplex Rennbahnstraße",
+    "en": "Construction of an open-air hall at the Rennbahnstraße sports complex",
+    "verification": "editorial_unverified",
+    "sourceRevision": "9bef88f88fdbe082a8c218b777964a9e3fdad7770c3ed556434f20d6d422407a"
+  },
+  "MB-2026-01371": {
+    "de": "Ersatzneubau des Spielplatzes Rütlistraße",
+    "en": "Replacement playground at Rütlistraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "68003e41c5f363bfdb453b7eb6156bd8646137717866200ae75ace87b0b11383"
+  },
+  "MB-2026-01364": {
+    "de": "Ersatzneubau Kinderspielplatz Wildenbruchplatz",
+    "en": "Replacement children's playground at Wildenbruchplatz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "547455ed2daa1bb1ed145eaf8b8715796c3a265f6173b04a7b395a2ca4a57bab"
+  },
+  "MB-2026-01362": {
+    "de": "Wohnungsneubau in der Cité Foch (Baufeld WA10)",
+    "en": "New housing in Cité Foch (building plot WA10)",
+    "verification": "editorial_unverified",
+    "sourceRevision": "2bf70d053d6b9d76b0aa1a1bc6f4e666f2519682b110f906ce3ac6c2c05ebf54"
+  },
+  "MB-2026-01359": {
+    "de": "Neugestaltung des Spielplatzes und Senkgartens Rohrbeckstraße 2",
+    "en": "Redesign of the playground and sunken garden at Rohrbeckstraße 2",
+    "verification": "editorial_unverified",
+    "sourceRevision": "adfe7f7aef8eccdde071217ebfb899300b296aa2362def6f69a53767a4387d64"
+  },
+  "MB-2026-01357": {
+    "de": "Neugestaltung der Grünfläche mit Spielplatz Fontane Eck",
+    "en": "Redesign of the green space and playground at Fontane Eck",
+    "verification": "editorial_unverified",
+    "sourceRevision": "47d855253776bbf95a63185a0f6b7c441538f754658f1b4bf1ca7d130c214f93"
+  },
+  "MB-2026-01350": {
+    "de": "Sanierung der Klosterkirchenruine",
+    "en": "Refurbishment of the Klosterkirchenruine",
+    "verification": "editorial_unverified",
+    "sourceRevision": "8401483064aa6d85206bf4ad3a69c1fc580ed32655b7167fc4980b165fa55710"
+  },
+  "MB-2026-01349": {
+    "de": "Bauliche und energetische Sanierung und Modernisierung der Bibliothek am Luisenbad",
+    "en": "Building and energy refurbishment and modernization of Bibliothek am Luisenbad",
+    "verification": "editorial_unverified",
+    "sourceRevision": "66377eec83f32bb89ba4a9e261d2f34ca1203db982d26b978a8507243b7aa4d4"
+  },
+  "MB-2026-01347": {
+    "de": "Wohnungsneubau Jan-Petersen-Straße 14",
+    "en": "New housing at Jan-Petersen-Straße 14",
+    "verification": "editorial_unverified",
+    "sourceRevision": "bd8a714293b6539b44ce8c3e10d964b4f6871907381556bd8b58d5f536de6aac"
+  },
+  "MB-2026-01338": {
+    "de": "Sanierung des Kunstrasen Großspielfeldes - Uranusweg",
+    "en": "Refurbishment of the large artificial-turf sports pitch — Uranusweg",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e8ffe4da82bfdf7ad91d4f61d0ed610f8d2ec6c02866e15d370383b7c5169bfd"
+  },
+  "MB-2026-01337": {
+    "de": "Sanierung des Kunststoff Basketball Spielfeldes Uranusweg",
+    "en": "Refurbishment of the synthetic-surface basketball court at Uranusweg",
+    "verification": "editorial_unverified",
+    "sourceRevision": "d134e5a23f9e3f2f8d5c545e6c447d3bdf0fd98bcb3d11c4d0aafdf89ce29355"
+  },
+  "MB-2026-01336": {
+    "de": "Sanierung von Fenstern und Fassade des Bootshauses Tegel",
+    "en": "Refurbishment of the windows and facade of Bootshaus Tegel",
+    "verification": "editorial_unverified",
+    "sourceRevision": "08e169b46b178efa02b3a9cbeb52292e9fbb154f525084ec120127d9f3842d4e"
+  },
+  "MB-2026-01334": {
+    "de": "Sanierung des Ballfangzaunes - Sportanlage Hatzfeldtallee",
+    "en": "Refurbishment of the ball-stop fence at the Hatzfeldtallee sports facility",
+    "verification": "editorial_unverified",
+    "sourceRevision": "4d4c74abebfe4523ed3601e7b5044004e90b134cd8596f4f33a98fee1f9482ab"
+  },
+  "MB-2025-01330": {
+    "de": "Umgestaltung des Kranoldplatzes",
+    "en": "Redesign of Kranoldplatz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "bf789616a51d19f2689d9a19312936fe7066a32e05f76f9d87cbffa01dc2beda"
+  },
+  "MB-2025-01328": {
+    "de": "Reaktivierung der Stammstrecke der Heidekrautbahn",
+    "en": "Reactivation of the original Heidekrautbahn route",
+    "verification": "editorial_unverified",
+    "sourceRevision": "0204bde14eaa0bafc08f333dd4220ea93f7fab34a1f507be523002e84123bf02"
+  },
+  "MB-2025-01316": {
+    "de": "Umbau und bauliche Anpassung der Gehwege im Kreuzungsbereich Hertastraße/ Kranoldstraße",
+    "en": "Reconstruction and structural adaptation of pavements at the Hertastraße/Kranoldstraße junction",
+    "verification": "editorial_unverified",
+    "sourceRevision": "90870c64436dcb01c079b745235185271a4c3a3fc6d8038ab8086024f7c45efc"
+  },
+  "MB-2025-01304": {
+    "de": "Neugestaltung Dresdener Str. 127 zu einem Ort für alle Generationen",
+    "en": "Redesign of Dresdener Str. 127 as a place for all generations",
+    "verification": "editorial_unverified",
+    "sourceRevision": "3bab1b138c7a4e86227f349fcc092d43cb67d5ecebebd82d532b585b4104758e"
+  },
+  "MB-2025-01295": {
+    "de": "Kabelsanierung in der Altstadt Spandau",
+    "en": "Cable refurbishment in Spandau's old town",
+    "verification": "editorial_unverified",
+    "sourceRevision": "654f95f514438944881375db869da54b5f31248ba8713a070ee1e39e55efec7b"
+  },
+  "MB-2025-01294": {
+    "de": "Carl-Bosch-Oberschule Sanierung und Erweiterung der Bestandsgebäude der ISS und der ehemaligen Kinderklinik",
+    "en": "Carl-Bosch-Oberschule: refurbishment and extension of existing ISS and former children's hospital buildings",
+    "verification": "editorial_unverified",
+    "sourceRevision": "5196a457c0750c557ec2871b850b124af95953734df5cafadde08a332256b2ea"
+  },
+  "MB-2025-01292": {
+    "de": "„Von Drachen und Nixen“ – Neubau Spielplatz Zossener Straße",
+    "en": "“Von Drachen und Nixen”: construction of the Zossener Straße playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "89757ba30ab621b55542106177202907cfb5111d44e7a732be0666b016cf23a6"
+  },
+  "MB-2025-01290": {
+    "de": "Umgestaltung der Schillingstraße",
+    "en": "Redesign of Schillingstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "1c9957fbe662f414e364f1291d0be89101bb1629decc649df5420c25178075b0"
+  },
+  "MB-2025-01265": {
+    "de": "Neubau \"Haus der Jugend\" am Werner-Voss-Damm 47",
+    "en": "Construction of Haus der Jugend at Werner-Voss-Damm 47",
+    "verification": "editorial_unverified",
+    "sourceRevision": "745c153c7bae985de9f78a6be67db6f204ecc5fa8eb8a11af1793e7f2229f742"
+  },
+  "MB-2025-01255": {
+    "de": "Christoph-Földerich-Grundschule Neubau Sporthalle und Sanierung Schulhof",
+    "en": "Christoph-Földerich-Grundschule: construction of a sports hall and schoolyard refurbishment",
+    "verification": "editorial_unverified",
+    "sourceRevision": "91bd6b9441562f7812863b57680556d513dc7ecd9b4174cb94a4d166c44531fa"
+  },
+  "MB-2025-01251": {
+    "de": "Neubau Götelstraße",
+    "en": "Construction of Götelstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "6a3ece1337eb938f4623efbf70a698f4fa882b0173b687a7379979c89e4bfa2f"
+  },
+  "MB-2025-01246": {
+    "de": "Neugestaltung Freifläche Neuenburgerstraße / Lindenstraße",
+    "en": "Redesign of the open space at Neuenburgerstraße/Lindenstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "ff1b11c8f49ef1ac2d5579306e7d6d85d2a96cc4c2c7052b0f70c174fc090584"
+  },
+  "MB-2025-01241": {
+    "de": "Bibliothek am Schäfersee  - Energetische Sanierung und Herstellung der Barrierefreiheit",
+    "en": "Bibliothek am Schäfersee: energy refurbishment and accessibility improvements",
+    "verification": "editorial_unverified",
+    "sourceRevision": "fb2cf9313f4299b73ab6643dce0052492e1aa1f20abb9c56521df0eac65c8c8a"
+  },
+  "MB-2025-01233": {
+    "de": "Erneuerung Spielplatz Germaniastraße",
+    "en": "Renewal of the Germaniastraße playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "a4b7b04e752ff9be3e9c86bc10eade9fb83ff5be05f9264eae31abbab99563c2"
+  },
+  "MB-2025-01230": {
+    "de": "Erneuerung Spielplatz Götzstraße",
+    "en": "Renewal of the Götzstraße playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "38d6af689fbe9e42bdf5116c6a2a77953d2553513636eb620b137d4010781260"
+  },
+  "MB-2025-01228": {
+    "de": "Neugestaltung Grünanlage",
+    "en": "Redesign of a green space",
+    "verification": "editorial_unverified",
+    "sourceRevision": "8027e55a8ebbc9f754c07d9e3f7f481dab090df6b867858d9265ba05e818ccd3"
+  },
+  "MB-2025-01224": {
+    "de": "Neugestaltung Blücherstraße zwischen Baerwaldstraße und Südstern",
+    "en": "Redesign of Blücherstraße between Baerwaldstraße and Südstern",
+    "verification": "editorial_unverified",
+    "sourceRevision": "bcb15f7a966291e1e6c5097c2cf8df392a0ee41f77a44ab7be22859e8243c6ff"
+  },
+  "MB-2025-01200": {
+    "de": "Neugestaltung Spielplatz Waldemarstraße",
+    "en": "Redesign of the Waldemarstraße playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "131cf6912f791126e05a6467692cde116cd7253746d82b57a1fa9b2d31ed15f3"
+  },
+  "MB-2025-01199": {
+    "de": "Neugestaltung der Kinderspielplätze am Richardplatz",
+    "en": "Redesign of the children's playgrounds at Richardplatz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "45128e4de29f5037257d2a6be4f74c81db3b228f94d383debf392d7fb315862d"
+  },
+  "MB-2025-01195": {
+    "de": "Neubau Umspannwerk Kurt-Schumacher-Damm",
+    "en": "Construction of the Kurt-Schumacher-Damm substation",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e7c33f40b4e98e90ab90a731449e21122bbb5f7b3567ea672ce38ad0ca2c5061"
+  },
+  "MB-2025-01194": {
+    "de": "denkmalgerechte Modernisierung des Brunnenplatzes",
+    "en": "Modernization of Brunnenplatz in keeping with its heritage status",
+    "verification": "editorial_unverified",
+    "sourceRevision": "6708b8b420202567e590ee62846f0cbe5c2a2570c6f0aa45e06089b4db5954c5"
+  },
+  "MB-2025-01168": {
+    "de": "Neubau Radverkehrsanlage in der Oranienburger Straße",
+    "en": "Construction of cycling infrastructure on Oranienburger Straße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "38af8c7e878e099c096e36b9c72f822959c1102cd2f8799964c7da6f8cc7d390"
+  },
+  "MB-2025-01155": {
+    "de": "Amtshaus Buchholz: Grundinstandsetzung",
+    "en": "Amtshaus Buchholz: comprehensive refurbishment",
+    "verification": "editorial_unverified",
+    "sourceRevision": "b68efca2eb26a28207b0837d997a5b4f2767e46f63fae14a5d6c68e69c29387a"
+  },
+  "MB-2025-01152": {
+    "de": "Sanierung des Kunstrasen Großspielfeldes Königshorster Straße",
+    "en": "Refurbishment of the large artificial-turf sports pitch at Königshorster Straße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e07a0282dddced2d4c98fc223b5f5360f0dec0fdc60f4929c775d18cb2910487"
+  },
+  "MB-2025-01151": {
+    "de": "Freizeitpark Lübars - Wegesanierung",
+    "en": "Freizeitpark Lübars: path refurbishment",
+    "verification": "editorial_unverified",
+    "sourceRevision": "b6d6dbde9c79c10bc190ea67babef2f7b8b50b8a24cd057d4a54ef48834d75eb"
+  },
+  "MB-2025-01148": {
+    "de": "Umbau der Adalbertstraße",
+    "en": "Reconstruction of Adalbertstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "13e26db3116330448f3d762827696ff97066294a245e1b3dd9585a1d8ec3b33e"
+  },
+  "MB-2025-01145": {
+    "de": "Ausbau der Schmidtstraße",
+    "en": "Upgrading of Schmidtstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "dcd5bb79f95bcdb88cca7f37a3bbc49934f5dcd407c49537c8ebe44ea6236267"
+  },
+  "MB-2025-01135": {
+    "de": "Sanierung Germersheimer Platz",
+    "en": "Refurbishment of Germersheimer Platz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "561e7599e385494647aefa24fde7fca898da1bd073e074017274d084792db2d4"
+  },
+  "MB-2025-01131": {
+    "de": "Umgestaltung Potentialflächen Sportplatz Maybachufer",
+    "en": "Redesign of potential development areas at the Maybachufer sports ground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "888776144086387cce8ea01a7fabb03f00c07ebb1a38395726b09734edcf6e8d"
+  },
+  "MB-2025-01129": {
+    "de": "Netzausbau Tempelhof-Schöneberg; Marienfelde",
+    "en": "Electricity network expansion in Tempelhof-Schöneberg; Marienfelde",
+    "verification": "editorial_unverified",
+    "sourceRevision": "f8c38dc8f96ab7b0e88e37918ec0d927fef2c6e0484c157b41b78a7873e58b82"
+  },
+  "MB-2025-01125": {
+    "de": "Neugestaltung Lausitzer Platz",
+    "en": "Redesign of Lausitzer Platz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "6f2ec4d041b7cee472959ed310e726b118bfdfd71dc30c9b27708818f3e7f162"
+  },
+  "MB-2025-01122": {
+    "de": "Sanierung und Ersatzanbau Kindervilla Lucy-Lameck Str. 31",
+    "en": "Refurbishment and replacement extension of Kindervilla, Lucy-Lameck Str. 31",
+    "verification": "editorial_unverified",
+    "sourceRevision": "662c58b9a02f3cad4d584b2ba9623b040cc4967bb2fa5d9d137c5de538aa2a6e"
+  },
+  "MB-2025-01119": {
+    "de": "Erweiterung und Umgestaltung am Sprengelpark",
+    "en": "Extension and redesign at Sprengelpark",
+    "verification": "editorial_unverified",
+    "sourceRevision": "5ec1f62ebf5891e69ca657e6b465bc800ecee978b79b65a2facb4a416bdc4971"
+  },
+  "MB-2025-01115": {
+    "de": "Umgestaltung nördlicher Grünzug Gropiusstadt",
+    "en": "Redesign of the northern green corridor in Gropiusstadt",
+    "verification": "editorial_unverified",
+    "sourceRevision": "c16f329fe0e5f03b77989befec238ef2f9e04850ae2071e0296233eba3667c8e"
+  },
+  "MB-2025-01112": {
+    "de": "Schulhofneubau Ringelnatz-Grundschule",
+    "en": "Construction of the Ringelnatz-Grundschule schoolyard",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e43b2c8e0a8356b9335d85595b9cea6549aef194539b2a52aa419d1923e85204"
+  },
+  "MB-2025-01110": {
+    "de": "Schulhofneubau der Charlie-Chaplin-Grundschule",
+    "en": "Construction of the Charlie-Chaplin-Grundschule schoolyard",
+    "verification": "editorial_unverified",
+    "sourceRevision": "ae1a5566db937c7cd878e3701030d5d81feaab55659d28b17a8e63f86423cd7f"
+  },
+  "MB-2025-01107": {
+    "de": "Umgestaltung Grünanlage Carl-Herz-Ufer und Bau barrierefreier Spielplatz",
+    "en": "Redesign of the Carl-Herz-Ufer green space and construction of an accessible playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "7fcf17a7d71ff590fb077508f8519cfa5344972e55a197ada5a4e45e2b54e96c"
+  },
+  "MB-2025-01096": {
+    "de": "Neugestaltung der Freiflächen Koppen-/Palisadenstraße",
+    "en": "Redesign of the open spaces at Koppen-/Palisadenstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "31c5a97edf0461a4cad48749557aaa61b724ee479082a5177b2dbf1c9e889522"
+  },
+  "MB-2025-01095": {
+    "de": "Neubau Schulsportanlage für die Spartacus-Grundschule",
+    "en": "Construction of a school sports facility for Spartacus-Grundschule",
+    "verification": "editorial_unverified",
+    "sourceRevision": "09abc8769ebf1046e3790d9583cd6544c0f27a5213e068749086ce6f8e28b27b"
+  },
+  "MB-2024-01081": {
+    "de": "Umgestaltung der Schillerpromenade und des Herrfurthplatzes",
+    "en": "Redesign of Schillerpromenade and Herrfurthplatz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e60567b64d195cacfd6bbe62cfbb1fb8929a3cc5a4d1a32fed2b1e72eb30d9b4"
+  },
+  "MB-2024-01080": {
+    "de": "Sanierung des Gartendenkmals Marienhöhe",
+    "en": "Refurbishment of the Marienhöhe heritage garden",
+    "verification": "editorial_unverified",
+    "sourceRevision": "4b6a7a5467845fe12a2f8af810445e393fe0938669c7199c3723707f39ae7d5c"
+  },
+  "MB-2024-01075": {
+    "de": "Ersatzneubau Sport- und Funktionsgebäude Ella-Kay-Straße",
+    "en": "Replacement sports and facilities building at Ella-Kay-Straße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "c99762ee9b91cc8665755dbd8cb649098f9eae910fea20c248c0dd957b29a239"
+  },
+  "MB-2024-01063": {
+    "de": "Schulhofsanierung Märkische Grundschule",
+    "en": "Schoolyard refurbishment at Märkische Grundschule",
+    "verification": "editorial_unverified",
+    "sourceRevision": "0e53278c909e88e0f1ee7e5987e0ed9e2d45758095351a0b28f5daed23e5b367"
+  },
+  "MB-2024-01045": {
+    "de": "Neubau GE-Förderzentrum Waidmannsluster Damm",
+    "en": "Construction of a GE support centre at Waidmannsluster Damm",
+    "verification": "editorial_unverified",
+    "sourceRevision": "f134354c883d21633e20f249fa4b14bdf1dbb5b4663304fead44e8603e478174"
+  },
+  "MB-2024-01043": {
+    "de": "Modernisierung der Begegnungsstätte Haus Bottrop",
+    "en": "Modernization of Haus Bottrop community centre",
+    "verification": "editorial_unverified",
+    "sourceRevision": "3a577e69f5f79b6f1b29f17d566551cff999533b9ddd28cb4202c8b719d6f609"
+  },
+  "MB-2024-01042": {
+    "de": "Sanierung des Otawitreffs",
+    "en": "Refurbishment of Otawitreff",
+    "verification": "editorial_unverified",
+    "sourceRevision": "1fe8ceba5abb953a6ac2bad2c9bb8b266cf0ec55cd5a15ffc082c6eeeeb690f5"
+  },
+  "MB-2024-01041": {
+    "de": "Schulhofsanierung Hoffmann-von-Fallersleben-Grundschule",
+    "en": "Schoolyard refurbishment at Hoffmann-von-Fallersleben-Grundschule",
+    "verification": "editorial_unverified",
+    "sourceRevision": "2e0f521ed9d49570588217246c435e89ec45769496f364886a5d71287577d73e"
+  },
+  "MB-2024-01039": {
+    "de": "Sanierung des Uferwanderweges Tegel",
+    "en": "Refurbishment of the Tegel waterfront walking path",
+    "verification": "editorial_unverified",
+    "sourceRevision": "013ddb7fe77a5e24e54620147100165145680583f137cedfe14539dcbefc2039"
+  },
+  "MB-2024-01038": {
+    "de": "Sanierung des Uferwanderweges Konradshöhe",
+    "en": "Refurbishment of the Konradshöhe waterfront walking path",
+    "verification": "editorial_unverified",
+    "sourceRevision": "13c97b7d894152b4aeeafd4806513251616f5d286bb73d6ab6ebd8d4a8d9fdc2"
+  },
+  "MB-2024-01028": {
+    "de": "Grundinstandsetzung Jugendfreizeitstätte Fuchsbau",
+    "en": "Comprehensive refurbishment of Fuchsbau youth recreation centre",
+    "verification": "editorial_unverified",
+    "sourceRevision": "d3c98e37e40fa9a6d93a054793d79d3ca5b4182f709650e8f0d6bcd7cdf2015f"
+  },
+  "MB-2024-01023": {
+    "de": "Umgestaltung der Ella-Barowsky-Straße",
+    "en": "Redesign of Ella-Barowsky-Straße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e98830010cfaecd432dd2be5701409e03445c8c62b6153384dbede80a4e72623"
+  },
+  "MB-2024-01020": {
+    "de": "Umgestaltung des Kinderspielplatzes in der Silbersteinstraße 119",
+    "en": "Redesign of the children's playground at Silbersteinstraße 119",
+    "verification": "editorial_unverified",
+    "sourceRevision": "942e810f0aeef7dfd32348b05bcd41d57671aa37c625733b15b8d2fd80d26792"
+  },
+  "MB-2024-01014": {
+    "de": "Sanierung und Erweiterung der Jugendfreizeiteinrichtung Düppel",
+    "en": "Refurbishment and extension of Düppel youth recreation centre",
+    "verification": "editorial_unverified",
+    "sourceRevision": "3a197c61e6144593be39f1afbfe74eb17948eee30c0768b9901829fa9cc55ac5"
+  },
+  "MB-2024-01002": {
+    "de": "Umbau der Ilsestraße zur Fahrradstraße",
+    "en": "Conversion of Ilsestraße to a cycle street",
+    "verification": "editorial_unverified",
+    "sourceRevision": "1ac6858646f2ddb44f23b5311ad5c0506a79ec14eb38b22a9787b983472ce264"
+  },
+  "MB-2024-00999": {
+    "de": "Aufwertung und Sanierung des Rosengartens in Reinickendorf",
+    "en": "Improvement and refurbishment of the rose garden in Reinickendorf",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e2cc29ad69663c3dafa46b5dd39e872757412e3880ae15d711dcc910a062f861"
+  },
+  "MB-2024-00994": {
+    "de": "Neubau Umspannwerk Amalienhof",
+    "en": "Construction of the Amalienhof substation",
+    "verification": "editorial_unverified",
+    "sourceRevision": "d149c1730fc39e092f09e4e367c61c756245906e6dfd6631586ac8ff81502bd4"
+  },
+  "MB-2024-00987": {
+    "de": "Neubau Beratungszentrum am Senftenberger Ring 27a",
+    "en": "Construction of an advice centre at Senftenberger Ring 27a",
+    "verification": "editorial_unverified",
+    "sourceRevision": "612c825453686c1ae5f083a812a908b20380dbb9ced2b816d2dbd06a02dbbc51"
+  },
+  "MB-2024-00983": {
+    "de": "Gesamtsanierung der Miriam-Makeba-Grundschule – Gebäudehülle und Innensanierung",
+    "en": "Complete refurbishment of Miriam-Makeba-Grundschule: building envelope and interior",
+    "verification": "editorial_unverified",
+    "sourceRevision": "904b58648afbeea479b1b7b7987ee53b570caa6c5f1ca74c196ecc4340e6f7b9"
+  },
+  "MB-2024-00981": {
+    "de": "Neubau einer Gemeinschaftsschule an der Pankstraße 70 / Orthstraße 1",
+    "en": "Construction of a Gemeinschaftsschule at Pankstraße 70/Orthstraße 1",
+    "verification": "editorial_unverified",
+    "sourceRevision": "87f152837ebeaf888e8e8630e210480d3cb854e2610cbc296302dfba79073010"
+  },
+  "MB-2024-00979": {
+    "de": "Neubau Gymnasium Schulstraße 97",
+    "en": "Construction of a Gymnasium at Schulstraße 97",
+    "verification": "editorial_unverified",
+    "sourceRevision": "76eef09a5e563d3a2cdd3cef7b6213b24ca5fa2f025055eb40da6aba94f6cd07"
+  },
+  "MB-2024-00978": {
+    "de": "Carl-Kraemer-Grundschule, Gesamtsanierung",
+    "en": "Carl-Kraemer-Grundschule: complete refurbishment",
+    "verification": "editorial_unverified",
+    "sourceRevision": "688db289615a03676e5c201d1f77bb69d1c0752ca02dce001dac552599beff2f"
+  },
+  "MB-2024-00973": {
+    "de": "Erneuerung der Uferwege und Freiflächen am Urbanhafen in Friedrichshain-Kreuzberg",
+    "en": "Renewal of waterfront paths and open spaces at Urbanhafen in Friedrichshain-Kreuzberg",
+    "verification": "editorial_unverified",
+    "sourceRevision": "bce3940224d0550df31c7bc4782bcb59006c0f965230b60763d028456f9f734f"
+  },
+  "MB-2024-00958": {
+    "de": "Neugestaltung Europaplatz Nord",
+    "en": "Redesign of Europaplatz Nord",
+    "verification": "editorial_unverified",
+    "sourceRevision": "6c9b30bb5087a0bc015dfc1a902d71bf7d70a01359b862e02445cf898540c483"
+  },
+  "MB-2024-00955": {
+    "de": "Neubau Wegeverbindung am Stangenpfuhl",
+    "en": "Construction of a connecting path at Stangenpfuhl",
+    "verification": "editorial_unverified",
+    "sourceRevision": "2087352911476967434ad937d00aa0fbee26a6b4935af4f631981b76fc82f8a0"
+  },
+  "MB-2024-00951": {
+    "de": "Sanierung des Bolzplatzes Bernkastler Platz",
+    "en": "Refurbishment of the informal football pitch at Bernkastler Platz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "236a65d9a410c2ac6ce2d4ab7c1410bfe9faa4486291dda444f731abe61d8fc9"
+  },
+  "MB-2024-00949": {
+    "de": "Umgestaltung des Hermann-Ehlers-Platz",
+    "en": "Redesign of Hermann-Ehlers-Platz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "0afb0c6fcda3b5e67549b44442c9ae31f5b2f325544326332ab5283bbebaa6d8"
+  },
+  "MB-2024-00917": {
+    "de": "Umgestaltung des Barbarossaplatzes",
+    "en": "Redesign of Barbarossaplatz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "876eb66eeab50b7ab563473ce9990210bfa7bef5c1557e29d2b8eff037651a98"
+  },
+  "MB-2024-00914": {
+    "de": "Sanierung Bolzplatz Singerstraße",
+    "en": "Refurbishment of the informal football pitch at Singerstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "a7a576bb9cf39a3244b4cda8471ae59456a7781f1ce03b36dccf1d2478b22c00"
+  },
+  "MB-2024-00910": {
+    "de": "Modernisierung Umspannwerk Kladow",
+    "en": "Modernization of the Kladow substation",
+    "verification": "editorial_unverified",
+    "sourceRevision": "ff0538eb32a8ca916043ea31081db37093a0f39605e9825b95755d4c306549e6"
+  },
+  "MB-2024-00906": {
+    "de": "Erneuerung Kinderspielplatz Agnes-Sorma Platz",
+    "en": "Renewal of the Agnes-Sorma Platz children's playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e431dcf5450591e92c91245b6b9244d783aefeb15f246221db731fcad69a7510"
+  },
+  "MB-2024-00901": {
+    "de": "Grundinstandsetzung Tunnel Schlangenbader Straße",
+    "en": "Comprehensive refurbishment of the Schlangenbader Straße tunnel",
+    "verification": "editorial_unverified",
+    "sourceRevision": "c41fae10b5e421d787cee0ff245e03f9c6f6dd96cde876613b9684c17988ce5e"
+  },
+  "MB-2024-00882": {
+    "de": "Grunderneuerung Promenadenwege Rudower Fließ",
+    "en": "Complete renewal of promenade paths along Rudower Fließ",
+    "verification": "editorial_unverified",
+    "sourceRevision": "5eed3349dffe93e3bf80f4ede290f966a58bfccf74d37f65a8efe9e1f51ed836"
+  },
+  "MB-2024-00867": {
+    "de": "Baumaßnahme zur Sanierung und Umnutzung des denkmalgeschützten Kioskgebäudes am Schäfersee",
+    "en": "Refurbishment and conversion of the listed kiosk building at Schäfersee",
+    "verification": "editorial_unverified",
+    "sourceRevision": "67992e4bf9eb280972c77ac880abe601040c14caa6217c8fa09434756534e857"
+  },
+  "MB-2024-00866": {
+    "de": "Neubau Jugend- und Stadtteilzentrum Auguste-Viktoria-Allee",
+    "en": "Construction of a youth and neighbourhood centre at Auguste-Viktoria-Allee",
+    "verification": "editorial_unverified",
+    "sourceRevision": "21dc37e913e6b6996d828418314e782c878211bdb73d7e24390ec37c0fd9171e"
+  },
+  "MB-2024-00858": {
+    "de": "Neubau Gollanczstraße",
+    "en": "Construction of Gollanczstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "eb32413f5f1e6debf161b3f88f4350c183de16b2702ba8f71287d8a09f439f56"
+  },
+  "MB-2024-00854": {
+    "de": "Neubau Spielplatz Freizeitpark Lübars",
+    "en": "Construction of a playground at Freizeitpark Lübars",
+    "verification": "editorial_unverified",
+    "sourceRevision": "88832adf4d26a1bd734aed1802f342b3b6970f1dd0b1960ff9687534813cae4b"
+  },
+  "MB-2024-00853": {
+    "de": "Neubau Außenanlagen Dachsbau",
+    "en": "Construction of outdoor grounds at Dachsbau",
+    "verification": "editorial_unverified",
+    "sourceRevision": "6ab004fac86f1f06223ea6c6039fa49e78fe41e4701f3d2be9e9341c7199eb72"
+  },
+  "MB-2024-00852": {
+    "de": "Neubau einer 4-zügigen Grundschule mit Sporthalle - Cité Foch",
+    "en": "Construction of a primary school with four classes per year group and a sports hall — Cité Foch",
+    "verification": "editorial_unverified",
+    "sourceRevision": "91d1a761481f11c05f44a3a9bb2758a2706a1024836c5344873a2dd5b991dd30"
+  },
+  "MB-2023-00846": {
+    "de": "Neugestaltung (Spiel-)Platz an der Remise",
+    "en": "Redesign of the square/playground at the Remise",
+    "verification": "editorial_unverified",
+    "sourceRevision": "1edd4a1af5933975a8e2779c8838cdf52bccb768c577c297cfdac1af95f84e10"
+  },
+  "MB-2023-00844": {
+    "de": "Erneuerung der Prenzlauer Promenade zwischen Am Steinberg und Rothenbachstraße",
+    "en": "Renewal of Prenzlauer Promenade between Am Steinberg and Rothenbachstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "a90dab19d0dd36c001b80304771d4f2b16237095e8d78d72b14676c55d731a2a"
+  },
+  "MB-2023-00837": {
+    "de": "Neubau Markgrafenstraße",
+    "en": "Construction of Markgrafenstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "c80c9698dd5545f99acbb9842ce75ecb14c87a7906ff6ba41c4555f7a3a629db"
+  },
+  "MB-2023-00831": {
+    "de": "Ausbau Kinder- und Jugendhaus Nahariyastraße zum Familiencampus",
+    "en": "Expansion of the Nahariyastraße children's and youth centre into a family campus",
+    "verification": "editorial_unverified",
+    "sourceRevision": "4a2b4370e0a7ab3d92b6101914bd1d2ef13f0a4983a6dbd4dc5bddcc6d2a4ebf"
+  },
+  "MB-2023-00826": {
+    "de": "Klima- und denkmalgerechte Umgestaltung des Ensembles „Dorfanger Bohnsdorf“",
+    "en": "Climate-sensitive and heritage-sensitive redesign of the Dorfanger Bohnsdorf ensemble",
+    "verification": "editorial_unverified",
+    "sourceRevision": "300a4ae3d90660841c237c2727098e0e223748ffa5f837825d6fed6f0ab7b97a"
+  },
+  "MB-2023-00824": {
+    "de": "Sanierung des Gartendenkmals Volkspark Mariendorf",
+    "en": "Refurbishment of the Volkspark Mariendorf heritage garden",
+    "verification": "editorial_unverified",
+    "sourceRevision": "1b5905a2fc8824d167ec354cf9ef70ef6a2532f2fce442e86848c2437e7b5e80"
+  },
+  "MB-2023-00823": {
+    "de": "Sanierung des Dorfteichs Lichtenrade",
+    "en": "Refurbishment of the Lichtenrade village pond",
+    "verification": "editorial_unverified",
+    "sourceRevision": "6c92502128ab06c3543d475316e1fde4bb68445845bf9306fedfc53e5af91544"
+  },
+  "MB-2023-00817": {
+    "de": "Umbau der Bahnhofstraße",
+    "en": "Reconstruction of Bahnhofstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "73de3d36720b675f4e63ab6b034ff035ed7171bc70dc73b1dd2e80234affa0d9"
+  },
+  "MB-2023-00810": {
+    "de": "Neubau Senheimer Straße",
+    "en": "Construction of Senheimer Straße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "26da0db30439be285d577e5670211757f2eaee46d7488d067e065e67d9abd2e0"
+  },
+  "MB-2023-00798": {
+    "de": "Neubau eines Umspannwerks in Berlin Mitte",
+    "en": "Construction of a substation in Berlin-Mitte",
+    "verification": "editorial_unverified",
+    "sourceRevision": "2ead7814bd172ab7a3b224e59191b59862bb8b1a5eef731600f83403c933ec0d"
+  },
+  "MB-2023-00794": {
+    "de": "Nachnutzung Flughafen Tegel - Netzausbau",
+    "en": "Reuse of Tegel Airport: network expansion",
+    "verification": "editorial_unverified",
+    "sourceRevision": "0a47821ff8fa74781b1248059b8129295a74844e38e80a11fb468b7353880dfb"
+  },
+  "MB-2023-00792": {
+    "de": "Neubau eines Umspannwerks im Rollberg-Kiez",
+    "en": "Construction of a substation in the Rollberg neighbourhood",
+    "verification": "editorial_unverified",
+    "sourceRevision": "9e0a05054ae763abdc12ce3af8a03f4ffdded9bb0420e8114c468c1bf13e77db"
+  },
+  "MB-2023-00791": {
+    "de": "Netzsanierung rund um die Claszeile und Modernisierung des Umspannwerks Claszeile",
+    "en": "Network refurbishment around Claszeile and modernization of the Claszeile substation",
+    "verification": "editorial_unverified",
+    "sourceRevision": "bd3a16470dd24984ff9c9281f4ad7b96ecd372213fda9fc9781940c07b287905"
+  },
+  "MB-2023-00790": {
+    "de": "Neubau eines Umspannwerks in Marzahn",
+    "en": "Construction of a substation in Marzahn",
+    "verification": "editorial_unverified",
+    "sourceRevision": "2ca9ebf8d8fcb8130f9120526a702bb12ee005818445eac1d6cfaba196f78f9a"
+  },
+  "MB-2023-00789": {
+    "de": "Erweiterungsneubau am Umspannwerk Tiefwerder",
+    "en": "New extension at the Tiefwerder substation",
+    "verification": "editorial_unverified",
+    "sourceRevision": "31a336e493fe25214ac1e7a81421a58b239c57381daf15dd036c104667e1ed84"
+  },
+  "MB-2023-00781": {
+    "de": "Sanierung und Ausbau der Gustave-Eiffel-Schule",
+    "en": "Refurbishment and expansion of Gustave-Eiffel-Schule",
+    "verification": "editorial_unverified",
+    "sourceRevision": "9b1615823508f0f193d17fd794c353ce1f6273b298220a57918f411ce9d8e5e7"
+  },
+  "MB-2023-00777": {
+    "de": "Neubau - Sportjugendclub Wildwuchs",
+    "en": "New construction — Sportjugendclub Wildwuchs",
+    "verification": "editorial_unverified",
+    "sourceRevision": "06b3ed95ffc6e530a4c611c79a2d9c23ca3658e9ca62810e7dd6dd859965e0c2"
+  },
+  "MB-2023-00775": {
+    "de": "Neugestaltung - Metzer Platz",
+    "en": "Redesign of Metzer Platz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "5dd9e7ced1823a80847be3e31632712addbd6c36f995324ab1df930d2f2919ed"
+  },
+  "MB-2023-00766": {
+    "de": "Sanierung und Klimaanpassung Park am Weißen See",
+    "en": "Refurbishment and climate adaptation of Park am Weißen See",
+    "verification": "editorial_unverified",
+    "sourceRevision": "84e868b6c4e576487137d074b04e83e79ded0765f8b47e8878c49605f029f9bd"
+  },
+  "MB-2023-00756": {
+    "de": "Ersatzneubau Schulenburgbrücke",
+    "en": "Replacement of Schulenburgbrücke",
+    "verification": "editorial_unverified",
+    "sourceRevision": "330a60f471083ec4391bce5ee9c5922dd920757793b8527848d53f1cca07dcd0"
+  },
+  "MB-2023-00735": {
+    "de": "Neugestaltung der Liebensteiner Promenade (nördlicher Teil)",
+    "en": "Redesign of the northern part of Liebensteiner Promenade",
+    "verification": "editorial_unverified",
+    "sourceRevision": "14f17ee4de44f243a4328a5ce063844bc81fe58b05b1c6c537f4b11b7cb28e16"
+  },
+  "MB-2023-00733": {
+    "de": "Erneuerung der Torstraße in Mitte; 1. Teilabschnitt zwischen Chausseestraße und Rosenthaler Platz",
+    "en": "Renewal of Torstraße in Mitte: first section between Chausseestraße and Rosenthaler Platz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "f24fd7056ed914e24d862bf83f9d8633788f28139da4efcb0ecc94b01bfee66e"
+  },
+  "MB-2023-00731": {
+    "de": "Sanierung Rummelsburger See",
+    "en": "Refurbishment of Rummelsburger See",
+    "verification": "editorial_unverified",
+    "sourceRevision": "5e84018181ce4961b97034f3fbbef964fd5ac64e47922dbedf7e7cfe70c45779"
+  },
+  "MB-2023-00716": {
+    "de": "Umbau der Karl-Marx-Straße - 3. Bauabschnitt zwischen Briesestraße und Weichselstraße",
+    "en": "Reconstruction of Karl-Marx-Straße: third construction phase between Briesestraße and Weichselstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "6bd4b3208a53b572ae1d9087dd934a5e242d3281125a2528be5ea2393af175c0"
+  },
+  "MB-2023-00707": {
+    "de": "Umgestaltung Blochplatz",
+    "en": "Redesign of Blochplatz",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e5274fdb07d6985cbb8d2f401241879076c7c5c8b13b94507f27462888b90104"
+  },
+  "MB-2023-00706": {
+    "de": "Ausbau der Weserstraße zur Fahrradstraße",
+    "en": "Upgrading of Weserstraße to a cycle street",
+    "verification": "editorial_unverified",
+    "sourceRevision": "a5ddbda7e6479b245a7d8a2daefea55eea68e71b491c3b53bab729c594babfac"
+  },
+  "MB-2023-00705": {
+    "de": "Erneuerung der Weichselstraße",
+    "en": "Renewal of Weichselstraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "e83e7adc3e7ae42d2f3b45489d45b351b1821f497340d0ff95c067e387cb7d19"
+  },
+  "MB-2023-00704": {
+    "de": "Umgestaltung und Neugestaltung der Elbestraße",
+    "en": "Reconstruction and redesign of Elbestraße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "53a74305ded08610c7494ba88699f69f7eca5f37f9ebbcd8e471b2d8f9dcc44e"
+  },
+  "MB-2023-00691": {
+    "de": "Grundhafte Erneuerung der B1 – Schloßstraße/Unter den Eichen zwischen Wolfensteindamm und Thielallee",
+    "en": "Complete renewal of the B1 — Schloßstraße/Unter den Eichen between Wolfensteindamm and Thielallee",
+    "verification": "editorial_unverified",
+    "sourceRevision": "ffe7f5bf06c2b875eafe691a7b226dab8189d84c1348eed96861de1c81374827"
+  },
+  "MB-2023-00683": {
+    "de": "Neugestaltung des Spielplatzes Singerstraße 114-117",
+    "en": "Redesign of the playground at Singerstraße 114–117",
+    "verification": "editorial_unverified",
+    "sourceRevision": "fd4307723f186dbf73ad10f071940b633d05f52d01c0c3e757020952e6c5bcc8"
+  },
+  "MB-2023-00661": {
+    "de": "Neue Höfe. Mehr Nutzen. Klimagerechter Umbau des Serenadenhofes",
+    "en": "Neue Höfe. Mehr Nutzen.: climate-sensitive reconstruction of Serenadenhof",
+    "verification": "editorial_unverified",
+    "sourceRevision": "5ad451bd12317b3efbe33d2edb224f4cb85e945f00cb9d1860ceace97f850bd9"
+  },
+  "MB-2022-00547": {
+    "de": "Sanierung Spielplatz Panketal",
+    "en": "Refurbishment of the Panketal playground",
+    "verification": "editorial_unverified",
+    "sourceRevision": "8b087560e8db83cb81dbfc3a18fc5d5b634fd588af8e06a3d6b1a29215943146"
+  },
+  "MB-2022-00543": {
+    "de": "Gehwegsanierung am Spittelmarkt",
+    "en": "Pavement refurbishment at Spittelmarkt",
+    "verification": "editorial_unverified",
+    "sourceRevision": "68a87cc71b3eea580342eee162a1cc0db785ebcf0f0721668c0be1970be1005a"
+  },
+  "MB-2022-00520": {
+    "de": "Neubau Begegnungszentrum Westerwaldstraße mit Stadtteilzentrum, Seniorenklub, JugendTheaterwerkstatt",
+    "en": "Construction of Westerwaldstraße community centre with neighbourhood centre, seniors' club and JugendTheaterwerkstatt",
+    "verification": "editorial_unverified",
+    "sourceRevision": "9ae0d58fad75103ca6dd76ca6725e1796278fd995fd802653b5f8bb1d69e791e"
+  },
+  "MB-2022-00516": {
+    "de": "Umgestaltung der Spiel- und Sportflächen an der Bornsdorfer Straße",
+    "en": "Redesign of the play and sports areas at Bornsdorfer Straße",
+    "verification": "editorial_unverified",
+    "sourceRevision": "fb4b91dc551f12a354879fdb85f53cf5206d8640e612131360a6ff87bae9bb8e"
+  },
+  "MB-2021-00469": {
+    "de": "Neugestaltung Schmollerplatz Alt-Treptow",
+    "en": "Redesign of Schmollerplatz in Alt-Treptow",
+    "verification": "editorial_unverified",
+    "sourceRevision": "c451ffd260264e9f5b5c0c82a15aaf521aa2aa91f41155c8a7a3f6bae8f232c5"
+  },
+  "MB-2021-00464": {
+    "de": "Ausbau der Oderstraße zur Fahrradstraße",
+    "en": "Upgrading of Oderstraße to a cycle street",
+    "verification": "editorial_unverified",
+    "sourceRevision": "94385312952ad83ad505f08f17fc6cd222044f71ae2c19d9629aea916313a38e"
+  },
+  "MB-2021-00462": {
+    "de": "Grundhafte Erneuerung und Umgestaltung der Straße Unter den Linden von Pariser Platz bis Schloßbrücke",
+    "en": "Complete renewal and redesign of Unter den Linden from Pariser Platz to Schloßbrücke",
+    "verification": "editorial_unverified",
+    "sourceRevision": "658400775977b468f098a5544669f57f688f7f26a59d4689d21c6554f8fddb02"
+  }
+}

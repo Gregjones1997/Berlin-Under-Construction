@@ -1,0 +1,90 @@
+---
+import {
+  forLocale,
+  localeFromPath,
+  enumLabel,
+  dateText,
+  qualifierText,
+  formatNumber,
+} from "../lib/i18n";
+import type { PublicFact } from "../lib/public-projects";
+interface Props {
+  fact: PublicFact;
+}
+const { fact } = Astro.props;
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
+const date = fact.dateValue as
+  { canonicalDe?: string; precision?: string } | undefined;
+const amount = fact.amount as { value?: number; currency?: string } | undefined;
+const qualifiers = (fact.qualifiers ?? []) as { tokenDe: string }[];
+---
+
+{
+  fact.milestoneType && (
+    <p class="meta">
+      {t("components.RawFact.12")} {enumLabel(fact.milestoneType, locale)}
+    </p>
+  )
+}
+{
+  fact.milestoneTermDe && (
+    <p class="meta">
+      {t("components.RawFact.13")}{" "}
+      <span lang="de">{String(fact.milestoneTermDe)}</span>
+    </p>
+  )
+}
+{
+  date?.canonicalDe && (
+    <p class="meta">
+      {t("components.RawFact.14")}{" "}
+      <span lang={locale}>{dateText(date.canonicalDe, locale)}</span> (
+      {enumLabel(date.precision, locale)})
+    </p>
+  )
+}
+{
+  fact.measureType && (
+    <p class="meta">
+      {t("components.RawFact.15")} {enumLabel(fact.measureType, locale)}
+    </p>
+  )
+}
+{
+  amount?.value !== undefined && (
+    <p class="meta">
+      {t("components.RawFact.16")} {formatNumber(amount.value, locale)}{" "}
+      {amount.currency}
+    </p>
+  )
+}
+{
+  ["taxTreatment", "priceBasis", "budgetReference"].map(
+    (key, index) =>
+      fact[key] && (
+        <p class="meta">
+          {t(
+            [
+              "components.RawFact.17",
+              "components.RawFact.18",
+              "components.RawFact.19",
+            ][index],
+          )}{" "}
+          {enumLabel(
+            (fact[key] as { value?: string; state?: string }).value ??
+              (fact[key] as { state?: string }).state,
+            locale,
+          )}
+        </p>
+      ),
+  )
+}
+{
+  qualifiers.map((q) => (
+    <p class="meta">
+      {t("components.RawFact.20")}{" "}
+      <span lang={locale}>{qualifierText(q.tokenDe, locale)}</span>
+    </p>
+  ))
+}

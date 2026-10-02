@@ -1366,7 +1366,7 @@ dialog dd a {
 /* On phones the map is the opening view; records are opened on demand. */
 @media (max-width: 700px) {
   .atlas-page { height: 100svh; height: 100dvh; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
-  .atlas-page > .site-header { flex: 0 0 66px; }
+  .atlas-page > .site-header { flex: 0 0 80px; }
   .atlas-page > .atlas-shell { flex: 1 1 0; height: auto; min-height: 0; }
   .atlas-page > .atlas-footer { flex: 0 0 38px; box-sizing: border-box; }
   .has-js .atlas-left, .has-js .city-explorer { display: none; }
@@ -1392,8 +1392,8 @@ dialog dd a {
     gap: 8px;
   }
   .atlas-page .site-wordmark-sub,
-  .atlas-page .site-header nav a:first-child,
-  .atlas-page .site-header nav a:last-child {
+  .atlas-page .site-header nav:not(.language-switch) a:first-child,
+  .atlas-page .site-header nav:not(.language-switch) a:last-child {
     display: none;
   }
   .atlas-page .site-header nav {

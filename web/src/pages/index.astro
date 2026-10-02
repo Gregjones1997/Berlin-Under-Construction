@@ -6,7 +6,7 @@ import {
   projectName,
   listingName,
   factText,
-  dateText,
+  cardDate,
   enumLabel,
 } from "../lib/i18n";
 const locale = localeFromPath(Astro.url.pathname);
@@ -18,7 +18,8 @@ import places from "../atlas/places.json";
 import { resolve } from "node:path";
 import { loadPublicProjectPages } from "../lib/public-projects";
 import { publicationAsOfDate } from "../lib/milestone-freshness.mjs";
-import RawFact from "../components/RawFact.astro";
+import ProjectRecordPanel from "../components/ProjectRecordPanel.astro";
+import TranslationDisclosure from "../components/TranslationDisclosure.astro";
 import Icon from "../components/AtlasIcon.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import contextLabels from "../atlas/context-labels.json";
@@ -271,229 +272,7 @@ const records = projects.map((project) => ({
         >
         {
           records.map((project, index) => (
-            <section
-              id={`record-${project.projectId}`}
-              class="project-record"
-              hidden
-            >
-              <div class="record-heading">
-                <>
-                  <p class="eyebrow">
-                    {t("pages.index.85")} {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h2 lang={locale}>{projectName(project, locale)}</h2>
-                  <p class="record-id">
-                    {project.projectId} {t("pages.index.86")}
-                  </p>
-                </>
-              </div>
-              {!project.position && (
-                <p class="withheld-note">{t("pages.index.87")}</p>
-              )}
-              <div
-                data-record-section="overview"
-                class="project-brief status-brief"
-              >
-                {locale === "en" && (
-                  <p class="translation-note">{t("translation.note")}</p>
-                )}
-                {project.projectId === "C-014" && project.start && (
-                  <p class="brief-description" lang={locale}>
-                    {factText(
-                      project.publishedFacts.find(
-                        (f) => f.factId === "c014-project-location",
-                      )!,
-                      locale,
-                    )}{" "}
-                    <a
-                      class="fact-source"
-                      href={project.start.evidence?.sourceUrl}
-                      aria-label={t("pages.index.88")}
-                    >
-                      <Icon name="arrow" />
-                    </a>
-                  </p>
-                )}
-                {project.status && (
-                  <div class="status-line" data-fact-id={project.status.factId}>
-                    <span class="source-status" lang={locale}>
-                      {factText(project.status, locale)}
-                    </span>
-                    <a
-                      class="fact-source"
-                      href={project.status.evidence?.sourceUrl}
-                      aria-label={t("pages.index.89")}
-                    >
-                      <Icon name="arrow" />
-                    </a>
-                    <small>
-                      {t("pages.index.90")}{" "}
-                      {String(
-                        (project.status.asOfDate as { value?: string })
-                          ?.value ?? t("pages.index.91"),
-                      )}
-                    </small>
-                  </div>
-                )}
-                <dl class="brief-dates">
-                  <div>
-                    <dt>{t("pages.index.92")}</dt>
-                    <dd>
-                      {project.start ? (
-                        <>
-                          <span lang={locale}>
-                            {dateText(
-                              String(
-                                (
-                                  project.start.dateValue as {
-                                    canonicalDe?: string;
-                                  }
-                                )?.canonicalDe,
-                              ),
-                              locale,
-                            )}
-                          </span>
-                          <a
-                            class="fact-source"
-                            href={project.start.evidence?.sourceUrl}
-                            aria-label={t("pages.index.93")}
-                          >
-                            <Icon name="arrow" />
-                          </a>
-                        </>
-                      ) : (
-                        <span class="date-missing">{t("pages.index.94")}</span>
-                      )}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>{t("pages.index.95")}</dt>
-                    <dd>
-                      {project.lead ? (
-                        <>
-                          <span lang={locale}>
-                            {dateText(
-                              String(
-                                (
-                                  project.lead.dateValue as {
-                                    canonicalDe?: string;
-                                  }
-                                )?.canonicalDe,
-                              ),
-                              locale,
-                            )}
-                          </span>
-                          <a
-                            class="fact-source"
-                            href={project.lead.evidence?.sourceUrl}
-                            aria-label={t("atlas.source.planned", {
-                              term: enumLabel(
-                                project.lead.milestoneType,
-                                locale,
-                              ),
-                            })}
-                            title={t("atlas.milestone")}
-                          >
-                            <Icon name="arrow" />
-                          </a>
-                        </>
-                      ) : (
-                        <span class="date-missing">{t("pages.index.94")}</span>
-                      )}
-                    </dd>
-                  </div>
-                </dl>
-                {((project.lead?.displayWarnings ?? []) as string[]).length >
-                  0 && <p class="brief-warning">{t("pages.index.96")}</p>}
-                <p class="brief-source-key">
-                  {t("pages.index.97")}{" "}
-                  <span>
-                    <Icon name="arrow" /> {t("components.RawFact.27")}
-                  </span>
-                </p>
-                <button
-                  class="brief-more brief-overview-link"
-                  data-expand-record
-                >
-                  <>
-                    <span>
-                      <>
-                        <strong>
-                          {project.history.length
-                            ? t("pages.index.98")
-                            : t("pages.index.99")}
-                        </strong>
-                        <small>
-                          {project.history.length
-                            ? t("pages.index.100")
-                            : t("pages.index.101")}
-                        </small>
-                      </>
-                    </span>
-                    <Icon name="arrow" />
-                  </>
-                </button>
-                <a
-                  href={localizePath(project.correctionPath, locale)}
-                  class="correction-link"
-                >
-                  {t("pages.index.102")}
-                </a>
-              </div>
-              <div data-record-section="history" hidden>
-                <p class="history-note">{t("pages.index.103")}</p>
-                <h3 class="history-title">{t("pages.index.104")}</h3>
-                {project.publishedFacts
-                  .filter((f) => !project.history.includes(f))
-                  .map((fact) => (
-                    <RawFact fact={fact} />
-                  ))}
-                <h3 class="history-title">{t("pages.index.105")}</h3>
-                {project.history.length ? (
-                  project.history.map((f) => <RawFact fact={f} />)
-                ) : (
-                  <p>{t("pages.index.106")}</p>
-                )}
-                {project.conflicts.map((conflict) => (
-                  <section
-                    class="record-conflict"
-                    data-conflict-id={conflict.conflictId}
-                  >
-                    <h3>{t("pages.index.107")}</h3>
-                    {conflict.facts.map((fact) => (
-                      <RawFact fact={fact} />
-                    ))}
-                  </section>
-                ))}
-                {project.withheldFacts.length > 0 && (
-                  <section class="record-withheld">
-                    <h3>{t("pages.index.108")}</h3>
-                    {project.withheldFacts.map((fact) => (
-                      <p>
-                        {enumLabel(fact.factType, locale)} ·{" "}
-                        {t(`reason.${fact.reasonCode}`)}
-                      </p>
-                    ))}
-                  </section>
-                )}
-              </div>
-              <div class="record-actions full-record-actions">
-                <>
-                  <a
-                    class="primary-link"
-                    href={localizePath(`/projects/${project.slug}/`, locale)}
-                  >
-                    {t("pages.index.109")} <Icon name="arrow" />
-                  </a>
-                  <a
-                    href={localizePath(project.correctionPath, locale)}
-                    class="correction-link"
-                  >
-                    {t("pages.index.102")}
-                  </a>
-                </>
-              </div>
-            </section>
+            <ProjectRecordPanel project={project} index={index} />
           ))
         }
         {
@@ -513,10 +292,6 @@ const records = projects.map((project) => ({
                 class="project-brief status-brief"
                 data-record-section="overview"
               >
-                {locale === "en" && (
-                  <p class="translation-note">{t("translation.note")}</p>
-                )}
-                <p lang="de">{project.locationDe}</p>
                 {basicMilestones.some(
                   (fact) => fact.projectId === project.id,
                 ) && (
@@ -531,7 +306,7 @@ const records = projects.map((project) => ({
                           <dt>{t(`basic.${fact.kind}`)}</dt>
                           <dd>
                             <span lang={locale}>
-                              {dateText(fact.valueDe, locale)}
+                              {cardDate(fact.valueDe, locale)}
                             </span>
                             <a
                               class="fact-source"
@@ -547,6 +322,7 @@ const records = projects.map((project) => ({
                       ))}
                   </dl>
                 )}
+                <p lang="de">{project.locationDe}</p>
                 <p class="brief-source-key">{t("pages.index.112")}</p>
                 <a
                   class="brief-more brief-overview-link"
@@ -560,6 +336,7 @@ const records = projects.map((project) => ({
                   </>
                 </a>
                 <details class="basic-evidence">
+                  <summary>{t("card.basicEvidence")}</summary>
                   <p lang="de">{project.nameDe}</p>
                   {basicMilestones
                     .filter((fact) => fact.projectId === project.id)
@@ -594,6 +371,7 @@ const records = projects.map((project) => ({
                 >
                   {t("pages.index.122")} {project.id}
                 </a>
+                <TranslationDisclosure />
               </div>
             </section>
           ))
@@ -857,7 +635,8 @@ const records = projects.map((project) => ({
       </details>
       <p>
         <a href={localizePath("/terminology/", locale)}
-          >{t("translation.terms")}</a>
+          >{t("translation.terms")}</a
+        >
       </p>
       <p class="model-date">
         {t("layouts.Base.39")}{" "}

@@ -1,5 +1,13 @@
 import type { MapView } from "./renderer";
+export const recordFolders = [
+  "schedule",
+  "budget",
+  "sources",
+  "questions",
+] as const;
+export type RecordFolder = (typeof recordFolders)[number];
 export type AtlasViewState = {
+  folder: RecordFolder;
   camera: MapView;
   plan: boolean;
   expanded: boolean;
@@ -13,6 +21,8 @@ export function decodeViewState(
   if (!raw || raw.length > 1000) return undefined;
   try {
     const value = JSON.parse(raw);
+    if (value.folder !== undefined && !recordFolders.includes(value.folder))
+      return undefined;
     const vector = (v: unknown) =>
       Array.isArray(v) &&
       v.length === 3 &&
@@ -43,6 +53,7 @@ export function decodeViewState(
       return undefined;
     if (Math.hypot(...value.camera.offset) < 1) return undefined;
     return {
+      folder: value.folder ?? "schedule",
       camera: {
         target: value.camera.target,
         offset: value.camera.offset,

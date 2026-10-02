@@ -1,4 +1,9 @@
-import { decodeViewState, encodeViewState } from "./view-state";
+import {
+  decodeViewState,
+  encodeViewState,
+  recordFolders,
+  type RecordFolder,
+} from "./view-state";
 import { forLocale, localeFromPath, formatNumber } from "../lib/i18n";
 const locale = localeFromPath(location.pathname);
 const t = forLocale(locale);
@@ -9,6 +14,7 @@ const $ = <T extends HTMLElement = HTMLElement>(id: string) =>
 const shell = $("atlas");
 const stage = $("map-stage");
 const panel = $("record-panel");
+matchMedia("(max-width:700px)").addEventListener("change",()=>{panel.scrollTop=0;});
 const selects = [
   ...document.querySelectorAll<HTMLButtonElement>(".project-select"),
 ];
@@ -129,6 +135,7 @@ function choose(id: string, updateHash = true, remember = true) {
   panel.hidden = false;
   panel.scrollTop = 0;
   shell.classList.remove("record-expanded");
+  showFolder(record, "schedule");
   $<HTMLDetailsElement>("area-picker").open = false;
   $("back-to-city").hidden = false;
   shell.classList.add("has-selection");
@@ -191,6 +198,54 @@ document.addEventListener("keydown", (e) => {
   )
     previousView();
 });
+function showFolder(record: HTMLElement, folder: RecordFolder) {
+  record
+    .querySelectorAll<HTMLButtonElement>("[data-record-folder]")
+    .forEach((tab) => {
+      const active = tab.dataset.recordFolder === folder;
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+    });
+  record
+    .querySelectorAll<HTMLElement>("[data-folder-page]")
+    .forEach((page) => (page.hidden = page.dataset.folderPage !== folder));
+  const pages = record.querySelector<HTMLElement>(".folder-pages");
+  if (pages) pages.scrollTop = 0;
+}
+document
+  .querySelectorAll<HTMLButtonElement>("[data-record-folder]")
+  .forEach((tab) => {
+    const activate = () =>
+      showFolder(
+        tab.closest<HTMLElement>(".project-record")!,
+        tab.dataset.recordFolder as RecordFolder,
+      );
+    tab.addEventListener("click", activate);
+    tab.addEventListener("keydown", (event) => {
+      const index = recordFolders.indexOf(
+        tab.dataset.recordFolder as RecordFolder,
+      );
+      const next =
+        event.key === "ArrowRight"
+          ? (index + 1) % 4
+          : event.key === "ArrowLeft"
+            ? (index + 3) % 4
+            : event.key === "Home"
+              ? 0
+              : event.key === "End"
+                ? 3
+                : null;
+      if (next === null) return;
+      event.preventDefault();
+      const record = tab.closest<HTMLElement>(".project-record")!;
+      showFolder(record, recordFolders[next]);
+      record
+        .querySelector<HTMLButtonElement>(
+          `[data-record-folder="${recordFolders[next]}"]`,
+        )
+        ?.focus();
+    });
+  });
 function showFullRecord(expanded: boolean) {
   if (!selection) return;
   const record = $(`record-${selection}`);
@@ -198,8 +253,7 @@ function showFullRecord(expanded: boolean) {
   record
     .querySelectorAll<HTMLElement>("[data-record-section]")
     .forEach((section) => {
-      section.hidden =
-        section.dataset.recordSection !== (expanded ? "history" : "overview");
+      section.hidden = section.dataset.recordSection === "history" && !expanded;
     });
   panel.scrollTop = 0;
   if (expanded) panel.focus({ preventScroll: true });
@@ -446,7 +500,10 @@ async function start() {
         $("area-name").textContent = area.textContent;
         if (!selection) $("view-label").textContent = area.textContent;
       }
-      if (selection && saved.expanded) showFullRecord(true);
+      if (selection && saved.expanded) {
+        showFullRecord(true);
+        showFolder($(`record-${selection}`), saved.folder);
+      }
     }
     // View data is carried on the language link, rather than accumulating stale state in this page's URL.
     const clean = new URL(location.href);
@@ -495,6 +552,11 @@ document
             camera: city.captureView(),
             plan,
             expanded: shell.classList.contains("record-expanded"),
+            folder: selection
+              ? (($(`record-${selection}`).querySelector<HTMLButtonElement>(
+                  '[data-record-folder][aria-selected="true"]',
+                )?.dataset.recordFolder as RecordFolder) ?? "schedule")
+              : "schedule",
             filter: placeFilter.value,
             area,
             labels,

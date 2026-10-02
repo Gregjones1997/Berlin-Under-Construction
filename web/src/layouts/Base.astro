@@ -3,6 +3,7 @@ import { forLocale, localeFromPath, localizePath } from "../lib/i18n";
 const locale = localeFromPath(Astro.url.pathname);
 const t = forLocale(locale);
 import "../styles/global.css";
+import TranslationDisclosure from "../components/TranslationDisclosure.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import { publicationAsOfDate } from "../lib/milestone-freshness.mjs";
 
@@ -46,9 +47,11 @@ const generatedOn = publicationAsOfDate(process.env.PUBLICATION_AS_OF_DATE);
       </header>
       <slot />
       <footer>
+        <TranslationDisclosure />
         <p>
           <a href={localizePath("/terminology/", locale)}
-            >{t("translation.terms")}</a>
+            >{t("translation.terms")}</a
+          >
         </p>
         <p>
           <a href={localizePath("/method/", locale)}>{t("layouts.Base.35")}</a> ·

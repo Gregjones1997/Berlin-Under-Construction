@@ -1472,3 +1472,118 @@ dialog dd a {
  .atlas-intro .eyebrow { margin-bottom:10px; }
  .project-select { padding-top:12px; padding-bottom:12px; }
 }
+
+/* Project folder workspace: retain the summary while opening the record. */
+.folder-record .record-heading { padding: 26px 24px 18px; }
+.folder-record .record-heading h2 { font-size: 30px; line-height: 1.08; padding-right: 6px; margin: 0; text-wrap: balance; }
+.folder-record .project-brief { padding: 0 24px; }
+.folder-record .card-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-block: 1px solid var(--rule); padding-block: 15px; }
+.folder-record .card-dates > div { display: block; padding: 0; border: 0; }
+.folder-record .card-dates dt { color: var(--muted); font-size: 10px; line-height: 1.4; margin-bottom: 8px; }
+.folder-record .card-dates dd { text-align: left; font: 500 17px/1.4 var(--sans); font-variant-numeric: tabular-nums; }
+.folder-record .card-dates .fact-source { margin-left: 2px; }
+.folder-record .brief-description { margin: 18px 0; font-size: 14px; line-height: 1.6; }
+.card-budget { display: grid; grid-template-columns: 1fr auto; gap: 5px 8px; border-top: 1px solid var(--rule); padding-block: 15px; }
+.card-budget > span { grid-column: 1 / -1; font: 10px var(--sans); color: var(--muted); }
+.card-budget strong { font: 25px var(--serif); }
+.card-budget small { grid-column: 1; font: 10px var(--sans); color: var(--muted); }
+.card-budget .fact-source { grid-column: 2; grid-row: 2; }
+.card-status { border-top: 1px solid var(--rule); padding-block: 13px; }
+.card-status > span, .card-status > small { font: 10px var(--sans); color: var(--muted); }
+.folder-record .card-status p { margin: 7px 0; font: 13px/1.5 var(--sans); }
+.folder-record .card-open { width: 100%; padding-block: 18px; margin-top: 0; text-align: left; }
+.card-open small { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; line-height: 1.5; }
+.card-footer { border-top: 1px solid var(--rule); padding: 15px 24px; font: 10px/1.5 var(--sans); }
+.card-footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 10px; }
+.translation-disclosure { font: 10px/1.5 var(--sans); color: var(--muted); }
+.translation-disclosure summary { cursor: pointer; }
+.translation-disclosure p { font: 11px/1.6 var(--sans); }
+.record-expanded .record-panel { top: 24px; bottom: 90px; height: auto; max-height: none; overflow: hidden; }
+.record-expanded .folder-record { height: 100%; display: grid; grid-template-columns: 310px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
+.record-expanded .record-summary { border-right: 1px solid var(--rule); min-width: 0; overflow-y: auto; }
+.record-expanded .folder-record .record-heading h2 { font-size: 30px; }
+.record-expanded .folder-record [data-record-section] { max-width: none; margin: 0; }
+.record-expanded .folder-record .card-open { display: none; }
+.record-expanded .record-workspace { min-width: 0; min-height: 0; display: flex; flex-direction: column; padding-top: 45px; }
+.record-expanded .card-footer { grid-column: 1 / -1; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+.record-expanded .card-footer-links { margin: 0; }
+.record-expanded .card-footer .translation-disclosure[open] { max-width: 380px; }
+.folder-tabs { display: flex; gap: 5px; padding: 0 24px; border-bottom: 1px solid var(--rule); flex-shrink: 0; overflow-x: auto; }
+.folder-tabs button { display: flex; align-items: center; gap: 7px; border: 1px solid var(--rule); border-bottom: 0; border-radius: 5px 5px 0 0; padding: 14px 15px; font: 11px var(--sans); color: var(--muted); white-space: nowrap; min-height: 44px; }
+.folder-tabs button[aria-selected="true"] { background: var(--paper); color: var(--accent); box-shadow: inset 0 3px var(--accent); }
+.folder-tabs svg { width: 15px; height: 15px; }
+.folder-pages { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 25px 30px; }
+.folder-kicker { font: 9px var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin: 0 0 12px; }
+.folder-pages > section > h3 { font: 29px/1.2 var(--serif); margin: 0 0 16px; }
+.folder-intro { font: 12px/1.6 var(--sans); color: var(--muted); margin-bottom: 18px; max-width: 58ch; }
+.record-expanded .folder-pages article { padding: 18px 0; border-top: 1px solid var(--rule); }
+.record-expanded .folder-pages article > h3 { font: 10px var(--sans); color: var(--muted); margin: 0 0 10px; }
+.record-expanded .folder-pages article > p[lang] { font: 18px/1.5 var(--sans); }
+.record-expanded .folder-pages .source-file { border: 1px solid var(--rule); padding: 16px; margin-bottom: 14px; }
+.source-file header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+.source-file header h4 { font: 13px var(--sans); margin: 0; }
+.source-file header p { font: 10px var(--mono); color: var(--muted); margin: 5px 0 0; }
+.source-file header > a { margin-left: auto; }
+.source-file-number { font: 20px var(--serif); color: var(--muted); }
+.source-file details { font: 12px/1.6 var(--sans); border-top: 1px solid var(--rule); padding-top: 10px; margin-top: 10px; }
+.source-file summary { cursor: pointer; }
+.folder-tabs button:focus-visible, [data-folder-page]:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.record-expanded .record-summary { animation: summary-settle 240ms cubic-bezier(.2,0,0,1); }
+.record-expanded .record-workspace { animation: folder-reveal 240ms cubic-bezier(.2,0,0,1); }
+@keyframes summary-settle { from { transform: translateX(max(0px, calc(100vw - 402px))); } to { transform: translateX(0); } }
+@keyframes folder-reveal { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
+@media (max-width: 1000px) and (min-width: 701px) {
+  .record-expanded .folder-record { grid-template-columns: 275px minmax(0,1fr); }
+  .folder-tabs { padding-inline: 14px; gap: 3px; }
+  .folder-tabs button { padding-inline: 10px; }
+  .folder-tabs svg { display: none; }
+}
+@media (max-width: 700px) {
+  .record-expanded .record-panel { top: 12px; bottom: 76px; max-height: none; overflow-y: auto; }
+  .record-expanded .folder-record { height: auto; display: block; }
+  .record-expanded .record-summary { border-right: 0; }
+  .record-expanded .folder-record .record-heading h2 { font-size: 26px; }
+  .record-expanded .record-workspace { padding-top: 15px; }
+  .folder-pages { height: 46svh; padding: 20px 22px; }
+  .folder-tabs { padding-inline: 22px; }
+  .folder-tabs button { padding: 12px; }
+  .folder-tabs svg { display: none; }
+  .record-expanded .card-footer { display: block; }
+  .record-expanded .card-footer-links { margin-bottom: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .record-expanded .record-summary, .record-expanded .record-workspace { animation: none; }
+}
+/* Keep sources next to their date labels and clear the close control. */
+.folder-record .card-dates > div { position: relative; }
+.folder-record .card-dates dd { font-size: 16px; }
+.folder-record .card-dates .fact-source { position: absolute; top: 0; right: 0; width: 12px; height: 12px; }
+.folder-record .card-dates .fact-source svg { width: 12px; height: 12px; }
+.record-expanded .city-return { top: 32px; right: 78px; padding: 8px 12px; font-size: 11px; }
+.atlas-page { height: 100svh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+.atlas-page > .site-header, .atlas-page > .atlas-footer { flex-shrink: 0; }
+.atlas-page > .atlas-shell { flex: 1 1 0; height: auto; min-height: 0; }
+.record-expanded .record-summary { background: var(--paper); position: relative; z-index: 1; }
+@media (max-width: 700px) {
+  .record-expanded .record-summary { animation: none; }
+  .folder-tabs { position: sticky; top: 0; background: var(--paper); z-index: 2; }
+}
+.folder-record .card-dates dt { min-height: 28px; padding-right: 14px; overflow-wrap: anywhere; }
+.record-panel:focus { outline: none; }
+.record-panel:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 700px) { .record-expanded .city-return { display: none; } }
+@media (max-width: 700px) {
+  .record-expanded .panel-close { position: fixed; top: 101px; right: 24px; z-index: 3; background: var(--paper); border-radius: 3px; }
+}
+.basic-record .basic-dates { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; border-block: 1px solid var(--rule); padding-block: 15px; margin-bottom: 15px; }
+.basic-record .basic-dates > div { display: block; padding: 0; border: 0; }
+.basic-record .basic-dates dt { font-size: 10px; color: var(--muted); margin-bottom: 8px; }
+.basic-record .basic-dates dd { text-align: left; font-variant-numeric: tabular-nums; }
+@media (min-width: 701px) {
+  .record-expanded .folder-record .record-heading { padding: 18px 24px 12px; }
+  .record-expanded .folder-record .record-heading h2 { font-size: 27px; }
+  .record-expanded .folder-record .card-dates { padding-block: 12px; }
+  .record-expanded .folder-record .brief-description { margin-block: 12px; }
+  .record-expanded .card-budget { padding-block: 12px; }
+  .record-expanded .card-status { padding-block: 10px; }
+}

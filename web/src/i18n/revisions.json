@@ -3258,5 +3258,145 @@
     "en": "ca99b7f1b14ee2c04f7aaefde89858fc947fa88de518c2e6d4b6132892175218",
     "de": "1991cec2f669f9e686946fc2261f8b113c623e27242c59e221ca9a37589f5df5",
     "editorialAcknowledgment": "Initial Codex paired draft; independent verification not established"
+  },
+  "messages:card.translation": {
+    "de": "65122457454fcafced0090459d1e0d3c782b64da8aa4c78a09356d373535b41a",
+    "en": "5a2925d497093aaf88eca31b315bd72c8cd680ac317e371516e0465738164c5f",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.start": {
+    "de": "686bf3de611144c3285eefacd2fde869103a31dfde615dd69bd69766c548c0ea",
+    "en": "dfeb674c91e4464b26d882021a981443042db0c3272b4fd826d62d03e6f82c0f",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.plannedEnd": {
+    "de": "fc52ffa57d09f2010df1f0041c007f82675550e98fc3e39fd3c5cde9a1c5df36",
+    "en": "0a38a092bd5764f396de124bd5091f46a5c81a1ecc8ce238399b785324e19dcb",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.handover": {
+    "de": "0aebd40b19ff3ad12a67af2fa410d5a26820ba9326489e4da6c4eb9e19faa307",
+    "en": "66b8a9a800ea5b2e9a865bedfa426de55e4c1a1cdd84a55301b95debed6ca0d5",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.commissioning": {
+    "de": "d293820bc3cc8a428687fee0d3b25dd709d4460cc2566ad476ffe9234978fa21",
+    "en": "e22e5ebe16764c755c5383b50a83b28797c05b4e75216ec1e006c56b40d21e93",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.approvedBudget": {
+    "de": "afb53a6735ea9fe5203e522f45649c0064ff57c233e678e391bdc24d7bdf9973",
+    "en": "263ec323efd3b363bd6db5cf8cbb506dea997934fa22ff69245c473127ec558b",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.gross": {
+    "de": "37015b5c981b8db672774a1ee7de18f74b46f7f25fd5d8140c1a9ec27da1da00",
+    "en": "6914401398f629ac563fd35c979e93993dc940b21abbec975346bcc721ea0a30",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.sourceStatus": {
+    "de": "f9eda6c4345b567ab1b3f71c65d988f52a427e43968c4f30fb383dccf0e38751",
+    "en": "4b186b1d53698f5b5993559b5a419f2e1560d4b79c5a3a32f19e486e99b51e0e",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.open": {
+    "de": "f269e1fa630d92d1a271a6614143e60ef1883056f094e926d9663aee5b9b9d73",
+    "en": "657a450160fd5e062d3dcaab1c9101a3480012cc5d86d3796d8a515fb2e9f269",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.openHint": {
+    "de": "86f4d2272586b67e102d7da6d8ac6396487c462d46780cbdfa1c9deba6861930",
+    "en": "e4a14f54afe2c22bcfffc77387082d57780c01f023643b03fd111238a1f43f72",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.folders": {
+    "de": "9a0ea37814b101bca2a4da9ad29997157e3ff480ec4279f3fbc1513592d15b3c",
+    "en": "8f7693d19bfcc05cd4a6362b9f96011b220c2eb2f82e0e9943155f5c65f8a4ae",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.folder.schedule": {
+    "de": "b047659c7285e08d7494624455324c005b4b1f47b0c19e879b321b8466f4955d",
+    "en": "f4830a1dae2980447c716bd4b5779b7013575ef09f70ef4731457218792487b3",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.folder.budget": {
+    "de": "1c6225ec7092ad2f4a4acd79f8fc6854aa10653763fb053a6cf2bb2d2a4148ab",
+    "en": "1c6225ec7092ad2f4a4acd79f8fc6854aa10653763fb053a6cf2bb2d2a4148ab",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.folder.sources": {
+    "de": "c7860048458ffe3bc7e0f3c8ce3ccdfe5a89bcc002afb491dbfe151223c5d253",
+    "en": "caf85b0888d78f1f83771a07b25c3d30fa1210242f2fae6e5ae5d9a686602800",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.folder.questions": {
+    "de": "4cf11de4a8bf07df33f1a825d36fda5994220829aa4089aa0d71ecef97d7e347",
+    "en": "5e0a96ef86c219c391afd5f0a25827cf8813194caf8e2753aff31c4213879415",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.scheduleHeading": {
+    "de": "bc5b090efa6ee2578a83aada286a0619289019bb08169356dba1bf00f138be94",
+    "en": "beddd6e3d86f115d7e026fdbaba0d57efe94f328a6970950ec787484314c295f",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.noSchedule": {
+    "de": "758e81d1513aab301f774ad826b62d5e56be876e4134acf001477f8c1ca40456",
+    "en": "633fa8645b3207ceec03b254bd6264f871f51fcee251ff5cb44ed1cbc936cdbe",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.budgetHeading": {
+    "de": "809cfe9de558befb1ea48f102e45271224680e11464556a635d90c67e6410b7c",
+    "en": "f73c09b95b5080a8b273cf4349d853a7501a95ce9b0496adb1fd2b5f4a19bdac",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.budgetHint": {
+    "de": "8039a4b45732b3fd1ccaed2c2b22efc1e2f796bd9ce25184cc9b16a5b65ef298",
+    "en": "298a1c262a296505ef3978673277009034871c8defca93e0da4e83864124e661",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.noBudget": {
+    "de": "679f5a672edc1b3f64d762f3410a5e64efe5a697c77ecc5c46d72eb90553c521",
+    "en": "13643d8ce992aa60f8dca021814da1892754f8a557fb6eeae5a04b9136efa4d2",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.sourcesHeading": {
+    "de": "4173f7ed091b1e4501c81b00e17a64d38f58199f1cf36489e4cee3c07cf39749",
+    "en": "f9b7debe0901466bd4813ad501acb3f24c59fca41041ece4b029e7dcc059462b",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.sourcesHint": {
+    "de": "4cdcadcf7aa4e95c9b654cb7bdd7b30ae8eb2e0f695413a6ed1a182845846757",
+    "en": "96ce406805dc87e216167929dd077eb094fcce388dc2507d28544ff537f064f8",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.openSource": {
+    "de": "8c4530dae1dc792905896b129969d3a700ebf5f159eb597c9007543999d65c17",
+    "en": "7be0d176050c6450b563bc592db09a4c946f3541357abf850e9ad3d59b043f95",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.questionsHeading": {
+    "de": "307aab4144800c89e429f715ff2b703967574ad11e72d936bf59bf1095e5df8a",
+    "en": "ff55e3352683507eda36f0357587ca6ccf06a26ba8d38ec57861fe09027d90b4",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.budgetConflict": {
+    "de": "7344df17c4a282fce97f6ee50b0e6824025aa00cd709881016c7418117eb8398",
+    "en": "812015555e83d24acd7d06c5ed7ac8a7067415f9a132626c63d0f161bca95ec9",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.noQuestions": {
+    "de": "829d85c952b4fed12f20ade9bcc37c73c91796f4cc89920dfbe93cc58634a62d",
+    "en": "f744b3e7873e25061a59e42ed497340c2beb0d08efd3977ec24c7ffbd631012b",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.basicEvidence": {
+    "de": "26210cd3bce905644042c92b2d55baa67b9eca6c8e6ccf828189c2804e8c8ac9",
+    "en": "3e113c53a500634032638997532c53a2ea97f00e1d80c11b0a0ef0fd3f001174",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
+  },
+  "messages:card.dateUnconfirmed": {
+    "de": "839f2239fb2c1cfb5e60f7f15108affefb911e8933dd88714d4075b89fe35a5d",
+    "en": "5ca6cba0284cc6d9c94cd4a9b92b935686764588040bf0e383598f87cbc966e8",
+    "editorialAcknowledgment": "Codex paired update; independent verification not established"
   }
 }

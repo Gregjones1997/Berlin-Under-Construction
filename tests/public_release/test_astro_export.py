@@ -179,8 +179,8 @@ def test_history_routes_and_atlas_actions_describe_their_actual_depth(
     assert "Browse the project index — 3 full dossiers" in atlas
     assert "150 basic listings" in atlas
     assert "Full project overview" not in atlas
-    assert "Review source history &amp; evidence" in atlas
-    assert "Review published facts &amp; evidence" in atlas
+    assert "Open project folders" in atlas
+    assert 'role="tablist"' in atlas
     assert "Open full dossier" in atlas
 
 
@@ -420,6 +420,11 @@ def test_rebuild_after_planned_date_changes_footer_and_c010_caveat(
         "That date has passed, but no confirming source is recorded. "
         "Completion is not asserted."
     ) in after_export
+    after_atlas = (after_dir / "en/index.html").read_text(encoding="utf-8")
+    before_atlas = (before_dir / "en/index.html").read_text(encoding="utf-8")
+    assert "Planned date passed; milestone unconfirmed." in after_atlas
+    assert "Planned date passed; milestone unconfirmed." not in before_atlas
+
 
 
 def test_every_internal_link_resolves_in_the_static_export(
@@ -594,3 +599,31 @@ def test_unverified_translations_never_claim_confirmed_terminology(c014_export: 
     assert 'nicht unabhängig geprüft' in german
     assert 'Technical handover' in english
     assert 'confirmed within reviewed scope' not in english.lower()
+
+
+def test_atlas_folder_cards_keep_summary_dates_and_source_boundaries(c014_export: str) -> None:
+    atlas = (DIST / "index.html").read_text(encoding="utf-8")
+    card = atlas.split('id="record-C-014"', 1)[1].split('id="record-C-010"', 1)[0]
+    assert "record-id" not in card
+    assert card.index("PROJECT RECORD") < card.index("Europaplatz Süd") < card.index("Announced start") < card.index("Forecourt of Berlin Hauptbahnhof")
+    assert "02/02/2026" in card
+    assert "Planned end" in card
+    assert "Approved budget" in card
+    assert "3,183,000 €" in card
+    assert "translation-note" not in card
+    assert 'class="translation-disclosure"' in card
+    for folder in ("schedule", "budget", "sources", "questions"):
+        assert f'data-record-folder="{folder}"' in card
+        assert f'data-folder-page="{folder}"' in card
+        assert f'aria-controls="C-014-folder-{folder}"' in card
+    parser = _FactLocationParser()
+    parser.feed(card)
+    for fact_id in ("c014-places-programme-page-figure", "c014-places-programme-index-figure"):
+        assert parser.fact_locations[fact_id] == [True]
+    school = atlas.split('id="record-C-010"', 1)[1].split('id="record-C-019"', 1)[0]
+    assert "Planned handover" in school
+    assert "31/08/2026" in school
+    plant = atlas.split('id="record-C-019"', 1)[1].split('class="project-record basic-record"', 1)[0]
+    assert "Planned commissioning" in plant
+    assert "by the end of 2028" in plant
+    assert "Approved budget" not in plant

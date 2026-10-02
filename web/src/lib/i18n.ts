@@ -95,3 +95,8 @@ export function factWarning(fact: PublicFact, locale: Locale): string {
     { date: dateText(date, locale), sourceDate },
   );
 }
+
+import { numericCardDate } from "./card-dates";
+export function cardDate(value: string, locale: Locale): string {
+  return numericCardDate(value, locale) ?? dateText(value, locale);
+}

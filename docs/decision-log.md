@@ -1253,3 +1253,20 @@ neither evidence publication, source privacy, naming, conflict/withheld treatmen
 glossary verification nor golden-set authority. No translation provider, new client
 island or third-party runtime request is authorized. Physical-phone acceptance and
 production deployment are separate checks.
+
+## ADR-028 — Put translation disclosure at the bottom of project records
+
+**Accepted:** 2 October 2026. After inspecting the bilingual cards, the owner
+explicitly requested removal of repeated editorial-translation notices from the
+main reading flow, allowing a bottom disclosure or the Impressum instead.
+
+Render one keyboard/touch-accessible native disclosure at the bottom of each atlas
+project card and static reading page, linking the contextual terminology register.
+It states that the editorial translation is not independently verified and that
+German wording remains canonical. Per-fact notices are removed. Verification
+metadata, contextual term status and the bilingual release review gate are unchanged.
+Moving disclosure does not confirm a translation or authorize a bilingual release.
+
+The owner also requested date-first summaries and clickable source/budget folders.
+Those use the already authorized atlas client JavaScript. Static dossier routes
+remain JavaScript-free, and all original German evidence remains available.

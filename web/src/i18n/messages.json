@@ -1870,5 +1870,117 @@
   "terms.confirmed": {
     "en": "Confirmed within reviewed scope",
     "de": "Im geprüften Umfang bestätigt"
+  },
+  "card.translation": {
+    "en": "Translation & source notes",
+    "de": "Hinweise zu Übersetzung und Quellen"
+  },
+  "card.start": {
+    "en": "Announced start",
+    "de": "Angekündigter Beginn"
+  },
+  "card.plannedEnd": {
+    "en": "Planned end",
+    "de": "Geplantes Ende"
+  },
+  "card.handover": {
+    "en": "Planned handover",
+    "de": "Geplante Übergabe"
+  },
+  "card.commissioning": {
+    "en": "Planned commissioning",
+    "de": "Geplante Inbetriebnahme"
+  },
+  "card.approvedBudget": {
+    "en": "Approved budget",
+    "de": "Genehmigtes Budget"
+  },
+  "card.gross": {
+    "en": "gross",
+    "de": "brutto"
+  },
+  "card.sourceStatus": {
+    "en": "Latest source status",
+    "de": "Letzter Quellenstand"
+  },
+  "card.open": {
+    "en": "Open project folders",
+    "de": "Projektordner öffnen"
+  },
+  "card.openHint": {
+    "en": "Schedule, budget & original sources",
+    "de": "Termine, Budget und Originalquellen"
+  },
+  "card.folders": {
+    "en": "Project folders",
+    "de": "Projektordner"
+  },
+  "card.folder.schedule": {
+    "en": "Schedule",
+    "de": "Termine"
+  },
+  "card.folder.budget": {
+    "en": "Budget",
+    "de": "Budget"
+  },
+  "card.folder.sources": {
+    "en": "Sources",
+    "de": "Quellen"
+  },
+  "card.folder.questions": {
+    "en": "Open questions",
+    "de": "Offene Fragen"
+  },
+  "card.scheduleHeading": {
+    "en": "Dates & earlier plans",
+    "de": "Termine und frühere Planungen"
+  },
+  "card.noSchedule": {
+    "en": "No milestone dates are published for this record.",
+    "de": "Für diesen Eintrag sind keine Meilensteintermine veröffentlicht."
+  },
+  "card.budgetHeading": {
+    "en": "Budget & funding",
+    "de": "Budget und Finanzierung"
+  },
+  "card.budgetHint": {
+    "en": "Budget and financing figures retain their own scope. They do not establish current spending or a cost overrun.",
+    "de": "Budget- und Finanzierungsangaben behalten ihren jeweiligen Geltungsbereich. Sie belegen weder aktuelle Ausgaben noch eine Kostenüberschreitung."
+  },
+  "card.noBudget": {
+    "en": "No budget figure is published for this record.",
+    "de": "Für diesen Eintrag ist kein Budgetbetrag veröffentlicht."
+  },
+  "card.sourcesHeading": {
+    "en": "The original record",
+    "de": "Die Originalquellen"
+  },
+  "card.sourcesHint": {
+    "en": "Open a source file to inspect its original German wording. Differing figures stay together in the Budget folder.",
+    "de": "Öffnen Sie eine Quelldatei, um die deutsche Originalformulierung zu lesen. Abweichende Beträge bleiben im Ordner Budget zusammen dargestellt."
+  },
+  "card.openSource": {
+    "en": "Open original source {number}",
+    "de": "Originalquelle {number} öffnen"
+  },
+  "card.questionsHeading": {
+    "en": "What remains unresolved",
+    "de": "Was ungeklärt bleibt"
+  },
+  "card.budgetConflict": {
+    "en": "The Budget folder contains unreconciled financing figures. Neither figure is preferred.",
+    "de": "Der Ordner Budget enthält ungeklärte Finanzierungsangaben. Keiner der Beträge wird bevorzugt."
+  },
+  "card.noQuestions": {
+    "en": "No withheld facts are recorded here. This is not a completeness assessment.",
+    "de": "Hier sind keine zurückgehaltenen Angaben erfasst. Das ist keine Bewertung der Vollständigkeit."
+  },
+  "card.basicEvidence": {
+    "en": "Original register entry & evidence",
+    "de": "Originaler Registereintrag und Belege"
+  },
+  "card.dateUnconfirmed": {
+    "en": "Planned date passed; milestone unconfirmed.",
+    "de": "Geplanter Termin verstrichen; Meilenstein nicht bestätigt."
   }
 }

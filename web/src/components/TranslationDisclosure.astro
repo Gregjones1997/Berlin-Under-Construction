@@ -1,0 +1,12 @@
+---
+import { forLocale, localeFromPath, localizePath } from "../lib/i18n";
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
+---
+
+<details class="translation-disclosure">
+  <summary>{t("card.translation")}</summary>
+  <p><strong>{t("translation.note")}</strong></p>
+  <p>{t("translation.pending", { version: "1.1" })}</p>
+  <a href={localizePath("/terminology/", locale)}>{t("translation.terms")}</a>
+</details>

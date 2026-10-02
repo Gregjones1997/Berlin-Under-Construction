@@ -1,0 +1,356 @@
+---
+import type { PublicProjectPage } from "../lib/public-projects";
+import {
+  forLocale,
+  localeFromPath,
+  localizePath,
+  projectName,
+  factText,
+  cardDate,
+  enumLabel,
+  formatNumber,
+} from "../lib/i18n";
+import RawFact from "./RawFact.astro";
+import Icon from "./AtlasIcon.astro";
+import TranslationDisclosure from "./TranslationDisclosure.astro";
+interface Props {
+  project: PublicProjectPage & { position?: unknown };
+  index: number;
+}
+const { project, index } = Astro.props;
+const locale = localeFromPath(Astro.url.pathname);
+const t = forLocale(locale);
+const facts = project.publishedFacts;
+const start = facts.find((f) =>
+  f.factId.endsWith("construction-start-current"),
+);
+const lead =
+  facts.find(
+    (f) => f.factType === "milestone" && f.factId.endsWith("current"),
+  ) ?? facts.find((f) => f.factType === "milestone");
+const description = facts.find((f) => f.factType === "project_location");
+const status = facts.find((f) => f.factType === "status");
+const money = facts.filter((f) => f.factType === "financial_measure");
+const budget = money.find((f) => f.measureType === "approved_budget");
+const milestones = facts.filter((f) => f.factType === "milestone");
+const financialConflicts = project.conflicts.filter((c) =>
+  c.facts.every((f) => f.factType === "financial_measure"),
+);
+const otherConflicts = project.conflicts.filter(
+  (c) => !financialConflicts.includes(c),
+);
+const sourceGroups = [...new Set(facts.map((f) => f.evidence!.sourceUrl))].map(
+  (url) => ({ url, facts: facts.filter((f) => f.evidence!.sourceUrl === url) }),
+);
+const folders = ["schedule", "budget", "sources", "questions"] as const;
+const endLabel =
+  lead?.milestoneType === "handover"
+    ? "card.handover"
+    : lead?.milestoneType === "commissioning"
+      ? "card.commissioning"
+      : "card.plannedEnd";
+const sourceDate = (fact: typeof lead) =>
+  String((fact?.dateValue as { canonicalDe?: string })?.canonicalDe ?? "");
+---
+
+<section
+  id={`record-${project.projectId}`}
+  class="project-record folder-record"
+  hidden
+>
+  <div class="record-summary" data-record-section="overview">
+    <header class="record-heading">
+      <p class="eyebrow">
+        {t("pages.index.85")}{" "}
+        {String(index + 1).padStart(2, "0")}
+      </p>
+      <h2 lang={locale}>{projectName(project, locale)}</h2>
+    </header>
+    <div class="project-brief">
+      <dl class="brief-dates card-dates">
+        <div>
+          <dt>{t("card.start")}</dt><dd>
+            {
+              start ? (
+                <>
+                  <>
+                    <span>{cardDate(sourceDate(start), locale)}</span>
+                    <a
+                      class="fact-source"
+                      href={start.evidence!.sourceUrl}
+                      aria-label={t("pages.index.93")}
+                    >
+                      <Icon name="arrow" />
+                    </a>
+                  </>
+                </>
+              ) : (
+                <span class="date-missing">{t("pages.index.94")}</span>
+              )
+            }
+          </dd>
+        </div>
+        <div>
+          <dt>{t(endLabel)}</dt><dd>
+            {
+              lead ? (
+                <>
+                  <>
+                    <span>{cardDate(sourceDate(lead), locale)}</span>
+                    <a
+                      class="fact-source"
+                      href={lead.evidence!.sourceUrl}
+                      aria-label={t("atlas.source.planned", {
+                        term: enumLabel(lead.milestoneType, locale),
+                      })}
+                    >
+                      <Icon name="arrow" />
+                    </a>
+                  </>
+                </>
+              ) : (
+                <span class="date-missing">{t("pages.index.94")}</span>
+              )
+            }
+          </dd>
+        </div>
+      </dl>
+      {
+        description && (
+          <p class="brief-description">
+            {factText(description, locale)}{" "}
+            <a
+              class="fact-source"
+              href={description.evidence!.sourceUrl}
+              aria-label={t("components.RawFact.27")}
+            >
+              <Icon name="arrow" />
+            </a>
+          </p>
+        )
+      }
+      {
+        budget && (
+          <div class="card-budget">
+            <span>{t("card.approvedBudget")}</span>
+            <strong>
+              {formatNumber((budget.amount as { value: number }).value, locale)}{" "}
+              €
+            </strong>
+            {(budget.taxTreatment as { value?: string })?.value === "gross" && (
+              <small>{t("card.gross")}</small>
+            )}
+            <a
+              class="fact-source"
+              href={budget.evidence!.sourceUrl}
+              aria-label={t("components.RawFact.27")}
+            >
+              <Icon name="arrow" />
+            </a>
+          </div>
+        )
+      }
+      {
+        status && (
+          <div class="card-status">
+            <>
+              <span>{t("card.sourceStatus")}</span>
+              <p>
+                {factText(status, locale)}{" "}
+                <a
+                  class="fact-source"
+                  href={status.evidence!.sourceUrl}
+                  aria-label={t("pages.index.89")}
+                >
+                  <Icon name="arrow" />
+                </a>
+              </p>
+              <small>
+                {String((status.asOfDate as { value?: string })?.value ?? "")}
+              </small>
+            </>
+          </div>
+        )
+      }
+      {!project.position && <p class="withheld-note">{t("pages.index.87")}</p>}
+      {((lead?.displayWarnings??[]) as string[]).some(warning=>warning.includes('has passed'))&&<p class="brief-warning">{t('card.dateUnconfirmed')}</p>}
+      <button class="brief-more card-open" data-expand-record
+        ><span
+          ><strong>{t("card.open")}</strong><small>{t("card.openHint")}</small
+          ></span
+        ><Icon name="arrow" /></button
+      >
+    </div>
+  </div>
+  <div class="record-workspace" data-record-section="history" hidden>
+    <div class="folder-tabs" role="tablist" aria-label={t("card.folders")}>
+      {
+        folders.map((folder, i) => (
+          <button
+            type="button"
+            role="tab"
+            data-record-folder={folder}
+            id={`${project.projectId}-tab-${folder}`}
+            aria-controls={`${project.projectId}-folder-${folder}`}
+            aria-selected={i === 0 ? "true" : "false"}
+            tabindex={i === 0 ? 0 : -1}
+          >
+            <>
+              <Icon name="folder" />
+              <span>{t(`card.folder.${folder}`)}</span>
+            </>
+          </button>
+        ))
+      }
+    </div>
+    <div class="folder-pages">
+      <section
+        id={`${project.projectId}-folder-schedule`}
+        role="tabpanel"
+        aria-labelledby={`${project.projectId}-tab-schedule`}
+        data-folder-page="schedule"
+        tabindex="0"
+      >
+        <p class="folder-kicker">{t("card.folder.schedule")}</p><h3>
+          {t("card.scheduleHeading")}
+        </h3><p class="folder-intro">{t("pages.index.103")}</p>
+        {
+          milestones.length ? (
+            milestones.map((f) => <RawFact fact={f} compact />)
+          ) : (
+            <p>{t("card.noSchedule")}</p>
+          )
+        }
+      </section>
+      <section
+        id={`${project.projectId}-folder-budget`}
+        role="tabpanel"
+        aria-labelledby={`${project.projectId}-tab-budget`}
+        data-folder-page="budget"
+        tabindex="0"
+        hidden
+      >
+        <p class="folder-kicker">{t("card.folder.budget")}</p><h3>
+          {t("card.budgetHeading")}
+        </h3><p class="folder-intro">{t("card.budgetHint")}</p>
+        {
+          money.length ? (
+            money.map((f) => <RawFact fact={f} compact />)
+          ) : (
+            <p>{t("card.noBudget")}</p>
+          )
+        }
+        {
+          financialConflicts.map((c) => (
+            <section class="record-conflict" data-conflict-id={c.conflictId}>
+              <h3>{t("pages.index.107")}</h3>
+              {c.facts.map((f) => (
+                <RawFact fact={f} compact />
+              ))}
+            </section>
+          ))
+        }
+      </section>
+      <section
+        id={`${project.projectId}-folder-sources`}
+        role="tabpanel"
+        aria-labelledby={`${project.projectId}-tab-sources`}
+        data-folder-page="sources"
+        tabindex="0"
+        hidden
+      >
+        <p class="folder-kicker">{t("card.folder.sources")}</p><h3>
+          {t("card.sourcesHeading")}
+        </h3><p class="folder-intro">{t("card.sourcesHint")}</p>
+        {
+          sourceGroups.map((group, i) => (
+            <article class="source-file">
+              <header>
+                <>
+                  <span class="source-file-number">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <>
+                      <h4>{new URL(group.url).hostname}</h4>
+                      <p>
+                        {String(
+                          (
+                            group.facts[0].evidence!.publicationDate as {
+                              value?: string;
+                            }
+                          )?.value ?? t("state.not_stated"),
+                        )}
+                      </p>
+                    </>
+                  </div>
+                  <a
+                    href={group.url}
+                    aria-label={t("card.openSource", { number: i + 1 })}
+                  >
+                    <Icon name="arrow" />
+                  </a>
+                </>
+              </header>
+              {group.facts.map((f) => (
+                <details>
+                  <summary>{factText(f, locale)}</summary>
+                  <p class="meta">{t("translation.original")}</p>
+                  <blockquote lang="de">{f.evidence!.exactTextDe}</blockquote>
+                </details>
+              ))}
+            </article>
+          ))
+        }
+      </section>
+      <section
+        id={`${project.projectId}-folder-questions`}
+        role="tabpanel"
+        aria-labelledby={`${project.projectId}-tab-questions`}
+        data-folder-page="questions"
+        tabindex="0"
+        hidden
+      >
+        <p class="folder-kicker">{t("card.folder.questions")}</p><h3>
+          {t("card.questionsHeading")}
+        </h3>
+        {financialConflicts.length > 0 && <p>{t("card.budgetConflict")}</p>}
+        {
+          otherConflicts.map((c) => (
+            <section class="record-conflict" data-conflict-id={c.conflictId}>
+              {c.facts.map((f) => (
+                <RawFact fact={f} compact />
+              ))}
+            </section>
+          ))
+        }
+        {
+          project.withheldFacts.length ? (
+            <section class="record-withheld">
+              {project.withheldFacts.map((f) => (
+                <article
+                  data-fact-id={f.factId}
+                  data-reason-code={f.reasonCode}
+                >
+                  <h4>{enumLabel(f.factType, locale)}</h4>
+                  <p>{t(`reason.${f.reasonCode}`)}</p>
+                </article>
+              ))}
+            </section>
+          ) : (
+            <p>{t("card.noQuestions")}</p>
+          )
+        }
+      </section>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <div class="card-footer-links">
+      <a href={localizePath(`/projects/${project.slug}/`, locale)}
+        >{t("pages.index.109")}</a
+      ><a href={localizePath(project.correctionPath, locale)}
+        >{t("pages.index.102")}</a>
+    </div>
+    <TranslationDisclosure />
+  </footer>
+</section>

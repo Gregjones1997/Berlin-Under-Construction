@@ -21,6 +21,12 @@ The paired catalogs are in `web/src/i18n/`:
 | `terms.json` | Proposed contextual domain mappings, glossary version/revision and review status |
 | `revisions.json` | Acknowledged hashes of both language values; synchronization evidence, not semantic certification |
 
+The atlas folder-card components share these same catalogs. Bottom disclosures
+retain translation status under ADR-028; do not reinsert repetitive notices into
+every fact. Date-only presentation uses `card-dates.ts` and never invents missing
+day/month precision. Folder selection is part of the validated language-switch URL
+state.
+
 Keep existing IDs stable. New wording gets a paired entry and a shared component
 reference. Do not put visitor copy directly into Astro text or public attributes.
 The public-copy check detects literal Astro wording; dynamic atlas messages must

@@ -55,7 +55,6 @@ const otherFacts = project.publishedFacts.filter(
   title={`${projectName(project, locale)} — Berlin, Under Construction`}
   heading={projectName(project, locale)}
   headingLang={locale}
-  subtitle={t("project.subtitle", { id: project.projectId })}
 >
   <section aria-labelledby="current-heading">
     <h2 id="current-heading">{t("pages.projects.slug..231")}</h2>
@@ -76,7 +75,8 @@ const otherFacts = project.publishedFacts.filter(
     }
     <p>
       <a href={localizePath(`/#${project.projectId}`, locale)}
-        >{t("pages.projects.slug..234")}</a>
+        >{t("pages.projects.slug..234")}</a
+      >
     </p>
   </section>
 
@@ -145,23 +145,12 @@ const otherFacts = project.publishedFacts.filter(
     )
   }
 
-  <section aria-labelledby="language-heading">
-    <p>
-      <a href={localizePath("/terminology/", locale)}
-        >{t("translation.terms")}</a>
-    </p>
-    <h2 id="language-heading">{t("pages.projects.slug..244")}</h2>
-    <p>
-      <strong>{t("pages.projects.slug..245")}</strong>
-      {t("pages.projects.slug..246")}
-    </p>
-  </section>
-
   <section>
     <h2>{t("pages.index.164")}</h2>
     <p>
       <a href={localizePath(project.correctionPath, locale)}
-        >{t("pages.projects.slug..247")}</a>
+        >{t("pages.projects.slug..247")}</a
+      >
     </p>
   </section>
 </Base>

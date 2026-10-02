@@ -33,6 +33,7 @@ test("selected map view roundtrips with filter, perspective and layer visibility
     camera: { target: [1000, 0, -100], offset: [1400, 2600, 2800], zoom: 2.2 },
     plan: true,
     expanded: true,
+    folder: "budget",
     filter: "13.38886,52.517",
     area: "overview",
     labels: { projects: true, basic: false, water: true, parks: false },
@@ -89,4 +90,20 @@ test("unverified model explanations cannot pass the release review gate", () => 
   assert.equal(report.pending.facts.length, 20);
   assert.equal(report.pending.listings.length, 150);
   assert.equal(report.pending.terms.length, 14);
+});
+
+import { numericCardDate } from "../src/lib/card-dates.ts";
+test("numeric card dates retain exact-day and partial-date precision", () => {
+  assert.equal(numericCardDate("2. Februar 2026", "en"), "02/02/2026");
+  assert.equal(numericCardDate("2. Februar 2026", "de"), "02.02.2026");
+  assert.equal(numericCardDate("31.08.2026", "en"), "31/08/2026");
+  assert.equal(numericCardDate("2026", "en"), undefined);
+  assert.equal(numericCardDate("Sommer 2026", "en"), undefined);
+  assert.equal(numericCardDate("bis Ende 2028", "en"), undefined);
+});
+
+test('old map links default to Schedule and arbitrary folder IDs are ignored',()=>{
+ const old={camera:{target:[0,0,0],offset:[100,100,100],zoom:1},plan:false,expanded:true,filter:'',area:'overview',labels:{projects:true,basic:true,water:false,parks:false}};
+ assert.equal(decodeViewState(JSON.stringify(old)).folder,'schedule');
+ assert.equal(decodeViewState(JSON.stringify({...old,folder:'untrusted-id'})),undefined);
 });

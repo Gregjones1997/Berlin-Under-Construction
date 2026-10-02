@@ -3338,3 +3338,59 @@ refresh, contested type resolution, human golden value, third-party runtime
 request, client reading-page island or production deployment was added. Physical
 phone acceptance and exact 195 px failure-state verification remain open. Editing
 and independent review procedure: [bilingual-editing.md](bilingual-editing.md).
+
+## 2026-10-02 — Date-first project cards and source folders
+
+**Status:** Local redesign verified; owner visual acceptance and bilingual publication pending.
+
+### Goal and participants
+
+The owner supplied two screenshots and requested dates immediately under the
+project name, less repetitive metadata, a brief summary and clickable folders
+instead of a single long overview. Main agent (Codex; host model identifier not
+exposed; Refero design and in-app Browser skills) owned all edits and checks.
+No agents were delegated. Refero style/screen calls returned NO_SUBSCRIPTION;
+no external reference was accepted. The owner's screenshots and existing site
+styles were the visual target. Refero craft references informed keyboard focus,
+short interruptible motion and reduced-motion treatment. Browser supplied rendered
+checks and screenshots; no tool-generated design artifact was copied into the tree.
+
+### Work and owner decision
+
+A shared Astro project-card component leads with the record label, name, numeric
+source-stated dates and location description. Approved budget and dated source
+status appear where supported. Expanded cards keep the summary on the left and
+show one Schedule, Budget, Sources or Open questions folder on the right. The
+source folder groups retained short quotations by source URL. Conflicting figures
+remain together in the budget conflict presentation; withheld entries show reasons.
+Keyboard arrows/Home/End navigate tabs, and the validated language-switch state
+retains the folder. Existing basic cards also place their available dates first.
+No invented budget variance, on-time ticker or plan document was introduced.
+A compact notice retains the existing passed-date/unconfirmed-milestone caveat,
+so a historical source status does not imply current on-time performance.
+
+ADR-028 records the owner's explicit request to move translation status into a
+bottom disclosure. Original evidence, review metadata, glossary status and release
+checks are unchanged. Static dossiers remain JavaScript-free. The motion uses the
+existing atlas JavaScript/CSS; no third-party runtime request was added.
+
+### Course correction
+
+The prior bilingual cards repeated an editorial-translation warning and internal
+dossier subtitle in the primary reading flow. The owner identified that clutter
+in screenshots. This follow-up moved the warning to one accessible bottom
+disclosure, removed the subtitle and changed the card hierarchy. This was one
+interface iteration; no false verification claim or source record was changed.
+
+### Verification and limitations
+
+213 Python tests, ten Node checks, TypeScript, 34-route/271-asset draft packaging
+and the full 305-file export scan passed. The integration checks retain financial
+conflict boundaries and precise dates; browser checks covered the desktop workspace,
+phone layouts at 390/320 px, keyboard navigation and cross-language folder retention.
+A formatter omitted the initial budget caption; an export assertion caught it and
+it was restored. Browser QA caught overlapping back/close controls and a phone close
+control scrolling offscreen; both were repaired before handoff. Design decisions,
+screenshots and remaining checks are in [project-card-redesign.md](project-card-redesign.md).
+No physical-device, exact 195 px failure fixture, OS reduced-motion toggle, independent
+language review or production deployment is claimed.

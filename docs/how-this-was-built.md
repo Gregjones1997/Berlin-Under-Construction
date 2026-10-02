@@ -3265,6 +3265,6 @@ Main agent (Codex; host model identifier not exposed; Chrome browser skill) open
 
 **Status:** Local Chrome check passed; final production check pending.
 
-**Commit:** Pending session hash recording.
+**Commit:** `d61fd05` — `fix(atlas): clear controls and center mobile key`.
 
 Main agent (Codex; host model identifier not exposed; Chrome browser skill) saw the corrected label overlap the bottom toolbar in the second READY deployment, then found the project key shifted left at 390 px. The lower-label offset now clears the toolbar, and the mobile key resets the desktop centering transform. A fresh local packaged build in Chrome showed the 260 × 59 px lower label fully above the toolbar (label bottom 682 px, toolbar top 720 px); the project key occupied x=12–378 px at a 390 px viewport, with no document overflow. Selecting Mitte showed the same 25 basic pins and 25 directory entries. The 15-page package passed again. Final production behavior still needs a Chrome check after the next deployment.

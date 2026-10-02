@@ -1,12 +1,8 @@
 @import "./design-tokens.css";
 :root {
-  --rule-2: #f1efea;
-  --flag: #a5121a;
-  --flag-bg: #fcf5f4;
-  --hold: #7e6f20;
-  --hold-bg: #fbf8ec;
-  --content-width: 51.25rem;
-  --page-gutter: clamp(18px, 5vw, 32px);
+  /* Page aliases resolve to the shared Lumos adaptation in design-tokens.css. */
+  --content-width: var(--container-reading);
+  --page-gutter: var(--layout-gutter);
 }
 * {
   box-sizing: border-box;
@@ -16,7 +12,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   overflow-wrap: anywhere;
-  font: 400 16px/1.62 var(--sans);
+  font: var(--font-weight-regular) var(--text-body) / var(--leading-body) var(--font-ui);
   -webkit-text-size-adjust: 100%;
 }
 main {
@@ -25,12 +21,12 @@ main {
   padding: 0 var(--page-gutter) 80px;
 }
 a {
-  color: var(--flag);
+  color: var(--text-action);
   text-underline-offset: 2px;
 }
 a:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--flag);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -112,7 +108,7 @@ h2[lang="de"],
 }
 .meta strong {
   font-weight: 600;
-  color: var(--flag);
+  color: var(--text-action);
 }
 .micro {
   font: 600 10px/1 var(--sans);
@@ -181,18 +177,18 @@ blockquote {
 }
 
 .conflict {
-  border: 1px solid var(--flag);
-  background: var(--flag-bg);
+  border: 1px solid var(--state-conflict);
+  background: var(--state-conflict-surface);
   margin-top: 8px;
 }
 .conflict > h3 {
   font: 600 10px/1 var(--sans);
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--flag);
+  color: var(--state-conflict);
   margin: 0;
   padding: 11px 16px;
-  border-bottom: 1px solid var(--flag);
+  border-bottom: 1px solid var(--state-conflict);
 }
 .conflict .pair {
   display: grid;
@@ -203,19 +199,19 @@ blockquote {
   background: var(--paper);
 }
 .conflict .pair > *:first-child {
-  border-right: 1px solid var(--flag);
+  border-right: 1px solid var(--state-conflict);
 }
 .conflict .note {
   font-size: 13.5px;
   color: var(--ink-2);
   padding: 13px 16px;
-  border-top: 1px solid var(--flag);
+  border-top: 1px solid var(--state-conflict);
   margin: 0;
 }
 
 .withheld {
-  border-left: 3px solid var(--hold);
-  background: var(--hold-bg);
+  border-left: 3px solid var(--state-withheld);
+  background: var(--state-withheld-surface);
   padding: 13px 16px;
   margin-bottom: 10px;
 }
@@ -243,7 +239,7 @@ svg[role="img"] path {
   stroke-width: 1;
 }
 svg[role="img"] circle {
-  fill: #d9622b;
+  fill: var(--swatch-map-public);
   stroke: #fff;
   stroke-width: 2;
 }
@@ -331,3 +327,7 @@ summary { min-height:44px; padding-block:10px; }
 @media(prefers-reduced-motion:no-preference) { .dossier-cards a { transition:background-color 150ms ease; } }
 @media(max-width:700px) { .index-opening { grid-template-columns:1fr; gap:0; } .register-directory ul { columns:1; } .directory-heading h2 { font-size:27px; } }
 .mast h1[lang] { font-size:clamp(32px,5vw,46px); line-height:1.16; }
+
+/* Evidence-state colours stay distinct from the rust action role. */
+.record-conflict { border-left-color: var(--state-conflict); }
+.record-withheld { border-left-color: var(--state-withheld); }

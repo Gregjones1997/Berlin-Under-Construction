@@ -9,6 +9,33 @@ const selects = [
   ...document.querySelectorAll<HTMLButtonElement>(".project-select"),
 ];
 const pins = [...document.querySelectorAll<HTMLButtonElement>(".project-pin")];
+const basicPins = pins.filter((pin) => pin.dataset.depth === "basic");
+const basicDirectory = [...document.querySelectorAll<HTMLButtonElement>(".basic-directory .project-select")];
+const placeFilter = $<HTMLSelectElement>("basic-place-filter");
+const placeFilterStatus = $("place-filter-status");
+function distanceKm(lon1: number, lat1: number, lon2: number, lat2: number) {
+  const radians = Math.PI / 180;
+  const dLat = (lat2 - lat1) * radians;
+  const dLon = (lon2 - lon1) * radians;
+  const a = Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * radians) * Math.cos(lat2 * radians) * Math.sin(dLon / 2) ** 2;
+  return 12742 * Math.asin(Math.min(1, Math.sqrt(a)));
+}
+placeFilter.addEventListener("change", () => {
+  const selected = placeFilter.value ? placeFilter.value.split(",").map(Number) : null;
+  const visibleIds = new Set<string>();
+  for (const pin of basicPins) {
+    const nearby = !selected || distanceKm(Number(pin.dataset.lon), Number(pin.dataset.lat), selected[0], selected[1]) <= 3;
+    pin.classList.toggle("filtered-out", !nearby);
+    if (nearby) visibleIds.add(pin.dataset.project!);
+  }
+  for (const button of basicDirectory) button.hidden = !visibleIds.has(button.dataset.project!);
+  const count = visibleIds.size;
+  placeFilterStatus.textContent = selected
+    ? `${count} basic listing${count === 1 ? "" : "s"} within 3 km of ${placeFilter.selectedOptions[0].textContent}.`
+    : `Showing all ${count} basic listings.`;
+  $("selection-status").textContent = placeFilterStatus.textContent;
+});
 let city: CityRenderer | undefined;
 let selection: string | null = null;
 const viewHistory: { camera: MapView; label: string; area: string; plan: boolean; project: string | null }[] = [];
@@ -44,6 +71,10 @@ function choose(id: string, updateHash = true, remember = true) {
   const button = selects.find((b) => b.dataset.project === id);
   const record = $(`record-${id}`);
   if (!button || !record) return;
+  if (basicPins.some((pin) => pin.dataset.project === id && pin.classList.contains("filtered-out"))) {
+    placeFilter.value = "";
+    placeFilter.dispatchEvent(new Event("change"));
+  }
   record.querySelectorAll<HTMLElement>("[data-record-section]").forEach(section => {
     section.hidden = section.dataset.recordSection !== "overview";
   });

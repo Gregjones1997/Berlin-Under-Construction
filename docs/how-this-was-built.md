@@ -3225,3 +3225,28 @@ completed work. No provider call, external message, deployment or publication oc
 `.gstack/qa-reports/qa-report-localhost-2026-09-23.md` and
 `docs/product-review/evidence/gstack-2026-09-23/`. Commit hashes are recorded in the
 closing build-log commit for this session.
+
+
+## 2026-09-26 — Local City Desk design finishing candidate
+
+Participants: GPT-6 Astra direction/visual review; GPT-5.6 Luna Max bounded CSS and Astro guide implementation; coordinating agent integration and in-app browser verification; personal-design and browser skills. Delegation separated project implementation from portfolio integration. Accepted semantic roles, real style-guide route and wrapping refinements. The delegated documentation lane was interrupted before its writes applied; the coordinator completed the evidence records. No claim that the delegated documentation was completed is made.
+
+Verified at the handoff: implementation lane typecheck/diff check and 15-page build; coordinator's WebGL phone atlas, no overflow at 390/320, keyboard index→dossier→Evidence→history→atlas return; Astra desktop visual review. Original source dates and display boundaries remain intact. Exact 195px current-candidate failure fixture and reduced-motion runtime were not repeated. Existing 23 September evidence remains historical. Fresh capture manifest and limitations: [local handoff](design-refresh-2026-09-26/HANDOFF.md). The candidate remained uncommitted and unpublished at the 26 September handoff; it was integrated into the 2 October release work below.
+
+## 2026-10-02 — Atlas label repair and place filter
+
+**Status:** Local release candidate; public verification pending.
+
+**Commit:** Pending session hash recording.
+
+### Goal and participants
+
+The owner reported clipped hover labels on the 150 basic pins and asked for a working place or type filter. Main agent (Codex; host model identifier not exposed in this session; browser and Vercel deployment skills) repaired pin-label positioning and added a 3 km place-point filter to the project key. The earlier 26 September delegated design candidate was integrated as recorded above; no new agents were spawned for this change.
+
+### Changes and checks
+
+The filter uses existing published map coordinates and named navigation anchors. It states its radius and does not present an administrative district or infer a project type from an unverified German title. The directory and map pins follow the same selection; selecting a filtered-out record resets the filter. Labels wrap and move inward/upward at map edges. The new style-guide route raised the static route count from 14 to 15, so the package guard and its fixtures were updated. The first complete test pass exposed the count mismatch, which was fixed before release. Final checks: 209 Python tests, TypeScript, 15-page Astro build, 15-route/271-asset Vercel package, public-export privacy/withheld scan, and `git diff --check` passed. The production-date package reused the matching owner-approved address from the prior local public package without printing it.
+
+### Limitations and next check
+
+The attempted local browser preview was unavailable in the sandbox, so the live Chrome check must confirm edge-label visibility, filter interaction and responsive presentation after deployment. No type filter is claimed: the 150 basic listings lack a verified type field. No source facts, golden values, glossary status or project-status conclusions changed.

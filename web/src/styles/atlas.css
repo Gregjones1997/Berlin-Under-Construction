@@ -8,9 +8,9 @@
 }
 body {
   margin: 0;
-  font: 14px/1.5 var(--sans);
-  color: var(--ink);
-  background: var(--paper);
+  font: var(--font-weight-regular) 14px / var(--leading-meta) var(--font-ui);
+  color: var(--text-primary);
+  background: var(--surface-canvas);
 }
 button,
 a,
@@ -37,17 +37,17 @@ button:focus-visible,
 a:focus-visible,
 summary:focus-visible,
 canvas:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 4px;
 }
 button:hover {
-  color: var(--accent);
+  color: var(--action-hover);
 }
 [hidden] {
   display: none !important;
 }
 button:disabled {
-  opacity: 0.45;
+  opacity: var(--control-disabled-opacity);
   cursor: wait;
 }
 svg {
@@ -130,7 +130,7 @@ svg {
   color: #60685f;
 }
 .project-picker {
-  background: var(--panel);
+  background: var(--surface-panel);
   box-shadow: var(--shadow);
   pointer-events: auto;
   border: 1px solid #c6cac05c;
@@ -210,7 +210,7 @@ svg {
   top: 98px;
   width: 338px;
   max-height: calc(100% - 209px);
-  background: var(--panel);
+  background: var(--surface-panel);
   border: 1px solid #c6cac063;
   border-radius: 3px;
   box-shadow: var(--shadow);
@@ -223,7 +223,7 @@ svg {
   padding: 25px 25px 20px;
 }
 .record-heading .eyebrow {
-  color: var(--accent);
+  color: var(--text-action);
   font-size: 8px;
   margin-bottom: 12px;
 }
@@ -292,7 +292,7 @@ svg {
   margin: 6px 0;
 }
 .project-record .meta strong {
-  color: var(--accent);
+  color: var(--text-action);
   font-weight: 500;
 }
 .project-record article details {
@@ -309,7 +309,7 @@ svg {
 }
 .project-record article details a {
   text-decoration: underline;
-  color: var(--accent);
+  color: var(--text-action);
 }
 .project-record blockquote {
   margin: 10px 0;
@@ -340,8 +340,8 @@ svg {
   justify-content: space-between;
   gap: 15px;
   align-items: center;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--control-primary-surface);
+  color: var(--control-primary-text);
   padding: 13px 16px;
   font-size: 11px;
   border-radius: 2px;
@@ -350,14 +350,14 @@ svg {
   display: block;
   text-align: center;
   font-size: 11px;
-  color: var(--muted);
+  color: var(--text-action);
   margin-top: 14px;
 }
 .withheld-note {
   padding: 12px 24px;
   font-size: 11px;
   color: var(--muted);
-  border-left: 2px solid var(--accent);
+  border-left: 2px solid var(--state-withheld);
   margin: 0 20px 20px 0;
 }
 .map-right-controls {
@@ -452,7 +452,7 @@ svg {
   border-radius: 2px;
 }
 .map-toolbar [aria-pressed="true"] {
-  background: #e5e9df;
+  background: var(--control-selected-surface);
   color: var(--ink);
 }
 .toolbar-divider {
@@ -490,13 +490,24 @@ svg {
   align-items: center;
   justify-content: space-between;
   gap: 15px;
+  min-width: 0;
+  max-width: 100%;
   font-size: 8px;
   color: var(--muted);
   border-top: 1px solid var(--rule);
 }
 .atlas-footer nav {
   display: flex;
+  min-width: 0;
   gap: 16px;
+}
+.atlas-footer span,
+.atlas-footer nav,
+.atlas-footer a {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .footer-center {
   font-family: var(--serif);
@@ -510,6 +521,7 @@ svg {
   z-index: 2;
   overflow: hidden;
 }
+.project-pin.filtered-out { display: none; }
 .project-pin {
   position: absolute;
   left: 0;
@@ -539,9 +551,9 @@ svg {
   margin-left: 5px;
   border: 1px solid #c6cac078;
   border-radius: 2px;
-  max-width: 230px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: min(230px, var(--pin-label-max, 230px));
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .project-pin:hover .pin-label,
 .project-pin.selected .pin-label {
@@ -584,29 +596,56 @@ svg {
 }
 .map-failure {
   position: absolute;
-  inset: 16px;
+  inset: clamp(12px, 2vw, 16px);
   z-index: 12;
-  width: min(560px, calc(100% - 32px));
+  width: auto;
+  min-width: 0;
+  max-width: min(560px, calc(100% - 24px));
   height: max-content;
-  max-height: calc(100% - 32px);
+  max-height: calc(100% - 24px);
   margin: auto;
   overflow: auto;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   background: var(--panel);
-  padding: 40px;
+  padding: clamp(20px, 4vw, 40px);
   box-shadow: var(--shadow);
 }
 .map-failure h2 {
-  font: 32px var(--serif);
+  max-width: 100%;
+  font: 32px / var(--leading-heading) var(--serif);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.map-failure p,
+.map-failure #failure-message {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.failure-actions {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+  max-width: 100%;
 }
 .map-failure a,
 .map-failure button {
   display: flex;
   align-items: center;
-  width: max-content;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
   max-width: 100%;
-  min-height: 44px;
-  margin: 4px 0;
+  min-height: var(--control-target);
+  margin: 0;
+  padding: var(--space-1) 0;
   text-decoration: underline;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .atlas-failed .map-stage > canvas,
 .atlas-failed .context-labels,
@@ -998,6 +1037,13 @@ dialog dd a {
   right: calc(100% + 5px);
   margin-left: 0;
 }
+.project-pin.label-up .pin-label {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  margin-left: 0;
+}
+.project-pin.label-up:not(.label-left) .pin-label { left: 14px; }
+.project-pin.label-up.label-left .pin-label { right: 14px; }
 .context-labels {
   position: absolute;
   inset: 0;
@@ -1072,6 +1118,11 @@ dialog dd a {
   height: 16px;
   cursor: pointer;
 }
+.place-filter { border-top: 1px solid var(--rule); padding: 13px 0; }
+.place-filter label { display: block; border: 0; padding: 0 0 7px; cursor: default; }
+.place-filter select { width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: 12px var(--sans); }
+.place-filter p { margin: 8px 0 4px; font-size: 12px; }
+.place-filter small { display: block; color: var(--muted); font-size: 10px; line-height: 1.5; }
 .legend-symbol {
   width: 22px;
   height: 22px;
@@ -1217,7 +1268,8 @@ dialog dd a {
 .record-expanded .record-tabs { position: sticky; top: 0; background: var(--paper); z-index: 2; }
 .history-title { font: 24px var(--serif); margin: 24px 0; }
 .record-conflict, .record-withheld { border: 1px solid var(--rule); padding: 20px; margin-top: 24px; }
-.record-conflict { border-left: 3px solid var(--accent); }
+.record-conflict { border-left: 3px solid var(--state-conflict); background: var(--state-conflict-surface); }
+.record-withheld { border-left: 3px solid var(--state-withheld); background: var(--state-withheld-surface); }
 .record-withheld p { font-size: 12px; line-height: 1.6; }
 .explorer-label { font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
 #area-picker { position: relative; min-width: 170px; }
@@ -1297,8 +1349,8 @@ dialog dd a {
 .brief-dates > div { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 13px 0; border-top: 1px solid var(--rule); }
 .brief-dates dt { font-size: 12px; }
 .brief-dates dd { margin: 0; font-size: 14px; text-align: right; }
-.fact-source { color: var(--ink); text-decoration: none; padding: 4px 5px; display: inline-flex; align-items: center; vertical-align: middle; border-radius: 3px; }
-.fact-source:hover, .fact-source:focus-visible { color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.fact-source { color: var(--text-action); text-decoration: none; padding: 4px 5px; display: inline-flex; align-items: center; vertical-align: middle; border-radius: 3px; }
+.fact-source:hover, .fact-source:focus-visible { color: var(--action-hover); background: color-mix(in srgb, var(--action-default) 8%, transparent); }
 .date-missing { font-size: 11px; color: var(--muted); }
 .status-brief .brief-source-key { font-size: 11px; line-height: 1.5; color: var(--muted); margin: 10px 0 15px; }
 .brief-source-key span { display: block; margin-top: 5px; }
@@ -1375,7 +1427,7 @@ dialog dd a {
 .project-pin.basic-pin { width: 44px; height: 44px; background: transparent; }
 .project-pin.basic-pin .pin-number { width: 22px; height: 22px; min-width: 22px; border: 2px solid #526e66; background: #f5f4ece6; color: #526e66; box-shadow: none; }
 .project-pin.basic-pin .pin-number svg { width: 13px; height: 13px; }
-.project-pin.basic-pin .pin-label { display: none; max-width: 260px; white-space: normal; }
+.project-pin.basic-pin .pin-label { display: none; max-width: min(260px, var(--pin-label-max, 260px)); white-space: normal; }
 .project-pin.basic-pin:hover .pin-label, .project-pin.basic-pin:focus-visible .pin-label, .project-pin.basic-pin.selected .pin-label { display: block; }
 .project-pin.basic-pin.selected .pin-number { border-color: #d65429; color: #d65429; }
 .basic-directory { max-height: 32dvh; overflow-y: auto; }

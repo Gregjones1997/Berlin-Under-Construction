@@ -1,4 +1,4 @@
-# City Desk — agent-selected brand direction
+# City Desk — agent-recommended brand direction
 
 For people curious about a Berlin building project, Berlin, Under Construction
 connects a place to the public statements behind it, helping them distinguish what
@@ -63,3 +63,21 @@ or expand history/evidence → return to previous view. Existing native and cont
 behavior is retained; surrounding UI remains anchored. Reduced-motion rules disable
 automatic orbit and page transitions. New card feedback is a 150ms surface tint only,
 disabled under reduced motion. Timing is proposed tuning, not measured from references.
+
+
+## 26 September production contract
+
+The current rendered guide is `/style-guide/`, built from `web/src/pages/style-guide.astro`; the earlier static HTML is a historical proposal. `web/src/styles/design-tokens.css` is authoritative. This is a native Lumos adaptation, not imported Webflow code or a certification.
+
+| Layer | Production contract |
+| --- | --- |
+| Typography | Helvetica Neue/Arial interface; Georgia/Times New Roman source context; system monospace references. Named display, heading, body, context and label roles separate family/size/leading/tracking. |
+| Metrics | Weights 400/500/600/700; display leading 1.04; heading 1.16; body 1.62; label tracking .13em. Fluid display 2.25–4.5rem; heading 1.5–2.25rem. |
+| Layout | Reading container 51.25rem, wide 78rem; gutter 18–32px; space-1 through space-5 from .5rem to fluid 3–7rem. Ordinary controls target 44px. |
+| Surfaces | Canvas paper, nearly opaque white panels, subtle green-grey and inverse ink. Text, borders and focus consume semantic roles. |
+| Action | Rust #a83d1c, hover #873116, active #6f2812. Primary controls use ink/paper. Focus stays visible; action color does not assert evidence status. |
+| States | Conflict red #a5121a/pale red; withheld olive #7e6f20/pale yellow; warning #915022; selected subtle surface; disabled opacity .45 with surrounding explanation. |
+| Components | Real header, record/index navigation, RawFact, evidence disclosure, selected atlas card and recovery routes. The guide shows focus, disabled, empty/withheld and recoverable error specimens; specimens are not successful production failures. |
+| Media | Fresh real WebGL and static evidence captures; no generated geometry or fabricated source text. Original map attribution remains visible. |
+
+Use hierarchy and typography to distinguish the geographic overview from the source-reading surface. Never reuse conflict red for ordinary links or show a withheld value through a component variant. Preserve native disclosure/keyboard behavior and reduced-motion CSS; this pass does not claim new reduced-motion runtime testing. Current evidence and actual limits: `docs/design-refresh-2026-09-26/HANDOFF.md`.

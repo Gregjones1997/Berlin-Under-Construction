@@ -11,7 +11,7 @@ DATE = '2026-09-07'
 
 
 def fixture_export(tmp_path: Path) -> None:
-    paths = ['index.html', 'impressum/index.html', 'privacy/index.html'] + [f'record-{i}/index.html' for i in range(11)]
+    paths = ['index.html', 'impressum/index.html', 'privacy/index.html', 'style-guide/index.html'] + [f'record-{i}/index.html' for i in range(11)]
     for name in paths:
         path = tmp_path / 'dist' / name
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -37,6 +37,7 @@ def test_package_routes_only_the_checked_static_export(tmp_path: Path) -> None:
     config = json.loads((output / 'config.json').read_text())
     assert config['version'] == 3
     assert {'src': '^/impressum/?$', 'dest': '/impressum/index.html'} in config['routes']
+    assert {'src': '^/style-guide/?$', 'dest': '/style-guide/index.html'} in config['routes']
     assert not (output / 'static/private.pdf').exists()
     assert not (output / 'functions').exists()
     assert "connect-src 'self'" in config['routes'][0]['headers']['Content-Security-Policy']

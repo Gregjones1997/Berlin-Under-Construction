@@ -74,8 +74,8 @@ const records = projects.map((project) => ({
         >
           <h2 id="failure-heading">The atlas could not load.</h2><p id="failure-message">
             Your browser may not support this 3D view.
-          </p><a href="/records/">Explore the accessible project index →</a
-          ><button id="retry-map" type="button">Try again</button>
+          </p><div class="failure-actions"><a href="/records/">Explore the accessible project index →</a
+          ><button id="retry-map" type="button">Try again</button></div>
         </div>
         <div class="context-labels" aria-hidden="true">
           {
@@ -345,6 +345,15 @@ const records = projects.map((project) => ({
           ><input type="checkbox" data-label-kind="projects" checked /></label
         >
         <label><span class="legend-symbol"><Icon name="pin" /></span><span>Basic listings<small>Official register references · research ongoing</small></span><input type="checkbox" data-label-kind="basic" checked /></label>
+        <div class="place-filter">
+          <label for="basic-place-filter">Basic listings near a place</label>
+          <select id="basic-place-filter">
+            <option value="">All 150 listings</option>
+            {places.places.map((place) => <option value={`${place.longitude},${place.latitude}`}>{place.name}</option>)}
+          </select>
+          <p id="place-filter-status" role="status">Showing all 150 basic listings.</p>
+          <small>Within 3 km of the selected place’s map point. This is a proximity filter, not a district boundary.</small>
+        </div>
         <div class="project-category-key">
           <button class="legend-project-link" data-project="C-014"><span class="legend-symbol legend-category"><Icon name="publicspace" /></span><span>Public space<small>Europaplatz Süd</small></span></button>
           <button class="legend-project-link" data-project="C-010"><span class="legend-symbol legend-category"><Icon name="school" /></span><span>School<small>Heinrich-Hertz-Gymnasium</small></span></button>

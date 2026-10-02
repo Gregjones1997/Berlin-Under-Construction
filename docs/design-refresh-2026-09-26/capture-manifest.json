@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-26",
+  "revision": "e3bd796b2754ee896db4330bbaecc698bb086cf3",
+  "working_tree": "modified local candidate; no new commit",
+  "boundary": "Local UI refresh; original factual/source dates unchanged; no deployment",
+  "captures": [
+    {
+      "file": "atlas-desktop.jpg",
+      "url": "http://127.0.0.1:48776/",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "state": "Settled WebGL atlas",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "b65abe5928d4b1c4fa7eca169b76a9f46361d796340d691d9d7d2ed35ae24f4a"
+    },
+    {
+      "file": "selected-desktop.jpg",
+      "url": "http://127.0.0.1:48776/#C-014",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "state": "Selected Europaplatz record",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "c2ead34d7e4740c11cb34c877ad2373c4da565cd82b919a52cc4ce127d78a8c0"
+    },
+    {
+      "file": "style-guide-desktop.jpg",
+      "url": "http://127.0.0.1:48776/style-guide/",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "state": "Production component guide",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "0cbb54dd18fd22160f2f5dbaf3c4fdcd77943bb133f25fc211bd0bd9d078e710"
+    },
+    {
+      "file": "style-guide-mobile.jpg",
+      "url": "http://127.0.0.1:48776/style-guide/",
+      "viewport": [
+        390,
+        844
+      ],
+      "state": "Production guide phone",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "bef16936a76e891d7e2decc97161c6f14f6d80b2c307719a1e8139e079fb13ff"
+    },
+    {
+      "file": "atlas-phone.jpg",
+      "url": "http://127.0.0.1:48776/",
+      "viewport": [
+        390,
+        844
+      ],
+      "state": "Settled WebGL phone atlas",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "e0043a4b20162bba58ab8f20250dfdc64415f1d973abad62ffd2c8596cbca182"
+    },
+    {
+      "file": "index-phone.jpg",
+      "url": "http://127.0.0.1:48776/records/",
+      "viewport": [
+        390,
+        844
+      ],
+      "state": "Static project index",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "13d36fb573297deaf185a904d72fa79e30c990b6f36587f96aa25a008005c714"
+    },
+    {
+      "file": "dossier-phone.jpg",
+      "url": "http://127.0.0.1:48776/projects/europaplatz-sued/",
+      "viewport": [
+        390,
+        844
+      ],
+      "state": "Canonical dossier",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "8398bee5c88cbf533c4ae31c13117bd7c52fb53cf1a20358cf14b20652ff0df3"
+    },
+    {
+      "file": "evidence-phone.jpg",
+      "url": "http://127.0.0.1:48776/projects/europaplatz-sued/",
+      "viewport": [
+        390,
+        844
+      ],
+      "state": "Keyboard-opened native evidence disclosure",
+      "mime": "image/jpeg",
+      "date": "2026-09-26",
+      "motion": "normal preference; settled capture",
+      "sha256": "55f1cc06f4329471b254907c6a9b91914b8905dbb8cf0642e71f0fbb8bcb62f4"
+    }
+  ]
+}

@@ -28,7 +28,7 @@ for (const route of ["impressum", "privacy"])
     throw new Error("The export does not match the supplied legal address");
 const files = walk(root);
 const pages = files.filter((p) => p.endsWith(".html"));
-if (pages.length !== 14) throw new Error("Unexpected route count");
+if (pages.length !== 15) throw new Error("Unexpected route count");
 for (const file of files) {
   if (/\.(?:pdf|sqlite3?|py|env)$/i.test(file))
     throw new Error(`Private artifact in static output: ${file}`);

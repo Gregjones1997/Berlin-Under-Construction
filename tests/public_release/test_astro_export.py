@@ -393,7 +393,7 @@ def test_publication_date_is_required_and_appears_on_every_route(
     assert "PUBLICATION_AS_OF_DATE" in result.stdout + result.stderr
 
     pages = tuple(DIST.rglob("*.html"))
-    assert len(pages) == 14
+    assert len(pages) == 15
     footer_sentence = f"This page was generated on {TEST_BUILD_DATE}."
     for page in pages:
         export = page.read_text(encoding="utf-8")

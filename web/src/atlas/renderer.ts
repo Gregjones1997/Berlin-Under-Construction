@@ -485,20 +485,26 @@ export class CityRenderer {
     for (const p of this.pins) {
       const [x, z] = cityPoint(Number(p.dataset.lon), Number(p.dataset.lat));
       const v = new THREE.Vector3(x, 55, z).project(this.camera);
+      const px = (v.x * 0.5 + 0.5) * r.width;
+      const py = (-v.y * 0.5 + 0.5) * r.height;
       const visible =
-        this.labels.projects && (p.dataset.depth !== "basic" || this.labels.basic) &&
+        this.labels.projects && !p.classList.contains("filtered-out") &&
+        (p.dataset.depth !== "basic" || this.labels.basic) &&
         v.z >= -1 &&
         v.z <= 1 &&
-        Math.abs(v.x) < 1.1 &&
-        Math.abs(v.y) < 1.1;
+        px >= 14 && px <= r.width - 14 &&
+        py >= 14 && py <= r.height - 14;
       if (visible)
         occupied.push({
-          x: (v.x * 0.5 + 0.5) * r.width + (v.x > 0.3 ? -80 : 80),
-          y: (-v.y * 0.5 + 0.5) * r.height,
+          x: px + (px > r.width / 2 ? -80 : 80),
+          y: py,
         });
-      p.classList.toggle("label-left", v.x > 0.3);
+      const labelLeft = px > r.width / 2;
+      p.classList.toggle("label-left", labelLeft);
+      p.classList.toggle("label-up", py > r.height - 100);
+      p.style.setProperty("--pin-label-max", `${Math.max(40, labelLeft ? px - 38 : r.width - px - 38)}px`);
       p.style.visibility = visible ? "visible" : "hidden";
-      p.style.transform = `translate(${(v.x * 0.5 + 0.5) * r.width - 14}px,${(-v.y * 0.5 + 0.5) * r.height - 14}px)`;
+      p.style.transform = `translate(${px - 14}px,${py - 14}px)`;
     }
     for (const label of this.contextLabels) {
       const [x, z] = cityPoint(

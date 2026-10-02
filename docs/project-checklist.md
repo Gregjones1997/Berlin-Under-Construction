@@ -32,14 +32,7 @@ commit `57c1e68`, including six source-stated dates on five basic listings.
 The 21 September handoff recheck matched the published release; no redeploy was needed.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Resume from the [gstack workflow handoff](product-review/gstack-handoff.md):
-fix and retest the reproduced 195 px atlas-failure reflow defect, run the full pytest
-suite, then complete the installed `/design-review` and `/review` passes. The local
-implementation is at `e4a7466`; production and the shared portfolio are unchanged.
-After technical review, arrange the three-resident need-validation experiment and
-recheck native view-transition warnings in a physical browser. Any later release still
-requires separate authorization, valid production legal configuration and fresh live
-verification.
+**Next action:** Visually verify the 2 October local atlas hover-label and 3 km place-filter changes at desktop and mobile widths, including map edges and a filtered selection; the local preview could not start during this session. TypeScript and the 15-page static build passed. Decide whether a separate type filter should wait for source-backed category data. Then review the [26 September local design handoff](design-refresh-2026-09-26/HANDOFF.md) and demonstrate the atlas → index → dossier → evidence/history → atlas journey. Current portfolio media are integrated. The earlier 195px defect was fixed and tested in the 23 September build log; the new CSS candidate has not repeated the exact 195px failure-state check (in-app viewport clamped to 240px). No public release or factual/source refresh occurred. Public refresh still needs its existing legal configuration, authorization and live verification; resident need-validation and source reliability work remain separate.
 
 **Deferred product backlog (not today's handoff):**
 For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße

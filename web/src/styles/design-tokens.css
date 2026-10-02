@@ -1,29 +1,135 @@
-/* Lumos adaptation: primitives → semantic roles → native component styles.
-   Mapping and metric choices: briefs/berlin-design/BRAND.md. */
+/*
+ * City Desk / Lumos adaptation
+ *
+ * The file keeps Lumos's order visible in a native Astro stack: raw swatches and
+ * metrics feed semantic roles, then components consume the roles. Values are
+ * intentionally local and system-font based; no starter package or remote asset
+ * is loaded.
+ */
 :root {
+  /* Raw colour swatches. Map colours remain separate from interface action. */
   --swatch-paper: #f6f7f4;
   --swatch-white: #ffffff;
   --swatch-ink: #202925;
   --swatch-secondary: #536059;
   --swatch-line: #d7ded8;
   --swatch-action: #a83d1c;
+  --swatch-conflict: #a5121a;
+  --swatch-conflict-surface: #fcf5f4;
+  --swatch-withheld: #7e6f20;
+  --swatch-withheld-surface: #fbf8ec;
+  --swatch-warning: #915022;
+  --swatch-map-public: #d9622b;
+  --swatch-map-basic: #526e66;
+  --swatch-map-water: #71999b;
+  --swatch-map-park: #adbba0;
+
+  /* Raw type metrics. Named text roles below are the app-facing contract. */
   --font-ui: "Helvetica Neue", Arial, sans-serif;
   --font-reading: Georgia, "Times New Roman", serif;
   --font-reference: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  --space-1: .5rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --leading-tight: 1.04;
+  --leading-heading: 1.16;
+  --leading-body: 1.62;
+  --leading-meta: 1.5;
+  --tracking-tight: -0.045em;
+  --tracking-label: 0.13em;
+
+  /* Fluid size and spacing primitives. */
+  --space-0: 0;
+  --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: clamp(1.25rem, 2vw, 2rem);
   --space-4: clamp(2rem, 4vw, 4rem);
+  --space-5: clamp(3rem, 7vw, 7rem);
+  --text-label: 0.625rem;
+  --text-body: 1rem;
   --text-display: clamp(2.25rem, 4vw, 4.5rem);
-  --paper: var(--swatch-paper);
-  --panel: rgba(255,255,255,.97);
-  --ink: var(--swatch-ink);
-  --muted: var(--swatch-secondary);
-  --ink-2: var(--swatch-secondary);
-  --ink-3: var(--swatch-secondary);
-  --rule: var(--swatch-line);
-  --accent: var(--swatch-action);
+  --text-title: clamp(1.5rem, 2.1vw, 2.25rem);
+  --text-reading: 1.4375rem;
+
+  /* Named text styles used by production components and the live guide. */
+  --type-display-family: var(--font-ui);
+  --type-display-size: var(--text-display);
+  --type-display-leading: var(--leading-tight);
+  --type-display-tracking: var(--tracking-tight);
+  --type-heading-family: var(--font-ui);
+  --type-heading-size: var(--text-title);
+  --type-heading-leading: var(--leading-heading);
+  --type-heading-tracking: -0.035em;
+  --type-body-family: var(--font-ui);
+  --type-body-size: var(--text-body);
+  --type-body-leading: var(--leading-body);
+  --type-context-family: var(--font-reading);
+  --type-context-size: var(--text-reading);
+  --type-context-leading: 1.5;
+  --type-label-family: var(--font-reference);
+  --type-label-size: var(--text-label);
+  --type-label-leading: 1.6;
+  --type-label-tracking: var(--tracking-label);
+
+  /* Fluid layout primitives. */
+  --container-reading: 51.25rem;
+  --container-wide: 78rem;
+  --layout-gutter: clamp(18px, 5vw, 32px);
+  --layout-header-height: 82px;
+  --layout-header-height-compact: 66px;
+  --control-target: 44px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* Semantic surfaces, text and borders. */
+  --surface-canvas: var(--swatch-paper);
+  --surface-panel: rgb(255 255 255 / 97%);
+  --surface-subtle: #e9eee8;
+  --surface-inverse: var(--swatch-ink);
+  --text-primary: var(--swatch-ink);
+  --text-secondary: var(--swatch-secondary);
+  --text-quiet: #708078;
+  --text-inverse: var(--swatch-paper);
+  --text-action: var(--swatch-action);
+  --border-default: var(--swatch-line);
+  --border-subtle: #f1efea;
+  --border-strong: var(--swatch-ink);
+  --focus-ring: var(--swatch-action);
+
+  /* Action/control roles. Conflict and withholding have their own semantics. */
+  --action-default: var(--swatch-action);
+  --action-hover: #873116;
+  --action-active: #6f2812;
+  --control-primary-surface: var(--swatch-ink);
+  --control-primary-text: var(--swatch-paper);
+  --control-selected-surface: #e5e9df;
+  --control-disabled-opacity: 0.45;
+  --state-conflict: var(--swatch-conflict);
+  --state-conflict-surface: var(--swatch-conflict-surface);
+  --state-withheld: var(--swatch-withheld);
+  --state-withheld-surface: var(--swatch-withheld-surface);
+  --state-warning: var(--swatch-warning);
+
+  /* Compatibility aliases for existing native components. */
+  --paper: var(--surface-canvas);
+  --panel: var(--surface-panel);
+  --ink: var(--text-primary);
+  --muted: var(--text-secondary);
+  --ink-2: var(--text-secondary);
+  --ink-3: var(--text-quiet);
+  --rule: var(--border-default);
+  --accent: var(--action-default);
   --sans: var(--font-ui);
   --serif: var(--font-reading);
   --mono: var(--font-reference);
+  --content-width: var(--container-reading);
+  --page-gutter: var(--layout-gutter);
+  --rule-2: var(--border-subtle);
+
+  /* Legacy names remain valid only for conflict/withheld presentation. */
+  --flag: var(--state-conflict);
+  --flag-bg: var(--state-conflict-surface);
+  --hold: var(--state-withheld);
+  --hold-bg: var(--state-withheld-surface);
 }

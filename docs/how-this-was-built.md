@@ -3268,3 +3268,11 @@ Main agent (Codex; host model identifier not exposed; Chrome browser skill) open
 **Commit:** `d61fd05` — `fix(atlas): clear controls and center mobile key`.
 
 Main agent (Codex; host model identifier not exposed; Chrome browser skill) saw the corrected label overlap the bottom toolbar in the second READY deployment, then found the project key shifted left at 390 px. The lower-label offset now clears the toolbar, and the mobile key resets the desktop centering transform. A fresh local packaged build in Chrome showed the 260 × 59 px lower label fully above the toolbar (label bottom 682 px, toolbar top 720 px); the project key occupied x=12–378 px at a 390 px viewport, with no document overflow. Selecting Mitte showed the same 25 basic pins and 25 directory entries. The 15-page package passed again. Final production behavior still needs a Chrome check after the next deployment.
+
+## 2026-10-02 — Public atlas verification
+
+**Status:** Complete for the checked release scope.
+
+**Commit:** Pending session hash recording.
+
+Main agent (Codex; host model identifier not exposed; Chrome browser and Vercel deployment skills) pushed the checked branch and deployed the final package to production as `dpl_FstDATqbq6CkCGNC5r3RKFnnQiwj`. An anonymous 22-file comparison matched all HTML, CSS/JS and atlas metadata in scope; three private-path probes returned 404. Chrome on the live desktop atlas showed the Mitte filter at 25 pins/25 directory entries and a lower label above the toolbar. The 390 px panel correction was checked locally against the same packaged candidate. The exact scope, screenshot and limits are recorded in [public-deployment.md](public-deployment.md). The owner-requested Chrome tab was left open. No factual source refresh or type classification was performed.

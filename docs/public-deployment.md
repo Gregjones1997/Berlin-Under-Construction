@@ -5,6 +5,35 @@ Only the checked Astro export is uploaded through Vercel's Build Output API.
 The retained PDF artifacts, SQLite store, pipeline source and environment files
 are never deployment inputs.
 
+## Current production update — City Desk atlas and place filter, 2 October 2026
+
+Source branch `phase-4-public-slice` at `ed4be6e` was pushed to GitHub and the
+checked 15-route, 271-asset package was deployed READY as
+`dpl_FstDATqbq6CkCGNC5r3RKFnnQiwj` at the
+[stable public atlas](https://berlin-under-construction.vercel.app/).
+The production build used the existing matching owner-approved postal address
+from the prior local public package and a 2 October publication date; the
+address was not printed in command output. The new style guide is a fifteenth
+public route. Source facts, evidence, and German values were not refreshed.
+
+Pre-release checks: 209 Python tests, TypeScript, 15-page Astro build,
+15-route Vercel packaging, and the public-export privacy/withheld scan passed.
+An anonymous HTTP comparison matched the checked export for all 15 HTML pages,
+five CSS/JS assets, and two atlas metadata files (22 files); none of those
+responses set cookies. The home response was 200 with the same-origin content
+policy, and three sampled private paths returned 404. Detailed geometry tiles
+were not re-downloaded for this check.
+
+Chrome on the live site selected Mitte and showed 25 basic pins and 25 matching
+directory entries within the stated 3 km radius. A lower hover label measured
+211 × 29 px and ended at y=703, above the toolbar starting at y=776. The
+[live filter capture](images/atlas-place-filter-live-2026-10-02.jpg) records
+the desktop project key. A 390 px Chrome check against the same packaged
+candidate placed the project key at x=12–378 with no document overflow and
+showed 25 pins and 25 directory entries for Mitte. The final mobile behavior
+was checked locally, not on a physical phone or through the public URL.
+No project-type filter is claimed: basic listings have no verified type field.
+
 ## Current production update — source-stated milestone cards
 
 Source commit `57c1e68` is READY on the stable public URL.

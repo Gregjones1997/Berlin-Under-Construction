@@ -32,7 +32,7 @@ commit `57c1e68`, including six source-stated dates on five basic listings.
 The 21 September handoff recheck matched the published release; no redeploy was needed.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Review the [2 October live atlas update](public-deployment.md) in Chrome, then decide whether the 150 basic listings should gain a separate type filter through a source-backed category review. The 3 km place filter and lower hover labels were checked on the live desktop site; the 390 px key was checked locally, so a physical-phone pass remains. Demonstrate the atlas → index → dossier → evidence/history → atlas journey. The earlier 195px failure-state fix has historical 23 September evidence; the new CSS did not repeat that exact width because the in-app viewport clamped to 240px. Current portfolio media are integrated. Resident need-validation and source reliability work remain separate.
+**Next action:** Prioritize the owner's 2 October request for complete German/English visitor-facing coverage and synchronized editing. Start with the public-copy inventory and shared localization module in [the bilingual-site proposal](bilingual-site-plan.md); resolve the English claim-explanation display treatment before publishing it. This is planning evidence, not completed localization or verified translations. Latest atlas release checks remain in [public-deployment.md](public-deployment.md); physical-phone validation and the exact 195px failure-state recheck remain open. Source-backed type review and resident need-validation remain separate.
 
 **Deferred product backlog (not today's handoff):**
 For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße

@@ -3396,3 +3396,5 @@ control scrolling offscreen; both were repaired before handoff. Design decisions
 screenshots and remaining checks are in [project-card-redesign.md](project-card-redesign.md).
 No physical-device, exact 195 px failure fixture, OS reduced-motion toggle, independent
 language review or production deployment is claimed.
+
+- 2026-10-02 — Project owner and main agent (Codex; host model identifier not exposed): recorded owner acceptance of the local folder-card version and explicit authorization to push the current branch; updated the session handoff. Verified: clean working tree before this documentation update, six local implementation/planning commits ahead of the tracked branch, and the existing checked redesign record. A more modern deck remains a possible later refinement. No new app changes, translation verification or production deployment; no delegation.

@@ -32,7 +32,7 @@ commit `57c1e68`, including six source-stated dates on five basic listings.
 The 21 September handoff recheck matched the published release; no redeploy was needed.
 Evidence and verification limits: [public deployment](public-deployment.md).
 
-**Next action:** Review the owner's local folder-card redesign at desktop and physical-phone sizes, then independently review the bilingual candidate's consequential explanations and terminology before packaging a public bilingual release. The compact cards now lead with numeric source-stated dates; expanded records keep the summary beside Schedule, Budget, Sources and Open questions folders. Translation status is in a bottom disclosure under ADR-028. Local checks and screenshots: [project-card-redesign.md](project-card-redesign.md). The release review gate remains closed for 20 fact explanations, 150 listing titles and 14 mappings. Physical-phone acceptance and exact 195px failure-state recheck remain open. No bilingual production deployment is claimed.
+**Next action:** Independently review the bilingual candidate's consequential explanations and terminology before packaging a public bilingual release. The owner accepted the local folder-card version on 2 October and authorized a repository push; a more modern deck remains optional future design work. Local checks and screenshots: [project-card-redesign.md](project-card-redesign.md). The release review gate remains closed for 20 fact explanations, 150 listing titles and 14 mappings. Physical-phone acceptance and exact 195px failure-state recheck remain open. No bilingual production deployment is claimed.
 
 **Deferred product backlog (not today's handoff):**
 For product research, next resolve Waldemarstraße start accounts and Karl-Marx-Straße

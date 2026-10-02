@@ -5,6 +5,11 @@ system. Direct implementation of the owner's content order and folder interactio
 The existing paper/map, serif project names, dark text, hairline rules and red action
 accent remain. No new imagery or framework is needed.
 
+Owner acceptance, 2 October: accepted this local version and authorized a repository
+push. The owner suggested a more modern deck as a possible later refinement. This
+acceptance covers the visual direction; independent translation review and physical
+phone acceptance remain open.
+
 Refero style and screen research was attempted but returned NO_SUBSCRIPTION. The
 fallback uses the supplied screenshots and Refero's motion/craft references: short,
 interruptible transitions, reduced-motion support, visible keyboard focus and

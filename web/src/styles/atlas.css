@@ -1044,7 +1044,7 @@ dialog dd a {
 }
 .project-pin.label-up .pin-label {
   top: auto;
-  bottom: calc(100% + 5px);
+  bottom: calc(100% + 80px);
 }
 .project-pin.label-up:not(.label-left) .pin-label { left: 14px; }
 .project-pin.label-up.label-left .pin-label { right: 14px; }
@@ -1382,7 +1382,7 @@ dialog dd a {
   .has-selection .record-panel { top: 65px; bottom: 76px; max-height: calc(100% - 145px); }
   .has-selection .map-right-controls, .has-selection .map-readout, .has-selection .about-map { display: none; }
   .has-selection .city-return { left: 12px; right: auto; }
-  .label-panel { left: 12px; right: 12px; bottom: 76px; width: auto; max-height: calc(100% - 96px); overflow-y: auto; }
+  .label-panel { left: 12px; right: 12px; bottom: 76px; width: auto; max-height: calc(100% - 96px); overflow-y: auto; transform: none; }
 }
 
 /* Preserve a usable recovery page at high zoom and very narrow reflow widths. */

@@ -501,7 +501,7 @@ export class CityRenderer {
         });
       const labelLeft = px > r.width / 2;
       p.classList.toggle("label-left", labelLeft);
-      p.classList.toggle("label-up", py > r.height - 100);
+      p.classList.toggle("label-up", py > r.height - 180);
       p.style.setProperty("--pin-label-max", `${Math.max(40, labelLeft ? px - 38 : r.width - px - 38)}px`);
       p.style.visibility = visible ? "visible" : "hidden";
       p.style.transform = `translate(${px - 14}px,${py - 14}px)`;

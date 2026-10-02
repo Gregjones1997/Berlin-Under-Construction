@@ -3260,3 +3260,11 @@ The attempted local browser preview was unavailable in the sandbox, so the live 
 **Commit:** `d10e911` — `fix(atlas): size hover labels to their content`.
 
 Main agent (Codex; host model identifier not exposed; Chrome browser skill) opened the first READY production deployment and checked a bottom-edge basic pin. The label measured only 27 px wide and 389 px tall despite the earlier wrap change. The cause was a flex item inside a fixed-width pin button. The label is now absolutely positioned with a content width, bounded by the map-edge allowance, and raised above neighboring pins on hover/focus/selection. TypeScript, `git diff --check` and the 15-page, 271-asset package passed again. A second public deployment and Chrome check are required before calling the visual repair verified.
+
+## 2026-10-02 — Clear map controls and center the mobile key
+
+**Status:** Local Chrome check passed; final production check pending.
+
+**Commit:** Pending session hash recording.
+
+Main agent (Codex; host model identifier not exposed; Chrome browser skill) saw the corrected label overlap the bottom toolbar in the second READY deployment, then found the project key shifted left at 390 px. The lower-label offset now clears the toolbar, and the mobile key resets the desktop centering transform. A fresh local packaged build in Chrome showed the 260 × 59 px lower label fully above the toolbar (label bottom 682 px, toolbar top 720 px); the project key occupied x=12–378 px at a 390 px viewport, with no document overflow. Selecting Mitte showed the same 25 basic pins and 25 directory entries. The 15-page package passed again. Final production behavior still needs a Chrome check after the next deployment.

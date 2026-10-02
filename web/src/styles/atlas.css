@@ -545,10 +545,13 @@ svg {
   border-radius: 50%;
 }
 .pin-label {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 5px);
+  width: max-content;
   background: var(--panel);
   padding: 6px 9px;
   font-size: 10px;
-  margin-left: 5px;
   border: 1px solid #c6cac078;
   border-radius: 2px;
   max-width: min(230px, var(--pin-label-max, 230px));
@@ -560,6 +563,9 @@ svg {
   background: var(--ink);
   color: var(--paper);
 }
+.project-pin:hover,
+.project-pin:focus-visible,
+.project-pin.selected { z-index: 3; }
 .map-loading {
   position: absolute;
   inset: 0;
@@ -1033,14 +1039,12 @@ dialog dd a {
 }
 
 .project-pin.label-left .pin-label {
-  position: absolute;
+  left: auto;
   right: calc(100% + 5px);
-  margin-left: 0;
 }
 .project-pin.label-up .pin-label {
-  position: absolute;
+  top: auto;
   bottom: calc(100% + 5px);
-  margin-left: 0;
 }
 .project-pin.label-up:not(.label-left) .pin-label { left: 14px; }
 .project-pin.label-up.label-left .pin-label { right: 14px; }

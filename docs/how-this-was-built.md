@@ -3252,3 +3252,11 @@ The filter uses existing published map coordinates and named navigation anchors.
 ### Limitations and next check
 
 The attempted local browser preview was unavailable in the sandbox, so the live Chrome check must confirm edge-label visibility, filter interaction and responsive presentation after deployment. No type filter is claimed: the 150 basic listings lack a verified type field. No source facts, golden values, glossary status or project-status conclusions changed.
+
+## 2026-10-02 — Live hover label correction
+
+**Status:** Correction packaged; repeat Chrome check pending.
+
+**Commit:** Pending session hash recording.
+
+Main agent (Codex; host model identifier not exposed; Chrome browser skill) opened the first READY production deployment and checked a bottom-edge basic pin. The label measured only 27 px wide and 389 px tall despite the earlier wrap change. The cause was a flex item inside a fixed-width pin button. The label is now absolutely positioned with a content width, bounded by the map-edge allowance, and raised above neighboring pins on hover/focus/selection. TypeScript, `git diff --check` and the 15-page, 271-asset package passed again. A second public deployment and Chrome check are required before calling the visual repair verified.

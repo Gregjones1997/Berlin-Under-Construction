@@ -20,7 +20,7 @@ The Astro release includes: three evidence-backed project
 dossiers, 150 distinct basic listings with official register reference points,
 an interactive architectural atlas of Berlin, a static map
 and project index, contextual correction routes, the recorded AI-method page,
-an Impressum and an Article 13 privacy notice. Its static export contains 14
+an Impressum and an Article 13 privacy notice. Its static export contains 15
 HTML pages. Only the atlas loads client JavaScript (Three.js); all other routes
 remain JavaScript-free. The self-hosted model contains 440,361 building shapes across Berlin. Its 9 MB overview loads first;
 detailed geometry streams by area from 263 self-hosted tiles; see [model provenance and limitations](docs/atlas-model.md). It makes no
